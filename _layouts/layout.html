@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="layout-documentation">
+  <header class="layout-header">
+    <div class="layout-meta">
+      <span class="layout-category">{{ page.category | capitalize }}</span>
+      {%- if page.tags -%}
+        <div class="layout-tags">
+          {%- for tag in page.tags -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <h1 class="layout-title">{{ page.title | escape }}</h1>
+    
+    {%- if page.description -%}
+      <p class="layout-description">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="layout-content">
+    {{ content }}
+  </div>
+
+  <footer class="layout-footer">
+    <div class="layout-navigation">
+      {%- assign layouts = site.layouts | sort: 'title' -%}
+      {%- for layout in layouts -%}
+        {%- if layout.url == page.url -%}
+          {%- assign current_index = forloop.index0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {%- if current_index > 0 -%}
+        {%- assign prev_layout = layouts[current_index | minus: 1] -%}
+        <a href="{{ prev_layout.url | relative_url }}" class="nav-prev">
+          ← {{ prev_layout.title }}
+        </a>
+      {%- endif -%}
+      
+      {%- if current_index < layouts.size | minus: 1 -%}
+        {%- assign next_layout = layouts[current_index | plus: 1] -%}
+        <a href="{{ next_layout.url | relative_url }}" class="nav-next">
+          {{ next_layout.title }} →
+        </a>
+      {%- endif -%}
+    </div>
+  </footer>
+</article>

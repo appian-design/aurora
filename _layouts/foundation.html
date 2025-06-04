@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="foundation-documentation">
+  <header class="foundation-header">
+    <div class="foundation-meta">
+      <span class="foundation-category">{{ page.category | capitalize }}</span>
+      {%- if page.tags -%}
+        <div class="foundation-tags">
+          {%- for tag in page.tags -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <h1 class="foundation-title">{{ page.title | escape }}</h1>
+    
+    {%- if page.description -%}
+      <p class="foundation-description">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="foundation-content">
+    {{ content }}
+  </div>
+
+  <footer class="foundation-footer">
+    <div class="foundation-navigation">
+      {%- assign foundations = site.foundations | sort: 'title' -%}
+      {%- for foundation in foundations -%}
+        {%- if foundation.url == page.url -%}
+          {%- assign current_index = forloop.index0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {%- if current_index > 0 -%}
+        {%- assign prev_foundation = foundations[current_index | minus: 1] -%}
+        <a href="{{ prev_foundation.url | relative_url }}" class="nav-prev">
+          ← {{ prev_foundation.title }}
+        </a>
+      {%- endif -%}
+      
+      {%- if current_index < foundations.size | minus: 1 -%}
+        {%- assign next_foundation = foundations[current_index | plus: 1] -%}
+        <a href="{{ next_foundation.url | relative_url }}" class="nav-next">
+          {{ next_foundation.title }} →
+        </a>
+      {%- endif -%}
+    </div>
+  </footer>
+</article>

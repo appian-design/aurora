@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="guideline-documentation">
+  <header class="guideline-header">
+    <div class="guideline-meta">
+      <span class="guideline-category">{{ page.category | capitalize }}</span>
+      {%- if page.tags -%}
+        <div class="guideline-tags">
+          {%- for tag in page.tags -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <h1 class="guideline-title">{{ page.title | escape }}</h1>
+    
+    {%- if page.description -%}
+      <p class="guideline-description">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="guideline-content">
+    {{ content }}
+  </div>
+
+  <footer class="guideline-footer">
+    <div class="guideline-navigation">
+      {%- assign guidelines = site.guidelines | sort: 'title' -%}
+      {%- for guideline in guidelines -%}
+        {%- if guideline.url == page.url -%}
+          {%- assign current_index = forloop.index0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {%- if current_index > 0 -%}
+        {%- assign prev_guideline = guidelines[current_index | minus: 1] -%}
+        <a href="{{ prev_guideline.url | relative_url }}" class="nav-prev">
+          ← {{ prev_guideline.title }}
+        </a>
+      {%- endif -%}
+      
+      {%- if current_index < guidelines.size | minus: 1 -%}
+        {%- assign next_guideline = guidelines[current_index | plus: 1] -%}
+        <a href="{{ next_guideline.url | relative_url }}" class="nav-next">
+          {{ next_guideline.title }} →
+        </a>
+      {%- endif -%}
+    </div>
+  </footer>
+</article>

@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<article class="page-content">
+  <header class="page-header">
+    {%- if page.category -%}
+      <div class="page-meta">
+        <span class="page-category">{{ page.category | replace: "-", " " | capitalize }}</span>
+        {%- if page.status -%}
+          <span class="page-status status-{{ page.status }}">{{ page.status | capitalize }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+    
+    {%- if page.last_updated -%}
+      <div class="page-updated">
+        Last updated: {{ page.last_updated }}
+      </div>
+    {%- endif -%}
+  </header>
+
+  <div class="page-body">
+    {{ content }}
+  </div>
+
+  {%- if page.related and page.related.size > 0 -%}
+    <footer class="page-footer">
+      <div class="related-links">
+        <h3>Related</h3>
+        <ul>
+          {%- for related in page.related -%}
+            <li><a href="{{ related | slugify | prepend: '/' | append: '/' | relative_url }}">{{ related }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </footer>
+  {%- endif -%}
+</article>

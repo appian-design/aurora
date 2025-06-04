@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article class="component-documentation">
+  <header class="component-header">
+    <div class="component-meta">
+      <span class="component-category">{{ page.category | capitalize }}</span>
+      {%- if page.tags -%}
+        <div class="component-tags">
+          {%- for tag in page.tags -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+    
+    <h1 class="component-title">{{ page.title | escape }}</h1>
+    
+    {%- if page.description -%}
+      <p class="component-description">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="component-content">
+    {{ content }}
+  </div>
+
+  <footer class="component-footer">
+    <div class="component-navigation">
+      {%- assign components = site.components | sort: 'title' -%}
+      {%- for component in components -%}
+        {%- if component.url == page.url -%}
+          {%- assign current_index = forloop.index0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {%- if current_index > 0 -%}
+        {%- assign prev_component = components[current_index | minus: 1] -%}
+        <a href="{{ prev_component.url | relative_url }}" class="nav-prev">
+          ← {{ prev_component.title }}
+        </a>
+      {%- endif -%}
+      
+      {%- if current_index < components.size | minus: 1 -%}
+        {%- assign next_component = components[current_index | plus: 1] -%}
+        <a href="{{ next_component.url | relative_url }}" class="nav-next">
+          {{ next_component.title }} →
+        </a>
+      {%- endif -%}
+    </div>
+  </footer>
+</article>
