@@ -16,7 +16,7 @@
 
 ### Markdown conventions
 
-- Front Matter: Delete "parent" element and related elements if not needed for the file
+- Front Matter: Delete "parent" and "related" elements if not needed for the file
 - Use double space between all elements (except lists)
 - Place images after heading and subheading and before paragraphs
 - Use empty alt text for component images
