@@ -13,6 +13,16 @@
 - Keep page hierarchy as flat as possible, but use logical structure as needed
 - Defer "special case" pages for now; will collaborate on those when we're ready
 
+### Markdown convetions
+
+- Use double space between all elements (except lists)
+- Place images after heading and subheading and before paragraphs
+- Use empty alt text for component images
+- Put inline functions in backticks (e.g., `a!localVariables`)
+- Use `1.` for all numbers in ordered lists (sequential numbers rendered automatically)
+- Use `<br>` to break lines within a paragraph
+- Format SAIL in Interface Designer before copying over
+
 ## Reviewing work
 
 - Create PRs to add new work
