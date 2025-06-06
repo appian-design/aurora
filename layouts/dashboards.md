@@ -11,7 +11,7 @@ Provide actionable insights from business data
 
 ## Structure
 
-<img width="1614" alt="dashboards-structure-full-page" src="https://github.com/user-attachments/assets/5a2eb2b5-d15f-4701-9922-629579ce0048" />
+![dashboards-structure-full-page](https://github.com/user-attachments/assets/5a2eb2b5-d15f-4701-9922-629579ce0048)
 
 A dashboard aggregates data in order to highlight trends, statuses and alerts that enable users to take relevant action.
 
@@ -45,7 +45,7 @@ The grid and KPI filters are placed relative to what content they affect.
 
 ### Data Representation
 
-<img width="1614" alt="dashboards-data-representation-example" src="https://github.com/user-attachments/assets/b2308982-88a9-4b33-8354-311e3df56cdb" />
+![dashboards-data-representation-example](https://github.com/user-attachments/assets/b2308982-88a9-4b33-8354-311e3df56cdb)
 Combination of different data representations. Read more about Charts, KPIs, and Grids
 
 |Item|
