@@ -6,6 +6,11 @@ A centralized, developer-accessible design system documentation platform that ma
 
 This repository serves as the single source of truth for our design system documentation, organized in a way that's both human-readable and machine-accessible through Model Context Protocol (MCP) servers.
 
+## Helpful Tools
+
+- [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
+
 ## Repository Structure
 
 ```
@@ -122,7 +127,7 @@ This repository is designed to work with our MCP server that makes documentation
 
 All documentation files use Markdown with YAML front matter:
 
-```yaml
+~~~yaml
 ---
 status: "stable"
 last_updated: "YYYY-MM-DD"
@@ -151,7 +156,7 @@ related: ["related-item-1", "related-item-2"]
 ```html
 <code>
 ```
-```
+~~~
 
 ## Deployment
 
