@@ -11,20 +11,22 @@ Banners are visual elements used to display important information or messages to
 
 <img width="1229" src="https://github.com/user-attachments/assets/f495efca-141e-4856-bff9-f7aa33063388" />
 
-### Dynamic • Standard
+### Variants
+
+#### Dynamic • Standard
 
 Use this to communicate and draw the user’s attention to the specific state they’re in
 
 <img width="870" src="https://github.com/user-attachments/assets/d9a9be3b-438b-4e65-ad15-1940546befcc" />
 
-### Dynamic • Titled
+#### Dynamic • Titled
 
 Use this variant of a titled banner when your banner message wraps to more than one line
 
 <img width="870" src="https://github.com/user-attachments/assets/7024ea74-eebd-47d7-b0ef-28927f8522f2" />
 
 
-### Actions
+#### Actions
 
 Use buttons or links to enable the user to take actions if needed. Actions may include opening a dialog, expanding or collapsing to view more information, or dismissing the banner for example.
 
@@ -36,13 +38,13 @@ Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {
 
 <img width="870" src="https://github.com/user-attachments/assets/faf525c8-be84-4546-9dea-643f9b736532" />
 
-### Persistent
+#### Persistent
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
 <img width="870" src="https://github.com/user-attachments/assets/dc5a247b-1afa-451e-b5fe-e0d253deceb9" />
 
-### Minimal
+#### Minimal
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
@@ -51,7 +53,9 @@ Use this for messages that are always going to be a part of the UI. It is up to 
 
 ## Development
 
-### Dynamic • Standard
+### Variants
+
+#### Dynamic • Standard
 
 ```
 a!localVariables(
@@ -136,7 +140,7 @@ a!localVariables(
 )
 ```
 
-### Dynamic • Titled
+#### Dynamic • Titled
 
 ```
 a!localVariables(
@@ -238,7 +242,7 @@ a!localVariables(
 )
 ```
 
-### Actions
+#### Actions
 
 ```
 a!localVariables(
@@ -398,7 +402,7 @@ a!localVariables(
 )
 ```
 
-### Persistent
+#### Persistent
 
 ```
 a!localVariables(
@@ -489,7 +493,7 @@ a!localVariables(
 )
 ```
 
-### Minimal
+#### Minimal
 
 ```
 a!localVariables(
