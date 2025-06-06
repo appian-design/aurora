@@ -13,7 +13,7 @@
 - Keep page hierarchy as flat as possible, but use logical structure as needed
 - Defer "special case" pages for now; will collaborate on those when we're ready
 
-### Markdown convetions
+### Markdown conventions
 
 - Use double space between all elements (except lists)
 - Place images after heading and subheading and before paragraphs
