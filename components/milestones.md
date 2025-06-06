@@ -65,14 +65,125 @@ Use the following considerations when deciding on the Milestone orientation:
 
 ## Development
 
-### Sample 1
+### Stamp Milestone Component
 
 ```
-<code>
+a!localVariables(
+  local!defalutMilestones: {
+    "Basic Information",
+    "Additional Details",
+    "Upload Files",
+    "Review"
+  },
+  local!defaultStep: 3,
+  a!sectionLayout(
+    label: "",
+    contents: {
+      a!forEach(
+        if(
+          a!isNullOrEmpty(ri!milestones),
+          local!defalutMilestones,
+          ri!milestones
+        ),
+        a!sideBySideLayout(
+          items: {
+            if(
+              fv!index < if(
+                a!isNullOrEmpty(ri!currentStep),
+                local!defaultStep,
+                ri!currentStep
+              ),
+              a!sideBySideItem(
+                item: a!stampField(
+                  labelPosition: "COLLAPSED",
+                  icon: "check",
+                  contentColor: "STANDARD",
+                  size: "TINY"
+                ),
+                width: "MINIMIZE"
+              ),
+              if(
+                fv!index = if(
+                  a!isNullOrEmpty(ri!currentStep),
+                  local!defaultStep,
+                  ri!currentStep
+                ),
+                a!sideBySideItem(
+                  item: a!stampField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    text: fv!index,
+                    contentColor: "STANDARD",
+                    size: "TINY"
+                  ),
+                  width: "MINIMIZE"
+                ),
+                a!sideBySideItem(
+                  item: a!stampField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    text: fv!index,
+                    backgroundColor: "#EDEEF2",
+                    contentColor: "#2E2E35",
+                    size: "TINY"
+                  ),
+                  width: "MINIMIZE"
+                ),
+
+              )
+            ),
+            a!sideBySideItem(
+              item: a!richTextDisplayField(
+                labelPosition: "COLLAPSED",
+                value: {
+                  a!richTextItem(
+                    text: { fv!item },
+                    color: if(
+                      fv!index < if(
+                        a!isNullOrEmpty(ri!currentStep),
+                        local!defaultStep,
+                        ri!currentStep
+                      ),
+                      "ACCENT",
+                      "STANDARD"
+                    ),
+                    style: if(
+                      fv!index = if(
+                        a!isNullOrEmpty(ri!currentStep),
+                        local!defaultStep,
+                        ri!currentStep
+                      ),
+                      "STRONG",
+                      "PLAIN"
+                    ),
+                    size: "MEDIUM"
+                  )
+                },
+                marginBelow: "NONE"
+              )
+            )
+          },
+          alignVertical: "MIDDLE"
+        )
+      )
+    },
+    marginBelow: "NONE"
+  )
+)
 ```
 
-### Sample 2
+### Stamp Milestone Component Rule Usage
 
 ```
-<code>
+rule!Stamp_Milestone_Component(
+  milestones: {"Create Document", "Additional Information", "Add Files", "Review"},
+  currentStep: 2
+)
 ```
+
+### Stamp Milestone Component Rule Inputs
+
+|Name|Type|Description|
+|--- |--- |--- |
+|milestones|Array of Text|List of milestone steps.|
+|currentStep|Integer|The step that is currently being highlighted.|
