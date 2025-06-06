@@ -9,19 +9,19 @@ Banners are visual elements used to display important information or messages to
 
 ## Design
 
-<img width="1229" alt="image" src="https://github.com/user-attachments/assets/f495efca-141e-4856-bff9-f7aa33063388" />
+<img width="1229" src="https://github.com/user-attachments/assets/f495efca-141e-4856-bff9-f7aa33063388" />
 
 ### Dynamic • Standard
 
 Use this to communicate and draw the user’s attention to the specific state they’re in
 
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/d9a9be3b-438b-4e65-ad15-1940546befcc" />
+<img width="870" src="https://github.com/user-attachments/assets/d9a9be3b-438b-4e65-ad15-1940546befcc" />
 
 ### Dynamic • Titled
 
 Use this variant of a titled banner when your banner message wraps to more than one line
 
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/7024ea74-eebd-47d7-b0ef-28927f8522f2" />
+<img width="870" src="https://github.com/user-attachments/assets/7024ea74-eebd-47d7-b0ef-28927f8522f2" />
 
 
 ### Actions
@@ -34,19 +34,19 @@ If using a link, use the ‘LINK’ parameter in the a!richTextItem() component.
 
 Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the accessibility text parameter.
 
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/faf525c8-be84-4546-9dea-643f9b736532" />
+<img width="870" src="https://github.com/user-attachments/assets/faf525c8-be84-4546-9dea-643f9b736532" />
 
 ### Persistent
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/dc5a247b-1afa-451e-b5fe-e0d253deceb9" />
+<img width="870" src="https://github.com/user-attachments/assets/dc5a247b-1afa-451e-b5fe-e0d253deceb9" />
 
 ### Minimal
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
-<img width="870" alt="image" src="https://github.com/user-attachments/assets/b02cbe8e-e377-46c4-98b1-4f9fccafa306" />
+<img width="870" src="https://github.com/user-attachments/assets/b02cbe8e-e377-46c4-98b1-4f9fccafa306" />
 
 
 ## Development
