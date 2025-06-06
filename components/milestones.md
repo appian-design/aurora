@@ -7,7 +7,7 @@ last_updated: "2024-01-29"
 
 Wizard milestones provide a guided experience to help users complete their tasks. Milestones should clearly identify each step in the process as well as the user’s progress through those steps.
 
-![image](https://github.com/user-attachments/assets/357aadac-0f84-4ddf-ab74-484a6a6e09f5)
+![](https://github.com/user-attachments/assets/357aadac-0f84-4ddf-ab74-484a6a6e09f5)
 
 ## Design
 
@@ -15,13 +15,13 @@ Wizard milestones provide a guided experience to help users complete their tasks
 
 #### Default
 
-![image](https://github.com/user-attachments/assets/7c20e215-cdff-4dfe-a6b4-ff0b8612bed9)
+![](https://github.com/user-attachments/assets/7c20e215-cdff-4dfe-a6b4-ff0b8612bed9)
 
 Use the Milestone Component (a!milestoneField) to leverage built-in accessibility parameters. Use this component when your form has at least 3 steps. Depending on the form’s layout, apply a horizontal or vertical layout.
 
 #### Using Stamps as Steps
 
-![image](https://github.com/user-attachments/assets/b9940a65-bc43-4444-898e-25d698d122b4)
+![](https://github.com/user-attachments/assets/b9940a65-bc43-4444-898e-25d698d122b4)
 
 Use this pattern when your form has at least 3 steps with a form layout that permits the user of a vertical milestone layout. This layout is particularly useful on UIs that are tailored to users that are new to Appian or the solution.
 
@@ -29,13 +29,13 @@ Use this pattern when your form has at least 3 steps with a form layout that per
 
 #### Using Instructions as Steps
 
-![image](https://github.com/user-attachments/assets/f1d75653-9e14-498d-8d11-4ef8c5825c49)
+![](https://github.com/user-attachments/assets/f1d75653-9e14-498d-8d11-4ef8c5825c49)
 
 Use the instructions parameter of `a!formlayout` when the milestone has 2 steps.
 
 #### Use as Horizontal Progress Indicator
 
-![image](https://github.com/user-attachments/assets/cef96499-0536-439b-87d7-9fa09ac6e1c4)
+![](https://github.com/user-attachments/assets/cef96499-0536-439b-87d7-9fa09ac6e1c4)
 
 Use the horizontal layout when there are 4 - 6 steps in the workflow.
 
@@ -49,13 +49,13 @@ Use the horizontal layout when there are 4 - 6 steps in the workflow.
 
 #### Using Links to Navigate Steps
 
-![image](https://github.com/user-attachments/assets/dda48fb0-991b-4b66-a111-9980d5f3fcbc)
+![](https://github.com/user-attachments/assets/dda48fb0-991b-4b66-a111-9980d5f3fcbc)
 
 Use the “Next” and “Back” buttons to provide navigation across the form steps. Use the Links parameter of a!milestoneField to navigate to a previous step but avoid adding Links for pending form steps.
 
 #### Orientation
 
-![image](https://github.com/user-attachments/assets/2c340524-1fc5-4b9d-b0ee-46b90f71dd4b)
+![](https://github.com/user-attachments/assets/2c340524-1fc5-4b9d-b0ee-46b90f71dd4b)
 
 Use the following considerations when deciding on the Milestone orientation:
 
