@@ -7,14 +7,39 @@ last_updated: "2023-11-15"
 
 Used to depict when the UI has no content to display. Empty states can be used to communicate intent and action with your user. A well designed empty state makes a great first impression, guides the user so that they complete their tasks intuitively and minimizes confusion.
 
-## Initial Use
+## Design
 
-![empty-states-initial-use](https://github.com/user-attachments/assets/c4251b79-854a-43f5-8a2e-254ede50c319)
+### Initial Use
+![](https://github.com/user-attachments/assets/c4251b79-854a-43f5-8a2e-254ede50c319)
 
 Use this pattern when the application is first opened by a user and there is no content to display.
 * Explain the intent of the app to the user and how it can be used. This can be particularly useful for new users who may not be familiar with the app.
 * Provide a clear action for the user to proceed as part of their journey in using the application.
 
+### No Results to Display
+
+![](https://github.com/user-attachments/assets/588db892-f449-4200-8baf-3f5164f94266)
+Provide the user with possible options if their search action turns up with no results
+
+![](https://github.com/user-attachments/assets/cc46a041-04b1-497a-addc-26d71146aba5)
+Simplistic depiction of an empty state within a section of the UI
+<br></br>
+
+Use this pattern if a user action (e.g.: search) shows no results. Provide options to help the user achieve their intended outcome.
+* Provide the user with possible options if their search action turns up with no results
+* Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
+
+### Errors
+
+![empty-states-errors](https://github.com/user-attachments/assets/8d699349-e3b1-464f-87f7-2feb011b4d4c)
+
+Use this pattern when a user enters an error or exception state.
+* State the error in layperson terms. Avoid using technical terms or system jargon.
+* Provide users with actionable suggestions how to exit the error or exception state
+
+## Development
+
+### Initial Use
 ```
 a!headerContentLayout(
   header: {},
@@ -200,19 +225,7 @@ a!headerContentLayout(
 )
 ```
 
-## No Results to Display
-
-![empty-state-no-results-example1](https://github.com/user-attachments/assets/588db892-f449-4200-8baf-3f5164f94266)
-Provide the user with possible options if their search action turns up with no results
-
-![empty-states-no-results-example2](https://github.com/user-attachments/assets/cc46a041-04b1-497a-addc-26d71146aba5)
-Simplistic depiction of an empty state within a section of the UI
-<br></br>
-
-Use this pattern if a user action (e.g.: search) shows no results. Provide options to help the user achieve their intended outcome.
-* Provide the user with possible options if their search action turns up with no results
-* Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
-
+### No Results to Display
 ```
 a!headerContentLayout(
   header: {},
@@ -399,14 +412,7 @@ a!headerContentLayout(
 )
 ```
 
-## Errors
-
-![empty-states-errors](https://github.com/user-attachments/assets/8d699349-e3b1-464f-87f7-2feb011b4d4c)
-
-Use this pattern when a user enters an error or exception state.
-* State the error in layperson terms. Avoid using technical terms or system jargon.
-* Provide users with actionable suggestions how to exit the error or exception state
-
+### Errors
 ```
 a!headerContentLayout(
   header: {},
