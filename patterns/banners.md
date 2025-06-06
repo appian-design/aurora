@@ -9,7 +9,8 @@ Banners are visual elements used to display important information or messages to
 
 ## Design
 
-<img width="1229" src="https://github.com/user-attachments/assets/f495efca-141e-4856-bff9-f7aa33063388" />
+![](https://github.com/user-attachments/assets/ba329fb2-817a-48ce-ab4d-332e749a9fd0)
+
 
 ### Variants
 
@@ -17,13 +18,15 @@ Banners are visual elements used to display important information or messages to
 
 Use this to communicate and draw the user’s attention to the specific state they’re in
 
-<img width="870" src="https://github.com/user-attachments/assets/d9a9be3b-438b-4e65-ad15-1940546befcc" />
+![](https://github.com/user-attachments/assets/1168c8d1-c1c6-4f66-84f6-14ed981a7881)
+
 
 #### Dynamic • Titled
 
 Use this variant of a titled banner when your banner message wraps to more than one line
 
-<img width="870" src="https://github.com/user-attachments/assets/7024ea74-eebd-47d7-b0ef-28927f8522f2" />
+![](https://github.com/user-attachments/assets/3af62b08-7adb-4ca7-bc21-460f6cf5bd95)
+
 
 
 #### Actions
@@ -36,19 +39,22 @@ If using a link, use the ‘LINK’ parameter in the a!richTextItem() component.
 
 Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the accessibility text parameter.
 
-<img width="870" src="https://github.com/user-attachments/assets/faf525c8-be84-4546-9dea-643f9b736532" />
+![](https://github.com/user-attachments/assets/ac5b80d1-c63c-47b6-be8f-667485e51eca)
+
 
 #### Persistent
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
-<img width="870" src="https://github.com/user-attachments/assets/dc5a247b-1afa-451e-b5fe-e0d253deceb9" />
+![](https://github.com/user-attachments/assets/5602ce1e-1087-4653-9d41-2c5967ea6d78)
+
 
 #### Minimal
 
 Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
 
-<img width="870" src="https://github.com/user-attachments/assets/b02cbe8e-e377-46c4-98b1-4f9fccafa306" />
+![](https://github.com/user-attachments/assets/4c83d1a7-f2df-43af-8559-b333f6034e99)
+
 
 
 ## Development
