@@ -12,9 +12,11 @@
 - Focus on migrating Solutions content for now; try to avoid new decisions
 - Keep page hierarchy as flat as possible, but use logical structure as needed
 - Defer "special case" pages for now; will collaborate on those when we're ready
+- For pages with an "Options" section, use the term "Variants" instead
 
 ### Markdown conventions
 
+- Front Matter: Delete "parent" element and related elements if not needed for the file
 - Use double space between all elements (except lists)
 - Place images after heading and subheading and before paragraphs
 - Use empty alt text for component images
