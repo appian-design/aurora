@@ -31,7 +31,7 @@ Use this pattern if a user action (e.g.: search) shows no results. Provide optio
 
 ### Errors
 
-![empty-states-errors](https://github.com/user-attachments/assets/8d699349-e3b1-464f-87f7-2feb011b4d4c)
+![](https://github.com/user-attachments/assets/8d699349-e3b1-464f-87f7-2feb011b4d4c)
 
 Use this pattern when a user enters an error or exception state.
 * State the error in layperson terms. Avoid using technical terms or system jargon.
