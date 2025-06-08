@@ -76,3 +76,49 @@ Generate RFI modal for a Requirements Management demo
 ## Resources
 
 - [AI Imagery - Google Drive](https://drive.google.com/drive/u/0/folders/1q4OyE6m2pIY0g-PI4D7h5qdsKGbOT-0L)
+
+## UX Guidance
+
+We have defined guidelines for three use cases of AI based on how the user interacts with the component. Each situation has unique guidance for when and how to display the UI.
+
+### Auto-Suggestions
+
+Auto-Suggestions are AI components that are working in the background to identify insights or suggestions. These are not user initiated and should be more minimally displayed or have the ability to be collapsed or closed.
+
+These should appear only when valuable. For example, if you have a query running to see if there are duplicate items, it should not appear and say "No duplicate found" and instead show only when a suggestion is applicable.
+
+#### Example Use Cases
+- Related Cases
+- Comment or Message Summary
+- Document Summary
+
+#### Behavior
+- Allow the user to collapse the section. If the suggested content is going to be large, considering having the section be default-collapsed.
+- Do not show the component if there is an error or if it is unavailable
+
+### Prompted Content
+
+Prompted Content is when a user purposefully engages with an AI element. These components require the user to provide input to create a response.
+
+#### Example Use Cases
+- Generating a Case
+- Generating an RFI
+- Semantic Search
+
+#### Behavior
+- Display in an AI-branded card to invite the user to use the AI feature. This is usually embedded within a frequently accessed interface, e.g. a landing page or summary view, in order to encourage the use of more AI functionality.
+- Include text that suggests how the user should use this AI module or examples so the user knows how to format their request
+
+### Chat Interface
+
+Chatbots are best when you anticipate the user to have more than one question or the AI will need multiple attempts to understand the prompt. These are often used for wayfinding or parsing through high-quantities of information.
+
+Chatbots should be used to provide time savings or additional insight. If they are querying limited information or cannot gather the full context of a system, then you should not use them.
+
+#### Example Use Cases
+- Appian AI Copilot
+- Document Assistant
+
+#### Behavior
+- Allow the user to collapse the section if they do not want to use it
+- Do not show the component if there is an error or if it is unavailable
