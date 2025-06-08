@@ -1,30 +1,46 @@
 ---
 status: "stable"
-last_updated: "2024-12-19"
+last_updated: "2025-06-08"
 parent: "branding"
-related: []
+related: ["colors", "typography"]
 ---
 
 # Logo and Favicon
 
-## Design
+Use the Appian logo and favicon to support branding guidelines.
 
-### Subsection
+## Images
 
-### Subsection
+### Appian Logo White
 
-### Accessibility
+![Appian Logo White](/assets/images/appian-logo-white.png)
 
-## Development
+**Default**
 
-### Sample 1
+Use Appian Logo White for Mercury Sites.png
 
-```
-<code>
-```
+[Download](/assets/downloads/appian-logo-white.png)
 
-### Sample 2
+### Appian Logo Blue
 
-```
-<code>
-```
+![Appian Logo Blue](/assets/images/appian-logo-blue.png)
+
+Use Appian Logo Vibrant Blue for Mercury Sites.png
+
+[Download](/assets/downloads/appian-logo-blue.png)
+
+### Appian Favicon
+
+![Appian Favicon](/assets/images/appian-favicon-48x48.png)
+
+Use Appian_favicon_48x48.png
+
+[Download](/assets/downloads/appian-favicon-48x48.png)
+
+## Accessibility
+
+For alternative text, select Custom and specify the text as "Appian" in all Appian Solutions.
+
+## Resources
+
+[View Google Drive - Appian Solutions Branding Resources](https://drive.google.com/drive/folders/13tU_WZ04DZ7Q_tVGcylIo0Tc6ShVAn1B)
