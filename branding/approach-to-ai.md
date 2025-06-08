@@ -1,8 +1,6 @@
 ---
 status: "stable"
 last_updated: "2025-06-08"
-parent: "branding"
-related: ["colors", "typography", "icons"]
 ---
 
 # Approach to AI
@@ -28,27 +26,35 @@ Due to the "Sparkle" icon not being available externally, use a custom image upl
 
 ### Sparkle Image - Dark
 
-![Sparkle Image - Dark](/assets/images/sparkle-dark.png)
+![](https://github.com/user-attachments/assets/b85b54f7-8bb0-4735-bf4f-5687938630c3)
 
 Use for small iconography
 
 ### Sparkle Image - Light
 
-![Sparkle Image - Light](/assets/images/sparkle-light.png)
+![](https://github.com/user-attachments/assets/b2cce3d1-1022-45fa-b710-9eef42b99b45)
 
 Use for larger, more illustrative elements
 
 ### Wizard Image
 
-![Wizard Image](/assets/images/wizard.png)
+![](https://github.com/user-attachments/assets/c37ac5a3-78da-46a8-8ee2-fd279c8d67f9)
 
 Reserve for marketing and sales slides, presentations and demos only. The light and dark stamps are an homage to the concept without using the explicit illustration.
 
 ### Usage Examples
 
-![AI Usage Example](/assets/images/ai-usage-example.png)
+![](https://github.com/user-attachments/assets/1811b902-b743-4f8b-a02d-94d7e8c30da2)
 
 Prompting the user to navigate to the AI Procedure Copilot from the Contract Writing landing page
+
+![](https://github.com/user-attachments/assets/9f3deb74-ce3a-45da-8f38-8f1d401fa215)
+
+Chatbot interface for users to ask questions about a case within Case Management
+
+![](https://github.com/user-attachments/assets/4a5b5e26-b927-4b69-b51c-e1a3642352f6)
+
+Generate RFI modal for a Requirements Management demo
 
 > **Helpful Tips**
 >
@@ -69,7 +75,4 @@ Prompting the user to navigate to the AI Procedure Copilot from the Contract Wri
 
 ## Resources
 
-- [AI Imagery - Google Drive](#)
-- [Sparkle Image - Dark (PNG)](#)
-- [Sparkle Image - Light (PNG)](#)
-- [Wizard Image (PNG)](#)
+- [AI Imagery - Google Drive](https://drive.google.com/drive/u/0/folders/1q4OyE6m2pIY0g-PI4D7h5qdsKGbOT-0L)
