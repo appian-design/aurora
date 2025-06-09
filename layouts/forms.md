@@ -1,3 +1,4 @@
+
 ---
 status: "stable"
 last_updated: "2024-12-19"
@@ -107,8 +108,417 @@ Checklist:
 ## Development
 
 #### Dialog
+```
+a!formLayout(
+  titleBar: a!headerTemplateFull(
+    title: "Create Case",
+    backgroundColor: "#020A51"
+  ),
+  contents: {
+    a!stampField(
+      labelPosition: "COLLAPSED",
+      icon: "thumbs-up",
+      backgroundColor: "POSITIVE",
+      contentColor: "STANDARD",
+      align: "CENTER",
+      marginBelow: "MORE"
+    ),
+    a!richTextDisplayField(
+      labelPosition: "COLLAPSED",
+      value: {
+        a!richTextItem(
+          text: {
+            "Case ",
+            a!richTextItem(text: { "#9378-837" }, style: { "STRONG" }),
+            " created for Velfin Capital, Inc."
+          },
+          size: "MEDIUM_PLUS"
+        ),
+        char(10),
+        char(10),
+        a!richTextItem(
+          text: {
+            "Thank you for submitting your case. We will keep you informed on its status via email updates. If you need immediate assistance, please don't hesitate to contact our support team via phone at (480)284-7289."
+          },
+          size: "STANDARD"
+        )
+      },
+      align: "CENTER",
+      marginBelow: "NONE"
+    ),
+    a!buttonArrayLayout(
+      buttons: {
+        a!buttonWidget(
+          label: "Close",
+          size: "SMALL",
+          style: "SOLID"
+        )
+      },
+      align: "CENTER",
+      marginAbove: "MORE",
+      marginBelow: "NONE"
+    )
+  },
+  contentsWidth: "NARROW"
+)
+```
 
 #### Site Page
-
+```
+a!headerContentLayout(
+  header: a!cardLayout(
+    style: "#020A50",
+    padding: "MORE",
+    contents: {
+      a!richTextDisplayField(
+        labelPosition: "COLLAPSED",
+        value: {
+          a!richTextItem(
+            text: "Create Case",
+            style: "STRONG",
+            size: "LARGE"
+          )
+        },
+        align: "LEFT"
+      )
+    },
+    marginBelow: "NONE"
+  ),
+  contents: {
+    a!columnsLayout(
+      marginAbove: "MORE",
+      columns: {
+        a!columnLayout(width: "EXTRA_NARROW"),
+        a!columnLayout(
+          width: "NARROW_PLUS",
+          contents: {
+            a!sideBySideLayout(
+              alignVertical: "MIDDLE",
+              items: {
+                a!sideBySideItem(
+                  width: "MINIMIZE",
+                  item: a!stampField(
+                    size: "TINY",
+                    icon: "check",
+                    backgroundColor: "ACCENT"
+                  )
+                ),
+                a!sideBySideItem(
+                  item: a!richTextDisplayField(
+                    value: {
+                      a!richTextItem(
+                        text: "Contact Information",
+                        style: "PLAIN",
+                        link: a!dynamicLink(),
+                        linkStyle: "STANDALONE"
+                      )
+                    },
+                    align: "LEFT"
+                  )
+                )
+              },
+              spacing: "STANDARD"
+            ),
+            a!sideBySideLayout(
+              alignVertical: "MIDDLE",
+              items: {
+                a!sideBySideItem(
+                  width: "MINIMIZE",
+                  item: a!stampField(
+                    size: "TINY",
+                    icon: "check",
+                    backgroundColor: "ACCENT"
+                  )
+                ),
+                a!sideBySideItem(
+                  item: a!richTextDisplayField(
+                    value: {
+                      a!richTextItem(
+                        text: "Case Information",
+                        style: "PLAIN",
+                        link: a!dynamicLink(),
+                        linkStyle: "STANDALONE"
+                      )
+                    },
+                    align: "LEFT"
+                  )
+                )
+              },
+              spacing: "STANDARD"
+            ),
+            a!sideBySideLayout(
+              alignVertical: "MIDDLE",
+              items: {
+                a!sideBySideItem(
+                  width: "MINIMIZE",
+                  item: a!stampField(
+                    size: "TINY",
+                    text: "3",
+                    backgroundColor: "ACCENT"
+                  )
+                ),
+                a!sideBySideItem(
+                  item: a!richTextDisplayField(
+                    value: {
+                      a!richTextItem(text: "Review", style: "STRONG")
+                    },
+                    align: "LEFT"
+                  )
+                )
+              },
+              spacing: "STANDARD"
+            )
+          }
+        ),
+        a!columnLayout(
+          contents: a!localVariables(
+            {
+              a!richTextDisplayField(
+                value: {
+                  a!richTextItem(
+                    text: "Contact Information",
+                    style: "STRONG"
+                  )
+                },
+                align: "LEFT",
+                marginBelow: "STANDARD"
+              ),
+              a!columnsLayout(
+                columns: {
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Name",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Email",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Phone",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Address",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Karen Anderson",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "karen.anderson@acme.com",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "571-567-0987",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "9836 Rocky River Court" & char(10) & "Annandale, VA USA 22003",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  )
+                }
+              ),
+              a!horizontalLine(),
+              /* Case Information Section */
+              a!richTextDisplayField(
+                value: {
+                  a!richTextItem(text: "Case Information", style: "STRONG")
+                },
+                align: "LEFT",
+                marginBelow: "STANDARD",
+                marginAbove: "STANDARD"
+              ),
+              a!columnsLayout(
+                columns: {
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Type",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Title",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Account Renewal",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Renew my account",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  )
+                }
+              ),
+              a!horizontalLine(),
+              a!sideBySideLayout(
+                items: {
+                  a!sideBySideItem(
+                    item: a!buttonArrayLayout(
+                      buttons: {
+                        a!buttonWidget(
+                          label: "BACK",
+                          style: "OUTLINE",
+                          saveInto: {}
+                        ),
+                        a!buttonWidget(
+                          label: "CANCEL",
+                          style: "LINK",
+                          saveInto: {}
+                        )
+                      }
+                    )
+                  ),
+                  a!sideBySideItem(
+                    item: a!buttonArrayLayout(
+                      buttons: {
+                        a!buttonWidget(
+                          label: "CREATE CASE",
+                          style: "SOLID",
+                          saveInto: {}
+                        )
+                      }
+                    )
+                  )
+                },
+                spacing: "STANDARD",
+                marginAbove: "STANDARD"
+              )
+            }
+          )
+        ),
+        a!columnLayout(width: "EXTRA_NARROW"),
+        a!columnLayout(
+          width: "NARROW_PLUS",
+          contents: {
+            a!cardLayout(
+              style: "#F4F5F9",
+              showBorder: false,
+              contents: {
+                a!richTextDisplayField(
+                  value: {
+                    a!richTextItem(
+                      text: "What happens next?",
+                      style: "STRONG",
+                      size: "MEDIUM"
+                    )
+                  },
+                  align: "LEFT",
+                  marginBelow: "STANDARD"
+                ),
+                a!richTextDisplayField(
+                  value: {
+                    a!richTextItem(
+                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                      style: "PLAIN"
+                    )
+                  },
+                  align: "LEFT"
+                )
+              },
+              padding: "STANDARD",
+              marginBelow: "STANDARD"
+            )
+          }
+        ),
+        a!columnLayout(width: "EXTRA_NARROW")
+      }
+    )
+  }
+)
+```
 
 
