@@ -48,9 +48,7 @@ All charts should have an intentional order. Some charts have a natural ordering
 
 ### Chart Colors
 
-![](https://github.com/user-attachments/assets/1f331fac-c11f-4f46-a04f-2fce6c7ccbaa)
-
-Use ASDS defined chart color themes.
+Use ASDS defined [chart color themes](../branding/colors.md#charts)
 
 ### Empty State
 
