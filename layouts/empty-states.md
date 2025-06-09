@@ -469,14 +469,14 @@ a!headerContentLayout(
                     ),
                     a!buttonArrayLayout(
                       buttons: {
-                        a!buttonWidget_23r3(
+                        a!buttonWidget(
                           label: "Try Again",
-                          style: "PRIMARY",
+                          style: "SOLID",
                           size: "STANDARD"
                         ),
-                        a!buttonWidget_23r3(
+                        a!buttonWidget(
                           label: "Back to Home",
-                          style: "NORMAL",
+                          style: "OUTLINE",
                           size: "STANDARD"
                         )
                       },
