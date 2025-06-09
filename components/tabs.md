@@ -271,7 +271,7 @@ a!sectionLayout(
                 label: "",
                 size: "SMALL",
                 icon: "table",
-                style: "PRIMARY"
+                style: "SOLID"
               ),
               a!buttonWidget(
                 label: "",
