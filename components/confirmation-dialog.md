@@ -44,11 +44,9 @@ If the out of the box confirmation dialog component is not technically feasible,
 
 ```
 a!formLayout(
-  header: a!headerTemplateSimple(
-    label: "Delete Document | Claim9236.pdf",
-    labelColor: "STANDARD"
-  ),
-  showHeaderDivider: false,
+  titleBar: a!headerTemplateSimple(
+    title: "Delete Document | Claim9236.pdf",
+  ), 
   contents: {
     a!richTextDisplayField(
       labelPosition: "COLLAPSED",
