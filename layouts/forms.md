@@ -1,4 +1,3 @@
-
 ---
 status: "stable"
 last_updated: "2024-12-19"
