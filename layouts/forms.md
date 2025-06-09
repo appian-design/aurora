@@ -45,6 +45,12 @@ Checklist:
 |Avoid using the a!HeaderContentLayout component|Dialogs|
 |Use a dialog size that matches field width. Avoid using a Large dialog size for sparse forms.|Dialogs|
 |Place fields in one column as much as possible|Dialogs|
+|Set SkipAutoFocus to True|Dialogs|
+|The submit action of the form should match the form header. Example: If the form header is “Update Status”, then the submit action of the form should state “Update”|Dialogs|
+|In a multi-step form, use the milestone component to indicate progress|Progress|
+|In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
+|In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
+|Provide confirmation upon submission|Progress|
 
 #### Site Page
 ![](https://github.com/user-attachments/assets/32be4251-0458-4e04-9b6b-3de88e0b3520)
@@ -94,6 +100,18 @@ Checklist:
 |Use the label parameter to show input format (e.g.: Date of Birth(MM/DD/YYYY))|Label|
 |Use sentence casing|Label|
 |Use a picker when the user has an idea of what they are looking for. Use "Search" in the placeholder parameter.|Picker vs. Dropdown|
+|Use a dropdown when the user isn't sure of what they are looking for. Use "Select" in the placeholder parameter.|Picker vs. Dropdown|
+|Use the placeholder parameter to specify the interaction (e.g.: "Select Vendor" in a dropdown or "Search Vendors" in a picker)|Placeholder Text|
+|Avoid using "---" in placeholder text|Placeholder Text|
+|Avoid using the placeholder parameter to specify input format|Placeholder Text|
+|Use the STANDARD style in a dense form|Radio Buttons and Checkboxes|
+|Use the STANDARD style when presenting as a custom grid filter|Radio Buttons and Checkboxes|
+|Use the helpTooltip parameter when the label is not sufficient for the user to understand the term|Tooltips|
+|Keep tooltips as brief as possible.|Tooltips|
+|Use field level validation as much as possible|Validation|
+|Define the error and provide guidance on how to resolve it. Avoid generic error messages (e.g.: "A value is required")|Validation|
+|Do not disable the submit or next button due to a validation error. Allow the user to click the button and view the validation error in the field.|Validation|
+
 
 ### When to Use Inline Dialogs vs. Modals
 
