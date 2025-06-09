@@ -60,38 +60,6 @@ a!cardLayout(
           },
           marginBelow: "NONE"
         ),
-        /*a!sideBySideLayout(*/
-        /*items: {*/
-        /*a!sideBySideItem(*/
-        /*item: a!richTextDisplayField(*/
-        /*labelPosition: "COLLAPSED",*/
-        /*value: {*/
-        /*a!richTextHeader(text: { "Mar 1 Wednesday" })*/
-        /*}*/
-        /*)*/
-        /*),*/
-        /*a!sideBySideItem(*/
-        /*item: a!richTextDisplayField(*/
-        /*labelPosition: "COLLAPSED",*/
-        /*value: {*/
-        /*a!richTextIcon(*/
-        /*icon: "angle-left",*/
-        /*color: "SECONDARY",*/
-        /*size: "MEDIUM"*/
-        /*),*/
-        /*a!richTextItem(text: { "    " }, size: "MEDIUM"),*/
-        /*a!richTextIcon(*/
-        /*icon: "angle-right",*/
-        /*color: "ACCENT",*/
-        /*size: "MEDIUM"*/
-        /*)*/
-        /*}*/
-        /*),*/
-        /*width: "MINIMIZE"*/
-        /*)*/
-        /*},*/
-        /*alignVertical: "MIDDLE"*/
-        /*)*/
       },
       height: "AUTO",
       style: "NONE",
@@ -234,13 +202,6 @@ a!cardLayout(
                               a!richTextItem(
                                 text: {
                                   "1 "
-                                  /*a!richTextIcon(*/
-                                  /*icon: "circle",*/
-                                  /*color: "ACCENT",*/
-                                  /*size: "SMALL"*/
-                                  /*                                                                                    */
-                                  /*)*/
-
                                 },
                                 color: "ACCENT",
                                 size: "SMALL",
@@ -369,25 +330,11 @@ a!cardLayout(
                             },
                             align: "CENTER"
                           ),
-                          /*a!tagField(*/
-                          /*tags: a!tagItem(*/
-                          /*text: "23"*/
-                          /*),*/
-                          /*size: "SMALL",*/
-                          /*align: "CENTER",*/
-                          /*accessibilityText: "Cases due on this date"*/
-                          /*),*/
                           a!richTextDisplayField(
                             value: {
                               a!richTextItem(
                                 text: {
                                   "23 "
-                                  /*a!richTextIcon(*/
-                                  /*icon: "circle",*/
-                                  /*color: "ACCENT",*/
-                                  /*size: "SMALL"*/
-                                  /*)*/
-
                                 },
                                 color: "ACCENT",
                                 size: "SMALL",
