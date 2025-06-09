@@ -448,60 +448,59 @@ a!columnsLayout(
 
 ```
 a!columnsLayout(
-    columns: {
-      a!columnLayout(
-        contents: {
-          a!sectionLayout(
-            label: "Fiscal Year Obligated Spend",
-            labelSize: "SMALL",
-            labelColor: "STANDARD",
-            contents: {
-              a!cardLayout(
-                contents: {
-
-                  a!lineChartField(
-                    label: a
-                    labelPosition: "COLLAPSED",
-                    categories: { "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" },
-                    series: {
-                      a!chartSeries(label: "2023 Fiscal Year", data: { 460, 560,660,769,860,930,963,1060,1260,1460,null() ,null()})
-                    },
-                    xAxisTitle: "",
-                    yAxisTitle: "Obligated Spend (M)",
-                    yAxisMax: 2.0E3,
-                    referenceLines: a!chartReferenceLine(label: "2023 Fiscal Year Budget", value: 1.85E3, color: "#2E2E35", style: "SHORTDASH"),
-                    showLegend: true,
-                    showDataLabels: false,
-                    showTooltips: true,
-                    allowDecimalAxisLabels: false,
-                    connectNulls: true,
-                    colorScheme: a!colorSchemeCustom(
-                      colors: {
-                        "#073DC4",
-                        "#9d4de3",
-                        "#F3961F",
-                        "#18b4ab",
-                        "#F9CC00"
-                      }
-                    ),
-                    height: "MEDIUM",
-                    xAxisStyle: "STANDARD",
-                    yAxisStyle: "STANDARD"
-                  )
-                },
-                height: "AUTO",
-                style: "NONE",
-                shape: "SEMI_ROUNDED",
-                padding: "STANDARD",
-                marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
-              )
-            })
-        }
-      )
-    }
-  )
+  columns: {
+    a!columnLayout(
+      contents: {
+        a!sectionLayout(
+          label: "Fiscal Year Obligated Spend",
+          labelSize: "SMALL",
+          labelColor: "STANDARD",
+          contents: {
+            a!cardLayout(
+              contents: {
+                a!lineChartField(
+                  label: "",
+                  labelPosition: "COLLAPSED",
+                  categories: { "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" },
+                  series: {
+                    a!chartSeries(label: "2023 Fiscal Year", data: { 460, 560,660,769,860,930,963,1060,1260,1460,null() ,null()})
+                  },
+                  xAxisTitle: "",
+                  yAxisTitle: "Obligated Spend (M)",
+                  yAxisMax: 2.0E3,
+                  referenceLines: a!chartReferenceLine(label: "2023 Fiscal Year Budget", value: 1.85E3, color: "#2E2E35", style: "SHORTDASH"),
+                  showLegend: true,
+                  showDataLabels: false,
+                  showTooltips: true,
+                  allowDecimalAxisLabels: false,
+                  connectNulls: true,
+                  colorScheme: a!colorSchemeCustom(
+                    colors: {
+                      "#073DC4",
+                      "#9d4de3",
+                      "#F3961F",
+                      "#18b4ab",
+                      "#F9CC00"
+                    }
+                  ),
+                  height: "MEDIUM",
+                  xAxisStyle: "STANDARD",
+                  yAxisStyle: "STANDARD"
+                )
+              },
+              height: "AUTO",
+              style: "NONE",
+              shape: "SEMI_ROUNDED",
+              padding: "STANDARD",
+              marginBelow: "STANDARD",
+              showBorder: false,
+              showShadow: true
+            )
+          })
+      }
+    )
+  }
+)
 ```
 
 
