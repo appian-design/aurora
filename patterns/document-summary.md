@@ -267,7 +267,7 @@ a!localVariables(
                           labelPosition: "COLLAPSED",
                           images: {
                             a!documentImage(
-                              /* use cons!ASDS_DOCUMENT_PREVIEW_EMPTY_STATE as an empty state illustration */
+                              /* Use cons!ASDS_DOCUMENT_PREVIEW_EMPTY_STATE illustration if available */
                               document: a!EXAMPLE_DOCUMENT_IMAGE()
                             )
                           },
