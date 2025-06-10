@@ -5,7 +5,9 @@ last_updated: "2024-12-19"
 
 # Landing Pages
 
-## Guidance
+## Design
+
+### Guidance
 
 **Tailor Content to Target Users**
 
@@ -16,8 +18,6 @@ Answer these questions to gain a better understanding of the various user person
 * What helpful (but not essential) information can you display under a link that directs users to a separate page? 
 
 Use dense layouts for experienced, data-intensive users that prefer efficiency. Use a guided experience layout for novice users that prefer a step-by-step approach.
-
-## Design
 
 ### Variants
 
