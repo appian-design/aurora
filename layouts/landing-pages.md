@@ -50,7 +50,7 @@ Use the Record Action Component
 
 Preserve Layout Consistency When Data Changes
 
-Guided Experience
+#### Guided Experience
 ![](https://github.com/user-attachments/assets/333a2fdb-2c57-4eb3-bd1c-318ff53f1e8b)
 
 Only present information that is relevant or important for the user to proceed with their primary task.
@@ -65,7 +65,7 @@ Note: The billboard image in the screenshot on the left might be unavailable in 
 
 ### Variants
 
-### Dense UI: Two Columns
+#### Dense UI: Two Columns
 
 ```
 a!headerContentLayout(
@@ -1955,7 +1955,7 @@ a!headerContentLayout(
 )
 ```
 
-### Dense UI: Three Columns
+#### Dense UI: Three Columns
 
 ```
 a!localVariables(
@@ -4590,7 +4590,7 @@ a!localVariables(
 )
 ```
 
-### Guided Experience
+#### Guided Experience
 
 ```
 a!headerContentLayout(
