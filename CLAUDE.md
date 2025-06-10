@@ -218,16 +218,26 @@ a!tagField(
 ## Action Components
 
 ### Button
+
+Button widgets should always be placed inside a `a!buttonArrayLayout`.
+
 ```sail
-a!buttonWidget(
-  label: "Save Changes",
-  style: "SOLID",
-  color: "ACCENT", 
-  size: "STANDARD",
-  loadingIndicator: true,
-  saveInto: {
-    /* Save actions here */
-  }
+a!buttonArrayLayout(
+  buttons: {
+    a!buttonWidget(
+      label: "Save Changes",
+      style: "SOLID",
+      color: "ACCENT",
+      size: "STANDARD",
+      value: true,
+      loadingIndicator: true,
+      saveInto: {
+        /* Save actions here */
+        /*a!save(local!submitted, save!value) */
+      }
+    )
+  },
+  align: "END"
 )
 ```
 
@@ -503,3 +513,63 @@ Avoid adding validation.
 ## Performance Considerations
 
 Don't worry about performance considerations.
+
+## Logical Operators
+
+SAIL uses function-style logical operators rather than symbolic operators. Always use these functions when combining multiple conditions:
+
+```sail
+/* Correct usage of logical operators */
+and(condition1, condition2, condition3)
+or(condition1, condition2, condition3)
+not(condition)
+
+/* Incorrect usage - this will cause errors */
+condition1 and condition2
+condition1 or condition2
+```
+
+### Examples:
+
+```sail
+/* Multiple conditions in showWhen */
+showWhen: and(
+  a!isNotNullOrEmpty(local!selectedItem),
+  local!isEditable,
+  local!hasPermission
+)
+
+/* Complex condition in if statement */
+if(
+  or(
+    a!isNullOrEmpty(local!value),
+    not(typename(typeof(local!value)) = "Number (Integer)"),
+    tointeger(local!value) < 0
+  ),
+  "Please enter a valid positive number",
+  null
+)
+
+/* Combining and/or conditions */
+if(
+  and(
+    a!isNotNullOrEmpty(local!email),
+    or(
+      not(contains(local!email, ".com")),
+      contains(local!email, "test")
+    )
+  ),
+  "Please enter a valid email address",
+  null
+)
+```
+
+Remember that these functions can take any number of arguments, not just two:
+
+```sail
+/* Multiple conditions with and() */
+and(condition1, condition2, condition3, condition4)
+
+/* Multiple conditions with or() */
+or(option1, option2, option3, option4, option5)
+```
