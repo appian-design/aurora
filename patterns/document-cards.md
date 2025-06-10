@@ -887,124 +887,348 @@ a!cardLayout(
 
 #### Icons & Alignment
 ```
-{a!cardLayout(
-  shape: "ROUNDED",
-  /* Default background */
-  style: "#FAFAFC", 
-  showBorder: false,
-  padding: "EVEN_MORE",
-  contents: {
-    a!sideBySideLayout(
-      alignVertical: "MIDDLE",
-      marginAbove: "LESS",
-      marginBelow: "STANDARD",
-      items: {
-        a!sideBySideItem(
-          width: "AUTO",
-          item: a!headingField(
-            text: "Attachments",
-            size: "EXTRA_SMALL",
-            fontWeight: "SEMI_BOLD",
-            marginAbove: "NONE",
-            marginBelow: "NONE"
+{
+  a!cardLayout(
+    shape: "ROUNDED",
+    /* Default background */
+    style: "#FAFAFC",
+    showBorder: false,
+    padding: "EVEN_MORE",
+    contents: {
+      a!sideBySideLayout(
+        alignVertical: "MIDDLE",
+        marginAbove: "LESS",
+        marginBelow: "STANDARD",
+        items: {
+          a!sideBySideItem(
+            width: "AUTO",
+            item: a!headingField(
+              text: "Attachments",
+              size: "EXTRA_SMALL",
+              fontWeight: "SEMI_BOLD",
+              marginAbove: "NONE",
+              marginBelow: "NONE"
+            ),
+            
           ),
-        ),
-      }
-    ),
-    a!cardGroupLayout(
-      labelPosition: "COLLAPSED",
-      marginAbove: "NONE",
-      marginBelow: "NONE",
-      cardWidth: "NARROW_PLUS",
-      spacing: "DENSE",
-      cards: {
-        a!localVariables(
-          local!kristelCards1: a!refreshVariable(
-            value: {
-              a!map(title: "Statement of Work",             status: "Required", date: "May 05, 2025", type: "PDF"),
-              a!map(title: "Performance Work Statement",    status: "Optional", date: "Mar 25, 2025", type: "DOCX"),
-              a!map(title: "Pricing Template",              status: "Required", date: "Mar 19, 2025", type: "PDF"),
-              a!map(title: "Technical Proposal Template",   status: "Required", date: "Feb 28, 2025", type: "PDF"),
-            },
-            refreshAlways: true
-          ),
-          {
-            a!forEach(
-              items: local!kristelCards1,
-              expression: {
-                a!cardLayout(
-                  shape: "ROUNDED",
-                  /* Gray 1 */
-                  borderColor: "#EDEDF2", 
-                  contents: {
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          width: "MEDIUM_PLUS",
-                          contents: {
-                            a!columnsLayout(
-                              alignVertical: "TOP",
-                              spacing: "NONE",
-                              columns: {
-                                /*ICON*/
-                                a!columnLayout(
-                                  width: "1X",
-                                  contents: {
-                                    a!cardLayout(
-                                      contents: {
-                                        a!richTextDisplayField(
-                                          labelPosition: "COLLAPSED",
-                                          value: if(
-                                            fv!item.type = "PDF",
-                                            a!richTextIcon(
-                                              icon: "file-pdf-o",
-                                              /* Gray 3 */
-                                              color: "#6C6C75",
-                                              size: "LARGE"
+          
+        }
+      ),
+      a!cardGroupLayout(
+        labelPosition: "COLLAPSED",
+        marginAbove: "NONE",
+        marginBelow: "NONE",
+        cardWidth: "NARROW_PLUS",
+        spacing: "DENSE",
+        cards: {
+          a!localVariables(
+            local!kristelCards1: a!refreshVariable(
+              value: {
+                a!map(
+                  title: "Statement of Work",
+                  status: "Required",
+                  date: "May 05, 2025",
+                  type: "PDF"
+                ),
+                a!map(
+                  title: "Performance Work Statement",
+                  status: "Optional",
+                  date: "Mar 25, 2025",
+                  type: "DOCX"
+                ),
+                a!map(
+                  title: "Pricing Template",
+                  status: "Required",
+                  date: "Mar 19, 2025",
+                  type: "PDF"
+                ),
+                a!map(
+                  title: "Technical Proposal Template",
+                  status: "Required",
+                  date: "Feb 28, 2025",
+                  type: "PDF"
+                ),
+                
+              },
+              refreshAlways: true
+            ),
+            {
+              a!forEach(
+                items: local!kristelCards1,
+                expression: {
+                  a!cardLayout(
+                    shape: "ROUNDED",
+                    /* Gray 1 */
+                    borderColor: "#EDEDF2",
+                    contents: {
+                      a!columnsLayout(
+                        columns: {
+                          a!columnLayout(
+                            width: "MEDIUM_PLUS",
+                            contents: {
+                              a!columnsLayout(
+                                alignVertical: "TOP",
+                                spacing: "NONE",
+                                columns: {
+                                  /*ICON*/
+                                  a!columnLayout(
+                                    width: "1X",
+                                    contents: {
+                                      a!cardLayout(
+                                        contents: {
+                                          a!richTextDisplayField(
+                                            labelPosition: "COLLAPSED",
+                                            value: if(
+                                              fv!item.type = "PDF",
+                                              a!richTextIcon(
+                                                icon: "file-pdf-o",
+                                                /* Gray 3 */
+                                                color: "#6C6C75",
+                                                size: "LARGE"
+                                              ),
+                                              a!richTextIcon(
+                                                icon: "file-word-o",
+                                                /* Gray 3 */
+                                                color: "#6C6C75",
+                                                size: "LARGE"
+                                              ),
+                                              
                                             ),
-                                            a!richTextIcon(
-                                              icon: "file-word-o",
-                                              /* Gray 3 */
-                                              color: "#6C6C75",
-                                              size: "LARGE"
-                                            ),
+                                            align: "CENTER",
+                                            marginAbove: "LESS",
+                                            marginBelow: "NONE"
+                                          )
+                                        },
+                                        padding: "EVEN_LESS",
+                                        showBorder: false
+                                      )
+                                    },
+                                    
+                                  ),
+                                  /*CONTENT*/
+                                  a!columnLayout(
+                                    width: "10X",
+                                    contents: {
+                                      a!cardLayout(
+                                        contents: {
+                                          /*TITLE*/
+                                          a!sideBySideLayout(
+                                            alignVertical: "MIDDLE",
+                                            marginAbove: "NONE",
+                                            marginBelow: "NONE",
+                                            items: {
+                                              a!sideBySideItem(
+                                                width: "AUTO",
+                                                item: a!headingField(
+                                                  headingTag: "H3",
+                                                  text: fv!item.title,
+                                                  size: "EXTRA_SMALL",
+                                                  fontWeight: "BOLD",
+                                                  marginAbove: "EVEN_LESS",
+                                                  marginBelow: "NONE"
+                                                )
+                                              ),
+                                              a!sideBySideItem(
+                                                width: "MINIMIZE",
+                                                item: a!richTextDisplayField(
+                                                  labelPosition: "COLLAPSED",
+                                                  align: "RIGHT",
+                                                  marginAbove: "EVEN_LESS",
+                                                  marginBelow: "NONE",
+                                                  value: {
+                                                    a!richTextIcon(
+                                                      icon: "download",
+                                                      /*size: "SMALL",*/
+                                                      link: a!dynamicLink(),
+                                                      linkStyle: "STANDALONE"
+                                                    )
+                                                  }
+                                                )
+                                              )
+                                            }
                                           ),
-                                          align: "CENTER",
-                                          marginAbove: "LESS",
-                                          marginBelow: "NONE"
-                                        )
-                                      },
-                                      padding: "EVEN_LESS",
-                                      showBorder: false
-                                    )
-                                  },
-                                ),
-                                /*CONTENT*/
-                                a!columnLayout(
-                                  width: "10X",
-                                  contents: {
-                                    a!cardLayout(
-                                      contents: {
-                                        /*TITLE*/
-                                        a!sideBySideLayout(
-                                          alignVertical: "MIDDLE",
-                                          marginAbove: "NONE",
-                                          marginBelow: "NONE",
-                                          items: {
-                                            a!sideBySideItem(
-                                              width: "AUTO",
-                                              item: a!headingField(
+                                          /*METADATA*/
+                                          a!richTextDisplayField(
+                                            labelPosition: "COLLAPSED",
+                                            value: {
+                                              a!richTextItem(
+                                                text: fv!item.date,
+                                                /* Gray 3 */
+                                                color: "#6C6C75",
+                                                linkStyle: "STANDALONE",
+                                                size: "SMALL"
+                                              )
+                                            },
+                                            preventWrapping: true,
+                                            marginBelow: "LESS"
+                                          ),
+                                          /*STATUS & FILE TYPE*/
+                                          a!tagField(
+                                            labelPosition: "COLLAPSED",
+                                            marginAbove: "NONE",
+                                            marginBelow: "EVEN_LESS",
+                                            size: "SMALL",
+                                            tags: {
+                                              a!tagItem(
+                                                text: fv!item.status,
+                                                tooltip: "Status",
+                                                textColor: if(
+                                                  fv!item.status = "Required",
+                                                  /* Green 4 */
+                                                  "#117C00",
+                                                  /* Gray 4 */
+                                                  "#2E2E35",
+                                                  
+                                                ),
+                                                backgroundColor: if(
+                                                  fv!item.status = "Required",
+                                                  /* Green 1 */
+                                                  "#E3FBDF",
+                                                  /* Gray 1 */
+                                                  "#EDEDF2",
+                                                  
+                                                )
+                                              ),
+                                              a!tagItem(
+                                                /* Gray 1 */
+                                                backgroundColor: "#EDEDF2",
+                                                /* Gray 4 */
+                                                textColor: "#2E2E35",
+                                                text: if(fv!item.type = "PDF", "PDF", "DOCX"),
+                                                tooltip: "Document format"
+                                              ),
+                                              
+                                            }
+                                          ),
+                                          
+                                        },
+                                        showBorder: false
+                                      )
+                                    },
+                                    
+                                  ),
+                                  
+                                }
+                              )
+                            }
+                          ),
+                          
+                        },
+                        alignVertical: "MIDDLE",
+                        spacing: "NONE"
+                      )
+                    },
+                    
+                  ),
+                  
+                }
+              )
+            }
+          )
+        }
+      ),
+      a!columnsLayout(
+        columns: {
+          a!columnLayout(
+            width: "MEDIUM_PLUS",
+            contents: {
+              a!headingField(
+                text: "Documents",
+                size: "SMALL",
+                fontWeight: "BOLD",
+                marginAbove: "MORE",
+                marginBelow: "NONE"
+              ),
+              a!localVariables(
+                local!kristelCards3: a!refreshVariable(
+                  value: {
+                    a!map(
+                      title: "Technical Proposal",
+                      size: "344 KB"
+                    ),
+                    a!map(
+                      title: "Executive Summary",
+                      size: "365 KB"
+                    ),
+                    a!map(title: "Business License", size: "205 KB"),
+                    
+                  },
+                  refreshAlways: true
+                ),
+                local!kristelCards4: a!refreshVariable(
+                  value: {
+                    a!map(title: "Criteria", size: "523 KB"),
+                    a!map(
+                      title: "Evaluation Instructions",
+                      size: "102 KB"
+                    ),
+                    
+                  },
+                  refreshAlways: true
+                ),
+                {
+                  a!headingField(
+                    text: "Vendor",
+                    size: "EXTRA_SMALL",
+                    fontWeight: "SEMI_BOLD",
+                    marginAbove: "STANDARD",
+                    marginBelow: "NONE"
+                  ),
+                  a!forEach(
+                    items: local!kristelCards3,
+                    expression: {
+                      a!cardLayout(
+                        shape: "ROUNDED",
+                        /* Gray 1 */
+                        borderColor: "#EDEDF2",
+                        marginAbove: "LESS",
+                        marginBelow: "NONE",
+                        contents: {
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                width: "MEDIUM_PLUS",
+                                contents: {
+                                  a!cardLayout(
+                                    contents: {
+                                      a!columnsLayout(
+                                        marginAbove: "NONE",
+                                        marginBelow: "NONE",
+                                        alignVertical: "MIDDLE",
+                                        columns: {
+                                          a!columnLayout(
+                                            contents: {
+                                              /*TITLE*/
+                                              a!headingField(
                                                 headingTag: "H3",
                                                 text: fv!item.title,
                                                 size: "EXTRA_SMALL",
                                                 fontWeight: "BOLD",
                                                 marginAbove: "EVEN_LESS",
                                                 marginBelow: "NONE"
-                                              )
-                                            ),
-                                            a!sideBySideItem(
-                                              width: "MINIMIZE",
-                                              item: a!richTextDisplayField(
+                                              ),
+                                              /*METADATA*/
+                                              a!richTextDisplayField(
+                                                labelPosition: "COLLAPSED",
+                                                value: {
+                                                  a!richTextItem(
+                                                    text: fv!item.size,
+                                                    /* Gray 3 */
+                                                    color: "#6C6C75",
+                                                    linkStyle: "STANDALONE",
+                                                    size: "SMALL"
+                                                  )
+                                                },
+                                                preventWrapping: true,
+                                                marginBelow: "LESS"
+                                              ),
+                                              
+                                            }
+                                          ),
+                                          a!columnLayout(
+                                            width: "EXTRA_NARROW",
+                                            contents: {
+                                              a!richTextDisplayField(
                                                 labelPosition: "COLLAPSED",
                                                 align: "RIGHT",
                                                 marginAbove: "EVEN_LESS",
@@ -1018,174 +1242,70 @@ a!cardLayout(
                                                   )
                                                 }
                                               )
-                                            )
-                                          }
-                                        ),
-                                        /*METADATA*/
-                                        a!richTextDisplayField(
-                                          labelPosition: "COLLAPSED",
-                                          value: {
-                                            a!richTextItem(
-                                              text: fv!item.date,
-                                              /* Gray 3 */
-                                              color: "#6C6C75",
-                                              linkStyle: "STANDALONE",
-                                              size: "SMALL"
-                                            )
-                                          },
-                                          preventWrapping: true,
-                                          marginBelow: "LESS"
-                                        ),
-                                        /*STATUS & FILE TYPE*/
-                                        a!tagField(
-                                          labelPosition: "COLLAPSED",
-                                          marginAbove: "NONE",
-                                          marginBelow: "EVEN_LESS",
-                                          size: "SMALL",
-                                          tags: {
-                                            a!tagItem(
-                                              text: fv!item.status,
-                                              tooltip: "Status",
-                                              textColor: if(
-                                                fv!item.status = "Required",
-                                                /* Green 4 */
-                                                "#117C00", 
-                                                /* Gray 4 */
-                                                "#2E2E35", 
-                                              ),
-                                              backgroundColor: if(
-                                                fv!item.status = "Required",
-                                                /* Green 1 */
-                                                "#E3FBDF", 
-                                                /* Gray 1 */
-                                                "#EDEDF2", 
-                                              )
-                                            ),
-                                            a!tagItem(
-                                              /* Gray 1 */
-                                              backgroundColor: "#EDEDF2",
-                                              /* Gray 4 */
-                                              textColor: "#2E2E35", 
-                                              text: if(
-                                                fv!item.type = "PDF",
-                                                "PDF",
-                                                "DOCX"
-                                              ),
-                                              tooltip: "Document format"
-                                            ),
-                                          }
-                                        ),
-                                      },
-                                      showBorder: false
-                                    )
-                                  },
-                                ),
-                              }
-                            )
-                          }
-                        ),
-                      },
-                      alignVertical: "MIDDLE",
-                      spacing: "NONE"
-                    )
-                  },
-                ),
-              }
-            )
-          }
-        )
-      }
-    ),
-    a!columnsLayout(
-      columns: {
-        a!columnLayout(
-          width: "MEDIUM_PLUS",
-          contents: {
-            a!headingField(
-              text: "Documents",
-              size: "SMALL",
-              fontWeight: "BOLD",
-              marginAbove: "MORE",
-              marginBelow: "NONE"
-            ),
-            a!localVariables(
-              local!kristelCards3: a!refreshVariable(
-                value: {
-                  a!map(title: "Technical Proposal",   size: "344 KB"),
-                  a!map(title: "Executive Summary",    size: "365 KB"),
-                  a!map(title: "Business License",     size: "205 KB"),
-                },
-                refreshAlways: true
-              ),
-              local!kristelCards4: a!refreshVariable(
-                value: {
-                  a!map(title: "Criteria",                size: "523 KB"),
-                  a!map(title: "Evaluation Instructions", size: "102 KB"),
-                },
-                refreshAlways: true
-              ),
-              {
-                a!headingField(
-                  text: "Vendor",
-                  size: "EXTRA_SMALL",
-                  fontWeight: "SEMI_BOLD",
-                  marginAbove: "STANDARD",
-                  marginBelow: "NONE"
-                ),
-                a!forEach(
-                  items: local!kristelCards3,
-                  expression: {
-                    a!cardLayout(
-                      shape: "ROUNDED",
-                      /* Gray 1 */
-                      borderColor: "#EDEDF2",
-                      marginAbove: "LESS",
-                      marginBelow: "NONE",
-                      contents: {
-                        a!columnsLayout(
-                          columns: {
-                            a!columnLayout(
-                              width: "MEDIUM_PLUS",
-                              contents: {
-                                a!cardLayout(
-                                  contents: {
-                                    a!columnsLayout(
-                                      marginAbove: "NONE",
-                                      marginBelow: "NONE",
-                                      alignVertical: "MIDDLE",
-                                      columns: {
-                                        a!columnLayout(
-                                          contents: {
-                                            /*TITLE*/
-                                            a!headingField(
+                                            }
+                                          )
+                                        }
+                                      ),
+                                      
+                                    },
+                                    showBorder: false
+                                  )
+                                }
+                              ),
+                              
+                            },
+                            alignVertical: "MIDDLE",
+                            spacing: "NONE"
+                          )
+                        },
+                        
+                      )
+                    }
+                  ),
+                  a!headingField(
+                    text: "Evaluation",
+                    size: "EXTRA_SMALL",
+                    fontWeight: "SEMI_BOLD",
+                    marginAbove: "MORE",
+                    marginBelow: "NONE"
+                  ),
+                  a!forEach(
+                    items: local!kristelCards4,
+                    expression: {
+                      a!cardLayout(
+                        shape: "ROUNDED",
+                        /* Gray 1 */
+                        borderColor: "#EDEDF2",
+                        marginAbove: "LESS",
+                        marginBelow: "NONE",
+                        contents: {
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                width: "MEDIUM_PLUS",
+                                contents: {
+                                  a!cardLayout(
+                                    contents: {
+                                      /*TITLE*/
+                                      a!sideBySideLayout(
+                                        alignVertical: "MIDDLE",
+                                        marginAbove: "NONE",
+                                        marginBelow: "NONE",
+                                        items: {
+                                          a!sideBySideItem(
+                                            width: "AUTO",
+                                            item: a!headingField(
                                               headingTag: "H3",
                                               text: fv!item.title,
                                               size: "EXTRA_SMALL",
                                               fontWeight: "BOLD",
                                               marginAbove: "EVEN_LESS",
                                               marginBelow: "NONE"
-                                            ),
-                                            /*METADATA*/
-                                            a!richTextDisplayField(
-                                              labelPosition: "COLLAPSED",
-                                              value: {
-                                                a!richTextItem(
-                                                  text: fv!item.size,
-                                                  /* Gray 3 */
-                                                  color: "#6C6C75",
-                                                  linkStyle: "STANDALONE",
-                                                  size: "SMALL"
-                                                )
-                                              },
-                                              preventWrapping: true,
-                                              marginBelow: "LESS"
-                                            ),
-                                          }
-                                        ),
-                                        a!columnLayout(
-                                          width: "EXTRA_NARROW",
-                                          contents: {
-                                            a!richTextDisplayField(
+                                            )
+                                          ),
+                                          a!sideBySideItem(
+                                            width: "MINIMIZE",
+                                            item: a!richTextDisplayField(
                                               labelPosition: "COLLAPSED",
                                               align: "RIGHT",
                                               marginAbove: "EVEN_LESS",
@@ -1199,118 +1319,46 @@ a!cardLayout(
                                                 )
                                               }
                                             )
-                                          }
-                                        )
-                                      }
-                                    ),
-                                  },
-                                  showBorder: false
-                                )
-                              }
-                            ),
-                          },
-                          alignVertical: "MIDDLE",
-                          spacing: "NONE"
-                        )
-                      },
-                    )
-                  }
-                ),
-                a!headingField(
-                  text: "Evaluation",
-                  size: "EXTRA_SMALL",
-                  fontWeight: "SEMI_BOLD",
-                  marginAbove: "MORE",
-                  marginBelow: "NONE"
-                ),
-                a!forEach(
-                  items: local!kristelCards4,
-                  expression: {
-                    a!cardLayout(
-                      shape: "ROUNDED",
-                      /* Gray 1 */
-                      borderColor: "#EDEDF2",
-                      marginAbove: "LESS",
-                      marginBelow: "NONE",
-                      contents: {
-                        a!columnsLayout(
-                          columns: {
-                            a!columnLayout(
-                              width: "MEDIUM_PLUS",
-                              contents: {
-                                a!cardLayout(
-                                  contents: {
-                                    /*TITLE*/
-                                    a!sideBySideLayout(
-                                      alignVertical: "MIDDLE",
-                                      marginAbove: "NONE",
-                                      marginBelow: "NONE",
-                                      items: {
-                                        a!sideBySideItem(
-                                          width: "AUTO",
-                                          item: a!headingField(
-                                            headingTag: "H3",
-                                            text: fv!item.title,
-                                            size: "EXTRA_SMALL",
-                                            fontWeight: "BOLD",
-                                            marginAbove: "EVEN_LESS",
-                                            marginBelow: "NONE"
                                           )
-                                        ),
-                                        a!sideBySideItem(
-                                          width: "MINIMIZE",
-                                          item: a!richTextDisplayField(
-                                            labelPosition: "COLLAPSED",
-                                            align: "RIGHT",
-                                            marginAbove: "EVEN_LESS",
-                                            marginBelow: "NONE",
-                                            value: {
-                                              a!richTextIcon(
-                                                icon: "download",
-                                                /*size: "SMALL",*/
-                                                link: a!dynamicLink(),
-                                                linkStyle: "STANDALONE"
-                                              )
-                                            }
+                                        }
+                                      ),
+                                      /*METADATA*/
+                                      a!richTextDisplayField(
+                                        labelPosition: "COLLAPSED",
+                                        value: {
+                                          a!richTextItem(
+                                            text: fv!item.size,
+                                            /* Gray 3 */
+                                            color: "#6C6C75",
+                                            linkStyle: "STANDALONE",
+                                            size: "SMALL"
                                           )
-                                        )
-                                      }
-                                    ),
-                                    /*METADATA*/
-                                    a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: fv!item.size,
-                                          /* Gray 3 */
-                                          color: "#6C6C75",
-                                          linkStyle: "STANDALONE",
-                                          size: "SMALL"
-                                        )
-                                      },
-                                      preventWrapping: true,
-                                      marginBelow: "LESS"
-                                    ),
-                                  },
-                                  showBorder: false
-                                )
-                              }
-                            ),
-                          },
-                          alignVertical: "MIDDLE",
-                          spacing: "NONE"
-                        )
-                      }
-                    )
-                  }
-                )
-              }
-            )
-          }
-        )
-      }
-    )
-  }
-)
+                                        },
+                                        preventWrapping: true,
+                                        marginBelow: "LESS"
+                                      ),
+                                      
+                                    },
+                                    showBorder: false
+                                  )
+                                }
+                              ),
+                              
+                            },
+                            alignVertical: "MIDDLE",
+                            spacing: "NONE"
+                          )
+                        }
+                      )
+                    }
+                  )
+                }
+              )
+            }
+          )
+        }
+      )
+    }
+  )
 }
 ```
