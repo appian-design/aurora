@@ -63,7 +63,7 @@ Checklist:
 
 ## Development
 
-### Example Grid
+### Grid Example 1
 
 ```
 a!headerContentLayout(
@@ -442,5 +442,1894 @@ a!headerContentLayout(
       )
     }
   )
+)
+```
+
+### Grid Example 2
+```
+a!headerContentLayout(
+  header: {},
+  contents: {
+    a!columnsLayout(
+      columns: {
+        a!columnLayout(
+          contents: {
+            a!sectionLayout(
+              label: "Active Awards",
+              labelSize: "SMALL",
+              labelHeadingTag: "H3",
+              labelColor: "STANDARD",
+              contents: {
+                a!cardLayout(
+                  contents: {
+                    a!columnsLayout(
+                      columns: {
+                        a!columnLayout(
+                          contents: {
+                            a!pickerFieldCustom(
+                              labelPosition: "COLLAPSED",
+                              placeholder: "Search Awards"
+                            )
+                          },
+                          width: "NARROW_PLUS"
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!dropdownField(
+                              labelPosition: "COLLAPSED",
+                              placeholder: "Select Contracting Officer(s)"
+                            )
+                          },
+                          width: "NARROW_PLUS"
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!dropdownField(
+                              labelPosition: "COLLAPSED",
+                              placeholder: "Select Contracting Specialist(s)"
+                            )
+                          },
+                          width: "NARROW_PLUS"
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!dateField(labelPosition: "COLLAPSED")
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(labelPosition: "COLLAPSED", value: { "to" }),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!dateField(labelPosition: "COLLAPSED")
+                                )
+                              },
+                              alignVertical: "MIDDLE"
+                            )
+                          },
+                          width: "NARROW_PLUS"
+                        )
+                      },
+                      marginAbove: "EVEN_LESS"
+                    ),
+                    a!buttonArrayLayout(
+                      buttons: {
+                        a!buttonWidget(
+                          label: "Add",
+                          icon: "plus",
+                          size: "SMALL",
+                          style: "OUTLINE",
+                          color: "SECONDARY"
+                        ),
+                        a!buttonWidget(
+                          label: "Import",
+                          icon: "upload",
+                          size: "SMALL",
+                          style: "OUTLINE",
+                          color: "SECONDARY"
+                        ),
+                        a!buttonWidget(
+                          label: "Update",
+                          icon: "pencil-square-o",
+                          size: "SMALL",
+                          style: "OUTLINE",
+                          color: "SECONDARY",
+                          disabled: true
+                        )
+                      },
+                      align: "START",
+                      marginBelow: "STANDARD"
+                    ),
+                    a!gridField(
+                      label: "Employee Directory",
+                      labelPosition: "COLLAPSED",
+                      /* Replace the dummy data with a query, rule, or function that returns a datasubset and uses fv!pagingInfo as the paging configuration. */
+                      data: todatasubset(
+                        {
+                          a!map(
+                            id: 11,
+                            award_name: "",
+                            company: "Sherwood Avionics Inc",
+                            amount: "$546,988.00",
+                            text_color: "NEGATIVE",
+                            tag_color: "#FFD8D8",
+                            tag_text_color: "#800322",
+                            risk_color: "#E2143F",
+                            risk_icon: "clock-o",
+                            risk: "Expired 2 days ago",
+                            award: "Expired",
+                            icon: "spinner",
+                            color: "SECONDARY",
+                            name: "80AFRC17F0239",
+                            cs: "James Lee",
+                            dept: "Theresa Jones",
+                            role: "Type 1",
+                            team: "Front-End Components",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 22,
+                            company: "Lockheed Martin Corporation",
+                            amount: "$288,471,393.48",
+                            text_color: "",
+                            tag_color: "#FFF6C9",
+                            tag_text_color: "#7E5D0F",
+                            risk_color: "#FFDC3F",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 30 days",
+                            award: "Expires soon",
+                            icon: "spinner",
+                            color: "SECONDARY",
+                            name: "80AFRC17P0011",
+                            dept: "Theresa Jones",
+                            cs: "James Lee",
+                            role: "Type 2",
+                            team: "Accounts Payable",
+                            pto: 2,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 33,
+                            company: "Lockheed Martin Corporation",
+                            amount: "$3,224,578.50",
+                            text_color: "",
+                            tag_color: "#FFF6C9",
+                            tag_text_color: "#7E5D0F",
+                            risk_color: "#FFDC3F",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 60 days",
+                            award: "Expires soon",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18C0018",
+                            cs: "James Lee",
+                            dept: "Charles Parker",
+                            role: "Type 3",
+                            team: "User Acceptance Testing",
+                            pto: 5,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 44,
+                            company: "Blue Origin LLC.",
+                            amount: "$109,129.36",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 67 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18C0036",
+                            dept: "Charles Parker",
+                            role: "Type 4",
+                            cs: "Anne Williams",
+                            team: "User Experience",
+                            pto: 49,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 55,
+                            company: "Cutting Edge Concrete Services, Inc.",
+                            amount: "$11,712,193.32",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 90 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18F0085",
+                            dept: "Charles Parker",
+                            cs: "Anne Williams",
+                            role: "Type 5",
+                            team: "Commercial North America",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 66,
+                            company: "Integration Innovation Inc.",
+                            amount: "$580,870.02",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 120 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18F0100",
+                            dept: "Charles Parker",
+                            cs: "Anne Williams",
+                            role: "Type 6",
+                            team: "Front-End Components",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 77,
+                            company: "Development One Inc.",
+                            amount: "$29,558.00",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 180 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18F0160",
+                            dept: "Charles Parker",
+                            role: "Type 7",
+                            cs: "Will Robbins",
+                            team: "Accounts Payable",
+                            pto: 2,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 44,
+                            company: "Rolls Royce Corp.",
+                            amount: "$658,000.00",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 67 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18P0007",
+                            dept: "Theresa Jones",
+                            role: "Type 4",
+                            cs: "Will Robbins",
+                            team: "User Experience",
+                            pto: 49,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 55,
+                            company: "Sherwood Avionics Inc.",
+                            amount: "$1,188,748.00",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 90 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC18P0021",
+                            dept: "Theresa Jones",
+                            role: "Type 5",
+                            cs: "Will Robbins",
+                            team: "Commercial North America",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 66,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 120 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19C0004",
+                            dept: "Jane Doe",
+                            role: "Type 6",
+                            cs: "Will Robbins",
+                            team: "Front-End Components",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 77,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 180 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19C0013",
+                            dept: "Jane Doe",
+                            role: "Type 7",
+                            cs: "Will Robbins",
+                            team: "Accounts Payable",
+                            pto: 2,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 44,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 67 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19C0018",
+                            dept: "Jane Doe",
+                            role: "Type 4",
+                            cs: "Will Robbins",
+                            team: "User Experience",
+                            pto: 49,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 55,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 90 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19C0031",
+                            dept: "Jane Doe",
+                            role: "Type 5",
+                            cs: "Will Robbins",
+                            team: "Commercial North America",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 66,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 120 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19F0025",
+                            dept: "Jane Doe",
+                            role: "Type 6",
+                            cs: "Will Robbins",
+                            team: "Front-End Components",
+                            pto: 15,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          ),
+                          a!map(
+                            id: 77,
+                            company: "Sherwood Avionics Inc",
+                            amount: "$500,000,000",
+                            text_color: "",
+                            risk_color: "SECONDARY",
+                            risk_icon: "clock-o",
+                            risk: "Expires in 180 days ago",
+                            award: "",
+                            icon: "check-circle",
+                            color: "POSITIVE",
+                            name: "80AFRC19F0164",
+                            dept: "Jane Doe",
+                            role: "Type 7",
+                            team: "Accounts Payable",
+                            cs: "Will Robbins",
+                            pto: 2,
+                            startDate: "01/01/2020 - 12/31/2021"
+                          )
+                        },
+                        fv!pagingInfo
+                      ),
+                      columns: {
+                        a!gridColumn(
+                          label: "Award",
+                          sortField: "name",
+                          value: a!richTextDisplayField(
+                            value: {
+                              a!richTextItem(
+                                text: fv!row.name,
+                                color: "ACCENT",
+                                style: "STRONG"
+                              ),
+                              char(10),
+                              a!richTextIcon(
+                                icon: "building",
+                                color: "SECONDARY",
+                                size: "SMALL"
+                              ),
+                              " ",
+                              a!richTextItem(
+                                text: fv!row.company,
+                                color: "SECONDARY",
+                                size: "SMALL"
+                              )
+                            }
+                          )
+                        ),
+                        a!gridColumn(
+                          label: "Contracting Officer",
+                          value: a!richTextDisplayField(
+                            value: { a!richTextItem(text: fv!row.dept) }
+                          )
+                        ),
+                        a!gridColumn(
+                          label: "Contracting Specialist",
+                          value: a!richTextDisplayField(value: { a!richTextItem(text: fv!row.cs) })
+                        ),
+                        a!gridColumn(
+                          label: "",
+                          value: a!tagField(
+                            tags: {
+                              a!tagItem(
+                                text: fv!row.award,
+                                backgroundColor: fv!row.tag_color,
+                                textColor: fv!row.tag_text_color
+                              )
+                            },
+                            size: ""
+                          ),
+                          align: "CENTER"
+                        ),
+                        a!gridColumn(
+                          label: "Period of Performance",
+                          sortField: "startDate",
+                          value: a!richTextDisplayField(
+                            value: {
+                              a!richTextItem(text: fv!row.startDate, ),
+                              char(10),
+                              a!richTextIcon(
+                                icon: "clock-o",
+                                color: fv!row.risk_color,
+                                size: "SMALL"
+                              ),
+                              " ",
+                              a!richTextItem(
+                                text: fv!row.risk,
+                                color: fv!row.text_color,
+                                size: "SMALL"
+                              )
+                            }
+                          ),
+                          align: "END"
+                        ),
+                        a!gridColumn(
+                          label: "Award Amount",
+                          value: a!richTextDisplayField(
+                            value: { a!richTextItem(text: fv!row.amount, ) }
+                          ),
+                          align: "END"
+                        )
+                      },
+                      pageSize: 15,
+                      selectable: true,
+                      borderStyle: "LIGHT",
+                      shadeAlternateRows: false
+                    )
+                  },
+                  height: "AUTO",
+                  style: "NONE",
+                  shape: "SEMI_ROUNDED",
+                  padding: "STANDARD",
+                  marginBelow: "NONE",
+                  showBorder: false,
+                  showShadow: true
+                )
+              }
+            )
+          },
+          width: "AUTO"
+        ),
+        a!columnLayout(
+          contents: {
+            a!sectionLayout(
+              label: "Awards by Status",
+              labelSize: "SMALL",
+              labelHeadingTag: "H3",
+              labelColor: "STANDARD",
+              contents: {
+                a!cardLayout(
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "ABOVE",
+                            value: {
+                              a!richTextItem(
+                                text: { "112" },
+                                color: "#2c3365",
+                                size: "LARGE",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(
+                                text: {
+                                  a!richTextItem(
+                                    text: { " " },
+                                    size: "MEDIUM",
+                                    style: { "STRONG" }
+                                  ),
+                                  a!richTextItem(text: { "TOTAL ACTIVE" }, size: "STANDARD")
+                                },
+                                color: "SECONDARY"
+                              )
+                            },
+                            align: "LEFT"
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            label: "Rich Text",
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextIcon(icon: "circle", color: "#173AB6"),
+                              " On Track ",
+                              a!richTextItem(text: { "76" }, style: { "STRONG" }),
+                              char(10),
+                              a!richTextIcon(icon: "circle", color: "#BCC9F3"),
+                              " Expiring Soon ",
+                              a!richTextItem(text: { "13" }, style: { "STRONG" }),
+                              char(10),
+                              a!richTextIcon(icon: "circle", color: "#F6A53F"),
+                              " Expired ",
+                              a!richTextItem(text: { "23" }, style: { "STRONG" })
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      marginBelow: "NONE"
+                    ),
+                    a!barChartField_21r4(
+                      categories: "Customer Satisfaction",
+                      series: {
+                        a!chartSeries(label: "Expired", data: { 23 }),
+                        a!chartSeries(label: "Expiring Soon", data: { 13 }),
+                        a!chartSeries(label: "On Track", data: { 76 })
+                      },
+                      yAxisMax: 110,
+                      stacking: "NORMAL",
+                      showLegend: false,
+                      showTooltips: true,
+                      labelPosition: "ABOVE",
+                      colorScheme: a!colorSchemeCustom(
+                        colors: {
+                          "#173AB6",
+                          "#BCC9F3",
+                          "#F6A53F",
+                          "#FFD393",
+                          "#9D4DE3"
+                        }
+                      ),
+                      height: "MICRO",
+                      xAxisStyle: "NONE",
+                      yAxisStyle: "NONE"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "NONE",
+                  shape: "SEMI_ROUNDED",
+                  padding: "STANDARD",
+                  marginBelow: "STANDARD",
+                  showBorder: false,
+                  showShadow: true
+                )
+              }
+            ),
+            a!sectionLayout(
+              label: "Funds Obligated",
+              labelSize: "SMALL",
+              labelHeadingTag: "H3",
+              labelColor: "STANDARD",
+              contents: {
+                a!cardLayout(
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!gaugeField(
+                            label: "Gauge",
+                            labelPosition: "COLLAPSED",
+                            percentage: 80.0,
+                            primaryText: a!gaugePercentage(),
+                            color: "#173AB6",
+                            size: "SMALL"
+                          ),
+                          width: "MINIMIZE"
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "FY 2021" },
+                                color: "STANDARD",
+                                size: "STANDARD"
+                              ),
+                              char(10),
+                              a!richTextItem(
+                                text: { "$400M" },
+                                color: "STANDARD",
+                                size: "LARGE",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(
+                                text: {
+                                  a!richTextItem(text: { " " }, style: { "STRONG" }),
+                                  a!richTextItem(text: { "/ $500M" }, size: "MEDIUM")
+                                },
+                                color: "SECONDARY"
+                              )
+                            }
+                          )
+                        )
+                      },
+                      alignVertical: "MIDDLE",
+                      spacing: "SPARSE",
+                      marginBelow: "NONE"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "NONE",
+                  shape: "SEMI_ROUNDED",
+                  padding: "STANDARD",
+                  marginBelow: "STANDARD",
+                  showBorder: false,
+                  showShadow: true
+                )
+              }
+            ),
+            a!sectionLayout(
+              label: "Funds Spent",
+              labelSize: "SMALL",
+              labelHeadingTag: "H3",
+              labelColor: "STANDARD",
+              contents: {
+                a!cardLayout(
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!gaugeField(
+                            label: "Gauge",
+                            labelPosition: "COLLAPSED",
+                            percentage: 62.5,
+                            primaryText: a!gaugePercentage(),
+                            color: "#173AB6",
+                            size: "SMALL"
+                          ),
+                          width: "MINIMIZE"
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              "FY 2021",
+                              char(10),
+                              a!richTextItem(
+                                text: { "$250M" },
+                                color: "STANDARD",
+                                size: "LARGE",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(
+                                text: {
+                                  a!richTextItem(text: { " " }, style: { "STRONG" }),
+                                  a!richTextItem(text: { "/ $400M" }, size: "MEDIUM")
+                                },
+                                color: "SECONDARY"
+                              )
+                            }
+                          )
+                        )
+                      },
+                      alignVertical: "MIDDLE",
+                      spacing: "SPARSE",
+                      marginBelow: "NONE"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "NONE",
+                  shape: "SEMI_ROUNDED",
+                  padding: "STANDARD",
+                  marginBelow: "STANDARD",
+                  showBorder: false,
+                  showShadow: true
+                )
+              },
+              marginBelow: "STANDARD"
+            ),
+            a!sectionLayout(
+              label: "Socio-Economic Targets",
+              labelSize: "SMALL",
+              labelHeadingTag: "H3",
+              labelColor: "STANDARD",
+              contents: {
+                a!cardLayout(
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: { "8(a)" }, size: "STANDARD")
+                            }
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "$150M" },
+                                color: "#173AB6",
+                                size: "STANDARD",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(text: { " / $200M" }, size: "STANDARD")
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      marginAbove: "EVEN_LESS",
+                      marginBelow: "LESS"
+                    ),
+                    a!progressBarField(
+                      label: "Progress Bar",
+                      labelPosition: "COLLAPSED",
+                      percentage: 75,
+                      color: "#173AB6",
+                      style: "THICK"
+                    ),
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "Small Business" },
+                                size: "STANDARD"
+                              )
+                            }
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "$40M" },
+                                color: "#173AB6",
+                                size: "STANDARD",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      marginBelow: "LESS"
+                    ),
+                    a!progressBarField(
+                      label: "Progress Bar",
+                      labelPosition: "COLLAPSED",
+                      percentage: 40,
+                      color: "#173AB6",
+                      style: "THICK"
+                    ),
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: { "WOSB" }, size: "STANDARD")
+                            }
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "$90M" },
+                                color: "#173AB6",
+                                size: "STANDARD",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      marginBelow: "LESS"
+                    ),
+                    a!progressBarField(
+                      label: "Progress Bar",
+                      labelPosition: "COLLAPSED",
+                      percentage: 90,
+                      color: "#173AB6",
+                      style: "THICK"
+                    ),
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: { "SDVOSB" }, size: "STANDARD")
+                            }
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "$50M" },
+                                color: "#173AB6",
+                                size: "STANDARD",
+                                style: { "STRONG" }
+                              ),
+                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      marginBelow: "LESS"
+                    ),
+                    a!progressBarField(
+                      label: "Progress Bar",
+                      labelPosition: "COLLAPSED",
+                      percentage: 50,
+                      color: "#173AB6",
+                      style: "THICK",
+                      marginBelow: "LESS"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "NONE",
+                  shape: "SEMI_ROUNDED",
+                  padding: "STANDARD",
+                  marginBelow: "STANDARD",
+                  showBorder: false,
+                  showShadow: true
+                )
+              }
+            ),
+            a!cardLayout(
+              contents: {
+                a!columnsLayout(
+                  columns: {
+                    a!columnLayout(
+                      contents: {
+                        a!pickerFieldCustom(
+                          labelPosition: "COLLAPSED",
+                          placeholder: "Search To-Dos"
+                        )
+                      }
+                    ),
+                    a!columnLayout(
+                      contents: {
+                        a!dropdownField(
+                          label: "Dropdown",
+                          labelPosition: "COLLAPSED",
+                          placeholder: "Select a Type",
+                          choiceLabels: {
+                            "Option 1",
+                            "Option 2",
+                            "Option 3",
+                            "Option 4",
+                            "Option 5",
+                            "Option 6",
+                            "Option 7",
+                            "Option 8",
+                            "Option 9",
+                            "Option 10",
+                            "Option 11",
+                            "Option 12"
+                          },
+                          choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+                          saveInto: {},
+                          searchDisplay: "AUTO",
+                          validations: {}
+                        )
+                      }
+                    )
+                  }
+                ),
+                a!buttonArrayLayout(
+                  buttons: {
+                    a!buttonWidget(
+                      label: "Mark complete",
+                      icon: "plus",
+                      size: "SMALL",
+                      style: "SECONDARY",
+                      disabled: true
+                    )
+                  },
+                  align: "START",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Schedule Kickoff Meeting" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Review SOW" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Establish timeframes" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Send Pricing" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Develop Task List" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Legal Check" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Issue GFE" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Sign NDA" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Send Vendor Notice" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Finalize SOW" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Confirm Deadlines" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Schedule Kickoff Meeting" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Schedule Kickoff Meeting" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                ),
+                a!sideBySideLayout(
+                  items: {
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { a!richTextIcon(icon: "square-o") },
+                            color: "ACCENT",
+                            size: "MEDIUM_PLUS",
+                            style: { "STRONG" }
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "Schedule Kickoff Meeting" },
+                            size: "STANDARD",
+                            style: { "STRONG" }
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: { "Confirmation  • 80AFRC17F0239" },
+                            color: "SECONDARY",
+                            size: "SMALL"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    ),
+                    a!sideBySideItem(
+                      item: a!richTextDisplayField(
+                        label: "",
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextIcon(
+                            icon: "exclamation-circle",
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { " " },
+                            color: "STANDARD",
+                            size: "STANDARD"
+                          ),
+                          a!richTextItem(
+                            text: { "-2d " },
+                            color: "NEGATIVE",
+                            size: "STANDARD"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      width: "MINIMIZE"
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  marginBelow: "STANDARD"
+                )
+              },
+              height: "AUTO",
+              showWhen: false,
+              style: "NONE",
+              marginBelow: "STANDARD",
+              showBorder: false
+            )
+          },
+          width: "MEDIUM"
+        )
+      }
+    )
+  },
+  backgroundColor: "#FAFAFA"
 )
 ```
