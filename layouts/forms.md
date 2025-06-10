@@ -124,7 +124,7 @@ Checklist:
 
 ## Development
 
-#### Dialog
+### Dialog Example 1
 ```
 a!formLayout(
   titleBar: a!headerTemplateFull(
@@ -180,7 +180,85 @@ a!formLayout(
 )
 ```
 
-#### Site Page
+### Dialog Example 2
+```
+a!localVariables(
+  local!firstName,
+  local!lastName,
+  local!organization,
+  local!jobTitle,
+  local!country,
+  local!countryChoices: {
+    "United States",
+    "Canada",
+    "Mexico",
+    "United Kingdom",
+    "Germany",
+    "France"
+  },
+  local!countryChoiceValues: { "US", "CA", "MX", "UK", "DE", "FR" },
+  a!wizardLayout(
+    titleBar: "Create Case",
+    showTitleBarDivider: true,
+    style: "MINIMAL",
+    focusOnFirstInput: true,
+    contentsWidth: "NARROW",
+    steps: {
+      a!wizardStep(
+        label: "About You",
+        contents: {
+          a!textField(
+            label: "First Name",
+            value: local!firstName,
+            saveInto: local!firstName
+          ),
+          a!textField(
+            label: "Last Name",
+            value: local!lastName,
+            saveInto: local!lastName
+          ),
+          a!textField(
+            label: "Organization",
+            value: local!organization,
+            saveInto: local!organization
+          ),
+          a!textField(
+            label: "Job Title",
+            value: local!jobTitle,
+            saveInto: local!jobTitle
+          ),
+          a!dropdownField(
+            label: "Country",
+            placeholder: "Select a Country",
+            choiceLabels: local!countryChoices,
+            choiceValues: local!countryChoiceValues,
+            value: local!country,
+            saveInto: local!country
+          )
+        }
+      ),
+      a!wizardStep(label: "Case Details"),
+      a!wizardStep(label: "Review")
+    },
+    showButtonDivider: true,
+    secondaryButtons: {
+      a!buttonWidget(
+        label: "Cancel",
+        style: if(fv!isFirstStep, "OUTLINE", "LINK")
+      )
+    },
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Create",
+        style: "SOLID",
+        showWhen: fv!isLastStep
+      )
+    }
+  )
+)
+```
+
+### Site Page
 ```
 a!headerContentLayout(
   header: a!cardLayout(
