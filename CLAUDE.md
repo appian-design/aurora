@@ -22,6 +22,70 @@ a!textField(
 )
 ```
 
+## Starting with local variables
+
+> [!IMPORTANT]
+> All interfaces should start with the `a!localVariables` component. Any other functions or components references local variables have to be wrapped in this top-level component.
+
+### Local variable types
+
+Local variables do not have a defined type. The type of a local variable is determined by the value of the variable at any given time.
+
+```
+a!localVariables(
+  local!isActive: true,
+  local!activeEmployees: a!queryEntity(
+    entity: cons!EMPLOYEE_DSE,
+    query: a!query(
+      filter: a!queryFilter("active", "=", local!isActive),
+      pagingInfo: a!pagingInfo(1, 10)
+    )
+  ).data,
+  local!activeEmployees
+)
+```
+
+In this example, local!isActive is of type Boolean and local!activeEmployees is of type Dictionary.
+
+### Variables without an initial value
+
+Local variables that do not have an initial value are of type Null. This can often cause errors when trying to pass the local variable to a function, so you may need to cast it to the expected type.
+
+```
+a!localVariables(
+  local!quantity,
+  a!integerField(
+    label: "Quantity",
+    value: local!quantity,
+    saveInto: local!quantity,
+    validations: if(
+      local!quantity<0,
+      "Quantity must be greater than 0",
+      ""
+    )
+  )
+)
+```
+
+In this example, local!quantity<0 fails because the variable is not an integer. You can solve this by casting the variable before doing comparisons using the `tointeger()` function.
+
+### Updating a variable value
+
+The type of a local variable can change if it is saved into from a component within an interface. The variable will now be of the same type as the new value that was saved into it.
+
+```
+a!localVariables(
+  local!number: 1,
+  a!floatingPointField(
+    label: "Number",
+    value: local!number,
+    saveInto: local!number
+  )
+)
+```
+
+In this example, local!number starts out as an Integer. However, once a user interacts with the Number field, a Decimal value will be saved into local!number.
+
 ## Essential Layout Components
 
 ### Section Layout
@@ -59,6 +123,8 @@ a!columnsLayout(
   stackWhen: {"PHONE", "TABLET_PORTRAIT"}
 )
 ```
+
+Use empty `a!columnLayout` components on either side of a column to center content.
 
 ### Card Layout
 Provides visual grouping with styling options:
@@ -165,14 +231,19 @@ a!buttonWidget(
 )
 ```
 
-### Link Field
+### Link
+
+Use `a!richTextItem` instead of `a!linkField` for links.
+
 ```sail
-a!linkField(
-  links: {
-    a!dynamicLink(
-      label: "View Details",
-      value: local!selectedId,
-      saveInto: local!selectedId
+a!richTextDisplayField(
+  labelPosition: "COLLAPSED",
+  value: {
+    a!richTextItem(
+      text: "Visit site",
+      link: a!safeLink(uri: "http://www.appian.com"),
+      linkStyle: "INLINE"
+       /* Use STANDALONE for linkStyle when linked text is not part of a sentence with other unlinked text. */
     )
   }
 )
@@ -280,14 +351,14 @@ a!textField(
 
 ### Visibility Control
 ```sail
-showWhen: not(isnull(local!selectedCustomer))
+showWhen: a!isNotNullOrEmpty(local!selectedCustomer)
 ```
 
 ### Validation Patterns
 ```sail
 validations: {
   if(len(local!value) < 3, "Must be at least 3 characters", null),
-  if(isnull(local!value), "This field is required", null)
+  if(a!isNullOrEmpty(local!value), "This field is required", null)
 }
 ```
 
@@ -333,7 +404,7 @@ a!sideBySideLayout(
 ### Basic Form
 ```sail
 a!formLayout(
-  label: "New Customer Registration",
+  titleBar: a!headerTemplateSimple(title: "New Customer Registration"),
   contents: {
     a!sectionLayout(
       label: "Basic Information",
@@ -353,7 +424,7 @@ a!formLayout(
             a!columnLayout(
               contents: {
                 a!textField(
-                  label: "Last Name", 
+                  label: "Last Name",
                   value: local!lastName,
                   saveInto: local!lastName,
                   required: true
@@ -377,6 +448,7 @@ a!formLayout(
       a!buttonWidget(
         label: "Cancel",
         value: true,
+        style: "OUTLINE",
         saveInto: local!showCancelDialog
       )
     }
@@ -426,29 +498,8 @@ a!headerContentLayout(
 
 ## Common Validation Patterns
 
-```sail
-/* Required field validation */
-if(isnull(local!value), "This field is required", null)
-
-/* Email validation */
-if(not(isemailaddress(local!email)), "Please enter a valid email", null)
-
-/* Phone number validation */
-if(not(isphoneNumber(local!phone)), "Please enter a valid phone number", null)
-
-/* Date range validation */
-if(local!endDate < local!startDate, "End date must be after start date", null)
-
-/* Text length validation */
-if(len(local!description) > 500, "Description cannot exceed 500 characters", null)
-```
+Avoid adding validation.
 
 ## Performance Considerations
 
-1. **Use local variables** for form data to minimize server calls
-2. **Implement showWhen** strategically to conditionally render expensive components  
-3. **Limit grid row counts** - use paging for large datasets
-4. **Optimize chart data** - aggregate data server-side when possible
-5. **Use refresh parameters** judiciously to control when components update
-
-Remember: Always test interfaces in Appian Designer to ensure proper syntax and functionality.
+Don't worry about performance considerations.
