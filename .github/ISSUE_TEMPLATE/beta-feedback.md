@@ -42,6 +42,9 @@ assignees: ''
 [Paste actual output here if text-based]
 ```
 
+### Syntax Edits
+<!-- Describe any changes you made to invalid SAIL to get it to render -->
+
 ## Screenshots
 <!-- Drag and drop screenshots here -->
 
