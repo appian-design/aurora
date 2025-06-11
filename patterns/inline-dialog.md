@@ -183,7 +183,7 @@ rule!Inline_Dialog_Component(
 |Name|Type|Description|
 |--- |--- |--- |
 |formButtonLabel|Text|The label of the button that will trigger the form to appear.|
-|buttonType|Text|Controls button styling. Options: “NORMAL“ (default), “PRIMARY“, “SECONDARY“, “DESTRUCTIVE“, and “LINK“.|
+|buttonType|Text|Controls button styling. Options: "OUTLINE" (default), "GHOST", "LINK", "SOLID"|
 |buttonIcon|Text|Controls icon that appears. Use formal icon library names.|
 |formFields|Any Type (Interface)|All form fields should be grouped in a SAIL interface. Use this variable to call the fields.|
 |formAction|Text|The primary submit action for this form, e.g. “Add“.|
