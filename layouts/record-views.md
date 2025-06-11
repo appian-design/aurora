@@ -19,9 +19,9 @@ By default, each record type will have at least three views namely, Summary, New
 
 The Summary view is displayed by default when the user clicks on a record item from the record list. A record type could also have up to 20 additional customizable views to display information sourced from the record type. 
 
-Note:
-We recommend using at most 6 views in a record. 
-Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
+**Note:**
+- We recommend using at most 6 views in a record. 
+- Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
 
 ![](https://github.com/user-attachments/assets/18d041b7-aceb-4875-ab1f-ff0916cbdcd9)
 
