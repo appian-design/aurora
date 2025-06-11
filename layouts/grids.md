@@ -63,7 +63,7 @@ Checklist:
 
 ## Development
 
-### Grid Example 1
+### Page Section Grid
 
 ```
 a!headerContentLayout(
@@ -445,7 +445,7 @@ a!headerContentLayout(
 )
 ```
 
-### Grid Example 2
+### Full Grid with Side Content
 ```
 a!headerContentLayout(
   header: {},
