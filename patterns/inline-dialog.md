@@ -31,12 +31,13 @@ a!localVariables(
                 {
                   a!buttonArrayLayout(
                     buttons: {
-                      a!buttonWidget_23r3(
+                      a!buttonWidget(
                         label: if(a!isNullOrEmpty(ri!formButtonLabel), "Add Employee", ri!formButtonLabel),
                         icon: if(a!isNullOrEmpty(ri!buttonIcon), "plus", ri!buttonIcon),
                         saveInto: a!save(local!active, not(local!active)),
                         size: "SMALL",
-                        style: if(isnull(ri!buttonType), "SECONDARY", ri!buttonType),
+                        style: if(isnull(ri!buttonType), "OUTLINE", ri!buttonType),
+                        color: "SECONDARY",
                         disabled: if(local!active, true, false)
                       )
                     },
