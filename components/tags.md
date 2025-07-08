@@ -7,7 +7,7 @@ last_updated: "2025-01-08"
 
 Tags are visual indicators used to highlight notable attributes of items and draw viewer attention to important characteristics. They provide quick, scannable context without overwhelming the interface.
 
-![Tags component example - screenshot to be added via Playwright MCP]()
+![Tags component example showing working SAIL code in expression editor](basic-tag-success.png)
 
 ## Design
 
@@ -141,36 +141,40 @@ a!localVariables(
         label: "Status",
         value: a!tagField(
           labelPosition: "COLLAPSED",
-          tags: a!tagItem(
-            text: fv!row.status,
-            backgroundColor: if(
-              fv!row.status = "Active",
-              "POSITIVE",
-              if(
-                fv!row.status = "Pending",
-                "SECONDARY",
-                "ACCENT"
+          tags: {
+            a!tagItem(
+              text: fv!row.status,
+              backgroundColor: if(
+                fv!row.status = "Active",
+                "POSITIVE",
+                if(
+                  fv!row.status = "Pending",
+                  "SECONDARY",
+                  "ACCENT"
+                )
               )
             )
-          )
+          }
         )
       ),
       a!gridColumn(
         label: "Priority",
         value: a!tagField(
           labelPosition: "COLLAPSED",
-          tags: a!tagItem(
-            text: fv!row.priority,
-            backgroundColor: if(
-              fv!row.priority = "High",
-              "NEGATIVE",
-              if(
-                fv!row.priority = "Medium",
-                "ACCENT",
-                "SECONDARY"
+          tags: {
+            a!tagItem(
+              text: fv!row.priority,
+              backgroundColor: if(
+                fv!row.priority = "High",
+                "NEGATIVE",
+                if(
+                  fv!row.priority = "Medium",
+                  "ACCENT",
+                  "SECONDARY"
+                )
               )
             )
-          )
+          }
         )
       )
     }
