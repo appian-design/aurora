@@ -1,13 +1,11 @@
 ---
 status: "stable"
-last_updated: "2025-01-08"
+last_updated: "2025-07-09"
 ---
 
 # Tags Guidance
 
 Tags are visual indicators used to highlight notable attributes of items and draw viewer attention to important characteristics. They provide quick, scannable context without overwhelming the interface.
-
-![Tags component example showing working SAIL code in expression editor](basic-tag-success.png)
 
 ## Design
 
@@ -21,16 +19,24 @@ Use tags to:
 
 ### Variants
 
-#### Single Tag
-Use a single tag to highlight one key attribute or status.
+#### Categorical Tags
+Use tags to display status, priority, or category information:
+- Status indicators (Active, Pending, Complete)
+- Priority levels (High, Medium, Low)
+- Category labels (Department, Type, Region)
 
-#### Multiple Tags
-When displaying multiple tags, use uniform, muted colors to maintain visual hierarchy and avoid overwhelming the interface.
+#### Numerical Tags
+Use tags to display counts, quantities, or numerical information:
+- Unread message counts (3, 12, 99+)
+- Task counts (5 tasks, 2 pending)
+- Item quantities (15 items, 3 new)
 
-#### Colored Tags
-Use colors strategically to convey meaning:
+### Color
+
+Use colors strategically to convey meaning and maintain consistency:
+
 - **Positive (Green)**: Success, active, approved states
-- **Negative (Red)**: Errors, urgent, critical items
+- **Negative (Red)**: Errors, urgent, critical items  
 - **Accent (Blue)**: Important information, primary actions
 - **Secondary (Gray)**: Neutral information, inactive states
 
@@ -43,21 +49,17 @@ Use colors strategically to convey meaning:
 - Choose descriptive, meaningful labels
 
 #### Visual Consistency
-- Use uniform colors when displaying multiple tags together
-- Maintain consistent sizing within the same interface
+- Use different colors when displaying multiple tags together to improve scannability
+- Maintain the same color for identical values across your application (e.g., all "High" priority tags should use the same color)
+- Keep consistent sizing within the same interface
 - Ensure sufficient contrast for accessibility
-
-#### Layout Considerations
-- Tags work well in side-by-side layouts
-- Allow tags to wrap in narrow containers
-- Consider spacing between multiple tags
 
 ### Accessibility
 
 - Tags must have sufficient color contrast (4.5:1 ratio minimum)
 - Use `accessibilityText` parameter when tag meaning isn't clear from visual context
 - Don't rely solely on color to convey information
-- Consider screen reader compatibility when using linked tags
+- When using linked tags, ensure the link purpose is clear to screen readers by providing descriptive text
 
 ## Development
 
@@ -107,12 +109,12 @@ a!tagField(
     a!tagItem(
       text: "HIGH PRIORITY",
       backgroundColor: "NEGATIVE",
-      textColor: "WHITE"
+      textColor: "STANDARD"
     ),
     a!tagItem(
       text: "REVIEWED",
       backgroundColor: "POSITIVE",
-      textColor: "WHITE"
+      textColor: "STANDARD"
     )
   },
   align: "START",
