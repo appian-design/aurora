@@ -69,7 +69,7 @@ Use when a user can select a single option from a list and the the labels are sh
 
 #### Cards as Choices
 > [!Note]
-> This is an internal-only skin of the cards as choices component
+> This is an internal-only skin of the cards as choices component. SAIL coming soon. 
 
 
 #### Toggle
@@ -134,6 +134,24 @@ a!dropdownField(
 > [!Note]
 > This is an internal-only component
 
+```
+a!asSystem_appian_internal(
+  {
+    a!iconSegmentedChoiceField(
+      label: "my label",
+      labelPosition: "ABOVE",
+      choices: {
+        "align-left",
+        "align-center",
+        "align-right"
+      },
+      choiceTooltips: { "Start", "Center", "End" },
+      value: 1,
+      saveInto: fn!null()
+    )
+  }
+)
+```
 
 #### Radio Buttons
 ```
