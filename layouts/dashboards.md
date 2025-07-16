@@ -75,7 +75,7 @@ a!headerContentLayout(
   header: {
     a!billboardLayout(
       backgroundMedia: a!webImage(
-        source: "/assets/images/billboard-bg-1.jpg"
+        source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-1.jpg"
       ),
       height: "EXTRA_SHORT",
       marginBelow: "NONE"
@@ -2193,7 +2193,7 @@ a!headerContentLayout(
         pickedUpOn: today(),
         pickedUpBy: "Jared Connors",
         pricePerItem: "$100",
-        image: "/assets/images/data-image-1.jpg"
+        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-1.jpg"
       ),
       a!map(
         name: "Suede Lace Up Shoe",
@@ -2201,7 +2201,7 @@ a!headerContentLayout(
         pickedUpOn: null,
         pickedUpBy: null,
         pricePerItem: "$50",
-        image: "/assets/images/data-image-2.jpg"
+        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-2.jpg"
       )
     },
     local!orderSummary: a!map(

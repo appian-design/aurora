@@ -1350,7 +1350,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "/assets/images/billboard-bg-2.jpg"
+                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-2.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1438,7 +1438,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "/assets/images/billboard-bg-3.jpg"
+                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-3.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1526,7 +1526,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "/assets/images/billboard-bg-4.jpg"
+                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-4.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1624,7 +1624,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "/assets/images/billboard-bg-5.jpg"
+                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-5.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1712,7 +1712,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "/assets/images/billboard-bg-6.jpg"
+                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-6.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
