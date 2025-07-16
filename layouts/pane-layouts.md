@@ -1350,7 +1350,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                          source: "/assets/images/billboard-bg-2.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1438,7 +1438,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "https://images.unsplash.com/photo-1575517111478-7f6afd0973db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                          source: "/assets/images/billboard-bg-3.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1526,7 +1526,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                          source: "/assets/images/billboard-bg-4.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1624,7 +1624,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzR8fGhvdXNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+                          source: "/assets/images/billboard-bg-5.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -1712,7 +1712,7 @@ a!localVariables(
                     contents: {
                       a!billboardLayout(
                         backgroundMedia: a!webImage(
-                          source: "https://images.unsplash.com/photo-1538963732282-4b2b48c7a4b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80"
+                          source: "/assets/images/billboard-bg-6.jpg"
                         ),
                         backgroundColor: "#f0f0f0",
                         height: "SHORT_PLUS",
@@ -2175,3 +2175,10 @@ a!localVariables(
   )
 )
 ```
+
+---
+
+**Image Credits:**
+- Billboard background images: Photos by Unsplash photographers¹
+
+¹ *Image credits need verification - please check original Unsplash URLs for photographer details*

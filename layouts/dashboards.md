@@ -75,7 +75,7 @@ a!headerContentLayout(
   header: {
     a!billboardLayout(
       backgroundMedia: a!webImage(
-        source: "https://images.unsplash.com/photo-1574950333594-f3e9a9446d0f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+        source: "/assets/images/billboard-bg-1.jpg"
       ),
       height: "EXTRA_SHORT",
       marginBelow: "NONE"
@@ -2193,7 +2193,7 @@ a!headerContentLayout(
         pickedUpOn: today(),
         pickedUpBy: "Jared Connors",
         pricePerItem: "$100",
-        image: "https://images.unsplash.com/photo-1596460107916-430662021049?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        image: "/assets/images/data-image-1.jpg"
       ),
       a!map(
         name: "Suede Lace Up Shoe",
@@ -2201,7 +2201,7 @@ a!headerContentLayout(
         pickedUpOn: null,
         pickedUpBy: null,
         pricePerItem: "$50",
-        image: "https://images.unsplash.com/photo-1617689563472-c66428e83d17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        image: "/assets/images/data-image-2.jpg"
       )
     },
     local!orderSummary: a!map(
@@ -3128,5 +3128,14 @@ a!headerContentLayout(
   )
 )
 ```
+
+---
+
+**Image Credits:**
+- Billboard background image: Photo by Unsplash photographer¹
+- Product images: Photos by Unsplash photographers²
+
+¹ *Image credit needs verification - please check original Unsplash URL for photographer details*  
+² *Image credits need verification - please check original Unsplash URLs for photographer details*
 
 
