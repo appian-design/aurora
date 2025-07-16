@@ -10,10 +10,10 @@ last_updated: "2025-06-08"
 The following is the complete color palette with named colors and their corresponding hex codes:
 
 ### Red
-- Red 0: #FEDF0
+- Red 0: #FDEDF0
 - Red 1: #FED7DE  
 - Red 2: #FDADAD
-- Red 3: #de0037
+- Red 3: #DE0037
 - Red 35: #B2002C
 - Red 4: #9F0019
 
@@ -30,14 +30,14 @@ The following is the complete color palette with named colors and their correspo
 - Yellow 1: #FFF6C9
 - Yellow 2: #FDEB93
 - Yellow 3: #FFD948
-- Yellow 35: #ffc008
+- Yellow 35: #FFC008
 - Yellow 4: #856C00
 
 ### Green
 - Green 0: #EDF7EE
 - Green 1: #E3FBDF
 - Green 2: #B2EAB1
-- Green 3: #1cc101
+- Green 3: #1CC101
 - Green 4: #117C00
 - Green 5: #0A4D00
 
@@ -90,7 +90,7 @@ When using these colors in SAIL, note that you should expect them to change base
 | Accent | Blue 3 | Used to highlight key interface elements. Avoid grayscale colors (black, white, and gray) that are similar to colors used for interface elements and green/red that are similar to colors used to indicate positive/negative values. |
 | Default Background | #FAFAFC | Used for the page background color. |
 | Dark Background | Blue 5 | Used to differentiate a page in dark mode, e.g. in portal backgrounds or reports. |
-| Light Background | #E7F1FF | |
+| Light Background | #E7F1FF | Used for secondary page backgrounds or content areas that need visual separation from the default background. |
 | Navigation Bar | Blue 5 | Used for the background color of the site header behind the corporate logo and site tabs. Select a color with sufficient contrast against the text color. |
 | Loading Bar | Blue 3 | Appears at the top of the site and gives users an idea of how long it will take the system to load a page or process an action. Usually set to the accent color. Select a color with sufficient contrast against the navigation bar color to ensure that users notice it. |
 | Selected Highlight | #FFFFFF | Identifies the selected tab on sites. Select a color with sufficient contrast against the navigation bar color so that users can easily tell which tab is highlighted. |
@@ -135,11 +135,11 @@ Used for message banners, colored tags, reference cards and icons.
 
 | Label | Default Color |
 |-------|--------------|
-| Info Background | #E9EDFC |
-| Info Accent | Blue 3 |
+| Info Background | Sky 0 |
+| Info Accent | Sky 35 |
 | Info Text | #08088D |
-| Positive Background | Green 1 |
-| Positive Accent | Green 3 |
+| Positive Background | Green 0 |
+| Positive Accent | Green 4 |
 | Positive Text | Green 4 |
 | Warning Background | Yellow 1 |
 | Warning Accent | Yellow 3 |
