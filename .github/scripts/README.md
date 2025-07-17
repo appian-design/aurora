@@ -97,9 +97,12 @@ The `parseMarkdownContent()` function can be customized to:
 
 ### Common Issues
 
-1. **Token permissions**: Ensure `MCP_REPO_TOKEN` has write access to issues
-2. **File parsing**: Check that markdown files have proper `# Title` headings
-3. **Path matching**: Verify file paths match between repositories
+1. **GitHub API rate limits**: The script may hit rate limits on frequent runs
+2. **Network connectivity**: Requires internet access to fetch MCP server metadata
+3. **TypeScript parsing**: Complex TypeScript syntax might need parser updates
+4. **Token permissions**: Ensure `MCP_REPO_TOKEN` has write access to issues
+5. **File parsing**: Check that markdown files have proper `# Title` headings
+6. **Path matching**: Verify file paths match between repositories
 
 ### Debugging
 

@@ -29,7 +29,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'  # Use Node 20 which has built-in fetch
+          
+      - name: Install dependencies
+        run: |
+          # Install node-fetch as fallback for older Node versions
+          npm init -y
+          npm install node-fetch@2
           
       - name: Run sync check
         id: sync-check

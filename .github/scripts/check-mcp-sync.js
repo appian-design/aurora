@@ -86,184 +86,83 @@ function scanCurrentRepo() {
 }
 
 /**
- * Fetch current MCP server metadata from GitHub
+ * Parse TypeScript file content to extract designSystemData object
+ */
+function parseTypeScriptMetadata(content) {
+  try {
+    // Find the designSystemData export
+    const dataMatch = content.match(/export const designSystemData[\s\S]*?= ([\s\S]*?);\s*$/m);
+    if (!dataMatch) {
+      throw new Error('Could not find designSystemData export in TypeScript file');
+    }
+    
+    let dataString = dataMatch[1];
+    
+    // Clean up the TypeScript syntax to make it valid JSON
+    // Remove TypeScript type annotations and trailing commas
+    dataString = dataString
+      .replace(/([a-zA-Z_$][a-zA-Z0-9_$]*)(\s*):/g, '"$1":') // Quote property names
+      .replace(/'/g, '"') // Convert single quotes to double quotes
+      .replace(/,\s*}/g, '}') // Remove trailing commas before closing braces
+      .replace(/,\s*]/g, ']'); // Remove trailing commas before closing brackets
+    
+    // Parse as JSON
+    const parsedData = JSON.parse(dataString);
+    return parsedData;
+  } catch (error) {
+    console.error('Error parsing TypeScript metadata:', error);
+    throw new Error(`Failed to parse MCP server metadata: ${error.message}`);
+  }
+}
+
+/**
+ * Fetch current MCP server metadata from GitHub API
  */
 async function fetchMCPMetadata() {
-  // This would normally fetch from the MCP server repo
-  // For now, we'll simulate the current structure based on what we know
-  // In a real implementation, this would use GitHub API to fetch the file
-  
-  const mcpStructure = {
-    branding: {
-      'logo-and-favicon': {
-        title: 'Logo and Favicon',
-        body: 'Guidelines for using logos and favicons consistently across applications.',
-        filePath: 'branding/logo-and-favicon.md'
-      },
-      'colors': {
-        title: 'Colors',
-        body: 'Color palette and usage guidelines for the design system.',
-        filePath: 'branding/colors.md'
-      },
-      'icons': {
-        title: 'Icons',
-        body: 'Icon library and usage guidelines.',
-        filePath: 'branding/icons.md'
-      },
-      'typography': {
-        title: 'Typography',
-        body: 'Typography scale, fonts, and text styling guidelines.',
-        filePath: 'branding/typography.md'
-      },
-      'approach-to-ai': {
-        title: 'Approach to AI',
-        body: 'Guidelines for incorporating AI elements in design.',
-        filePath: 'branding/approach-to-ai.md'
+  try {
+    console.log('📡 Fetching MCP server metadata from GitHub API...');
+    
+    const response = await fetch(
+      'https://api.github.com/repos/pglevy/design-system-server/contents/src/design-system-data.ts',
+      {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'design-system-sync-checker'
+        }
       }
-    },
-    'content-style-guide': {
-      'voice-and-tone': {
-        title: 'Voice and Tone',
-        body: 'Guidelines for consistent voice and tone across content.',
-        filePath: 'content-style-guide/voice-and-tone.md'
-      }
-    },
-    accessibility: {
-      'checklist': {
-        title: 'Accessibility Checklist',
-        body: 'Comprehensive checklist for ensuring accessible design and development.',
-        filePath: 'accessibility/checklist.md'
-      }
-    },
-    layouts: {
-      'dashboards': {
-        title: 'Dashboards',
-        body: 'Layout patterns for dashboard interfaces.',
-        filePath: 'layouts/dashboards.md'
-      },
-      'empty-states': {
-        title: 'Empty States',
-        body: 'Layout guidance for empty state screens.',
-        filePath: 'layouts/empty-states.md'
-      },
-      'forms': {
-        title: 'Forms',
-        body: 'Form layout patterns and best practices.',
-        filePath: 'layouts/forms.md'
-      },
-      'grids': {
-        title: 'Grids',
-        body: 'Grid system and layout structures.',
-        filePath: 'layouts/grids.md'
-      },
-      'landing-pages': {
-        title: 'Landing Pages',
-        body: 'Layout patterns for landing and marketing pages.',
-        filePath: 'layouts/landing-pages.md'
-      },
-      'messaging-module': {
-        title: 'Messaging Module',
-        body: 'Layout for messaging and communication interfaces.',
-        filePath: 'layouts/messaging-module.md'
-      },
-      'pane-layouts': {
-        title: 'Pane Layouts',
-        body: 'Multi-pane layout patterns for complex interfaces.',
-        filePath: 'layouts/pane-layouts.md'
-      },
-      'record-views': {
-        title: 'Record Views',
-        body: 'Layout patterns for viewing and editing records.',
-        filePath: 'layouts/record-views.md'
-      }
-    },
-    patterns: {
-      'banners': {
-        title: 'Banners',
-        body: 'Banner patterns for important announcements and alerts.',
-        filePath: 'patterns/banners.md'
-      },
-      'calendar-widget': {
-        title: 'Calendar Widget',
-        body: 'Calendar interface patterns and interactions.',
-        filePath: 'patterns/calendar-widget.md'
-      },
-      'charts': {
-        title: 'Charts',
-        body: 'Data visualization and chart patterns.',
-        filePath: 'patterns/charts.md'
-      },
-      'comment-thread': {
-        title: 'Comment Thread',
-        body: 'Comment and discussion thread patterns.',
-        filePath: 'patterns/comment-thread.md'
-      },
-      'document-summary': {
-        title: 'Document Summary',
-        body: 'Document summary and preview patterns.',
-        filePath: 'patterns/document-summary.md'
-      },
-      'document-cards': {
-        title: 'Document Cards',
-        body: 'Card patterns for displaying document information.',
-        filePath: 'patterns/document-cards.md'
-      },
-      'inline-dialog': {
-        title: 'Inline Dialog',
-        body: 'Inline dialog and contextual popup patterns.',
-        filePath: 'patterns/inline-dialog.md'
-      },
-      'key-performance-indicators': {
-        title: 'Key Performance Indicators',
-        body: 'KPI display and dashboard patterns.',
-        filePath: 'patterns/key-performance-indicators.md'
-      },
-      'notifications': {
-        title: 'Notifications',
-        body: 'Notification patterns for system messages and alerts.',
-        filePath: 'patterns/notifications.md'
-      },
-      'pick-list': {
-        title: 'Pick List',
-        body: 'Selection and pick list interface patterns.',
-        filePath: 'patterns/pick-list.md'
-      }
-    },
-    components: {
-      'breadcrumbs': {
-        title: 'Breadcrumbs',
-        body: 'Navigation breadcrumb components for showing hierarchy.',
-        filePath: 'components/breadcrumbs.md'
-      },
-      'cards': {
-        title: 'Cards',
-        body: 'Card components for displaying grouped content.',
-        filePath: 'components/cards.md'
-      },
-      'confirmation-dialog': {
-        title: 'Confirmation Dialog',
-        body: 'Modal dialog components for confirmations.',
-        filePath: 'components/confirmation-dialog.md'
-      },
-      'milestones': {
-        title: 'Milestones',
-        body: 'Milestone and progress indicator components.',
-        filePath: 'components/milestones.md'
-      },
-      'more-less-link': {
-        title: 'More / Less Link',
-        body: 'Expandable content toggle components.',
-        filePath: 'components/more-less-link.md'
-      },
-      'tabs': {
-        title: 'Tabs',
-        body: 'Tabbed interface components for organizing content.',
-        filePath: 'components/tabs.md'
-      }
+    );
+    
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
     }
-  };
-  
-  return mcpStructure;
+    
+    const data = await response.json();
+    
+    if (data.type !== 'file') {
+      throw new Error('Expected file but got: ' + data.type);
+    }
+    
+    // Decode base64 content
+    const content = Buffer.from(data.content, 'base64').toString('utf8');
+    console.log('✅ Successfully fetched MCP server file');
+    
+    // Parse the TypeScript file to extract the designSystemData object
+    const metadata = parseTypeScriptMetadata(content);
+    console.log(`✅ Parsed metadata with ${Object.keys(metadata).length} categories`);
+    
+    return metadata;
+  } catch (error) {
+    console.error('❌ Failed to fetch MCP metadata:', error.message);
+    
+    // Provide helpful error context
+    if (error.message.includes('404')) {
+      console.error('   Make sure the file path is correct: src/design-system-data.ts');
+    } else if (error.message.includes('403')) {
+      console.error('   This might be a rate limiting or permissions issue');
+    }
+    
+    throw error;
+  }
 }
 
 /**
@@ -379,12 +278,33 @@ function generateTypeScriptUpdates(discrepancies) {
 }
 
 /**
+ * Add fetch polyfill for Node.js environments that don't have it
+ */
+function setupFetch() {
+  if (typeof fetch === 'undefined') {
+    // Try to use node-fetch if available, otherwise provide helpful error
+    try {
+      const { default: fetch } = require('node-fetch');
+      global.fetch = fetch;
+    } catch (e) {
+      console.error('❌ fetch is not available. In Node.js < 18, you may need to install node-fetch:');
+      console.error('   npm install node-fetch');
+      throw new Error('fetch is not available');
+    }
+  }
+}
+
+/**
  * Main function
  */
 async function main() {
   try {
+    // Setup fetch for older Node.js versions
+    setupFetch();
+    
     console.log('🔍 Scanning current repository structure...');
     const currentStructure = scanCurrentRepo();
+    console.log(`   Found ${Object.keys(currentStructure).length} categories`);
     
     console.log('📡 Fetching MCP server metadata...');
     const mcpMetadata = await fetchMCPMetadata();
@@ -398,6 +318,7 @@ async function main() {
     
     if (totalChanges === 0) {
       console.log('✅ No discrepancies found - MCP server is in sync!');
+      console.log('ISSUE_NEEDED=false');
       process.exit(0);
     } else {
       console.log(`⚠️  Found ${totalChanges} discrepancies`);
@@ -414,7 +335,7 @@ ${generateTypeScriptUpdates(discrepancies)}
 
 ---
 **Auto-generated by sync-check workflow on ${new Date().toISOString()}**
-**Commit:** $\{process.env.GITHUB_SHA || 'unknown'}**`;
+**Commit:** ${process.env.GITHUB_SHA || 'unknown'}`;
 
       // Output for GitHub Actions
       console.log('ISSUE_NEEDED=true');
@@ -424,7 +345,28 @@ ${generateTypeScriptUpdates(discrepancies)}
       process.exit(1); // Exit with error to indicate sync needed
     }
   } catch (error) {
-    console.error('❌ Error during sync check:', error);
+    console.error('❌ Error during sync check:', error.message);
+    console.error('Stack trace:', error.stack);
+    
+    // Create an issue for the error itself
+    const errorIssueBody = `## MCP Server Sync Check Failed
+
+**Error:** ${error.message}
+
+**Details:**
+\`\`\`
+${error.stack}
+\`\`\`
+
+**Timestamp:** ${new Date().toISOString()}
+**Commit:** ${process.env.GITHUB_SHA || 'unknown'}
+
+This indicates a problem with the sync checking system itself that needs to be resolved.`;
+    
+    console.log('ISSUE_NEEDED=true');
+    console.log('ISSUE_TITLE=MCP Server Sync Check Failed');
+    console.log('ISSUE_BODY=' + Buffer.from(errorIssueBody).toString('base64'));
+    
     process.exit(1);
   }
 }
@@ -435,7 +377,9 @@ if (require.main === module) {
 
 module.exports = {
   parseMarkdownContent,
+  parseTypeScriptMetadata,
   scanCurrentRepo,
+  fetchMCPMetadata,
   compareStructures,
   generateTypeScriptUpdates
 };
