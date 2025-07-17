@@ -75,7 +75,7 @@ a!headerContentLayout(
   header: {
     a!billboardLayout(
       backgroundMedia: a!webImage(
-        source: "https://images.unsplash.com/photo-1574950333594-f3e9a9446d0f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+        source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-1.jpg"
       ),
       height: "EXTRA_SHORT",
       marginBelow: "NONE"
@@ -2193,7 +2193,7 @@ a!headerContentLayout(
         pickedUpOn: today(),
         pickedUpBy: "Jared Connors",
         pricePerItem: "$100",
-        image: "https://images.unsplash.com/photo-1596460107916-430662021049?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-1.jpg"
       ),
       a!map(
         name: "Suede Lace Up Shoe",
@@ -2201,7 +2201,7 @@ a!headerContentLayout(
         pickedUpOn: null,
         pickedUpBy: null,
         pricePerItem: "$50",
-        image: "https://images.unsplash.com/photo-1617689563472-c66428e83d17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-2.jpg"
       )
     },
     local!orderSummary: a!map(
@@ -3129,4 +3129,10 @@ a!headerContentLayout(
 )
 ```
 
+---
 
+**Image Credits:**
+
+- Billboard background image: Photo by [Andy Holmes](https://unsplash.com/@andyjh07?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/flock-of-penguins-tmsxaFx1Sws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+      
+- Product images: Photos by [Darryl Low](https://unsplash.com/@1188low?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) and [Mana Akbarzadegan](https://unsplash.com/@manaakbar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-round-analog-watch-at-10-10-M85fe7-_nnA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)    

@@ -1067,7 +1067,7 @@ a!localVariables(
                                             value: {
                                               a!richTextImage(
                                                 image: a!webImage(
-                                                  source: "https://ux.appiancloud.com/suite/rest/a/content/latest/ikBf0TnjWyrbLrSn_w_rpxbkNhsmebcfu8ZdpQsPpb3YiiBMo9kLWxOZg/o"
+                                                  source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/sparkle-light-version-1.png"
                                                 )
                                               ),
                                               " ",
@@ -1787,3 +1787,8 @@ a!localVariables(
   }
 )
 ```
+
+---
+
+**Image Credits:**
+- Profile image: Appian Cloud hosted image (source needs verification)
