@@ -2179,6 +2179,11 @@ a!localVariables(
 ---
 
 **Image Credits:**
-- Billboard background images: Photos by Unsplash photographers¹
 
-¹ *Image credits need verification - please check original Unsplash URLs for photographer details*
+Photos by [Unsplash](https://unsplash.com/) photographers:
+
+- [Frames For Your Heart](https://unsplash.com/@framesforyourheart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+- [Greg Rivers](https://unsplash.com/@rivphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+- [Florian Schmidinger](https://unsplash.com/@fensterschmidinger?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+- [John Fornander](https://unsplash.com/@johnfo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+- [David Everett Strickler](https://unsplash.com/@mktgmantra?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)

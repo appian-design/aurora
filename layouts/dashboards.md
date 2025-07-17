@@ -3132,10 +3132,7 @@ a!headerContentLayout(
 ---
 
 **Image Credits:**
-- Billboard background image: Photo by Unsplash photographer¹
-- Product images: Photos by Unsplash photographers²
 
-¹ *Image credit needs verification - please check original Unsplash URL for photographer details*  
-² *Image credits need verification - please check original Unsplash URLs for photographer details*
-
-
+- Billboard background image: Photo by [Andy Holmes](https://unsplash.com/@andyjh07?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/flock-of-penguins-tmsxaFx1Sws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+      
+- Product images: Photos by [Darryl Low](https://unsplash.com/@1188low?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) and [Mana Akbarzadegan](https://unsplash.com/@manaakbar?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-round-analog-watch-at-10-10-M85fe7-_nnA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)    
