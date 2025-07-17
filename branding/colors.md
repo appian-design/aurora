@@ -81,6 +81,12 @@ The following is the complete color palette with named colors and their correspo
 - Pink 35: #BB117C
 - Pink 4: #8C1565
 
+### Grays
+- Gray 0: #FFFFFF
+- Gray 2: #E0E0E0
+- Gray 4: #636363
+- Gray 5: #222222
+
 ## Branding
 
 When using these colors in SAIL, note that you should expect them to change based on the client's branding.
@@ -137,23 +143,19 @@ Used for message banners, colored tags, reference cards and icons.
 |-------|--------------|
 | Info Background | Sky 0 |
 | Info Accent | Sky 35 |
-| Info Text | #08088D |
 | Positive Background | Green 0 |
 | Positive Accent | Green 4 |
-| Positive Text | Green 4 |
-| Warning Background | Yellow 1 |
-| Warning Accent | Yellow 3 |
-| Warning Text | Yellow 4 |
-| Negative Background | #FFE7E7 |
-| Negative Accent | Red 3 |
-| Negative Text | Red 4 |
+| Warning Background | Orange 0 |
+| Warning Accent | Orange 35 |
+| Negative Background | Red 0 |
+| Negative Accent | Red 35 |
 
 ## Typography
 
 | Label | Default Color |
 |-------|--------------|
-| Primary Text | #2E2E35 |
-| Secondary Text | #6C6C75 |
+| Primary Text | Gray 5 |
+| Secondary Text | Gray 4 |
 
 ## Charts
 
