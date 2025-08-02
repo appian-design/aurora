@@ -1,93 +1,75 @@
 # Design System Documentation
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+
 A centralized, developer-accessible design system documentation platform that makes design guidance available directly within coding environments through AI assistants and other tools.
 
 ## Overview
 
-This repository serves as the single source of truth for our design system documentation, organized in a way that's both human-readable and machine-accessible through Model Context Protocol (MCP) servers.
+This open-source repository serves as the single source of truth for our design system documentation, organized in a way that's both human-readable and machine-accessible through Model Context Protocol (MCP) servers. Our goal is to bridge the gap between design guidance and development implementation, ensuring design system resources are accessible exactly when and where they're needed most.
 
-## Helpful Tools
+## 🚀 Quick Start
 
-- [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
+### View the Documentation
+Visit our [live documentation site](https://pglevy.github.io/design-system-docs/) to explore the design system.
 
-## Repository Structure
+### Contributing
+We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/pglevy/design-system-docs.git
+cd design-system-docs
+
+# Install dependencies
+bundle install
+
+# Serve the site locally
+bundle exec jekyll serve
+
+# View at http://localhost:4000
+```
+
+## 📚 What's Inside
+
+This design system documentation includes:
+
+- **Components**: Individual UI components with usage guidelines and code examples
+- **Patterns**: Reusable design patterns for common interface problems
+- **Layouts**: Page-level layout templates and structural guidance
+- **Branding**: Core brand identity elements including colors, typography, and iconography
+- **Accessibility**: Comprehensive guidelines and checklists for inclusive design
+- **Content Style Guide**: Guidelines for voice, tone, and content consistency
+
+## 🏗️ Repository Structure
 
 ```
 design-system-docs/
 ├── about/                  # About the design system
-│   ├── release-notes.md
-│   ├── prioritizing-ui-designs.md
-│   ├── our-solutions.md
-│   └── inspiration.md
 ├── branding/               # Brand identity and visual elements
-│   ├── logo-and-favicon.md
-│   ├── colors.md
-│   ├── icons.md
-│   ├── typography.md
-│   └── approach-to-ai.md
 ├── content-style-guide/    # Content and writing guidelines
-│   ├── voice-and-tone.md
-│   └── dictionary.md
 ├── accessibility/          # Accessibility guidelines and checklists
-│   └── checklist.md
 ├── layouts/                # Page-level layout templates
-│   ├── dashboards.md
-│   ├── empty-states.md
-│   ├── forms.md
-│   ├── grids.md
-│   ├── landing-pages.md
-│   ├── messaging-module.md
-│   ├── pane-layouts.md
-│   ├── portals.md
-│   └── record-views.md
 ├── patterns/               # Reusable design patterns
-│   ├── banners.md
-│   ├── calendar-widget.md
-│   ├── charts.md
-│   ├── comment-thread.md
-│   ├── document-summary.md
-│   ├── document-cards.md
-│   ├── inline-dialog.md
-│   ├── key-performance-indicators.md
-│   ├── notifications.md
-│   └── pick-list.md
 ├── components/             # Individual UI components
-│   ├── breadcrumbs.md
-│   ├── cards.md
-│   ├── confirmation-dialog.md
-│   ├── milestones.md
-│   ├── more-less-link.md
-│   └── tabs.md
 ├── _layouts/               # Jekyll layout templates
 ├── _includes/              # Jekyll include templates
 └── _config.yml             # Jekyll configuration
 ```
 
-## Content Organization
+## 🤝 Contributing
 
-### About
-Information about the design system approach, release notes, and inspiration.
+We believe that great design systems are built by communities. Whether you're a designer, developer, content creator, or accessibility expert, there are many ways to contribute:
 
-### Branding
-Core brand identity elements including colors, typography, logos, and iconography.
+### Ways to Contribute
 
-### Content Style Guide
-Guidelines for voice, tone, and content consistency across all touchpoints.
-
-### Accessibility
-Comprehensive accessibility guidelines and checklists for inclusive design.
-
-### Layouts
-Page-level layout templates and structural guidance for different types of interfaces.
-
-### Patterns
-Reusable design patterns that solve common interface problems and provide consistent user experiences.
-
-### Components
-Individual UI components with detailed usage guidelines, code examples, and implementation notes.
-
-## Contributing
+- **Report Issues**: Found a bug or have a suggestion? [Open an issue](https://github.com/pglevy/design-system-docs/issues/new/choose)
+- **Improve Documentation**: Help us make our docs clearer and more comprehensive
+- **Add Examples**: Contribute code examples and implementation guides
+- **Enhance Accessibility**: Help us make our design system more inclusive
+- **Share Patterns**: Document new design patterns you've discovered
 
 ### For Designers
 
@@ -98,36 +80,40 @@ Individual UI components with detailed usage guidelines, code examples, and impl
 
 ### For Developers
 
-1. **Clone the repository**: `git clone [repository-url]`
-2. **Create a feature branch**: `git checkout -b feature/your-feature-name`
-3. **Make changes**: Edit markdown files or add new documentation
-4. **Submit PR**: Push changes and open a pull request for review
+1. **Fork the repository**: Click the "Fork" button on GitHub
+2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/design-system-docs.git`
+3. **Create a feature branch**: `git checkout -b feature/your-feature-name`
+4. **Make changes**: Edit markdown files or add new documentation
+5. **Test locally**: Run `bundle exec jekyll serve` to preview changes
+6. **Submit PR**: Push changes and open a pull request for review
 
-## Local Development
+Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information and our [Code of Conduct](CODE_OF_CONDUCT.md) for community guidelines.
 
-### Jekyll Site
-
-To run the documentation site locally:
-
-```bash
-# Install dependencies
-bundle install
-
-# Serve the site locally
-bundle exec jekyll serve
-
-# View at http://localhost:4000
-```
+## 🛠️ Technical Features
 
 ### MCP Server Integration
 
-This repository is designed to work with our MCP server that makes documentation available directly within AI coding assistants. Changes made here will be automatically available through the MCP interface.
+This repository is designed to work with Model Context Protocol (MCP) servers that make documentation available directly within AI coding assistants. Changes made here are automatically available through the MCP interface, enabling:
 
-## File Formatting
+- Real-time access to design system guidance within development environments
+- AI-powered assistance with component selection and implementation
+- Contextual design recommendations during coding
+
+### Jekyll-Powered Site
+
+Our documentation is built with Jekyll and automatically deployed via GitHub Pages, providing:
+
+- Fast, static site generation
+- Markdown-based content management
+- Responsive, accessible design
+- Search functionality
+- Version control integration
+
+## 📝 File Formatting
 
 All documentation files use Markdown with YAML front matter:
 
-~~~yaml
+```yaml
 ---
 status: "stable"
 last_updated: "YYYY-MM-DD"
@@ -156,19 +142,37 @@ related: ["related-item-1", "related-item-2"]
 ```html
 <code>
 ```
-~~~
+```
 
-## Deployment
+## 🚀 Deployment
 
 - **GitHub Pages**: Static site automatically deployed from main branch
 - **MCP Server**: Documentation served through Model Context Protocol for AI integration
 
-## Getting Help
+## 📖 Helpful Resources
 
-- Check existing documentation and issues before creating new ones
-- Use GitHub Discussions for questions and feature requests
-- Follow our contribution guidelines for consistent formatting
+- [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
+- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+
+## 🆘 Getting Help
+
+- **Documentation**: Check our [existing documentation](https://pglevy.github.io/design-system-docs/) first
+- **Issues**: Search [existing issues](https://github.com/pglevy/design-system-docs/issues) before creating new ones
+- **Discussions**: Start a [discussion](https://github.com/pglevy/design-system-docs/discussions) for questions and ideas
+- **Contributing**: Read our [Contributing Guide](CONTRIBUTING.md) for detailed guidance
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+This project builds upon the collective wisdom of the design systems community. We're grateful for the open-source tools, patterns, and practices that make this work possible.
 
 ---
 
-This documentation platform bridges the gap between design guidance and development implementation, ensuring our design system is accessible exactly when and where it's needed most.
+**Made with ❤️ by the design systems community**
+
+*This documentation platform bridges the gap between design guidance and development implementation, ensuring our design system is accessible exactly when and where it's needed most.*
