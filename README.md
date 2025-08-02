@@ -133,15 +133,15 @@ related: ["related-item-1", "related-item-2"]
 
 ### Sample 1
 
-```html
-<code>
-```
+    ```html
+    <code>
+    ```
 
 ### Sample 2
 
-```html
-<code>
-```
+    ```html
+    <code>
+    ```
 ```
 
 ## 🚀 Deployment
@@ -169,10 +169,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-This project builds upon the collective wisdom of the design systems community. We're grateful for the open-source tools, patterns, and practices that make this work possible.
+This project builds upon the collective wisdom of the Appian UX Design Team and larger design community. We're grateful for the open-source tools, patterns, and practices that make this work possible. And also the LLMs.
 
 ---
 
-**Made with ❤️ by the design systems community**
-
-*This documentation platform bridges the gap between design guidance and development implementation, ensuring our design system is accessible exactly when and where it's needed most.*
+**Made with ❤️ by the Appian UX Design Team**
