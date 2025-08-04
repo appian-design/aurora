@@ -43,32 +43,101 @@ Use for secondary actions that supplement the primary action. These actions are 
 
 ### Form 
 ```
-a!formLayout(
-  titleBar: a!headerTemplateFull(
-    title: "Form",
-    secondaryText: "Enter your details",
-    backgroundColor: "ACCENT"
-  ),
-  showTitleBarDivider: false,
-  contents: {
-    a!textField(
-      label: "Name",
-      value: local!name,
-      saveInto: local!name
+a!localVariables(
+  local!name,
+  local!email,
+  a!formLayout(
+    titleBar: a!headerTemplateFull(
+      title: "Form",
+      secondaryText: "Enter your details",
+      backgroundColor: "ACCENT"
     ),
-    a!textField(
-      label: "Email",
-      value: local!email,
-      saveInto: local!email
+    showTitleBarDivider: false,
+    contents: {
+      a!textField(
+        label: "Name",
+        value: local!name,
+        saveInto: local!name
+      ),
+      a!textField(
+        label: "Email",
+        value: local!email,
+        saveInto: local!email
+      )
+    },
+    buttons: a!buttonLayout(
+      primaryButtons: {
+        a!buttonWidget(
+          label: "Submit",
+          submit: true,
+          style: "SOLID",
+          loadingIndicator: true
+        )
+      },
+      secondaryButtons: {
+        a!buttonWidget(
+          label: "Cancel",
+          value: true,
+          saveInto: {},
+          submit: true,
+          style: "OUTLINE",
+          validate: false
+        )
+      }
     )
-  },
-  buttons: a!buttonLayout(
+  )
+)
+```
+
+### Wizard 
+```
+a!localVariables(
+  local!name,
+  local!email,
+  a!wizardLayout(
+    titleBar: a!headerTemplateFull(
+      title: "Wizard",
+      secondaryText: "Enter your details"
+    ),
+    steps: {
+      a!wizardStep(
+        label: "Personal Info",
+        contents: {
+          a!textField(
+            label: "Name",
+            value: local!name,
+            saveInto: local!name
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Contact Info",
+        contents: {
+          a!textField(
+            label: "Email",
+            value: local!email,
+            saveInto: local!email
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Review",
+        contents: {
+          a!richTextDisplayField(
+            value: a!richTextItem(
+              text: "Please review your information before submitting."
+            )
+          )
+        }
+      )
+    },
     primaryButtons: {
       a!buttonWidget(
         label: "Submit",
         submit: true,
         style: "SOLID",
-        loadingIndicator: true
+        loadingIndicator: true,
+        showWhen: fv!isLastStep
       )
     },
     secondaryButtons: {
@@ -77,71 +146,10 @@ a!formLayout(
         value: true,
         saveInto: {},
         submit: true,
-        style: "OUTLINE",
+        style: "LINK",
         validate: false
       )
     }
   )
-)
-```
-
-### Wizard 
-```
-a!wizardLayout(
-  titleBar: a!headerTemplateFull(
-    title: "Wizard",
-    secondaryText: "Enter your details"
-  ),
-  steps: {
-    a!wizardStep(
-      label: "Personal Info", 
-      contents: {
-        a!textField(
-          label: "Name",
-          value: local!name,
-          saveInto: local!name
-        )
-      }
-    ),
-    a!wizardStep(
-      label: "Contact Info", 
-      contents: {
-        a!textField(
-          label: "Email",
-          value: local!email,
-          saveInto: local!email
-        )
-      }
-    ),
-    a!wizardStep(
-      label: "Review", 
-      contents: {
-        a!richTextDisplayField(
-          value: a!richTextItem(
-            text: "Please review your information before submitting."
-          )
-        )
-      }
-    )
-  },
-  primaryButtons: {
-    a!buttonWidget(
-      label: "Submit",
-      submit: true,
-      style: "SOLID",
-      loadingIndicator: true,
-      showWhen: fv!isLastStep
-    )
-  },
-  secondaryButtons: {
-    a!buttonWidget(
-      label: "Cancel",
-      value: true,
-      saveInto: {},
-      submit: true,
-      style: "LINK",
-      validate: false
-    )
-  }
 )
 ```
