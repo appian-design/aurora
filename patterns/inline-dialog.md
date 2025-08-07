@@ -174,7 +174,7 @@ rule!Inline_Dialog_Component(
   formButtonLabel: "Add User",
   buttonType: "LINK",
   buttonIcon: "plus",
-  formFields: {}, /*sample: rule!ASDS_FormFields*/
+  formFields: {},
   formAction: "Add"
 )
 ```
