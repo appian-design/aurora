@@ -36,7 +36,7 @@ assignees: ''
 - **[Variant Name]:** [Brief description of when/why to use this variant]
 - **[Additional Variant]:** [Description - add as many as needed]
 
-### Usage Scenarios (Optional)
+### Usage (Optional)
 <!-- Include if there are specific usage patterns, guidelines, or edge cases to document -->
 **When to Use:**
 - [Specific guidance on appropriate usage]
