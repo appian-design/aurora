@@ -27,7 +27,8 @@ Use the sidebar option on a form that uses a full page layout to provide referen
 
 #### Semi-Rounded Cards
 
-![](https://github.com/user-attachments/assets/e8c828d6-3c3f-4ca0-8f0e-1b0452e717e3)
+![](https://github.com/user-attachments/assets/233f25ca-04a7-4437-8826-bf80eeb554ff)
+
 
 Use semi-rounded cards if the card is being used as an information container, for example, KPI cards, lists, and reference information.
 
