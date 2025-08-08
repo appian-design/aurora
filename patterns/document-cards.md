@@ -538,9 +538,8 @@ a!columnsLayout(
                                           item: a!imageField(
                                             labelPosition: "COLLAPSED",
                                             images: {
-                                              /* Replace with reference to sparkle icon cons!ASDS_AI_SPARKLES_LIGHT,*/ 
-                                              a!documentImage(
-                                                document: a!EXAMPLE_DOCUMENT_IMAGE(),
+                                              a!webImage(
+                                                source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/ai-imagery/sparkle-light-1.png"
                                               )
                                             },
                                             size: "ICON",
