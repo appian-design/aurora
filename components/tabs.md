@@ -24,7 +24,7 @@ Use the platform’s record tabs to establish views within a record. Avoid desig
 
 #### Tabs as Side Navigation
 
-![](https://github.com/user-attachments/assets/d3d4eb16-a2ef-49e9-9593-8aec13c4cc44)
+![](https://github.com/user-attachments/assets/0bb4dabd-ca89-42ca-9697-b1a408623e11)
 
 Use this option when there are 4 or more tabs.
 
@@ -49,7 +49,7 @@ Use horizontal tabs to implement views within a page or section. Avoid using mor
 
 #### Chart Toggle Using Tabs
 
-![](https://github.com/user-attachments/assets/02557c17-5fc3-44f4-9447-75e678c7facd)
+![](https://github.com/user-attachments/assets/ccf38b00-39fc-4438-a0ae-c244272f6992)
 
 Use this pattern to toggle data display between a chart view and list view.
 
