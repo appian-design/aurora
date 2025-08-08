@@ -68,7 +68,6 @@ Extended color palette for categorical tags:
 - Tags must have sufficient color contrast (4.5:1 ratio minimum)
 - Use `accessibilityText` parameter when tag meaning isn't clear from visual context
 - Don't rely solely on color to convey information
-- When using linked tags, ensure the link purpose is clear to screen readers by providing descriptive text
 
 ## Development
 
