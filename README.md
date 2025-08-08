@@ -1,6 +1,5 @@
 # Design System Documentation
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
 A centralized, developer-accessible design system documentation platform that makes design guidance available directly within coding environments through AI assistants and other tools.
