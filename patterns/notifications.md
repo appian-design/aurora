@@ -7,12 +7,12 @@ last_updated: "2023-8-10"
 
 Notifications are used to inform users about events in a solution
 
-![](https://github.com/user-attachments/assets/ad883d1a-8a0e-4ad3-880f-d95648415a56)
+![](https://github.com/user-attachments/assets/b50e4f92-4eaf-4aa5-8cc8-9a0b8df54b76)
 
 ## Design
 
 ### Guidance
-![](https://github.com/user-attachments/assets/d7a927ad-2612-40ee-9469-418ffc29bbd6)
+![](https://github.com/user-attachments/assets/c94591ce-5385-4c29-b6e9-06e188c8c603)
 
 Use tags next to each tab to indicate the number of notifications. Display “10+” if there are more than 10.
 
