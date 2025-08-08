@@ -1789,6 +1789,3 @@ a!localVariables(
 ```
 
 ---
-
-**Image Credits:**
-- Profile image: Appian Cloud hosted image (source needs verification)
