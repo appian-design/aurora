@@ -161,7 +161,7 @@ a!headerContentLayout(
               labelPosition: "COLLAPSED",
               images: {
                 a!webImage(
-                  source:"https://raw.githubusercontent.com/pglevy/design-system-docs/refs/heads/content-audit-and-cleanup/assets/images/empty-state-image.png"
+                  source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/empty-state-image.png"
                 )
               },
               size: "LARGE_PLUS",
