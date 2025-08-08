@@ -48,7 +48,7 @@ We welcome contributions to improve our design system documentation:
 5. **Test locally**: Run `bundle exec jekyll serve` to preview changes
 6. **Submit PR**: Push changes and open a pull request for review
 
-## Development Workflow
+## Workflow Conventions
 
 ### Tracking Work
 
@@ -103,8 +103,7 @@ design-system-docs/
 
 - Have at least one other person review your changes
 - Anyone with write access can merge when ready
-- Please delete remote branches after merge
-- Small edits and typos can be committed directly to main
+- Delete remote branches after merge
 
 ## Local Development
 
