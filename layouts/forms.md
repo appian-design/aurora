@@ -115,7 +115,7 @@ Checklist:
 
 ### When to Use Inline Dialogs vs. Modals
 
-|          |![](https://github.com/user-attachments/assets/5f2f25dc-ce0f-4a7e-b73e-aa3a3175cbec) Use an Inline Dialog When| ![](https://github.com/user-attachments/assets/26dd1986-fe53-49ca-b226-a66b3df7a705) Use a Modal When |
+|          | ![](https://github.com/user-attachments/assets/353d5082-710b-4bde-8311-b570a7d1f3e9) Use an Inline Dialog When| ![](https://github.com/user-attachments/assets/26dd1986-fe53-49ca-b226-a66b3df7a705) Use a Modal When |
 |----------|---------|----------|
 |**Number of Fields**|Only one or two fields need editing|More than two fields are required for data entry|
 |**Task Complexity**|The action involves one step|The action involves one or multiple steps that are in a single or double column with input fields| 
