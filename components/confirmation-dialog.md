@@ -7,9 +7,6 @@ last_updated: "2024-01-29"
 
 Confirmation dialogs are used to present the user with a directive action to prevent adverse situations
 
-> [!NOTE]
-> This pattern uses components that are internal to Appian Engineering. This pattern should be provided to developers for implementation purposes only.
-
 ![](https://github.com/user-attachments/assets/def4ee48-5910-45fd-9213-8c0d8a8ac736)
 
 ## Design
