@@ -42,12 +42,12 @@ Colors with semantic meaning:
 - **Secondary (Gray)**: Neutral information, inactive states
 
 Extended color palette for categorical tags:
-- Orange
-- Yellow
-- Teal
-- Sky
-- Purple
-- Pink 
+- Orange (Orange 3) 
+- Yellow (Yellow 3) 
+- Teal (Teal 3) 
+- Sky (Sky 3) 
+- Purple (Purple 3) 
+- Pink (Pink 3)
 
 ### Usage Guidelines
 
@@ -203,6 +203,6 @@ a!localVariables(
 ### Tag Item Properties
 
 - **text**: Display text for the tag
-- **backgroundColor**: Color scheme - "ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY", #FAA92F", "#FFD948", "#56ADC0", "#3F8EEE", "#B561FF", "#E21496"
+- **backgroundColor**: Color scheme - "ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY", Orange 3, Yellow 3, Teal 3, Sky 3, Purple 3, Pink 3
 - **textColor**: Optional text color override
 - **link**: Optional link for interactive tags
