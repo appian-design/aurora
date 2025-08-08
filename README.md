@@ -98,6 +98,10 @@ This repository is designed to work with Model Context Protocol (MCP) servers th
 - AI-powered assistance with component selection and implementation
 - Contextual design recommendations during coding
 
+### AI Assistant Integration
+
+For AI assistants working with this repository, see [AGENTS.md](AGENTS.md) for guidance on documentation structure, formatting conventions, and best practices.
+
 ### Jekyll-Powered Site
 
 Our documentation is built with Jekyll and automatically deployed via GitHub Pages, providing:

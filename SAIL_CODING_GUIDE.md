@@ -1,4 +1,4 @@
-# CLAUDE.md - Appian SAIL Interface Generation Guide
+# SAIL Coding Guide - Appian Interface Generation
 
 ## Overview
 This guide helps generate valid Appian SAIL interfaces using documented components and best practices. SAIL (Self-Assembling Interface Layer) is Appian's declarative UI framework for building responsive, accessible interfaces.
@@ -505,14 +505,6 @@ a!headerContentLayout(
   }
 )
 ```
-
-## Common Validation Patterns
-
-Avoid adding validation.
-
-## Performance Considerations
-
-Don't worry about performance considerations.
 
 ## Logical Operators
 
