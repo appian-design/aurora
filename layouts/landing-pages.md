@@ -4596,9 +4596,9 @@ a!localVariables(
 a!headerContentLayout(
   header: {
     a!billboardLayout(
-      /*backgroundMedia: a!documentImage(*/
-      /*document: cons!SUS_PROGRESSIVE_DISCLOSURE_IMAGE*/
-      /*),*/
+      backgroundMedia: a!webImage(
+        source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image.png"
+      ),
       backgroundColor: "#f0f0f0",
       height: "MEDIUM",
       marginBelow: "NONE",
