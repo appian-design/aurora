@@ -17,7 +17,7 @@ Use the Appian logo and favicon to support branding guidelines.
 
 Use Appian Logo White for Mercury Sites.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/refs/heads/content-audit-and-cleanup/assets/images/logo-and-favicon/appian-logo-white.png)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-white.png)
 
 ### Appian Logo Blue
 
@@ -25,7 +25,7 @@ Use Appian Logo White for Mercury Sites.png
 
 Use Appian Logo Vibrant Blue for Mercury Sites.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/refs/heads/content-audit-and-cleanup/assets/images/logo-and-favicon/appian-logo-vibrant-blue.png)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-vibrant-blue.png)
 
 ### Appian Favicon
 
@@ -33,7 +33,7 @@ Use Appian Logo Vibrant Blue for Mercury Sites.png
 
 Use Appian_favicon_48x48.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/refs/heads/content-audit-and-cleanup/assets/images/logo-and-favicon/appian-favicon48x48.png)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-favicon48x48.png)
 
 ## Accessibility
 
