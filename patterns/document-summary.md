@@ -266,10 +266,9 @@ a!localVariables(
                           label: "",
                           labelPosition: "COLLAPSED",
                           images: {
-                            a!documentImage(
-                              /* Use cons!ASDS_DOCUMENT_PREVIEW_EMPTY_STATE illustration if available */
-                              document: a!EXAMPLE_DOCUMENT_IMAGE()
-                            )
+                           a!webImage(
+                              source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/empty-state-image-2.png"
+                           )
                           },
                           size: "MEDIUM_PLUS",
                           isThumbnail: false,
