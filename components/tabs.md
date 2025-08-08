@@ -293,43 +293,43 @@ a!sectionLayout(
             local!requirement: {
               a!map(
                 id: 1,
-                name: "Amy Horton",
+                name: "Kari Becker",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 2,
-                name: "Ben Lloyd",
+                name: "Tom Smith",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 3,
-                name: "Terry Pham",
+                name: "Bree Mercer",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 4,
-                name: "Jon Stolte",
+                name: "James Lee",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 5,
-                name: "Kyra Chan",
+                name: "Diana Hellstrom",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 6,
-                name: "Saurabh Sabat",
+                name: "Francois Morin",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 7,
-                name: "Annika Siddharth",
+                name: "Maya Kapoor",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               )
