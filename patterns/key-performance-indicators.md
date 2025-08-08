@@ -8,13 +8,13 @@ last_updated: "2024-12-19"
 KPIs or Key Performance Indicators are meant to show a quick and high level snapshot of organizational performance over time or in meeting their measurable goals. 
 KPIs are best suited for Landing Pages, Record Summary Views, or Dashboards.
 
-![](https://github.com/user-attachments/assets/e80fb806-b92a-455d-a8dc-7068b8354e47)
+![](https://github.com/user-attachments/assets/9d4ce694-1117-45a8-bb30-05c4b759662d)
 
 ## Design
 
 ### Placement
 
-![](https://github.com/user-attachments/assets/176fc231-20c7-4aa2-9bc4-27a8fd293628)
+![](https://github.com/user-attachments/assets/be2d0709-3b1b-4c4e-b75f-87b76e7a12a5)
 
 Place KPIs where they might be optimally discoverable while not impeding their tasks (e.g.: at the top or on the side).
 * Avoid using more than 5 KPIs. Fewer the KPIs, the easier it is for the user to consume and act on the information.
@@ -22,7 +22,8 @@ Place KPIs where they might be optimally discoverable while not impeding their t
 
 ### Action
 
-![](https://github.com/user-attachments/assets/09d63ade-0857-4ade-ac46-928edeb6e5a0)
+![](https://github.com/user-attachments/assets/1afa8915-6eaf-4e50-916b-80062b631bd0)
+
 
 When designing KPIs, think about the underlying action or importance and present that to the user if applicable. For example:
 * What is the user going to do based on the information presented?
