@@ -17,7 +17,7 @@ Use the Appian logo and favicon to support branding guidelines.
 
 Use Appian Logo White for Mercury Sites.png
 
-[Download](https://eng-test-solutions-ux2.appianpreview.com/suite/rest/a/content/latest/igB2PKFLnvAZ7aGJv1Yl0t1YlQLoIX8zfy8QxgMOctehb7x6k4FOxFY/o?isUIAnchorLink=true)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-white.png)
 
 ### Appian Logo Blue
 
@@ -25,7 +25,7 @@ Use Appian Logo White for Mercury Sites.png
 
 Use Appian Logo Vibrant Blue for Mercury Sites.png
 
-[Download](https://eng-test-solutions-ux2.appianpreview.com/suite/rest/a/content/latest/igB2PKFLnvAZ7aGJvpbl0p1Yj-jYeZ7VNwhPwGU-tseqIQHdn6ODHfx/o?isUIAnchorLink=true)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-vibrant-blue.png)
 
 ### Appian Favicon
 
@@ -33,7 +33,7 @@ Use Appian Logo Vibrant Blue for Mercury Sites.png
 
 Use Appian_favicon_48x48.png
 
-[Download](https://eng-test-solutions-ux2.appianpreview.com/suite/rest/a/content/latest/igB2PKFLnvAZ7aGJvpbl0l1YgsdrnRcZ99behEzS_b-X2ahudXh_8_b/o?isUIAnchorLink=true)
+[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-favicon48x48.png)
 
 ## Accessibility
 
@@ -41,4 +41,4 @@ For alternative text, select Custom and specify the text as "Appian" in all Appi
 
 ## Resources
 
-[View Google Drive - Appian Solutions Branding Resources](https://drive.google.com/drive/folders/13tU_WZ04DZ7Q_tVGcylIo0Tc6ShVAn1B)
+[Branding Images](../assets/images/logo-and-favicon)

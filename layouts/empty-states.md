@@ -160,7 +160,9 @@ a!headerContentLayout(
               label: "",
               labelPosition: "COLLAPSED",
               images: {
-                a!documentImage(document: cons!onboard_63)
+                a!webImage(
+                  source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/empty-state-image-1.png"
+                )
               },
               size: "LARGE_PLUS",
               isThumbnail: false,

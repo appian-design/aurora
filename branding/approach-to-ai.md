@@ -74,8 +74,7 @@ Generate RFI modal for a Requirements Management demo
 - For generated content consider adding instructional text such as "Review generated content to make sure it's accurate and appropriate"
 
 ## Resources
-
-- [AI Imagery - Google Drive](https://drive.google.com/drive/u/0/folders/1q4OyE6m2pIY0g-PI4D7h5qdsKGbOT-0L)
+- [AI Imagery](../assets/images/ai-imagery)
 
 ## UX Guidance
 

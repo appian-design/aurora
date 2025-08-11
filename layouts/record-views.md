@@ -12,7 +12,7 @@ Display information about a record in an interface
 
 ## Design
 
-![](https://github.com/user-attachments/assets/a6d211a9-f050-4e40-9a3c-4ae79c6cf5eb)
+![](https://github.com/user-attachments/assets/7f797f36-e1e9-4615-a2b9-9c5e079f3bf4)
 
 
 By default, each record type will have at least three views namely, Summary, News and Related Actions. The views are displayed as tabs under the record header. 
@@ -27,11 +27,11 @@ The Summary view is displayed by default when the user clicks on a record item f
 
 The progress bar at the top immediately presents status. Also, notice the use of a two column layout with the wider column presenting important information and relevant metadata presented in the second and narrower column.
 
-![](https://github.com/user-attachments/assets/caa7ca37-e0a3-4202-badb-3a20266329f2)
+![](https://github.com/user-attachments/assets/9b4a3380-8bc0-4739-aa12-d778332cb24d)
 
 A mix of horizontal and vertical tabs used to balance information density. Local action are presented as links in-context (on top of each card section).
 
-![](https://github.com/user-attachments/assets/819d6608-250a-4b3d-b403-e4735f6371f5)
+![](https://github.com/user-attachments/assets/b7800b9c-5eb1-49e7-ac0b-018ada8f3d78)
 
 The button label in the record view matches the verb in the form header. Also, the submit button label in the footer matches the verb in the form header.
 
@@ -123,7 +123,7 @@ a!localVariables(
         "-",
         "Combined Synopsis/Solicitation"
       ),
-      
+
     ),
     a!map(
       label: "Opportunity Stage",
@@ -144,7 +144,7 @@ a!localVariables(
           "Reviewing Responses"
         )
       ),
-      
+
     ),
     a!map(
       label: "Sealed Bid",
@@ -218,7 +218,7 @@ a!localVariables(
       contentColor: "#856C00",
       backgroundColor: "#FFF6C9"
     ),
-    
+
   },
   local!keyDates: {
     a!map(
@@ -310,7 +310,7 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
       documents: 0,
       description: "This update clarifies the scope of work regarding cybersecurity incident response requirements. The scope now includes detailed requirements for proactive threat hunting and monthly security posture reporting. Additionally, all personnel are now required to have Top Secret clearance instead of the originally stated Secret clearance. This update provides further specificity on the contractor’s responsibilities in real-time threat detection and intelligence sharing."
     ),
-    
+
   },
   local!attachments: {
     a!map(
@@ -523,73 +523,42 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                             ),
                             contents: if(
                               fv!index = 1,
-                              if(
-                                local!status = "Draft",
-                                {
-                                  a!imageField(
-                                    align: "CENTER",
-                                    labelPosition: "COLLAPSED",
-                                    marginAbove: "MORE",
-                                    images: a!documentImage(document: cons!VMM_CALENDAR),
-                                    size: "TINY",
-                                    showWhen: local!status = "Draft",
-                                    
-                                  ),
-                                  a!richTextDisplayField(
-                                    labelPosition: "COLLAPSED",
-                                    align: "CENTER",
-                                    value: "No key dates available",
-                                    showWhen: local!status = "Draft",
-                                    marginBelow: if(
-                                      a!isPageWidth(
+                              a!columnsLayout(
+                                columns: {
+                                  a!forEach(
+                                    { 1, 2 },
+                                    a!columnLayout(
+                                      contents: a!forEach(
+                                        if(
+                                          fv!index = 1,
+                                          { local!keyDates[1], local!keyDates[3] },
+                                          { local!keyDates[2], local!keyDates[4] }
+                                        ),
                                         {
-                                          "DESKTOP_NARROW",
-                                          "TABLET_PORTRAIT",
-                                          "PHONE"
-                                        }
-                                      ),
-                                      "MORE",
-                                      "NONE"
-                                    )
-                                  )
-                                },
-                                a!columnsLayout(
-                                  columns: {
-                                    a!forEach(
-                                      { 1, 2 },
-                                      a!columnLayout(
-                                        contents: a!forEach(
-                                          if(
-                                            fv!index = 1,
-                                            { local!keyDates[1], local!keyDates[3] },
-                                            { local!keyDates[2], local!keyDates[4] }
-                                          ),
-                                          {
-                                            a!richTextDisplayField(
-                                              labelPosition: "COLLAPSED",
-                                              value: {
-                                                a!richTextItem(text: fv!item.label, color: "#6C6C75"),
-                                                char(10),
-                                                a!richTextItem(text: fv!item.contents, style: "STRONG")
-                                              },
-                                              marginBelow: if(
-                                                a!isPageWidth(
-                                                  {
-                                                    "DESKTOP_NARROW",
-                                                    "TABLET_PORTRAIT",
-                                                    "PHONE"
-                                                  }
-                                                ),
-                                                if(fv!isLast, "NONE", "STANDARD"),
-                                                if(fv!isLast, "NONE", "MORE")
-                                              )
+                                          a!richTextDisplayField(
+                                            labelPosition: "COLLAPSED",
+                                            value: {
+                                              a!richTextItem(text: fv!item.label, color: "#6C6C75"),
+                                              char(10),
+                                              a!richTextItem(text: fv!item.contents, style: "STRONG")
+                                            },
+                                            marginBelow: if(
+                                              a!isPageWidth(
+                                                {
+                                                  "DESKTOP_NARROW",
+                                                  "TABLET_PORTRAIT",
+                                                  "PHONE"
+                                                }
+                                              ),
+                                              if(fv!isLast, "NONE", "STANDARD"),
+                                              if(fv!isLast, "NONE", "MORE")
                                             )
-                                          }
-                                        )
+                                          )
+                                        }
                                       )
                                     )
-                                  }
-                                )
+                                  )
+                                }
                               ),
                               {
                                 a!richTextDisplayField(
@@ -799,14 +768,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                       showDividers: not(a!isPageWidth("PHONE")),
                       showWhen: local!status <> "Draft"
                     ),
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY",
-                      showWhen: local!status = "Draft"
-                    ),
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
                       align: "CENTER",
@@ -934,28 +895,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                   ),
                   showWhen: local!status <> "Draft"
                 ),
-                a!cardLayout(
-                  padding: "STANDARD",
-                  marginBelow: "MORE",
-                  borderColor: "#EDEDF2",
-                  shape: "SEMI_ROUNDED",
-                  showWhen: local!status = "Draft",
-                  contents: {
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY"
-                    ),
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      align: "CENTER",
-                      value: "No attachments available",
-                      marginBelow: "MORE"
-                    )
-                  }
-                ),
                 a!headingField(
                   text: "Description",
                   size: "SMALL",
@@ -1035,15 +974,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                         showWhen: local!status <> "Draft"
                       )
                     ),
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY",
-                      showWhen: local!status = "Draft",
-                      
-                    ),
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
                       align: "CENTER",
@@ -1088,22 +1018,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                 ),
                 a!cardLayout(
                   contents: if(
-                    local!status = "Draft",
-                    {
-                      a!imageField(
-                        align: "CENTER",
-                        labelPosition: "COLLAPSED",
-                        marginAbove: "MORE",
-                        images: a!documentImage(document: cons!VMM_COMMENTS_EMPTY_STATE),
-                        size: "TINY"
-                      ),
-                      a!richTextDisplayField(
-                        labelPosition: "COLLAPSED",
-                        align: "CENTER",
-                        value: "No updates available",
-                        marginBelow: "MORE"
-                      )
-                    },
                     local!showUpdateDetails,
                     {
                       a!richTextDisplayField(
@@ -1273,7 +1187,7 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                                       ),
                                       color: "#6C6C75",
                                       /*size: "MEDIUM"*/
-                                      
+
                                     )
                                   )
                                 )
@@ -1398,7 +1312,7 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                   padding: "STANDARD",
                   marginBelow: "MORE",
                   borderColor: "#EDEDF2",
-                  
+
                 ),
                 a!headingField(
                   text: "Solicitation",
@@ -1441,14 +1355,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                       labelPosition: "COLLAPSED",
                       value: a!richTextItem(text: "HD940225R0010", color: "#6C6C75"),
                       showWhen: local!hasLinkedSolicitation
-                    ),
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY",
-                      showWhen: not(local!hasLinkedSolicitation)
                     ),
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
@@ -1530,14 +1436,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                       value: a!richTextItem(text: "HD940225R0010", color: "#6C6C75"),
                       showWhen: local!hasLinkedEvaluation
                     ),
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY",
-                      showWhen: not(local!hasLinkedEvaluation)
-                    ),
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
                       align: "CENTER",
@@ -1582,14 +1480,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
                         )
                       }
                     ),
-                    a!imageField(
-                      align: "CENTER",
-                      labelPosition: "COLLAPSED",
-                      marginAbove: "MORE",
-                      images: a!documentImage(document: cons!VMM_DETAILS_EMPTY),
-                      size: "TINY",
-                      showWhen: local!status = "Draft"
-                    ),
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
                       align: "CENTER",
@@ -1612,776 +1502,6 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
       }
     },
     backgroundColor: "#FAFAFC"
-  )
-)
-```
-
-### Record Action
-
-```
-a!localVariables(
-  local!step: 1,
-  local!gridSelection,
-  local!vendors: {
-    {
-      icon: "check-circle",
-      vendorName: "Accenture Federal Services LLC",
-      duns: "139727148",
-      cage: "47374747",
-      uei: "311884425",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Pentagon City, Virginia",
-      county: "Arlington",
-      expirationDate: "June 05, 2024",
-      cDate: "June 05, 2024",
-      expstatus: "Expiring Soon",
-      vGroup1: { "Pricing", "wefwef" },
-      vGroup2: "Evaluation Team",
-      vGroup3: "Local",
-      vGroup4: "Legal and Marketing",
-      vCount: "4 Groups",
-      psc: "R408, R406",
-      naics: "541511",
-      setAsides: {
-        a!map(
-          code: "WOSB",
-          description: "The Women-Owned Small Business"
-        ),
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        ),
-        a!map(
-          name: "HUBZones",
-          description: "Historically Underutilized Business Zones"
-        ),
-        a!map(
-          name: "+3",
-          description: "8a, Small Disadvantaged Business (SDB), The Women-Owned Small Business (WOSB)"
-        )
-      }
-    },
-    /*2*/
-    {
-      icon: "check-circle",
-      vCount: "2 Groups",
-      vendorName: "Appian Corporation",
-      duns: "139727148",
-      cage: "874647402",
-      uei: "876983263",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Shelbyville, Tennessee",
-      county: "Bedford",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      vGroup1: "Pricing",
-      vGroup2: "Evaluation Team",
-      vGroup3: "Local",
-      vGroup4: "Legal and Marketing",
-      psc: "R408",
-      naics: "541511",
-      setAsides: {
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        ),
-        a!map(
-          name: "HUBZones",
-          description: "Historically Underutilized Business Zones"
-        )
-      }
-    },
-    /*3*/
-    {
-      icon: "times-circle",
-      vendorName: "BAE Systems Controls Inc.",
-      duns: "139727148",
-      vCount: "4 Groups",
-      cage: "453738207",
-      uei: "469556316",
-      status: "Inactive",
-      istatus: "Active",
-      bizType: "",
-      address: "Hanford, California",
-      county: "Kings",
-      expirationDate: "Jan 22, 2024",
-      cDate: "June 05, 2024",
-      expstatus: "Expired",
-      vGroup1: "-",
-      psc: "R408, R406, R305, R402",
-      naics: "541511, 541512",
-      setAsides: {
-        a!map(
-          code: "WOSB",
-          description: "The Women-Owned Small Business"
-        )
-      }
-    },
-    /*4*/
-    {
-      icon: "check-circle",
-      vendorName: "Boeing Aerospace Operations, Inc.",
-      duns: "139727148",
-      vCount: "2 Groups",
-      cage: "464738292",
-      uei: "311884425",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Shelbyville, Tennessee",
-      county: "Bedford",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R406",
-      naics: "541511",
-      setAsides: {}
-    },
-    /*5*/
-    {
-      icon: "check-circle",
-      vendorName: "CACI",
-      vCount: "2 Groups",
-      duns: "139727148",
-      cage: "47474748",
-      uei: "876983263",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Pentagon City, Virginia",
-      county: "Arlington",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406",
-      naics: "541511",
-      setAsides: {
-        a!map(
-          code: "WOSB",
-          description: "The Women-Owned Small Business"
-        ),
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        ),
-        a!map(
-          name: "HUBZones",
-          description: "Historically Underutilized Business Zones"
-        ),
-        a!map(
-          name: "+3",
-          description: "8a, Small Disadvantaged Business (SDB), The Women-Owned Small Business (WOSB)"
-        )
-      }
-    },
-    /*6*/
-    {
-      icon: "check-circle",
-      vendorName: "CGI Federal Inc.",
-      duns: "139727148",
-      vCount: "-",
-      cage: "1244353784",
-      uei: "469556316",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Pentagon City, Virginia",
-      county: "Arlington",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406",
-      naics: "541511",
-      setAsides: {
-        a!map(
-          code: "WOSB",
-          description: "The Women-Owned Small Business"
-        ),
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        ),
-        a!map(
-          name: "HUBZones",
-          description: "Historically Underutilized Business Zones"
-        ),
-        a!map(
-          name: "+2",
-          description: "8a, Small Disadvantaged Business (SDB)"
-        )
-      }
-    },
-    /*7*/
-    {
-      icon: "check-circle",
-      vendorName: "DARBY ENTERPRISE",
-      duns: "139727148",
-      vCount: "6 Groups",
-      cage: "3435627284",
-      uei: "311884425",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Hanford, California",
-      county: "Kings",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406, R305, R402",
-      naics: "541511, 541512",
-      setAsides: {
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        )
-      }
-    },
-    /*8*/
-    {
-      icon: "times-circle",
-      vendorName: "Deloitte",
-      vCount: "2 Groups",
-      duns: "139727148",
-      cage: "4625274382",
-      uei: "876983263",
-      status: "Inactive",
-      istatus: "Active",
-      bizType: "",
-      address: "Hanford, California",
-      county: "Kings",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406, R305, R402",
-      naics: "541511, 541512",
-      setAsides: {}
-    },
-    /*9*/
-    {
-      icon: "check-circle",
-      vendorName: "G2 Innovative Solutions, Inc.",
-      duns: "139727148",
-      vCount: "1 Group",
-      cage: "1534649264",
-      uei: "469556316",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Shelbyville, Tennessee",
-      county: "Bedford",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406, R305, R402",
-      naics: "541511, 541512",
-      setAsides: {}
-    },
-    /*10*/
-    {
-      icon: "check-circle",
-      vendorName: "KPMG",
-      vCount: "1 Group",
-      duns: "139727148",
-      cage: "363728326",
-      uei: "311884425",
-      status: "Active",
-      istatus: "Active",
-      bizType: "",
-      address: "Pentagon City, Virginia",
-      county: "Arlington",
-      expirationDate: "Feb 05, 2025",
-      cDate: "June 05, 2024",
-      psc: "R408, R406, R305, R402",
-      naics: "541511, 541512",
-      setAsides: {
-        a!map(
-          code: "WOSB",
-          description: "The Women-Owned Small Business"
-        ),
-        a!map(
-          name: "SDB",
-          description: "Small Disadvantaged Business"
-        ),
-        a!map(
-          name: "HUBZones",
-          description: "Historically Underutilized Business Zones"
-        ),
-        a!map(name: "+1 other", description: "8a")
-      }
-    },
-    
-  },
-  a!formLayout(
-    titleBar: a!headerTemplateSimple(
-      title: "Create Vendor Group",
-      secondaryText: "Required fields are marked with an asterisk (*)",
-      titleColor: "STANDARD",
-      secondaryTextColor: "#6C6C75",
-      stampIcon: "",
-      stampColor: "ACCENT"
-    ),
-    showTitleBarDivider: true,
-    showButtonDivider: true,
-    isTitleBarFixed: true,
-    isButtonFooterFixed: true,
-    backgroundColor: "#FAFAFC",
-    contentsWidth: "FULL",
-    contents: {
-      a!sectionLayout(
-        contents: {
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: choose(
-              local!step,
-              "Step 1 of 2: Overview",
-              "Step 2 of 2: " & if(ri!isUpdate, "Manage", "Add") & " Vendors"
-            )
-          ),
-          a!cardLayout(
-            contents: {
-              choose(
-                local!step,
-                {
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!columnsLayout(
-                            columns: {
-                              a!columnLayout(
-                                contents: a!textField(
-                                  label: "Name",
-                                  characterLimit: 200,
-                                  required: true
-                                )
-                              ),
-                              a!columnLayout(
-                                contents: a!radioButtonField(
-                                  choiceLabels: { "Active", "Inactive" },
-                                  choiceValues: { 1, 2 },
-                                  label: "Status",
-                                  value: 1,
-                                  required: true,
-                                  choiceLayout: "COMPACT"
-                                )
-                              )
-                            }
-                          ),
-                          a!columnsLayout(
-                            columns: {
-                              a!columnLayout(
-                                contents: a!dropdownField(
-                                  label: "Geography",
-                                  placeholder: "Select Geography"
-                                )
-                              ),
-                              a!columnLayout(
-                                contents: a!multipleDropdownField(
-                                  label: "Socioeconomic Classification",
-                                  placeholder: "Select Classifications"
-                                )
-                              )
-                            }
-                          ),
-                          a!columnsLayout(
-                            columns: {
-                              a!columnLayout(
-                                contents: a!dropdownField(
-                                  label: "Category",
-                                  helpTooltip: "The service or product category for this vendor group",
-                                  placeholder: "Select Category"
-                                )
-                              ),
-                              a!columnLayout(
-                                contents: a!dropdownField(
-                                  label: "Tier",
-                                  helpTooltip: "The service or product tier for this vendor group",
-                                  placeholder: "Select Tier"
-                                )
-                              )
-                            }
-                          ),
-                          a!paragraphField(
-                            label: "Description",
-                            /* put the correct character limit based on the paragraph field*/
-                            characterLimit: 4000
-                          )
-                        },
-                        width: "2X"
-                      ),
-                      a!columnLayout(
-                        showWhen: a!isPageWidth({ "DESKTOP", "DESKTOP_WIDE" })
-                      )
-                    }
-                  ),
-                  a!richTextDisplayField(labelPosition: "COLLAPSED")
-                },
-                a!columnsLayout(
-                  columns: {
-                    a!columnLayout(
-                      contents: {
-                        a!sideBySideLayout(
-                          items: {
-                            a!sideBySideItem(
-                              item: a!headingField(
-                                text: "All Vendors",
-                                size: "SMALL",
-                                headingTag: "H2",
-                                fontWeight: "SEMI_BOLD",
-                                marginBelow: "NONE"
-                              ),
-                              width: "MINIMIZE"
-                            ),
-                            a!sideBySideItem(
-                              item: a!tagField(
-                                labelPosition: "COLLAPSED",
-                                tags: a!tagItem(
-                                  text: length(local!vendors),
-                                  backgroundColor: cons!AS_GSM_HEX_GRAY_1,
-                                  textColor: cons!AS_GSM_HEX_GRAY_4
-                                )
-                              ),
-                              width: "MINIMIZE"
-                            )
-                          },
-                          alignVertical: "MIDDLE"
-                        ),
-                        a!columnsLayout(
-                          columns: {
-                            a!columnLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!textField(
-                                        label: "Search Vendors",
-                                        labelPosition: "COLLAPSED",
-                                        placeholder: "Search Vendors"
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!buttonArrayLayout(
-                                        buttons: a!buttonWidget(label: "search", size: "SMALL"),
-                                        marginBelow: "NONE"
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  spacing: "DENSE"
-                                )
-                              },
-                              width: "MEDIUM"
-                            ),
-                            a!columnLayout(
-                              contents: a!multipleDropdownField(
-                                label: "Set Aside Codes",
-                                labelPosition: "COLLAPSED",
-                                placeholder: "Set Aside Codes | Any"
-                              ),
-                              width: "2X"
-                            ),
-                            a!columnLayout()
-                          }
-                        ),
-                        a!gridField(
-                          label: "All Vendors",
-                          labelPosition: "COLLAPSED",
-                          instructions: "Search by vendor name, UEI, CAGE, PSC, or NAICS Codes",
-                          data: todatasubset(local!vendors, fv!pagingInfo),
-                          columns: {
-                            a!gridColumn(
-                              label: "Name",
-                              sortField: "vendorName",
-                              value: a!richTextDisplayField(
-                                labelPosition: "COLLAPSED",
-                                value: {
-                                  a!richTextItem(
-                                    text: fv!row.vendorName,
-                                    link: a!dynamicLink(),
-                                    linkStyle: "STANDALONE"
-                                  ),
-                                  char(10),
-                                  a!richTextItem(
-                                    text: concat("UEI: ", fv!row.uei),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  ),
-                                  a!richTextItem(
-                                    text: concat(" • CAGE: ", fv!row.cage),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  )
-                                },
-                                tooltip: "<Full vendor name>"
-                              ),
-                              width: "MEDIUM"
-                            ),
-                            a!gridColumn(
-                              label: "Location",
-                              sortField: "address",
-                              value: a!richTextDisplayField(
-                                value: {
-                                  a!richTextItem(text: fv!row.address),
-                                  char(10),
-                                  a!richTextItem(
-                                    text: concat(fv!row.county, " County"),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  )
-                                }
-                              )
-                            ),
-                            a!gridColumn(
-                              label: "PSC Codes",
-                              sortField: "psc",
-                              value: fv!row.psc
-                            ),
-                            a!gridColumn(
-                              label: "NAICS Codes",
-                              sortField: "naics",
-                              value: fv!row.naics
-                            ),
-                            a!gridColumn(
-                              label: "Set Aside Codes",
-                              value: a!tagField(
-                                labelPosition: "COLLAPSED",
-                                tags: a!forEach(
-                                  fv!row.setAsides,
-                                  a!tagItem(
-                                    text: fv!item.name,
-                                    backgroundColor: cons!AS_GSM_HEX_BLUE_1,
-                                    textColor: cons!AS_GSM_HEX_BLUE_4,
-                                    tooltip: fv!item.description
-                                  )
-                                ),
-                                size: "SMALL"
-                              )
-                            )
-                          },
-                          pageSize: 20,
-                          initialSorts: a!sortInfo("vendorName", true),
-                          selectable: true,
-                          selectionValue: local!gridSelection,
-                          selectionSaveInto: local!gridSelection,
-                          height: "MEDIUM",
-                          borderStyle: "LIGHT"
-                        )
-                      },
-                      width: "2X"
-                    ),
-                    a!columnLayout(
-                      contents: {
-                        a!sideBySideLayout(
-                          items: {
-                            a!sideBySideItem(
-                              item: a!headingField(
-                                text: "Selected Vendors",
-                                size: "SMALL",
-                                headingTag: "H2",
-                                fontWeight: "SEMI_BOLD",
-                                marginBelow: "NONE"
-                              ),
-                              width: "MINIMIZE"
-                            ),
-                            a!sideBySideItem(
-                              item: a!tagField(
-                                labelPosition: "COLLAPSED",
-                                tags: a!tagItem(
-                                  text: if(
-                                    a!isNullOrEmpty(local!gridSelection),
-                                    "0",
-                                    length(local!gridSelection)
-                                  ),
-                                  backgroundColor: cons!AS_GSM_HEX_GRAY_1,
-                                  textColor: cons!AS_GSM_HEX_GRAY_4
-                                )
-                              ),
-                              width: "MINIMIZE"
-                            )
-                          },
-                          alignVertical: "MIDDLE"
-                        ),
-                        a!columnsLayout(
-                          columns: a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!textField(
-                                      label: "Search vendor name, PSC, or NAICS code",
-                                      labelPosition: "COLLAPSED",
-                                      placeholder: "Search Vendors"
-                                    )
-                                  ),
-                                  a!sideBySideItem(
-                                    item: a!buttonArrayLayout(
-                                      buttons: a!buttonWidget(label: "search", size: "SMALL"),
-                                      marginBelow: "NONE"
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                spacing: "DENSE"
-                              )
-                            },
-                            width: "MEDIUM"
-                          )
-                        ),
-                        a!gridField(
-                          label: "All Vendors",
-                          labelPosition: "COLLAPSED",
-                          data: todatasubset(
-                            index(local!vendors, local!gridSelection),
-                            fv!pagingInfo
-                          ),
-                          columns: {
-                            a!gridColumn(
-                              label: "Name",
-                              value: a!richTextDisplayField(
-                                labelPosition: "COLLAPSED",
-                                value: {
-                                  a!richTextItem(
-                                    text: fv!row.vendorName,
-                                    link: a!dynamicLink(),
-                                    linkStyle: "STANDALONE"
-                                  ),
-                                  char(10),
-                                  a!richTextItem(
-                                    text: concat("UEI: ", fv!row.uei),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  ),
-                                  a!richTextItem(
-                                    text: concat(" • CAGE: ", fv!row.cage),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  )
-                                },
-                                tooltip: "<Full vendor name>"
-                              )
-                            ),
-                            a!gridColumn(
-                              label: "Location",
-                              /*value: fv!row.address,*/
-                              value: a!richTextDisplayField(
-                                value: {
-                                  a!richTextItem(text: fv!row.address),
-                                  char(10),
-                                  a!richTextItem(
-                                    text: concat(fv!row.county, " County"),
-                                    color: "#6C6C75",
-                                    size: "SMALL"
-                                  )
-                                }
-                              ),
-                              width: "NARROW_PLUS"
-                            ),
-                            a!gridColumn(
-                              value: a!richTextDisplayField(
-                                labelPosition: "COLLAPSED",
-                                value: a!richTextIcon(
-                                  icon: "times",
-                                  caption: "Remove",
-                                  link: if(
-                                    length(local!gridSelection) = 1,
-                                    a!dynamicLink(
-                                      value: null,
-                                      saveInto: local!gridSelection
-                                    ),
-                                    a!dynamicLink(
-                                      value: remove(local!gridSelection, fv!identifier),
-                                      saveInto: local!gridSelection
-                                    )
-                                  ),
-                                  linkStyle: "STANDALONE"
-                                )
-                              )
-                            )
-                          },
-                          pageSize: 10,
-                          showWhen: a!isNotNullOrEmpty(local!gridSelection),
-                          height: "MEDIUM",
-                          borderStyle: "LIGHT"
-                        ),
-                        a!cardLayout(
-                          contents: {
-                            a!stampField(
-                              labelPosition: "COLLAPSED",
-                              icon: "store",
-                              backgroundColor: cons!AS_GSM_HEX_GRAY_1,
-                              contentColor: "#6C6C75",
-                              size: "SMALL",
-                              align: "CENTER",
-                              marginAbove: "EVEN_MORE"
-                            ),
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: "No vendors selected",
-                              align: "CENTER",
-                              marginBelow: "EVEN_MORE"
-                            )
-                          },
-                          showWhen: a!isNullOrEmpty(local!gridSelection),
-                          style: "#FAFAFC",
-                          shape: "SEMI_ROUNDED",
-                          padding: "STANDARD",
-                          showBorder: false
-                        )
-                      }
-                    )
-                  },
-                  spacing: "SPARSE",
-                  showDividers: true
-                )
-              )
-            },
-            shape: "SEMI_ROUNDED",
-            padding: "STANDARD",
-            marginBelow: "NONE",
-            showBorder: false,
-            /*borderColor: cons!AS_GSM_HEX_GRAY_1*/
-            
-          )
-        },
-        marginBelow: "NONE"
-      )
-    },
-    buttons: a!buttonLayout(
-      primaryButtons: {
-        a!buttonWidget(
-          label: "Next",
-          value: 2,
-          saveInto: local!step,
-          style: "SOLID",
-          showWhen: local!step = 1
-        ),
-        a!buttonWidget(
-          label: if(ri!isUpdate, "Update", "Create"),
-          saveInto: {
-            a!save(ri!showConfirmation, true),
-            a!save(ri!showWizard, false),
-            a!save(local!step, 1)
-          },
-          style: "SOLID",
-          showWhen: local!step = 2
-        )
-      },
-      secondaryButtons: {
-        a!buttonWidget(
-          label: "Back",
-          value: 1,
-          saveInto: local!step,
-          showWhen: local!step = 2
-        ),
-        a!buttonWidget(
-          label: "Cancel",
-          saveInto: {
-            a!save(ri!showWizard, false),
-            a!save(ri!showConfirmation, false),
-            a!save(local!step, 1)
-          },
-          style: "LINK"
-        )
-      }
-    )
   )
 )
 ```

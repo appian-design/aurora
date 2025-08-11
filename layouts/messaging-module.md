@@ -1067,7 +1067,7 @@ a!localVariables(
                                             value: {
                                               a!richTextImage(
                                                 image: a!webImage(
-                                                  source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/sparkle-light-version-1.png"
+                                                  source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/ai-imagery/sparkle-light-1.png"
                                                 )
                                               ),
                                               " ",
@@ -1789,6 +1789,3 @@ a!localVariables(
 ```
 
 ---
-
-**Image Credits:**
-- Profile image: Appian Cloud hosted image (source needs verification)

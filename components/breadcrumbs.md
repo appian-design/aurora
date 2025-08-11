@@ -68,7 +68,6 @@ a!localVariables(
             ),
             a!richTextItem(
               text: "  / ...  /  ",
-              /* Replace this with ASDS_NEUTRAL_PALETTE_NEUTRAL_3 */
               color: "#6C6C75"
             ),
             a!richTextItem(
@@ -97,7 +96,6 @@ a!localVariables(
                 ),
                 a!richTextItem(
                   text: "  /  ",
-                  /* Replace this with ASDS_NEUTRAL_PALETTE_NEUTRAL_3 */
                   color: "#6C6C75"
                 )
               }

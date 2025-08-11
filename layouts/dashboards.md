@@ -6,7 +6,7 @@ last_updated: "2024-02-05"
 # Dashboards
 Provide actionable insights from business data
 
-![](https://github.com/user-attachments/assets/20b83725-caee-44a5-9028-a5dc1823db7c)
+![](https://github.com/user-attachments/assets/bfc64cee-31f2-4bcd-8fcd-2aa742e5c457)
 
 
 ## Design

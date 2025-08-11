@@ -24,7 +24,7 @@ Use the platform’s record tabs to establish views within a record. Avoid desig
 
 #### Tabs as Side Navigation
 
-![](https://github.com/user-attachments/assets/d3d4eb16-a2ef-49e9-9593-8aec13c4cc44)
+![](https://github.com/user-attachments/assets/0bb4dabd-ca89-42ca-9697-b1a408623e11)
 
 Use this option when there are 4 or more tabs.
 
@@ -49,7 +49,7 @@ Use horizontal tabs to implement views within a page or section. Avoid using mor
 
 #### Chart Toggle Using Tabs
 
-![](https://github.com/user-attachments/assets/02557c17-5fc3-44f4-9447-75e678c7facd)
+![](https://github.com/user-attachments/assets/021a6869-eb40-4829-a148-de92b89dfa59)
 
 Use this pattern to toggle data display between a chart view and list view.
 
@@ -293,43 +293,43 @@ a!sectionLayout(
             local!requirement: {
               a!map(
                 id: 1,
-                name: "Amy Horton",
+                name: "Kari Becker",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 2,
-                name: "Ben Lloyd",
+                name: "Tom Smith",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 3,
-                name: "Terry Pham",
+                name: "Bree Mercer",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 4,
-                name: "Jon Stolte",
+                name: "Kevin Lu",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 5,
-                name: "Kyra Chan",
+                name: "Diana Hellstrom",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 6,
-                name: "Saurabh Sabat",
+                name: "Francois Morin",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
               a!map(
                 id: 7,
-                name: "Annika Siddharth",
+                name: "Maya Kapoor",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               )
