@@ -311,7 +311,7 @@ a!sectionLayout(
               ),
               a!map(
                 id: 4,
-                name: "James Lee",
+                name: "Kevin Lu",
                 dept: "Contracting Officer",
                 icon: "$11,234.00"
               ),
