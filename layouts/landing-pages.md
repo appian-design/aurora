@@ -30,7 +30,8 @@ This layout is structured for users who want to spend most of their time interac
 The charts provide the information users need for context but are not required for users to perform daily actions.
 
 #### Dense UI: Three Columns
-![](https://github.com/user-attachments/assets/7744870f-4092-4b01-a1f4-512c00c3f5ce)
+![](https://github.com/user-attachments/assets/e322b8a9-50b7-480b-8d68-1f28a0eaf0bc)
+
 
 This layout is structured for users who want to spend most of their time on the record list interacting with record details and associated actions.
 
@@ -38,15 +39,15 @@ This layout incorporates multiple records into a single interface. The two colum
 
 The charts on the right help the user to gather context, but they aren't essential to the user’s day-to-day actions.
 
-![](https://github.com/user-attachments/assets/77a2b33d-a8f3-4ef4-b8f4-eddd735726d8)
+![](https://github.com/user-attachments/assets/df9fa84f-693b-4f82-8d5c-8b20ad2cd44e)
 
 Use Highlights Lists as a Gateway to Other Information
 
-![](https://github.com/user-attachments/assets/6896e6b0-7a51-4597-85c9-a915541b2c94)
+![](https://github.com/user-attachments/assets/469e3309-ad20-4b14-b06a-f750c1b65e35)
 
 Use the Record Action Component
 
-![](https://github.com/user-attachments/assets/b4cfae33-74e1-4034-8461-fa8295c2a400)
+![](https://github.com/user-attachments/assets/64511958-97c8-4ecf-a9fd-5fe75e4f7bcc)
 
 Preserve Layout Consistency When Data Changes
 
