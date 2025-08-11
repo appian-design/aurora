@@ -49,7 +49,7 @@ Use horizontal tabs to implement views within a page or section. Avoid using mor
 
 #### Chart Toggle Using Tabs
 
-![](https://github.com/user-attachments/assets/ccf38b00-39fc-4438-a0ae-c244272f6992)
+![](https://github.com/user-attachments/assets/021a6869-eb40-4829-a148-de92b89dfa59)
 
 Use this pattern to toggle data display between a chart view and list view.
 
