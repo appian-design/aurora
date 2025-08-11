@@ -5,11 +5,11 @@ last_updated: "2024-12-19"
 
 # Grids
 Display tabular information in a scannable and digestible format
-![](https://github.com/user-attachments/assets/665906dd-7ce0-41ff-8a00-54a1fbb8d6c3)
+![](https://github.com/user-attachments/assets/69c875e4-59f6-432b-9517-4810ac2b86d7)
 
 
 ## Design
-![](https://github.com/user-attachments/assets/dc4b4741-9c12-4642-aa15-f435def30bc1)
+![](https://github.com/user-attachments/assets/69c875e4-59f6-432b-9517-4810ac2b86d7)
 
 In a full page
 
