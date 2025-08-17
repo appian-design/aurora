@@ -3,15 +3,14 @@
 # Site settings
 title: Design System Documentation
 description: Centralized design system guidance and component documentation
-baseurl: "/design-system-docs-website" # the subpath of your site, e.g. /blog
-url: "https://aarushivenk.github.io" # the base hostname & protocol for your site
+baseurl: "/design-system-docs-website"
+url: "https://aarushivenk.github.io"
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
-# Plugins
+# Plugins (these are included in github-pages gem)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -19,25 +18,13 @@ plugins:
 
 # Collections for organizing content
 collections:
-  about:
-    output: true
-    permalink: /:collection/:name/
-  branding:
-    output: true
-    permalink: /:collection/:name/
-  content-style-guide:
-    output: true
-    permalink: /:collection/:name/
-  accessibility:
-    output: true
-    permalink: /:collection/:name/
-  layouts:
+  components:
     output: true
     permalink: /:collection/:name/
   patterns:
     output: true
     permalink: /:collection/:name/
-  components:
+  layouts:
     output: true
     permalink: /:collection/:name/
 
@@ -45,34 +32,10 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "about"
+      type: "components"
     values:
       layout: "page"
-      category: "about"
-  - scope:
-      path: ""
-      type: "branding"
-    values:
-      layout: "page"
-      category: "branding"
-  - scope:
-      path: ""
-      type: "content-style-guide"
-    values:
-      layout: "page"
-      category: "content-style-guide"
-  - scope:
-      path: ""
-      type: "accessibility"
-    values:
-      layout: "page"
-      category: "accessibility"
-  - scope:
-      path: ""
-      type: "layouts"
-    values:
-      layout: "page"
-      category: "layouts"
+      category: "components"
   - scope:
       path: ""
       type: "patterns"
@@ -81,10 +44,10 @@ defaults:
       category: "patterns"
   - scope:
       path: ""
-      type: "components"
+      type: "layouts"
     values:
       layout: "page"
-      category: "components"
+      category: "layouts"
 
 # Exclude from processing
 exclude:
@@ -96,5 +59,3 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
-  - foundations-old/
-  - guidelines-old/
