@@ -18,13 +18,31 @@ plugins:
 
 # Collections for organizing content
 collections:
-  components:
+  about:
+    output: true
+    permalink: /:collection/:name/
+  branding:
+    output: true
+    permalink: /:collection/:name/
+  content-style-guide:
+    output: true
+    permalink: /:collection/:name/
+  accessibility:
+    output: true
+    permalink: /:collection/:name/
+  layouts:
     output: true
     permalink: /:collection/:name/
   patterns:
     output: true
     permalink: /:collection/:name/
-  layouts:
+  components:
+    output: true
+    permalink: /:collection/:name/
+  foundations:
+    output: true
+    permalink: /:collection/:name/
+  guidelines:
     output: true
     permalink: /:collection/:name/
 
@@ -32,22 +50,58 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "components"
+      type: "about"
     values:
       layout: "page"
-      category: "components"
+      category: "about"
   - scope:
       path: ""
-      type: "patterns"
+      type: "branding"
     values:
       layout: "page"
-      category: "patterns"
+      category: "branding"
+  - scope:
+      path: ""
+      type: "content-style-guide"
+    values:
+      layout: "page"
+      category: "content-style-guide"
+  - scope:
+      path: ""
+      type: "accessibility"
+    values:
+      layout: "page"
+      category: "accessibility"
   - scope:
       path: ""
       type: "layouts"
     values:
-      layout: "page"
+      layout: "layout"
       category: "layouts"
+  - scope:
+      path: ""
+      type: "patterns"
+    values:
+      layout: "pattern"
+      category: "patterns"
+  - scope:
+      path: ""
+      type: "components"
+    values:
+      layout: "component"
+      category: "components"
+  - scope:
+      path: ""
+      type: "foundations"
+    values:
+      layout: "foundation"
+      category: "foundations"
+  - scope:
+      path: ""
+      type: "guidelines"
+    values:
+      layout: "guideline"
+      category: "guidelines"
 
 # Exclude from processing
 exclude:
