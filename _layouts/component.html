@@ -37,14 +37,17 @@ layout: default
       {%- endfor -%}
       
       {%- if current_index > 0 -%}
-        {%- assign prev_component = components[current_index | minus: 1] -%}
+        {%- assign prev_index = current_index | minus: 1 -%}
+        {%- assign prev_component = components[prev_index] -%}
         <a href="{{ prev_component.url | relative_url }}" class="nav-prev">
           ← {{ prev_component.title }}
         </a>
       {%- endif -%}
       
-      {%- if current_index < components.size | minus: 1 -%}
-        {%- assign next_component = components[current_index | plus: 1] -%}
+      {%- assign max_index = components.size | minus: 1 -%}
+      {%- if current_index < max_index -%}
+        {%- assign next_index = current_index | plus: 1 -%}
+        {%- assign next_component = components[next_index] -%}
         <a href="{{ next_component.url | relative_url }}" class="nav-next">
           {{ next_component.title }} →
         </a>
