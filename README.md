@@ -22,13 +22,16 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 git clone https://github.com/pglevy/design-system-docs.git
 cd design-system-docs
 
+# Switch to docusaurus branch
+git checkout docusaurus
+
 # Install dependencies
-bundle install
+npm install
 
 # Serve the site locally
-bundle exec jekyll serve
+npm start
 
-# View at http://localhost:4000
+# View at http://localhost:3000
 ```
 
 ## 📚 What's Inside
@@ -102,15 +105,16 @@ This repository is designed to work with Model Context Protocol (MCP) servers th
 
 For AI assistants working with this repository, see [AGENTS.md](AGENTS.md) for guidance on documentation structure, formatting conventions, and best practices.
 
-### Jekyll-Powered Site
+### Docusaurus-Powered Site
 
-Our documentation is built with Jekyll and automatically deployed via GitHub Pages, providing:
+Our documentation is built with Docusaurus and automatically deployed via GitHub Pages, providing:
 
-- Fast, static site generation
-- Markdown-based content management
+- Fast, static site generation with React
+- MDX-based content management
 - Responsive, accessible design
-- Search functionality
+- Built-in search functionality
 - Version control integration
+- Modern developer experience
 
 ## 📝 File Formatting
 

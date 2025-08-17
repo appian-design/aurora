@@ -1,13 +1,18 @@
-# Jekyll
+# Jekyll (legacy)
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
 
-# Bundler
+# Bundler (legacy)
 .bundle/
 Gemfile.lock
+
+# Docusaurus
+build/
+.docusaurus/
+.cache-loader/
 
 # System files
 .DS_Store
