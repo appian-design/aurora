@@ -3,8 +3,8 @@
 # Site settings
 title: Design System Documentation
 description: Centralized design system guidance and component documentation
-baseurl: "/design-system-docs" # the subpath of your site, e.g. /blog
-url: "https://pglevy.github.io" # the base hostname & protocol for your site
+baseurl: "/design-system-docs-website" # the subpath of your site, e.g. /blog
+url: "https://aarushivenk.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
