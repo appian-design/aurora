@@ -138,7 +138,7 @@ a!localVariables(
                     showWhen: local!active,
                     style: "#FAFAFA",
                     marginBelow: "STANDARD",
-                    showBorder: true
+                    borderColor: "#EDEEFA"
                   ),
                   a!columnsLayout(
                     columns: {
