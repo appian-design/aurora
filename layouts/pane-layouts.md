@@ -1490,6 +1490,7 @@ a!localVariables(
                 height: "AUTO",
                 style: "NONE",
                 shape: "SEMI_ROUNDED",
+                borderColor: "#EDEEFA",
                 padding: "NONE",
                 marginBelow: "STANDARD"
               )
