@@ -439,8 +439,7 @@ a!cardLayout(
   shape: "SEMI_ROUNDED",
   padding: "STANDARD",
   marginBelow: "STANDARD",
-  showBorder: false,
-  showShadow: true
+  borderColor: "#EDEEFA"
 )
 ```
 
@@ -689,7 +688,7 @@ a!cardLayout(
                             shape: "SEMI_ROUNDED",
                             padding: "LESS",
                             marginBelow: "STANDARD",
-                            showBorder: true
+                            borderColor: "#EDEEFA"
                           ),
                           a!sideBySideLayout(
                             items: {
@@ -1141,7 +1140,6 @@ a!cardLayout(
   shape: "SEMI_ROUNDED",
   padding: "NONE",
   marginBelow: "NONE",
-  showBorder: false,
-  showShadow: true
+  borderColor: "#EDEEFA"
 )
 ```
