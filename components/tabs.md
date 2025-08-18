@@ -386,8 +386,7 @@ a!localVariables(
     padding: "STANDARD",
     shape: "SEMI_ROUNDED",
     marginBelow: "STANDARD",
-    showBorder: false,
-    showShadow: true
+    borderColor: "#EDEEFA"
   )
 }
 ```
