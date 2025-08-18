@@ -55,7 +55,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Active Awards",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -532,8 +532,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "NONE",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -545,7 +544,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Awards by Status",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -631,15 +630,14 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Funds Obligated",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -694,15 +692,14 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Funds Spent",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -753,8 +750,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               },
               marginBelow: "STANDARD"
@@ -762,7 +758,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Socio-Economic Targets",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -918,8 +914,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
@@ -2670,8 +2665,7 @@ a!localVariables(
             height: "AUTO",
             style: "NONE",
             marginBelow: "STANDARD",
-            showBorder: false,
-            showShadow: true
+            borderColor: "#EDEEFA"
           )
         ),
         cardWidth: "MEDIUM"
@@ -2735,8 +2729,7 @@ a!localVariables(
             height: "AUTO",
             style: "NONE",
             marginBelow: "STANDARD",
-            showBorder: false,
-            showShadow: true
+            borderColor: "#EDEEFA"
           ),
           /* Emissions by Category Card */
           a!cardLayout(
@@ -2745,6 +2738,7 @@ a!localVariables(
               a!sectionLayout(
                 label: "Emissions by Category",
                 labelHeadingTag: "H2",
+                labelSize: "SMALL",
                 labelColor: "STANDARD",
                 contents: {
                   a!pieChartField(
@@ -2794,8 +2788,7 @@ a!localVariables(
             height: "AUTO",
             style: "NONE",
             marginBelow: "STANDARD",
-            showBorder: false,
-            showShadow: true
+            borderColor: "#EDEEFA"
           ),
           /* Emissions by Scope Card */
           a!cardLayout(
@@ -2804,6 +2797,7 @@ a!localVariables(
               a!sectionLayout(
                 label: "Emissions by Scope",
                 labelHeadingTag: "H2",
+                labelSize: "SMALL",
                 labelColor: "STANDARD",
                 contents: {
                   a!pieChartField(
@@ -2853,8 +2847,7 @@ a!localVariables(
             height: "AUTO",
             style: "NONE",
             marginBelow: "STANDARD",
-            showBorder: false,
-            showShadow: true
+            borderColor: "#EDEEFA"
           )
         },
         cardWidth: "MEDIUM"
@@ -3188,8 +3181,7 @@ a!localVariables(
             style: "NONE",
             padding: "STANDARD",
             marginBelow: "STANDARD",
-            showBorder: false,
-            showShadow: true
+            borderColor: "#EDEEFA"
           )
         }
       )
