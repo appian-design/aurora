@@ -401,7 +401,7 @@ a!localVariables(
                                     shape: "SEMI_ROUNDED",
                                     padding: "STANDARD",
                                     marginBelow: "STANDARD",
-                                    showBorder: false
+                                    borderColor: "#EDEEFA"
                                   )
                                 }
                               ),
@@ -442,7 +442,7 @@ a!localVariables(
                                                 shape: "SEMI_ROUNDED",
                                                 padding: "STANDARD",
                                                 marginBelow: "NONE",
-                                                showBorder: false
+                                                borderColor: "#EDEEFA"
                                               )
                                             }
                                           ),
@@ -482,7 +482,7 @@ a!localVariables(
                                                 shape: "SEMI_ROUNDED",
                                                 padding: "STANDARD",
                                                 marginBelow: "NONE",
-                                                showBorder: false
+                                                borderColor: "#EDEEFA"
                                               )
                                             }
                                           )
@@ -596,7 +596,7 @@ a!localVariables(
                                         padding: "STANDARD",
                                         marginAbove: "EVEN_LESS",
                                         marginBelow: "NONE",
-                                        showBorder: false
+                                        borderColor: "#EDEEFA"
                                       )
                                     },
                                     height: "TALL_PLUS",
@@ -620,110 +620,92 @@ a!localVariables(
                                   columns: {
                                     a!columnLayout(
                                       contents: {
-                                        a!localVariables(
-                                          local!dateRange,
-                                          'type!{http://www.appian.com/ae/types/2009}DateRangeWidget'(
-                                            inlineLabel: if(isnull("date"), "Date Range", ""),
-                                            placeholder: fn!resource_appian_internal(
-                                              "sysrule.recordsLayout.userfiltersDropdownPlaceholder"
-                                            ),
-                                            datePlaceholder: fn!resource_appian_internal("sysrule.datePicker.placeholder"),
-                                            todayLabel: fn!resource_appian_internal("sysrule.datePicker.todayLabel"),
-                                            noneLabel: fn!resource_appian_internal("sysrule.datePicker.noneLabel"),
-                                            value: local!dateRange,
-                                            saveInto: local!dateRange
-                                          )
+                                        a!dateField(
+                                          label: "Date", 
+                                          labelPosition: "ABOVE"
                                         )
                                       }
                                     ),
                                     a!columnLayout(
                                       contents: {
-                                        /* Replace with record filters */
-                                        'type!{http://www.appian.com/ae/types/2009}DropdownWidget'(
-                                          inlineLabel: if(
-                                            isnull("Requesting Department"),
-                                            "Requesting Department",
-                                            "Requesting Department"
-                                          ),
-                                          placeholder: if(isnull(" "), "All Departments", " "),
-                                          choices: if(
-                                            isnull(" "),
-                                            {
-                                              "Engineering",
-                                              "Professional Services",
-                                              "Finance"
-                                            },
-                                            " "
-                                          ),
-                                          value: {},
+                                        a!dropdownField(
+                                          label: "Requesting Department",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Departments",
+                                          choiceLabels: {
+                                            "Engineering",
+                                            "Professional Services", 
+                                            "Finance"
+                                          },
+                                          choiceValues: {
+                                            "Engineering",
+                                            "Professional Services",
+                                            "Finance"
+                                          },
+                                          value: null,
                                           saveInto: {}
                                         )
                                       }
                                     ),
                                     a!columnLayout(
                                       contents: {
-                                        /* Replace with record filters */
-                                        'type!{http://www.appian.com/ae/types/2009}DropdownWidget'(
-                                          inlineLabel: if(isnull("Vendor"), "Vendor", "Vendor"),
-                                          placeholder: if(isnull(" "), "All Departments", " "),
-                                          choices: if(
-                                            isnull(" "),
-                                            {
-                                              "Engineering",
-                                              "Professional Services",
-                                              "Finance"
-                                            },
-                                            " "
-                                          ),
-                                          value: {},
+                                        a!dropdownField(
+                                          label: "Vendor",
+                                          labelPosition: "ABOVE", 
+                                          placeholder: "All Vendors",
+                                          choiceLabels: {
+                                            "Vendor A",
+                                            "Vendor B",
+                                            "Vendor C"
+                                          },
+                                          choiceValues: {
+                                            "Vendor A",
+                                            "Vendor B", 
+                                            "Vendor C"
+                                          },
+                                          value: null,
                                           saveInto: {}
                                         )
                                       }
                                     ),
                                     a!columnLayout(
                                       contents: {
-                                        /* Replace with record filters */
-                                        'type!{http://www.appian.com/ae/types/2009}DropdownWidget'(
-                                          inlineLabel: if(
-                                            isnull("Obligated Amount"),
-                                            "Obligated Amount",
-                                            "Contracting Officer"
-                                          ),
-                                          placeholder: if(isnull(" "), "All Departments", " "),
-                                          choices: if(
-                                            isnull(" "),
-                                            {
-                                              "Engineering",
-                                              "Professional Services",
-                                              "Finance"
-                                            },
-                                            " "
-                                          ),
-                                          value: {},
+                                        a!dropdownField(
+                                          label: "Contracting Officer",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Officers",
+                                          choiceLabels: {
+                                            "Officer A",
+                                            "Officer B",
+                                            "Officer C"
+                                          },
+                                          choiceValues: {
+                                            "Officer A",
+                                            "Officer B",
+                                            "Officer C"
+                                          },
+                                          value: null,
                                           saveInto: {}
                                         )
                                       }
                                     ),
                                     a!columnLayout(
                                       contents: {
-                                        /* Replace with record filters */
-                                        'type!{http://www.appian.com/ae/types/2009}DropdownWidget'(
-                                          inlineLabel: if(
-                                            isnull("Obligated Amount"),
-                                            "Obligated Amount",
-                                            "Spend Buckets"
-                                          ),
-                                          placeholder: if(isnull(" "), "All Departments", " "),
-                                          choices: if(
-                                            isnull(" "),
-                                            {
-                                              "Engineering",
-                                              "Professional Services",
-                                              "Finance"
-                                            },
-                                            " "
-                                          ),
-                                          value: {},
+                                        a!dropdownField(
+                                          label: "Spend Buckets",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Buckets", 
+                                          choiceLabels: {
+                                            "$0 - $10K",
+                                            "$10K - $50K",
+                                            "$50K+"
+                                          },
+                                          choiceValues: {
+                                            "0-10000",
+                                            "10000-50000", 
+                                            "50000+"
+                                          },
+                                          value: null,
                                           saveInto: {}
                                         )
                                       }
@@ -851,8 +833,7 @@ a!localVariables(
                         shape: "SEMI_ROUNDED",
                         padding: "STANDARD",
                         marginBelow: "STANDARD",
-                        showBorder: false,
-                        showShadow: false
+                        borderColor: "#EDEEFA"
                       )
                     }
                   )
@@ -1025,7 +1006,7 @@ a!localVariables(
                                 style: "NONE",
                                 shape: "SEMI_ROUNDED",
                                 marginBelow: "LESS",
-                                showBorder: false
+                                borderColor: "#EDEEFA"
                               ),
                               a!cardLayout(
                                 contents: {
@@ -1112,14 +1093,14 @@ a!localVariables(
                                 shape: "ROUNDED",
                                 padding: "LESS",
                                 marginBelow: "STANDARD",
-                                showBorder: false
+                                borderColor: "#EDEEFA"
                               )
                             },
                             height: "AUTO",
                             style: "#FCFCFF",
                             shape: "SEMI_ROUNDED",
                             marginBelow: "STANDARD",
-                            showBorder: false
+                            borderColor: "#EDEEFA"
                           )
                         },
                         height: "AUTO",
@@ -1127,7 +1108,7 @@ a!localVariables(
                         shape: "SEMI_ROUNDED",
                         padding: "LESS",
                         marginBelow: "STANDARD",
-                        showBorder: false
+                        borderColor: "#EDEEFA"
                       ),
                       a!cardLayout(
                         contents: {
@@ -1497,8 +1478,7 @@ a!localVariables(
                         shape: "SEMI_ROUNDED",
                         padding: "STANDARD",
                         marginBelow: "STANDARD",
-                        showBorder: false,
-                        showShadow: false
+                        borderColor: "#EDEEFA"
                       )
                     }
                   )
@@ -1830,8 +1810,7 @@ a!headerContentLayout(
                   height: "MEDIUM_PLUS",
                   style: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
@@ -1902,8 +1881,7 @@ a!headerContentLayout(
                       height: "AUTO",
                       style: "NONE",
                       marginBelow: "NONE",
-                      showBorder: false,
-                      showShadow: true
+                      showBorder: false
                     ),
                     a!cardLayout(
                       contents: {
@@ -2208,9 +2186,9 @@ a!headerContentLayout(
                   height: "AUTO",
                   style: "NONE",
                   padding: "NONE",
+                  shape: "SEMI_ROUNDED",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -2227,7 +2205,7 @@ a!headerContentLayout(
               contents: {
                 a!cardLayout(
                   shape: "SEMI_ROUNDED",
-                  showShadow: true,
+                  borderColor: "#EDEEFA",
                   contents: {
                     a!localVariables(
                       local!campaigns: {
@@ -2435,7 +2413,7 @@ a!headerContentLayout(
                           endDate: today() + 60,
                           budget: 15000
                         ),
-                        
+
                       },
                       local!filterName: "",
                       /* Local variable to store the campaign name filter */
@@ -2459,7 +2437,7 @@ a!headerContentLayout(
                                   placeholder: "Enter campaign name",
                                   refreshAfter: "KEYPRESS",
                                   /* Update filter on each keypress */
-                                  
+
                                 )
                               }
                             ),
@@ -2472,7 +2450,7 @@ a!headerContentLayout(
                                   choiceValues: { "Active", "Paused", "Completed" },
                                   value: local!filterStatus,
                                   saveInto: local!filterStatus,
-                                  
+
                                 )
                               }
                             )
@@ -2529,7 +2507,7 @@ a!headerContentLayout(
          */
                           showWhen: not(isnull(local!campaigns)),
                           userFilters: {}/* This parameter is typically where you'd define grid filters */
-                          
+
                         )
                       }
                     )
@@ -2582,8 +2560,7 @@ a!headerContentLayout(
                   height: "AUTO",
                   style: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
@@ -2748,8 +2725,7 @@ a!headerContentLayout(
                   style: "NONE",
                   padding: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
@@ -2830,8 +2806,7 @@ a!headerContentLayout(
                   style: "NONE",
                   padding: "MORE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -4018,8 +3993,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               ),
               a!cardLayout(
                 contents: {
@@ -4465,8 +4439,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               )
             },
             width: "MEDIUM"
@@ -4512,7 +4485,7 @@ a!localVariables(
                             shape: "SEMI_ROUNDED",
                             padding: "STANDARD",
                             marginBelow: "STANDARD",
-                            showBorder: false
+                            borderColor: "#EDEEFA"
                           )
                         }
                       ),
@@ -4547,7 +4520,7 @@ a!localVariables(
                             shape: "SEMI_ROUNDED",
                             padding: "STANDARD",
                             marginBelow: "STANDARD",
-                            showBorder: false
+                            borderColor: "#EDEEFA"
                           )
                         }
                       ),
@@ -4603,7 +4576,7 @@ a!localVariables(
                             shape: "SEMI_ROUNDED",
                             padding: "STANDARD",
                             marginBelow: "STANDARD",
-                            showBorder: false
+                            borderColor: "#EDEEFA"
                           )
                         }
                       )
@@ -4728,8 +4701,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               ),
               a!cardLayout(
                 contents: {
@@ -4807,7 +4779,7 @@ a!localVariables(
                       )
                     }
                   ),
-                  a!gridField_23r3(
+                  a!gridField(
                     label: "Contracts",
                     labelPosition: "COLLAPSED",
                     data: local!contractData,
@@ -4864,8 +4836,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               )
             }
           ),
@@ -5042,8 +5013,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               ),
               a!cardLayout(
                 contents: {
@@ -5101,8 +5071,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               ),
               a!cardLayout(
                 contents: {
@@ -5161,8 +5130,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "MORE",
                 marginBelow: "MORE",
-                showBorder: false,
-                showShadow: false
+                borderColor: "#EDEEFA"
               )
             },
             width: "MEDIUM"
@@ -5492,7 +5460,8 @@ a!headerContentLayout(
           )
         },
         padding: "STANDARD",
-        marginBelow: "MORE"
+        marginBelow: "MORE",
+        borderColor: "#EDEEFA"
       ),
       a!columnsLayout(
         columns: {
@@ -5509,6 +5478,7 @@ a!headerContentLayout(
                       labelSize: "SMALL",
                       contents: a!cardLayout(
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!forEach(
                             items: local!packageTrackingMilestones,
@@ -5628,7 +5598,8 @@ a!headerContentLayout(
                           )
                         },
                         padding: "STANDARD",
-                        marginBelow: "STANDARD"
+                        marginBelow: "STANDARD",
+                        borderColor: "#EDEEFA"
                       )
                     )
                   },
@@ -5649,6 +5620,7 @@ a!headerContentLayout(
                       contents: a!cardLayout(
                         padding: "STANDARD",
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!sectionLayout(
                             label: upper("Details"),
@@ -5837,6 +5809,7 @@ a!headerContentLayout(
                       contents: a!cardLayout(
                         padding: "STANDARD",
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!columnsLayout(
                             columns: {
@@ -6108,7 +6081,8 @@ a!headerContentLayout(
                                   marginBelow: "NONE"
                                 )
                               },
-                              marginBelow: "LESS"
+                              marginBelow: "LESS",
+                              borderColor: "#EDEEFA"
                             )
                           )
                         }
@@ -6162,7 +6136,8 @@ a!headerContentLayout(
                                       }
                                     )
                                   },
-                                  marginBelow: "LESS"
+                                  marginBelow: "LESS",
+                                  borderColor: "#EDEEFA"
                                 )
                               )
                             }
