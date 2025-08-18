@@ -7,6 +7,8 @@ last_updated: "2025-07-09"
 
 Tags are visual indicators used to highlight notable attributes of items and draw viewer attention to important characteristics. They provide quick, scannable context without overwhelming the interface.
 
+![](https://github.com/user-attachments/assets/15680949-2452-43c9-99bd-98a33a83cf14)
+
 ## Design
 
 ### When to Use Tags
