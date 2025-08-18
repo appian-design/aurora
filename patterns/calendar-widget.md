@@ -60,6 +60,7 @@ a!cardLayout(
           },
           marginBelow: "NONE"
         ),
+        
       },
       height: "AUTO",
       style: "NONE",
@@ -200,9 +201,7 @@ a!cardLayout(
                           a!richTextDisplayField(
                             value: {
                               a!richTextItem(
-                                text: {
-                                  "1 "
-                                },
+                                text: { "1 " },
                                 color: "ACCENT",
                                 size: "SMALL",
                                 style: "STRONG"
@@ -333,9 +332,7 @@ a!cardLayout(
                           a!richTextDisplayField(
                             value: {
                               a!richTextItem(
-                                text: {
-                                  "23 "
-                                },
+                                text: { "23 " },
                                 color: "ACCENT",
                                 size: "SMALL",
                                 style: "STRONG"
@@ -432,9 +429,7 @@ a!cardLayout(
                         labelPosition: "COLLAPSED",
                         value: {
                           a!richTextItem(
-                            text: {
-                              "WEDNESDAY 03/01/2022"
-                            },
+                            text: { "WEDNESDAY 03/01/2022" },
                             color: "STANDARD",
                             size: "SMALL"
                           )
@@ -475,9 +470,7 @@ a!cardLayout(
                         labelPosition: "COLLAPSED",
                         value: {
                           a!richTextItem(
-                            text: {
-                              "THURSDAY 03/23/2022"
-                            },
+                            text: { "THURSDAY 03/23/2022" },
                             color: "STANDARD",
                             size: "SMALL"
                           )
@@ -546,7 +539,6 @@ a!cardLayout(
   shape: "SEMI_ROUNDED",
   padding: "NONE",
   marginBelow: "NONE",
-  showBorder: false,
-  showShadow: true
+  borderColor: "#EDEEFA"
 )
 ```
