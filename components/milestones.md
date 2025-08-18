@@ -65,7 +65,240 @@ Use the following considerations when deciding on the Milestone orientation:
 
 ## Development
 
-### Stamp Milestone Component
+### Variants
+
+#### Horizontal Milestone in Wizard
+```
+a!localVariables(
+  local!department,
+  local!title,
+  local!manager,
+  local!ambassador,
+  local!annualSalary,
+  local!startDate,
+  local!signingBonus,
+  a!wizardLayout(
+    titleBar: a!headerTemplateSimple(title: "Employee Onboarding"),
+    showTitleBarDivider: true,
+    style: "LINE_HORIZONTAL",
+    contentsWidth: "MEDIUM",
+    steps: {
+      a!wizardStep(
+        label: "Personal Details",
+        contents: {
+          a!columnsLayout(
+            columns: {
+              a!columnLayout(
+                contents: {
+                  a!dropdownField(
+                    label: "Department",
+                    placeholder: "Select a Department",
+                    choiceLabels: {
+                      "Engineering",
+                      "Marketing",
+                      "Sales",
+                      "HR",
+                      "Finance"
+                    },
+                    choiceValues: { "ENG", "MKT", "SAL", "HR", "FIN" },
+                    value: local!department,
+                    saveInto: local!department
+                  ),
+                  a!textField(
+                    label: "Title",
+                    value: local!title,
+                    saveInto: local!title
+                  )
+                },
+                width: "MEDIUM"
+              ),
+              a!columnLayout(
+                contents: {
+                  a!dropdownField(
+                    label: "Manager",
+                    placeholder: "Select an Employee",
+                    choiceLabels: {
+                      "John Smith",
+                      "Jane Doe",
+                      "Mike Johnson",
+                      "Sarah Wilson"
+                    },
+                    choiceValues: {
+                      "john.smith",
+                      "jane.doe",
+                      "mike.johnson",
+                      "sarah.wilson"
+                    },
+                    value: local!manager,
+                    saveInto: local!manager
+                  ),
+                  a!dropdownField(
+                    label: "Ambassador",
+                    placeholder: "Select an Employee",
+                    choiceLabels: {
+                      "Alice Brown",
+                      "Bob Davis",
+                      "Carol White",
+                      "David Lee"
+                    },
+                    choiceValues: {
+                      "alice.brown",
+                      "bob.davis",
+                      "carol.white",
+                      "david.lee"
+                    },
+                    value: local!ambassador,
+                    saveInto: local!ambassador
+                  )
+                },
+                width: "MEDIUM"
+              ),
+              a!columnLayout(
+                contents: {
+                  a!integerField(
+                    label: "Annual Salary",
+                    value: local!annualSalary,
+                    saveInto: local!annualSalary
+                  ),
+                  a!dateField(
+                    label: "Start Date",
+                    value: local!startDate,
+                    saveInto: local!startDate
+                  )
+                },
+                width: "MEDIUM"
+              ),
+              a!columnLayout(
+                contents: {
+                  a!integerField(
+                    label: "Signing Bonus",
+                    value: local!signingBonus,
+                    saveInto: local!signingBonus
+                  ),
+                  a!textField(
+                    label: "",
+                    value: "",
+                    readOnly: true,
+                    showWhen: false
+                  )
+                },
+                width: "MEDIUM"
+              )
+            }
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Position Details",
+        contents: {
+          a!richTextDisplayField(
+            value: "Position details form would go here"
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Review",
+        contents: {
+          a!richTextDisplayField(
+            value: "Review information would go here"
+          )
+        }
+      )
+    },
+    showButtonDivider: true,
+    primaryButtons: {
+      a!buttonWidget(
+        label: "SUBMIT",
+        style: "SOLID",
+        showWhen: fv!isLastStep,
+        saveInto: {
+          /* Add submit logic here */
+          
+        }
+      )
+    },
+    secondaryButtons: {
+      a!buttonWidget(
+        label: "CANCEL",
+        style: "LINK",
+        saveInto: {
+          /* Add cancel logic here */
+          
+        }
+      )
+    }
+  )
+)
+```
+
+#### Vertical Milestone in Wizard
+
+```
+a!localVariables(
+  local!name,
+  local!email,
+  a!wizardLayout(
+    titleBar: a!headerTemplateFull(
+      title: "Wizard",
+      secondaryText: "Enter your details"
+    ),
+    style: "DOT_VERTICAL",
+    steps: {
+      a!wizardStep(
+        label: "Personal Info",
+        contents: {
+          a!textField(
+            label: "Name",
+            value: local!name,
+            saveInto: local!name
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Contact Info",
+        contents: {
+          a!textField(
+            label: "Email",
+            value: local!email,
+            saveInto: local!email
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Review",
+        contents: {
+          a!richTextDisplayField(
+            value: a!richTextItem(
+              text: "Please review your information before submitting."
+            )
+          )
+        }
+      )
+    },
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Submit",
+        submit: true,
+        style: "SOLID",
+        loadingIndicator: true,
+        showWhen: fv!isLastStep
+      )
+    },
+    secondaryButtons: {
+      a!buttonWidget(
+        label: "Cancel",
+        value: true,
+        saveInto: {},
+        submit: true,
+        style: "LINK",
+        validate: false
+      )
+    }
+  )
+)
+```
+
+#### Vertial Stamp Milestone Component
 
 ```
 a!localVariables(
@@ -172,7 +405,7 @@ a!localVariables(
 )
 ```
 
-### Stamp Milestone Component Rule Usage
+Stamp Milestone Component Rule Usage
 
 ```
 rule!Stamp_Milestone_Component(
@@ -181,7 +414,7 @@ rule!Stamp_Milestone_Component(
 )
 ```
 
-### Stamp Milestone Component Rule Inputs
+Stamp Milestone Component Rule Inputs
 
 |Name|Type|Description|
 |--- |--- |--- |
