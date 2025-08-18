@@ -1425,7 +1425,7 @@ a!localVariables(
                         a!tagField(
                           labelPosition: "COLLAPSED",
                           tags: {
-                            a!tagItem_24r2(
+                            a!tagItem(
                               text: fv!item.tagText,
                               backgroundColor: fv!item.tagColor
                             )
