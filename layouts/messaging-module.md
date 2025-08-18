@@ -1022,7 +1022,7 @@ a!localVariables(
                                                       label: "REPLY",
                                                       saveInto: { a!save(local!showReply, false) },
                                                       size: "SMALL",
-                                                      style: "PRIMARY"
+                                                      style: "SOLID"
                                                     )
                                                   },
                                                   align: "END"
