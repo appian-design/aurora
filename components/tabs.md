@@ -100,6 +100,11 @@ a!localVariables(
           "ACCENT",
           local!backgroundColor
         ),
+        accessibilityText: if(
+          fv!index = local!selectedTab,
+          "Selected",
+          ""
+        ),
         link: a!dynamicLink(),
         decorativeBarPosition: "START",
         marginBelow: "LESS"
@@ -201,7 +206,7 @@ a!localVariables(
                         ),
                         accessibilityText: if(
                           fv!index = local!selectedTab,
-                          "Current Selection",
+                          "Selected",
                           ""
                         )
                       )
@@ -247,133 +252,142 @@ a!localVariables(
 #### Chart Toggle Using Tabs
 
 ```
-a!sectionLayout(
-  label: "",
-  contents: {
-    a!columnsLayout(
-      columns: {
-        a!columnLayout(
-          width: "3X",
-          contents: a!sectionLayout(
-            label: "Users by Funding",
-            labelColor: "STANDARD",
-            labelSize: "SMALL",
-            marginAbove: "LESS",
-            marginBelow: "NONE"
-          )
-        ),
-        a!columnLayout(
-          width: "1X",
-          contents: a!buttonArrayLayout(
-            align: "END",
-            buttons: {
-              a!buttonWidget(
-                label: "",
-                size: "SMALL",
-                icon: "table",
-                style: "SOLID"
-              ),
-              a!buttonWidget(
-                label: "",
-                size: "SMALL",
-                icon: "area-chart",
-                style: "LINK"
-              )
-            },
-            marginBelow: "NONE"
-          )
+{
+  a!sideBySideLayout(
+    alignVertical: "MIDDLE",
+    spacing: "NONE",
+    items: {
+      a!sideBySideItem(
+        item: a!headingField(
+          text: "Users by Funding",
+          headingTag: "H2",
+          color: "STANDARD",
+          fontWeight: "SEMI_BOLD",
+          size: "SMALL",
+          marginAbove: "LESS"
         )
-      },
-      marginBelow: "LESS"
-    ),
-    a!cardLayout(
-      contents: {
-        {
-          a!localVariables(
-            local!requirement: {
-              a!map(
-                id: 1,
-                name: "Kari Becker",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 2,
-                name: "Tom Smith",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 3,
-                name: "Bree Mercer",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 4,
-                name: "Kevin Lu",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 5,
-                name: "Diana Hellstrom",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 6,
-                name: "Francois Morin",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              ),
-              a!map(
-                id: 7,
-                name: "Maya Kapoor",
-                dept: "Contracting Officer",
-                icon: "$11,234.00"
-              )
-            },
-            {
-              a!sectionLayout(
-                label: "",
-                contents: {
-                  a!gridField(
-                    /* Replace the dummy data with a query, rule, or function that returns a datasubset and uses fv!pagingInfo as the paging configuration. */
-                    data: todatasubset(local!requirement, fv!pagingInfo),
-                    columns: {
-                      a!gridColumn(
-                        label: "Assignment",
-                        value: a!richTextDisplayField(
-                          labelPosition: "COLLAPSED",
-                          value: { a!richTextItem(text: fv!row.name) }
-                        )
-                      ),
-                      a!gridColumn(label: "Role", value: fv!row.dept),
-                      a!gridColumn(
-                        label: "Total Funding",
-                        value: fv!row.icon
+      ),
+      a!sideBySideItem(
+        width: "MINIMIZE",
+        item: a!buttonArrayLayout(
+          align: "END",
+          buttons: {
+            a!buttonWidget(
+              label: "",
+              size: "SMALL",
+              icon: "table",
+              style: "SOLID",
+              accessibilityText: "Chart view selected"
+            )
+          },
+          marginBelow: "NONE"
+        )
+      ),
+      a!sideBySideItem(
+        width: "MINIMIZE",
+        item: a!buttonArrayLayout(
+          align: "END",
+          buttons: {
+            a!buttonWidget(
+              label: "",
+              size: "SMALL",
+              icon: "area-chart",
+              style: "LINK"
+            )
+          },
+          marginBelow: "NONE"
+        )
+      )
+    },
+    marginBelow: "LESS"
+  ),
+  a!cardLayout(
+    contents: {
+      {
+        a!localVariables(
+          local!requirement: {
+            a!map(
+              id: 1,
+              name: "Kari Becker",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 2,
+              name: "Tom Smith",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 3,
+              name: "Bree Mercer",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 4,
+              name: "Kevin Lu",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 5,
+              name: "Diana Hellstrom",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 6,
+              name: "Francois Morin",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            ),
+            a!map(
+              id: 7,
+              name: "Maya Kapoor",
+              dept: "Contracting Officer",
+              icon: "$11,234.00"
+            )
+          },
+          {
+            a!sectionLayout(
+              label: "",
+              contents: {
+                a!gridField(
+                  /* Replace the dummy data with a query, rule, or function that returns a datasubset and uses fv!pagingInfo as the paging configuration. */
+                  data: todatasubset(local!requirement, fv!pagingInfo),
+                  columns: {
+                    a!gridColumn(
+                      label: "Assignment",
+                      value: a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: { a!richTextItem(text: fv!row.name) }
                       )
-                    },
-                    pageSize: 10,
-                    shadeAlternateRows: false,
-                    rowHeader: 1
-                  )
-                },
-                marginBelow: "EVEN_LESS"
-              )
-            }
-          )
-        }
-      },
-      height: "AUTO",
-      style: "NONE",
-      padding: "STANDARD",
-      shape: "SEMI_ROUNDED",
-      marginBelow: "STANDARD",
-      showBorder: false,
-      showShadow: true
-    )
-  }
-)
+                    ),
+                    a!gridColumn(label: "Role", value: fv!row.dept),
+                    a!gridColumn(
+                      label: "Total Funding",
+                      value: fv!row.icon
+                    )
+                  },
+                  pageSize: 10,
+                  shadeAlternateRows: false,
+                  rowHeader: 1
+                )
+              },
+              marginBelow: "EVEN_LESS"
+            )
+          }
+        )
+      }
+    },
+    height: "AUTO",
+    style: "NONE",
+    padding: "STANDARD",
+    shape: "SEMI_ROUNDED",
+    marginBelow: "STANDARD",
+    showBorder: false,
+    showShadow: true
+  )
+}
 ```
