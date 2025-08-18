@@ -81,6 +81,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Advanced Settings",
               labelSize: "SMALL",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -181,14 +182,14 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Alerts",
               labelSize: "SMALL",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -201,7 +202,7 @@ a!headerContentLayout(
                           value: {
                             a!richTextIcon(
                               icon: "bell-slash-o",
-                              color: "#6C6C75",
+                              color: "#636363",
                               size: "LARGE_PLUS"
                             )
                           },
@@ -254,8 +255,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
