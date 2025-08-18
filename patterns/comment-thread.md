@@ -464,6 +464,7 @@ a!cardLayout(
                   marginBelow: "EVEN_LESS"
                 )
               },
+              accessibilityText: "Selected",
               marginBelow: "NONE",
               showBorder: false
             ),
