@@ -133,6 +133,7 @@ a!headerContentLayout(
           a!sectionLayout(
             label: "Checklist Tasks",
             labelSize: "SMALL",
+            labelHeadingTag: "H2",
             labelColor: "STANDARD",
             contents: a!cardLayout(
               shape: "SEMI_ROUNDED",
@@ -168,7 +169,7 @@ a!headerContentLayout(
                                   color: "SECONDARY",
                                   size: "SMALL",
                                   saveInto: {}/* No action for mockup */
-                                  
+
                                 )
                               )
                             )
@@ -338,6 +339,7 @@ a!headerContentLayout(
           a!sectionLayout(
             label: "Details",
             labelSize: "SMALL",
+            labelHeadingTag: "H2",
             labelColor: "STANDARD",
             contents: a!cardLayout(
               shape: "SEMI_ROUNDED",
@@ -415,6 +417,7 @@ a!headerContentLayout(
           a!sectionLayout(
             label: "Funding",
             labelSize: "SMALL",
+            labelHeadingTag: "H2",
             labelColor: "STANDARD",
             contents: a!cardLayout(
               shape: "SEMI_ROUNDED",
@@ -460,7 +463,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Active Awards",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -950,7 +953,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Awards by Status",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -1044,7 +1047,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Funds Obligated",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -1167,7 +1170,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Socio-Economic Targets",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -2333,6 +2336,6 @@ a!headerContentLayout(
       }
     )
   },
-  backgroundColor: "#FAFAFA"
+  backgroundColor: "#FAFAFC"
 )
 ```
