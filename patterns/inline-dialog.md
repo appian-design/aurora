@@ -27,7 +27,6 @@ a!localVariables(
           contents: {
             {
               a!localVariables(
-               
                 {
                   a!buttonArrayLayout(
                     buttons: {
@@ -45,9 +44,7 @@ a!localVariables(
                   ),
                   a!cardLayout(
                     contents: {
-                      
                       if(isnull(ri!formFields),
-                     
                       a!columnsLayout(
                         columns: {
                           a!columnLayout(
@@ -96,9 +93,6 @@ a!localVariables(
                           )
                         }
                       ), ri!formFields),
-                      
-                      
-                      
                       a!sectionLayout(
                         label: "",
                         contents: {
@@ -107,11 +101,11 @@ a!localVariables(
                               a!sideBySideItem(
                                 item: a!buttonArrayLayout(
                                   buttons: {
-                                    a!buttonWidget_23r3(
+                                    a!buttonWidget(
                                       label: "Cancel",
                                       saveInto: a!save(local!active, not(local!active)),
                                       size: "SMALL",
-                                      style: "NORMAL"
+                                      style: "LINK"
                                     )
                                   },
                                   align: "START",
@@ -121,11 +115,11 @@ a!localVariables(
                               a!sideBySideItem(
                                 item: a!buttonArrayLayout(
                                   buttons: {
-                                    a!buttonWidget_23r3(
+                                    a!buttonWidget(
                                       label: if(isnull(ri!formAction),"Add", ri!formAction),
                                       saveInto: a!save(local!active, not(local!active)),
                                       size: "SMALL",
-                                      style: "PRIMARY"
+                                      style: "SOLID"
                                     )
                                   },
                                   align: "END",
@@ -153,8 +147,7 @@ a!localVariables(
                       )
                     },
                     stackWhen: { "PHONE", "TABLET_PORTRAIT" }
-                  ),
-                
+                  )
                 }
               )
             }
