@@ -1928,110 +1928,633 @@ a!headerContentLayout(
       }
     )
   },
-  backgroundColor: "#FAFAFA"
+  backgroundColor: "#FAFAFC"
 )
 ```
 
 ### Top Placement
 
 ```
-a!headerContentLayout(
-  header: {
-    a!billboardLayout(
-      backgroundColor: "#dbf1d3",
-      height: if(
-        a!isPageWidth({ "PHONE" }),
-        "MEDIUM",
-        "SHORT_PLUS"
-      ),
-      marginBelow: "NONE",
-      overlay: a!fullOverlay(
-        alignVertical: if(
+a!localVariables(
+  /* Sustainability metrics data in local variables */
+  local!metricsData: {
+    a!map(
+      category: "Energy Consumption",
+      value: "203,194",
+      unit: "MTCO2e",
+      reportingPercentage: "93% REPORTING",
+      reportingColor: "#ff9900",
+      target: "257K",
+      progressPercentage: 79,
+      progressColor: "#3a77e9",
+      targetExceeded: false
+    ),
+    a!map(
+      category: "Transportation",
+      value: "85,853",
+      unit: "MTCO2e",
+      reportingPercentage: "100% REPORTING",
+      reportingColor: "SECONDARY",
+      target: "78K",
+      progressPercentage: 100,
+      progressColor: "NEGATIVE",
+      targetExceeded: true
+    ),
+    a!map(
+      category: "Waste",
+      value: "25,472",
+      unit: "MTCO2e",
+      reportingPercentage: "100% REPORTING",
+      reportingColor: "SECONDARY",
+      target: "34K",
+      progressPercentage: 72,
+      progressColor: "#3a77e9",
+      targetExceeded: false
+    )
+  },
+  /* Chart data for emissions analysis */
+  local!emissionsOverTimeData: {
+    categories: {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"},
+    energySeries: {29.8, 28, 24.9, 21.5, 27.4, 27.2, 22.1, 29.9, 25.6, 26.4, 23.1, 25.3},
+    transportationSeries: {15.2, 19.8, 17.1, 16.7, 18.8, 15, 19.5, 19.4, 16.9, 16.7, 15.3, 16.6},
+    wasteSeries: {7.1, 6.2, 7.1, 7.6, 7.9, 7.6, 6, 7.9, 6.5, 6.3, 6.6, 6.4}
+  },
+  local!emissionsByCategoryData: {
+    a!map(label: "Energy", value: 314),
+    a!map(label: "Transportation", value: 219),
+    a!map(label: "Waste", value: 89)
+  },
+  local!emissionsByScopeData: {
+    a!map(label: "Scope 1", value: 27),
+    a!map(label: "Scope 2", value: 287),
+    a!map(label: "Scope 3", value: 308)
+  },
+  a!headerContentLayout(
+    header: {
+      a!billboardLayout(
+        backgroundColor: "#dbf1d3",
+        height: if(
           a!isPageWidth({ "PHONE" }),
-          "TOP",
-          "MIDDLE"
+          "MEDIUM",
+          "SHORT_PLUS"
         ),
-        contents: {
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(
-                text: {
-                  "Journey to ",
-                  a!richTextItem(
-                    text: { "Net-Zero Carbon " },
-                    style: { "STRONG" }
+        marginBelow: "NONE",
+        overlay: a!fullOverlay(
+          alignVertical: if(
+            a!isPageWidth({ "PHONE" }),
+            "TOP",
+            "MIDDLE"
+          ),
+          contents: {
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(
+                  text: {
+                    "Journey to ",
+                    a!richTextItem(
+                      text: { "Net-Zero Carbon " },
+                      style: { "STRONG" }
+                    )
+                  },
+                  color: "#274e13",
+                  size: if(
+                    a!isPageWidth({ "PHONE" }),
+                    "MEDIUM",
+                    "MEDIUM_PLUS"
                   )
-                },
-                color: "#274e13",
-                size: if(
-                  a!isPageWidth({ "PHONE" }),
-                  "MEDIUM",
-                  "MEDIUM_PLUS"
-                )
-              ),
-              a!richTextItem(
-                text: { "2025" },
-                color: "#47b311",
-                size: if(
-                  a!isPageWidth({ "PHONE" }),
-                  "MEDIUM",
-                  "MEDIUM_PLUS"
                 ),
-                style: { "STRONG" }
-              ),
-              char(10)
-            },
-            align: if(
-              a!isPageWidth({ "PHONE" }),
-              "CENTER",
-              "LEFT"
-            ),
-            marginBelow: if(
-              a!isPageWidth({ "PHONE" }),
-              "STANDARD",
-              "NONE"
-            )
-          ),
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(
-                text: { "2021 ACTUAL IMPACT" },
-                size: "SMALL",
-                style: { "STRONG" }
-              )
-            },
-            showWhen: a!isPageWidth({ "PHONE" }),
-            align: "CENTER",
-            marginBelow: "NONE"
-          ),
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(
-                text: {
-                  a!richTextItem(
-                    text: { "______________________________" },
-                    size: "SMALL"
+                a!richTextItem(
+                  text: { "2025" },
+                  color: "#47b311",
+                  size: if(
+                    a!isPageWidth({ "PHONE" }),
+                    "MEDIUM",
+                    "MEDIUM_PLUS"
                   ),
-                  "____________________________________"
-                },
-                color: "#93c47d"
+                  style: { "STRONG" }
+                ),
+                char(10)
+              },
+              align: if(
+                a!isPageWidth({ "PHONE" }),
+                "CENTER",
+                "LEFT"
+              ),
+              marginBelow: if(
+                a!isPageWidth({ "PHONE" }),
+                "STANDARD",
+                "NONE"
               )
-            },
-            showWhen: a!isPageWidth(
-              {
-                "DESKTOP_NARROW",
-                "DESKTOP",
-                "DESKTOP_WIDE"
-              }
             ),
-            marginBelow: "MORE"
-          ),
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(
+                  text: { "2021 ACTUAL IMPACT" },
+                  size: "SMALL",
+                  style: { "STRONG" }
+                )
+              },
+              showWhen: a!isPageWidth({ "PHONE" }),
+              align: "CENTER",
+              marginBelow: "NONE"
+            ),
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(
+                  text: {
+                    a!richTextItem(
+                      text: { "______________________________" },
+                      size: "SMALL"
+                    ),
+                    "____________________________________"
+                  },
+                  color: "#93c47d"
+                )
+              },
+              showWhen: a!isPageWidth(
+                {
+                  "DESKTOP_NARROW",
+                  "DESKTOP",
+                  "DESKTOP_WIDE"
+                }
+              ),
+              marginBelow: "MORE"
+            ),
+            a!columnsLayout(
+              columns: {
+                a!columnLayout(
+                  contents: {
+                    a!columnsLayout(
+                      columns: {
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    label: "2021 ACTUAL IMPACT",
+                                    labelPosition: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "COLLAPSED",
+                                      "ABOVE"
+                                    ),
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "smog") },
+                                        color: "#47b311",
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextItem(
+                                            text: { "314,519 " },
+                                            size: if(
+                                              a!isPageWidth(
+                                                {
+                                                  "DESKTOP_NARROW",
+                                                  "DESKTOP",
+                                                  "DESKTOP_WIDE"
+                                                }
+                                              ),
+                                              "LARGE_PLUS",
+                                              "MEDIUM_PLUS"
+                                            ),
+                                            style: { "STRONG" }
+                                          ),
+                                          "MTCO2e"
+                                        },
+                                        color: "#274e13"
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        color: "SECONDARY",
+                                        size: "LARGE"
+                                      )
+                                    },
+                                    align: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "CENTER",
+                                      "LEFT"
+                                    ),
+                                    marginBelow: if(a!isPageWidth({ "PHONE" }), "LESS", "NONE")
+                                  ),
+                                  width: if(
+                                    a!isPageWidth({ "PHONE" }),
+                                    "AUTO",
+                                    "MINIMIZE"
+                                  )
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "SPARSE"
+                            )
+                          },
+                          width: "AUTO"
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: { "2021 OFFSETS" },
+                                  size: "SMALL",
+                                  style: { "STRONG" }
+                                )
+                              },
+                              showWhen: a!isPageWidth({ "PHONE" }),
+                              align: "CENTER",
+                              marginBelow: "NONE"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    label: "2021 OFFSETS",
+                                    labelPosition: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "COLLAPSED",
+                                      "ABOVE"
+                                    ),
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "seedling") },
+                                        color: "#47b311",
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextItem(
+                                            text: { "219,482 " },
+                                            size: if(
+                                              a!isPageWidth(
+                                                {
+                                                  "DESKTOP_NARROW",
+                                                  "DESKTOP",
+                                                  "DESKTOP_WIDE"
+                                                }
+                                              ),
+                                              "LARGE_PLUS",
+                                              "MEDIUM_PLUS"
+                                            ),
+                                            style: { "STRONG" }
+                                          ),
+                                          "MTCO2e"
+                                        },
+                                        color: "#274e13"
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        color: "SECONDARY",
+                                        size: "LARGE"
+                                      )
+                                    },
+                                    align: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "CENTER",
+                                      "LEFT"
+                                    ),
+                                    marginBelow: if(a!isPageWidth({ "PHONE" }), "LESS", "NONE")
+                                  ),
+                                  width: if(
+                                    a!isPageWidth({ "PHONE" }),
+                                    "AUTO",
+                                    "MINIMIZE"
+                                  )
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "SPARSE"
+                            )
+                          },
+                          width: "AUTO"
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: { "2021 NET IMPACT" },
+                                  size: "SMALL",
+                                  style: { "STRONG" }
+                                )
+                              },
+                              showWhen: a!isPageWidth({ "PHONE" }),
+                              align: "CENTER",
+                              marginBelow: "NONE"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    label: "2021 NET IMPACT",
+                                    labelPosition: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "COLLAPSED",
+                                      "ABOVE"
+                                    ),
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "globe-africa") },
+                                        color: "#47b311",
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        size: if(
+                                          a!isPageWidth(
+                                            {
+                                              "DESKTOP_NARROW",
+                                              "DESKTOP",
+                                              "DESKTOP_WIDE"
+                                            }
+                                          ),
+                                          "LARGE_PLUS",
+                                          "MEDIUM_PLUS"
+                                        ),
+                                        style: { "STRONG" }
+                                      ),
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextItem(
+                                            text: { "95,037 " },
+                                            size: if(
+                                              a!isPageWidth(
+                                                {
+                                                  "DESKTOP_NARROW",
+                                                  "DESKTOP",
+                                                  "DESKTOP_WIDE"
+                                                }
+                                              ),
+                                              "LARGE_PLUS",
+                                              "MEDIUM_PLUS"
+                                            ),
+                                            style: { "STRONG" }
+                                          ),
+                                          "MTCO2e"
+                                        },
+                                        color: "#274e13"
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        color: "SECONDARY",
+                                        size: "LARGE"
+                                      )
+                                    },
+                                    align: if(
+                                      a!isPageWidth({ "PHONE" }),
+                                      "CENTER",
+                                      "LEFT"
+                                    ),
+                                    marginBelow: "NONE"
+                                  ),
+                                  width: if(
+                                    a!isPageWidth({ "PHONE" }),
+                                    "AUTO",
+                                    "MINIMIZE"
+                                  )
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "SPARSE"
+                            )
+                          },
+                          width: "AUTO"
+                        )
+                      },
+                      marginAbove: "NONE",
+                      stackWhen: { "PHONE" },
+                      showDividers: if(a!isPageWidth({ "PHONE" }), false, true)
+                    )
+                  },
+                  width: "WIDE_PLUS"
+                ),
+                a!columnLayout(
+                  contents: {},
+                  width: "MEDIUM_PLUS",
+                  showWhen: a!isPageWidth({ "DESKTOP_WIDE" })
+                )
+              },
+              alignVertical: "MIDDLE",
+              stackWhen: {
+                "PHONE",
+                "TABLET_PORTRAIT",
+                "TABLET_LANDSCAPE"
+              }
+            )
+          },
+          style: "NONE"
+        )
+      ),
+      a!cardLayout(
+        contents: {
           a!columnsLayout(
             columns: {
               a!columnLayout(
+                contents: {
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextIcon(icon: "calendar", color: "#274e13")
+                          }
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!dropdownField(
+                          label: "Countries Filter",
+                          labelPosition: "COLLAPSED",
+                          choiceLabels: {
+                            "2021 Full Year",
+                            "Option 2",
+                            "Option 3",
+                            "Option 4",
+                            "Option 5",
+                            "Option 6",
+                            "Option 7",
+                            "Option 8",
+                            "Option 9",
+                            "Option 10",
+                            "Option 11",
+                            "Option 12"
+                          },
+                          choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+                          value: 1,
+                          saveInto: {},
+                          searchDisplay: "AUTO",
+                          validations: {}
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE"
+                  )
+                },
+                width: "NARROW_PLUS"
+              ),
+              a!columnLayout(contents: {}),
+              a!columnLayout(
+                contents: {
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextIcon(icon: "globe-alt", color: "#274e13")
+                          }
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!dropdownField(
+                          label: "Countries Filter",
+                          labelPosition: "COLLAPSED",
+                          choiceLabels: {
+                            "All countries",
+                            "Option 2",
+                            "Option 3",
+                            "Option 4",
+                            "Option 5",
+                            "Option 6",
+                            "Option 7",
+                            "Option 8",
+                            "Option 9",
+                            "Option 10",
+                            "Option 11",
+                            "Option 12"
+                          },
+                          choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+                          value: 1,
+                          saveInto: {},
+                          searchDisplay: "AUTO",
+                          validations: {}
+                        )
+                      ),
+                      a!sideBySideItem(
+                        item: a!dropdownField(
+                          label: "Regions Filter",
+                          labelPosition: "COLLAPSED",
+                          choiceLabels: {
+                            "All regions",
+                            "Option 2",
+                            "Option 3",
+                            "Option 4",
+                            "Option 5",
+                            "Option 6",
+                            "Option 7",
+                            "Option 8",
+                            "Option 9",
+                            "Option 10",
+                            "Option 11",
+                            "Option 12"
+                          },
+                          choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+                          value: 1,
+                          saveInto: {},
+                          searchDisplay: "AUTO",
+                          validations: {}
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE"
+                  )
+                },
+                width: "MEDIUM_PLUS"
+              )
+            }
+          )
+        },
+        height: "AUTO",
+        style: "#85c47d",
+        padding: "STANDARD",
+        marginBelow: "LESS",
+        showBorder: false
+      )
+    },
+    contents: {
+      /* First row of metrics cards using a!cardGroupLayout */
+      a!cardGroupLayout(
+        labelPosition: "COLLAPSED",
+        cards: a!forEach(
+          items: local!metricsData,
+          expression: a!cardLayout(
+            shape: "SEMI_ROUNDED",
+            contents: {
+              a!sectionLayout(
+                label: fv!item.category,
+                labelHeadingTag: "H2",
+                labelSize: "SMALL",
+                labelColor: "STANDARD",
                 contents: {
                   a!columnsLayout(
                     columns: {
@@ -2041,1412 +2564,638 @@ a!headerContentLayout(
                             items: {
                               a!sideBySideItem(
                                 item: a!richTextDisplayField(
-                                  label: "2021 ACTUAL IMPACT",
-                                  labelPosition: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "COLLAPSED",
-                                    "ABOVE"
-                                  ),
+                                  labelPosition: "COLLAPSED",
                                   value: {
                                     a!richTextItem(
-                                      text: { a!richTextIcon(icon: "smog") },
-                                      color: "#47b311",
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
+                                      text: { fv!item.value & " " },
+                                      size: "LARGE",
                                       style: { "STRONG" }
                                     ),
-                                    a!richTextItem(
-                                      text: { " " },
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
-                                      style: { "STRONG" }
-                                    ),
-                                    a!richTextItem(
-                                      text: {
-                                        a!richTextItem(
-                                          text: { "314,519 " },
-                                          size: if(
-                                            a!isPageWidth(
-                                              {
-                                                "DESKTOP_NARROW",
-                                                "DESKTOP",
-                                                "DESKTOP_WIDE"
-                                              }
-                                            ),
-                                            "LARGE_PLUS",
-                                            "MEDIUM_PLUS"
-                                          ),
-                                          style: { "STRONG" }
-                                        ),
-                                        "MTCO2e"
-                                      },
-                                      color: "#274e13"
-                                    ),
+                                    fv!item.unit,
                                     a!richTextItem(
                                       text: { " " },
                                       color: "SECONDARY",
                                       size: "LARGE"
                                     )
                                   },
-                                  align: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "CENTER",
-                                    "LEFT"
-                                  ),
-                                  marginBelow: if(a!isPageWidth({ "PHONE" }), "LESS", "NONE")
-                                ),
-                                width: if(
-                                  a!isPageWidth({ "PHONE" }),
-                                  "AUTO",
-                                  "MINIMIZE"
-                                )
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            spacing: "SPARSE"
-                          )
-                        },
-                        width: "AUTO"
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "2021 OFFSETS" },
-                                size: "SMALL",
-                                style: { "STRONG" }
-                              )
-                            },
-                            showWhen: a!isPageWidth({ "PHONE" }),
-                            align: "CENTER",
-                            marginBelow: "NONE"
-                          ),
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "2021 OFFSETS",
-                                  labelPosition: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "COLLAPSED",
-                                    "ABOVE"
-                                  ),
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "seedling") },
-                                      color: "#47b311",
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
-                                      style: { "STRONG" }
-                                    ),
-                                    a!richTextItem(
-                                      text: { " " },
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
-                                      style: { "STRONG" }
-                                    ),
-                                    a!richTextItem(
-                                      text: {
-                                        a!richTextItem(
-                                          text: { "219,482 " },
-                                          size: if(
-                                            a!isPageWidth(
-                                              {
-                                                "DESKTOP_NARROW",
-                                                "DESKTOP",
-                                                "DESKTOP_WIDE"
-                                              }
-                                            ),
-                                            "LARGE_PLUS",
-                                            "MEDIUM_PLUS"
-                                          ),
-                                          style: { "STRONG" }
-                                        ),
-                                        "MTCO2e"
-                                      },
-                                      color: "#274e13"
-                                    ),
-                                    a!richTextItem(
-                                      text: { " " },
-                                      color: "SECONDARY",
-                                      size: "LARGE"
-                                    )
-                                  },
-                                  align: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "CENTER",
-                                    "LEFT"
-                                  ),
-                                  marginBelow: if(a!isPageWidth({ "PHONE" }), "LESS", "NONE")
-                                ),
-                                width: if(
-                                  a!isPageWidth({ "PHONE" }),
-                                  "AUTO",
-                                  "MINIMIZE"
-                                )
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            spacing: "SPARSE"
-                          )
-                        },
-                        width: "AUTO"
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "2021 NET IMPACT" },
-                                size: "SMALL",
-                                style: { "STRONG" }
-                              )
-                            },
-                            showWhen: a!isPageWidth({ "PHONE" }),
-                            align: "CENTER",
-                            marginBelow: "NONE"
-                          ),
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "2021 NET IMPACT",
-                                  labelPosition: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "COLLAPSED",
-                                    "ABOVE"
-                                  ),
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "globe-africa") },
-                                      color: "#47b311",
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
-                                      style: { "STRONG" }
-                                    ),
-                                    a!richTextItem(
-                                      text: { " " },
-                                      size: if(
-                                        a!isPageWidth(
-                                          {
-                                            "DESKTOP_NARROW",
-                                            "DESKTOP",
-                                            "DESKTOP_WIDE"
-                                          }
-                                        ),
-                                        "LARGE_PLUS",
-                                        "MEDIUM_PLUS"
-                                      ),
-                                      style: { "STRONG" }
-                                    ),
-                                    a!richTextItem(
-                                      text: {
-                                        a!richTextItem(
-                                          text: { "95,037 " },
-                                          size: if(
-                                            a!isPageWidth(
-                                              {
-                                                "DESKTOP_NARROW",
-                                                "DESKTOP",
-                                                "DESKTOP_WIDE"
-                                              }
-                                            ),
-                                            "LARGE_PLUS",
-                                            "MEDIUM_PLUS"
-                                          ),
-                                          style: { "STRONG" }
-                                        ),
-                                        "MTCO2e"
-                                      },
-                                      color: "#274e13"
-                                    ),
-                                    a!richTextItem(
-                                      text: { " " },
-                                      color: "SECONDARY",
-                                      size: "LARGE"
-                                    )
-                                  },
-                                  align: if(
-                                    a!isPageWidth({ "PHONE" }),
-                                    "CENTER",
-                                    "LEFT"
-                                  ),
+                                  marginAbove: "STANDARD",
                                   marginBelow: "NONE"
                                 ),
-                                width: if(
-                                  a!isPageWidth({ "PHONE" }),
-                                  "AUTO",
-                                  "MINIMIZE"
-                                )
+                                width: "MINIMIZE"
                               )
                             },
                             alignVertical: "MIDDLE",
-                            spacing: "SPARSE"
+                            marginBelow: "EVEN_LESS"
+                          ),
+                          a!tagField(
+                            labelPosition: "COLLAPSED",
+                            tags: {
+                              a!tagItem(
+                                text: fv!item.reportingPercentage,
+                                backgroundColor: fv!item.reportingColor
+                              )
+                            },
+                            size: "SMALL"
+                          )
+                        },
+                        width: "NARROW"
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: { fv!item.target }, size: "STANDARD")
+                            },
+                            align: "CENTER",
+                            marginBelow: "NONE"
+                          ),
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                contents: {
+                                  a!progressBarField(
+                                    label: "",
+                                    labelPosition: "COLLAPSED",
+                                    percentage: fv!item.progressPercentage,
+                                    color: fv!item.progressColor,
+                                    style: "THICK",
+                                    marginAbove: "LESS",
+                                    marginBelow: "LESS",
+                                    showPercentage: false
+                                  )
+                                },
+                                width: "AUTO"
+                              ),
+                              a!columnLayout(
+                                contents: {
+                                  a!progressBarField(
+                                    label: "",
+                                    labelPosition: "COLLAPSED",
+                                    percentage: if(fv!item.targetExceeded, 10, -1),
+                                    color: "NEGATIVE",
+                                    style: "THICK",
+                                    marginAbove: "LESS",
+                                    marginBelow: "LESS",
+                                    showPercentage: false
+                                  )
+                                }
+                              )
+                            },
+                            alignVertical: "MIDDLE",
+                            marginAbove: "NONE",
+                            marginBelow: "EVEN_LESS",
+                            spacing: "NONE",
+                            stackWhen: { "NEVER" },
+                            showDividers: true
+                          ),
+                          a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: { "TARGET" }, size: "SMALL")
+                            },
+                            align: "CENTER"
                           )
                         },
                         width: "AUTO"
                       )
                     },
-                    marginAbove: "NONE",
-                    stackWhen: { "PHONE" },
-                    showDividers: if(a!isPageWidth({ "PHONE" }), false, true)
+                    alignVertical: "MIDDLE",
+                    stackWhen: { "TABLET_LANDSCAPE", "DESKTOP_NARROW" }
                   )
-                },
-                width: "WIDE_PLUS"
-              ),
-              a!columnLayout(
-                contents: {},
-                width: "MEDIUM_PLUS",
-                showWhen: a!isPageWidth({ "DESKTOP_WIDE" })
+                }
               )
             },
-            alignVertical: "MIDDLE",
-            stackWhen: {
-              "PHONE",
-              "TABLET_PORTRAIT",
-              "TABLET_LANDSCAPE"
-            }
+            link: a!dynamicLink(),
+            height: "AUTO",
+            style: "NONE",
+            marginBelow: "STANDARD",
+            showBorder: false,
+            showShadow: true
+          )
+        ),
+        cardWidth: "MEDIUM"
+      ),
+      /* Second row of chart cards using a!cardGroupLayout */
+      a!cardGroupLayout(
+        labelPosition: "COLLAPSED",
+        cards: {
+          /* Emissions over Time Card */
+          a!cardLayout(
+            contents: {
+              a!sectionLayout(
+                label: "Emissions over Time",
+                labelHeadingTag: "H2",
+                labelSize: "SMALL",
+                labelColor: "STANDARD",
+                contents: {
+                  a!areaChartField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    categories: local!emissionsOverTimeData.categories,
+                    series: {
+                      a!chartSeries(
+                        label: "Energy",
+                        data: local!emissionsOverTimeData.energySeries
+                      ),
+                      a!chartSeries(
+                        label: "Transportation",
+                        data: local!emissionsOverTimeData.transportationSeries
+                      ),
+                      a!chartSeries(
+                        label: "Waste",
+                        data: local!emissionsOverTimeData.wasteSeries
+                      )
+                    },
+                    xAxisTitle: "2021",
+                    yAxisTitle: "MTCO2e",
+                    stacking: "NONE",
+                    showLegend: true,
+                    showTooltips: true,
+                    colorScheme: a!colorSchemeCustom(colors: { "#59C968", "#41934B", "#117D20" }),
+                    height: if(
+                      a!isPageWidth(
+                        {
+                          "PHONE",
+                          "TABLET_PORTRAIT",
+                          "TABLET_LANDSCAPE",
+                          "DESKTOP_NARROW"
+                        }
+                      ),
+                      "SHORT",
+                      "MEDIUM"
+                    ),
+                    xAxisStyle: "STANDARD",
+                    yAxisStyle: "STANDARD"
+                  )
+                }
+              )
+            },
+            shape: "SEMI_ROUNDED",
+            height: "AUTO",
+            style: "NONE",
+            marginBelow: "STANDARD",
+            showBorder: false,
+            showShadow: true
+          ),
+          /* Emissions by Category Card */
+          a!cardLayout(
+            shape: "SEMI_ROUNDED",
+            contents: {
+              a!sectionLayout(
+                label: "Emissions by Category",
+                labelHeadingTag: "H2",
+                labelColor: "STANDARD",
+                contents: {
+                  a!pieChartField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    series: a!forEach(
+                      items: local!emissionsByCategoryData,
+                      expression: a!chartSeries(label: fv!item.label, data: fv!item.value)
+                    ),
+                    colorScheme: a!colorSchemeCustom(
+                      colors: {
+                        "#59C968",
+                        "#41934B",
+                        "#117D20",
+                        "#0A4A13"
+                      }
+                    ),
+                    style: "DONUT",
+                    seriesLabelStyle: if(
+                      a!isPageWidth(
+                        {
+                          "PHONE",
+                          "TABLET_PORTRAIT",
+                          "TABLET_LANDSCAPE",
+                          "DESKTOP_NARROW"
+                        }
+                      ),
+                      "LEGEND",
+                      "ON_CHART"
+                    ),
+                    height: if(
+                      a!isPageWidth(
+                        {
+                          "PHONE",
+                          "TABLET_PORTRAIT",
+                          "TABLET_LANDSCAPE",
+                          "DESKTOP_NARROW"
+                        }
+                      ),
+                      "SHORT",
+                      "MEDIUM"
+                    )
+                  )
+                }
+              )
+            },
+            height: "AUTO",
+            style: "NONE",
+            marginBelow: "STANDARD",
+            showBorder: false,
+            showShadow: true
+          ),
+          /* Emissions by Scope Card */
+          a!cardLayout(
+            shape: "SEMI_ROUNDED",
+            contents: {
+              a!sectionLayout(
+                label: "Emissions by Scope",
+                labelHeadingTag: "H2",
+                labelColor: "STANDARD",
+                contents: {
+                  a!pieChartField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    series: a!forEach(
+                      items: local!emissionsByScopeData,
+                      expression: a!chartSeries(label: fv!item.label, data: fv!item.value)
+                    ),
+                    colorScheme: a!colorSchemeCustom(
+                      colors: {
+                        "#59C968",
+                        "#41934B",
+                        "#117D20",
+                        "#0A4A13"
+                      }
+                    ),
+                    style: "DONUT",
+                    seriesLabelStyle: if(
+                      a!isPageWidth(
+                        {
+                          "PHONE",
+                          "TABLET_PORTRAIT",
+                          "TABLET_LANDSCAPE",
+                          "DESKTOP_NARROW"
+                        }
+                      ),
+                      "LEGEND",
+                      "ON_CHART"
+                    ),
+                    height: if(
+                      a!isPageWidth(
+                        {
+                          "PHONE",
+                          "TABLET_PORTRAIT",
+                          "TABLET_LANDSCAPE",
+                          "DESKTOP_NARROW"
+                        }
+                      ),
+                      "SHORT",
+                      "MEDIUM"
+                    )
+                  )
+                }
+              )
+            },
+            height: "AUTO",
+            style: "NONE",
+            marginBelow: "STANDARD",
+            showBorder: false,
+            showShadow: true
           )
         },
-        style: "NONE"
+        cardWidth: "MEDIUM"
+      ),
+
+      /* Emissions per Unit Produced Section */
+      a!sectionLayout(
+        label: "Emissions per Unit Produced",
+        labelHeadingTag: "H2",
+        labelSize: "SMALL",
+        labelColor: "STANDARD",
+        contents: {
+          a!cardLayout(
+            shape: "SEMI_ROUNDED",
+            contents: {
+              a!columnsLayout(
+                columns: {
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "ENERGY (SCOPE 1)" },
+                            color: "SECONDARY"
+                          )
+                        }
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!stampField(
+                              labelPosition: "COLLAPSED",
+                              icon: "bolt",
+                              contentColor: "STANDARD",
+                              size: "TINY"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    a!richTextItem(text: { "0.020 " }, size: "MEDIUM_PLUS"),
+                                    a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
+                                  },
+                                  color: "STANDARD"
+                                )
+                              }
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
+                        },
+                        align: if(
+                          a!isPageWidth(
+                            {
+                              "PHONE",
+                              "TABLET_PORTRAIT",
+                              "TABLET_LANDSCAPE",
+                              "DESKTOP_NARROW"
+                            }
+                          ),
+                          "LEFT",
+                          "CENTER"
+                        )
+                      )
+                    },
+                    width: "EXTRA_NARROW"
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "ENERGY (SCOPE 2)" },
+                            color: "SECONDARY"
+                          )
+                        }
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!stampField(
+                              labelPosition: "COLLAPSED",
+                              icon: "plug",
+                              contentColor: "STANDARD",
+                              size: "TINY"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    a!richTextItem(text: { "0.157 " }, size: "MEDIUM_PLUS"),
+                                    a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
+                                  },
+                                  color: "STANDARD"
+                                )
+                              }
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
+                        },
+                        align: if(
+                          a!isPageWidth(
+                            {
+                              "PHONE",
+                              "TABLET_PORTRAIT",
+                              "TABLET_LANDSCAPE",
+                              "DESKTOP_NARROW"
+                            }
+                          ),
+                          "LEFT",
+                          "CENTER"
+                        )
+                      )
+                    },
+                    width: "EXTRA_NARROW"
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "TRANSPORTATION" },
+                            color: "SECONDARY"
+                          )
+                        }
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!stampField(
+                              labelPosition: "COLLAPSED",
+                              icon: "truck-moving",
+                              contentColor: "STANDARD",
+                              size: "TINY"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    a!richTextItem(text: { "0.123 " }, size: "MEDIUM_PLUS"),
+                                    a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
+                                  },
+                                  color: "STANDARD"
+                                )
+                              }
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
+                        },
+                        align: if(
+                          a!isPageWidth(
+                            {
+                              "PHONE",
+                              "TABLET_PORTRAIT",
+                              "TABLET_LANDSCAPE",
+                              "DESKTOP_NARROW"
+                            }
+                          ),
+                          "LEFT",
+                          "CENTER"
+                        )
+                      )
+                    },
+                    width: "EXTRA_NARROW"
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { "WASTE" }, color: "SECONDARY")
+                        }
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!stampField(
+                              labelPosition: "COLLAPSED",
+                              icon: "trash",
+                              contentColor: "STANDARD",
+                              size: "TINY"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    a!richTextItem(text: { "0.045 " }, size: "MEDIUM_PLUS"),
+                                    a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
+                                  },
+                                  color: "STANDARD"
+                                )
+                              }
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { "=" }, size: "MEDIUM_PLUS")
+                        },
+                        align: if(
+                          a!isPageWidth(
+                            {
+                              "PHONE",
+                              "TABLET_PORTRAIT",
+                              "TABLET_LANDSCAPE",
+                              "DESKTOP_NARROW"
+                            }
+                          ),
+                          "LEFT",
+                          "CENTER"
+                        )
+                      )
+                    },
+                    width: "EXTRA_NARROW"
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: { "TOTAL" },
+                            color: "SECONDARY",
+                            style: { "STRONG" }
+                          )
+                        }
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!stampField(
+                              labelPosition: "COLLAPSED",
+                              icon: "smog",
+                              contentColor: "STANDARD",
+                              size: "TINY"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    a!richTextItem(
+                                      text: {
+                                        a!richTextItem(text: { "0.320" }, style: { "STRONG" }),
+                                        " "
+                                      },
+                                      size: "MEDIUM_PLUS"
+                                    ),
+                                    a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
+                                  },
+                                  color: "STANDARD"
+                                )
+                              }
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    }
+                  )
+                },
+                alignVertical: "MIDDLE",
+                stackWhen: {
+                  "PHONE",
+                  "TABLET_PORTRAIT",
+                  "TABLET_LANDSCAPE",
+                  "DESKTOP_NARROW"
+                },
+                showDividers: false
+              )
+            },
+            height: "AUTO",
+            style: "NONE",
+            padding: "STANDARD",
+            marginBelow: "STANDARD",
+            showBorder: false,
+            showShadow: true
+          )
+        }
       )
-    ),
-    a!cardLayout(
-      contents: {
-        a!columnsLayout(
-          columns: {
-            a!columnLayout(
-              contents: {
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(icon: "calendar", color: "#274e13")
-                        }
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!dropdownField(
-                        label: "Countries Filter",
-                        labelPosition: "COLLAPSED",
-                        choiceLabels: {
-                          "2021 Full Year",
-                          "Option 2",
-                          "Option 3",
-                          "Option 4",
-                          "Option 5",
-                          "Option 6",
-                          "Option 7",
-                          "Option 8",
-                          "Option 9",
-                          "Option 10",
-                          "Option 11",
-                          "Option 12"
-                        },
-                        choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
-                        value: 1,
-                        saveInto: {},
-                        searchDisplay: "AUTO",
-                        validations: {}
-                      )
-                    )
-                  },
-                  alignVertical: "MIDDLE"
-                )
-              },
-              width: "NARROW_PLUS"
-            ),
-            a!columnLayout(contents: {}),
-            a!columnLayout(
-              contents: {
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(icon: "globe-alt", color: "#274e13")
-                        }
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!dropdownField(
-                        label: "Countries Filter",
-                        labelPosition: "COLLAPSED",
-                        choiceLabels: {
-                          "All countries",
-                          "Option 2",
-                          "Option 3",
-                          "Option 4",
-                          "Option 5",
-                          "Option 6",
-                          "Option 7",
-                          "Option 8",
-                          "Option 9",
-                          "Option 10",
-                          "Option 11",
-                          "Option 12"
-                        },
-                        choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
-                        value: 1,
-                        saveInto: {},
-                        searchDisplay: "AUTO",
-                        validations: {}
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!dropdownField(
-                        label: "Regions Filter",
-                        labelPosition: "COLLAPSED",
-                        choiceLabels: {
-                          "All regions",
-                          "Option 2",
-                          "Option 3",
-                          "Option 4",
-                          "Option 5",
-                          "Option 6",
-                          "Option 7",
-                          "Option 8",
-                          "Option 9",
-                          "Option 10",
-                          "Option 11",
-                          "Option 12"
-                        },
-                        choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
-                        value: 1,
-                        saveInto: {},
-                        searchDisplay: "AUTO",
-                        validations: {}
-                      )
-                    )
-                  },
-                  alignVertical: "MIDDLE"
-                )
-              },
-              width: "MEDIUM_PLUS"
-            )
-          }
-        )
-      },
-      height: "AUTO",
-      style: "#85c47d",
-      padding: "STANDARD",
-      marginBelow: "LESS",
-      showBorder: false
-    )
-  },
-  contents: {
-    a!columnsLayout(
-      columns: {
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Energy Consumption",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: { "203,194 " },
-                                        size: "LARGE",
-                                        style: { "STRONG" }
-                                      ),
-                                      "MTCO2e",
-                                      a!richTextItem(
-                                        text: { " " },
-                                        color: "SECONDARY",
-                                        size: "LARGE"
-                                      )
-                                    },
-                                    marginAbove: "STANDARD",
-                                    marginBelow: "NONE"
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginBelow: "EVEN_LESS"
-                            ),
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem(
-                                  text: "93% REPORTING",
-                                  backgroundColor: "#ff9900"
-                                )
-                              },
-                              size: "SMALL"
-                            )
-                          },
-                          width: "NARROW"
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "257K" }, size: "STANDARD")
-                              },
-                              align: "CENTER",
-                              marginBelow: "NONE"
-                            ),
-                            a!columnsLayout(
-                              columns: {
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: 79,
-                                      color: "#3a77e9",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  },
-                                  width: "AUTO"
-                                ),
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: - 1,
-                                      color: "NEGATIVE",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  }
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginAbove: "NONE",
-                              marginBelow: "EVEN_LESS",
-                              spacing: "NONE",
-                              stackWhen: { "NEVER" },
-                              showDividers: true
-                            ),
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "TARGET" }, size: "SMALL")
-                              },
-                              align: "CENTER"
-                            )
-                          },
-                          width: "AUTO"
-                        )
-                      },
-                      alignVertical: "MIDDLE",
-                      stackWhen: { "TABLET_LANDSCAPE", "DESKTOP_NARROW" }
-                    )
-                  },
-                  link: a!dynamicLink(),
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        ),
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Transportation",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: { "85,853 " },
-                                        size: "LARGE",
-                                        style: { "STRONG" }
-                                      ),
-                                      "MTCO2e",
-                                      a!richTextItem(
-                                        text: { " " },
-                                        color: "SECONDARY",
-                                        size: "LARGE"
-                                      )
-                                    },
-                                    marginAbove: "STANDARD",
-                                    marginBelow: "NONE"
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginBelow: "EVEN_LESS"
-                            ),
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem(
-                                  text: "100% REPORTING",
-                                  backgroundColor: "SECONDARY"
-                                )
-                              },
-                              size: "SMALL"
-                            )
-                          },
-                          width: "NARROW"
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "78K" }, size: "STANDARD")
-                              },
-                              align: "CENTER",
-                              marginBelow: "NONE"
-                            ),
-                            a!columnsLayout(
-                              columns: {
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: 100,
-                                      color: "NEGATIVE",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  },
-                                  width: "AUTO"
-                                ),
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: 10,
-                                      color: "NEGATIVE",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  }
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginAbove: "NONE",
-                              marginBelow: "EVEN_LESS",
-                              spacing: "NONE",
-                              stackWhen: { "NEVER" },
-                              showDividers: true
-                            ),
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "TARGET" }, size: "SMALL")
-                              },
-                              align: "CENTER"
-                            )
-                          },
-                          width: "AUTO"
-                        )
-                      },
-                      alignVertical: "MIDDLE",
-                      stackWhen: { "TABLET_LANDSCAPE", "DESKTOP_NARROW" }
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        ),
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Waste",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: { "25,472 " },
-                                        size: "LARGE",
-                                        style: { "STRONG" }
-                                      ),
-                                      "MTCO2e",
-                                      a!richTextItem(
-                                        text: { " " },
-                                        color: "SECONDARY",
-                                        size: "LARGE"
-                                      )
-                                    },
-                                    marginAbove: "STANDARD",
-                                    marginBelow: "NONE"
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginBelow: "EVEN_LESS"
-                            ),
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem(
-                                  text: "100% REPORTING",
-                                  backgroundColor: "SECONDARY"
-                                )
-                              },
-                              size: "SMALL"
-                            )
-                          },
-                          width: "NARROW"
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "34K" }, size: "STANDARD")
-                              },
-                              align: "CENTER",
-                              marginBelow: "NONE"
-                            ),
-                            a!columnsLayout(
-                              columns: {
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: 72,
-                                      color: "#3a77e9",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  },
-                                  width: "AUTO"
-                                ),
-                                a!columnLayout(
-                                  contents: {
-                                    a!progressBarField(
-                                      label: "",
-                                      labelPosition: "COLLAPSED",
-                                      percentage: - 1,
-                                      color: "NEGATIVE",
-                                      style: "THICK",
-                                      marginAbove: "LESS",
-                                      marginBelow: "LESS",
-                                      showPercentage: false
-                                    )
-                                  }
-                                )
-                              },
-                              alignVertical: "MIDDLE",
-                              marginAbove: "NONE",
-                              marginBelow: "EVEN_LESS",
-                              spacing: "NONE",
-                              stackWhen: { "NEVER" },
-                              showDividers: true
-                            ),
-                            a!richTextDisplayField(
-                              labelPosition: "COLLAPSED",
-                              value: {
-                                a!richTextItem(text: { "TARGET" }, size: "SMALL")
-                              },
-                              align: "CENTER"
-                            )
-                          },
-                          width: "AUTO"
-                        )
-                      },
-                      alignVertical: "MIDDLE",
-                      stackWhen: { "TABLET_LANDSCAPE", "DESKTOP_NARROW" }
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        )
-      },
-      stackWhen: { "PHONE", "TABLET_PORTRAIT" }
-    ),
-    a!columnsLayout(
-      columns: {
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Emissions over Time",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!areaChartField(
-                      label: "",
-                      labelPosition: "COLLAPSED",
-                      categories: {
-                        "Jan",
-                        "Feb",
-                        "Mar",
-                        "Apr",
-                        "May",
-                        "Jun",
-                        "Jul",
-                        "Aug",
-                        "Sep",
-                        "Oct",
-                        "Nov",
-                        "Dec"
-                      },
-                      series: {
-                        a!chartSeries(
-                          label: "Energy",
-                          data: {
-                            29.8,
-                            28,
-                            24.9,
-                            21.5,
-                            27.4,
-                            27.2,
-                            22.1,
-                            29.9,
-                            25.6,
-                            26.4,
-                            23.1,
-                            25.3
-                          }
-                        ),
-                        a!chartSeries(
-                          label: "Transportation",
-                          data: {
-                            15.2,
-                            19.8,
-                            17.1,
-                            16.7,
-                            18.8,
-                            15,
-                            19.5,
-                            19.4,
-                            16.9,
-                            16.7,
-                            15.3,
-                            16.6
-                          }
-                        ),
-                        a!chartSeries(
-                          label: "Waste",
-                          data: {
-                            7.1,
-                            6.2,
-                            7.1,
-                            7.6,
-                            7.9,
-                            7.6,
-                            6,
-                            7.9,
-                            6.5,
-                            6.3,
-                            6.6,
-                            6.4
-                          }
-                        )
-                      },
-                      xAxisTitle: "2021",
-                      yAxisTitle: "MTCO2e",
-                      stacking: "NONE",
-                      showLegend: true,
-                      showTooltips: true,
-                      colorScheme: a!colorSchemeCustom(colors: { "#59C968", "#41934B", "#117D20" }),
-                      height: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "SHORT",
-                        "MEDIUM"
-                      ),
-                      xAxisStyle: "STANDARD",
-                      yAxisStyle: "STANDARD"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        ),
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Emissions by Category",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!pieChartField(
-                      label: "",
-                      labelPosition: "COLLAPSED",
-                      series: {
-                        a!chartSeries(label: "Energy", data: 314),
-                        a!chartSeries(label: "Transportation", data: 219),
-                        a!chartSeries(label: "Waste", data: 89)
-                      },
-                      colorScheme: a!colorSchemeCustom(
-                        colors: {
-                          "#59C968",
-                          "#41934B",
-                          "#117D20",
-                          "#0A4A13"
-                        }
-                      ),
-                      style: "DONUT",
-                      seriesLabelStyle: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEGEND",
-                        "ON_CHART"
-                      ),
-                      height: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "SHORT",
-                        "MEDIUM"
-                      )
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        ),
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Emissions by Scope",
-              labelHeadingTag: "H2",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!pieChartField(
-                      label: "",
-                      labelPosition: "COLLAPSED",
-                      series: {
-                        a!chartSeries(label: "Scope 1", data: 27),
-                        a!chartSeries(label: "Scope 2", data: 287),
-                        a!chartSeries(label: "Scope 3", data: 308)
-                      },
-                      colorScheme: a!colorSchemeCustom(
-                        colors: {
-                          "#59C968",
-                          "#41934B",
-                          "#117D20",
-                          "#0A4A13"
-                        }
-                      ),
-                      style: "DONUT",
-                      seriesLabelStyle: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEGEND",
-                        "ON_CHART"
-                      ),
-                      height: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "SHORT",
-                        "MEDIUM"
-                      )
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            )
-          }
-        )
-      },
-      stackWhen: { "PHONE", "TABLET_PORTRAIT" }
-    ),
-    a!sectionLayout(
-      label: "Emissions per Unit Produced",
-      labelHeadingTag: "H2",
-      labelColor: "STANDARD",
-      contents: {
-        a!cardLayout(
-          contents: {
-            a!columnsLayout(
-              columns: {
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: { "ENERGY (SCOPE 1)" },
-                          color: "SECONDARY"
-                        )
-                      }
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            labelPosition: "COLLAPSED",
-                            icon: "bolt",
-                            contentColor: "STANDARD",
-                            size: "TINY"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { "0.020 " }, size: "MEDIUM_PLUS"),
-                                  a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
-                                },
-                                color: "STANDARD"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  }
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
-                      },
-                      align: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEFT",
-                        "CENTER"
-                      )
-                    )
-                  },
-                  width: "EXTRA_NARROW"
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: { "ENERGY (SCOPE 2)" },
-                          color: "SECONDARY"
-                        )
-                      }
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            labelPosition: "COLLAPSED",
-                            icon: "plug",
-                            contentColor: "STANDARD",
-                            size: "TINY"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { "0.157 " }, size: "MEDIUM_PLUS"),
-                                  a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
-                                },
-                                color: "STANDARD"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  }
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
-                      },
-                      align: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEFT",
-                        "CENTER"
-                      )
-                    )
-                  },
-                  width: "EXTRA_NARROW"
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: { "TRANSPORTATION" },
-                          color: "SECONDARY"
-                        )
-                      }
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            labelPosition: "COLLAPSED",
-                            icon: "truck-moving",
-                            contentColor: "STANDARD",
-                            size: "TINY"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { "0.123 " }, size: "MEDIUM_PLUS"),
-                                  a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
-                                },
-                                color: "STANDARD"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  }
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(text: { "+" }, size: "MEDIUM_PLUS")
-                      },
-                      align: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEFT",
-                        "CENTER"
-                      )
-                    )
-                  },
-                  width: "EXTRA_NARROW"
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(text: { "WASTE" }, color: "SECONDARY")
-                      }
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            labelPosition: "COLLAPSED",
-                            icon: "trash",
-                            contentColor: "STANDARD",
-                            size: "TINY"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { "0.045 " }, size: "MEDIUM_PLUS"),
-                                  a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
-                                },
-                                color: "STANDARD"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  }
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(text: { "=" }, size: "MEDIUM_PLUS")
-                      },
-                      align: if(
-                        a!isPageWidth(
-                          {
-                            "PHONE",
-                            "TABLET_PORTRAIT",
-                            "TABLET_LANDSCAPE",
-                            "DESKTOP_NARROW"
-                          }
-                        ),
-                        "LEFT",
-                        "CENTER"
-                      )
-                    )
-                  },
-                  width: "EXTRA_NARROW"
-                ),
-                a!columnLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: { "TOTAL" },
-                          color: "SECONDARY",
-                          style: { "STRONG" }
-                        )
-                      }
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            labelPosition: "COLLAPSED",
-                            icon: "smog",
-                            contentColor: "STANDARD",
-                            size: "TINY"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(
-                                    text: {
-                                      a!richTextItem(text: { "0.320" }, style: { "STRONG" }),
-                                      " "
-                                    },
-                                    size: "MEDIUM_PLUS"
-                                  ),
-                                  a!richTextItem(text: { "MTCO2e" }, size: "STANDARD")
-                                },
-                                color: "STANDARD"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  }
-                )
-              },
-              alignVertical: "MIDDLE",
-              stackWhen: {
-                "PHONE",
-                "TABLET_PORTRAIT",
-                "TABLET_LANDSCAPE",
-                "DESKTOP_NARROW"
-              },
-              showDividers: false
-            )
-          },
-          height: "AUTO",
-          style: "NONE",
-          padding: "STANDARD",
-          marginBelow: "STANDARD",
-          showBorder: false,
-          showShadow: true
-        )
-      }
-    )
-  },
-  backgroundColor: "TRANSPARENT"
+    },
+    backgroundColor: "#FAFAFC"
+  )
 )
 ```
 
@@ -3468,43 +3217,7 @@ a!headerContentLayout(
             icon: "caret-up",
             percent: "(18%)",
             color: "#4CC900",
-            data: {
-              1,
-              3,
-              2,
-              4,
-              3,
-              2,
-              5,
-              7,
-              10,
-              12,
-              7,
-              6,
-              15,
-              14,
-              13,
-              10,
-              15,
-              13,
-              15,
-              22,
-              24,
-              19,
-              15,
-              25,
-              25,
-              30,
-              30,
-              35,
-              32,
-              36,
-              39,
-              35,
-              38,
-              39,
-              40
-            }
+            data: {1, 3, 2, 4, 3, 2, 5, 7, 10, 12, 7, 6, 15, 14, 13, 10, 15, 13, 15, 22, 24, 19, 15, 25, 25, 30, 30, 35, 32, 36, 39, 35, 38, 39, 40}
           },
           {
             name: "Revenue Per User",
@@ -3513,43 +3226,7 @@ a!headerContentLayout(
             icon: "caret-down",
             percent: "(-7%)",
             color: "#E64345",
-            data: {
-              3,
-              5,
-              4,
-              2,
-              3,
-              2,
-              4,
-              5,
-              7,
-              10,
-              12,
-              16,
-              17,
-              15,
-              15,
-              16,
-              13,
-              10,
-              15,
-              17,
-              20,
-              21,
-              25,
-              22,
-              22,
-              17,
-              15,
-              17,
-              16,
-              15,
-              14,
-              13,
-              13,
-              14,
-              10
-            }
+            data: {3, 5, 4, 2, 3, 2, 4, 5, 7, 10, 12, 16, 17, 15, 15, 16, 13, 10, 15, 17, 20, 21, 25, 22, 22, 17, 15, 17, 16, 15, 14, 13, 13, 14, 10}
           },
           {
             name: "New Orders",
@@ -3558,42 +3235,7 @@ a!headerContentLayout(
             icon: "caret-down",
             percent: "(-15%)",
             color: "#E64345",
-            data: {
-              3,
-              5,
-              7,
-              6,
-              8,
-              10,
-              12,
-              4,
-              16,
-              13,
-              22,
-              26,
-              24,
-              25,
-              16,
-              14,
-              13,
-              13,
-              14,
-              12,
-              16,
-              20,
-              22,
-              27,
-              30,
-              35,
-              34,
-              35,
-              23,
-              18,
-              16,
-              17,
-              14,
-              12
-            }
+            data: {3, 5, 7, 6, 8, 10, 12, 4, 16, 13, 22, 26, 24, 25, 16, 14, 13, 13, 14, 12, 16, 20, 22, 27, 30, 35, 34, 35, 23, 18, 16, 17, 14, 12}
           },
           {
             name: "New Users",
@@ -3602,40 +3244,7 @@ a!headerContentLayout(
             icon: "caret-up",
             percent: "(22%)",
             color: "#4CC900",
-            data: {
-              2,
-              3,
-              5,
-              13,
-              20,
-              17,
-              23,
-              24,
-              22,
-              18,
-              12,
-              10,
-              3,
-              4,
-              2,
-              15,
-              16,
-              20,
-              26,
-              23,
-              27,
-              28,
-              30,
-              34,
-              33,
-              32,
-              30,
-              35,
-              40,
-              38,
-              37,
-              42
-            }
+            data: {2, 3, 5, 13, 20, 17, 23, 24, 22, 18, 12, 10, 3, 4, 2, 15, 16, 20, 26, 23, 27, 28, 30, 34, 33, 32, 30, 35, 40, 38, 37, 42}
           }
         },
         {
@@ -3703,6 +3312,7 @@ a!headerContentLayout(
               a!forEach(
                 items: local!kpis,
                 expression: a!cardLayout(
+                  shape: "SEMI_ROUNDED",
                   contents: {
                     a!columnsLayout(
                       columns: {
@@ -3777,7 +3387,7 @@ a!headerContentLayout(
       )
     },
     height: "AUTO",
-    style: "#17202b",
+    style: "#171523",
     padding: "STANDARD",
     marginBelow: "NONE",
     showBorder: false
@@ -3902,6 +3512,7 @@ a!headerContentLayout(
           a!columnLayout(
             contents: {
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Top Selling Products By Category",
@@ -4081,6 +3692,7 @@ a!headerContentLayout(
           a!columnLayout(
             contents: {
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Sales by Region ($)",
@@ -4121,6 +3733,7 @@ a!headerContentLayout(
               ),
               a!sectionLayout(),
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Top Performing Campaigns",
@@ -4193,6 +3806,7 @@ a!headerContentLayout(
           a!columnLayout(
             contents: {
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Customer Satisfaction",
@@ -4223,6 +3837,7 @@ a!headerContentLayout(
               ),
               a!sectionLayout(),
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Customer Acquisition",
@@ -4257,6 +3872,7 @@ a!headerContentLayout(
               ),
               a!sectionLayout(),
               a!cardLayout(
+                shape: "SEMI_ROUNDED",
                 contents: {
                   a!headingField(
                     text: "Traffic Sources",
