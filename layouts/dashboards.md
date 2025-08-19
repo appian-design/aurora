@@ -4875,7 +4875,7 @@ a!localVariables(
                             item: a!tagField(
                               labelPosition: "COLLAPSED",
                               tags: {
-                                a!tagItem_24r2(
+                                a!tagItem(
                                   text: "↗",
                                   backgroundColor: local!Blue1,
                                   textColor: local!Blue3
@@ -4927,7 +4927,7 @@ a!localVariables(
                             item: a!tagField(
                               labelPosition: "COLLAPSED",
                               tags: {
-                                a!tagItem_24r2(
+                                a!tagItem(
                                   text: "↗",
                                   backgroundColor: local!Blue1,
                                   textColor: local!Blue3
@@ -4978,7 +4978,7 @@ a!localVariables(
                             item: a!tagField(
                               labelPosition: "COLLAPSED",
                               tags: {
-                                a!tagItem_24r2(
+                                a!tagItem(
                                   text: "↗",
                                   backgroundColor: local!Blue1,
                                   textColor: local!blue3
