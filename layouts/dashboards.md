@@ -90,7 +90,7 @@ a!localVariables(
       approved: 4,
       awaitingSignature: 20,
       totalCycleTime: 45,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -103,7 +103,7 @@ a!localVariables(
       approved: 6,
       awaitingSignature: 16,
       totalCycleTime: 38,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Xerox"
     ),
     a!map(
@@ -116,7 +116,7 @@ a!localVariables(
       approved: 7,
       awaitingSignature: 24,
       totalCycleTime: 55,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Lockheed Martin"
     ),
     a!map(
@@ -129,7 +129,7 @@ a!localVariables(
       approved: 4,
       awaitingSignature: 28,
       totalCycleTime: 55,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Appian Corp."
     ),
     a!map(
@@ -142,7 +142,7 @@ a!localVariables(
       approved: 10,
       awaitingSignature: 12,
       totalCycleTime: 42,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -155,7 +155,7 @@ a!localVariables(
       approved: 9,
       awaitingSignature: 17,
       totalCycleTime: 47,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -168,7 +168,7 @@ a!localVariables(
       approved: 5,
       awaitingSignature: 21,
       totalCycleTime: 44,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -181,7 +181,7 @@ a!localVariables(
       approved: 8,
       awaitingSignature: 19,
       totalCycleTime: 48,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -194,7 +194,7 @@ a!localVariables(
       approved: 5,
       awaitingSignature: 20,
       totalCycleTime: 44,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -207,7 +207,7 @@ a!localVariables(
       approved: 6,
       awaitingSignature: 19,
       totalCycleTime: 59,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -220,7 +220,7 @@ a!localVariables(
       approved: 4,
       awaitingSignature: 16,
       totalCycleTime: 50,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -233,7 +233,7 @@ a!localVariables(
       approved: 12,
       awaitingSignature: 18,
       totalCycleTime: 52,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -246,7 +246,7 @@ a!localVariables(
       approved: 6,
       awaitingSignature: 22,
       totalCycleTime: 46,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -259,7 +259,7 @@ a!localVariables(
       approved: 13,
       awaitingSignature: 14,
       totalCycleTime: 45,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
     a!map(
@@ -272,7 +272,7 @@ a!localVariables(
       approved: 8,
       awaitingSignature: 17,
       totalCycleTime: 52,
-      contractingOfficer: "Kimberly Vo",
+      contractingOfficer: "Sara Daniels",
       vendor: "Boeing Co"
     ),
 
