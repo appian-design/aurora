@@ -12,13 +12,13 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://pglevy.github.io',
+  url: 'https://aarushivenk.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/design-system-docs/',
+  baseUrl: '/design-system-docs-website/',
 
   // GitHub pages deployment config
-  organizationName: 'pglevy',
-  projectName: 'design-system-docs',
+  organizationName: 'aarushivenk',
+  projectName: 'design-system-docs-website',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
