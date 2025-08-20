@@ -14,7 +14,11 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   tutorialSidebar: [
-    'index',
+    {
+      type: 'doc',
+      id: 'index',
+      label: 'About Aurora',
+    },
     {
       type: 'category',
       label: 'Branding',

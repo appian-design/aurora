@@ -9,7 +9,7 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'Design System Documentation',
   tagline: 'A centralized, developer-accessible design system documentation platform',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://aarushivenk.github.io',
@@ -56,8 +56,8 @@ const config = {
       navbar: {
         title: 'Design System',
         logo: {
-          alt: 'Design System Logo',
-          src: 'img/logo.svg',
+          alt: 'Appian Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
