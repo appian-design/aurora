@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* A very light grey for the background */
+            overflow: hidden;
+        }
+
+        .blob-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            /* Removed the high contrast to create a soft gradient effect */
+            filter: blur(100px);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            will-change: transform;
+        }
+
+        /* Individual Blob Styling & Animation */
+        .blob-1 {
+            background: #2322F0;
+            width: 350px;
+            height: 350px;
+            top: 5%;
+            left: 20%;
+            animation: move 20s ease-in-out infinite alternate;
+        }
+
+        .blob-2 {
+            background: #E41A97;
+            width: 300px;
+            height: 300px;
+            top: 40%;
+            left: 50%;
+            animation: move 22s ease-in-out infinite alternate;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            background: #FFD852;
+            width: 250px;
+            height: 250px;
+            top: 60%;
+            left: 10%;
+            animation: move 25s ease-in-out infinite alternate;
+            animation-delay: -10s;
+        }
+
+        .blob-4 {
+            background: #F29744;
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            left: 70%;
+            animation: move 18s ease-in-out infinite alternate;
+            animation-delay: -2s;
+        }
+
+        /* General movement animation */
+        @keyframes move {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            to {
+                transform: translate(50%, 50%) rotate(360deg) scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Main container for the content and background -->
+    <div class="relative min-h-screen w-full flex items-center justify-start overflow-hidden">
+        
+        <!-- The animated blob container -->
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="relative z-10 p-8 md:p-16 max-w-2xl">
+            <h1 class="text-5xl md:text-7xl font-bold text-black tracking-tight">
+                Aurora
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
+                Aurora serves as the guide to navigating SAIL, Appian's low-code language, to design beautiful, responsive, and accessible applications.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
