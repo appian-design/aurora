@@ -2,9 +2,9 @@ name: Deploy Docusaurus to GitHub Pages
 
 on:
   push:
-    branches: [ docusaurus ]
+    branches: [ main ]
   pull_request:
-    branches: [ docusaurus ]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -45,7 +45,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/docusaurus'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
