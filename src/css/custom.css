@@ -4,27 +4,31 @@
  * work well for content-centric websites.
  */
 
+/* Import Mulish font */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-font-family-base: 'Mulish', system-ui, -apple-system, sans-serif;
+  --ifm-color-primary: #2322F0;
+  --ifm-color-primary-dark: #1f1ed8;
+  --ifm-color-primary-darker: #1d1ccc;
+  --ifm-color-primary-darkest: #1817a8;
+  --ifm-color-primary-light: #3f3ef2;
+  --ifm-color-primary-lighter: #4b4af3;
+  --ifm-color-primary-lightest: #6968f6;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #5856f4;
+  --ifm-color-primary-dark: #4644f2;
+  --ifm-color-primary-darker: #3a38f1;
+  --ifm-color-primary-darkest: #1817d4;
+  --ifm-color-primary-light: #6a68f6;
+  --ifm-color-primary-lighter: #7674f7;
+  --ifm-color-primary-lightest: #9492fa;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
