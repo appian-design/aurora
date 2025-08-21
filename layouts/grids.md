@@ -7,8 +7,56 @@ last_updated: "2024-12-19"
 Display tabular information in a scannable and digestible format
 ![](https://github.com/user-attachments/assets/69c875e4-59f6-432b-9517-4810ac2b86d7)
 
+## Overview
+
+Use grids to display tabular data in a structured, easy-to-scan layout. Keep grid data values concise and consistently-formatted to maximize readability. Great grid design allows users to quickly scan, sort, compare, and take action on large amounts of data.
+
+### When to Use Grids
+✅ **Use grids when:**
+- Displaying tabular data that users need to compare across rows
+- Data requires sorting, filtering, or searching capabilities  
+- Information benefits from columnar organization
+- Users need to perform actions on individual rows or bulk selections
+
+❌ **Don't use grids when:**
+- Displaying large blocks of text or narrative content
+- Simple lists would be more appropriate
+- Data doesn't benefit from tabular structure
+
+## Grid Types and Layout Patterns
+
+At its foundation, every grid will have column headers, rows of data, and pagination. Most grids will also include search and filter functionality, sorting capabilities, and record actions. Grids can take up a full page or be placed within a page section layout. They can either be read-only or editable, depending on whether users are meant to be viewing or updating the grid content.
+
+### Read-Only vs. Editable Grids
+
+**Read-Only Grids (a!gridField)**
+- **Purpose**: Display data for viewing, analysis, and navigation
+- **Features**: Sorting, filtering, searching, selection, record actions
+- **Column widths**: Support automatic, fixed, and relative width options
+- **Use cases**: Reports, dashboards, data browsing, record lists
+
+**Editable Grids (a!gridLayout)**  
+- **Purpose**: Allow in-line data editing and data entry
+- **Features**: Cell editing, row addition/deletion, validation, limited styling
+- **Column widths**: No automatic widths; use "Distribute" or proportional weights
+- **Use cases**: Data entry forms, bulk editing interfaces
+
+### Layout Patterns
+
+**List-Style Grid**
+- Designed to fit within container width without horizontal scrolling
+- Most common for record lists with drill-down navigation
+- Use "Auto" width or weighted proportions for flexible layouts
+- Best for navigation-focused interfaces
+
+**Spreadsheet-Style Grid**
+- Features fixed widths with horizontal scrolling for overflow
+- Intended for data-rich analysis, not navigation
+- Set fixed widths ("Narrow", "Medium") for all columns
+- Best for analytical interfaces with many columns
 
 ## Design
+
 ![](https://github.com/user-attachments/assets/69c875e4-59f6-432b-9517-4810ac2b86d7)
 
 In a full page
@@ -20,49 +68,90 @@ In a page section layout
 
 Grids serve as containers for displaying record information. Great grid design allows users to quickly scan, sort, compare, and take action on large amounts of data.
 
-At its foundation, every grid will have column headers, rows of data, and pagination. Most grids will also include search and filter functionality, sorting capabilities, and record actions. Grids can take up a full page or be placed within a page section layout. They can either be read-only or editable, depending on whether users are meant to be viewing or updating the grid content.
+## Design Guidelines Checklist
 
-Checklist:
-|Item|Type|
-|--- |--- |
-|Use the a!gridField component for a read-only grid|Layout|
-|Use the a!gridLayout component for an editable grid|Layout|
-|Minimize content sprawl across the grid by putting more than one field in one column (e.g.: Last updated and user who updated can be in the same column)|Layout|
-|Set preventTextWrapping to true for columns with long read-only text using the a!RichTextDisplayField() component|Layout|
-|Set a fixed grid column width for icons and center align the rich text icon within the column|Layout|
-|Avoid using the “Dense” spacing option|Styling|
-|Use the “Light” border style by default, but “Standard” when sorting is involved to clearly identify which column is being sorted on|Styling|
-|Shade alternate rows for full-page grids to enhance readability. For grids with a smaller batch size (e.g. 5), it is not necessary to shade alternate rows.|Styling|
-|Avoid shading alternate rows when secondary text are used on a grid due to accessibility concerns with color contrast. Only use colors that pass color contrast against the shaded row background color for rich text icons.|Styling|
-|For multi-row selections, set the selection styling to checkbox. Avoid using the row highlight style.|Styling|
-|Avoid using row highlight as the selection styling when the row contains links or actions|Styling|
-|Use row highlight for single-row selection grids|Styling|
-|For full page grids, use 25 as the batch size|Pagination|
-|For grids in larger sections, use 10 as the batch size|Pagination|
-|For grids within smaller cards, use 5 as the batch size|Pagination|
-|Apply a default sort order such that the most important information shows up at the top of the list (e.g.: most recent updated first)|Search, Filter and Sort|
-|Provide commonly used filters to let users narrow down the list to what they are looking for|Search, Filter and Sort|
-|Match the filter order to the order of the grid columns|Search, Filter and Sort|
-|Use the menu style for record actions if there is only one action that applies to a grid row|Record Actions|
-|Use the menu (icon) style if there are multiple actions that apply to a grid row|Record Actions|
-|If most of the record actions can be bulk applied to multiple rows, display them as buttons above a selectable grid|Record Actions|
-|If the title specifies the entity, avoid mentioning that in the button label. For example: if the tab name is Line items, then the button label should be "Import" and not "Import Line Items"|Record Actions|
-|For guidance on phrasing record actions, see Voice and Tone|Record Actions|
-|Left align text, including icons and secondary text|Column Alignments|
-|Right align dollar and numeric amounts|Column Alignments|
-|Left align ID and phone numbers|Column Alignments|
-|Left align dates, date ranges and timestamps if an icon is used, otherwise keep it right aligned|Column Alignments|
-|Ensure that every cell must have an icon if status icons are to be used for overdue items. By default, use the “calendar-o” icon in gray 3 color with a caption that says “Due”. Reference the Icons page for more guidance on using icons to signify date stat|Column Alignments|
-|Left align tags and use "Standard" size|Column Alignments|
-|Center align rich text icon links, buttons and record actions|Column Alignments|
-|Left align user profile images|Column Alignments|
-|Left align input fields|Column Alignments|
-|Use hyphen (-) when displaying cells with no value|Empty States|
-|For full page grids, use a custom illustration or stamp / icon with a message that explains how the user can take action to populate the grid. Because the text clearly states the message, do not provide a text alternative or caption for the image / stamp|Empty States|
-|For grids within smaller section layouts or card containers, use the out of the box empty state message (e.g.: “No [objects] available”)|Empty States|
-|Try to have at most 6 columns. To maximize the use of available space, use text formatting to consolidate logical groupings of fields into a grid column or minimize the number of columns to the ones necessary.|Column Alignments|
-|Keep column labels to a minimum. Avoid wrapping of labels. Use a tooltip to provide additional context if necessary.|Column Alignments|
-|Use the Rich Text Component's PreventWrapping parameter to optimize column widths especially for values with long text|Styling|
+### Layout and Component Selection
+|Item|Type|Details|
+|--- |--- |--- |
+|Use the a!gridField component for a read-only grid|Layout|Best for viewing, analyzing, and navigating data|
+|Use the a!gridLayout component for an editable grid|Layout|Best for data entry and in-line editing|
+|Minimize content sprawl across the grid by putting more than one field in one column (e.g.: Last updated and user who updated can be in the same column)|Layout|Consolidate related information to maximize space efficiency|
+|Set preventTextWrapping to true for columns with long read-only text using the a!RichTextDisplayField() component|Layout|Optimizes column widths and prevents layout issues|
+|Set a fixed grid column width for icons and center align the rich text icon within the column|Layout|Use "Icon" width for status indicators and action buttons|
+|Try to have at most 6 columns. To maximize the use of available space, use text formatting to consolidate logical groupings of fields into a grid column or minimize the number of columns to the ones necessary.|Layout|Maintains readability while maximizing information density|
+|Keep column labels to a minimum. Avoid wrapping of labels. Use a tooltip to provide additional context if necessary.|Layout|Ensures clean header appearance and prevents layout issues|
+
+### Styling and Visual Design
+|Item|Type|Details|
+|--- |--- |--- |
+|Use "Standard" spacing by default for optimal balance of density and readability|Styling|Provides good balance between information density and readability|
+|Use "Dense" spacing selectively for large datasets to reduce scrolling|Styling|Consider accessibility - some users may find dense grids harder to read|
+|Use the "Light" border style by default, but "Standard" when sorting is involved to clearly identify which column is being sorted on|Styling|Light borders create cleaner appearance; Standard borders help with sorting clarity|
+|Shade alternate rows for full-page grids to enhance readability. For grids with a smaller batch size (e.g. 5), it is not necessary to shade alternate rows.|Styling|Helps users track across wide grids with many columns|
+|Avoid shading alternate rows when secondary text are used on a grid due to accessibility concerns with color contrast. Only use colors that pass color contrast against the shaded row background color for rich text icons.|Styling|Ensures WCAG AA compliance (4.5:1 contrast ratio minimum)|
+|For multi-row selections, set the selection styling to checkbox. Avoid using the row highlight style.|Styling|Checkboxes provide clearer multi-selection feedback|
+|Avoid using row highlight as the selection styling when the row contains links or actions|Styling|Prevents confusion between selection and interactive elements|
+|Use row highlight for single-row selection grids|Styling|Appropriate for single-selection scenarios|
+|Use the Rich Text Component's PreventWrapping parameter to optimize column widths especially for values with long text|Styling|Maintains consistent column sizing and layout|
+
+### Performance and Pagination
+|Item|Type|Details|
+|--- |--- |--- |
+|For full page grids, use 25 as the batch size|Pagination|Balances performance with content visibility|
+|For grids in larger sections, use 10 as the batch size|Pagination|Allows access to other page components|
+|For grids within smaller cards, use 5 as the batch size|Pagination|Minimizes scrolling in constrained spaces|
+|For single grid interfaces, consider 25-50 items to reduce paging|Pagination|When grid is primary interface element|
+|For multiple component interfaces, use 5-10 items|Pagination|Ensures other components remain accessible|
+
+### Search, Filter and Sort
+|Item|Type|Details|
+|--- |--- |--- |
+|Apply a default sort order such that the most important information shows up at the top of the list (e.g.: most recent updated first)|Search, Filter and Sort|Helps users find relevant information quickly|
+|Provide commonly used filters to let users narrow down the list to what they are looking for|Search, Filter and Sort|Use Record Type filters when available for consistency|
+|Match the filter order to the order of the grid columns|Search, Filter and Sort|Creates logical flow and user expectations|
+|Use Record Type as data source to leverage built-in search and filter capabilities|Search, Filter and Sort|Reduces development effort and ensures consistency|
+
+### Record Actions
+|Item|Type|Details|
+|--- |--- |--- |
+|Use the menu style for record actions if there is only one action that applies to a grid row|Record Actions|Clean, minimal approach for single actions|
+|Use the menu (icon) style if there are multiple actions that apply to a grid row|Record Actions|Saves space while providing access to multiple actions|
+|If most of the record actions can be bulk applied to multiple rows, display them as buttons above a selectable grid|Record Actions|Efficient for operations affecting multiple items|
+|If the title specifies the entity, avoid mentioning that in the button label. For example: if the tab name is Line items, then the button label should be "Import" and not "Import Line Items"|Record Actions|Reduces redundancy and improves clarity|
+|For guidance on phrasing record actions, see Voice and Tone|Record Actions|Ensures consistent language across application|
+|Don't display multiple related actions within a single grid cell|Record Actions|Use separate columns or above-grid placement instead|
+
+### Column Alignments
+|Item|Type|Details|
+|--- |--- |--- |
+|Left align text, including icons and secondary text|Column Alignments|Standard for text content in left-to-right languages|
+|Right align dollar and numeric amounts|Column Alignments|Enables easy comparison of quantitative values|
+|Left align ID and phone numbers|Column Alignments|Qualitative numbers can be left-aligned|
+|Left align dates, date ranges and timestamps if an icon is used, otherwise keep it right aligned|Column Alignments|Icon presence affects optimal alignment|
+|Ensure that every cell must have an icon if status icons are to be used for overdue items. By default, use the "calendar-o" icon in gray 3 color with a caption that says "Due". Reference the Icons page for more guidance on using icons to signify date status|Column Alignments|Maintains visual consistency across all rows|
+|Left align tags and use "Standard" size|Column Alignments|Consistent with text alignment patterns|
+|Center align rich text icon links, buttons and record actions|Column Alignments|Optimal for interactive elements and status indicators|
+|Left align user profile images|Column Alignments|Consistent with other content alignment|
+|Left align input fields|Column Alignments|Standard for form elements in editable grids|
+|First column should always be left-aligned regardless of value type|Column Alignments|Provides consistent starting point for scanning|
+|For editable grids, use left alignment for all field types|Column Alignments|Maintains consistency in editing mode|
+
+### Empty States
+|Item|Type|Details|
+|--- |--- |--- |
+|Use hyphen (-) when displaying cells with no value|Empty States|Provides clear indication of missing data|
+|For full page grids, use a custom illustration or stamp / icon with a message that explains how the user can take action to populate the grid. Because the text clearly states the message, do not provide a text alternative or caption for the image / stamp|Empty States|Guides users toward productive actions|
+|For grids within smaller section layouts or card containers, use the out of the box empty state message (e.g.: "No [objects] available")|Empty States|Appropriate for constrained spaces|
+
+### Accessibility and Responsive Design
+|Item|Type|Details|
+|--- |--- |--- |
+|Define meaningful row headers when rows have identifiers|Accessibility|Helps screen readers navigate grid content|
+|Use descriptive, unique column labels|Accessibility|Ensures screen reader users understand column purpose|
+|Ensure keyboard navigation works for all interactive elements|Accessibility|Support tab order and arrow key navigation where appropriate|
+|Test color contrast for all visual elements (minimum 4.5:1 ratio)|Accessibility|Ensures WCAG AA compliance|
+|Consider spreadsheet-style layout with fixed widths for narrow screens|Responsive|Maintains usability on mobile devices|
+|Prioritize most important columns for mobile display|Responsive|Focus on essential information in constrained spaces|
 
 ## Development
 
@@ -633,215 +722,6 @@ a!headerContentLayout(
                             team: "User Experience",
                             pto: 49,
                             startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 55,
-                            company: "Cutting Edge Concrete Services, Inc.",
-                            amount: "$11,712,193.32",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 90 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC18F0085",
-                            dept: "Charles Parker",
-                            cs: "Anne Williams",
-                            role: "Type 5",
-                            team: "Commercial North America",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 66,
-                            company: "Integration Innovation Inc.",
-                            amount: "$580,870.02",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 120 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC18F0100",
-                            dept: "Charles Parker",
-                            cs: "Anne Williams",
-                            role: "Type 6",
-                            team: "Front-End Components",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 77,
-                            company: "Development One Inc.",
-                            amount: "$29,558.00",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 180 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC18F0160",
-                            dept: "Charles Parker",
-                            role: "Type 7",
-                            cs: "Will Robbins",
-                            team: "Accounts Payable",
-                            pto: 2,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 44,
-                            company: "Rolls Royce Corp.",
-                            amount: "$658,000.00",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 67 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC18P0007",
-                            dept: "Theresa Jones",
-                            role: "Type 4",
-                            cs: "Will Robbins",
-                            team: "User Experience",
-                            pto: 49,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 55,
-                            company: "Sherwood Avionics Inc.",
-                            amount: "$1,188,748.00",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 90 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC18P0021",
-                            dept: "Theresa Jones",
-                            role: "Type 5",
-                            cs: "Will Robbins",
-                            team: "Commercial North America",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 66,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 120 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19C0004",
-                            dept: "Jane Doe",
-                            role: "Type 6",
-                            cs: "Will Robbins",
-                            team: "Front-End Components",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 77,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 180 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19C0013",
-                            dept: "Jane Doe",
-                            role: "Type 7",
-                            cs: "Will Robbins",
-                            team: "Accounts Payable",
-                            pto: 2,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 44,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 67 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19C0018",
-                            dept: "Jane Doe",
-                            role: "Type 4",
-                            cs: "Will Robbins",
-                            team: "User Experience",
-                            pto: 49,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 55,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 90 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19C0031",
-                            dept: "Jane Doe",
-                            role: "Type 5",
-                            cs: "Will Robbins",
-                            team: "Commercial North America",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 66,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 120 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19F0025",
-                            dept: "Jane Doe",
-                            role: "Type 6",
-                            cs: "Will Robbins",
-                            team: "Front-End Components",
-                            pto: 15,
-                            startDate: "01/01/2020 - 12/31/2021"
-                          ),
-                          a!map(
-                            id: 77,
-                            company: "Sherwood Avionics Inc",
-                            amount: "$500,000,000",
-                            text_color: "",
-                            risk_color: "SECONDARY",
-                            risk_icon: "clock-o",
-                            risk: "Expires in 180 days ago",
-                            award: "",
-                            icon: "check-circle",
-                            color: "POSITIVE",
-                            name: "80AFRC19F0164",
-                            dept: "Jane Doe",
-                            role: "Type 7",
-                            team: "Accounts Payable",
-                            cs: "Will Robbins",
-                            pto: 2,
-                            startDate: "01/01/2020 - 12/31/2021"
                           )
                         },
                         fv!pagingInfo
@@ -944,1391 +824,6 @@ a!headerContentLayout(
             )
           },
           width: "AUTO"
-        ),
-        a!columnLayout(
-          contents: {
-            a!sectionLayout(
-              label: "Awards by Status",
-              labelSize: "SMALL",
-              labelHeadingTag: "H3",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "ABOVE",
-                            value: {
-                              a!richTextItem(
-                                text: { "112" },
-                                color: "#2c3365",
-                                size: "LARGE",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(
-                                    text: { " " },
-                                    size: "MEDIUM",
-                                    style: { "STRONG" }
-                                  ),
-                                  a!richTextItem(text: { "TOTAL ACTIVE" }, size: "STANDARD")
-                                },
-                                color: "SECONDARY"
-                              )
-                            },
-                            align: "LEFT"
-                          )
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            label: "Rich Text",
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextIcon(icon: "circle", color: "#173AB6"),
-                              " On Track ",
-                              a!richTextItem(text: { "76" }, style: { "STRONG" }),
-                              char(10),
-                              a!richTextIcon(icon: "circle", color: "#BCC9F3"),
-                              " Expiring Soon ",
-                              a!richTextItem(text: { "13" }, style: { "STRONG" }),
-                              char(10),
-                              a!richTextIcon(icon: "circle", color: "#F6A53F"),
-                              " Expired ",
-                              a!richTextItem(text: { "23" }, style: { "STRONG" })
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      marginBelow: "NONE"
-                    ),
-                    a!barChartField_21r4(
-                      categories: "Customer Satisfaction",
-                      series: {
-                        a!chartSeries(label: "Expired", data: { 23 }),
-                        a!chartSeries(label: "Expiring Soon", data: { 13 }),
-                        a!chartSeries(label: "On Track", data: { 76 })
-                      },
-                      yAxisMax: 110,
-                      stacking: "NORMAL",
-                      showLegend: false,
-                      showTooltips: true,
-                      labelPosition: "ABOVE",
-                      colorScheme: a!colorSchemeCustom(
-                        colors: {
-                          "#173AB6",
-                          "#BCC9F3",
-                          "#F6A53F",
-                          "#FFD393",
-                          "#9D4DE3"
-                        }
-                      ),
-                      height: "MICRO",
-                      xAxisStyle: "NONE",
-                      yAxisStyle: "NONE"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  shape: "SEMI_ROUNDED",
-                  padding: "STANDARD",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            ),
-            a!sectionLayout(
-              label: "Funds Obligated",
-              labelSize: "SMALL",
-              labelHeadingTag: "H3",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!gaugeField(
-                            label: "Gauge",
-                            labelPosition: "COLLAPSED",
-                            percentage: 80.0,
-                            primaryText: a!gaugePercentage(),
-                            color: "#173AB6",
-                            size: "SMALL"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "FY 2021" },
-                                color: "STANDARD",
-                                size: "STANDARD"
-                              ),
-                              char(10),
-                              a!richTextItem(
-                                text: { "$400M" },
-                                color: "STANDARD",
-                                size: "LARGE",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { " " }, style: { "STRONG" }),
-                                  a!richTextItem(text: { "/ $500M" }, size: "MEDIUM")
-                                },
-                                color: "SECONDARY"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE",
-                      spacing: "SPARSE",
-                      marginBelow: "NONE"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  shape: "SEMI_ROUNDED",
-                  padding: "STANDARD",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            ),
-            a!sectionLayout(
-              label: "Funds Spent",
-              labelSize: "SMALL",
-              labelHeadingTag: "H3",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!gaugeField(
-                            label: "Gauge",
-                            labelPosition: "COLLAPSED",
-                            percentage: 62.5,
-                            primaryText: a!gaugePercentage(),
-                            color: "#173AB6",
-                            size: "SMALL"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              "FY 2021",
-                              char(10),
-                              a!richTextItem(
-                                text: { "$250M" },
-                                color: "STANDARD",
-                                size: "LARGE",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(
-                                text: {
-                                  a!richTextItem(text: { " " }, style: { "STRONG" }),
-                                  a!richTextItem(text: { "/ $400M" }, size: "MEDIUM")
-                                },
-                                color: "SECONDARY"
-                              )
-                            }
-                          )
-                        )
-                      },
-                      alignVertical: "MIDDLE",
-                      spacing: "SPARSE",
-                      marginBelow: "NONE"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  shape: "SEMI_ROUNDED",
-                  padding: "STANDARD",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              },
-              marginBelow: "STANDARD"
-            ),
-            a!sectionLayout(
-              label: "Socio-Economic Targets",
-              labelSize: "SMALL",
-              labelHeadingTag: "H3",
-              labelColor: "STANDARD",
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "8(a)" }, size: "STANDARD")
-                            }
-                          )
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "$150M" },
-                                color: "#173AB6",
-                                size: "STANDARD",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(text: { " / $200M" }, size: "STANDARD")
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      marginAbove: "EVEN_LESS",
-                      marginBelow: "LESS"
-                    ),
-                    a!progressBarField(
-                      label: "Progress Bar",
-                      labelPosition: "COLLAPSED",
-                      percentage: 75,
-                      color: "#173AB6",
-                      style: "THICK"
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "Small Business" },
-                                size: "STANDARD"
-                              )
-                            }
-                          )
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "$40M" },
-                                color: "#173AB6",
-                                size: "STANDARD",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      marginBelow: "LESS"
-                    ),
-                    a!progressBarField(
-                      label: "Progress Bar",
-                      labelPosition: "COLLAPSED",
-                      percentage: 40,
-                      color: "#173AB6",
-                      style: "THICK"
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "WOSB" }, size: "STANDARD")
-                            }
-                          )
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "$90M" },
-                                color: "#173AB6",
-                                size: "STANDARD",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      marginBelow: "LESS"
-                    ),
-                    a!progressBarField(
-                      label: "Progress Bar",
-                      labelPosition: "COLLAPSED",
-                      percentage: 90,
-                      color: "#173AB6",
-                      style: "THICK"
-                    ),
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "SDVOSB" }, size: "STANDARD")
-                            }
-                          )
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: { "$50M" },
-                                color: "#173AB6",
-                                size: "STANDARD",
-                                style: { "STRONG" }
-                              ),
-                              a!richTextItem(text: { " / $100M" }, size: "STANDARD")
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      marginBelow: "LESS"
-                    ),
-                    a!progressBarField(
-                      label: "Progress Bar",
-                      labelPosition: "COLLAPSED",
-                      percentage: 50,
-                      color: "#173AB6",
-                      style: "THICK",
-                      marginBelow: "LESS"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "NONE",
-                  shape: "SEMI_ROUNDED",
-                  padding: "STANDARD",
-                  marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
-                )
-              }
-            ),
-            a!cardLayout(
-              contents: {
-                a!columnsLayout(
-                  columns: {
-                    a!columnLayout(
-                      contents: {
-                        a!pickerFieldCustom(
-                          labelPosition: "COLLAPSED",
-                          placeholder: "Search To-Dos"
-                        )
-                      }
-                    ),
-                    a!columnLayout(
-                      contents: {
-                        a!dropdownField(
-                          label: "Dropdown",
-                          labelPosition: "COLLAPSED",
-                          placeholder: "Select a Type",
-                          choiceLabels: {
-                            "Option 1",
-                            "Option 2",
-                            "Option 3",
-                            "Option 4",
-                            "Option 5",
-                            "Option 6",
-                            "Option 7",
-                            "Option 8",
-                            "Option 9",
-                            "Option 10",
-                            "Option 11",
-                            "Option 12"
-                          },
-                          choiceValues: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
-                          saveInto: {},
-                          searchDisplay: "AUTO",
-                          validations: {}
-                        )
-                      }
-                    )
-                  }
-                ),
-                a!buttonArrayLayout(
-                  buttons: {
-                    a!buttonWidget(
-                      label: "Mark complete",
-                      icon: "plus",
-                      size: "SMALL",
-                      style: "SECONDARY",
-                      disabled: true
-                    )
-                  },
-                  align: "START",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Schedule Kickoff Meeting" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Review SOW" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Establish timeframes" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Send Pricing" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Develop Task List" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Legal Check" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Issue GFE" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Sign NDA" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Send Vendor Notice" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Finalize SOW" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Confirm Deadlines" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Schedule Kickoff Meeting" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Schedule Kickoff Meeting" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                ),
-                a!sideBySideLayout(
-                  items: {
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { a!richTextIcon(icon: "square-o") },
-                            color: "ACCENT",
-                            size: "MEDIUM_PLUS",
-                            style: { "STRONG" }
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: { "Schedule Kickoff Meeting" },
-                            size: "STANDARD",
-                            style: { "STRONG" }
-                          ),
-                          char(10),
-                          a!richTextItem(
-                            text: { "Confirmation  • 80AFRC17F0239" },
-                            color: "SECONDARY",
-                            size: "SMALL"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    ),
-                    a!sideBySideItem(
-                      item: a!richTextDisplayField(
-                        label: "",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextIcon(
-                            icon: "exclamation-circle",
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { " " },
-                            color: "STANDARD",
-                            size: "STANDARD"
-                          ),
-                          a!richTextItem(
-                            text: { "-2d " },
-                            color: "NEGATIVE",
-                            size: "STANDARD"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      width: "MINIMIZE"
-                    )
-                  },
-                  alignVertical: "MIDDLE",
-                  marginBelow: "STANDARD"
-                )
-              },
-              height: "AUTO",
-              showWhen: false,
-              style: "NONE",
-              marginBelow: "STANDARD",
-              showBorder: false
-            )
-          },
-          width: "MEDIUM"
         )
       }
     )
@@ -2336,3 +831,45 @@ a!headerContentLayout(
   backgroundColor: "#FAFAFA"
 )
 ```
+
+## Additional Resources
+
+### Technical Implementation
+- [Editable Grid Component Documentation](https://docs.appian.com/suite/help/25.3/Editable_Grid_Component.html) - Technical details for editable grids
+- [Read-Only Grid Component Documentation](https://docs.appian.com/suite/help/25.3/Paging_Grid_Component.html) - Technical details for read-only grids
+
+### Design Patterns
+- **List-Style Grids**: Use "Auto" width or weighted proportions for flexible layouts that fit container width
+- **Spreadsheet-Style Grids**: Use fixed widths with horizontal scrolling for data-rich analytical interfaces
+- **Mobile Considerations**: Switch to fixed-width approach for narrow screens to maintain legibility
+
+### Related Components
+- [Lists](./lists.md) - For simpler data display without tabular structure
+- [Cards](./cards.md) - Alternative layout for complex data items  
+- [Record Actions](./record-actions.md) - Guidance on action patterns and placement
+- [Voice and Tone Guidelines](./voice-and-tone.md) - For consistent action labeling
+
+### Best Practices Summary
+
+**Performance Optimization:**
+- Use Record Types as data sources for built-in search and filtering
+- Choose appropriate batch sizes based on interface context
+- Implement logical default sort orders to surface relevant content
+
+**Accessibility Excellence:**
+- Ensure WCAG AA color contrast compliance (4.5:1 minimum)
+- Define meaningful row and column headers for screen readers
+- Support keyboard navigation for all interactive elements
+- Test with assistive technologies
+
+**Responsive Design:**
+- Prioritize essential columns for mobile display
+- Consider alternative layouts for very small screens
+- Use fixed widths for narrow screens when needed
+- Maintain touch target minimum sizes (44px)
+
+**Visual Consistency:**
+- Apply consistent alignment rules across all grids
+- Use standardized spacing and border styles
+- Maintain color palette limits for status indicators
+- Ensure consistent empty state handling
