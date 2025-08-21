@@ -17,11 +17,27 @@ Forms serve as a way for users to have a conversation with our products. Great f
 
 Every form needs to have a header, content and form navigation. A form can be used in a site page or in a dialog.
 
+## Form Types
+
+### Simple Forms
+Use simple forms for basic data collection with minimal fields and straightforward workflows.
+
+### Multi-step Forms (Wizards)
+Wizards are useful when a form is complex or has conditional field logic. Wizard step indicators are helpful for:
+
+- Breaking form fields into categories, making it easier to understand and complete each section
+- Structuring form fields and steps in a logical flow to reduce the chance of missing or incorrectly filling out important information
+- Improving navigation with visual cues that show users their progress and remaining steps
+
+Depending on the complexity of your form, you can decide between single level sidebar step indicators or multi-level sidebars that further break steps down into sub-steps.
+
+**Important**: In wizards, Appian automatically handles the page scrolling between each step of the wizard. This means that whenever a user navigates to the next step, the page will automatically scroll to the top of the page. If you are using the form layout in a wizard, make sure that the buttons or dynamic links that control form navigation are placed in the *buttons* parameter. If they are placed in the *contents* parameter, auto scrolling will not work.
+
 ### Usage
 
 #### Dialog
 ![](https://github.com/user-attachments/assets/2be94769-e053-4db8-8631-6020efe1adeb)
-In multi-step forms, place the “Back” button first followed by the “Cancel” button next left-aligned. Right align the submit or next action.
+In multi-step forms, place the "Back" button first followed by the "Cancel" button next left-aligned. Right align the submit or next action.
 
 ![](https://github.com/user-attachments/assets/556b8845-d773-47ab-81c3-46a8271e2ca0)
 Provide confirmation upon submission
@@ -30,15 +46,15 @@ Provide confirmation upon submission
 Checklist:
 |Item|Type|
 |--- |--- |
-|Use “Solid” style for the “submit” or “next” action (in multi-step forms)|Buttons|
-|Use “Link” style for the “cancel” action|Buttons|
-|Use “Outline” style for “back” navigation in multi-step forms|Buttons|
-|Use “Update” (not “Edit”) for the “submit” action when a user is modifying an item|Buttons|
-|In multi-step forms, place the “Back” button first followed by the “Cancel” button next left-aligned. Right align the submit or next action.|Buttons|
+|Use "Solid" style for the "submit" or "next" action (in multi-step forms)|Buttons|
+|Use "Link" style for the "cancel" action|Buttons|
+|Use "Outline" style for "back" navigation in multi-step forms|Buttons|
+|Use "Update" (not "Edit") for the "submit" action when a user is modifying an item|Buttons|
+|In multi-step forms, place the "Back" button first followed by the "Cancel" button next left-aligned. Right align the submit or next action.|Buttons|
 |Stack buttons on mobile in the order as prescribed (see example image)|Buttons|
 |In related actions, the form header should match the action Display Name (button label)|Buttons|
 |Verbs in the header (e.g.: Create Case) should match the submit button label and any button label used to launch the form|Content|
-|Use “Update” (not “Edit”) when a user is modifying an item|Content|
+|Use "Update" (not "Edit") when a user is modifying an item|Content|
 |Group related fields close to each other as much as possible to minimize context switching|Content|
 |If there is a required input field, add instructions under the form header that specifies - "Mandatory fields are marked with an asterisk (*)"|Content|
 |Use the a!FormLayout component|Dialogs|
@@ -46,33 +62,38 @@ Checklist:
 |Use a dialog size that matches field width. Avoid using a Large dialog size for sparse forms.|Dialogs|
 |Place fields in one column as much as possible|Dialogs|
 |Set SkipAutoFocus to True|Dialogs|
-|The submit action of the form should match the form header. Example: If the form header is “Update Status”, then the submit action of the form should state “Update”|Dialogs|
+|The submit action of the form should match the form header. Example: If the form header is "Update Status", then the submit action of the form should state "Update"|Dialogs|
+|Use the a!wizardLayout component for multi-step forms in dialogs|Wizards|
+|Set showStepHeadings to false when using wizard layout to avoid redundant headers|Wizards|
+|Use appropriate contentsWidth (NARROW, MEDIUM, WIDE) based on form complexity|Wizards|
 |In a multi-step form, use the milestone component to indicate progress|Progress|
 |In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
-|In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
+|In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.|Progress|
 |Provide confirmation upon submission|Progress|
 
 #### Site Page
 ![](https://github.com/user-attachments/assets/32be4251-0458-4e04-9b6b-3de88e0b3520)
-In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.
+In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.
 
 Checklist:
 |Item|Type|
 |--- |--- |
-|Use “Solid” style for the “submit” or “next” action (in multi-step forms)|Buttons|
-|Use “Link” style for the “cancel” action|Buttons|
-|Use “Outline” style for “back” navigation in multi-step forms|Buttons|
-|Use “Update” (not “Edit”) for the “submit” action when a user is modifying an item|Buttons|
-|In multi-step forms, place the “Back” button first followed by the “Cancel” button next left-aligned. Right align the submit or next action.|Buttons|
+|Use "Solid" style for the "submit" or "next" action (in multi-step forms)|Buttons|
+|Use "Link" style for the "cancel" action|Buttons|
+|Use "Outline" style for "back" navigation in multi-step forms|Buttons|
+|Use "Update" (not "Edit") for the "submit" action when a user is modifying an item|Buttons|
+|In multi-step forms, place the "Back" button first followed by the "Cancel" button next left-aligned. Right align the submit or next action.|Buttons|
 |Stack buttons on mobile in the order as prescribed (see example image)|Buttons|
 |In related actions, the form header should match the action Display Name (button label)|Buttons|
 |Verbs in the header (e.g.: Create Case) should match the submit button label and any button label used to launch the form|Content|
-|Use “Update” (not “Edit”) when a user is modifying an item|Content|
+|Use "Update" (not "Edit") when a user is modifying an item|Content|
 |Group related fields close to each other as much as possible to minimize context switching|Content|
 |If there is a required input field, add instructions under the form header that specifies - "Mandatory fields are marked with an asterisk (*)"|Content|
+|Use a!headerContentLayout for site page forms with complex layouts|Site Pages|
+|Consider using sidebar step indicators for multi-step forms on site pages|Site Pages|
 |In a multi-step form, use the milestone component to indicate progress|Progress|
 |In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
-|In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
+|In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.|Progress|
 |Provide confirmation upon submission|Progress|
 
 ### Fields
@@ -106,13 +127,41 @@ Checklist:
 |Avoid using the placeholder parameter to specify input format|Placeholder Text|
 |Use the STANDARD style in a dense form|Radio Buttons and Checkboxes|
 |Use the STANDARD style when presenting as a custom grid filter|Radio Buttons and Checkboxes|
+|Use card choice fields for visual selection when users need to choose from options with additional context|Card Choices|
+|Configure card choice fields with appropriate templates (bar text stacked, etc.) for clear information hierarchy|Card Choices|
 |Use the helpTooltip parameter when the label is not sufficient for the user to understand the term|Tooltips|
 |Keep tooltips as brief as possible.|Tooltips|
 |Use field level validation as much as possible|Validation|
 |Define the error and provide guidance on how to resolve it. Avoid generic error messages (e.g.: "A value is required")|Validation|
 |Do not disable the submit or next button due to a validation error. Allow the user to click the button and view the validation error in the field.|Validation|
 
+### Wizard Layout Components
 
+#### Using the Wizard Layout
+Use the a!wizardLayout component to easily create great-looking wizards with built-in step navigation and progress indicators.
+
+Key parameters:
+- `titleBar`: Use header templates (a!headerTemplateFull, a!headerTemplateImage) for rich headers
+- `style`: Choose from DOT_VERTICAL, DOT_HORIZONTAL, or other step indicator styles
+- `steps`: Define each step with a!wizardStep components
+- `contentsWidth`: Set to NARROW, MEDIUM, or WIDE based on form complexity
+- `showStepHeadings`: Set to false to avoid redundant step headers
+- `primaryButtons` and `secondaryButtons`: Define navigation and action buttons
+
+#### Sidebar Step Indicators
+Use sidebar step indicators for custom wizard implementations when you need more control over the layout and navigation.
+
+Benefits:
+- Works well for longer lists of steps
+- Helps balance whitespace in simpler forms
+- Provides clear visual progress indication
+- Allows for custom styling and interaction patterns
+
+Implementation considerations:
+- Use milestone components or custom step indicators
+- Ensure proper navigation between steps
+- Maintain consistent visual hierarchy
+- Consider responsive behavior on mobile devices
 ### When to Use Inline Dialogs vs. Modals
 
 |          | ![](https://github.com/user-attachments/assets/353d5082-710b-4bde-8311-b570a7d1f3e9) Use an Inline Dialog When| ![](https://github.com/user-attachments/assets/26dd1986-fe53-49ca-b226-a66b3df7a705) Use a Modal When |
@@ -121,10 +170,36 @@ Checklist:
 |**Task Complexity**|The action involves one step|The action involves one or multiple steps that are in a single or double column with input fields| 
 |**Contextual Awareness**|Visibility of the editable content and the parent page is necessary|Full attention to the task is necessary without the need for referring back to the original context|
 |**Progressive Disclosure**|No progressive disclosure is needed|Additional fields or options need to be revealed progressively|
+|**Form Type**|Simple, single-step forms|Multi-step wizards or complex forms with conditional logic|
+|**User Flow**|Quick edits or updates that don't interrupt the main workflow|Complete tasks that require focused attention and step-by-step completion|
 
+### Advanced Form Patterns
+
+#### Card Choice Fields
+Use card choice fields when users need to select from options that require additional context or visual representation.
+
+Best practices:
+- Use appropriate card templates (a!cardTemplateBarTextStacked, etc.)
+- Provide primary and secondary text for clear information hierarchy
+- Set maxSelections appropriately (1 for single selection, multiple for multi-select)
+- Consider using icons or visual elements to enhance recognition
+
+#### Multi-Column Layouts
+For complex forms, use column layouts to organize related fields and optimize screen space:
+- Group related fields in the same column
+- Use appropriate column widths (NARROW, MEDIUM, WIDE, AUTO)
+- Consider responsive behavior on different screen sizes
+- Maintain logical tab order for accessibility
+
+#### Conditional Field Display
+Implement progressive disclosure by showing/hiding fields based on user selections:
+- Use showWhen parameter to control field visibility
+- Group conditional fields logically
+- Provide clear visual cues when fields appear or disappear
+- Ensure validation works correctly with conditional fields
 ## Development
 
-### Dialog Example 1
+### Dialog Example 1 - Simple Form with Confirmation
 ```
 a!formLayout(
   titleBar: a!headerTemplateFull(
@@ -180,7 +255,7 @@ a!formLayout(
 )
 ```
 
-### Dialog Example 2
+### Dialog Example 2 - Multi-step Wizard with Card Choices
 ```
 a!localVariables(
   local!firstName,
@@ -188,6 +263,7 @@ a!localVariables(
   local!organization,
   local!jobTitle,
   local!country,
+  local!office,
   local!countryChoices: {
     "United States",
     "Canada",
@@ -198,14 +274,74 @@ a!localVariables(
   },
   local!countryChoiceValues: { "US", "CA", "MX", "UK", "DE", "FR" },
   a!wizardLayout(
-    titleBar: "Create Case",
-    showTitleBarDivider: true,
-    style: "MINIMAL",
-    focusOnFirstInput: true,
-    contentsWidth: "NARROW",
+    titleBar: a!headerTemplateImage(
+      title: "Return to Work Readiness Questionnaire",
+      secondaryText: "Please answer the questions below and provide any requested documentation in order to determine if you meet local requirements for returning to work.",
+      backgroundColor: "#020A51",
+      image: a!documentImage(
+        document: a!EXAMPLE_DOCUMENT_IMAGE()
+      ),
+      imageSize: "MEDIUM"
+    ),
+    style: "DOT_VERTICAL",
     steps: {
       a!wizardStep(
-        label: "About You",
+        label: "Work Location",
+        contents: {
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: {
+              a!richTextItem(
+                text: "Which office will you be returning to?",
+                size: "MEDIUM",
+                style: "PLAIN"
+              )
+            },
+            marginAbove: "STANDARD",
+            marginBelow: "MORE"
+          ),
+          a!cardChoiceField(
+            label: "",
+            labelPosition: "COLLAPSED",
+            data: {
+              a!map(id: 1, primaryText: "United States"),
+              a!map(id: 2, primaryText: "United Kingdom"),
+              a!map(id: 3, primaryText: "Australia"),
+              a!map(id: 4, primaryText: "Spain"),
+              a!map(id: 5, primaryText: "Germany"),
+              a!map(id: 6, primaryText: "Italy")
+            },
+            cardTemplate: a!cardTemplateBarTextStacked(
+              id: fv!data.id,
+              primaryText: fv!data.primaryText
+            ),
+            value: local!country,
+            saveInto: local!country,
+            maxSelections: 1,
+            validations: {}
+          ),
+          a!cardChoiceField(
+            label: "",
+            labelPosition: "COLLAPSED",
+            data: {
+              a!map(id: 1, primaryText: "Headquarters", secondaryText: "McLean VA"),
+              a!map(id: 2, primaryText: "NYC WeWork", secondaryText: "New York NY"),
+              a!map(id: 3, primaryText: "Remote WFH", secondaryText: "United States")
+            },
+            cardTemplate: a!cardTemplateBarTextStacked(
+              id: fv!data.id,
+              primaryText: fv!data.primaryText,
+              secondaryText: fv!data.secondaryText
+            ),
+            value: local!office,
+            saveInto: local!office,
+            maxSelections: 1,
+            validations: {}
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Personal Information",
         contents: {
           a!textField(
             label: "First Name",
@@ -237,28 +373,74 @@ a!localVariables(
           )
         }
       ),
-      a!wizardStep(label: "Case Details"),
-      a!wizardStep(label: "Review")
+      a!wizardStep(
+        label: "Review",
+        contents: {
+          /* Review step with read-only fields */
+          a!richTextDisplayField(
+            value: {
+              a!richTextItem(text: "Please review your information:", style: "STRONG")
+            },
+            marginBelow: "STANDARD"
+          ),
+          a!columnsLayout(
+            columns: {
+              a!columnLayout(
+                contents: {
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: "Name:", color: "SECONDARY") }
+                  ),
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: "Organization:", color: "SECONDARY") }
+                  ),
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: "Job Title:", color: "SECONDARY") }
+                  )
+                }
+              ),
+              a!columnLayout(
+                contents: {
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: local!firstName & " " & local!lastName) }
+                  ),
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: local!organization) }
+                  ),
+                  a!richTextDisplayField(
+                    value: { a!richTextItem(text: local!jobTitle) }
+                  )
+                }
+              )
+            }
+          )
+        }
+      )
     },
-    showButtonDivider: true,
+    contentsWidth: "MEDIUM",
+    showStepHeadings: false(),
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Submit",
+        submit: true,
+        style: "SOLID",
+        loadingIndicator: true,
+        showWhen: fv!isLastStep
+      )
+    },
     secondaryButtons: {
       a!buttonWidget(
         label: "Cancel",
-        style: if(fv!isFirstStep, "OUTLINE", "LINK")
-      )
-    },
-    primaryButtons: {
-      a!buttonWidget(
-        label: "Create",
-        style: "SOLID",
-        showWhen: fv!isLastStep
+        value: true,
+        saveInto: {},
+        submit: true,
+        style: "LINK",
+        validate: false
       )
     }
   )
 )
 ```
-
-### Site Page
+### Site Page Example with Sidebar Step Indicator
 ```
 a!headerContentLayout(
   header: a!cardLayout(
@@ -287,6 +469,7 @@ a!headerContentLayout(
         a!columnLayout(
           width: "NARROW_PLUS",
           contents: {
+            /* Sidebar Step Indicator */
             a!sideBySideLayout(
               alignVertical: "MIDDLE",
               items: {
@@ -368,6 +551,7 @@ a!headerContentLayout(
         a!columnLayout(
           contents: a!localVariables(
             {
+              /* Review Step Content */
               a!richTextDisplayField(
                 value: {
                   a!richTextItem(
@@ -414,17 +598,6 @@ a!headerContentLayout(
                           )
                         },
                         align: "LEFT"
-                      ),
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "Address",
-                            style: "PLAIN",
-                            size: "MEDIUM",
-                            color: "SECONDARY"
-                          )
-                        },
-                        align: "LEFT"
                       )
                     }
                   ),
@@ -459,86 +632,13 @@ a!headerContentLayout(
                           )
                         },
                         align: "LEFT"
-                      ),
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "9836 Rocky River Court" & char(10) & "Annandale, VA USA 22003",
-                            style: "PLAIN",
-                            size: "MEDIUM"
-                          )
-                        },
-                        align: "LEFT"
                       )
                     }
                   )
                 }
               ),
               a!horizontalLine(),
-              /* Case Information Section */
-              a!richTextDisplayField(
-                value: {
-                  a!richTextItem(text: "Case Information", style: "STRONG")
-                },
-                align: "LEFT",
-                marginBelow: "STANDARD",
-                marginAbove: "STANDARD"
-              ),
-              a!columnsLayout(
-                columns: {
-                  a!columnLayout(
-                    contents: {
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "Type",
-                            style: "PLAIN",
-                            size: "MEDIUM",
-                            color: "SECONDARY"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "Title",
-                            style: "PLAIN",
-                            size: "MEDIUM",
-                            color: "SECONDARY"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    }
-                  ),
-                  a!columnLayout(
-                    contents: {
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "Account Renewal",
-                            style: "PLAIN",
-                            size: "MEDIUM"
-                          )
-                        },
-                        align: "LEFT"
-                      ),
-                      a!richTextDisplayField(
-                        value: {
-                          a!richTextItem(
-                            text: "Renew my account",
-                            style: "PLAIN",
-                            size: "MEDIUM"
-                          )
-                        },
-                        align: "LEFT"
-                      )
-                    }
-                  )
-                }
-              ),
-              a!horizontalLine(),
+              /* Navigation Buttons */
               a!sideBySideLayout(
                 items: {
                   a!sideBySideItem(
@@ -579,6 +679,7 @@ a!headerContentLayout(
         a!columnLayout(
           width: "NARROW_PLUS",
           contents: {
+            /* Contextual Help Panel */
             a!cardLayout(
               style: "#F4F5F9",
               showBorder: false,
@@ -597,7 +698,7 @@ a!headerContentLayout(
                 a!richTextDisplayField(
                   value: {
                     a!richTextItem(
-                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                      text: "After submitting your case, you will receive a confirmation email with your case number. Our support team will review your request and respond within 24 hours. You can track the status of your case in the customer portal.",
                       style: "PLAIN"
                     )
                   },
@@ -616,4 +717,25 @@ a!headerContentLayout(
 )
 ```
 
+## Best Practices Summary
 
+### Form Design Principles
+1. **Progressive Disclosure**: Break complex forms into logical steps
+2. **Clear Navigation**: Provide obvious paths forward and backward
+3. **Contextual Help**: Offer guidance where users need it most
+4. **Responsive Design**: Ensure forms work well on all device sizes
+5. **Accessibility**: Use proper labels, instructions, and validation messages
+
+### Technical Implementation
+1. **Component Selection**: Choose the right layout component for your use case
+2. **Parameter Configuration**: Set appropriate values for contentsWidth, labelPosition, etc.
+3. **Validation Strategy**: Implement field-level validation with clear error messages
+4. **Button Placement**: Position navigation buttons correctly for automatic scrolling
+5. **Performance**: Consider data loading and form submission performance
+
+### User Experience
+1. **Minimize Cognitive Load**: Group related fields and reduce context switching
+2. **Provide Feedback**: Show progress indicators and confirmation messages
+3. **Enable Recovery**: Allow users to go back and modify their inputs
+4. **Maintain Context**: Help users understand where they are in the process
+5. **Optimize for Success**: Design forms that guide users to successful completion
