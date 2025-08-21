@@ -9,19 +9,48 @@ Display information about a record in an interface
 
 ![](https://github.com/user-attachments/assets/de8b7955-d549-4a3c-b578-2c5f0f013030)
 
+## Overview
+
+Record views help users to easily scan for relevant record details and actions. They provide a structured way to display comprehensive information about a specific record while maintaining usability and visual hierarchy.
+
+By default, each record type will have at least three views: Summary, News and Related Actions. The views are displayed as tabs under the record header. The Summary view is displayed by default when the user clicks on a record item from the record list. A record type could also have up to 20 additional customizable views to display information sourced from the record type.
+
+### Key Principles
+- **Scannable Design**: Use visual hierarchy and clear section headers to help users quickly find relevant information
+- **Action Accessibility**: Place actions contextually where users expect to find them
+- **Information Density**: Balance comprehensive information with readability
+- **Consistent Patterns**: Apply consistent design patterns across all record views
+
+## Design Patterns
+
+### Basic Record View with Cards
+
+This pattern uses the following techniques to create an easy-to-scan record view design:
+
+- **Flush header** to differentiate it from page contents
+- **Content cards** contrasted against a transparent background  
+- **Clear section headers** for logical information grouping
+- **Large label and value text** for easy reading and to fill up the page
+
+**Best Practice**: Set a header background color in record view configurations to establish a bolder header style that stands out more from the view contents.
+
+![Basic record view with cards pattern](https://docs.appian.com/suite/help/25.3/sail/ds-images/image34.png)
+
+### Basic Record View (Alternative)
+
+This record view design focuses on showing data from a record and its related records:
+
+- **Middle column cards** show record field values from the subject record and some of its one-to-one related records
+- **Right column cards** show lists of one-to-many related records
+- **Mixed layouts** within cards for different content types
+
+**Best Practice**: Try not to mix different column counts or field label positions within one card as this could create visual misalignment. However, lengthier values, such as description fields, may look best when they span the full width of the card alongside shorter values that are arranged into multiple columns.
+
+![Alternative record view pattern](https://docs.appian.com/suite/help/25.3/sail/ds-images/image72.png)
 
 ## Design
 
 ![](https://github.com/user-attachments/assets/7f797f36-e1e9-4615-a2b9-9c5e079f3bf4)
-
-
-By default, each record type will have at least three views namely, Summary, News and Related Actions. The views are displayed as tabs under the record header. 
-
-The Summary view is displayed by default when the user clicks on a record item from the record list. A record type could also have up to 20 additional customizable views to display information sourced from the record type. 
-
-**Note:**
-- We recommend using at most 6 views in a record. 
-- Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
 
 ![](https://github.com/user-attachments/assets/18d041b7-aceb-4875-ab1f-ff0916cbdcd9)
 
@@ -35,40 +64,75 @@ A mix of horizontal and vertical tabs used to balance information density. Local
 
 The button label in the record view matches the verb in the form header. Also, the submit button label in the footer matches the verb in the form header.
 
-Checklist:
-|Item|Type|
-|--- |--- |
-|Place global actions next to the record header. Global actions affect the entire record. Examples include: “Update”, “Update Status”, Delete”, “Export”.|Related Actions|
-|Limit global actions as much as possible. A good rule of thumb is to not use more than 3 global actions.|Related Actions|
-|Avoid using icons in global actions.|Related Actions|
-|Display global actions on views where there is relevant content. Else, hide the action.|Related Actions|
-|Place local actions next to where the data resides on the view. Examples include: “Update Team” for a Contract Record View with a section that has a list of teams.|Related Actions|
-|Use an icon for a local action if generally recognizable. Examples include Update, Delete or Create. Else, use a button with a label.|Related Actions|
-|Be consistent with local actions - either use “icon + label” or just “label”. Avoid mixing the two styles.|Related Actions|
-|Start each action label with a verb. Example: “Update Status” instead of “Status”|Related Actions|
-|Use a display name that the user can clearly understand. Avoid using terms like “Manage <Record>” or “View Details”.|Related Actions|
-|Avoid unnecessary terms in the action label if the view name or record header is in immediate context. Example: for a record’s global action, use “Update” instead of “Update <Record Name>”.|Related Actions|
-|The action form header should match the action Display Name (button label)|Related Actions|
-|The submit action of the form should match the form header. Example: If the form header is “Update Status”, then the submit action of the form should state “Update”|Related Actions|
-|Use a dialog size that matches the form content. Avoid using a Large dialog size for sparse form content.|Related Actions|
-|Treat Summary views as a Category 1 - Marketable UI|Views|
-|Set the record header color to match the page background color (white or Default Background - #fafafc)|Views|
-|Set the same page background color for all record view tabs|Views|
-|Set the record header to fixed if the user needs to know which tab they are in when scrolling in the view|Views|
-|Avoid using the News view|Views|
-|Avoid using the Related Actions view unless you only have a summary view. If you only have a summary view, use the Related Actions view.|Views|
-|Place record progress or status at the top of the summary view|Views|
-|Use the summary view for immediate comprehension. Keep the content to the minimum information needed to highlight essential data, progress and actions.|Views|
-|Before designing a record view, set up a planning session with your PM to identify the essential data elements to showcase in the summary versus non-essential data elements that can be surfaced in a different view|Views|
-|Use other record views to highlight data that is of intermittent importance. Examples include: Audit history, list of documents, list of users etc.|Views|
-|Avoid using more than 6 record views in a record. Use a combination of Record Views and Tabs as Side Navigation to balance information density.|Views|
-|Depending on the information to display, use a one column or two column layout|Views|
-|When using one column layout, center the component and set the width based on the amount of information to display. Use blank a!columnLayout()s to establish gutters on either side of the component.|Views|
-|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually NARROW_PLUS or MEDIUM).|Views|
-|When using two column layouts, include high priority information in the primary and wider content area and move secondary priority information (e.g.: record metadata) to the second and narrower column.|Views|
-|Avoid using three column layouts|Views|
-|Unless agreed upon with your PM as a Category 1 - Marketable UI, treat other views as Category 2 - Usability Focused UIs.|Views|
-|Unless tagged as Category 1, use out of the box Appian SAIL components to display other views|Views|
+## Planning and Strategy
+
+**Note:**
+- We recommend using at most 6 views in a record. 
+- Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
+- Before designing a record view, set up a planning session with your PM to identify the essential data elements to showcase in the summary versus non-essential data elements that can be surfaced in a different view
+
+## Design Guidelines Checklist
+
+### Related Actions - Global Actions
+|Item|Type|Details|
+|--- |--- |--- |
+|Place global actions next to the record header. Global actions affect the entire record. Examples include: "Update", "Update Status", Delete", "Export".|Related Actions|Global actions should be immediately accessible and clearly distinguished from local actions|
+|Limit global actions as much as possible. A good rule of thumb is to not use more than 3 global actions.|Related Actions|Prevents cognitive overload and maintains clean header design|
+|Avoid using icons in global actions.|Related Actions|Text labels provide clearer context for record-level operations|
+|Display global actions on views where there is relevant content. Else, hide the action.|Related Actions|Context-sensitive display improves usability and reduces clutter|
+
+### Related Actions - Local Actions  
+|Item|Type|Details|
+|--- |--- |--- |
+|Place local actions next to where the data resides on the view. Examples include: "Update Team" for a Contract Record View with a section that has a list of teams.|Related Actions|Contextual placement makes actions discoverable when users need them|
+|Use an icon for a local action if generally recognizable. Examples include Update, Delete or Create. Else, use a button with a label.|Related Actions|Icons save space for common actions; labels provide clarity for specific actions|
+|Be consistent with local actions - either use "icon + label" or just "label". Avoid mixing the two styles.|Related Actions|Consistency creates predictable user experience across the interface|
+|Don't display multiple related actions within a single location unless using a menu pattern|Related Actions|Prevents overcrowding and maintains clean section design|
+
+### Action Labeling and Forms
+|Item|Type|Details|
+|--- |--- |--- |
+|Start each action label with a verb. Example: "Update Status" instead of "Status"|Related Actions|Action-oriented language makes purpose clear to users|
+|Use a display name that the user can clearly understand. Avoid using terms like "Manage <Record>" or "View Details".|Related Actions|Specific, descriptive labels improve usability and reduce confusion|
+|Avoid unnecessary terms in the action label if the view name or record header is in immediate context. Example: for a record's global action, use "Update" instead of "Update <Record Name>".|Related Actions|Reduces redundancy and keeps labels concise|
+|The action form header should match the action Display Name (button label)|Related Actions|Consistency between trigger and destination improves user confidence|
+|The submit action of the form should match the form header. Example: If the form header is "Update Status", then the submit action of the form should state "Update"|Related Actions|Maintains consistent language throughout the user journey|
+|Use a dialog size that matches the form content. Avoid using a Large dialog size for sparse form content.|Related Actions|Appropriate sizing improves visual balance and user focus|
+
+### Views Configuration and Layout
+|Item|Type|Details|
+|--- |--- |--- |
+|Treat Summary views as a Category 1 - Marketable UI|Views|Summary views require highest design quality as primary user touchpoint|
+|Set the record header color to match the page background color (white or Default Background - #fafafc)|Views|Creates visual cohesion and proper contrast with content cards|
+|Set the same page background color for all record view tabs|Views|Maintains consistency across different views of the same record|
+|Set the record header to fixed if the user needs to know which tab they are in when scrolling in the view|Views|Provides context and navigation reference during scrolling|
+|Avoid using the News view|Views|News view pattern is deprecated in favor of more specific content organization|
+|Avoid using the Related Actions view unless you only have a summary view. If you only have a summary view, use the Related Actions view.|Views|Prevents redundant navigation; actions should be contextually placed|
+
+### Content Organization and Hierarchy
+|Item|Type|Details|
+|--- |--- |--- |
+|Place record progress or status at the top of the summary view|Views|Status information is critical for user decision-making and should be immediately visible|
+|Use the summary view for immediate comprehension. Keep the content to the minimum information needed to highlight essential data, progress and actions.|Views|Summary should provide quick understanding without overwhelming detail|
+|Use other record views to highlight data that is of intermittent importance. Examples include: Audit history, list of documents, list of users etc.|Views|Secondary views handle detailed or specialized information|
+|Avoid using more than 6 record views in a record. Use a combination of Record Views and Tabs as Side Navigation to balance information density.|Views|Prevents tab overflow and maintains navigable interface|
+
+### Layout Structure
+|Item|Type|Details|
+|--- |--- |--- |
+|Depending on the information to display, use a one column or two column layout|Views|Layout should match content complexity and user scanning patterns|
+|When using one column layout, center the component and set the width based on the amount of information to display. Use blank a!columnLayout()s to establish gutters on either side of the component.|Views|Centered layouts with appropriate gutters improve readability|
+|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually NARROW_PLUS or MEDIUM).|Views|Establishes clear visual hierarchy between primary and secondary content|
+|When using two column layouts, include high priority information in the primary and wider content area and move secondary priority information (e.g.: record metadata) to the second and narrower column.|Views|Prioritizes most important information in the primary visual flow|
+|Avoid using three column layouts|Views|Three columns can create cramped layouts and poor mobile experience|
+
+### Design Quality and Standards
+|Item|Type|Details|
+|--- |--- |--- |
+|Unless agreed upon with your PM as a Category 1 - Marketable UI, treat other views as Category 2 - Usability Focused UIs.|Views|Establishes appropriate design investment level for different view types|
+|Unless tagged as Category 1, use out of the box Appian SAIL components to display other views|Views|Maintains consistency and reduces development overhead for secondary views|
+|Use content cards contrasted against transparent background for better visual separation|Views|Improves scannability and creates clear content boundaries|
+|Implement clear section headers for logical information grouping|Views|Helps users navigate and understand information architecture|
 
 ## Development
 
