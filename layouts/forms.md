@@ -8,40 +8,43 @@ Facilitate user input by using the appropriate form style and input types for ea
 
 ![](https://github.com/user-attachments/assets/943d8b37-9cba-44af-a07b-ddd2deb8e500)
 
-## Design
-![](https://github.com/user-attachments/assets/1023e7c2-2f86-42d4-a2dd-01d946d19c80)
-Form in a dialog
-<br></br>
+## Overview
 
-Forms serve as a way for users to have a conversation with our products. Great form design enhances the ability for the user to successfully complete their tasks. 
+Forms serve as a way for users to have a conversation with our products. Great form design enhances the ability for the user to successfully complete their tasks. Use forms to guide users through sequential steps for completing a task, and to break long forms up into more manageable components.
 
 Every form needs to have a header, content and form navigation. A form can be used in a site page or in a dialog.
 
-## Form Types
+## Design Guidelines
 
-### Simple Forms
-Use simple forms for basic data collection with minimal fields and straightforward workflows.
+### When to Use Forms
 
-### Multi-step Forms (Wizards)
-Wizards are useful when a form is complex or has conditional field logic. Wizard step indicators are helpful for:
+Use this pattern as a starting point for basic forms. The [form layout component](https://docs.appian.com/suite/help/25.3/Form_Layout.html) makes it easy to automate some of these best practices, which include:
 
-- Breaking form fields into categories, making it easier to understand and complete each section
-- Structuring form fields and steps in a logical flow to reduce the chance of missing or incorrectly filling out important information
-- Improving navigation with visual cues that show users their progress and remaining steps
+- Showing the form title in the header
+- Adding submit and cancel buttons, with the recommended styling for both, at the bottom of the form
+- If you have a record action that is configured to open in a dialog, the buttons are automatically fixed to the bottom of the dialog and will stay in view as the user scrolls
 
-Depending on the complexity of your form, you can decide between single level sidebar step indicators or multi-level sidebars that further break steps down into sub-steps.
+### Form Types
 
-**Important**: In wizards, Appian automatically handles the page scrolling between each step of the wizard. This means that whenever a user navigates to the next step, the page will automatically scroll to the top of the page. If you are using the form layout in a wizard, make sure that the buttons or dynamic links that control form navigation are placed in the *buttons* parameter. If they are placed in the *contents* parameter, auto scrolling will not work.
+#### Single-Step Forms
+Use for simple data collection that can be completed quickly without overwhelming the user.
 
-### Usage
+#### Multi-Step Forms (Wizards)
+Use wizards to guide users through sequential steps for completing a task. Wizards also help to break long forms up into more manageable components.
 
-#### Dialog
+**Don't** design wizards that require users to frequently reference previous steps to complete the current step.
+
+### Form Layout Options
+
+![](https://github.com/user-attachments/assets/1023e7c2-2f86-42d4-a2dd-01d946d19c80)
+Form in a dialog
+
+#### Dialog Forms
 ![](https://github.com/user-attachments/assets/2be94769-e053-4db8-8631-6020efe1adeb)
 In multi-step forms, place the "Back" button first followed by the "Cancel" button next left-aligned. Right align the submit or next action.
 
 ![](https://github.com/user-attachments/assets/556b8845-d773-47ab-81c3-46a8271e2ca0)
 Provide confirmation upon submission
-<br></br>
 
 Checklist:
 |Item|Type|
@@ -63,15 +66,8 @@ Checklist:
 |Place fields in one column as much as possible|Dialogs|
 |Set SkipAutoFocus to True|Dialogs|
 |The submit action of the form should match the form header. Example: If the form header is "Update Status", then the submit action of the form should state "Update"|Dialogs|
-|Use the a!wizardLayout component for multi-step forms in dialogs|Wizards|
-|Set showStepHeadings to false when using wizard layout to avoid redundant headers|Wizards|
-|Use appropriate contentsWidth (NARROW, MEDIUM, WIDE) based on form complexity|Wizards|
-|In a multi-step form, use the milestone component to indicate progress|Progress|
-|In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
-|In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.|Progress|
-|Provide confirmation upon submission|Progress|
 
-#### Site Page
+#### Site Page Forms
 ![](https://github.com/user-attachments/assets/32be4251-0458-4e04-9b6b-3de88e0b3520)
 In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.
 
@@ -89,19 +85,42 @@ Checklist:
 |Use "Update" (not "Edit") when a user is modifying an item|Content|
 |Group related fields close to each other as much as possible to minimize context switching|Content|
 |If there is a required input field, add instructions under the form header that specifies - "Mandatory fields are marked with an asterisk (*)"|Content|
-|Use a!headerContentLayout for site page forms with complex layouts|Site Pages|
-|Consider using sidebar step indicators for multi-step forms on site pages|Site Pages|
+
+## Wizard Patterns
+
+### Wizard with Milestones
+
+Use the [milestone component](https://docs.appian.com/suite/help/25.3/Milestone_Component.html) to show the user's progress. Include links on the milestone component when you want users to easily navigate to previous steps.
+
+Checklist:
+|Item|Type|
+|--- |--- |
 |In a multi-step form, use the milestone component to indicate progress|Progress|
 |In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
-|In a form with 3+ steps, provide a review step that lists all the fields as read-only. Allow the user to navigate back to update information.|Progress|
+|In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
 |Provide confirmation upon submission|Progress|
 
-### Fields
+**Don't** use a horizontal milestone component when there are a large number of steps, as this can result in a cluttered look. If a wizard contains more than 5 or 6 steps, it's worthwhile to consider a side navigation bar instead.
+
+### Wizard with Side Navigation Bar
+
+Instead of showing wizard steps in a milestone component, you may choose to implement a side navigation bar using a [card layout](https://docs.appian.com/suite/help/25.3/card_layout.html) and [rich text display](https://docs.appian.com/suite/help/25.3/Rich_Text_Component.html) component in a fixed-width column. Consider this approach if you want more control over the appearance of the wizard navigation. This approach also works well when there are too many steps to comfortably fit in a milestone component or when each step in the wizard has a relatively narrow interface. Utilizing available horizontal space to display the navigation also reduces vertical scrolling.
+
+### Progressive Disclosure
+
+For wizards with many steps, use this pattern to break steps up into sub-steps. Only showing the sub-steps for the current step reduces clutter and makes it easier for users to navigate the form.
+
+For forms that can't easily be completed in one session, consider providing a button for users to save their progress and return later. In this pattern, a "Save my progress" button is placed underneath the wizard.
+
+## Field Guidelines
+
 ![](https://github.com/user-attachments/assets/4a3978f7-245b-42e6-8a5d-5f4f78c79304)
 Use the instructions parameter to provide information vital to form completion
 
 ![](https://github.com/user-attachments/assets/8cc52179-593c-4af3-9e58-3407a675850a)
 Use field level validation as much as possible. Define the error and provide guidance on how to resolve it. Avoid generic error messages. Do not disable a button, instead let the user click and view the error to understand what is missing or incorrect
+
+### Field Best Practices
 
 Checklist:
 |Item|Type|
@@ -127,42 +146,30 @@ Checklist:
 |Avoid using the placeholder parameter to specify input format|Placeholder Text|
 |Use the STANDARD style in a dense form|Radio Buttons and Checkboxes|
 |Use the STANDARD style when presenting as a custom grid filter|Radio Buttons and Checkboxes|
-|Use card choice fields for visual selection when users need to choose from options with additional context|Card Choices|
-|Configure card choice fields with appropriate templates (bar text stacked, etc.) for clear information hierarchy|Card Choices|
 |Use the helpTooltip parameter when the label is not sufficient for the user to understand the term|Tooltips|
 |Keep tooltips as brief as possible.|Tooltips|
 |Use field level validation as much as possible|Validation|
 |Define the error and provide guidance on how to resolve it. Avoid generic error messages (e.g.: "A value is required")|Validation|
 |Do not disable the submit or next button due to a validation error. Allow the user to click the button and view the validation error in the field.|Validation|
 
-### Wizard Layout Components
+## Accessibility Guidelines
 
-#### Using the Wizard Layout
-Use the a!wizardLayout component to easily create great-looking wizards with built-in step navigation and progress indicators.
+### Accessibility Text
+Always include `accessibilityText` parameters for form elements to ensure screen reader compatibility:
 
-Key parameters:
-- `titleBar`: Use header templates (a!headerTemplateFull, a!headerTemplateImage) for rich headers
-- `style`: Choose from DOT_VERTICAL, DOT_HORIZONTAL, or other step indicator styles
-- `steps`: Define each step with a!wizardStep components
-- `contentsWidth`: Set to NARROW, MEDIUM, or WIDE based on form complexity
-- `showStepHeadings`: Set to false to avoid redundant step headers
-- `primaryButtons` and `secondaryButtons`: Define navigation and action buttons
+- **Completed Steps**: `accessibilityText: "Completed Step (1 of 6)"`
+- **Current Step**: `accessibilityText: "Current Step (2 of 6)"`
+- **Future Steps**: `accessibilityText: "Future Step (3 of 6)"`
+- **Sections**: `accessibilityText: "Current section"` or `"Completed section"`
 
-#### Sidebar Step Indicators
-Use sidebar step indicators for custom wizard implementations when you need more control over the layout and navigation.
+### Form Navigation
+In both custom wizards and wizard layouts, Appian automatically handles the page scrolling between each step of the wizard. This means that whenever a user navigates to the next step, the page will automatically scroll to the top of the page.
 
-Benefits:
-- Works well for longer lists of steps
-- Helps balance whitespace in simpler forms
-- Provides clear visual progress indication
-- Allows for custom styling and interaction patterns
+To take advantage of this, make sure that you don't have multiple read-only components—elements that the user does not interact with—that affects the automatic page scrolling.
 
-Implementation considerations:
-- Use milestone components or custom step indicators
-- Ensure proper navigation between steps
-- Maintain consistent visual hierarchy
-- Consider responsive behavior on mobile devices
-### When to Use Inline Dialogs vs. Modals
+Additionally, if you are using a form layout in a custom wizard, make sure that the buttons or dynamic links that control form navigation are placed at the bottom of the form layout.
+
+## When to Use Inline Dialogs vs. Modals
 
 |          | ![](https://github.com/user-attachments/assets/353d5082-710b-4bde-8311-b570a7d1f3e9) Use an Inline Dialog When| ![](https://github.com/user-attachments/assets/26dd1986-fe53-49ca-b226-a66b3df7a705) Use a Modal When |
 |----------|---------|----------|
@@ -170,36 +177,21 @@ Implementation considerations:
 |**Task Complexity**|The action involves one step|The action involves one or multiple steps that are in a single or double column with input fields| 
 |**Contextual Awareness**|Visibility of the editable content and the parent page is necessary|Full attention to the task is necessary without the need for referring back to the original context|
 |**Progressive Disclosure**|No progressive disclosure is needed|Additional fields or options need to be revealed progressively|
-|**Form Type**|Simple, single-step forms|Multi-step wizards or complex forms with conditional logic|
-|**User Flow**|Quick edits or updates that don't interrupt the main workflow|Complete tasks that require focused attention and step-by-step completion|
 
-### Advanced Form Patterns
+## Confirmation and Review Pages
 
-#### Card Choice Fields
-Use card choice fields when users need to select from options that require additional context or visual representation.
+Confirmation and review pages reassure users of the successful completion of a form and can set expectations for what to do next.
 
-Best practices:
-- Use appropriate card templates (a!cardTemplateBarTextStacked, etc.)
-- Provide primary and secondary text for clear information hierarchy
-- Set maxSelections appropriately (1 for single selection, multiple for multi-select)
-- Consider using icons or visual elements to enhance recognition
+### Confirmation Page
+Use confirmation pages to:
+- Acknowledge successful form submission
+- Provide next steps or expectations
+- Include relevant reference numbers or contact information
+- Set user expectations for follow-up communications
 
-#### Multi-Column Layouts
-For complex forms, use column layouts to organize related fields and optimize screen space:
-- Group related fields in the same column
-- Use appropriate column widths (NARROW, MEDIUM, WIDE, AUTO)
-- Consider responsive behavior on different screen sizes
-- Maintain logical tab order for accessibility
-
-#### Conditional Field Display
-Implement progressive disclosure by showing/hiding fields based on user selections:
-- Use showWhen parameter to control field visibility
-- Group conditional fields logically
-- Provide clear visual cues when fields appear or disappear
-- Ensure validation works correctly with conditional fields
 ## Development
 
-### Dialog Example 1 - Simple Form with Confirmation
+### Dialog Example 1: Confirmation Page
 ```
 a!formLayout(
   titleBar: a!headerTemplateFull(
@@ -213,7 +205,8 @@ a!formLayout(
       backgroundColor: "POSITIVE",
       contentColor: "STANDARD",
       align: "CENTER",
-      marginBelow: "MORE"
+      marginBelow: "MORE",
+      accessibilityText: "Success confirmation"
     ),
     a!richTextDisplayField(
       labelPosition: "COLLAPSED",
@@ -255,7 +248,7 @@ a!formLayout(
 )
 ```
 
-### Dialog Example 2 - Multi-step Wizard with Card Choices
+### Dialog Example 2: Multi-Step Wizard with Accessibility
 ```
 a!localVariables(
   local!firstName,
@@ -263,7 +256,6 @@ a!localVariables(
   local!organization,
   local!jobTitle,
   local!country,
-  local!office,
   local!countryChoices: {
     "United States",
     "Canada",
@@ -274,94 +266,38 @@ a!localVariables(
   },
   local!countryChoiceValues: { "US", "CA", "MX", "UK", "DE", "FR" },
   a!wizardLayout(
-    titleBar: a!headerTemplateImage(
-      title: "Return to Work Readiness Questionnaire",
-      secondaryText: "Please answer the questions below and provide any requested documentation in order to determine if you meet local requirements for returning to work.",
-      backgroundColor: "#020A51",
-      image: a!documentImage(
-        document: a!EXAMPLE_DOCUMENT_IMAGE()
-      ),
-      imageSize: "MEDIUM"
-    ),
-    style: "DOT_VERTICAL",
+    titleBar: "Create Case",
+    showTitleBarDivider: true,
+    style: "MINIMAL",
+    focusOnFirstInput: true,
+    contentsWidth: "NARROW",
     steps: {
       a!wizardStep(
-        label: "Work Location",
-        contents: {
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(
-                text: "Which office will you be returning to?",
-                size: "MEDIUM",
-                style: "PLAIN"
-              )
-            },
-            marginAbove: "STANDARD",
-            marginBelow: "MORE"
-          ),
-          a!cardChoiceField(
-            label: "",
-            labelPosition: "COLLAPSED",
-            data: {
-              a!map(id: 1, primaryText: "United States"),
-              a!map(id: 2, primaryText: "United Kingdom"),
-              a!map(id: 3, primaryText: "Australia"),
-              a!map(id: 4, primaryText: "Spain"),
-              a!map(id: 5, primaryText: "Germany"),
-              a!map(id: 6, primaryText: "Italy")
-            },
-            cardTemplate: a!cardTemplateBarTextStacked(
-              id: fv!data.id,
-              primaryText: fv!data.primaryText
-            ),
-            value: local!country,
-            saveInto: local!country,
-            maxSelections: 1,
-            validations: {}
-          ),
-          a!cardChoiceField(
-            label: "",
-            labelPosition: "COLLAPSED",
-            data: {
-              a!map(id: 1, primaryText: "Headquarters", secondaryText: "McLean VA"),
-              a!map(id: 2, primaryText: "NYC WeWork", secondaryText: "New York NY"),
-              a!map(id: 3, primaryText: "Remote WFH", secondaryText: "United States")
-            },
-            cardTemplate: a!cardTemplateBarTextStacked(
-              id: fv!data.id,
-              primaryText: fv!data.primaryText,
-              secondaryText: fv!data.secondaryText
-            ),
-            value: local!office,
-            saveInto: local!office,
-            maxSelections: 1,
-            validations: {}
-          )
-        }
-      ),
-      a!wizardStep(
-        label: "Personal Information",
+        label: "About You",
         contents: {
           a!textField(
             label: "First Name",
             value: local!firstName,
-            saveInto: local!firstName
+            saveInto: local!firstName,
+            accessibilityText: "Enter your first name"
           ),
           a!textField(
             label: "Last Name",
             value: local!lastName,
-            saveInto: local!lastName
+            saveInto: local!lastName,
+            accessibilityText: "Enter your last name"
           ),
           a!textField(
             label: "Organization",
             value: local!organization,
-            saveInto: local!organization
+            saveInto: local!organization,
+            accessibilityText: "Enter your organization name"
           ),
           a!textField(
             label: "Job Title",
             value: local!jobTitle,
-            saveInto: local!jobTitle
+            saveInto: local!jobTitle,
+            accessibilityText: "Enter your job title"
           ),
           a!dropdownField(
             label: "Country",
@@ -369,78 +305,41 @@ a!localVariables(
             choiceLabels: local!countryChoices,
             choiceValues: local!countryChoiceValues,
             value: local!country,
-            saveInto: local!country
+            saveInto: local!country,
+            accessibilityText: "Select your country from the dropdown"
           )
         }
       ),
       a!wizardStep(
+        label: "Case Details",
+        accessibilityText: "Step 2 of 3: Case Details"
+      ),
+      a!wizardStep(
         label: "Review",
-        contents: {
-          /* Review step with read-only fields */
-          a!richTextDisplayField(
-            value: {
-              a!richTextItem(text: "Please review your information:", style: "STRONG")
-            },
-            marginBelow: "STANDARD"
-          ),
-          a!columnsLayout(
-            columns: {
-              a!columnLayout(
-                contents: {
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: "Name:", color: "SECONDARY") }
-                  ),
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: "Organization:", color: "SECONDARY") }
-                  ),
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: "Job Title:", color: "SECONDARY") }
-                  )
-                }
-              ),
-              a!columnLayout(
-                contents: {
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: local!firstName & " " & local!lastName) }
-                  ),
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: local!organization) }
-                  ),
-                  a!richTextDisplayField(
-                    value: { a!richTextItem(text: local!jobTitle) }
-                  )
-                }
-              )
-            }
-          )
-        }
+        accessibilityText: "Step 3 of 3: Review your information"
       )
     },
-    contentsWidth: "MEDIUM",
-    showStepHeadings: false(),
-    primaryButtons: {
-      a!buttonWidget(
-        label: "Submit",
-        submit: true,
-        style: "SOLID",
-        loadingIndicator: true,
-        showWhen: fv!isLastStep
-      )
-    },
+    showButtonDivider: true,
     secondaryButtons: {
       a!buttonWidget(
         label: "Cancel",
-        value: true,
-        saveInto: {},
-        submit: true,
-        style: "LINK",
-        validate: false
+        style: if(fv!isFirstStep, "OUTLINE", "LINK"),
+        accessibilityText: "Cancel form submission"
+      )
+    },
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Create",
+        style: "SOLID",
+        showWhen: fv!isLastStep,
+        accessibilityText: "Submit case creation form"
       )
     }
   )
 )
 ```
-### Site Page Example with Sidebar Step Indicator
+
+### Site Page Example: Multi-Step Form with Progress Indicator
 ```
 a!headerContentLayout(
   header: a!cardLayout(
@@ -459,7 +358,8 @@ a!headerContentLayout(
         align: "LEFT"
       )
     },
-    marginBelow: "NONE"
+    marginBelow: "NONE",
+    accessibilityText: "Form header: Create Case"
   ),
   contents: {
     a!columnsLayout(
@@ -469,7 +369,6 @@ a!headerContentLayout(
         a!columnLayout(
           width: "NARROW_PLUS",
           contents: {
-            /* Sidebar Step Indicator */
             a!sideBySideLayout(
               alignVertical: "MIDDLE",
               items: {
@@ -478,7 +377,8 @@ a!headerContentLayout(
                   item: a!stampField(
                     size: "TINY",
                     icon: "check",
-                    backgroundColor: "ACCENT"
+                    backgroundColor: "ACCENT",
+                    accessibilityText: "Completed Step"
                   )
                 ),
                 a!sideBySideItem(
@@ -505,7 +405,8 @@ a!headerContentLayout(
                   item: a!stampField(
                     size: "TINY",
                     icon: "check",
-                    backgroundColor: "ACCENT"
+                    backgroundColor: "ACCENT",
+                    accessibilityText: "Completed Step"
                   )
                 ),
                 a!sideBySideItem(
@@ -532,7 +433,8 @@ a!headerContentLayout(
                   item: a!stampField(
                     size: "TINY",
                     text: "3",
-                    backgroundColor: "ACCENT"
+                    backgroundColor: "ACCENT",
+                    accessibilityText: "Current Step (3 of 3)"
                   )
                 ),
                 a!sideBySideItem(
@@ -551,7 +453,6 @@ a!headerContentLayout(
         a!columnLayout(
           contents: a!localVariables(
             {
-              /* Review Step Content */
               a!richTextDisplayField(
                 value: {
                   a!richTextItem(
@@ -598,6 +499,17 @@ a!headerContentLayout(
                           )
                         },
                         align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Address",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
                       )
                     }
                   ),
@@ -632,13 +544,86 @@ a!headerContentLayout(
                           )
                         },
                         align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "9836 Rocky River Court" & char(10) & "Annandale, VA USA 22003",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
                       )
                     }
                   )
                 }
               ),
               a!horizontalLine(),
-              /* Navigation Buttons */
+              /* Case Information Section */
+              a!richTextDisplayField(
+                value: {
+                  a!richTextItem(text: "Case Information", style: "STRONG")
+                },
+                align: "LEFT",
+                marginBelow: "STANDARD",
+                marginAbove: "STANDARD"
+              ),
+              a!columnsLayout(
+                columns: {
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Type",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Title",
+                            style: "PLAIN",
+                            size: "MEDIUM",
+                            color: "SECONDARY"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  ),
+                  a!columnLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Account Renewal",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      ),
+                      a!richTextDisplayField(
+                        value: {
+                          a!richTextItem(
+                            text: "Renew my account",
+                            style: "PLAIN",
+                            size: "MEDIUM"
+                          )
+                        },
+                        align: "LEFT"
+                      )
+                    }
+                  )
+                }
+              ),
+              a!horizontalLine(),
               a!sideBySideLayout(
                 items: {
                   a!sideBySideItem(
@@ -647,12 +632,14 @@ a!headerContentLayout(
                         a!buttonWidget(
                           label: "BACK",
                           style: "OUTLINE",
-                          saveInto: {}
+                          saveInto: {},
+                          accessibilityText: "Go back to previous step"
                         ),
                         a!buttonWidget(
                           label: "CANCEL",
                           style: "LINK",
-                          saveInto: {}
+                          saveInto: {},
+                          accessibilityText: "Cancel form submission"
                         )
                       }
                     )
@@ -663,7 +650,8 @@ a!headerContentLayout(
                         a!buttonWidget(
                           label: "CREATE CASE",
                           style: "SOLID",
-                          saveInto: {}
+                          saveInto: {},
+                          accessibilityText: "Submit case creation form"
                         )
                       }
                     )
@@ -679,7 +667,6 @@ a!headerContentLayout(
         a!columnLayout(
           width: "NARROW_PLUS",
           contents: {
-            /* Contextual Help Panel */
             a!cardLayout(
               style: "#F4F5F9",
               showBorder: false,
@@ -698,7 +685,7 @@ a!headerContentLayout(
                 a!richTextDisplayField(
                   value: {
                     a!richTextItem(
-                      text: "After submitting your case, you will receive a confirmation email with your case number. Our support team will review your request and respond within 24 hours. You can track the status of your case in the customer portal.",
+                      text: "After submitting your case, you will receive a confirmation email with your case number. Our support team will review your request and respond within 24 hours. You can track the status of your case through your account dashboard.",
                       style: "PLAIN"
                     )
                   },
@@ -706,7 +693,8 @@ a!headerContentLayout(
                 )
               },
               padding: "STANDARD",
-              marginBelow: "STANDARD"
+              marginBelow: "STANDARD",
+              accessibilityText: "Information about next steps after form submission"
             )
           }
         ),
@@ -714,6 +702,153 @@ a!headerContentLayout(
       }
     )
   }
+)
+```
+
+### Wizard with Side Navigation Example
+```
+a!localVariables(
+  local!currentStep: 1,
+  local!steps: {
+    "Personal Information",
+    "Contact Details", 
+    "Preferences",
+    "Account Setup",
+    "Security Settings",
+    "Review & Submit"
+  },
+  a!columnsLayout(
+    columns: {
+      /* Side Navigation */
+      a!columnLayout(
+        width: "NARROW",
+        contents: {
+          a!cardLayout(
+            contents: {
+              a!forEach(
+                items: local!steps,
+                expression: a!cardLayout(
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          width: "MINIMIZE",
+                          item: a!stampField(
+                            size: "TINY",
+                            text: fv!index,
+                            backgroundColor: if(
+                              fv!index < local!currentStep,
+                              "POSITIVE",
+                              if(
+                                fv!index = local!currentStep,
+                                "ACCENT", 
+                                "SECONDARY"
+                              )
+                            ),
+                            contentColor: "STANDARD",
+                            accessibilityText: if(
+                              fv!index < local!currentStep,
+                              "Completed Step (" & fv!index & " of " & length(local!steps) & ")",
+                              if(
+                                fv!index = local!currentStep,
+                                "Current Step (" & fv!index & " of " & length(local!steps) & ")",
+                                "Future Step (" & fv!index & " of " & length(local!steps) & ")"
+                              )
+                            )
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            value: a!richTextItem(
+                              text: fv!item,
+                              style: if(fv!index = local!currentStep, "STRONG", "PLAIN"),
+                              color: if(fv!index <= local!currentStep, "STANDARD", "SECONDARY")
+                            ),
+                            accessibilityText: fv!item & " - " & if(
+                              fv!index < local!currentStep,
+                              "Completed",
+                              if(
+                                fv!index = local!currentStep,
+                                "Current Step",
+                                "Not Started"
+                              )
+                            )
+                          )
+                        )
+                      },
+                      alignVertical: "MIDDLE"
+                    )
+                  },
+                  style: "NONE",
+                  padding: "LESS",
+                  marginBelow: "STANDARD"
+                )
+              )
+            },
+            style: "#F8F9FA",
+            padding: "MORE"
+          )
+        }
+      ),
+      /* Main Content */
+      a!columnLayout(
+        contents: {
+          a!cardLayout(
+            contents: {
+              a!richTextDisplayField(
+                value: a!richTextItem(
+                  text: "Step " & local!currentStep & ": " & index(local!steps, local!currentStep, ""),
+                  style: "STRONG",
+                  size: "LARGE"
+                ),
+                marginBelow: "MORE"
+              ),
+              /* Step content would go here */
+              a!textField(
+                label: "Sample Field",
+                placeholder: "Enter information for step " & local!currentStep,
+                accessibilityText: "Sample input field for step " & local!currentStep
+              )
+            },
+            padding: "MORE"
+          ),
+          /* Navigation Buttons */
+          a!buttonArrayLayout(
+            buttons: {
+              a!buttonWidget(
+                label: "Previous",
+                style: "OUTLINE",
+                showWhen: local!currentStep > 1,
+                saveInto: a!save(local!currentStep, local!currentStep - 1),
+                accessibilityText: "Go to previous step"
+              ),
+              a!buttonWidget(
+                label: "Cancel",
+                style: "LINK",
+                accessibilityText: "Cancel wizard"
+              ),
+              a!buttonWidget(
+                label: if(local!currentStep = length(local!steps), "Submit", "Next"),
+                style: "SOLID",
+                saveInto: if(
+                  local!currentStep < length(local!steps),
+                  a!save(local!currentStep, local!currentStep + 1),
+                  {}
+                ),
+                accessibilityText: if(
+                  local!currentStep = length(local!steps),
+                  "Submit form",
+                  "Go to next step"
+                )
+              )
+            },
+            align: "BETWEEN",
+            marginAbove: "MORE"
+          )
+        }
+      )
+    }
+  )
 )
 ```
 
