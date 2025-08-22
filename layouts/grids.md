@@ -153,6 +153,22 @@ Grids serve as containers for displaying record information. Great grid design a
 |Consider spreadsheet-style layout with fixed widths for narrow screens|Responsive|Maintains usability on mobile devices|
 |Prioritize most important columns for mobile display|Responsive|Focus on essential information in constrained spaces|
 
+## Additional Resources
+
+### Technical Implementation
+- [Editable Grid Component Documentation](https://docs.appian.com/suite/help/25.3/Editable_Grid_Component.html)
+- [Read-Only Grid Component Documentation](https://docs.appian.com/suite/help/25.3/Paging_Grid_Component.html)
+
+### Design Patterns
+- **List-Style Grids**: Use "Auto" width or weighted proportions for flexible layouts that fit container width
+- **Spreadsheet-Style Grids**: Use fixed widths with horizontal scrolling for data-rich analytical interfaces
+- **Mobile Considerations**: Switch to fixed-width approach for narrow screens to maintain legibility
+
+### Performance Optimization
+- Use Record Types as data sources for built-in search and filtering
+- Choose appropriate batch sizes based on interface context
+- Implement logical default sort orders to surface relevant content
+
 ## Development
 
 ### Page Section Grid
