@@ -134,6 +134,45 @@ The button label in the record view matches the verb in the form header. Also, t
 |Use content cards contrasted against transparent background for better visual separation|Views|Improves scannability and creates clear content boundaries|
 |Implement clear section headers for logical information grouping|Views|Helps users navigate and understand information architecture|
 
+## Additional Resources
+
+### Technical Implementation
+- [Record Type Configuration Documentation](https://docs.appian.com/suite/help/25.3/Record_Type_Object.html) - Guide to setting up record types and views
+- [Record View Configuration](https://docs.appian.com/suite/help/25.3/Record_Views.html) - Details for configuring record views and tabs
+
+### Design Patterns
+- **Summary Views**: Focus on essential information, status, and primary actions for quick comprehension
+- **Detail Views**: Organize comprehensive information using cards and clear section headers
+- **Two-Column Layouts**: Use wider primary column for main content, narrower secondary column for metadata
+- **Progressive Disclosure**: Implement "Show More/Less" patterns for lengthy content to maintain scannability
+
+### Related Components
+- [Cards](./cards.md) - Essential for organizing record information into scannable sections
+- [Grids](./grids.md) - For displaying related record lists within record views
+- [Forms](./forms.md) - For record action dialogs and update interfaces
+- [Navigation](./navigation.md) - For tab organization and view switching patterns
+
+### Best Practices Summary
+
+**Information Architecture:**
+- Limit to 6 record views maximum to prevent tab overflow
+- Use Summary view for Category 1 (Marketable UI) design quality
+- Group related data logically with meaningful section headers
+- Place status and progress information prominently at the top
+
+**Action Design:**
+- Position global actions next to record header (limit to 3 maximum)
+- Place local actions contextually near relevant data sections
+- Use consistent action labeling: start with verbs, match form headers
+- Avoid mixing icon-only and icon+label action styles
+
+**Accessibility:**
+- Ensure WCAG AA color contrast compliance (4.5:1 minimum)
+- Provide meaningful labels for all interactive elements
+- Support keyboard navigation throughout record views
+- Use semantic heading structure (H2 for section headers)
+- Include appropriate alt text for icons and images
+
 ## Development
 
 ### Record View
