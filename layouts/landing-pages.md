@@ -14,77 +14,6 @@ Landing pages should be designed with specific user personas and usage patterns 
 - **Visitor Landing Pages**: Welcome new and occasional users to a website
 - **Employee Home Pages**: Provide personalized experiences for users who frequently use an app
 
-## Visitor Landing Pages
-
-### What is a Visitor Landing Page?
-
-Visitor landing pages are designed to welcome new and occasional users to a website. These pages focus on orientation, education, and guiding users to their first successful interaction with your application.
-
-### When to Use Visitor Landing Pages
-
-Use visitor landing pages when:
-- Users are new to your application or website
-- Users visit infrequently and need orientation
-- You need to educate users about available features
-- Users need guidance to complete their first task
-- You want to showcase key capabilities and value propositions
-
-### Design Principles for Visitor Landing Pages
-
-**Focus on Orientation and Education**
-- Provide clear navigation and wayfinding
-- Explain key features and benefits
-- Use progressive disclosure to avoid overwhelming users
-- Include helpful links and getting started guides
-
-**Use Approachable Design**
-- Employ larger text and more white space
-- Minimize visual clutter
-- Use clear, action-oriented language
-- Provide visual hierarchy to guide attention
-
-### Billboard Layout Pattern
-
-For visitor landing pages, consider using billboard layouts to create impactful first impressions:
-
-- Use compelling visuals or hero images
-- Include clear value propositions
-- Provide prominent calls-to-action
-- Showcase key features or benefits
-
-## Employee Home Pages
-
-### What is an Employee Home Page?
-
-Employee home pages provide users who frequently use an app with a tailored summary of tasks, actions, and relevant information. These pages are designed with content selected for a target audience and are typically the first page a user views on a site.
-
-### When to Use Employee Home Pages
-
-Use employee home pages when:
-- Users frequently access the application
-- Users have established workflows and tasks
-- Personalization can improve efficiency
-- Users need quick access to relevant information
-- Task completion is the primary goal
-
-### Design Principles for Employee Home Pages
-
-**Tailor Content to Target Users**
-
-Answer these questions to gain a better understanding of the various user personas viewing the landing page: 
-* What information does each user need to view?
-* What is the minimum amount of information you need to provide to give users context? 
-* What actions do users need to perform, and what information do they need to perform them?  
-* What helpful (but not essential) information can you display under a link that directs users to a separate page? 
-
-**Choose Appropriate Information Density**
-
-Use dense layouts for experienced, data-intensive users that prefer efficiency. Use a guided experience layout for novice users that prefer a step-by-step approach.
-
-**Preserve Layout Consistency**
-
-The amount of information included on a page should be determined by the requirements for the use case. Before adding more information to a page, make sure it will significantly benefit users. While some users legitimately benefit from seeing very dense employee home pages, think about whether a more focused design would be best for your audience.
-
 ## Design Patterns
 
 ### Dense UI: Two Columns
@@ -186,59 +115,49 @@ Employee home pages with larger text, more white space, and fewer elements tend 
 - Maintain touch targets and accessibility standards
 - Test on actual devices, not just browser resizing
 
-## Personalization Strategies
+## Content Strategies
 
-### Content Personalization
+### General
+- Use action-oriented language that clearly communicates purpose
+- Provide helpful links and getting started guides for new users
+- Balance comprehensive information with scannability
+- Implement consistent voice and tone across all landing page elements
 
+### Personalization
 - Show relevant tasks and actions based on user role
 - Display recent or frequently accessed items
 - Customize information density based on user preferences
 - Provide user-configurable dashboard elements
 - Use progressive disclosure for advanced features
 
-### Contextual Adaptation
-
-- Adapt content based on time of day or business cycles
-- Show location-relevant information when applicable
-- Display status-specific actions and information
-- Provide role-based navigation and features
-- Consider user's current workflow context
-
 ## Accessibility Considerations
-
-### Universal Design Principles
 
 - Ensure sufficient color contrast for all text
 - Provide keyboard navigation for all interactive elements
 - Use semantic HTML and proper heading structure
 - Include alt text for all meaningful images
 - Test with screen readers and assistive technologies
-
-### Progressive Enhancement
-
-- Design for keyboard-only users first
-- Ensure core functionality works without JavaScript
 - Provide text alternatives for visual information
-- Use focus indicators that are clearly visible
-- Support browser zoom up to 200% without horizontal scrolling
 
-## Performance Considerations
+## Additional Resources
 
-### Loading Strategies
+### Technical Implementation
+- [Billboard Layout Documentation](https://docs.appian.com/suite/help/25.3/Billboard_Layout.html) - Details for creating impactful hero sections
+- [Header Content Layout Documentation](https://docs.appian.com/suite/help/25.3/Header_Content_Layout.html) - Guide to page structure and layout patterns
+- [Card Layout Documentation](https://docs.appian.com/suite/help/25.3/Card_Layout.html) - Organizing content sections and interactive elements
 
-- Prioritize above-the-fold content loading
-- Use lazy loading for non-critical images and components
-- Implement progressive loading for data-heavy sections
-- Provide loading states and skeleton screens
-- Optimize images and assets for web delivery
+### Design Patterns
+- **Visitor Landing Pages**: Focus on orientation, education, and first-time user success with approachable design
+- **Employee Home Pages**: Provide personalized, task-focused experiences for frequent users with appropriate information density
+- **Dense UI Layouts**: Use two or three-column layouts for experienced users who prioritize efficiency over guidance
+- **Guided Experience**: Implement step-by-step approaches for new users with progressive disclosure and clear navigation
 
-### Data Management
-
-- Cache frequently accessed data
-- Use pagination for large data sets
-- Implement efficient search and filtering
-- Minimize API calls through smart data fetching
-- Provide offline capabilities where appropriate
+### Related Components
+- [Cards](./cards.md) - Essential building blocks for organizing landing page content sections
+- [Grids](./grids.md) - For displaying data lists and record collections on employee home pages
+- [Navigation](./navigation.md) - For implementing tabs, links, and wayfinding elements
+- [Forms](./forms.md) - For interactive elements and user input on landing pages
+- [Charts and Visualizations](./charts.md) - For displaying metrics and KPIs on employee dashboards
 
 ## Development
 
