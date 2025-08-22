@@ -189,6 +189,38 @@ Use confirmation pages to:
 - Include relevant reference numbers or contact information
 - Set user expectations for follow-up communications
 
+## Additional Resources
+
+### Technical Implementation
+- [Form Layout Component Documentation](https://docs.appian.com/suite/help/25.3/Form_Layout.html) - Complete reference for the a!formLayout() component
+- [Wizard Layout Component](https://docs.appian.com/suite/help/25.3/Wizard_Layout.html) - Multi-step form implementation guide
+- [Milestone Component](https://docs.appian.com/suite/help/25.3/Milestone_Component.html) - Progress indicators for wizards
+- [Card Layout Component](https://docs.appian.com/suite/help/25.3/card_layout.html) - Container layouts for form sections
+- [Rich Text Display Component](https://docs.appian.com/suite/help/25.3/Rich_Text_Component.html) - Text formatting and display options
+- [Building Accessible Applications](https://docs.appian.com/suite/help/25.3/Accessibility_Best_Practices.html) - Accessibility implementation guidelines
+
+### Design Patterns
+- **Single-Step Forms**: Simple data collection with clear submit/cancel actions
+- **Multi-Step Wizards**: Sequential form completion with progress tracking
+- **Confirmation Pages**: Success acknowledgment with next steps guidance
+- **Progressive Disclosure**: Revealing form sections based on user input
+- **Inline Dialogs vs. Modals**: Choosing the right interaction pattern based on complexity
+- **Review and Edit Patterns**: Allowing users to modify previous inputs
+
+### Related Components
+- [Header Content Layout](https://docs.appian.com/suite/help/25.3/Header_Content_Layout.html) - Page-level form containers
+- [Section Layout](https://docs.appian.com/suite/help/25.3/Section_Layout.html) - Grouping related form fields
+- [Columns Layout](https://docs.appian.com/suite/help/25.3/Columns_Layout.html) - Multi-column form arrangements
+- [Side by Side Layout](https://docs.appian.com/suite/help/25.3/Side_By_Side_Layout.html) - Horizontal field alignment
+- [Button Array Layout](https://docs.appian.com/suite/help/25.3/Button_Array_Layout.html) - Form action button placement
+- [Stamp Field](https://docs.appian.com/suite/help/25.3/Stamp_Field.html) - Status indicators and progress markers
+
+### Validation and Error Handling
+- [Form Validation Best Practices](https://docs.appian.com/suite/help/25.3/Form_Validation.html) - Field-level and form-level validation
+- [Error Message Guidelines](https://docs.appian.com/suite/help/25.3/Error_Messages.html) - Clear, actionable error communication
+- [Required Field Indicators](https://docs.appian.com/suite/help/25.3/Required_Fields.html) - Marking mandatory form fields
+- [Input Format Validation](https://docs.appian.com/suite/help/25.3/Input_Validation.html) - Data format checking and feedback
+
 ## Development
 
 ### Dialog Example 1: Confirmation Page
@@ -851,26 +883,3 @@ a!localVariables(
   )
 )
 ```
-
-## Best Practices Summary
-
-### Form Design Principles
-1. **Progressive Disclosure**: Break complex forms into logical steps
-2. **Clear Navigation**: Provide obvious paths forward and backward
-3. **Contextual Help**: Offer guidance where users need it most
-4. **Responsive Design**: Ensure forms work well on all device sizes
-5. **Accessibility**: Use proper labels, instructions, and validation messages
-
-### Technical Implementation
-1. **Component Selection**: Choose the right layout component for your use case
-2. **Parameter Configuration**: Set appropriate values for contentsWidth, labelPosition, etc.
-3. **Validation Strategy**: Implement field-level validation with clear error messages
-4. **Button Placement**: Position navigation buttons correctly for automatic scrolling
-5. **Performance**: Consider data loading and form submission performance
-
-### User Experience
-1. **Minimize Cognitive Load**: Group related fields and reduce context switching
-2. **Provide Feedback**: Show progress indicators and confirmation messages
-3. **Enable Recovery**: Allow users to go back and modify their inputs
-4. **Maintain Context**: Help users understand where they are in the process
-5. **Optimize for Success**: Design forms that guide users to successful completion
