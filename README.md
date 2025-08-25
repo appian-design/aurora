@@ -22,9 +22,6 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 git clone https://github.com/pglevy/design-system-docs.git
 cd design-system-docs
 
-# Switch to docusaurus branch
-git checkout docusaurus
-
 # Install dependencies
 npm install
 
@@ -49,16 +46,19 @@ This design system documentation includes:
 
 ```
 design-system-docs/
-├── about/                  # About the design system
-├── branding/               # Brand identity and visual elements
-├── content-style-guide/    # Content and writing guidelines
-├── accessibility/          # Accessibility guidelines and checklists
-├── layouts/                # Page-level layout templates
-├── patterns/               # Reusable design patterns
-├── components/             # Individual UI components
-├── _layouts/               # Jekyll layout templates
-├── _includes/              # Jekyll include templates
-└── _config.yml             # Jekyll configuration
+├── docs/                   # All documentation content
+│   ├── accessibility/     # Accessibility guidelines and checklists
+│   ├── branding/          # Brand identity and visual elements
+│   ├── components/        # Individual UI components
+│   ├── content-style-guide/ # Content and writing guidelines
+│   ├── layouts/           # Page-level layout templates
+│   └── patterns/          # Reusable design patterns
+├── src/                   # Docusaurus source files
+├── static/                # Static assets (images, etc.)
+├── .github/               # GitHub workflows and templates
+├── docusaurus.config.js   # Docusaurus configuration
+├── package.json           # Dependencies and scripts
+└── sidebars.js            # Sidebar navigation structure
 ```
 
 ## 🤝 Contributing
@@ -86,7 +86,7 @@ We believe that great design systems are built by communities. Whether you're a 
 2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/design-system-docs.git`
 3. **Create a feature branch**: `git checkout -b feature/your-feature-name`
 4. **Make changes**: Edit markdown files or add new documentation
-5. **Test locally**: Run `bundle exec jekyll serve` to preview changes
+5. **Test locally**: Run `npm start` to preview changes
 6. **Submit PR**: Push changes and open a pull request for review
 
 Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information and our [Code of Conduct](CODE_OF_CONDUCT.md) for community guidelines.
@@ -160,7 +160,7 @@ related: ["related-item-1", "related-item-2"]
 
 - [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Docusaurus Documentation](https://docusaurus.io/docs)
 - [Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## 🆘 Getting Help
