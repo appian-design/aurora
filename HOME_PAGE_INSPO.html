@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .blob-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            filter: blur(120px);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            will-change: transform;
+        }
+
+        /* Adjusted Blob Styling & Animation for the mockup */
+        .blob-1 {
+            background: rgba(228, 26, 151, 0.3); /* Pink */
+            width: 450px;
+            height: 450px;
+            top: 25%;
+            left: 60%;
+            animation: move 22s ease-in-out infinite alternate;
+            animation-delay: -5s;
+        }
+
+        .blob-2 {
+            background: rgba(35, 34, 240, 0.3); /* Blue */
+            width: 500px;
+            height: 500px;
+            top: 10%;
+            left: 30%;
+            animation: move 20s ease-in-out infinite alternate;
+        }
+
+        .blob-3 {
+            background: rgba(255, 216, 82, 0.3); /* Yellow */
+            width: 400px;
+            height: 400px;
+            top: 55%;
+            left: 45%;
+            animation: move 25s ease-in-out infinite alternate;
+            animation-delay: -10s;
+        }
+
+
+        @keyframes move {
+            from {
+                transform: rotate(0deg) scale(1) translateX(0px);
+            }
+            to {
+                transform: rotate(360deg) scale(1.1) translateX(50px);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <div class="gradient-bg">
+        <div class="blob-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <main class="relative z-10 min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-6xl w-full py-16 px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
+                    Aurora Design System
+                </h1>
+                <p class="mt-4 text-lg text-gray-600">
+                    Aurora serves as the guide to navigating SAIL, Appian's low-code language, to design beautiful, responsive, and accessible applications.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Components</h3>
+                    <p class="mt-2 text-gray-700">Individual UI components with usage guidelines and code examples</p>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Patterns</h3>
+                    <p class="mt-2 text-gray-700">Reusable design patterns for common interface problems</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Layouts</h3>
+                    <p class="mt-2 text-gray-700">Page-level layout templates and structural guidance</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Branding</h3>
+                    <p class="mt-2 text-gray-700">Core brand identity elements including colors, typography, and iconography</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Accessibility</h3>
+                    <p class="mt-2 text-gray-700">Comprehensive guidelines and checklists for inclusive design</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-md rounded-xl p-6 border border-white/30 shadow-sm">
+                    <h3 class="text-lg font-bold">Content Style Guide</h3>
+                    <p class="mt-2 text-gray-700">Guidelines for voice, tone, and content consistency</p>
+                </div>
+            </div>
+
+            <p class="mt-16 text-gray-600">
+                We welcome contributions! Please read our <a href="#" class="font-medium text-black underline hover:text-gray-800">Contributing Guide</a> to get started.
+            </p>
+
+        </div>
+    </main>
+
+</body>
+</html>
+```
