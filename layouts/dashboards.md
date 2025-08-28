@@ -1750,7 +1750,7 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "NEW CAMPAIGN",
+                      label: "New Campaign",
                       icon: "plus-circle",
                       size: "LARGE",
                       style: "SOLID"
