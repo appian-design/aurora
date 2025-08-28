@@ -31,7 +31,7 @@ Use this pattern when your form has at least 3 steps with a form layout that per
 
 ![](https://github.com/user-attachments/assets/f1d75653-9e14-498d-8d11-4ef8c5825c49)
 
-Use the instructions parameter of `a!formlayout` when the milestone has 2 steps.
+Use the instructions parameter of `a!formLayout` when the milestone has 2 steps.
 
 #### Use as Horizontal Progress Indicator
 
@@ -174,12 +174,6 @@ a!localVariables(
                     label: "Signing Bonus",
                     value: local!signingBonus,
                     saveInto: local!signingBonus
-                  ),
-                  a!textField(
-                    label: "",
-                    value: "",
-                    readOnly: true,
-                    showWhen: false
                   )
                 },
                 width: "MEDIUM"
@@ -192,6 +186,7 @@ a!localVariables(
         label: "Position Details",
         contents: {
           a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
             value: "Position details form would go here"
           )
         }
@@ -200,6 +195,7 @@ a!localVariables(
         label: "Review",
         contents: {
           a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
             value: "Review information would go here"
           )
         }
@@ -208,7 +204,7 @@ a!localVariables(
     showButtonDivider: true,
     primaryButtons: {
       a!buttonWidget(
-        label: "SUBMIT",
+        label: "Submit",
         style: "SOLID",
         showWhen: fv!isLastStep,
         saveInto: {
@@ -219,7 +215,7 @@ a!localVariables(
     },
     secondaryButtons: {
       a!buttonWidget(
-        label: "CANCEL",
+        label: "Cancel",
         style: "LINK",
         saveInto: {
           /* Add cancel logic here */
@@ -268,6 +264,7 @@ a!localVariables(
         label: "Review",
         contents: {
           a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
             value: a!richTextItem(
               text: "Please review your information before submitting."
             )
@@ -298,34 +295,26 @@ a!localVariables(
 )
 ```
 
-#### Vertial Stamp Milestone Component
+#### Vertical Stamp Milestone Component
 
 ```
 a!localVariables(
-  local!defalutMilestones: {
+  local!currentStep: 3,
+  local!milestones: {
     "Basic Information",
     "Additional Details",
     "Upload Files",
     "Review"
   },
-  local!defaultStep: 3,
   a!sectionLayout(
     label: "",
     contents: {
       a!forEach(
-        if(
-          a!isNullOrEmpty(ri!milestones),
-          local!defalutMilestones,
-          ri!milestones
-        ),
-        a!sideBySideLayout(
+        items: local!milestones,
+        expression: a!sideBySideLayout(
           items: {
             if(
-              fv!index < if(
-                a!isNullOrEmpty(ri!currentStep),
-                local!defaultStep,
-                ri!currentStep
-              ),
+              fv!index < local!currentStep,
               a!sideBySideItem(
                 item: a!stampField(
                   labelPosition: "COLLAPSED",
@@ -336,11 +325,7 @@ a!localVariables(
                 width: "MINIMIZE"
               ),
               if(
-                fv!index = if(
-                  a!isNullOrEmpty(ri!currentStep),
-                  local!defaultStep,
-                  ri!currentStep
-                ),
+                fv!index = local!currentStep,
                 a!sideBySideItem(
                   item: a!stampField(
                     label: "",
@@ -372,20 +357,12 @@ a!localVariables(
                   a!richTextItem(
                     text: { fv!item },
                     color: if(
-                      fv!index < if(
-                        a!isNullOrEmpty(ri!currentStep),
-                        local!defaultStep,
-                        ri!currentStep
-                      ),
+                      fv!index < local!currentStep,
                       "ACCENT",
                       "STANDARD"
                     ),
                     style: if(
-                      fv!index = if(
-                        a!isNullOrEmpty(ri!currentStep),
-                        local!defaultStep,
-                        ri!currentStep
-                      ),
+                      fv!index = local!currentStep,
                       "STRONG",
                       "PLAIN"
                     ),
