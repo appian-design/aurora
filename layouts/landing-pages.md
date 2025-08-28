@@ -986,7 +986,7 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "Mark complete",
+                      label: "Mark Complete",
                       icon: "plus",
                       size: "SMALL",
                       style: "SECONDARY",
