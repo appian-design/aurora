@@ -277,7 +277,7 @@ a!localVariables(
               size: "SMALL",
               icon: "table",
               style: "SOLID",
-              accessibilityText: "Chart view selected"
+              accessibilityText: "Table view selected"
             )
           },
           marginBelow: "NONE"
@@ -292,7 +292,8 @@ a!localVariables(
               label: "",
               size: "SMALL",
               icon: "area-chart",
-              style: "LINK"
+              style: "LINK",
+              accessibilityText: "Chart view"
             )
           },
           marginBelow: "NONE"
@@ -351,7 +352,6 @@ a!localVariables(
           },
           {
             a!sectionLayout(
-              label: "",
               contents: {
                 a!gridField(
                   /* Replace the dummy data with a query, rule, or function that returns a datasubset and uses fv!pagingInfo as the paging configuration. */
