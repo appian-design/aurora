@@ -4872,7 +4872,7 @@ a!localVariables(
                           labelPosition: "COLLAPSED",
                           icon: fv!item.icon,
                           text: "",
-                          backgroundColor: "#f3f3f3",
+                          backgroundColor: "#E0E0E0",
                           contentColor: "ACCENT",
                           size: "SMALL",
                           align: "START"
@@ -5082,7 +5082,7 @@ a!localVariables(
                                       label: "Stamp",
                                       labelPosition: "COLLAPSED",
                                       icon: fv!item.icon,
-                                      backgroundColor: "#f3f3f3",
+                                      backgroundColor: "#E0E0E0",
                                       contentColor: "ACCENT",
                                       size: "SMALL",
                                       align: "START"
@@ -5171,7 +5171,7 @@ a!localVariables(
                                       label: "Stamp",
                                       labelPosition: "COLLAPSED",
                                       icon: fv!item.icon,
-                                      backgroundColor: "#f3f3f3",
+                                      backgroundColor: "#E0E0E0",
                                       contentColor: "ACCENT",
                                       size: "SMALL",
                                       align: "START"
@@ -5277,7 +5277,7 @@ a!localVariables(
                                   label: "Stamp",
                                   labelPosition: "COLLAPSED",
                                   icon: fv!item.icon,
-                                  backgroundColor: "#f3f3f3",
+                                  backgroundColor: "#E0E0E0",
                                   contentColor: "ACCENT",
                                   size: "SMALL",
                                   align: "START"
@@ -5351,7 +5351,7 @@ a!localVariables(
                                 label: "Stamp",
                                 labelPosition: "COLLAPSED",
                                 icon: fv!item.icon,
-                                backgroundColor: "#f3f3f3",
+                                backgroundColor: "#E0E0E0",
                                 contentColor: "ACCENT",
                                 size: "SMALL",
                                 align: "START"
