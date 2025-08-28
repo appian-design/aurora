@@ -1019,7 +1019,7 @@ a!localVariables(
                                                 item: a!buttonArrayLayout(
                                                   buttons: {
                                                     a!buttonWidget(
-                                                      label: "REPLY",
+                                                      label: "Reply",
                                                       saveInto: { a!save(local!showReply, false) },
                                                       size: "SMALL",
                                                       style: "SOLID"
