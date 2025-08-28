@@ -15,50 +15,52 @@ More / Less Links are used to display a certain amount of text content and provi
 
 ```
 a!localVariables(
+  local!text: "The rapid advancement of artificial intelligence and machine learning is profoundly reshaping the landscape of the financial services industry, moving far beyond algorithmic trading and into the core functions of banking, insurance, and personal finance. Financial institutions are increasingly leveraging AI for sophisticated fraud detection, analyzing vast datasets in real-time to identify and flag suspicious transactions with a level of accuracy and speed previously unattainable.",
+  local!cutoff: 255,
   local!show: true,
   if(
-    len(ri!text) <= ri!cutoff,
+    len(local!text) <= local!cutoff,
     a!richTextDisplayField(
       labelPosition: "COLLAPSED",
       value: {
-        ri!text,
+        local!text,
       }
     ),
     if(
-    local!show,
-    a!richTextDisplayField(
-      labelPosition: "COLLAPSED",
-      value: {
-        a!richTextItem(text: left(ri!text, ri!cutoff)),
-        "... ",
-        a!richTextItem(
-          text: "More",
-          link: a!dynamicLink(
-            label: "",
-            saveInto: a!save(local!show, not(local!show))
-          ),
-          color: "ACCENT",
-          style: "STRONG"
-        )
-      }
-    ),
-    a!richTextDisplayField(
-      labelPosition: "COLLAPSED",
-      value: {
-        a!richTextItem(text: ri!text),
-        "  ",
-        a!richTextItem(
-          text: "Less",
-          link: a!dynamicLink(
-            label: "",
-            saveInto: a!save(local!show, not(local!show))
-          ),
-          color: "ACCENT",
-          style: "STRONG"
-        )
-      }
+      local!show,
+      a!richTextDisplayField(
+        labelPosition: "COLLAPSED",
+        value: {
+          a!richTextItem(text: left(local!text, local!cutoff)),
+          "... ",
+          a!richTextItem(
+            text: "More",
+            link: a!dynamicLink(
+              label: "",
+              saveInto: a!save(local!show, not(local!show))
+            ),
+            color: "ACCENT",
+            style: "STRONG"
+          )
+        }
+      ),
+      a!richTextDisplayField(
+        labelPosition: "COLLAPSED",
+        value: {
+          a!richTextItem(text: local!text),
+          "  ",
+          a!richTextItem(
+            text: "Less",
+            link: a!dynamicLink(
+              label: "",
+              saveInto: a!save(local!show, not(local!show))
+            ),
+            color: "ACCENT",
+            style: "STRONG"
+          )
+        }
+      )
     )
-  )
   )
 )
 ```
