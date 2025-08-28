@@ -370,22 +370,22 @@ A Price Proposal must also be included, providing a detailed breakdown of labor 
             contents: a!buttonArrayLayout(
               buttons: {
                 a!buttonWidget(
-                  label: "update opportunity",
+                  label: "Update Opportunity",
                   size: "SMALL",
                   showWhen: local!status = "Draft"
                 ),
                 a!buttonWidget(
-                  label: "amend notice",
+                  label: "Amend Notice",
                   size: "SMALL",
                   showWhen: local!status = "Active"
                 ),
                 a!buttonWidget(
-                  label: "close opportunity",
+                  label: "Close Opportunity",
                   size: "SMALL",
                   showWhen: local!status = "Active"
                 ),
                 a!buttonWidget(
-                  label: "mark as uninterested",
+                  label: "Mark as Uninterested",
                   size: "SMALL",
                   showWhen: local!status = "Interested"
                 )
