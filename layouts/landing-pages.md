@@ -4589,7 +4589,7 @@ a!localVariables(
       description: "Take a look at how Workforce Safety serves your users",
       icon: "external-link-square",
       showIcon: true,
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
+      link: a!dynamicLink(),
       showBorder: true
     },
     {
@@ -4597,7 +4597,7 @@ a!localVariables(
       description: "Understand how Workforce Safety can help your organization",
       icon: "external-link-square",
       showIcon: true,
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
+      link: a!dynamicLink(),
       showBorder: false
     },
     {
@@ -4605,7 +4605,7 @@ a!localVariables(
       description: "Take a tour of the different features available in Workforce Safety", 
       icon: null,
       showIcon: false,
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
+      link: a!dynamicLink(),
       showBorder: true
     }
   },
@@ -4618,7 +4618,7 @@ a!localVariables(
       description: "Configure the information requested from your employees",
       infoText: "Information needed",
       infoCaption: "Facilties, Departments and Pass Requests Questions",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "comments", 
@@ -4626,7 +4626,7 @@ a!localVariables(
       description: "Keep track of employees that could be exposed to a COVID infection",
       infoText: "Information needed",
       infoCaption: "Facilities and Areas",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "shield",
@@ -4634,7 +4634,7 @@ a!localVariables(
       description: "Understand vaccination status and COVID-19 history of employees",
       infoText: "Information needed", 
       infoCaption: "Health Information Questions",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
 
@@ -4645,106 +4645,102 @@ a!localVariables(
       title: "Pass Requests",
       status: "ACTIVE",
       statusColor: "STANDARD",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "clipboard",
       title: "Intake Survey", 
       status: "INACTIVE",
       statusColor: "SECONDARY",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "bed",
       title: "Isolation Update",
       status: "ACTIVE", 
       statusColor: "STANDARD",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
-
   /* Feature Management Cards Data */
   local!featureCards: {
     {
       icon: "exclamation-triangle",
       title: "Incident Management",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "sign-in",
       title: "Capacity Management", 
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "th",
       title: "Cohort Management",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "medkit", 
       title: "COVID-19 Testing",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "book",
       title: "Safety Guidelines",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "comments",
       title: "Contact Tracing", 
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "shield",
       title: "Health Information",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "hand-paper-o",
       title: "Community Volunteering",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
-
   /* Communication Cards Data */
   local!communicationCards: {
     {
       icon: "bullhorn",
       title: "Announcements",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "external-link-square",
       title: "Helpful Links",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "files-o", 
       title: "Policy Documents",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
-
   /* System Settings Cards Data */
   local!systemCards: {
     {
       icon: "paint-brush",
       title: "Branding",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "users",
       title: "User Groups", 
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       icon: "floppy-o",
       title: "Data Management",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
-
   a!headerContentLayout(
     header: {
       a!billboardLayout(
@@ -4758,7 +4754,6 @@ a!localVariables(
           position: "BOTTOM",
           contents: {
             a!richTextDisplayField(
-              label: "Rich Text",
               labelPosition: "COLLAPSED",
               value: {
                 a!richTextItem(
@@ -4785,7 +4780,6 @@ a!localVariables(
                 expression: a!cardLayout(
                   contents: {
                     a!richTextDisplayField(
-                      label: "Rich Text",
                       labelPosition: "COLLAPSED",
                       value: {
                         a!richTextItem(
@@ -4840,7 +4834,6 @@ a!localVariables(
       a!cardLayout(
         contents: {
           a!richTextDisplayField(
-            label: "Rich Text",
             labelPosition: "COLLAPSED",
             value: {
               a!richTextItem(
@@ -4853,7 +4846,6 @@ a!localVariables(
             }
           ),
           a!richTextDisplayField(
-            label: "",
             labelPosition: "COLLAPSED",
             value: {
               a!richTextItem(
@@ -4889,7 +4881,6 @@ a!localVariables(
                       ),
                       a!sideBySideItem(
                         item: a!richTextDisplayField(
-                          label: "Rich Text",
                           labelPosition: "COLLAPSED",
                           value: {
                             a!richTextItem(
@@ -4909,7 +4900,6 @@ a!localVariables(
                     alignVertical: "MIDDLE"
                   ),
                   a!richTextDisplayField(
-                    label: "",
                     labelPosition: "COLLAPSED",
                     value: {
                       a!richTextItem(
@@ -4996,7 +4986,6 @@ a!localVariables(
                     local!selectedTab,
                     {
                       a!richTextDisplayField(
-                        label: "Rich Text",
                         labelPosition: "COLLAPSED",
                         value: {
                           char(10),
@@ -5093,7 +5082,6 @@ a!localVariables(
                                       label: "Stamp",
                                       labelPosition: "COLLAPSED",
                                       icon: fv!item.icon,
-                                      text: "",
                                       backgroundColor: "#f3f3f3",
                                       contentColor: "ACCENT",
                                       size: "SMALL",
@@ -5103,7 +5091,6 @@ a!localVariables(
                                   ),
                                   a!sideBySideItem(
                                     item: a!richTextDisplayField(
-                                      label: "Rich Text",
                                       labelPosition: "COLLAPSED",
                                       value: {
                                         a!richTextItem(
@@ -5128,7 +5115,6 @@ a!localVariables(
                                   ),
                                   a!sideBySideItem(
                                     item: a!richTextDisplayField(
-                                      label: "Rich Text",
                                       labelPosition: "COLLAPSED",
                                       value: {
                                         a!richTextIcon(
@@ -5153,7 +5139,6 @@ a!localVariables(
                         )
                       ),
                       a!richTextDisplayField(
-                        label: "Rich Text",
                         labelPosition: "COLLAPSED",
                         value: {
                           char(10),
@@ -5186,7 +5171,6 @@ a!localVariables(
                                       label: "Stamp",
                                       labelPosition: "COLLAPSED",
                                       icon: fv!item.icon,
-                                      text: "",
                                       backgroundColor: "#f3f3f3",
                                       contentColor: "ACCENT",
                                       size: "SMALL",
@@ -5196,7 +5180,6 @@ a!localVariables(
                                   ),
                                   a!sideBySideItem(
                                     item: a!richTextDisplayField(
-                                      label: "Rich Text",
                                       labelPosition: "COLLAPSED",
                                       value: {
                                         a!richTextItem(
@@ -5212,7 +5195,6 @@ a!localVariables(
                                   ),
                                   a!sideBySideItem(
                                     item: a!richTextDisplayField(
-                                      label: "Rich Text",
                                       labelPosition: "COLLAPSED",
                                       value: {
                                         a!richTextIcon(
@@ -5237,7 +5219,6 @@ a!localVariables(
                         )
                       ),
                       a!richTextDisplayField(
-                        label: "Rich Text",
                         labelPosition: "COLLAPSED",
                         value: {
                           char(10),
@@ -5296,7 +5277,6 @@ a!localVariables(
                                   label: "Stamp",
                                   labelPosition: "COLLAPSED",
                                   icon: fv!item.icon,
-                                  text: "",
                                   backgroundColor: "#f3f3f3",
                                   contentColor: "ACCENT",
                                   size: "SMALL",
@@ -5306,7 +5286,6 @@ a!localVariables(
                               ),
                               a!sideBySideItem(
                                 item: a!richTextDisplayField(
-                                  label: "Rich Text",
                                   labelPosition: "COLLAPSED",
                                   value: {
                                     a!richTextItem(
@@ -5322,7 +5301,6 @@ a!localVariables(
                               ),
                               a!sideBySideItem(
                                 item: a!richTextDisplayField(
-                                  label: "Rich Text",
                                   labelPosition: "COLLAPSED",
                                   value: {
                                     a!richTextIcon(
@@ -5347,7 +5325,6 @@ a!localVariables(
                     )
                   ),
                   a!richTextDisplayField(
-                    label: "Rich Text",
                     labelPosition: "COLLAPSED",
                     value: {
                       char(10),
@@ -5374,7 +5351,6 @@ a!localVariables(
                                 label: "Stamp",
                                 labelPosition: "COLLAPSED",
                                 icon: fv!item.icon,
-                                text: "",
                                 backgroundColor: "#f3f3f3",
                                 contentColor: "ACCENT",
                                 size: "SMALL",
@@ -5384,7 +5360,6 @@ a!localVariables(
                             ),
                             a!sideBySideItem(
                               item: a!richTextDisplayField(
-                                label: "Rich Text",
                                 labelPosition: "COLLAPSED",
                                 value: {
                                   a!richTextItem(
@@ -5400,7 +5375,6 @@ a!localVariables(
                             ),
                             a!sideBySideItem(
                               item: a!richTextDisplayField(
-                                label: "Rich Text",
                                 labelPosition: "COLLAPSED",
                                 value: {
                                   a!richTextIcon(
