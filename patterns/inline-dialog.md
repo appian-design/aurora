@@ -31,11 +31,11 @@ a!localVariables(
                   a!buttonArrayLayout(
                     buttons: {
                       a!buttonWidget(
-                        label: if(a!isNullOrEmpty(ri!formButtonLabel), "Add Employee", ri!formButtonLabel),
-                        icon: if(a!isNullOrEmpty(ri!buttonIcon), "plus", ri!buttonIcon),
+                        label: "Add Employee",
+                        icon: "plus",
                         saveInto: a!save(local!active, not(local!active)),
                         size: "SMALL",
-                        style: if(isnull(ri!buttonType), "OUTLINE", ri!buttonType),
+                        style: "OUTLINE",
                         color: "SECONDARY",
                         disabled: if(local!active, true, false)
                       )
@@ -44,7 +44,6 @@ a!localVariables(
                   ),
                   a!cardLayout(
                     contents: {
-                      if(isnull(ri!formFields),
                       a!columnsLayout(
                         columns: {
                           a!columnLayout(
@@ -92,7 +91,7 @@ a!localVariables(
                             }
                           )
                         }
-                      ), ri!formFields),
+                      ),
                       a!sectionLayout(
                         label: "",
                         contents: {
@@ -116,7 +115,7 @@ a!localVariables(
                                 item: a!buttonArrayLayout(
                                   buttons: {
                                     a!buttonWidget(
-                                      label: if(isnull(ri!formAction),"Add", ri!formAction),
+                                      label: "Add",
                                       saveInto: a!save(local!active, not(local!active)),
                                       size: "SMALL",
                                       style: "SOLID"
