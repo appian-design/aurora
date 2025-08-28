@@ -2115,7 +2115,7 @@ a!localVariables(
                   a!buttonArrayLayout(
                     buttons: {
                       a!buttonWidget(
-                        label: "NEW CASE",
+                        label: "New Case",
                         icon: "plus",
                         saveInto: a!save(local!case, true),
                         size: "LARGE",
@@ -3579,7 +3579,7 @@ a!localVariables(
                       a!buttonArrayLayout(
                         buttons: {
                           a!buttonWidget(
-                            label: "Update ",
+                            label: "Update",
                             icon: "pencil-square-o",
                             size: "SMALL",
                             style: "OUTLINE",
