@@ -1173,7 +1173,7 @@ a!localVariables(
       tagText: "NEW LISTING",
       tagColor: "#ff9900",
       imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-2.jpg",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       price: "$2,150,000",
@@ -1185,7 +1185,7 @@ a!localVariables(
       tagText: "OPEN HOUSE SCHEDULED",
       tagColor: "#38761d",
       imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-3.jpg",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       price: "$1,945,000",
@@ -1197,7 +1197,7 @@ a!localVariables(
       tagText: "OPEN HOUSE SCHEDULED",
       tagColor: "#38761d",
       imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-4.jpg",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       price: "$2,092,000",
@@ -1209,7 +1209,7 @@ a!localVariables(
       tagText: "PRICE REDUCED",
       tagColor: "#3c78d8",
       imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-5.jpg",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     },
     {
       price: "$1,723,000",
@@ -1221,7 +1221,7 @@ a!localVariables(
       tagText: "NO OFFERS RECEIVED",
       tagColor: "#cc0000",
       imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-6.jpg",
-      link: a!dynamicLink(label: "Dynamic Link", saveInto: {})
+      link: a!dynamicLink()
     }
   },
   a!paneLayout(
@@ -1238,7 +1238,7 @@ a!localVariables(
               labelPosition: "ABOVE",
               saveInto: {},
               refreshAfter: "UNFOCUS",
-              validations: {}
+              marginAbove: "LESS"
             ),
             a!multipleDropdownField(
               choiceLabels: local!priorityListForOrdersByCustomer,
@@ -1247,9 +1247,9 @@ a!localVariables(
               labelPosition: "ABOVE",
               placeholder: "All priorities",
               value: local!priorityForOrderTrendByStatus,
-              saveInto: local!priorityForOrderTrendByStatus
+              saveInto: local!priorityForOrderTrendByStatus,
+              marginAbove: "LESS"
             ),
-            a!imageField(labelPosition: "COLLAPSED"),
             a!multipleDropdownField(
               choiceLabels: local!priorityListForOrdersByCustomer,
               choiceValues: local!priorityListForOrdersByCustomer,
@@ -1257,14 +1257,16 @@ a!localVariables(
               labelPosition: "ABOVE",
               placeholder: "All types",
               value: local!priorityForOrderTrendByStatus,
-              saveInto: local!priorityForOrderTrendByStatus
+              saveInto: local!priorityForOrderTrendByStatus,
+              marginAbove: "LESS"
             ),
             a!checkboxField(
+              label: "Property Features",
               choiceLabels: { "Central air", "Outdoor kitchen", "Pool" },
               choiceValues: { 1, 2, 3 },
-              label: "Property Features"
+              saveInto: {},
+              marginAbove: "LESS"
             ),
-            a!imageField(labelPosition: "COLLAPSED"),
             a!checkboxField(
               choiceLabels: {
                 "New",
@@ -1273,17 +1275,17 @@ a!localVariables(
                 "No offers"
               },
               choiceValues: { 1, 2, 3, 4 },
+              saveInto: {},
               label: "Status",
               labelPosition: "ABOVE",
-              saveInto: {},
-              validations: {}
+              marginAbove: "LESS"
             ),
             a!richTextDisplayField(
               labelPosition: "COLLAPSED",
               value: {
                 a!richTextItem(text: { "Listed" }, style: { "STRONG" })
               },
-              marginAbove: "STANDARD",
+              marginAbove: "LESS",
               marginBelow: "EVEN_LESS"
             ),
             a!sideBySideLayout(
@@ -1313,12 +1315,8 @@ a!localVariables(
                     saveInto: local!endDateForOrderTrendByStatus,
                     validations: if(
                       and(
-                        not(
-                          isnull(local!startdateForOrderTrendByStatus)
-                        ),
-                        not(
-                          isnull(local!endDateForOrderTrendByStatus)
-                        )
+                        a!isNotNullorEmpty(local!startdateForOrderTrendByStatus),
+                        a!isNotNullorEmpty(local!endDateForOrderTrendByStatus)
                       ),
                       if(
                         local!endDateForOrderTrendByStatus <= local!startdateForOrderTrendByStatus,
@@ -1340,7 +1338,7 @@ a!localVariables(
               value: {
                 a!richTextItem(text: { "Offered" }, style: { "STRONG" })
               },
-              marginAbove: "STANDARD",
+              marginAbove: "LESS",
               marginBelow: "EVEN_LESS"
             ),
             a!sideBySideLayout(
@@ -1392,13 +1390,12 @@ a!localVariables(
               spacing: "DENSE",
               stackWhen: { "NEVER" }
             ),
-            a!imageField(labelPosition: "COLLAPSED"),
             a!pickerFieldCustom(
               label: "Listing Agent",
               labelPosition: "ABOVE",
               placeholder: "All Customers",
               saveInto: {},
-              validations: {}
+              marginAbove: "LESS"
             )
           }
         ),
