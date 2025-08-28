@@ -164,12 +164,11 @@ a!headerContentLayout(
                               width: "MINIMIZE",
                               item: a!buttonArrayLayout(
                                 buttons: a!buttonWidget(
-                                  label: "SEARCH",
+                                  label: "Search",
                                   style: "OUTLINE",
                                   color: "SECONDARY",
                                   size: "SMALL",
-                                  saveInto: {}/* No action for mockup */
-
+                                  saveInto: {} /* No action for mockup */
                                 )
                               )
                             )
@@ -196,14 +195,14 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "ADD CHECKLIST",
+                      label: "Add Checklist",
                       icon: "plus",
                       style: "OUTLINE",
                       color: "SECONDARY",
                       saveInto: {}
                     ),
                     a!buttonWidget(
-                      label: "MARK COMPLETE",
+                      label: "Mark Complete",
                       icon: "check",
                       style: "OUTLINE",
                       color: "SECONDARY",
@@ -211,7 +210,7 @@ a!headerContentLayout(
                       saveInto: {}
                     ),
                     a!buttonWidget(
-                      label: "MARK NOT NEEDED",
+                      label: "Mark Not Needed",
                       style: "OUTLINE",
                       icon: "times",
                       color: "SECONDARY",
@@ -219,7 +218,7 @@ a!headerContentLayout(
                       saveInto: {}
                     ),
                     a!buttonWidget(
-                      label: "REASSIGN",
+                      label: "Reassign",
                       icon: "hand-o-right",
                       style: "OUTLINE",
                       color: "SECONDARY",
@@ -227,7 +226,7 @@ a!headerContentLayout(
                       saveInto: {}
                     ),
                     a!buttonWidget(
-                      label: "CLAIM ITEM",
+                      label: "Claim Item",
                       icon: "user-plus",
                       style: "OUTLINE",
                       color: "SECONDARY",
@@ -235,7 +234,7 @@ a!headerContentLayout(
                       saveInto: {}
                     ),
                     a!buttonWidget(
-                      label: "CANCEL",
+                      label: "Cancel",
                       icon: "ban",
                       style: "OUTLINE",
                       color: "SECONDARY",
@@ -1370,7 +1369,7 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "Mark complete",
+                      label: "Mark Complete",
                       icon: "plus",
                       size: "SMALL",
                       style: "SECONDARY",
@@ -1384,7 +1383,6 @@ a!headerContentLayout(
                   items: {
                     a!sideBySideItem(
                       item: a!richTextDisplayField(
-                        label: "",
                         labelPosition: "COLLAPSED",
                         value: {
                           a!richTextItem(
