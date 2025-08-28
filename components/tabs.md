@@ -273,7 +273,6 @@ a!localVariables(
           align: "END",
           buttons: {
             a!buttonWidget(
-              label: "",
               size: "SMALL",
               icon: "table",
               style: "SOLID",
@@ -289,7 +288,6 @@ a!localVariables(
           align: "END",
           buttons: {
             a!buttonWidget(
-              label: "",
               size: "SMALL",
               icon: "area-chart",
               style: "LINK",
