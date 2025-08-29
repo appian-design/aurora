@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-8-10"
+last_updated: "2025-08-29"
 ---
 
 # Notifications
