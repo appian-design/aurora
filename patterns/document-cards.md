@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-6-3"
+last_updated: "2025-08-29"
 ---
 
 # Document Cards
@@ -57,7 +57,7 @@ a!columnsLayout(
         a!cardLayout(
           shape: "ROUNDED",
           /* Gray 1 */ 
-          borderColor: "#EDEDF2",
+          borderColor: "#EDEEFA",
           contents: {
             a!columnsLayout(
               columns: {
@@ -192,8 +192,7 @@ a!columnsLayout(
       contents: {
         a!cardLayout(
           shape: "ROUNDED",
-          /* Gray 1 */ 
-          borderColor: "#EDEDF2", 
+          borderColor: "#EDEEFA", 
           contents: {
             a!columnsLayout(
               columns: {
@@ -342,7 +341,6 @@ a!columnsLayout(
       contents: {
         a!cardLayout(
           shape: "ROUNDED",
-          /* Gray 1 */
           borderColor: "#EDEDF2", 
           contents: {
             a!columnsLayout(

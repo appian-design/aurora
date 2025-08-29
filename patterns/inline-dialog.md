@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-6-3"
+last_updated: "2025-08-29"
 ---
 
 # Inline Dialog
@@ -27,16 +27,15 @@ a!localVariables(
           contents: {
             {
               a!localVariables(
-               
                 {
                   a!buttonArrayLayout(
                     buttons: {
                       a!buttonWidget(
-                        label: if(a!isNullOrEmpty(ri!formButtonLabel), "Add Employee", ri!formButtonLabel),
-                        icon: if(a!isNullOrEmpty(ri!buttonIcon), "plus", ri!buttonIcon),
+                        label: "Add Employee",
+                        icon: "plus",
                         saveInto: a!save(local!active, not(local!active)),
                         size: "SMALL",
-                        style: if(isnull(ri!buttonType), "OUTLINE", ri!buttonType),
+                        style: "OUTLINE",
                         color: "SECONDARY",
                         disabled: if(local!active, true, false)
                       )
@@ -45,9 +44,6 @@ a!localVariables(
                   ),
                   a!cardLayout(
                     contents: {
-                      
-                      if(isnull(ri!formFields),
-                     
                       a!columnsLayout(
                         columns: {
                           a!columnLayout(
@@ -95,10 +91,7 @@ a!localVariables(
                             }
                           )
                         }
-                      ), ri!formFields),
-                      
-                      
-                      
+                      ),
                       a!sectionLayout(
                         label: "",
                         contents: {
@@ -107,11 +100,11 @@ a!localVariables(
                               a!sideBySideItem(
                                 item: a!buttonArrayLayout(
                                   buttons: {
-                                    a!buttonWidget_23r3(
+                                    a!buttonWidget(
                                       label: "Cancel",
                                       saveInto: a!save(local!active, not(local!active)),
                                       size: "SMALL",
-                                      style: "NORMAL"
+                                      style: "LINK"
                                     )
                                   },
                                   align: "START",
@@ -121,11 +114,11 @@ a!localVariables(
                               a!sideBySideItem(
                                 item: a!buttonArrayLayout(
                                   buttons: {
-                                    a!buttonWidget_23r3(
-                                      label: if(isnull(ri!formAction),"Add", ri!formAction),
+                                    a!buttonWidget(
+                                      label: "Add",
                                       saveInto: a!save(local!active, not(local!active)),
                                       size: "SMALL",
-                                      style: "PRIMARY"
+                                      style: "SOLID"
                                     )
                                   },
                                   align: "END",
@@ -144,7 +137,7 @@ a!localVariables(
                     showWhen: local!active,
                     style: "#FAFAFA",
                     marginBelow: "STANDARD",
-                    showBorder: true
+                    borderColor: "#EDEEFA"
                   ),
                   a!columnsLayout(
                     columns: {
@@ -153,8 +146,7 @@ a!localVariables(
                       )
                     },
                     stackWhen: { "PHONE", "TABLET_PORTRAIT" }
-                  ),
-                
+                  )
                 }
               )
             }

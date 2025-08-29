@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-3-19"
+last_updated: "2025-08-29"
 ---
 
 # Banners
@@ -329,7 +329,7 @@ a!localVariables(
                         size: "SMALL",
                         style: "SOLID",
                         color: "#FFF",
-                        label: "DISMISS"
+                        label: "Dismiss"
                       )
                     }
                   ),
@@ -379,12 +379,12 @@ a!localVariables(
                       a!buttonWidget(
                         size: "SMALL",
                         style: "LINK",
-                        label: "IGNORE"
+                        label: "Ignore"
                       ),
                       a!buttonWidget(
                         size: "SMALL",
                         style: "SOLID",
-                        label: "VIEW ERRORS"
+                        label: "View Errors"
                       )
                     }
                   ),

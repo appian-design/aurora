@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-06-08"
+last_updated: "2025-08-29"
 ---
 
 # Colors
@@ -109,9 +109,10 @@ Refer to Pattern Library > Cards for more guidance on card styling.
 
 | Label | Default Styling | Notes |
 |-------|----------------|-------|
-| Card Shadows | True | Determines if card shadows are shown. Valid values: true, false. Should be false if card is against a white background. |
-| Card Borders | False | Determines if card borders are shown. Valid values: true, false. Should be true if card is against a white background. |
 | Card Shape | Semi-Rounded | Valid values: "SQUARED", "SEMI_ROUNDED", "ROUNDED". |
+| Card Shadows | False | Determines if card shadows are shown. Valid values: true, false. Should be false if card is against a white background. |
+| Card Borders | True | Determines if card borders are shown. Valid values: true, false. Should be true if card is against a white background. |
+| Card Border Color | #EDEEFA | Used for the card border color. |
 | Card Background | #FFFFFF | Used for the card background color. |
 | Card Decorative Bar (Active) | Blue 3 | Used for clickable or active cards. |
 | Card Decorative Bar (Informational) | Blue 3 | Used for static reference cards. |

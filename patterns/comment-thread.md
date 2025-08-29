@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-9-7"
+last_updated: "2025-08-29"
 ---
 
 # Comment Thread
@@ -439,8 +439,7 @@ a!cardLayout(
   shape: "SEMI_ROUNDED",
   padding: "STANDARD",
   marginBelow: "STANDARD",
-  showBorder: false,
-  showShadow: true
+  borderColor: "#EDEEFA"
 )
 ```
 
@@ -464,6 +463,7 @@ a!cardLayout(
                   marginBelow: "EVEN_LESS"
                 )
               },
+              accessibilityText: "Selected",
               marginBelow: "NONE",
               showBorder: false
             ),
@@ -688,7 +688,7 @@ a!cardLayout(
                             shape: "SEMI_ROUNDED",
                             padding: "LESS",
                             marginBelow: "STANDARD",
-                            showBorder: true
+                            borderColor: "#EDEEFA"
                           ),
                           a!sideBySideLayout(
                             items: {
@@ -1140,7 +1140,6 @@ a!cardLayout(
   shape: "SEMI_ROUNDED",
   padding: "NONE",
   marginBelow: "NONE",
-  showBorder: false,
-  showShadow: true
+  borderColor: "#EDEEFA"
 )
 ```

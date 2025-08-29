@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-12-19"
+last_updated: "2025-08-29"
 ---
 
 # Forms
@@ -545,12 +545,12 @@ a!headerContentLayout(
                     item: a!buttonArrayLayout(
                       buttons: {
                         a!buttonWidget(
-                          label: "BACK",
+                          label: "Back",
                           style: "OUTLINE",
                           saveInto: {}
                         ),
                         a!buttonWidget(
-                          label: "CANCEL",
+                          label: "Cancel",
                           style: "LINK",
                           saveInto: {}
                         )
@@ -561,7 +561,7 @@ a!headerContentLayout(
                     item: a!buttonArrayLayout(
                       buttons: {
                         a!buttonWidget(
-                          label: "CREATE CASE",
+                          label: "Create Case",
                           style: "SOLID",
                           saveInto: {}
                         )

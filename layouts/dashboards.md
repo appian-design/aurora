@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-02-05"
+last_updated: "2025-08-29"
 ---
 
 # Dashboards
@@ -67,6 +67,1433 @@ Checklist:
 * Make primary action the most heavily weighted visual component on the interface.
 
 ## Development
+
+### Actionable Insights
+```
+a!localVariables(
+  local!AppianBackground: "#FAFAFC",
+  local!CategoricalSceme: {
+    "#2322F0",
+    "#B561FF",
+    "#FAA92F",
+    "#56ADC0",
+    "#FFD948"
+  },
+  local!data: {
+    a!map(
+      awardId: "HT98200012",
+      amount: "$12,234,234.12",
+      buyer: "Research and Development",
+      releaseDate: "10/20/23",
+      draft: 12,
+      underReview: 9,
+      approved: 4,
+      awaitingSignature: 20,
+      totalCycleTime: 45,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "HT23907980",
+      amount: "$2,842,214.48",
+      buyer: "Enforcement and Compliance Assurance",
+      releaseDate: "10/20/23",
+      draft: 10,
+      underReview: 6,
+      approved: 6,
+      awaitingSignature: 16,
+      totalCycleTime: 38,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Xerox"
+    ),
+    a!map(
+      awardId: "HT98080979",
+      amount: "$234,853.00",
+      buyer: "Chief of Staff",
+      releaseDate: "10/20/23",
+      draft: 13,
+      underReview: 11,
+      approved: 7,
+      awaitingSignature: 24,
+      totalCycleTime: 55,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Lockheed Martin"
+    ),
+    a!map(
+      awardId: "HT44312124",
+      amount: "$1,843,028.34",
+      buyer: "Human Resources",
+      releaseDate: "10/20/23",
+      draft: 9,
+      underReview: 14,
+      approved: 4,
+      awaitingSignature: 28,
+      totalCycleTime: 55,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Appian Corp."
+    ),
+    a!map(
+      awardId: "HT72324123",
+      amount: "$$98,273.44",
+      buyer: "Research and Development",
+      releaseDate: "10/20/23",
+      draft: 12,
+      underReview: 8,
+      approved: 10,
+      awaitingSignature: 12,
+      totalCycleTime: 42,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "15F908G908",
+      amount: "$873,434.87",
+      buyer: "Research and Development",
+      releaseDate: "10/20/23",
+      draft: 11,
+      underReview: 10,
+      approved: 9,
+      awaitingSignature: 17,
+      totalCycleTime: 47,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "15F09901C81",
+      amount: "$23,821.99",
+      buyer: "Office of the Administrator",
+      releaseDate: "10/20/23",
+      draft: 7,
+      underReview: 11,
+      approved: 5,
+      awaitingSignature: 21,
+      totalCycleTime: 44,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "15J7897893D",
+      amount: "$1,843,028.34",
+      buyer: "Information Technology",
+      releaseDate: "10/20/23",
+      draft: 15,
+      underReview: 6,
+      approved: 8,
+      awaitingSignature: 19,
+      totalCycleTime: 48,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "15J00124412",
+      amount: "$1,843,028.34",
+      buyer: "Enforcement and Compliance Assurance",
+      releaseDate: "10/20/23",
+      draft: 5,
+      underReview: 14,
+      approved: 5,
+      awaitingSignature: 20,
+      totalCycleTime: 44,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "15J23441234",
+      amount: "$1,843,028.34",
+      buyer: "Chief of Staff",
+      releaseDate: "10/20/23",
+      draft: 19,
+      underReview: 15,
+      approved: 6,
+      awaitingSignature: 19,
+      totalCycleTime: 59,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "HT98092344",
+      amount: "$1,843,028.34",
+      buyer: "Office of the Administrator",
+      releaseDate: "10/20/23",
+      draft: 20,
+      underReview: 10,
+      approved: 4,
+      awaitingSignature: 16,
+      totalCycleTime: 50,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "HT443243411",
+      amount: "$873,434.87",
+      buyer: "Information Technology",
+      releaseDate: "10/20/23",
+      draft: 12,
+      underReview: 10,
+      approved: 12,
+      awaitingSignature: 18,
+      totalCycleTime: 52,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "19H34641221",
+      amount: "$98,273.44",
+      buyer: "Research and Development",
+      releaseDate: "10/20/23",
+      draft: 10,
+      underReview: 8,
+      approved: 6,
+      awaitingSignature: 22,
+      totalCycleTime: 46,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "20F7897M123",
+      amount: "$92,371.76",
+      buyer: "Enforcement and Compliance Assurance",
+      releaseDate: "T10/20/23",
+      draft: 13,
+      underReview: 5,
+      approved: 13,
+      awaitingSignature: 14,
+      totalCycleTime: 45,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+    a!map(
+      awardId: "HT129085123",
+      amount: "$23,821.99",
+      buyer: "Chief of Staff",
+      releaseDate: "10/20/23",
+      draft: 14,
+      underReview: 13,
+      approved: 8,
+      awaitingSignature: 17,
+      totalCycleTime: 52,
+      contractingOfficer: "Sara Daniels",
+      vendor: "Boeing Co"
+    ),
+
+  },
+  local!chartData: {
+    71,
+    40,
+    100,
+    78,
+    51,
+    45,
+    56,
+    60,
+    73,
+    53,
+    68,
+    47,
+    80
+  },
+  a!headerContentLayout(
+    contents: {
+      a!sectionLayout(
+        contents: {
+          a!columnsLayout(
+            columns: {
+              a!columnLayout(
+                contents: {
+                  a!sectionLayout(
+                    contents: {
+                      a!cardLayout(
+                        contents: {
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                contents: {
+                                  a!sectionLayout(
+                                    label: "Award Cycle Time Report",
+                                    labelSize: "SMALL",
+                                    labelHeadingTag: "H2",
+                                    labelColor: "STANDARD",
+                                    contents: {},
+                                    marginBelow: "NONE"
+                                  )
+                                }
+                              ),
+                              a!columnLayout(
+                                contents: {
+                                  a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { "July 2022 - July 2023" },
+                                        color: "SECONDARY",
+                                        size: "STANDARD"
+                                      )
+                                    },
+                                    align: "RIGHT",
+                                    marginBelow: "NONE"
+                                  )
+                                }
+                              )
+                            },
+                            marginBelow: "STANDARD"
+                          ),
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                contents: {
+                                  a!cardLayout(
+                                    contents: {
+                                      a!richTextDisplayField(
+                                        labelPosition: "COLLAPSED",
+                                        value: {
+                                          a!richTextItem(
+                                            text: { "Average Cycle Time by Month" },
+                                            color: "#6C6C75"
+                                          )
+                                        }
+                                      ),
+                                      a!lineChartField(
+                                        label: "Average Cycle Time by Month",
+                                        labelPosition: "COLLAPSED",
+                                        categories: {
+                                          "JUL, 2022",
+                                          "AUG, 2022",
+                                          "SEP, 2022",
+                                          "OCT, 2022",
+                                          "NOV, 2022",
+                                          "DEC, 2022",
+                                          "JAN, 2023",
+                                          "FEB, 2023",
+                                          "MAR, 2023",
+                                          "APR, 2023",
+                                          "MAY, 2023",
+                                          "JUN, 2023",
+                                          "JUL, 2023"
+                                        },
+                                        series: {
+                                          a!chartSeries(
+                                            label: "Average Cycle Time",
+                                            data: local!chartData
+                                          )
+                                        },
+                                        xAxisTitle: "Time",
+                                        yAxisTitle: "Average Cycle Time (Days)",
+                                        yAxisMax: if(max(local!chartData) < 200, 200 + 20, {}),
+                                        referenceLines: {
+                                          a!chartReferenceLine(
+                                            label: "Threshold",
+                                            value: 200,
+                                            color: "#6C6C75",
+                                            style: "DASHDOT"
+                                          )
+                                        },
+                                        showLegend: false,
+                                        showDataLabels: false,
+                                        showTooltips: true,
+                                        colorScheme: a!colorSchemeCustom(colors: { "#027dbb" }),
+                                        height: "MEDIUM",
+                                        xAxisStyle: "STANDARD",
+                                        yAxisStyle: "MINIMAL"
+                                      )
+                                    },
+                                    height: "TALL_PLUS",
+                                    style: "#FCFCFF",
+                                    shape: "SEMI_ROUNDED",
+                                    padding: "STANDARD",
+                                    marginBelow: "STANDARD",
+                                    borderColor: "#EDEEFA"
+                                  )
+                                }
+                              ),
+                              a!columnLayout(
+                                contents: {
+                                  a!cardLayout(
+                                    contents: {
+                                      a!columnsLayout(
+                                        columns: {
+                                          a!columnLayout(
+                                            contents: {
+                                              a!cardLayout(
+                                                contents: {
+                                                  a!richTextDisplayField(
+                                                    labelPosition: "COLLAPSED",
+                                                    value: {
+                                                      a!richTextItem(
+                                                        text: { "Number of Awards" },
+                                                        color: "#6C6C75"
+                                                      )
+                                                    }
+                                                  ),
+                                                  a!richTextDisplayField(
+                                                    label: "",
+                                                    labelPosition: "COLLAPSED",
+                                                    value: {
+                                                      a!richTextItem(
+                                                        text: { "185" },
+                                                        color: "#2E2E35",
+                                                        size: "LARGE"
+                                                      ),
+                                                      char(10)
+                                                    }
+                                                  )
+                                                },
+                                                height: "AUTO",
+                                                style: "#FCFCFF",
+                                                shape: "SEMI_ROUNDED",
+                                                padding: "STANDARD",
+                                                marginBelow: "NONE",
+                                                borderColor: "#EDEEFA"
+                                              )
+                                            }
+                                          ),
+                                          a!columnLayout(
+                                            contents: {
+                                              a!cardLayout(
+                                                contents: {
+                                                  a!richTextDisplayField(
+                                                    labelPosition: "COLLAPSED",
+                                                    value: {
+                                                      a!richTextItem(
+                                                        text: { "Average Cycle Time" },
+                                                        color: "#6C6C75"
+                                                      )
+                                                    }
+                                                  ),
+                                                  a!richTextDisplayField(
+                                                    label: "",
+                                                    labelPosition: "COLLAPSED",
+                                                    value: {
+                                                      a!richTextItem(
+                                                        text: { "56 " },
+                                                        color: "#2E2E35",
+                                                        size: "LARGE"
+                                                      ),
+                                                      a!richTextItem(
+                                                        text: { "Days" },
+                                                        color: "SECONDARY",
+                                                        size: "MEDIUM"
+                                                      ),
+                                                      char(10)
+                                                    }
+                                                  )
+                                                },
+                                                height: "AUTO",
+                                                style: "#FCFCFF",
+                                                shape: "SEMI_ROUNDED",
+                                                padding: "STANDARD",
+                                                marginBelow: "NONE",
+                                                borderColor: "#EDEEFA"
+                                              )
+                                            }
+                                          )
+                                        },
+                                        marginBelow: "LESS",
+                                        spacing: "DENSE"
+                                      ),
+                                      a!cardLayout(
+                                        contents: {
+                                          a!richTextDisplayField(
+                                            labelPosition: "COLLAPSED",
+                                            value: {
+                                              a!richTextItem(
+                                                text: { "Average Cycle Time Per Phase" },
+                                                color: "#6C6C75"
+                                              )
+                                            }
+                                          ),
+                                          a!pieChartField(
+                                            label: "Average Cycle Time Per Phase",
+                                            labelPosition: "COLLAPSED",
+                                            series: {
+                                              a!chartSeries(label: "Chart Series 1", data: 1),
+                                              a!chartSeries(label: "Chart Series 2", data: 2),
+                                              a!chartSeries(label: "Chart Series 3", data: 3),
+                                              a!chartSeries(label: "Chart Series 3", data: 4)
+                                            },
+                                            showTooltips: true,
+                                            colorScheme: a!colorSchemeCustom(colors: local!CategoricalSceme),
+                                            style: "DONUT",
+                                            seriesLabelStyle: "NONE",
+                                            height: "SHORT"
+                                          ),
+                                          a!columnsLayout(
+                                            columns: {
+                                              a!columnLayout(
+                                                contents: {
+                                                  a!sideBySideLayout(
+                                                    items: {
+                                                      a!sideBySideItem(
+                                                        item: a!richTextDisplayField(
+                                                          labelPosition: "COLLAPSED",
+                                                          value: {
+                                                            a!richTextIcon(
+                                                              icon: "circle",
+                                                              color: local!CategoricalSceme[1],
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { " " }, size: "SMALL"),
+                                                            a!richTextItem(
+                                                              text: { "Draft " },
+                                                              color: "SECONDARY",
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { "   " }, size: "SMALL"),
+                                                            a!richTextIcon(
+                                                              icon: "circle",
+                                                              color: local!CategoricalSceme[2],
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { " " }, size: "SMALL"),
+                                                            a!richTextItem(
+                                                              text: { "Under Review " },
+                                                              color: "SECONDARY",
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { "   " }, size: "SMALL"),
+                                                            a!richTextIcon(
+                                                              icon: "circle",
+                                                              color: local!CategoricalSceme[3],
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { " " }, size: "SMALL"),
+                                                            a!richTextItem(
+                                                              text: { "Approved " },
+                                                              color: "SECONDARY",
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(text: { " " }, size: "SMALL"),
+                                                            char(10),
+                                                            a!richTextIcon(
+                                                              icon: "circle",
+                                                              color: local!CategoricalSceme[4],
+                                                              size: "SMALL"
+                                                            ),
+                                                            a!richTextItem(
+                                                              text: { " Awaiting Signature" },
+                                                              color: "SECONDARY",
+                                                              size: "SMALL"
+                                                            )
+                                                          },
+                                                          align: "CENTER"
+                                                        ),
+                                                        width: "AUTO"
+                                                      )
+                                                    },
+                                                    spacing: "STANDARD",
+                                                    marginAbove: "NONE",
+                                                    marginBelow: "EVEN_LESS"
+                                                  )
+                                                },
+                                                width: "WIDE"
+                                              )
+                                            },
+                                            spacing: "DENSE"
+                                          )
+                                        },
+                                        height: "TALL",
+                                        style: "#FCFCFF",
+                                        shape: "SEMI_ROUNDED",
+                                        padding: "STANDARD",
+                                        marginAbove: "EVEN_LESS",
+                                        marginBelow: "NONE",
+                                        borderColor: "#EDEEFA"
+                                      )
+                                    },
+                                    height: "TALL_PLUS",
+                                    style: "NONE",
+                                    shape: "SEMI_ROUNDED",
+                                    padding: "NONE",
+                                    marginAbove: "NONE",
+                                    marginBelow: "STANDARD",
+                                    showBorder: false
+                                  )
+                                },
+                                width: "MEDIUM"
+                              )
+                            },
+                            spacing: "DENSE"
+                          ),
+                          a!cardLayout(
+                            contents: {
+                              {
+                                a!columnsLayout(
+                                  columns: {
+                                    a!columnLayout(
+                                      contents: {
+                                        a!dateField(
+                                          label: "Date", 
+                                          labelPosition: "ABOVE"
+                                        )
+                                      }
+                                    ),
+                                    a!columnLayout(
+                                      contents: {
+                                        a!dropdownField(
+                                          label: "Requesting Department",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Departments",
+                                          choiceLabels: {
+                                            "Engineering",
+                                            "Professional Services", 
+                                            "Finance"
+                                          },
+                                          choiceValues: {
+                                            "Engineering",
+                                            "Professional Services",
+                                            "Finance"
+                                          },
+                                          value: null,
+                                          saveInto: {}
+                                        )
+                                      }
+                                    ),
+                                    a!columnLayout(
+                                      contents: {
+                                        a!dropdownField(
+                                          label: "Vendor",
+                                          labelPosition: "ABOVE", 
+                                          placeholder: "All Vendors",
+                                          choiceLabels: {
+                                            "Vendor A",
+                                            "Vendor B",
+                                            "Vendor C"
+                                          },
+                                          choiceValues: {
+                                            "Vendor A",
+                                            "Vendor B", 
+                                            "Vendor C"
+                                          },
+                                          value: null,
+                                          saveInto: {}
+                                        )
+                                      }
+                                    ),
+                                    a!columnLayout(
+                                      contents: {
+                                        a!dropdownField(
+                                          label: "Contracting Officer",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Officers",
+                                          choiceLabels: {
+                                            "Officer A",
+                                            "Officer B",
+                                            "Officer C"
+                                          },
+                                          choiceValues: {
+                                            "Officer A",
+                                            "Officer B",
+                                            "Officer C"
+                                          },
+                                          value: null,
+                                          saveInto: {}
+                                        )
+                                      }
+                                    ),
+                                    a!columnLayout(
+                                      contents: {
+                                        a!dropdownField(
+                                          label: "Spend Buckets",
+                                          labelPosition: "ABOVE",
+                                          placeholder: "All Buckets", 
+                                          choiceLabels: {
+                                            "$0 - $10K",
+                                            "$10K - $50K",
+                                            "$50K+"
+                                          },
+                                          choiceValues: {
+                                            "0-10000",
+                                            "10000-50000", 
+                                            "50000+"
+                                          },
+                                          value: null,
+                                          saveInto: {}
+                                        )
+                                      }
+                                    )
+                                  },
+                                  alignVertical: "BOTTOM",
+                                  marginAbove: "NONE",
+                                  spacing: "STANDARD"
+                                ),
+                                a!gridField(
+                                  label: "",
+                                  labelPosition: "ABOVE",
+                                  data: local!data,
+                                  columns: {
+                                    a!gridColumn(
+                                      label: "Award ID",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.awardId, color: "ACCENT")
+                                      )
+                                    ),
+                                    a!gridColumn(
+                                      label: "Amount",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.amount, color: "#6C6C75")
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Release Date",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(
+                                          text: fv!row.releaseDate,
+                                          color: "#6C6C75"
+                                        )
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Requesting Department",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.buyer, color: "#6C6C75")
+                                      ),
+                                      backgroundColor: if(
+                                        mod(fv!identifier, 2),
+                                        "#FCFCFF",
+                                        "#ffffff"
+                                      )
+                                    ),
+                                    a!gridColumn(
+                                      label: "Vendor",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.vendor, color: "#6C6C75")
+                                      )
+                                    ),
+                                    a!gridColumn(
+                                      label: "Contracting Officer",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(
+                                          text: fv!row.contractingOfficer,
+                                          color: "#6C6C75"
+                                        )
+                                      )
+                                    ),
+                                    a!gridColumn(
+                                      label: "Time in Draft",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.draft, color: "#6C6C75")
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Time Under Review",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(
+                                          text: fv!row.underReview,
+                                          color: "#6C6C75"
+                                        )
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Time Approved",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(text: fv!row.approved, color: "#6C6C75")
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Time Awaiting Signature",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(
+                                          text: fv!row.awaitingSignature,
+                                          color: "#6C6C75"
+                                        )
+                                      ),
+                                      align: "END"
+                                    ),
+                                    a!gridColumn(
+                                      label: "Total Cycle Time",
+                                      value: a!richTextDisplayField(
+                                        value: a!richTextItem(
+                                          text: fv!row.totalCycleTime,
+                                          color: "#6C6C75"
+                                        )
+                                      ),
+                                      align: "END"
+                                    )
+                                  },
+                                  validations: {},
+                                  borderStyle: "LIGHT",
+                                  shadeAlternateRows: true
+                                )
+                              }
+                            },
+                            height: "AUTO",
+                            style: "TRANSPARENT",
+                            shape: "SEMI_ROUNDED",
+                            padding: "STANDARD",
+                            marginBelow: "STANDARD",
+                            showBorder: false
+                          )
+                        },
+                        height: "AUTO",
+                        style: "NONE",
+                        shape: "SEMI_ROUNDED",
+                        padding: "STANDARD",
+                        marginBelow: "STANDARD",
+                        borderColor: "#EDEEFA"
+                      )
+                    }
+                  )
+                }
+              ),
+              a!columnLayout(
+                contents: a!localVariables(
+                  local!Blue1: "#E9EDFC",
+                  local!Blue4: "#08088D",
+                  local!Orange1: "#FFEED3",
+                  local!Orange3: "#FAA92F",
+                  a!sectionLayout(
+                    contents: {
+                      a!cardLayout(
+                        contents: {
+                          a!cardLayout(
+                            contents: {
+                              a!imageField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                images: {
+                                  a!webImage(
+                                    source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/callout-image-1.png"
+                                  )
+                                },
+                                size: "FIT",
+                                isThumbnail: false,
+                                style: "STANDARD",
+                                align: "CENTER"
+                              ),
+                              a!richTextDisplayField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "Great overall progress!" },
+                                    size: "STANDARD",
+                                    style: { "STRONG" }
+                                  )
+                                },
+                                align: "CENTER",
+                                marginAbove: "NONE",
+                                marginBelow: "EVEN_LESS"
+                              ),
+                              a!richTextDisplayField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: {
+                                      "80% of you awards were process under the the threshold of 67 days. "
+                                    },
+                                    color: "SECONDARY",
+                                    size: "STANDARD"
+                                  )
+                                },
+                                align: "CENTER",
+                                marginAbove: "NONE",
+                                marginBelow: "MORE"
+                              ),
+                              a!buttonArrayLayout(
+                                buttons: {
+                                  a!buttonWidget(
+                                    label: "Edit Threshold",
+                                    size: "SMALL",
+                                    width: "MINIMIZE",
+                                    style: "SOLID"
+                                  )
+                                },
+                                align: "CENTER"
+                              )
+                            },
+                            height: "AUTO",
+                            style: "TRANSPARENT",
+                            padding: "STANDARD",
+                            marginBelow: "STANDARD",
+                            showBorder: false
+                          ),
+                          a!cardLayout(
+                            contents: {
+                              a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: { "Areas to Improve" },
+                                align: "LEFT",
+                                marginAbove: "STANDARD"
+                              ),
+                              a!cardLayout(
+                                contents: {
+                                  a!columnsLayout(
+                                    columns: {
+                                      a!columnLayout(
+                                        contents: {
+                                          a!cardLayout(
+                                            contents: {
+                                              a!richTextDisplayField(
+                                                labelPosition: "COLLAPSED",
+                                                value: {
+                                                  a!richTextIcon(
+                                                    icon: "exclamation-triangle",
+                                                    color: local!Orange3,
+                                                    size: "STANDARD"
+                                                  )
+                                                },
+                                                align: "CENTER"
+                                              )
+                                            },
+                                            height: "AUTO",
+                                            style: local!Orange1,
+                                            shape: "ROUNDED",
+                                            padding: "STANDARD",
+                                            marginBelow: "NONE",
+                                            showBorder: false
+                                          )
+                                        },
+                                        width: "EXTRA_NARROW"
+                                      ),
+                                      a!columnLayout(
+                                        contents: {
+                                          a!sideBySideLayout(
+                                            items: {
+                                              a!sideBySideItem(
+                                                item: a!richTextDisplayField(
+                                                  label: "",
+                                                  labelPosition: "COLLAPSED",
+                                                  instructions: "",
+                                                  value: {
+                                                    a!richTextItem(
+                                                      text: { "Awaiting Signature" },
+                                                      color: "#6C6C75",
+                                                      size: "SMALL",
+                                                      style: { "STRONG" }
+                                                    ),
+                                                    char(10),
+                                                    a!richTextItem(
+                                                      text: {
+                                                        "The average cycle time for this phase is 5 days above the set threshold"
+                                                      },
+                                                      color: "SECONDARY",
+                                                      size: "SMALL"
+                                                    )
+                                                  }
+                                                )
+                                              ),
+                                              a!sideBySideItem(
+                                                item: a!tagField(
+                                                  labelPosition: "COLLAPSED",
+                                                  tags: {
+                                                    a!tagItem(
+                                                      text: "›",
+                                                      backgroundColor: "#fafafa",
+                                                      textColor: "#6C6C75"
+                                                    )
+                                                  },
+                                                  size: "STANDARD"
+                                                ),
+                                                width: "MINIMIZE"
+                                              )
+                                            },
+                                            alignVertical: "MIDDLE",
+                                            spacing: "STANDARD"
+                                          )
+                                        }
+                                      )
+                                    },
+                                    alignVertical: "MIDDLE",
+                                    spacing: "DENSE"
+                                  )
+                                },
+                                height: "AUTO",
+                                style: "NONE",
+                                shape: "SEMI_ROUNDED",
+                                marginBelow: "LESS",
+                                borderColor: "#EDEEFA"
+                              ),
+                              a!cardLayout(
+                                contents: {
+                                  a!columnsLayout(
+                                    columns: {
+                                      a!columnLayout(
+                                        contents: {
+                                          a!cardLayout(
+                                            contents: {
+                                              a!richTextDisplayField(
+                                                labelPosition: "COLLAPSED",
+                                                value: {
+                                                  a!richTextIcon(
+                                                    icon: "exclamation-triangle",
+                                                    color: local!Orange3,
+                                                    size: "STANDARD"
+                                                  )
+                                                },
+                                                align: "CENTER"
+                                              )
+                                            },
+                                            height: "AUTO",
+                                            style: local!Orange1,
+                                            shape: "ROUNDED",
+                                            padding: "STANDARD",
+                                            marginBelow: "NONE",
+                                            showBorder: false
+                                          )
+                                        },
+                                        width: "EXTRA_NARROW"
+                                      ),
+                                      a!columnLayout(
+                                        contents: {
+                                          a!sideBySideLayout(
+                                            items: {
+                                              a!sideBySideItem(
+                                                item: a!richTextDisplayField(
+                                                  labelPosition: "COLLAPSED",
+                                                  value: {
+                                                    a!richTextItem(
+                                                      text: { "Draft" },
+                                                      color: "#6C6C75",
+                                                      size: "SMALL",
+                                                      style: { "STRONG" }
+                                                    ),
+                                                    char(10),
+                                                    a!richTextItem(
+                                                      text: {
+                                                        "The average cycle time for this phase is 8 days above the set threshold"
+                                                      },
+                                                      color: "SECONDARY",
+                                                      size: "SMALL"
+                                                    )
+                                                  }
+                                                )
+                                              ),
+                                              a!sideBySideItem(
+                                                item: a!tagField(
+                                                  labelPosition: "COLLAPSED",
+                                                  tags: {
+                                                    a!tagItem(
+                                                      text: "›",
+                                                      backgroundColor: "#fafafa",
+                                                      textColor: "#6C6C75"
+                                                    )
+                                                  },
+                                                  size: "STANDARD"
+                                                ),
+                                                width: "MINIMIZE"
+                                              )
+                                            },
+                                            alignVertical: "MIDDLE",
+                                            spacing: "STANDARD"
+                                          )
+                                        }
+                                      )
+                                    },
+                                    alignVertical: "MIDDLE",
+                                    spacing: "DENSE"
+                                  )
+                                },
+                                height: "AUTO",
+                                style: "NONE",
+                                shape: "ROUNDED",
+                                padding: "LESS",
+                                marginBelow: "STANDARD",
+                                borderColor: "#EDEEFA"
+                              )
+                            },
+                            height: "AUTO",
+                            style: "#FCFCFF",
+                            shape: "SEMI_ROUNDED",
+                            marginBelow: "STANDARD",
+                            borderColor: "#EDEEFA"
+                          )
+                        },
+                        height: "AUTO",
+                        style: "#ffffff",
+                        shape: "SEMI_ROUNDED",
+                        padding: "LESS",
+                        marginBelow: "STANDARD",
+                        borderColor: "#EDEEFA"
+                      ),
+                      a!cardLayout(
+                        contents: {
+                          a!richTextDisplayField(
+                            label: "",
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "Awards with Longest Cycle Times" },
+                                size: "STANDARD",
+                                style: { "STRONG" }
+                              )
+                            },
+                            marginAbove: "NONE",
+                            marginBelow: "STANDARD"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "1",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "HT98200012",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    a!richTextItem(text: { "HT98200012" }, color: "ACCENT"),
+                                    char(10),
+                                    "Personal projects should be an important part of life as Award description up until a certain character cut off. This will give a brief introduction about what the award is.",
+                                    char(10),
+                                    a!richTextItem(text: { "55 Days" }, color: "SECONDARY")
+                                  },
+                                  preventWrapping: false
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "2",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "HT98200012",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    a!richTextItem(text: { "HT98200012" }, color: "ACCENT"),
+                                    char(10),
+                                    "Award description up until a certain character cut off. This will give a brief introduction about what the award is.",
+                                    char(10),
+                                    a!richTextItem(text: { "55 Days" }, color: "SECONDARY")
+                                  }
+                                )
+                              )
+                            }
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "3",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "HT98200012",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    a!richTextItem(text: { "HT98200012" }, color: "ACCENT"),
+                                    char(10),
+                                    "Award description up until a certain character cut off. This will give a brief introduction about what the award is.",
+                                    char(10),
+                                    a!richTextItem(text: { "55 Days" }, color: "SECONDARY")
+                                  }
+                                )
+                              )
+                            }
+                          ),
+                          a!richTextDisplayField(
+                            label: "",
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: { "Vendors with Longest Cycle Times" },
+                                style: { "STRONG" }
+                              )
+                            },
+                            marginAbove: "STANDARD",
+                            marginBelow: "STANDARD"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "1",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    "Microsoft",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "66 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "2",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    "Lockheed Martin",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "66 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "3",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    "Boeing",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "66 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          ),
+                          a!richTextDisplayField(
+                            label: "",
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: {
+                                  "Requesting Departments with Longest Cycle Times"
+                                },
+                                style: { "STRONG" }
+                              )
+                            },
+                            marginAbove: "STANDARD",
+                            marginBelow: "STANDARD"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "1",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    "Research and Development",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "66 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS",
+                            marginBelow: "STANDARD"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "2",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "COLLAPSED",
+                                  instructions: "",
+                                  value: {
+                                    "Enforcement and Compliance Assurance",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "63 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          ),
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!tagField(
+                                  label: "Tag Field",
+                                  labelPosition: "COLLAPSED",
+                                  tags: {
+                                    a!tagItem(
+                                      text: "3",
+                                      backgroundColor: local!Blue1,
+                                      textColor: local!Blue4
+                                    )
+                                  },
+                                  size: "STANDARD",
+                                  align: "CENTER"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  label: "",
+                                  labelPosition: "ABOVE",
+                                  instructions: "",
+                                  value: {
+                                    "Chief of Staff",
+                                    char(10),
+                                    a!richTextItem(
+                                      text: { "60 Days on Average" },
+                                      color: "SECONDARY"
+                                    )
+                                  }
+                                )
+                              )
+                            },
+                            marginAbove: "EVEN_LESS"
+                          )
+                        },
+                        height: "AUTO",
+                        style: "NONE",
+                        shape: "SEMI_ROUNDED",
+                        padding: "STANDARD",
+                        marginBelow: "STANDARD",
+                        borderColor: "#EDEEFA"
+                      )
+                    }
+                  )
+                ),
+                width: "MEDIUM"
+              )
+            }
+          )
+        }
+      )
+    },
+    backgroundColor: local!AppianBackground
+  )
+)
+```
 
 ### Filters
 
@@ -323,7 +1750,7 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "NEW CAMPAIGN",
+                      label: "New Campaign",
                       icon: "plus-circle",
                       size: "LARGE",
                       style: "SOLID"
@@ -351,11 +1778,12 @@ a!headerContentLayout(
           contents: {
             a!sectionLayout(
               label: "Alerts",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
+                  shape: "SEMI_ROUNDED",
                   contents: {
                     a!richTextDisplayField(
                       labelPosition: "COLLAPSED",
@@ -382,20 +1810,20 @@ a!headerContentLayout(
                   height: "MEDIUM_PLUS",
                   style: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "My Tasks",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
                   contents: {
                     a!cardLayout(
+                      shape: "SEMI_ROUNDED",
                       contents: {
                         a!sideBySideLayout(
                           items: {
@@ -453,8 +1881,7 @@ a!headerContentLayout(
                       height: "AUTO",
                       style: "NONE",
                       marginBelow: "NONE",
-                      showBorder: false,
-                      showShadow: true
+                      showBorder: false
                     ),
                     a!cardLayout(
                       contents: {
@@ -759,9 +2186,9 @@ a!headerContentLayout(
                   height: "AUTO",
                   style: "NONE",
                   padding: "NONE",
+                  shape: "SEMI_ROUNDED",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -772,12 +2199,13 @@ a!headerContentLayout(
           contents: {
             a!sectionLayout(
               label: "Active Campaigns",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
-                  showShadow: true,
+                  shape: "SEMI_ROUNDED",
+                  borderColor: "#EDEEFA",
                   contents: {
                     a!localVariables(
                       local!campaigns: {
@@ -985,7 +2413,7 @@ a!headerContentLayout(
                           endDate: today() + 60,
                           budget: 15000
                         ),
-                        
+
                       },
                       local!filterName: "",
                       /* Local variable to store the campaign name filter */
@@ -1009,7 +2437,7 @@ a!headerContentLayout(
                                   placeholder: "Enter campaign name",
                                   refreshAfter: "KEYPRESS",
                                   /* Update filter on each keypress */
-                                  
+
                                 )
                               }
                             ),
@@ -1022,7 +2450,7 @@ a!headerContentLayout(
                                   choiceValues: { "Active", "Paused", "Completed" },
                                   value: local!filterStatus,
                                   saveInto: local!filterStatus,
-                                  
+
                                 )
                               }
                             )
@@ -1079,7 +2507,7 @@ a!headerContentLayout(
          */
                           showWhen: not(isnull(local!campaigns)),
                           userFilters: {}/* This parameter is typically where you'd define grid filters */
-                          
+
                         )
                       }
                     )
@@ -1094,11 +2522,12 @@ a!headerContentLayout(
           contents: {
             a!sectionLayout(
               label: "Actions",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
+                  shape: "SEMI_ROUNDED",
                   contents: {
                     a!buttonArrayLayout(
                       buttons: {
@@ -1131,18 +2560,18 @@ a!headerContentLayout(
                   height: "AUTO",
                   style: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Resources",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
+                  shape: "SEMI_ROUNDED",
                   contents: {
                     a!cardLayout(
                       contents: {
@@ -1296,18 +2725,18 @@ a!headerContentLayout(
                   style: "NONE",
                   padding: "NONE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "My Goals",
-              labelSize: "MEDIUM",
+              labelSize: "SMALL",
               labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
+                  shape: "SEMI_ROUNDED",
                   contents: {
                     a!columnsLayout(
                       columns: {
@@ -1377,8 +2806,7 @@ a!headerContentLayout(
                   style: "NONE",
                   padding: "MORE",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -1395,11 +2823,11 @@ a!headerContentLayout(
     )
   },
   showWhen: true,
-  backgroundColor: "TRANSPARENT"
+  backgroundColor: "#FAFAFC"
 )
 ```
 
-### Data Representation
+### Chart Data Representation
 ```
 a!headerContentLayout(
   header: a!cardLayout(
@@ -2107,7 +3535,1615 @@ a!headerContentLayout(
 )
 ```
 
-### Actions
+### Data Representation with Prominent Action
+```
+a!localVariables(
+  local!AppianBackground: "#FAFAFC",
+  local!Blue1: "#E9EDFC",
+  local!Blue3: "#2322F0",
+  local!CategoricalSceme: {
+    "#2322F0",
+    "#B561FF",
+    "#FAA92F",
+    "#56ADC0",
+    "#FFD948"
+  },
+  local!contractData: {
+    a!map(
+      awardId: "693JJ321F000201",
+      description: "GSA EIS TELECOM SERVICES 693KA820F00178-A00020 INCORPORATES ADDITIONAL OST AND MODAL WORK ORDER FUND",
+      obligatedAmount: "16,511,078.33",
+      startDate: "1/5/2023",
+      endDate: "7/4/2023",
+      Department: "Communication"
+    ),
+    a!map(
+      awardId: "693C7323M000001",
+      description: "SERVICES FOR WASHINGTON GAS FOR THE TEMPORARY AND PERMANENT GAS MAIN RELOCATION WORK FOR THE... ",
+      obligatedAmount: "2,219,854.30",
+      startDate: "4/16/2023",
+      endDate: "5/9/2023",
+      Department: "Operations"
+    ),
+    a!map(
+      awardId: "6982AF22C000030",
+      description: "CHANGE TASK ORDER CONTRACTING OFFICER'S REPRESENTATIVE FLAP JEFFER 150009(1), UNDI ROAD BYPASS IMPROVEMENTS FINAL DESIGN PHASES",
+      obligatedAmount: "831,930.95",
+      startDate: "4/7/2023",
+      endDate: "6/21/2023",
+      Department: "Public Affairs"
+    ),
+    a!map(
+      awardId: "693JJ318F300045",
+      description: "THE PURPOSE OF THIS MODIFICATION IS TO INCORPORATE A REVISED STATEMENT OF WORK AT NO ADDITIONAL COST",
+      obligatedAmount: "384,878.00",
+      startDate: "1/18/2023",
+      endDate: "8/19/2023",
+      Department: "Communication"
+    ),
+    a!map(
+      awardId: "6982AF20C000025",
+      description: "CO FLAP PUW16(1) NICHOLS ROAD, CONSTRUCTION SERVICES",
+      obligatedAmount: "365,119.85",
+      startDate: "4/8/2023",
+      endDate: "7/19/2023",
+      Department: "Research and Technology"
+    ),
+    a!map(
+      awardId: "6982AF18C000016",
+      description: "FUNDING FOR OPTIONAL TASK 3",
+      obligatedAmount: "197,994.00",
+      startDate: "1/21/2023",
+      endDate: "7/25/2023",
+      Department: "Research and Technology"
+    ),
+    a!map(
+      awardId: "693JJ321F000201",
+      description: "INCORPORATES ADDITIONAL OST AND MODAL WORK ORDER FUND",
+      obligatedAmount: "191,078.30",
+      startDate: "1/5/2023",
+      endDate: "7/4/2023",
+      Department: "Communications"
+    ),
+    a!map(
+      awardId: "693JJ318F000077",
+      description: "WA FLAP JEFFER 150009(1), UNDI ROAD BYPASS IMPROVEMENTS FINAL DESIGN PHASES",
+      obligatedAmount: "162,483.05",
+      startDate: "4/8/2023",
+      endDate: "7/17/2023",
+      Department: "Public Affairs"
+    ),
+    a!map(
+      awardId: "6982AF23C000013",
+      description: "TO REVISE SCHEDULE OF SERVICES ",
+      obligatedAmount: "126,486.17",
+      startDate: "11/22/2022",
+      endDate: "6/13/2023",
+      Department: "Operations"
+    ),
+    a!map(
+      awardId: "693JJ321F000301",
+      description: "MINIMUM GUARANTEE FOR IDIQ.",
+      obligatedAmount: "100,000.00",
+      startDate: "2/28/2023",
+      endDate: "6/20/2023",
+      Department: "Accounting"
+    ),
+    a!map(
+      awardId: "693C7323M000001",
+      description: "SERVICES FOR WASHINGTON GAS FOR THE TEMPORARY AND PERMANENT GAS MAIN RELOCATION WORK FOR THE... ",
+      obligatedAmount: "100,000.00",
+      startDate: "4/16/2023",
+      endDate: "5/9/2023",
+      Department: "Operations"
+    ),
+    a!map(
+      awardId: "693JJ318F000077",
+      description: "WA FLAP JEFFER 150009(1), UNDI ROAD BYPASS IMPROVEMENTS FINAL DESIGN PHASES",
+      obligatedAmount: "100,000.00",
+      startDate: "4/8/2023",
+      endDate: "7/17/2023",
+      Department: "Public Affairs"
+    ),
+    a!map(
+      awardId: "693JJ321F000201",
+      description: "GSA EIS TELECOM SERVICES 693KA820F00178-A00020 INCORPORATES ADDITIONAL OST AND MODAL WORK ORDER FUND",
+      obligatedAmount: "100,000.00",
+      startDate: "1/5/2023",
+      endDate: "7/4/2023",
+      Department: "Communication"
+    ),
+    a!map(
+      awardId: "693JJ321F000301",
+      description: "MINIMUM GUARANTEE FOR IDIQ.",
+      obligatedAmount: "100,000.00",
+      startDate: "2/28/2023",
+      endDate: "6/20/2023",
+      Department: "Accounting"
+    ),
+    a!map(
+      awardId: "6982AF18C000016",
+      description: "FUNDING FOR OPTIONAL TASK 3",
+      obligatedAmount: "100,000.00",
+      startDate: "1/21/2023",
+      endDate: "7/25/2023",
+      Department: "Research and Technology"
+    ),
+    a!map(
+      awardId: "693C7323M000001",
+      description: "SERVICES FOR WASHINGTON GAS FOR THE TEMPORARY AND PERMANENT GAS MAIN RELOCATION WORK FOR THE... ",
+      obligatedAmount: "100,000.00",
+      startDate: "4/16/2023",
+      endDate: "5/9/2023",
+      Department: "Operations"
+    ),
+    a!map(
+      awardId: "693JJ318F000077",
+      description: "WA FLAP JEFFER 150009(1), UNDI ROAD BYPASS IMPROVEMENTS FINAL DESIGN PHASES",
+      obligatedAmount: "100,000.00",
+      startDate: "4/8/2023",
+      endDate: "7/17/2023",
+      Department: "Public Affairs"
+    ),
+    a!map(
+      awardId: "693JJ321F000201",
+      description: "GSA EIS TELECOM SERVICES 693KA820F00178-A00020 INCORPORATES ADDITIONAL OST AND MODAL WORK ORDER FUND",
+      obligatedAmount: "100,000.00",
+      startDate: "1/5/2023",
+      endDate: "7/4/2023",
+      Department: "Communication"
+    ),
+    a!map(
+      awardId: "693JJ321F000301",
+      description: "MINIMUM GUARANTEE FOR IDIQ.",
+      obligatedAmount: "100,000.00",
+      startDate: "2/28/2023",
+      endDate: "6/20/2023",
+      Department: "Accounting"
+    ),
+    a!map(
+      awardId: "6982AF18C000016",
+      description: "FUNDING FOR OPTIONAL TASK 3",
+      obligatedAmount: "100,000.00",
+      startDate: "1/21/2023",
+      endDate: "7/25/2023",
+      Department: "Research and Technology"
+    )
+  },
+  local!categories: 1,
+  a!headerContentLayout(
+    header: a!cardLayout(
+      contents: {
+        a!columnsLayout(
+          columns: {
+            a!columnLayout(contents: {}, width: "AUTO"),
+            a!columnLayout(
+              contents: {
+                a!columnsLayout(
+                  columns: {
+                    a!columnLayout(
+                      contents: {
+                        a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextItem(
+                              text: { "2023 Fiscal Year Obligated Spend" },
+                              size: "LARGE",
+                              style: { "STRONG" }
+                            )
+                          }
+                        ),
+                        a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextItem(
+                              text: {
+                                "Your one stop shop to view and analyze organizational spending and procurement activity tracking."
+                              },
+                              size: "STANDARD"
+                            )
+                          },
+                          marginBelow: "MORE"
+                        ),
+                        a!buttonArrayLayout(
+                          buttons: {
+                            a!buttonWidget(
+                              label: "Edit Dashboard",
+                              size: "STANDARD",
+                              style: "SOLID"
+                            )
+                          },
+                          align: "START",
+                          marginAbove: "NONE",
+                          marginBelow: "NONE"
+                        )
+                      }
+                    ),
+                    a!columnLayout(
+                      contents: {
+                        a!imageField(
+                          label: "",
+                          labelPosition: "ABOVE",
+                          images: {
+                            a!webImage(
+                              source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image-2.png"
+                            )
+                          },
+                          size: "FIT",
+                          isThumbnail: false,
+                          style: "STANDARD",
+                          align: "CENTER"
+                        )
+                      }
+                    )
+                  },
+                  alignVertical: "MIDDLE",
+                  spacing: "STANDARD"
+                )
+              },
+              width: "WIDE_PLUS"
+            ),
+            a!columnLayout(contents: {}, width: "AUTO")
+          },
+          alignVertical: "MIDDLE"
+        )
+      },
+      height: "AUTO",
+      style: "NONE",
+      padding: "STANDARD",
+      marginBelow: "NONE",
+      showBorder: false
+    ),
+    isHeaderFixed: false(),
+    contents: {
+      a!columnsLayout(
+        columns: {
+          a!columnLayout(
+            contents: {
+              a!cardLayout(
+                contents: {
+                  a!columnsLayout(
+                    columns: {
+                      a!columnLayout(
+                        contents: {
+                          a!sectionLayout(
+                            label: "GWCM Categories",
+                            labelSize: "SMALL",
+                            labelHeadingTag: "H2",
+                            labelColor: "STANDARD",
+                            contents: {},
+                            marginBelow: "NONE"
+                          )
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            helpTooltip: "Government wide category management",
+                            value: {
+                              a!richTextIcon(icon: "question-circle", color: "ACCENT")
+                            },
+                            tooltip: "Government wide category management",
+                            align: "RIGHT"
+                          )
+                        },
+                        width: "EXTRA_NARROW"
+                      )
+                    },
+                    alignVertical: "TOP"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "building",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Facilities and Construction",
+                          labelPosition: "ABOVE",
+                          instructions: "$469.07M / $407M (22% of Total Budget)",
+                          percentage: 115,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginBelow: "STANDARD"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "book",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Human Capital ",
+                          labelPosition: "ABOVE",
+                          instructions: "$237.08M / $240.5M (13% of Total Budget)",
+                          percentage: 98,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "wrench",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Industrial Products and Services",
+                          labelPosition: "ABOVE",
+                          instructions: "$250.62M / $222M (12% of Total Budget)",
+                          percentage: 113,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "laptop",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Information Technology",
+                          labelPosition: "ABOVE",
+                          instructions: "$249.49M / $296M  (16% of Total Budget)",
+                          percentage: 84,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "briefcase-medical",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Medical",
+                          labelPosition: "ABOVE",
+                          instructions: "$21.7M / $37M  (2% of Total Budget)",
+                          percentage: 59,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextItem(
+                              text: {
+                                "View all categories ",
+                                a!richTextIcon(icon: "angle-down")
+                              },
+                              link: a!dynamicLink(value: 2, saveInto: local!categories),
+                              linkStyle: "STANDALONE",
+                              color: "ACCENT"
+                            )
+                          },
+                          align: "CENTER"
+                        )
+                      )
+                    }
+                  )
+                },
+                height: "AUTO",
+                showWhen: if(local!categories = 1, true, false),
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "building",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Facilities and Construction",
+                          labelPosition: "ABOVE",
+                          instructions: "$469.07M / $407M (22% of Total Budget)",
+                          percentage: 115,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginBelow: "STANDARD"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "book",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Human Capital ",
+                          labelPosition: "ABOVE",
+                          instructions: "$237.08M / $240.5M (13% of Total Budget)",
+                          percentage: 98,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "wrench",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Industrial Products and Services",
+                          labelPosition: "ABOVE",
+                          instructions: "$250.62M / $222M (12% of Total Budget)",
+                          percentage: 113,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "laptop",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Information Technology",
+                          labelPosition: "ABOVE",
+                          instructions: "$249.49M / $296M  (16% of Total Budget)",
+                          percentage: 84,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "briefcase-medical",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Medical",
+                          labelPosition: "ABOVE",
+                          instructions: "$21.7M / $37M  (2% of Total Budget)",
+                          percentage: 59,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "print",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Office Management",
+                          labelPosition: "ABOVE",
+                          instructions: "$65M / $92.5M (5% of Total Budget)",
+                          percentage: 70,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "user-alt",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Professional Services",
+                          labelPosition: "ABOVE",
+                          instructions: "$40.98M / $55.5M  (3% of Total Budget)",
+                          percentage: 73,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "shield",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Security and Protection",
+                          labelPosition: "ABOVE",
+                          instructions: "$56.81M / $92.5M (5% of Total Budget)",
+                          percentage: 60,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "truck",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Transportation and Logistics Services",
+                          labelPosition: "ABOVE",
+                          instructions: "$42.87M / $55.5M (3% of Total Budget)",
+                          percentage: 77,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "plane",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Travel",
+                          labelPosition: "ABOVE",
+                          instructions: "$175,000 / $200,250  (3% of Total Budget)",
+                          percentage: 21,
+                          color: local!Blue3,
+                          style: "THIN",
+                          showPercentage: true
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS",
+                    marginBelow: "MORE"
+                  ),
+                  a!richTextDisplayField(
+                    labelPosition: "COLLAPSED",
+                    value: {
+                      a!richTextItem(
+                        text: {
+                          "View less categories ",
+                          a!richTextIcon(icon: "angle-up")
+                        },
+                        link: a!dynamicLink(value: 1, saveInto: local!categories),
+                        linkStyle: "STANDALONE",
+                        color: "ACCENT"
+                      )
+                    },
+                    align: "CENTER"
+                  )
+                },
+                height: "AUTO",
+                showWhen: if(local!categories = 2, true, false),
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                showBorder: false,
+                showShadow: true
+              ),
+              a!cardLayout(
+                contents: {
+                  a!sectionLayout(
+                    label: "Socioeconomic Spend",
+                    labelSize: "SMALL",
+                    labelColor: "STANDARD",
+                    contents: {},
+                    marginBelow: "NONE"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "home",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Total Small Business",
+                          labelPosition: "ABOVE",
+                          instructions: "$581.11M / $462.5M (25% of Total Budget)",
+                          percentage: 126,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginBelow: "STANDARD"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "house-damage",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Small Disadvantaged Business",
+                          labelPosition: "ABOVE",
+                          instructions: "$166.72M/ $222M (12% of Total Budget)",
+                          percentage: 75,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "female",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Women Owned Business",
+                          labelPosition: "ABOVE",
+                          instructions: "$89.73M/ $185M (10% of Total Budget)",
+                          percentage: 48,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "wheelchair",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Service Disabled Veteran-Owned Business",
+                          labelPosition: "ABOVE",
+                          instructions: "$94.95M/ $185M (10% of Total Budget)",
+                          percentage: 51,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  ),
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          labelPosition: "COLLAPSED",
+                          icon: "award",
+                          backgroundColor: "#EDEEF2",
+                          contentColor: "#2E2E35",
+                          size: "TINY"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!progressBarField(
+                          label: "Certified HUBZone Small Business",
+                          labelPosition: "ABOVE",
+                          instructions: "$32.86M/ $92.5M (5% of Total Budget)",
+                          percentage: 34,
+                          color: local!Blue3,
+                          style: "THIN"
+                        )
+                      )
+                    },
+                    alignVertical: "MIDDLE",
+                    marginAbove: "LESS"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              )
+            },
+            width: "MEDIUM"
+          ),
+          a!columnLayout(
+            contents: {
+              a!cardLayout(
+                contents: {
+                  a!columnsLayout(
+                    columns: {
+                      a!columnLayout(
+                        contents: {
+                          a!cardLayout(
+                            contents: {
+                              a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "Total Obligated Amount" },
+                                    color: "#6C6C75"
+                                  )
+                                }
+                              ),
+                              a!richTextDisplayField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "$1.46B" },
+                                    color: "#2E2E35",
+                                    size: "LARGE"
+                                  ),
+                                  a!richTextItem(
+                                    text: { "/1.85B" },
+                                    color: "SECONDARY",
+                                    size: "MEDIUM"
+                                  )
+                                }
+                              )
+                            },
+                            height: "AUTO",
+                            style: "#FCFCFF",
+                            shape: "SEMI_ROUNDED",
+                            padding: "STANDARD",
+                            marginBelow: "STANDARD",
+                            borderColor: "#EDEEFA"
+                          )
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!cardLayout(
+                            contents: {
+                              a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "Number of Actions" },
+                                    color: "#6C6C75"
+                                  )
+                                }
+                              ),
+                              a!richTextDisplayField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "715" },
+                                    color: "#2E2E35",
+                                    size: "LARGE"
+                                  ),
+                                  char(10)
+                                }
+                              )
+                            },
+                            height: "AUTO",
+                            style: "#FCFCFF",
+                            shape: "SEMI_ROUNDED",
+                            padding: "STANDARD",
+                            marginBelow: "STANDARD",
+                            borderColor: "#EDEEFA"
+                          )
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!cardLayout(
+                            contents: {
+                              a!sideBySideLayout(
+                                items: {
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextItem(text: { "Best In Class" }, color: "#6C6C75")
+                                      },
+                                      tooltip: ""
+                                    )
+                                  ),
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextItem(
+                                          text: {
+                                            " ",
+                                            a!richTextIcon(icon: "question-circle")
+                                          },
+                                          color: "ACCENT"
+                                        )
+                                      },
+                                      tooltip: "Best-in-Class (BIC) is a government-wide designation for acquisition solutions that can be used by multiple agencies and satisfies key criteria defined by Office of Management and Budget (OMB)"
+                                    ),
+                                    width: "MINIMIZE"
+                                  )
+                                }
+                              ),
+                              a!richTextDisplayField(
+                                label: "",
+                                labelPosition: "COLLAPSED",
+                                helpTooltip: "",
+                                value: {
+                                  a!richTextItem(
+                                    text: { "21.3%" },
+                                    color: "#2E2E35",
+                                    size: "LARGE"
+                                  ),
+                                  char(10)
+                                }
+                              )
+                            },
+                            height: "AUTO",
+                            style: "#FCFCFF",
+                            shape: "SEMI_ROUNDED",
+                            padding: "STANDARD",
+                            marginBelow: "STANDARD",
+                            borderColor: "#EDEEFA"
+                          )
+                        }
+                      )
+                    },
+                    marginBelow: "MORE",
+                    spacing: "DENSE"
+                  ),
+                  a!columnsLayout(
+                    columns: {
+                      a!columnLayout(
+                        contents: {
+                          a!sectionLayout(
+                            label: "Fiscal Year Obligated Spend",
+                            labelSize: "SMALL",
+                            labelColor: "STANDARD",
+                            contents: {},
+                            marginBelow: "NONE"
+                          )
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  labelPosition: "COLLAPSED",
+                                  helpTooltip: "Government wide category management",
+                                  value: {
+                                    a!richTextIcon(
+                                      icon: "circle",
+                                      color: "ACCENT",
+                                      size: "SMALL"
+                                    )
+                                  },
+                                  tooltip: "Government wide category management",
+                                  align: "RIGHT"
+                                )
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  labelPosition: "COLLAPSED",
+                                  helpTooltip: "Government wide category management",
+                                  value: {
+                                    a!richTextItem(
+                                      text: { "2023 Fiscal Year" },
+                                      color: "SECONDARY",
+                                      size: "SMALL"
+                                    )
+                                  },
+                                  tooltip: "Government wide category management",
+                                  align: "RIGHT"
+                                ),
+                                width: "MINIMIZE"
+                              )
+                            },
+                            spacing: "DENSE"
+                          )
+                        },
+                        width: "AUTO"
+                      )
+                    },
+                    alignVertical: "TOP"
+                  ),
+                  a!lineChartField(
+                    label: "",
+                    labelPosition: "COLLAPSED",
+                    categories: {
+                      "Oct",
+                      "Nov",
+                      "Dec",
+                      "Jan",
+                      "Feb",
+                      "Mar",
+                      "Apr",
+                      "May",
+                      "Jun",
+                      "Jul",
+                      "Aug",
+                      "Sep"
+                    },
+                    series: {
+                      a!chartSeries(
+                        label: "2023 Fiscal Year",
+                        data: {
+                          460533958,
+                          560533958,
+                          660533958,
+                          769533958,
+                          860533958,
+                          930533958,
+                          963533968,
+                          1060333949,
+                          1260553958,
+                          1460533958,
+                          null(),
+                          null()
+                        }
+                      )
+                    },
+                    yAxisTitle: "",
+                    yAxisMax: 2.0E9,
+                    referenceLines: a!chartReferenceLine(
+                      label: "2023 Fiscal Year Budget",
+                      value: 1.85E9,
+                      color: "#2E2E35",
+                      style: "SHORTDASH"
+                    ),
+                    showLegend: false,
+                    showDataLabels: false,
+                    showTooltips: true,
+                    allowDecimalAxisLabels: false,
+                    connectNulls: true,
+                    colorScheme: a!colorSchemeCustom(colors: { local!CategoricalSceme }),
+                    height: "MEDIUM",
+                    xAxisStyle: "STANDARD",
+                    yAxisStyle: "STANDARD"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!columnsLayout(
+                    columns: {
+                      a!columnLayout(
+                        contents: {
+                          a!sectionLayout(
+                            label: "Awards",
+                            labelSize: "SMALL",
+                            labelColor: "STANDARD",
+                            labelHeadingTag: "H2",
+                            contents: {},
+                            marginBelow: "NONE"
+                          )
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!tagField(
+                            labelPosition: "COLLAPSED",
+                            tags: {
+                              a!tagItem(
+                                text: "↗",
+                                backgroundColor: local!Blue1,
+                                textColor: local!Blue3
+                              )
+                            },
+                            size: "STANDARD",
+                            align: "END"
+                          )
+                        }
+                      )
+                    },
+                    alignVertical: "TOP"
+                  ),
+                  a!columnsLayout(
+                    columns: {
+                      a!columnLayout(
+                        contents: a!localVariables(
+                          local!dateRange,
+                          'type!{http://www.appian.com/ae/types/2009}DateRangeWidget'(
+                            inlineLabel: if(isnull("date"), "Date Range", ""),
+                            placeholder: fn!resource_appian_internal(
+                              "sysrule.recordsLayout.userfiltersDropdownPlaceholder"
+                            ),
+                            datePlaceholder: fn!resource_appian_internal("sysrule.datePicker.placeholder"),
+                            todayLabel: fn!resource_appian_internal("sysrule.datePicker.todayLabel"),
+                            noneLabel: fn!resource_appian_internal("sysrule.datePicker.noneLabel"),
+                            value: local!dateRange,
+                            saveInto: local!dateRange
+                          )
+                        )
+                      ),
+                      a!columnLayout(
+                        contents: 'type!{http://www.appian.com/ae/types/2009}DropdownWidget'(
+                          inlineLabel: if(
+                            isnull("Obligated Amount"),
+                            "Obligated Amount",
+                            "Obligated amount"
+                          ),
+                          placeholder: if(isnull(" "), "All Departments", " "),
+                          choices: if(
+                            isnull(" "),
+                            {
+                              "Engineering",
+                              "Professional Services",
+                              "Finance"
+                            },
+                            " "
+                          ),
+                          value: {},
+                          saveInto: {}
+                        )
+                      )
+                    }
+                  ),
+                  a!gridField(
+                    label: "Contracts",
+                    labelPosition: "COLLAPSED",
+                    data: local!contractData,
+                    columns: {
+                      a!gridColumn(
+                        label: "Award ID",
+                        value: a!linkField(
+                          links: a!dynamicLink(label: fv!row.awardId)
+                        ),
+                        align: "START"
+                      ),
+                      a!gridColumn(
+                        label: "Description",
+                        value: a!richTextDisplayField(
+                          value: a!richTextItem(
+                            text: fv!row.description,
+                            color: "#6C6C75"
+                          )
+                        )
+                      ),
+                      a!gridColumn(
+                        label: "Obligated Amount ($)",
+                        value: a!richTextDisplayField(
+                          value: a!richTextItem(
+                            text: fv!row.obligatedAmount,
+                            color: "#6C6C75"
+                          )
+                        ),
+                        align: "END"
+                      ),
+                      a!gridColumn(
+                        label: "Start Date",
+                        value: a!richTextDisplayField(
+                          value: a!richTextItem(text: fv!row.startDate, color: "#6C6C75")
+                        ),
+                        align: "END"
+                      ),
+                      a!gridColumn(
+                        label: "End Date",
+                        value: a!richTextDisplayField(
+                          value: a!richTextItem(text: fv!row.endDate, color: "#6C6C75")
+                        ),
+                        align: "END"
+                      )
+                    },
+                    pageSize: 10,
+                    initialSorts: {},
+                    validations: {},
+                    borderStyle: "LIGHT"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "STANDARD",
+                borderColor: "#EDEEFA"
+              )
+            }
+          ),
+          a!columnLayout(
+            contents: {
+              a!cardLayout(
+                contents: {
+                  a!sectionLayout(
+                    label: "",
+                    contents: {
+                      a!sectionLayout(
+                        label: "Additional Reports",
+                        labelSize: "SMALL",
+                        labelColor: "STANDARD",
+                        labelHeadingTag: "H2",
+                        contents: {},
+                        marginBelow: "NONE"
+                      ),
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: { "Work In Progress" },
+                                  color: "ACCENT",
+                                  size: "STANDARD"
+                                )
+                              },
+                              marginBelow: "NONE"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!tagField(
+                              labelPosition: "COLLAPSED",
+                              tags: {
+                                a!tagItem(
+                                  text: "↗",
+                                  backgroundColor: local!Blue1,
+                                  textColor: local!Blue3
+                                )
+                              },
+                              size: "SMALL",
+                              align: "START"
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE",
+                        marginBelow: "LESS"
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: {
+                              "Get a high level overview of your organization's work in progress."
+                            },
+                            color: "SECONDARY"
+                          )
+                        }
+                      )
+                    },
+                    divider: "NONE",
+                    marginBelow: "STANDARD"
+                  ),
+                  a!sectionLayout(
+                    label: "",
+                    contents: {
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: { "Unliquidated Obligations (ULO)" },
+                                  color: "ACCENT",
+                                  size: "STANDARD"
+                                )
+                              },
+                              marginBelow: "NONE"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!tagField(
+                              labelPosition: "COLLAPSED",
+                              tags: {
+                                a!tagItem(
+                                  text: "↗",
+                                  backgroundColor: local!Blue1,
+                                  textColor: local!Blue3
+                                )
+                              },
+                              size: "SMALL",
+                              align: "START"
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE",
+                        marginBelow: "LESS"
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: {
+                              "Keep track of unliquidated obligations to avoid deobligation of funds."
+                            },
+                            color: "SECONDARY"
+                          )
+                        }
+                      )
+                    },
+                    divider: "NONE"
+                  ),
+                  a!sectionLayout(
+                    label: "",
+                    contents: {
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: { "NAICS Summary Report" },
+                                  color: "ACCENT",
+                                  size: "STANDARD"
+                                )
+                              },
+                              marginBelow: "NONE"
+                            ),
+                            width: "MINIMIZE"
+                          ),
+                          a!sideBySideItem(
+                            item: a!tagField(
+                              labelPosition: "COLLAPSED",
+                              tags: {
+                                a!tagItem(
+                                  text: "↗",
+                                  backgroundColor: local!Blue1,
+                                  textColor: local!blue3
+                                )
+                              },
+                              size: "SMALL",
+                              align: "START"
+                            )
+                          )
+                        },
+                        alignVertical: "MIDDLE",
+                        marginBelow: "LESS"
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: {
+                              "View your organization's spend broken up by NAICS code."
+                            },
+                            color: "SECONDARY"
+                          )
+                        }
+                      )
+                    },
+                    divider: "NONE",
+                    marginBelow: "NONE"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!sectionLayout(
+                    label: "Top Vendor Spend",
+                    labelSize: "SMALL",
+                    labelColor: "STANDARD",
+                    labelHeadingTag: "H2",
+                    contents: {},
+                    marginBelow: "NONE"
+                  ),
+                  a!barChartField(
+                    label: "Bar Chart",
+                    labelPosition: "COLLAPSED",
+                    categories: {
+                      "Top NAICS Spend",
+                      "Category 2",
+                      "Category 3"
+                    },
+                    series: {
+                      a!chartSeries(label: "Utilities", data: { 5 }),
+                      a!chartSeries(
+                        label: "American Sanitary Products (ASP)",
+                        data: { 4 },
+                        links: {}
+                      ),
+                      a!chartSeries(
+                        label: "Document Imaging Dimensions (DID)",
+                        data: { 3 },
+                        links: {}
+                      ),
+                      a!chartSeries(
+                        label: "Hardware Inc.",
+                        data: { 2 },
+                        links: {}
+                      ),
+                      a!chartSeries(
+                        label: "SPS Industrial",
+                        data: { 1 },
+                        links: {}
+                      )
+                    },
+                    stacking: "NONE",
+                    showLegend: true,
+                    showDataLabels: false,
+                    showTooltips: true,
+                    colorScheme: a!colorSchemeCustom(colors: { local!CategoricalSceme }),
+                    height: "MEDIUM",
+                    xAxisStyle: "NONE",
+                    yAxisStyle: "MINIMAL"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!sectionLayout(
+                    label: "Top PSC Spend",
+                    labelSize: "SMALL",
+                    labelColor: "STANDARD",
+                    labelHeadingTag: "H2",
+                    contents: {},
+                    marginBelow: "NONE"
+                  ),
+                  a!barChartField(
+                    label: "Bar Chart",
+                    labelPosition: "COLLAPSED",
+                    categories: {
+                      "Top NAICS Spend",
+                      "Category 2",
+                      "Category 3",
+                      "2344",
+                      "1243"
+                    },
+                    series: {
+                      a!chartSeries(
+                        label: "Education, Training, Employment, & Social",
+                        data: { 5 }
+                      ),
+                      a!chartSeries(
+                        label: "National Defense",
+                        data: { 4 },
+                        links: {}
+                      ),
+                      a!chartSeries(label: "Energy", data: { 3 }, links: {}),
+                      a!chartSeries(
+                        label: "Natural Resources and Enviornment",
+                        data: { 2 },
+                        links: {}
+                      ),
+                      a!chartSeries(
+                        label: "Income and Security",
+                        data: { 1 },
+                        links: {}
+                      )
+                    },
+                    stacking: "NONE",
+                    showLegend: true,
+                    showDataLabels: false,
+                    showTooltips: true,
+                    colorScheme: a!colorSchemeCustom(colors: { local!CategoricalSceme }),
+                    height: "MEDIUM",
+                    xAxisStyle: "NONE",
+                    yAxisStyle: "MINIMAL"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "MORE",
+                marginBelow: "MORE",
+                borderColor: "#EDEEFA"
+              )
+            },
+            width: "MEDIUM"
+          )
+        }
+      )
+    },
+    backgroundColor: local!AppianBackground
+  )
+)
+```
+
+### Secondary Actions
 ```
 a!headerContentLayout(
   backgroundColor: "#FAFAFC",
@@ -2230,7 +5266,7 @@ a!headerContentLayout(
             time: "02:30 AM",
             isSystemGenerated: false
           ),
-          
+
         }
       ),
       a!map(
@@ -2259,15 +5295,10 @@ a!headerContentLayout(
     },
     local!dateFormat: "MMM D, YYYY",
     {
-      a!richTextDisplayField(
-        labelPosition: "COLLAPSED",
-        value: {
-          a!richTextItem(
-            text: "Order" & " " & "#12345667",
-            size: "LARGE",
-            style: "STRONG"
-          )
-        }
+      a!headingField(
+        text: "Order" & " " & "#12345667",
+        headingTag: "H1",
+        fontWeight: "BOLD"
       ),
       /* KPI header */
       a!cardLayout(
@@ -2429,7 +5460,8 @@ a!headerContentLayout(
           )
         },
         padding: "STANDARD",
-        marginBelow: "MORE"
+        marginBelow: "MORE",
+        borderColor: "#EDEEFA"
       ),
       a!columnsLayout(
         columns: {
@@ -2441,11 +5473,12 @@ a!headerContentLayout(
                   contents: {
                     a!sectionLayout(
                       label: "Package Tracking",
-                      labelIcon: "box",
+                      accessibilityText: "H2",
                       labelColor: "STANDARD",
                       labelSize: "SMALL",
                       contents: a!cardLayout(
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!forEach(
                             items: local!packageTrackingMilestones,
@@ -2500,7 +5533,7 @@ a!headerContentLayout(
                     ),
                     a!sectionLayout(
                       label: "Customer",
-                      labelIcon: "user",
+                      accessibilityText: "H2",
                       labelColor: "STANDARD",
                       labelSize: "SMALL",
                       contents: a!cardLayout(
@@ -2565,7 +5598,8 @@ a!headerContentLayout(
                           )
                         },
                         padding: "STANDARD",
-                        marginBelow: "STANDARD"
+                        marginBelow: "STANDARD",
+                        borderColor: "#EDEEFA"
                       )
                     )
                   },
@@ -2580,16 +5614,18 @@ a!headerContentLayout(
                   contents: {
                     a!sectionLayout(
                       label: "Shipping",
-                      labelIcon: "truck",
+                      accessibilityText: "H2",
                       labelColor: "STANDARD",
                       labelSize: "SMALL",
                       contents: a!cardLayout(
                         padding: "STANDARD",
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!sectionLayout(
                             label: upper("Details"),
                             labelSize: "EXTRA_SMALL",
+                            labelHeadingTag: "H3",
                             labelColor: "SECONDARY",
                             contents: {
                               a!columnsLayout(
@@ -2767,12 +5803,13 @@ a!headerContentLayout(
                     ),
                     a!sectionLayout(
                       label: "Order Items",
-                      labelIcon: "list",
+                      accessibilityText: "H2",
                       labelColor: "STANDARD",
                       labelSize: "SMALL",
                       contents: a!cardLayout(
                         padding: "STANDARD",
                         shape: "SEMI_ROUNDED",
+                        borderColor: "#EDEEFA",
                         contents: {
                           a!columnsLayout(
                             columns: {
@@ -2802,6 +5839,7 @@ a!headerContentLayout(
                                                 contents: {
                                                   a!sectionLayout(
                                                     label: upper(fv!item.name),
+                                                    labelHeadingTag: "H3",
                                                     labelSize: "EXTRA_SMALL",
                                                     labelColor: "SECONDARY",
                                                     contents: {
@@ -2865,6 +5903,7 @@ a!headerContentLayout(
                                     label: upper("Summary"),
                                     labelSize: "EXTRA_SMALL",
                                     labelColor: "SECONDARY",
+                                    labelHeadingTag: "H3",
                                     contents: {
                                       a!richTextDisplayField(
                                         label: "Items" & " (" & length(local!orderItems) & ")",
@@ -2954,7 +5993,7 @@ a!headerContentLayout(
                     contents: {
                       a!sectionLayout(
                         label: "Documents",
-                        labelIcon: "folder-open",
+                        accessibilityText: "H2",
                         labelColor: "STANDARD",
                         labelSize: "SMALL",
                         contents: {
@@ -3042,7 +6081,8 @@ a!headerContentLayout(
                                   marginBelow: "NONE"
                                 )
                               },
-                              marginBelow: "LESS"
+                              marginBelow: "LESS",
+                              borderColor: "#EDEEFA"
                             )
                           )
                         }
@@ -3053,7 +6093,7 @@ a!headerContentLayout(
                     contents: {
                       a!sectionLayout(
                         label: "Activity Log",
-                        labelIcon: "clock",
+                        accessibilityText: "H2",
                         labelColor: "STANDARD",
                         labelSize: "SMALL",
                         contents: {
@@ -3096,7 +6136,8 @@ a!headerContentLayout(
                                       }
                                     )
                                   },
-                                  marginBelow: "LESS"
+                                  marginBelow: "LESS",
+                                  borderColor: "#EDEEFA"
                                 )
                               )
                             }

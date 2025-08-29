@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-10-24"
+last_updated: "2025-08-29"
 ---
 
 # Pick List
@@ -220,13 +220,12 @@ a!localVariables(
                   a!sideBySideLayout(
                     items: {
                       a!sideBySideItem(
-                        item: a!richTextDisplayField(
-                          labelPosition: "COLLAPSED",
-                          value: a!richTextItem(
-                            text: "Available Line Items",
-                            size: "MEDIUM",
-                            style: "STRONG"
-                          )
+                        item: a!headingField(
+                          text: "Available Line Items",
+                          size: "SMALL",
+                          headingTag: "H2",
+                          fontWeight: "SEMI_BOLD",
+                          marginBelow: "NONE"
                         ),
                         width: "MINIMIZE"
                       ),
@@ -432,13 +431,12 @@ a!localVariables(
                   a!sideBySideLayout(
                     items: {
                       a!sideBySideItem(
-                        item: a!richTextDisplayField(
-                          labelPosition: "COLLAPSED",
-                          value: a!richTextItem(
-                            text: "Selected Line Items",
-                            size: "MEDIUM",
-                            style: "STRONG"
-                          )
+                        item: a!headingField(
+                          text: "Selected Line Items",
+                          size: "SMALL",
+                          headingTag: "H2",
+                          fontWeight: "SEMI_BOLD",
+                          marginBelow: "NONE"
                         ),
                         width: "MINIMIZE"
                       ),

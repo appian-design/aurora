@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-06-08"
+last_updated: "2025-08-29"
 ---
 
 # Typography
@@ -86,26 +86,32 @@ a!headerContentLayout(
 
 ```
 a!columnsLayout(
+  alignVertical: "MIDDLE",
   columns: {
     a!columnLayout(
       contents: {
         a!sectionLayout(
           label: "Section Title",
+          labelColor: "STANDARD",
           labelSize: "SMALL",
-          accessibilityHeadingTag: "H2",
+          labelHeadingTag: "H2",
+          marginBelow: "NONE",
           contents: {
-            // Section content goes here
+            /* Section content goes here */
           }
         )
       }
     ),
     a!columnLayout(
-      width: "MINIMIZE",
+      width: "NARROW",
       contents: {
-        a!buttonWidget(
-          label: "Add New",
-          icon: "plus",
-          style: "SECONDARY"
+        a!buttonArrayLayout(
+          buttons: a!buttonWidget(
+            label: "Add New",
+            icon: "plus",
+            style: "OUTLINE",
+            color: "SECONDARY"
+          )
         )
       }
     )
@@ -117,18 +123,25 @@ a!columnsLayout(
 
 ```
 a!sideBySideLayout(
+  alignVertical: "MIDDLE",
   items: {
     a!sideBySideItem(
-      item: a!richTextHeader(
+      item: a!headingField(
         text: "Section Title",
-        size: "MEDIUM"
+        size: "SMALL",
+        fontWeight: "SEMI_BOLD",
+        headingTag: "H2"
       )
     ),
     a!sideBySideItem(
       width: "MINIMIZE",
-      item: a!badgeField(
-        value: 5,
-        color: "ACCENT"
+      item: a!tagField(
+        labelPosition: "COLLAPSED",
+        tags: {
+          a!tagItem(
+            text: 5
+          )
+        }
       )
     )
   }

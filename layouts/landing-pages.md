@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-12-19"
+last_updated: "2025-08-29"
 ---
 
 # Landing Pages
@@ -79,7 +79,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Active Awards",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -556,8 +556,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "NONE",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             )
@@ -569,7 +568,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Awards by Status",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -655,15 +654,14 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Funds Obligated",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -718,15 +716,14 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
             a!sectionLayout(
               label: "Funds Spent",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -777,8 +774,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               },
               marginBelow: "STANDARD"
@@ -786,7 +782,7 @@ a!headerContentLayout(
             a!sectionLayout(
               label: "Socio-Economic Targets",
               labelSize: "SMALL",
-              labelHeadingTag: "H3",
+              labelHeadingTag: "H2",
               labelColor: "STANDARD",
               contents: {
                 a!cardLayout(
@@ -942,8 +938,7 @@ a!headerContentLayout(
                   shape: "SEMI_ROUNDED",
                   padding: "STANDARD",
                   marginBelow: "STANDARD",
-                  showBorder: false,
-                  showShadow: true
+                  borderColor: "#EDEEFA"
                 )
               }
             ),
@@ -991,7 +986,7 @@ a!headerContentLayout(
                 a!buttonArrayLayout(
                   buttons: {
                     a!buttonWidget(
-                      label: "Mark complete",
+                      label: "Mark Complete",
                       icon: "plus",
                       size: "SMALL",
                       style: "SECONDARY",
@@ -1952,7 +1947,7 @@ a!headerContentLayout(
       }
     )
   },
-  backgroundColor: "#FAFAFA"
+  backgroundColor: "#FAFAFC"
 )
 ```
 
@@ -1966,8 +1961,10 @@ a!localVariables(
       a!cardLayout(
         contents: {
           a!columnsLayout(
+            stackWhen: {"TABLET_PORTRAIT", "PHONE"},
             columns: {
               a!columnLayout(
+                width: "3X",
                 contents: {
                   a!columnsLayout(
                     columns: {
@@ -2113,14 +2110,12 @@ a!localVariables(
                   )
                 }
               ),
-              a!columnLayout(contents: {}, width: "NARROW"),
-              a!columnLayout(contents: {}, width: "NARROW"),
               a!columnLayout(
                 contents: {
                   a!buttonArrayLayout(
                     buttons: {
                       a!buttonWidget(
-                        label: "NEW CASE",
+                        label: "New Case",
                         icon: "plus",
                         saveInto: a!save(local!case, true),
                         size: "LARGE",
@@ -2647,8 +2642,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "NONE",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               ),
               a!columnsLayout(
                 columns: {
@@ -3448,8 +3442,7 @@ a!localVariables(
                 padding: "NONE",
                 shape: "SEMI_ROUNDED",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               )
             },
             width: "MEDIUM"
@@ -3586,7 +3579,7 @@ a!localVariables(
                       a!buttonArrayLayout(
                         buttons: {
                           a!buttonWidget(
-                            label: "Update ",
+                            label: "Update",
                             icon: "pencil-square-o",
                             size: "SMALL",
                             style: "OUTLINE",
@@ -4024,16 +4017,14 @@ a!localVariables(
                     height: "AUTO",
                     style: "NONE",
                     marginBelow: "NONE",
-                    showBorder: false
-                  ),
-
+                    borderColor: "#EDEEFA"
+                  )
                 },
                 height: "AUTO",
                 style: "NONE",
                 padding: "NONE",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               )
             }
           ),
@@ -4194,8 +4185,7 @@ a!localVariables(
                 height: "AUTO",
                 style: "NONE",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               ),
               a!sectionLayout(
                 label: "Cases by Status",
@@ -4318,8 +4308,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "STANDARD",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               ),
               a!sectionLayout(
                 label: "Cases by Type",
@@ -4442,8 +4431,7 @@ a!localVariables(
                 shape: "SEMI_ROUNDED",
                 padding: "STANDARD",
                 marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
+                borderColor: "#EDEEFA"
               ),
               a!sectionLayout(
                 label: "Resources",
@@ -4575,8 +4563,7 @@ a!localVariables(
                 },
                 height: "AUTO",
                 style: "NONE",
-                showBorder: false,
-                showShadow: true,
+                borderColor: "#EDEEFA",
                 shape: "SEMI_ROUNDED",
                 marginBelow: "STANDARD"
               )
@@ -4586,7 +4573,7 @@ a!localVariables(
         }
       )
     },
-    backgroundColor: "#FAFAFA"
+    backgroundColor: "#FAFAFC"
   )
 )
 ```
@@ -4594,110 +4581,217 @@ a!localVariables(
 #### Guided Experience
 
 ```
-a!headerContentLayout(
-  header: {
-    a!billboardLayout(
-      backgroundMedia: a!webImage(
-        source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image.png"
-      ),
-      backgroundColor: "#f0f0f0",
-      height: "MEDIUM",
-      marginBelow: "NONE",
-      overlay: a!barOverlay(
-        position: "BOTTOM",
-        contents: {
-          a!richTextDisplayField(
-            label: "Rich Text",
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(
-                text: {
-                  "Safely manage "
-                },
-                size: "LARGE"
-              ),
-              char(10),
-              a!richTextItem(
-                text: {
-                  "your onsite workforce "
-                },
-                size: "LARGE"
-              ),
-              char(10),
-              char(10),
-              char(10)
-            }
-          ),
-          a!columnsLayout(
-            columns: {
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!richTextDisplayField(
-                        label: "Rich Text",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: {
-                              "Workforce Safety Homepage",
-                              a!richTextItem(
-                                text: {
-                                  " ",
-                                  a!richTextIcon(
-                                    icon: "external-link-square"
-                                  )
-                                },
-                                style: {
-                                  "STRONG"
-                                }
-                              )
-                            },
-                            color: "ACCENT",
-                            size: "MEDIUM"
-                          ),
-                          char(10),
-                          char(10),
-                          a!richTextItem(
-                            text: {
-                              "Take a look at how Workforce Safety serves your users"
-                            },
-                            color: "#666666",
-                            size: "STANDARD"
-                          )
-                        }
-                      )
-                    },
-                    link: a!dynamicLink(
-                      label: "Dynamic Link",
-                      saveInto: {}
-                    ),
-                    height: "SHORT",
-                    style: "NONE",
-                    padding: "STANDARD",
-                    marginBelow: "NONE",
-                    showBorder: true,
-                    showShadow: true
-                  )
-                },
-                width: "AUTO"
-              ),
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!richTextDisplayField(
-                        label: "Rich Text",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: {
-                              "Workforce Safety Documentation",
+a!localVariables(
+  /* Header Cards Data */
+  local!headerCards: {
+    {
+      title: "Workforce Safety Homepage",
+      description: "Take a look at how Workforce Safety serves your users",
+      icon: "external-link-square",
+      showIcon: true,
+      link: a!dynamicLink(),
+      showBorder: true
+    },
+    {
+      title: "Workforce Safety Documentation", 
+      description: "Understand how Workforce Safety can help your organization",
+      icon: "external-link-square",
+      showIcon: true,
+      link: a!dynamicLink(),
+      showBorder: false
+    },
+    {
+      title: "Understand Workforce Safety",
+      description: "Take a tour of the different features available in Workforce Safety", 
+      icon: null,
+      showIcon: false,
+      link: a!dynamicLink(),
+      showBorder: true
+    }
+  },
+
+  /* Setup Cards Data */
+  local!setupCards: {
+    {
+      icon: "qrcode",
+      title: "Pass Requests",
+      description: "Configure the information requested from your employees",
+      infoText: "Information needed",
+      infoCaption: "Facilties, Departments and Pass Requests Questions",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "comments", 
+      title: "Contact Tracing",
+      description: "Keep track of employees that could be exposed to a COVID infection",
+      infoText: "Information needed",
+      infoCaption: "Facilities and Areas",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "shield",
+      title: "Health Information",
+      description: "Understand vaccination status and COVID-19 history of employees",
+      infoText: "Information needed", 
+      infoCaption: "Health Information Questions",
+      link: a!dynamicLink()
+    }
+  },
+
+  /* Questionnaire Cards Data */
+  local!questionnaireCards: {
+    {
+      icon: "qrcode",
+      title: "Pass Requests",
+      status: "ACTIVE",
+      statusColor: "STANDARD",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "clipboard",
+      title: "Intake Survey", 
+      status: "INACTIVE",
+      statusColor: "SECONDARY",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "bed",
+      title: "Isolation Update",
+      status: "ACTIVE", 
+      statusColor: "STANDARD",
+      link: a!dynamicLink()
+    }
+  },
+  /* Feature Management Cards Data */
+  local!featureCards: {
+    {
+      icon: "exclamation-triangle",
+      title: "Incident Management",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "sign-in",
+      title: "Capacity Management", 
+      link: a!dynamicLink()
+    },
+    {
+      icon: "th",
+      title: "Cohort Management",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "medkit", 
+      title: "COVID-19 Testing",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "book",
+      title: "Safety Guidelines",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "comments",
+      title: "Contact Tracing", 
+      link: a!dynamicLink()
+    },
+    {
+      icon: "shield",
+      title: "Health Information",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "hand-paper-o",
+      title: "Community Volunteering",
+      link: a!dynamicLink()
+    }
+  },
+  /* Communication Cards Data */
+  local!communicationCards: {
+    {
+      icon: "bullhorn",
+      title: "Announcements",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "external-link-square",
+      title: "Helpful Links",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "files-o", 
+      title: "Policy Documents",
+      link: a!dynamicLink()
+    }
+  },
+  /* System Settings Cards Data */
+  local!systemCards: {
+    {
+      icon: "paint-brush",
+      title: "Branding",
+      link: a!dynamicLink()
+    },
+    {
+      icon: "users",
+      title: "User Groups", 
+      link: a!dynamicLink()
+    },
+    {
+      icon: "floppy-o",
+      title: "Data Management",
+      link: a!dynamicLink()
+    }
+  },
+  a!headerContentLayout(
+    header: {
+      a!billboardLayout(
+        backgroundMedia: a!webImage(
+          source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image.png"
+        ),
+        backgroundColor: "#FAFAFC",
+        height: "MEDIUM",
+        marginBelow: "NONE",
+        overlay: a!barOverlay(
+          position: "BOTTOM",
+          contents: {
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(
+                  text: {
+                    "Safely manage "
+                  },
+                  size: "LARGE"
+                ),
+                char(10),
+                a!richTextItem(
+                  text: {
+                    "your onsite workforce "
+                  },
+                  size: "LARGE"
+                ),
+                char(10),
+                char(10),
+                char(10)
+              }
+            ),
+            a!cardGroupLayout(
+              cards: a!forEach(
+                items: local!headerCards,
+                expression: a!cardLayout(
+                  contents: {
+                    a!richTextDisplayField(
+                      labelPosition: "COLLAPSED",
+                      value: {
+                        a!richTextItem(
+                          text: if(
+                            fv!item.showIcon,
+                            {
+                              fv!item.title,
                               a!richTextItem(
                                 text: {
                                   " ",
                                   a!richTextIcon(
-                                    icon: "external-link-square"
+                                    icon: fv!item.icon
                                   )
                                 },
                                 style: {
@@ -4705,1733 +4799,619 @@ a!headerContentLayout(
                                 }
                               )
                             },
-                            color: "ACCENT",
-                            size: "MEDIUM"
+                            fv!item.title
                           ),
-                          char(10),
-                          char(10),
-                          a!richTextItem(
-                            text: {
-                              "Understand how Workforce Safety can help your organization"
-                            },
-                            color: "#666666",
-                            size: "STANDARD"
-                          )
-                        }
-                      )
-                    },
-                    link: a!dynamicLink(
-                      label: "Dynamic Link",
-                      saveInto: {}
-                    ),
-                    height: "SHORT",
-                    style: "NONE",
-                    padding: "STANDARD",
-                    marginBelow: "NONE",
-                    showShadow: true
-                  )
-                }
+                          color: "ACCENT",
+                          size: "MEDIUM"
+                        ),
+                        char(10),
+                        char(10),
+                        a!richTextItem(
+                          text: fv!item.description,
+                          color: "#666666",
+                          size: "STANDARD"
+                        )
+                      }
+                    )
+                  },
+                  link: fv!item.link,
+                  height: "SHORT",
+                  style: "NONE",
+                  padding: "STANDARD",
+                  marginBelow: "NONE",
+                  borderColor: "#EDEEFA",
+                  shape: "SEMI_ROUNDED"
+                )
               ),
-              a!columnLayout(
+              marginBelow: "NONE"
+            )
+          },
+          style: "NONE"
+        )
+      )
+    },
+    contents: {
+      a!cardLayout(
+        contents: {
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: {
+              a!richTextItem(
+                text: {
+                  "Set Up Workforce Safety"
+                },
+                size: "MEDIUM_PLUS"
+              ),
+              char(10)
+            }
+          ),
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: {
+              a!richTextItem(
+                text: {
+                  "To get started with using Workforce Safety, configure the following features for your organization"
+                },
+                color: "SECONDARY",
+                size: "STANDARD"
+              ),
+              char(10),
+              char(10)
+            }
+          ),
+          a!cardGroupLayout(
+            cards: a!forEach(
+              items: local!setupCards,
+              expression: a!cardLayout(
                 contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!richTextDisplayField(
-                        label: "Rich Text",
-                        labelPosition: "COLLAPSED",
-                        value: {
-                          a!richTextItem(
-                            text: {
-                              "Understand Workforce Safety"
-                            },
-                            color: "ACCENT",
-                            size: "MEDIUM"
-                          ),
-                          char(10),
-                          char(10),
-                          a!richTextItem(
-                            text: {
-                              "Take a tour of the different features available in Workforce Safety"
-                            },
-                            color: "#666666",
-                            size: "STANDARD"
-                          )
-                        }
+                  a!sideBySideLayout(
+                    items: {
+                      a!sideBySideItem(
+                        item: a!stampField(
+                          label: "Stamp",
+                          labelPosition: "COLLAPSED",
+                          icon: fv!item.icon,
+                          text: "",
+                          backgroundColor: "#E0E0E0",
+                          contentColor: "ACCENT",
+                          size: "SMALL",
+                          align: "START"
+                        ),
+                        width: "MINIMIZE"
+                      ),
+                      a!sideBySideItem(
+                        item: a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: {
+                            a!richTextItem(
+                              text: fv!item.title,
+                              color: "ACCENT",
+                              size: "MEDIUM",
+                              style: {
+                                "STRONG"
+                              }
+                            ),
+                            char(10)
+                          }
+                        ),
+                        width: "MINIMIZE"
                       )
                     },
-                    link: a!dynamicLink(
-                      label: "Dynamic Link",
-                      saveInto: {}
-                    ),
-                    height: "SHORT",
-                    style: "NONE",
-                    padding: "STANDARD",
-                    marginBelow: "NONE",
-                    showBorder: true,
-                    showShadow: true
+                    alignVertical: "MIDDLE"
+                  ),
+                  a!richTextDisplayField(
+                    labelPosition: "COLLAPSED",
+                    value: {
+                      a!richTextItem(
+                        text: fv!item.description,
+                        color: "#666666"
+                      ),
+                      char(10),
+                      char(10),
+                      a!richTextItem(
+                        text: {
+                          fv!item.infoText & " ",
+                          a!richTextIcon(
+                            icon: "info-circle",
+                            caption: fv!item.infoCaption
+                          )
+                        },
+                        color: "SECONDARY"
+                      ),
+                      char(10)
+                    }
                   )
-                }
+                },
+                link: fv!item.link,
+                height: "AUTO",
+                style: "NONE",
+                padding: "LESS",
+                marginBelow: "STANDARD",
+                shape: "SEMI_ROUNDED"
               )
-            },
-            marginBelow: "NONE"
+            )
           )
         },
-        style: "NONE"
-      )
-    )
-  },
-  contents: {
-    a!cardLayout(
-      contents: {
-        a!richTextDisplayField(
-          label: "Rich Text",
-          labelPosition: "COLLAPSED",
-          value: {
-            a!richTextItem(
-              text: {
-                "Set Up Workforce Safety"
-              },
-              size: "MEDIUM_PLUS"
-            ),
-            char(10)
-          }
-        ),
-        a!richTextDisplayField(
-          label: "",
-          labelPosition: "COLLAPSED",
-          value: {
-            a!richTextItem(
-              text: {
-                "To get started with using Workforce Safety, configure the following features for your organization"
-              },
-              color: "SECONDARY",
-              size: "STANDARD"
-            ),
-            char(10),
-            char(10)
-          }
-        ),
-        a!columnsLayout(
-          columns: {
-            a!columnLayout(
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            label: "Stamp",
-                            labelPosition: "COLLAPSED",
-                            icon: "qrcode",
-                            text: "",
-                            backgroundColor: "#f3f3f3",
-                            contentColor: "ACCENT",
-                            size: "SMALL",
-                            align: "START"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            label: "Rich Text",
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  "Pass Requests"
-                                },
-                                color: "ACCENT",
-                                size: "MEDIUM",
-                                style: {
-                                  "STRONG"
-                                }
-                              ),
-                              char(10)
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      alignVertical: "MIDDLE"
+        height: "AUTO",
+        style: "NONE",
+        padding: "STANDARD",
+        marginBelow: "STANDARD",
+        borderColor: "#EDEEFA",
+        shape: "SEMI_ROUNDED"
+      ),
+      a!cardLayout(
+        contents: {
+          {
+            a!localVariables(
+              local!selectedTab: 1,
+              local!toggle1: true,
+              {
+                a!buttonArrayLayout(
+                  buttons: {
+                    a!buttonWidget(
+                      label: "General Settings",
+                      saveInto: if(local!selectedTab = 1, {}, a!save(local!selectedTab, 1)),
+                      size: "SMALL",
+                      width: "MINIMIZE",
+                      style: if(local!selectedTab = 1, "SOLID", "LINK")
                     ),
-                    a!richTextDisplayField(
-                      label: "",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: {
-                            "Configure the information requested from your employees "
-                          },
-                          color: "#666666"
-                        ),
-                        char(10),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Information needed ",
-                            a!richTextIcon(
-                              icon: "info-circle",
-                              caption: "Facilties, Departments and Pass Requests Questions"
-                            )
-                          },
-                          color: "SECONDARY"
-                        ),
-                        char(10)
-                      }
+                    a!buttonWidget(
+                      label: "Facilities",
+                      saveInto: if(local!selectedTab = 2, {}, a!save(local!selectedTab, 2)),
+                      size: "SMALL",
+                      width: "MINIMIZE",
+                      style: if(local!selectedTab = 2, "SOLID", "LINK")
+                    ),
+                    a!buttonWidget(
+                      label: "Departments",
+                      saveInto: if(local!selectedTab = 3, {}, a!save(local!selectedTab, 3)),
+                      size: "SMALL",
+                      width: "MINIMIZE",
+                      style: if(local!selectedTab = 3, "SOLID", "LINK")
+                    ),
+                    a!buttonWidget(
+                      label: "Areas",
+                      saveInto: if(local!selectedTab = 4, {}, a!save(local!selectedTab, 4)),
+                      size: "SMALL",
+                      width: "MINIMIZE",
+                      style: if(local!selectedTab = 4, "SOLID", "LINK")
                     )
                   },
-                  link: a!dynamicLink(
-                    label: "Dynamic Link",
-                    saveInto: {}
-                  ),
-                  height: "AUTO",
-                  style: "NONE",
-                  padding: "LESS",
-                  marginBelow: "STANDARD",
-                  showShadow: true
-                )
-              }
-            ),
-            a!columnLayout(
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            label: "Stamp",
-                            labelPosition: "COLLAPSED",
-                            icon: "comments",
-                            text: "",
-                            backgroundColor: "#f3f3f3",
-                            contentColor: "ACCENT",
-                            size: "SMALL",
-                            align: "START"
+                  align: "START",
+                  marginBelow: "STANDARD"
+                ),
+
+                {
+                  choose(
+                    local!selectedTab,
+                    {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Questionnaire Settings"
+                            },
+                            size: "MEDIUM_PLUS"
                           ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            label: "Rich Text",
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  "Contact Tracing"
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Tailor the questions needed within your organization for Pass Request, Intake Survey and Isolation Update"
+                            },
+                            color: "SECONDARY"
+                          ),
+                          char(10),
+                          char(10)
+                        }
+                      ),
+                      a!cardLayout(
+                        contents: {
+                          a!columnsLayout(
+                            columns: {
+                              a!columnLayout(
+                                contents: {
+                                  a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextIcon(
+                                        icon: if(local!toggle1=true, "toggle-on","toggle-off"),
+                                        caption: if(local!toggle1=true, "On","Off"),
+                                        link: a!dynamicLink(
+                                          value: if(local!toggle1=true, false,true),
+                                          saveInto: local!toggle1
+                                        ),
+                                        linkStyle: "STANDALONE",
+                                        color:"ACCENT",
+                                        size: "LARGE"
+                                      )
+                                    },
+                                    align: "LEFT"
+                                  )
                                 },
-                                color: "ACCENT",
-                                size: "MEDIUM",
-                                style: {
-                                  "STRONG"
+                                width: "EXTRA_NARROW"
+                              ),
+                              a!columnLayout(
+                                contents: {
+                                  a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          "Prepopulate questionnaire answers"
+                                        },
+                                        size: "STANDARD",
+                                        style: {
+                                          "STRONG"
+                                        }
+                                      ),
+                                      char(10),
+                                      a!richTextItem(
+                                        text: {
+                                          "When toggled on, questionnaires are prepopulated with a users previous answers. When toggled off, performance may be impacted."
+                                        },
+                                        color: "SECONDARY"
+                                      ),
+                                      char(10)
+                                    }
+                                  )
+                                }
+                              )
+                            },
+                            marginBelow: "NONE",
+                            spacing: "NONE"
+                          )
+                        },
+                        height: "AUTO",
+                        style: "NONE",
+                        padding: "LESS",
+                        marginBelow: "STANDARD",
+                        showBorder: true,
+                        shape: "SEMI_ROUNDED"
+                      ),
+                      a!cardGroupLayout(
+                        cards: a!forEach(
+                          items: local!questionnaireCards,
+                          expression: a!cardLayout(
+                            contents: {
+                              a!sideBySideLayout(
+                                items: {
+                                  a!sideBySideItem(
+                                    item: a!stampField(
+                                      label: "Stamp",
+                                      labelPosition: "COLLAPSED",
+                                      icon: fv!item.icon,
+                                      backgroundColor: "#E0E0E0",
+                                      contentColor: "ACCENT",
+                                      size: "SMALL",
+                                      align: "START"
+                                    ),
+                                    width: "MINIMIZE"
+                                  ),
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextItem(
+                                          text: fv!item.title,
+                                          color: "ACCENT",
+                                          size: "STANDARD",
+                                          style: {
+                                            "STRONG"
+                                          }
+                                        ),
+                                        char(10),
+                                        a!richTextItem(
+                                          text: fv!item.status,
+                                          color: fv!item.statusColor,
+                                          size: "SMALL",
+                                          style: {
+                                            "STRONG"
+                                          }
+                                        )
+                                      }
+                                    )
+                                  ),
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextIcon(
+                                          icon: "angle-right",
+                                          color: "#d9d9d9",
+                                          size: "LARGE"
+                                        )
+                                      }
+                                    ),
+                                    width: "MINIMIZE"
+                                  )
+                                },
+                                alignVertical: "MIDDLE"
+                              )
+                            },
+                            link: fv!item.link,
+                            height: "AUTO",
+                            style: "NONE",
+                            marginBelow: "STANDARD",
+                            shape: "SEMI_ROUNDED"
+                          )
+                        )
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Manage Features "
+                            },
+                            size: "MEDIUM_PLUS"
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Manage the settings for the following Workforce Safety features"
+                            },
+                            color: "SECONDARY"
+                          ),
+                          char(10),
+                          char(10)
+                        }
+                      ),
+                      a!cardGroupLayout(
+                        cards: a!forEach(
+                          items: local!featureCards,
+                          expression: a!cardLayout(
+                            contents: {
+                              a!sideBySideLayout(
+                                items: {
+                                  a!sideBySideItem(
+                                    item: a!stampField(
+                                      label: "Stamp",
+                                      labelPosition: "COLLAPSED",
+                                      icon: fv!item.icon,
+                                      backgroundColor: "#E0E0E0",
+                                      contentColor: "ACCENT",
+                                      size: "SMALL",
+                                      align: "START"
+                                    ),
+                                    width: "MINIMIZE"
+                                  ),
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextItem(
+                                          text: fv!item.title,
+                                          color: "ACCENT",
+                                          size: "STANDARD",
+                                          style: {
+                                            "STRONG"
+                                          }
+                                        )
+                                      }
+                                    )
+                                  ),
+                                  a!sideBySideItem(
+                                    item: a!richTextDisplayField(
+                                      labelPosition: "COLLAPSED",
+                                      value: {
+                                        a!richTextIcon(
+                                          icon: "angle-right",
+                                          color: "#d9d9d9",
+                                          size: "LARGE"
+                                        )
+                                      }
+                                    ),
+                                    width: "MINIMIZE"
+                                  )
+                                },
+                                alignVertical: "MIDDLE"
+                              )
+                            },
+                            link: fv!item.link,
+                            height: "AUTO",
+                            style: "NONE",
+                            marginBelow: "STANDARD",
+                            shape: "SEMI_ROUNDED"
+                          )
+                        )
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Employee Communication and Resources"
+                            },
+                            size: "MEDIUM_PLUS"
+                          ),
+                          char(10),
+                          a!richTextItem(
+                            text: {
+                              "Use the following features to communicate with employees and provide them with useful information"
+                            },
+                            color: "SECONDARY"
+                          ),
+                          char(10),
+                          char(10)
+                        }
+                      )
+                    },
+                    {
+                      /* Replace this rich text with the component or rule that should populate this tab */
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {a!richTextItem(text: "The contents of the second tab would go here", style: "EMPHASIS")},
+                        align: "CENTER"
+                      )
+                    },
+                    {
+                      /* Replace this rich text with the component or rule that should populate this tab */
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {a!richTextItem(text: "The contents of the third tab would go here", style: "EMPHASIS")},
+                        align: "CENTER"
+                      )
+                    },
+                    {
+                      /* Replace this rich text with the component or rule that should populate this tab */
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {a!richTextItem(text: "The contents of the fourth tab would go here", style: "EMPHASIS")},
+                        align: "CENTER"
+                      )
+                    }
+                  ),
+                  a!cardGroupLayout(
+                    cards: a!forEach(
+                      items: local!communicationCards,
+                      expression: a!cardLayout(
+                        contents: {
+                          a!sideBySideLayout(
+                            items: {
+                              a!sideBySideItem(
+                                item: a!stampField(
+                                  label: "Stamp",
+                                  labelPosition: "COLLAPSED",
+                                  icon: fv!item.icon,
+                                  backgroundColor: "#E0E0E0",
+                                  contentColor: "ACCENT",
+                                  size: "SMALL",
+                                  align: "START"
+                                ),
+                                width: "MINIMIZE"
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  labelPosition: "COLLAPSED",
+                                  value: {
+                                    a!richTextItem(
+                                      text: fv!item.title,
+                                      color: "ACCENT",
+                                      size: "STANDARD",
+                                      style: {
+                                        "STRONG"
+                                      }
+                                    )
+                                  }
+                                )
+                              ),
+                              a!sideBySideItem(
+                                item: a!richTextDisplayField(
+                                  labelPosition: "COLLAPSED",
+                                  value: {
+                                    a!richTextIcon(
+                                      icon: "angle-right",
+                                      color: "#d9d9d9",
+                                      size: "LARGE"
+                                    )
+                                  }
+                                ),
+                                width: "MINIMIZE"
+                              )
+                            },
+                            alignVertical: "MIDDLE"
+                          )
+                        },
+                        link: fv!item.link,
+                        height: "AUTO",
+                        style: "NONE",
+                        marginBelow: "STANDARD",
+                        shape: "SEMI_ROUNDED"
+                      )
+                    )
+                  ),
+                  a!richTextDisplayField(
+                    labelPosition: "COLLAPSED",
+                    value: {
+                      char(10),
+                      a!richTextItem(
+                        text: {
+                          "System Settings"
+                        },
+                        size: "MEDIUM_PLUS"
+                      ),
+                      char(10),
+                      char(10)
+                    }
+                  )
+                },
+                a!cardGroupLayout(
+                  cards: a!forEach(
+                    items: local!systemCards,
+                    expression: a!cardLayout(
+                      contents: {
+                        a!sideBySideLayout(
+                          items: {
+                            a!sideBySideItem(
+                              item: a!stampField(
+                                label: "Stamp",
+                                labelPosition: "COLLAPSED",
+                                icon: fv!item.icon,
+                                backgroundColor: "#E0E0E0",
+                                contentColor: "ACCENT",
+                                size: "SMALL",
+                                align: "START"
+                              ),
+                              width: "MINIMIZE"
+                            ),
+                            a!sideBySideItem(
+                              item: a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextItem(
+                                    text: fv!item.title,
+                                    color: "ACCENT",
+                                    size: "STANDARD",
+                                    style: {
+                                      "STRONG"
+                                    }
+                                  )
+                                }
+                              )
+                            ),
+                            a!sideBySideItem(
+                              item: a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: {
+                                  a!richTextIcon(
+                                    icon: "angle-right",
+                                    color: "#d9d9d9",
+                                    size: "LARGE"
+                                  )
                                 }
                               ),
-                              char(10)
-                            }
-                          ),
-                          width: "MINIMIZE"
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    ),
-                    a!richTextDisplayField(
-                      label: "Rich Text",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: {
-                            "Keep track of employees that could be exposed to a COVID infection"
-                          },
-                          color: "#666666"
-                        ),
-                        char(10),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Information needed ",
-                            a!richTextIcon(
-                              icon: "info-circle",
-                              caption: "Facilities and Areas"
+                              width: "MINIMIZE"
                             )
                           },
-                          color: "SECONDARY"
-                        )
-                      }
-                    )
-                  },
-                  link: a!dynamicLink(
-                    label: "Dynamic Link",
-                    saveInto: {}
-                  ),
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showShadow: true
-                )
-              }
-            ),
-            a!columnLayout(
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!stampField(
-                            label: "Stamp",
-                            labelPosition: "COLLAPSED",
-                            icon: "shield",
-                            text: "",
-                            backgroundColor: "#f3f3f3",
-                            contentColor: "ACCENT",
-                            size: "SMALL",
-                            align: "START"
-                          ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            label: "Rich Text",
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  "Health Information"
-                                },
-                                color: "ACCENT",
-                                size: "MEDIUM",
-                                style: {
-                                  "STRONG"
-                                }
-                              ),
-                              a!richTextItem(
-                                text: {
-                                  " "
-                                },
-                                size: "MEDIUM",
-                                style: {
-                                  "STRONG"
-                                }
-                              ),
-                              char(10)
-                            }
-                          ),
-                          width: "AUTO"
+                          alignVertical: "MIDDLE"
                         )
                       },
-                      alignVertical: "MIDDLE"
-                    ),
-                    a!richTextDisplayField(
-                      label: "Rich Text",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        a!richTextItem(
-                          text: {
-                            "Understand vaccination status and COVID-19 history of employees"
-                          },
-                          color: "#666666"
-                        ),
-                        char(10),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Information needed ",
-                            a!richTextIcon(
-                              icon: "info-circle",
-                              caption: "Health Information Questions"
-                            )
-                          },
-                          color: "SECONDARY"
-                        )
-                      }
+                      link: fv!item.link,
+                      height: "AUTO",
+                      style: "NONE",
+                      marginBelow: "STANDARD",
+                      shape: "SEMI_ROUNDED"
                     )
-                  },
-                  link: a!dynamicLink(
-                    label: "Dynamic Link",
-                    saveInto: {}
-                  ),
-                  height: "AUTO",
-                  style: "NONE",
-                  marginBelow: "STANDARD",
-                  showBorder: true,
-                  showShadow: true
+                  )
                 )
               }
             )
           }
-        )
-      },
-      height: "AUTO",
-      style: "NONE",
-      padding: "STANDARD",
-      marginBelow: "STANDARD",
-      showBorder: false,
-      showShadow: true
-    ),
-    a!cardLayout(
-      contents: {
-        {
-          a!localVariables(
-            local!selectedTab: 1,
-            local!toggle1: true,
-            {
-              a!buttonArrayLayout(
-                buttons: {
-                  a!buttonWidget(
-                    label: "General Settings",
-                    saveInto: if(local!selectedTab = 1, {}, a!save(local!selectedTab, 1)),
-                    size: "SMALL",
-                    width: "MINIMIZE",
-                    style: if(local!selectedTab = 1, "SOLID", "LINK")
-                  ),
-                  a!buttonWidget(
-                    label: "Facilities",
-                    saveInto: if(local!selectedTab = 2, {}, a!save(local!selectedTab, 2)),
-                    size: "SMALL",
-                    width: "MINIMIZE",
-                    style: if(local!selectedTab = 2, "SOLID", "LINK")
-                  ),
-                  a!buttonWidget(
-                    label: "Departments",
-                    saveInto: if(local!selectedTab = 3, {}, a!save(local!selectedTab, 3)),
-                    size: "SMALL",
-                    width: "MINIMIZE",
-                    style: if(local!selectedTab = 3, "PRIMARY", "LINK")
-                  ),
-                  a!buttonWidget(
-                    label: "Areas",
-                    saveInto: if(local!selectedTab = 4, {}, a!save(local!selectedTab, 4)),
-                    size: "SMALL",
-                    width: "MINIMIZE",
-                    style: if(local!selectedTab = 4, "PRIMARY", "LINK")
-                  )
-                },
-                align: "START",
-                marginBelow: "STANDARD"
-              ),
-
-              {
-                choose(
-                  local!selectedTab,
-                  {
-                    a!richTextDisplayField(
-                      label: "Rich Text",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Questionnaire Settings"
-                          },
-                          size: "MEDIUM_PLUS"
-                        ),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Tailor the questions needed within your organization for Pass Request, Intake Survey and Isolation Update"
-                          },
-                          color: "SECONDARY"
-                        ),
-                        char(10),
-                        char(10)
-                      }
-                    ),
-                    a!cardLayout(
-                      contents: {
-                        a!columnsLayout(
-                          columns: {
-                            a!columnLayout(
-                              contents: {
-                                a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextIcon(
-                                      icon: if(local!toggle1=true, "toggle-on","toggle-off"),
-                                      caption: if(local!toggle1=true, "On","Off"),
-                                      link: a!dynamicLink(
-                                        value: if(local!toggle1=true, false,true),
-                                        saveInto: local!toggle1
-                                      ),
-                                      linkStyle: "STANDALONE",
-                                      color:"ACCENT",
-                                      size: "LARGE"
-                                    )
-                                  },
-                                  align: "LEFT"
-                                )
-                              },
-                              width: "EXTRA_NARROW"
-                            ),
-                            a!columnLayout(
-                              contents: {
-                                a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: {
-                                        "Prepopulate questionnaire answers"
-                                      },
-                                      size: "STANDARD",
-                                      style: {
-                                        "STRONG"
-                                      }
-                                    ),
-                                    char(10),
-                                    a!richTextItem(
-                                      text: {
-                                        "When toggled on, questionnaires are prepopulated with a users previous answers. When toggled off, performance may be impacted."
-                                      },
-                                      color: "SECONDARY"
-                                    ),
-                                    char(10)
-                                  }
-                                )
-                              }
-                            )
-                          },
-                          marginBelow: "NONE",
-                          spacing: "NONE"
-                        )
-                      },
-                      height: "AUTO",
-                      style: "NONE",
-                      padding: "LESS",
-                      marginBelow: "STANDARD",
-                      showBorder: true
-                    ),
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "qrcode",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Pass Requests"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          ),
-                                          char(10),
-                                          a!richTextItem(
-                                            text: {
-                                              "ACTIVE"
-                                            },
-                                            color: "STANDARD",
-                                            size: "SMALL",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "clipboard",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Intake Survey"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          ),
-                                          char(10),
-                                          a!richTextItem(
-                                            text: {
-                                              "INACTIVE"
-                                            },
-                                            color: "SECONDARY",
-                                            size: "SMALL",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "bed",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Isolation Update"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          ),
-                                          char(10),
-                                          a!richTextItem(
-                                            text: {
-                                              "ACTIVE"
-                                            },
-                                            color: "STANDARD",
-                                            size: "SMALL",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        )
-                      }
-                    ),
-                    a!richTextDisplayField(
-                      label: "Rich Text",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Manage Features "
-                          },
-                          size: "MEDIUM_PLUS"
-                        ),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Manage the settings for the following Workforce Safety features"
-                          },
-                          color: "SECONDARY"
-                        ),
-                        char(10),
-                        char(10)
-                      }
-                    ),
-                    a!columnsLayout(
-                      columns: {
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "exclamation-triangle",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Incident Management"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            ),
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "medkit",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "COVID-19 Testing"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            ),
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "comments",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Contact Tracing"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "sign-in",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Capacity Management"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            ),
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "book",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Safety Guidelines"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            ),
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "shield",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Health Information"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        ),
-                        a!columnLayout(
-                          contents: {
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "th",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Cohort Management"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            ),
-                            a!cardLayout(
-                              contents: {
-                                a!sideBySideLayout(
-                                  items: {
-                                    a!sideBySideItem(
-                                      item: a!stampField(
-                                        label: "Stamp",
-                                        labelPosition: "COLLAPSED",
-                                        icon: "hand-paper-o",
-                                        text: "",
-                                        backgroundColor: "#f3f3f3",
-                                        contentColor: "ACCENT",
-                                        size: "SMALL",
-                                        align: "START"
-                                      ),
-                                      width: "MINIMIZE"
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextItem(
-                                            text: {
-                                              "Community Volunteering"
-                                            },
-                                            color: "ACCENT",
-                                            size: "STANDARD",
-                                            style: {
-                                              "STRONG"
-                                            }
-                                          )
-                                        }
-                                      )
-                                    ),
-                                    a!sideBySideItem(
-                                      item: a!richTextDisplayField(
-                                        label: "Rich Text",
-                                        labelPosition: "COLLAPSED",
-                                        value: {
-                                          a!richTextIcon(
-                                            icon: "angle-right",
-                                            color: "#d9d9d9",
-                                            size: "LARGE"
-                                          )
-                                        }
-                                      ),
-                                      width: "MINIMIZE"
-                                    )
-                                  },
-                                  alignVertical: "MIDDLE"
-                                )
-                              },
-                              link: a!dynamicLink(
-                                label: "Dynamic Link",
-                                saveInto: {}
-                              ),
-                              height: "AUTO",
-                              style: "NONE",
-                              marginBelow: "STANDARD"
-                            )
-                          }
-                        )
-                      }
-                    ),
-                    a!richTextDisplayField(
-                      label: "Rich Text",
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Employee Communication and Resources"
-                          },
-                          size: "MEDIUM_PLUS"
-                        ),
-                        char(10),
-                        a!richTextItem(
-                          text: {
-                            "Use the following features to communicate with employees and provide them with useful information"
-                          },
-                          color: "SECONDARY"
-                        ),
-                        char(10),
-                        char(10)
-                      }
-                    )
-                  },
-                  {
-                    /* Replace this rich text with the component or rule that should populate this tab */
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {a!richTextItem(text: "The contents of the second tab would go here", style: "EMPHASIS")},
-                      align: "CENTER"
-                    )
-                  },
-                  {
-                    /* Replace this rich text with the component or rule that should populate this tab */
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {a!richTextItem(text: "The contents of the third tab would go here", style: "EMPHASIS")},
-                      align: "CENTER"
-                    )
-                  },
-                  {
-                    /* Replace this rich text with the component or rule that should populate this tab */
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {a!richTextItem(text: "The contents of the fourth tab would go here", style: "EMPHASIS")},
-                      align: "CENTER"
-                    )
-                  }
-                ),
-                a!columnsLayout(
-                  columns: {
-                    a!columnLayout(
-                      contents: {
-                        a!cardLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!stampField(
-                                    label: "Stamp",
-                                    labelPosition: "COLLAPSED",
-                                    icon: "bullhorn",
-                                    text: "",
-                                    backgroundColor: "#f3f3f3",
-                                    contentColor: "ACCENT",
-                                    size: "SMALL",
-                                    align: "START"
-                                  ),
-                                  width: "MINIMIZE"
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: {
-                                          "Announcements"
-                                        },
-                                        color: "ACCENT",
-                                        size: "STANDARD",
-                                        style: {
-                                          "STRONG"
-                                        }
-                                      )
-                                    }
-                                  )
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextIcon(
-                                        icon: "angle-right",
-                                        color: "#d9d9d9",
-                                        size: "LARGE"
-                                      )
-                                    }
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE"
-                            )
-                          },
-                          link: a!dynamicLink(
-                            label: "Dynamic Link",
-                            saveInto: {}
-                          ),
-                          height: "AUTO",
-                          style: "NONE",
-                          marginBelow: "STANDARD"
-                        )
-                      }
-                    ),
-                    a!columnLayout(
-                      contents: {
-                        a!cardLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!stampField(
-                                    label: "Stamp",
-                                    labelPosition: "COLLAPSED",
-                                    icon: "external-link-square",
-                                    text: "",
-                                    backgroundColor: "#f3f3f3",
-                                    contentColor: "ACCENT",
-                                    size: "SMALL",
-                                    align: "START"
-                                  ),
-                                  width: "MINIMIZE"
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: {
-                                          "Helpful Links"
-                                        },
-                                        color: "ACCENT",
-                                        size: "STANDARD",
-                                        style: {
-                                          "STRONG"
-                                        }
-                                      )
-                                    }
-                                  )
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextIcon(
-                                        icon: "angle-right",
-                                        color: "#d9d9d9",
-                                        size: "LARGE"
-                                      )
-                                    }
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE"
-                            )
-                          },
-                          link: a!dynamicLink(
-                            label: "Dynamic Link",
-                            saveInto: {}
-                          ),
-                          height: "AUTO",
-                          style: "NONE",
-                          marginBelow: "STANDARD"
-                        )
-                      }
-                    ),
-                    a!columnLayout(
-                      contents: {
-                        a!cardLayout(
-                          contents: {
-                            a!sideBySideLayout(
-                              items: {
-                                a!sideBySideItem(
-                                  item: a!stampField(
-                                    label: "Stamp",
-                                    labelPosition: "COLLAPSED",
-                                    icon: "files-o",
-                                    text: "",
-                                    backgroundColor: "#f3f3f3",
-                                    contentColor: "ACCENT",
-                                    size: "SMALL",
-                                    align: "START"
-                                  ),
-                                  width: "MINIMIZE"
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextItem(
-                                        text: {
-                                          "Policy Documents"
-                                        },
-                                        color: "ACCENT",
-                                        size: "STANDARD",
-                                        style: {
-                                          "STRONG"
-                                        }
-                                      )
-                                    }
-                                  )
-                                ),
-                                a!sideBySideItem(
-                                  item: a!richTextDisplayField(
-                                    label: "Rich Text",
-                                    labelPosition: "COLLAPSED",
-                                    value: {
-                                      a!richTextIcon(
-                                        icon: "angle-right",
-                                        color: "#d9d9d9",
-                                        size: "LARGE"
-                                      )
-                                    }
-                                  ),
-                                  width: "MINIMIZE"
-                                )
-                              },
-                              alignVertical: "MIDDLE"
-                            )
-                          },
-                          link: a!dynamicLink(
-                            label: "Dynamic Link",
-                            saveInto: {}
-                          ),
-                          height: "AUTO",
-                          style: "NONE",
-                          marginBelow: "STANDARD"
-                        )
-                      }
-                    )
-                  }
-                ),
-                a!richTextDisplayField(
-                  label: "Rich Text",
-                  labelPosition: "COLLAPSED",
-                  value: {
-                    char(10),
-                    a!richTextItem(
-                      text: {
-                        "System Settings"
-                      },
-                      size: "MEDIUM_PLUS"
-                    ),
-                    char(10),
-                    char(10)
-                  }
-                )
-              },
-              a!columnsLayout(
-                columns: {
-                  a!columnLayout(
-                    contents: {
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!stampField(
-                                  label: "Stamp",
-                                  labelPosition: "COLLAPSED",
-                                  icon: "paint-brush",
-                                  text: "",
-                                  backgroundColor: "#f3f3f3",
-                                  contentColor: "ACCENT",
-                                  size: "SMALL",
-                                  align: "START"
-                                ),
-                                width: "MINIMIZE"
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: {
-                                        "Branding"
-                                      },
-                                      color: "ACCENT",
-                                      size: "STANDARD",
-                                      style: {
-                                        "STRONG"
-                                      }
-                                    )
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextIcon(
-                                      icon: "angle-right",
-                                      color: "#d9d9d9",
-                                      size: "LARGE"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE"
-                          )
-                        },
-                        link: a!dynamicLink(
-                          label: "Dynamic Link",
-                          saveInto: {}
-                        ),
-                        height: "AUTO",
-                        style: "NONE",
-                        marginBelow: "STANDARD"
-                      )
-                    }
-                  ),
-                  a!columnLayout(
-                    contents: {
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!stampField(
-                                  label: "Stamp",
-                                  labelPosition: "COLLAPSED",
-                                  icon: "users",
-                                  text: "",
-                                  backgroundColor: "#f3f3f3",
-                                  contentColor: "ACCENT",
-                                  size: "SMALL",
-                                  align: "START"
-                                ),
-                                width: "MINIMIZE"
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: {
-                                        "User Groups"
-                                      },
-                                      color: "ACCENT",
-                                      size: "STANDARD",
-                                      style: {
-                                        "STRONG"
-                                      }
-                                    )
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextIcon(
-                                      icon: "angle-right",
-                                      color: "#d9d9d9",
-                                      size: "LARGE"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE"
-                          )
-                        },
-                        link: a!dynamicLink(
-                          label: "Dynamic Link",
-                          saveInto: {}
-                        ),
-                        height: "AUTO",
-                        style: "NONE",
-                        marginBelow: "STANDARD"
-                      )
-                    }
-                  ),
-                  a!columnLayout(
-                    contents: {
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!stampField(
-                                  label: "Stamp",
-                                  labelPosition: "COLLAPSED",
-                                  icon: "floppy-o",
-                                  text: "",
-                                  backgroundColor: "#f3f3f3",
-                                  contentColor: "ACCENT",
-                                  size: "SMALL",
-                                  align: "START"
-                                ),
-                                width: "MINIMIZE"
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: {
-                                        "Data Management"
-                                      },
-                                      color: "ACCENT",
-                                      size: "STANDARD",
-                                      style: {
-                                        "STRONG"
-                                      }
-                                    )
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  label: "Rich Text",
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextIcon(
-                                      icon: "angle-right",
-                                      color: "#d9d9d9",
-                                      size: "LARGE"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE"
-                          )
-                        },
-                        link: a!dynamicLink(
-                          label: "Dynamic Link",
-                          saveInto: {}
-                        ),
-                        height: "AUTO",
-                        style: "NONE",
-                        marginBelow: "STANDARD"
-                      )
-                    }
-                  )
-                }
-              )
-            }
-          )
-        }
-      },
-      height: "AUTO",
-      style: "NONE",
-      padding: "STANDARD",
-      marginBelow: "STANDARD",
-      showBorder: false,
-      showShadow: true
-    )
-  },
-  backgroundColor: "TRANSPARENT"
+        },
+        height: "AUTO",
+        style: "NONE",
+        padding: "STANDARD",
+        marginBelow: "STANDARD",
+        showBorder: false,
+        showShadow: true,
+        shape: "SEMI_ROUNDED"
+      )
+    },
+    backgroundColor: "#FAFAFC"
+  )
 )
 ```

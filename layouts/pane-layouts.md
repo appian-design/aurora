@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-12-19"
+last_updated: "2025-08-29"
 ---
 
 # Pane Layouts
@@ -1160,648 +1160,338 @@ a!localVariables(
   local!priorityForOrderTrendByStatus,
   local!startdateForOrderTrendByStatus: date(year(today()), 1, 1),
   local!endDateForOrderTrendByStatus: today() - 1,
+
+  /* Property Listings Data */
+  local!propertyListings: {
+    {
+      price: "$1,695,000",
+      beds: "3 Beds",
+      baths: "2.5 Baths",
+      sqft: "2,403 Sq. Ft.",
+      address: "12345 Maple Ave, Palm Springs, CA 92262",
+      daysListed: "2d",
+      tagText: "NEW LISTING",
+      tagColor: "#ff9900",
+      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-2.jpg",
+      link: a!dynamicLink()
+    },
+    {
+      price: "$2,150,000",
+      beds: "4 Beds",
+      baths: "3.5 Baths",
+      sqft: "2,942 Sq. Ft.",
+      address: "2345 Mesa Blvd, Palm Springs, CA 92264",
+      daysListed: "15d",
+      tagText: "OPEN HOUSE SCHEDULED",
+      tagColor: "#38761d",
+      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-3.jpg",
+      link: a!dynamicLink()
+    },
+    {
+      price: "$1,945,000",
+      beds: "3 Beds",
+      baths: "2.5 Baths",
+      sqft: "2,178 Sq. Ft.",
+      address: "345 Main St, Cathedral City, CA 92234",
+      daysListed: "26d",
+      tagText: "OPEN HOUSE SCHEDULED",
+      tagColor: "#38761d",
+      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-4.jpg",
+      link: a!dynamicLink()
+    },
+    {
+      price: "$2,092,000",
+      beds: "5 Beds",
+      baths: "4.5 Baths",
+      sqft: "3,219 Sq. Ft.",
+      address: "45678 Desert Ln, Palm Desert, CA 92260",
+      daysListed: "33d",
+      tagText: "PRICE REDUCED",
+      tagColor: "#3c78d8",
+      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-5.jpg",
+      link: a!dynamicLink()
+    },
+    {
+      price: "$1,723,000",
+      beds: "3 Beds",
+      baths: "3 Baths",
+      sqft: "2,230 Sq. Ft.",
+      address: "567 Fountain St, Hot Springs, CA 92241",
+      daysListed: "42d",
+      tagText: "NO OFFERS RECEIVED",
+      tagColor: "#cc0000",
+      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-6.jpg",
+      link: a!dynamicLink()
+    }
+  },
   a!paneLayout(
     panes: {
       a!pane(
-        contents: {
-          a!richTextDisplayField(
-            value: {
-              a!richTextHeader(text: upper("Filters"), size: "SMALL")
-            }
-          ),
-          a!imageField(labelPosition: "COLLAPSED"),
-          a!textField(
-            label: "Listing Number",
-            labelPosition: "ABOVE",
-            saveInto: {},
-            refreshAfter: "UNFOCUS",
-            validations: {}
-          ),
-          a!multipleDropdownField(
-            choiceLabels: local!priorityListForOrdersByCustomer,
-            choiceValues: local!priorityListForOrdersByCustomer,
-            label: "Priority",
-            labelPosition: "ABOVE",
-            placeholder: "All priorities",
-            value: local!priorityForOrderTrendByStatus,
-            saveInto: local!priorityForOrderTrendByStatus
-          ),
-          a!imageField(labelPosition: "COLLAPSED"),
-          a!multipleDropdownField(
-            choiceLabels: local!priorityListForOrdersByCustomer,
-            choiceValues: local!priorityListForOrdersByCustomer,
-            label: "Type",
-            labelPosition: "ABOVE",
-            placeholder: "All types",
-            value: local!priorityForOrderTrendByStatus,
-            saveInto: local!priorityForOrderTrendByStatus
-          ),
-          a!checkboxField(
-            choiceLabels: { "Central air", "Outdoor kitchen", "Pool" },
-            choiceValues: { 1, 2, 3 },
-            label: "Property Features"
-          ),
-          a!imageField(labelPosition: "COLLAPSED"),
-          a!checkboxField(
-            choiceLabels: {
-              "New",
-              "Open house",
-              "Reduced",
-              "No offers"
-            },
-            choiceValues: { 1, 2, 3, 4 },
-            label: "Status",
-            labelPosition: "ABOVE",
-            saveInto: {},
-            validations: {}
-          ),
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(text: { "Listed" }, style: { "STRONG" })
-            },
-            marginAbove: "STANDARD",
-            marginBelow: "EVEN_LESS"
-          ),
-          a!sideBySideLayout(
-            items: {
-              a!sideBySideItem(
-                item: a!dateField(
-                  label: "Start Date",
-                  labelPosition: "COLLAPSED",
-                  value: local!startdateForOrderTrendByStatus,
-                  saveInto: local!startdateForOrderTrendByStatus
+        contents: a!sectionLayout(
+          label: upper("Filters"),
+          labelColor: "STANDARD",
+          labelSize: "SMALL",
+          labelHeadingTag: "H2",
+          contents: {
+            a!textField(
+              label: "Listing Number",
+              labelPosition: "ABOVE",
+              saveInto: {},
+              refreshAfter: "UNFOCUS",
+              marginAbove: "LESS"
+            ),
+            a!multipleDropdownField(
+              choiceLabels: local!priorityListForOrdersByCustomer,
+              choiceValues: local!priorityListForOrdersByCustomer,
+              label: "Priority",
+              labelPosition: "ABOVE",
+              placeholder: "All priorities",
+              value: local!priorityForOrderTrendByStatus,
+              saveInto: local!priorityForOrderTrendByStatus,
+              marginAbove: "LESS"
+            ),
+            a!multipleDropdownField(
+              choiceLabels: local!priorityListForOrdersByCustomer,
+              choiceValues: local!priorityListForOrdersByCustomer,
+              label: "Type",
+              labelPosition: "ABOVE",
+              placeholder: "All types",
+              value: local!priorityForOrderTrendByStatus,
+              saveInto: local!priorityForOrderTrendByStatus,
+              marginAbove: "LESS"
+            ),
+            a!checkboxField(
+              label: "Property Features",
+              choiceLabels: { "Central air", "Outdoor kitchen", "Pool" },
+              choiceValues: { 1, 2, 3 },
+              saveInto: {},
+              marginAbove: "LESS"
+            ),
+            a!checkboxField(
+              choiceLabels: {
+                "New",
+                "Open house",
+                "Reduced",
+                "No offers"
+              },
+              choiceValues: { 1, 2, 3, 4 },
+              saveInto: {},
+              label: "Status",
+              labelPosition: "ABOVE",
+              marginAbove: "LESS"
+            ),
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(text: { "Listed" }, style: { "STRONG" })
+              },
+              marginAbove: "LESS",
+              marginBelow: "EVEN_LESS"
+            ),
+            a!sideBySideLayout(
+              items: {
+                a!sideBySideItem(
+                  item: a!dateField(
+                    label: "Start Date",
+                    labelPosition: "COLLAPSED",
+                    value: local!startdateForOrderTrendByStatus,
+                    saveInto: local!startdateForOrderTrendByStatus
+                  ),
+                  width: "MINIMIZE"
                 ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!richTextDisplayField(
-                  labelPosition: "COLLAPSED",
-                  value: { " to " },
-                  align: "LEFT"
+                a!sideBySideItem(
+                  item: a!richTextDisplayField(
+                    labelPosition: "COLLAPSED",
+                    value: { " to " },
+                    align: "LEFT"
+                  ),
+                  width: "MINIMIZE"
                 ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!dateField(
-                  label: "End Date",
-                  labelPosition: "COLLAPSED",
-                  value: local!endDateForOrderTrendByStatus,
-                  saveInto: local!endDateForOrderTrendByStatus,
-                  validations: if(
-                    and(
-                      not(
-                        isnull(local!startdateForOrderTrendByStatus)
+                a!sideBySideItem(
+                  item: a!dateField(
+                    label: "End Date",
+                    labelPosition: "COLLAPSED",
+                    value: local!endDateForOrderTrendByStatus,
+                    saveInto: local!endDateForOrderTrendByStatus,
+                    validations: if(
+                      and(
+                        a!isNotNullorEmpty(local!startdateForOrderTrendByStatus),
+                        a!isNotNullorEmpty(local!endDateForOrderTrendByStatus)
                       ),
-                      not(
-                        isnull(local!endDateForOrderTrendByStatus)
-                      )
-                    ),
-                    if(
-                      local!endDateForOrderTrendByStatus <= local!startdateForOrderTrendByStatus,
-                      "Please set the 'end date' to a value later than the 'start date'",
-                      ""
-                    ),
-                    ""
-                  )
-                ),
-                width: "MINIMIZE"
-              )
-            },
-            alignVertical: "MIDDLE",
-            spacing: "DENSE",
-            stackWhen: { "NEVER" }
-          ),
-          a!richTextDisplayField(
-            labelPosition: "COLLAPSED",
-            value: {
-              a!richTextItem(text: { "Offered" }, style: { "STRONG" })
-            },
-            marginAbove: "STANDARD",
-            marginBelow: "EVEN_LESS"
-          ),
-          a!sideBySideLayout(
-            items: {
-              a!sideBySideItem(
-                item: a!dateField(
-                  label: "Start Date",
-                  labelPosition: "COLLAPSED",
-                  value: local!startdateForOrderTrendByStatus,
-                  saveInto: local!startdateForOrderTrendByStatus
-                ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!richTextDisplayField(
-                  labelPosition: "COLLAPSED",
-                  value: { " to " },
-                  align: "LEFT"
-                ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!dateField(
-                  label: "End Date",
-                  labelPosition: "COLLAPSED",
-                  value: local!endDateForOrderTrendByStatus,
-                  saveInto: local!endDateForOrderTrendByStatus,
-                  validations: if(
-                    and(
-                      not(
-                        isnull(local!startdateForOrderTrendByStatus)
+                      if(
+                        local!endDateForOrderTrendByStatus <= local!startdateForOrderTrendByStatus,
+                        "Please set the 'end date' to a value later than the 'start date'",
+                        ""
                       ),
-                      not(
-                        isnull(local!endDateForOrderTrendByStatus)
-                      )
-                    ),
-                    if(
-                      local!endDateForOrderTrendByStatus <= local!startdateForOrderTrendByStatus,
-                      "Please set the 'end date' to a value later than the 'start date'",
                       ""
-                    ),
-                    ""
-                  )
+                    )
+                  ),
+                  width: "MINIMIZE"
+                )
+              },
+              alignVertical: "MIDDLE",
+              spacing: "DENSE",
+              stackWhen: { "NEVER" }
+            ),
+            a!richTextDisplayField(
+              labelPosition: "COLLAPSED",
+              value: {
+                a!richTextItem(text: { "Offered" }, style: { "STRONG" })
+              },
+              marginAbove: "LESS",
+              marginBelow: "EVEN_LESS"
+            ),
+            a!sideBySideLayout(
+              items: {
+                a!sideBySideItem(
+                  item: a!dateField(
+                    label: "Start Date",
+                    labelPosition: "COLLAPSED",
+                    value: local!startdateForOrderTrendByStatus,
+                    saveInto: local!startdateForOrderTrendByStatus
+                  ),
+                  width: "MINIMIZE"
                 ),
-                width: "MINIMIZE"
-              )
-            },
-            alignVertical: "MIDDLE",
-            spacing: "DENSE",
-            stackWhen: { "NEVER" }
-          ),
-          a!imageField(labelPosition: "COLLAPSED"),
-          a!pickerFieldCustom(
-            label: "Listing Agent",
-            labelPosition: "ABOVE",
-            placeholder: "All Customers",
-            saveInto: {},
-            validations: {}
-          )
-        },
+                a!sideBySideItem(
+                  item: a!richTextDisplayField(
+                    labelPosition: "COLLAPSED",
+                    value: { " to " },
+                    align: "LEFT"
+                  ),
+                  width: "MINIMIZE"
+                ),
+                a!sideBySideItem(
+                  item: a!dateField(
+                    label: "End Date",
+                    labelPosition: "COLLAPSED",
+                    value: local!endDateForOrderTrendByStatus,
+                    saveInto: local!endDateForOrderTrendByStatus,
+                    validations: if(
+                      and(
+                        not(
+                          isnull(local!startdateForOrderTrendByStatus)
+                        ),
+                        not(
+                          isnull(local!endDateForOrderTrendByStatus)
+                        )
+                      ),
+                      if(
+                        local!endDateForOrderTrendByStatus <= local!startdateForOrderTrendByStatus,
+                        "Please set the 'end date' to a value later than the 'start date'",
+                        ""
+                      ),
+                      ""
+                    )
+                  ),
+                  width: "MINIMIZE"
+                )
+              },
+              alignVertical: "MIDDLE",
+              spacing: "DENSE",
+              stackWhen: { "NEVER" }
+            ),
+            a!pickerFieldCustom(
+              label: "Listing Agent",
+              labelPosition: "ABOVE",
+              placeholder: "All Customers",
+              saveInto: {},
+              marginAbove: "LESS"
+            )
+          }
+        ),
         width: "MEDIUM"
       ),
       a!pane(
+        backgroundColor: "#FAFAFC",
         contents: {
-          a!columnsLayout(
-            columns: {
-              a!columnLayout(
+          a!cardGroupLayout(
+            cards: a!forEach(
+              items: local!propertyListings,
+              expression: a!cardLayout(
                 contents: {
+                  a!billboardLayout(
+                    backgroundMedia: a!webImage(
+                      source: fv!item.imageSource
+                    ),
+                    backgroundColor: "#f0f0f0",
+                    height: "SHORT_PLUS",
+                    marginBelow: "NONE",
+                    overlay: a!fullOverlay(
+                      alignVertical: "TOP",
+                      contents: {
+                        a!tagField(
+                          labelPosition: "COLLAPSED",
+                          tags: {
+                            a!tagItem(
+                              text: fv!item.tagText,
+                              backgroundColor: fv!item.tagColor
+                            )
+                          }
+                        )
+                      },
+                      style: "NONE"
+                    )
+                  ),
                   a!cardLayout(
                     contents: {
-                      a!billboardLayout(
-                        backgroundMedia: a!webImage(
-                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-2.jpg"
-                        ),
-                        backgroundColor: "#f0f0f0",
-                        height: "SHORT_PLUS",
-                        marginBelow: "NONE",
-                        overlay: a!fullOverlay(
-                          alignVertical: "TOP",
-                          contents: {
-                            a!tagField(
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
                               labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem_24r2(
-                                  text: "NEW LISTING",
-                                  backgroundColor: "#ff9900"
-                                )
+                              value: {
+                                a!richTextItem(text: fv!item.price, size: "MEDIUM_PLUS")
                               }
                             )
-                          },
-                          style: "NONE"
-                        )
-                      ),
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(text: { "$1,695,000" }, size: "MEDIUM_PLUS")
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "calendar"), " 2d" },
-                                      color: "SECONDARY",
-                                      size: "MEDIUM"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            marginBelow: "STANDARD"
                           ),
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "3 Beds  " }, size: "STANDARD"),
-                              "•  2.5 Baths  •  2,403 Sq. Ft.",
-                              char(10),
-                              a!richTextItem(
-                                text: {
-                                  "12345 Maple Ave, Palm Springs, CA 92262"
-                                },
-                                size: "SMALL"
-                              )
-                            },
-                            preventWrapping: false
-                          )
-                        },
-                        height: "AUTO",
-                        style: "NONE",
-                        padding: "STANDARD",
-                        marginBelow: "NONE",
-                        showBorder: false
-                      )
-                    },
-                    link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
-                    height: "AUTO",
-                    style: "NONE",
-                    shape: "SEMI_ROUNDED",
-                    padding: "NONE",
-                    marginBelow: "STANDARD"
-                  )
-                }
-              ),
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!billboardLayout(
-                        backgroundMedia: a!webImage(
-                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-3.jpg"
-                        ),
-                        backgroundColor: "#f0f0f0",
-                        height: "SHORT_PLUS",
-                        marginBelow: "NONE",
-                        overlay: a!fullOverlay(
-                          alignVertical: "TOP",
-                          contents: {
-                            a!tagField(
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
                               labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem_24r2(
-                                  text: "OPEN HOUSE SCHEDULED",
-                                  backgroundColor: "#38761d"
+                              value: {
+                                a!richTextItem(
+                                  text: { a!richTextIcon(icon: "calendar"), " " & fv!item.daysListed },
+                                  color: "SECONDARY",
+                                  size: "MEDIUM"
                                 )
                               }
-                            )
-                          },
-                          style: "NONE"
-                        )
-                      ),
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(text: { "$2,150,000" }, size: "MEDIUM_PLUS")
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "calendar"), " 15d" },
-                                      color: "SECONDARY",
-                                      size: "MEDIUM"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            marginBelow: "STANDARD"
-                          ),
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "4 Beds  " }, size: "STANDARD"),
-                              "•  3.5 Baths  •  2,942 Sq. Ft.",
-                              char(10),
-                              a!richTextItem(
-                                text: {
-                                  "2345 Mesa Blvd, Palm Springs, CA 92264"
-                                },
-                                size: "SMALL"
-                              )
-                            },
-                            preventWrapping: false
+                            ),
+                            width: "MINIMIZE"
                           )
                         },
-                        height: "AUTO",
-                        style: "NONE",
-                        padding: "STANDARD",
-                        marginBelow: "NONE",
-                        showBorder: false
-                      )
-                    },
-                    link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
-                    height: "AUTO",
-                    style: "NONE",
-                    shape: "SEMI_ROUNDED",
-                    padding: "NONE",
-                    marginBelow: "STANDARD"
-                  )
-                }
-              ),
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!billboardLayout(
-                        backgroundMedia: a!webImage(
-                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-4.jpg"
-                        ),
-                        backgroundColor: "#f0f0f0",
-                        height: "SHORT_PLUS",
-                        marginBelow: "NONE",
-                        overlay: a!fullOverlay(
-                          alignVertical: "TOP",
-                          contents: {
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem_24r2(
-                                  text: "OPEN HOUSE SCHEDULED",
-                                  backgroundColor: "#38761d"
-                                )
-                              }
-                            )
-                          },
-                          style: "NONE"
-                        )
+                        alignVertical: "MIDDLE",
+                        marginBelow: "STANDARD"
                       ),
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(text: { "$1,945,000" }, size: "MEDIUM_PLUS")
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "calendar"), " 26d" },
-                                      color: "SECONDARY",
-                                      size: "MEDIUM"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            marginBelow: "STANDARD"
-                          ),
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "3 Beds  " }, size: "STANDARD"),
-                              "•  2.5 Baths  •  2,178 Sq. Ft.",
-                              char(10),
-                              a!richTextItem(
-                                text: {
-                                  "345 Main St, Cathedral City, CA 92234"
-                                },
-                                size: "SMALL"
-                              )
-                            },
-                            preventWrapping: false
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(text: { fv!item.beds & "  " }, size: "STANDARD"),
+                          "•  " & fv!item.baths & "  •  " & fv!item.sqft,
+                          char(10),
+                          a!richTextItem(
+                            text: fv!item.address,
+                            size: "SMALL"
                           )
                         },
-                        height: "AUTO",
-                        style: "NONE",
-                        padding: "STANDARD",
-                        marginBelow: "NONE",
-                        showBorder: false
+                        preventWrapping: false
                       )
                     },
-                    link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
                     height: "AUTO",
                     style: "NONE",
-                    shape: "SEMI_ROUNDED",
-                    padding: "NONE",
-                    marginBelow: "STANDARD"
+                    padding: "STANDARD",
+                    marginBelow: "NONE",
+                    showBorder: false,
+                    shape: "SEMI_ROUNDED"
                   )
-                }
+                },
+                link: fv!item.link,
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                borderColor: "#EDEEFA",
+                padding: "NONE",
+                marginBelow: "STANDARD"
               )
-            },
-            stackWhen: {
-              "PHONE",
-              "TABLET_PORTRAIT",
-              "TABLET_LANDSCAPE",
-              "DESKTOP_NARROW"
-            }
-          ),
-          a!columnsLayout(
-            columns: {
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!billboardLayout(
-                        backgroundMedia: a!webImage(
-                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-5.jpg"
-                        ),
-                        backgroundColor: "#f0f0f0",
-                        height: "SHORT_PLUS",
-                        marginBelow: "NONE",
-                        overlay: a!fullOverlay(
-                          alignVertical: "TOP",
-                          contents: {
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem_24r2(
-                                  text: "PRICE REDUCED",
-                                  backgroundColor: "#3c78d8"
-                                )
-                              }
-                            )
-                          },
-                          style: "NONE"
-                        )
-                      ),
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(text: { "$2,092,000" }, size: "MEDIUM_PLUS")
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "calendar"), " 33d" },
-                                      color: "SECONDARY",
-                                      size: "MEDIUM"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            marginBelow: "STANDARD"
-                          ),
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "5 Beds  " }, size: "STANDARD"),
-                              "•  4.5 Baths  •  3,219 Sq. Ft.",
-                              char(10),
-                              a!richTextItem(
-                                text: {
-                                  "45678 Desert Ln, Palm Desert, CA 92260"
-                                },
-                                size: "SMALL"
-                              )
-                            },
-                            preventWrapping: false
-                          )
-                        },
-                        height: "AUTO",
-                        style: "NONE",
-                        padding: "STANDARD",
-                        marginBelow: "NONE",
-                        showBorder: false
-                      )
-                    },
-                    link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
-                    height: "AUTO",
-                    style: "NONE",
-                    shape: "SEMI_ROUNDED",
-                    padding: "NONE",
-                    marginBelow: "STANDARD"
-                  )
-                }
-              ),
-              a!columnLayout(
-                contents: {
-                  a!cardLayout(
-                    contents: {
-                      a!billboardLayout(
-                        backgroundMedia: a!webImage(
-                          source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-6.jpg"
-                        ),
-                        backgroundColor: "#f0f0f0",
-                        height: "SHORT_PLUS",
-                        marginBelow: "NONE",
-                        overlay: a!fullOverlay(
-                          alignVertical: "TOP",
-                          contents: {
-                            a!tagField(
-                              labelPosition: "COLLAPSED",
-                              tags: {
-                                a!tagItem_24r2(
-                                  text: "NO OFFERS RECEIVED",
-                                  backgroundColor: "#cc0000"
-                                )
-                              }
-                            )
-                          },
-                          style: "NONE"
-                        )
-                      ),
-                      a!cardLayout(
-                        contents: {
-                          a!sideBySideLayout(
-                            items: {
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(text: { "$1,723,000" }, size: "MEDIUM_PLUS")
-                                  }
-                                )
-                              ),
-                              a!sideBySideItem(
-                                item: a!richTextDisplayField(
-                                  labelPosition: "COLLAPSED",
-                                  value: {
-                                    a!richTextItem(
-                                      text: { a!richTextIcon(icon: "calendar"), " 42d" },
-                                      color: "SECONDARY",
-                                      size: "MEDIUM"
-                                    )
-                                  }
-                                ),
-                                width: "MINIMIZE"
-                              )
-                            },
-                            alignVertical: "MIDDLE",
-                            marginBelow: "STANDARD"
-                          ),
-                          a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(text: { "3 Beds  " }, size: "STANDARD"),
-                              "•  3 Baths  •  2,230 Sq. Ft.",
-                              char(10),
-                              a!richTextItem(
-                                text: {
-                                  "567 Fountain St, Hot Springs, CA 92241"
-                                },
-                                size: "SMALL"
-                              )
-                            },
-                            preventWrapping: false
-                          )
-                        },
-                        height: "AUTO",
-                        style: "NONE",
-                        padding: "STANDARD",
-                        marginBelow: "NONE",
-                        showBorder: false
-                      )
-                    },
-                    link: a!dynamicLink(label: "Dynamic Link", saveInto: {}),
-                    height: "AUTO",
-                    style: "NONE",
-                    shape: "SEMI_ROUNDED",
-                    padding: "NONE",
-                    marginBelow: "STANDARD"
-                  )
-                }
-              ),
-              a!columnLayout(contents: {})
-            },
-            stackWhen: {
-              "PHONE",
-              "TABLET_PORTRAIT",
-              "TABLET_LANDSCAPE",
-              "DESKTOP_NARROW"
-            }
+            )
           )
         },
         width: "AUTO"

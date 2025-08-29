@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-11-16"
+last_updated: "2025-08-29"
 ---
 
 # Charts
@@ -118,328 +118,328 @@ a!sectionLayout(
 
 ```
 a!columnsLayout(
-    columns: {
-      a!columnLayout(
-        contents: {
-          a!sectionLayout(
-            label: "Chart with Custom Legend ",
-            labelSize: "SMALL",
-            labelColor: "STANDARD",
-            contents: {
-              a!cardLayout(
-                contents: {
-                  a!pieChartField(
-                    label: "",
-                    labelPosition: "COLLAPSED",
-                    series: {
-                      a!chartSeries(label: "Soccer", data: 10),
-                      a!chartSeries(label: "Ultimate Frisbee", data: 24),
-                      a!chartSeries(label: "Volleyball", data: 39),
-                      a!chartSeries(label: "Tennis", data: 42),
-                      a!chartSeries(label: "Football", data: 51)
-                    },
-                    showDataLabels: false,
-                    showTooltips: true,
-                    allowImageDownload: false,
-                    colorScheme: a!colorSchemeCustom(
-                      colors: {
-                        "#2322F0",
-                        "#B561FF",
-                        "#FAA92F",
-                        "#A5E8E8",
-                        "#AFBFF8"
-                      }
-                    ),
-                    style: "DONUT",
-                    seriesLabelStyle: "NONE",
-                    height: "SHORT"
+  columns: {
+    a!columnLayout(
+      contents: {
+        a!sectionLayout(
+          label: "Chart with Custom Legend ",
+          labelSize: "SMALL",
+          labelHeadingTag: "H2",
+          labelColor: "STANDARD",
+          contents: {
+            a!cardLayout(
+              contents: {
+                a!pieChartField(
+                  label: "",
+                  labelPosition: "COLLAPSED",
+                  series: {
+                    a!chartSeries(label: "Soccer", data: 10),
+                    a!chartSeries(label: "Ultimate Frisbee", data: 24),
+                    a!chartSeries(label: "Volleyball", data: 39),
+                    a!chartSeries(label: "Tennis", data: 42),
+                    a!chartSeries(label: "Football", data: 51)
+                  },
+                  showDataLabels: false,
+                  showTooltips: true,
+                  allowImageDownload: false,
+                  colorScheme: a!colorSchemeCustom(
+                    colors: {
+                      "#2322F0",
+                      "#B561FF",
+                      "#FAA92F",
+                      "#A5E8E8",
+                      "#AFBFF8"
+                    }
                   ),
-                  a!cardLayout(
-                    contents: {
-                      a!columnsLayout(
-                        columns: {
-                          a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            a!richTextIcon(
-                                              icon: "circle"
-                                            ),
-                                            " "
-                                          },
-                                          color: "#2322F0",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                  style: "DONUT",
+                  seriesLabelStyle: "NONE",
+                  height: "SHORT"
+                ),
+                a!cardLayout(
+                  contents: {
+                    a!columnsLayout(
+                      columns: {
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextIcon(
+                                            icon: "circle"
+                                          ),
+                                          " "
+                                        },
+                                        color: "#2322F0",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            "Soccer"
-                                          },
-                                          size: "STANDARD"
-                                        )
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          "Soccer"
+                                        },
+                                        size: "STANDARD"
+                                      )
+                                    },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            "(10)"
-                                          },
-                                          size: "STANDARD"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            a!richTextIcon(
-                                              icon: "circle"
-                                            ),
-                                            " "
-                                          },
-                                          color: "#FAA92F",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          "(10)"
+                                        },
+                                        size: "STANDARD"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "Volleyball"
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextIcon(
+                                            icon: "circle"
+                                          ),
+                                          " "
+                                        },
+                                        color: "#FAA92F",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "(39)"
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            a!richTextIcon(
-                                              icon: "circle"
-                                            ),
-                                            " "
-                                          },
-                                          color: "#AFBFF8",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "Volleyball"
+                                    },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "Football"
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "(39)"
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "(51)"
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE"
-                              )
-                            }
-                          ),
-                          a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            a!richTextIcon(
-                                              icon: "circle"
-                                            ),
-                                            " "
-                                          },
-                                          color: "#B561FF",
-                                          size: "SMALL"
-                                        )
-                                      },
-                                      marginBelow: "NONE"
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextIcon(
+                                            icon: "circle"
+                                          ),
+                                          " "
+                                        },
+                                        color: "#AFBFF8",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            "Ultimate Frisbee"
-                                          },
-                                          size: "STANDARD"
-                                        )
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "AUTO"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "Football"
+                                    },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: {
-                                            "(24)"
-                                          },
-                                          size: "STANDARD"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextIcon(
-                                          icon: "circle",
-                                          color: "#A5E8E8",
-                                          size: "SMALL"
-                                        ),
-                                        a!richTextItem(
-                                          text: {
-                                            " "
-                                          },
-                                          color: "#FAA92F",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "(51)"
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "Tennis"
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE"
+                            )
+                          }
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          a!richTextIcon(
+                                            icon: "circle"
+                                          ),
+                                          " "
+                                        },
+                                        color: "#B561FF",
+                                        size: "SMALL"
+                                      )
+                                    },
+                                    marginBelow: "NONE"
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        "(42)"
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              )
-                            }
-                          )
-                        },
-                        spacing: "DENSE"
-                      )
-                    },
-                    height: "AUTO",
-                    style: "TRANSPARENT",
-                    marginBelow: "STANDARD",
-                    showBorder: false
-                  )
-                },
-                height: "AUTO",
-                style: "NONE",
-                shape: "SEMI_ROUNDED",
-                padding: "STANDARD",
-                marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
-              )
-            }
-          )
-        },
-        width: "MEDIUM"
-      ),
-      a!columnLayout(
-        contents: {},
-        width: "MEDIUM"
-      ),
-      a!columnLayout(
-        contents: {}
-      )
-    }
-  )
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          "Ultimate Frisbee"
+                                        },
+                                        size: "STANDARD"
+                                      )
+                                    },
+                                    preventWrapping: true
+                                  ),
+                                  width: "AUTO"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: {
+                                          "(24)"
+                                        },
+                                        size: "STANDARD"
+                                      )
+                                    }
+                                  ),
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextIcon(
+                                        icon: "circle",
+                                        color: "#A5E8E8",
+                                        size: "SMALL"
+                                      ),
+                                      a!richTextItem(
+                                        text: {
+                                          " "
+                                        },
+                                        color: "#FAA92F",
+                                        size: "SMALL"
+                                      )
+                                    }
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "Tennis"
+                                    },
+                                    preventWrapping: true
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      "(42)"
+                                    }
+                                  ),
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            )
+                          }
+                        )
+                      },
+                      spacing: "DENSE"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "TRANSPARENT",
+                  marginBelow: "STANDARD",
+                  showBorder: false
+                )
+              },
+              height: "AUTO",
+              style: "NONE",
+              shape: "SEMI_ROUNDED",
+              padding: "STANDARD",
+              marginBelow: "STANDARD",
+              borderColor: "#EDEEFA"
+            )
+          }
+        )
+      },
+      width: "MEDIUM"
+    ),
+    a!columnLayout(
+      contents: {},
+      width: "MEDIUM"
+    ),
+    a!columnLayout(
+      contents: {}
+    )
+  }
+)
 ```
 
 ### Abbreviate Numbers
@@ -452,6 +452,7 @@ a!columnsLayout(
         a!sectionLayout(
           label: "Fiscal Year Obligated Spend",
           labelSize: "SMALL",
+          labelHeadingTag: "H2",
           labelColor: "STANDARD",
           contents: {
             a!cardLayout(
@@ -491,10 +492,10 @@ a!columnsLayout(
               shape: "SEMI_ROUNDED",
               padding: "STANDARD",
               marginBelow: "STANDARD",
-              showBorder: false,
-              showShadow: true
+              borderColor: "#EDEEFA"
             )
-          })
+          }
+        )
       }
     )
   }
@@ -506,315 +507,314 @@ a!columnsLayout(
 
 ```
 a!columnsLayout(
-    columns: {
-      a!columnLayout(
-        contents: {
-          a!sectionLayout(
-            label: """Other"" Chart",
-            labelSize: "SMALL",
-            labelColor: "STANDARD",
-            contents: {
-              a!cardLayout(
-                contents: {
-                  a!columnChartField(
-                    label: "",
-                    categories: { "Sports", "Category 2", "Category 3" },
-                    series: {
-                      a!chartSeries(label: "Soccer", data: { 29 }),
-                      a!chartSeries(label: "Football", data: { 27 }),
-                      a!chartSeries(label: "Basketball", data: { 19 }),
-                      a!chartSeries(label: "Tennis", data: { 16 }),
-                      a!chartSeries(label: "Wrestling", data: { 10 }),
-                      a!chartSeries(
-                        label: "Gymnastics [3], Skiing [2], Track [1]",
-                        data: { 6 }
-                      )
-                    },
-                    stacking: "NONE",
-                    showLegend: false,
-                    showTooltips: true,
-                    labelPosition: "ABOVE",
-                    allowImageDownload: false,
-                    colorScheme: a!colorSchemeCustom(
-                      colors: {
-                        "#2322F0",
-                        "#B561FF",
-                        "#FAA92F",
-                        "#A5E8E8",
-                        "#AFBFF8",
-                        "#6C6C75",
-                        "#56ADC0",
-                        "#FFDCA3"
-                      }
-                    ),
-                    height: "SHORT",
-                    xAxisStyle: "NONE",
-                    yAxisStyle: "STANDARD"
+  columns: {
+    a!columnLayout(
+      contents: {
+        a!sectionLayout(
+          label: """Other"" Chart",
+          labelSize: "SMALL",
+          labelColor: "STANDARD",
+          contents: {
+            a!cardLayout(
+              contents: {
+                a!columnChartField(
+                  label: "",
+                  categories: { "Sports", "Category 2", "Category 3" },
+                  series: {
+                    a!chartSeries(label: "Soccer", data: { 29 }),
+                    a!chartSeries(label: "Football", data: { 27 }),
+                    a!chartSeries(label: "Basketball", data: { 19 }),
+                    a!chartSeries(label: "Tennis", data: { 16 }),
+                    a!chartSeries(label: "Wrestling", data: { 10 }),
+                    a!chartSeries(
+                      label: "Gymnastics [3], Skiing [2], Track [1]",
+                      data: { 6 }
+                    )
+                  },
+                  stacking: "NONE",
+                  showLegend: false,
+                  showTooltips: true,
+                  labelPosition: "ABOVE",
+                  allowImageDownload: false,
+                  colorScheme: a!colorSchemeCustom(
+                    colors: {
+                      "#2322F0",
+                      "#B561FF",
+                      "#FAA92F",
+                      "#A5E8E8",
+                      "#AFBFF8",
+                      "#6C6C75",
+                      "#56ADC0",
+                      "#FFDCA3"
+                    }
                   ),
-                  a!cardLayout(
-                    contents: {
-                      a!columnsLayout(
-                        columns: {
-                          a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: { a!richTextIcon(icon: "circle"), " " },
-                                          color: "#2322F0",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                  height: "SHORT",
+                  xAxisStyle: "NONE",
+                  yAxisStyle: "STANDARD"
+                ),
+                a!cardLayout(
+                  contents: {
+                    a!columnsLayout(
+                      columns: {
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "circle"), " " },
+                                        color: "#2322F0",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(text: { "Soccer" }, size: "STANDARD")
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(text: { "Soccer" }, size: "STANDARD")
+                                    },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(text: { "(29)" }, size: "STANDARD")
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextIcon(
-                                          icon: "circle",
-                                          color: "#A5E8E8",
-                                          size: "SMALL"
-                                        ),
-                                        a!richTextItem(
-                                          text: { " " },
-                                          color: "#FAA92F",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(text: { "(29)" }, size: "STANDARD")
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "Tennis" },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextIcon(
+                                        icon: "circle",
+                                        color: "#A5E8E8",
+                                        size: "SMALL"
+                                      ),
+                                      a!richTextItem(
+                                        text: { " " },
+                                        color: "#FAA92F",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "(16)" }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              )
-                            }
-                          ),
-                          a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: { a!richTextIcon(icon: "circle"), " " },
-                                          color: "#B561FF",
-                                          size: "SMALL"
-                                        )
-                                      },
-                                      marginBelow: "NONE"
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "Tennis" },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(text: { "Football" }, size: "STANDARD")
-                                      },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "(16)" }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(text: { "(27)" }, size: "STANDARD")
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: { a!richTextIcon(icon: "circle"), " " },
-                                          color: "#AFBFF8",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            )
+                          }
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "circle"), " " },
+                                        color: "#B561FF",
+                                        size: "SMALL"
+                                      )
+                                    },
+                                    marginBelow: "NONE"
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "Wrestling" },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(text: { "Football" }, size: "STANDARD")
+                                    },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "(10)" }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE"
-                              )
-                            }
-                          ),
-                          a!columnLayout(
-                            contents: {
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: { a!richTextIcon(icon: "circle"), " " },
-                                          color: "#FAA92F",
-                                          size: "SMALL"
-                                        )
-                                      }
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(text: { "(27)" }, size: "STANDARD")
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "Basketball" },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "circle"), " " },
+                                        color: "#AFBFF8",
+                                        size: "SMALL"
+                                      )
+                                    }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "(19)" }
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE",
-                                marginBelow: "EVEN_LESS"
-                              ),
-                              a!sideBySideLayout(
-                                items: {
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: {
-                                        a!richTextItem(
-                                          text: { a!richTextIcon(icon: "circle"), " " },
-                                          color: "#6C6C75",
-                                          size: "SMALL"
-                                        )
-                                      },
-                                      tooltip: ""
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "Wrestling" },
+                                    preventWrapping: true
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "Other" },
-                                      preventWrapping: true
-                                    ),
-                                    width: "MINIMIZE"
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "(10)" }
                                   ),
-                                  a!sideBySideItem(
-                                    item: a!richTextDisplayField(
-                                      labelPosition: "COLLAPSED",
-                                      value: { "(6)" },
-                                      preventWrapping: true,
-                                      tooltip: "Gymnastics [3], Skiing [2], Track [1]"
-                                    ),
-                                    width: "MINIMIZE"
-                                  )
-                                },
-                                alignVertical: "MIDDLE",
-                                spacing: "DENSE"
-                              )
-                            }
-                          )
-                        },
-                        spacing: "DENSE"
-                      )
-                    },
-                    height: "AUTO",
-                    style: "TRANSPARENT",
-                    marginBelow: "STANDARD",
-                    showBorder: false
-                  )
-                },
-                height: "AUTO",
-                style: "NONE",
-                shape: "SEMI_ROUNDED",
-                padding: "STANDARD",
-                marginBelow: "STANDARD",
-                showBorder: false,
-                showShadow: true
-              )
-            }
-          )
-        }
-      ),
-      a!columnLayout(contents: {})
-    }
-  )
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE"
+                            )
+                          }
+                        ),
+                        a!columnLayout(
+                          contents: {
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "circle"), " " },
+                                        color: "#FAA92F",
+                                        size: "SMALL"
+                                      )
+                                    }
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "Basketball" },
+                                    preventWrapping: true
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "(19)" }
+                                  ),
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE",
+                              marginBelow: "EVEN_LESS"
+                            ),
+                            a!sideBySideLayout(
+                              items: {
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: {
+                                      a!richTextItem(
+                                        text: { a!richTextIcon(icon: "circle"), " " },
+                                        color: "#6C6C75",
+                                        size: "SMALL"
+                                      )
+                                    },
+                                    tooltip: ""
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "Other" },
+                                    preventWrapping: true
+                                  ),
+                                  width: "MINIMIZE"
+                                ),
+                                a!sideBySideItem(
+                                  item: a!richTextDisplayField(
+                                    labelPosition: "COLLAPSED",
+                                    value: { "(6)" },
+                                    preventWrapping: true,
+                                    tooltip: "Gymnastics [3], Skiing [2], Track [1]"
+                                  ),
+                                  width: "MINIMIZE"
+                                )
+                              },
+                              alignVertical: "MIDDLE",
+                              spacing: "DENSE"
+                            )
+                          }
+                        )
+                      },
+                      spacing: "DENSE"
+                    )
+                  },
+                  height: "AUTO",
+                  style: "TRANSPARENT",
+                  marginBelow: "STANDARD",
+                  showBorder: false
+                )
+              },
+              height: "AUTO",
+              style: "NONE",
+              shape: "SEMI_ROUNDED",
+              padding: "STANDARD",
+              marginBelow: "STANDARD",
+              borderColor: "#EDEEFA"
+            )
+          }
+        )
+      }
+    ),
+    a!columnLayout(contents: {})
+  }
+)
 ```
