@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-2-16"
+last_updated: "2025-08-29"
 ---
 
 # Calendar Widget
