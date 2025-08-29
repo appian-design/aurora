@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2024-02-05"
+last_updated: "2025-08-29"
 ---
 
 # Dashboards
