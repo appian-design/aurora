@@ -381,19 +381,3 @@ a!localVariables(
   )
 )
 ```
-
-Stamp Milestone Component Rule Usage
-
-```
-rule!Stamp_Milestone_Component(
-  milestones: {"Create Document", "Additional Information", "Add Files", "Review"},
-  currentStep: 2
-)
-```
-
-Stamp Milestone Component Rule Inputs
-
-|Name|Type|Description|
-|--- |--- |--- |
-|milestones|Array of Text|List of milestone steps.|
-|currentStep|Integer|The step that is currently being highlighted.|
