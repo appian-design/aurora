@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-06-03"
+last_updated: "2025-08-29"
 ---
 
 # Cards Guidance
