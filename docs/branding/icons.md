@@ -11,84 +11,84 @@ The following icons are available for use in Appian Solutions. Icons are organiz
 
 | Label | Icon | Icon Name | Category |
 |-------|------|-----------|----------|
-| Accounts | 💼 | suitcase | Object |
-| Active | ✓ | check-circle-o | Status |
-| Add | + | plus | Action |
-| Additional Details | 📋 | list-alt | Object |
-| Address | 📍 | map-marker | Object |
-| Addresses | 📇 | address-card-o | Object |
-| Alerts | 🔔 | bell-o | Object |
-| Award | 🏆 | award | Object |
-| Business | 🏢 | building-o | Object |
-| Calendar | 📅 | calendar-o | Object |
-| Checklist Setup | ✓ | tasks-alt | Object |
-| Close | ✕ | times | Action |
-| Collateral | ⚖️ | balance-scale | Object |
-| Column View | ⫴ | columns | Display |
-| Commercial Auto | 🚗 | car-alt | Object |
-| Complete | ✓ | check-circle | Status |
-| Confirmation | 👍 | thumbs-o-up | Action |
-| Contact | 📇 | address-card-o | Object |
-| Contacts | 📋 | address-book-o | Object |
-| Critical | 🔥 | fire-alt | Priority |
-| Data | 🗄️ | database | Object |
-| Delete | 🗑️ | trash-o | Action |
-| Delivery | 🚚 | truck-loading | Object |
-| Details | 📋 | list-alt | Object |
-| Download | ⬇️ | download | Action |
-| Duplicate | 📑 | files-o | Action |
-| Edit | ✏️ | pencil-square-o | Action |
-| Email | ✉️ | envelope-o | Object |
-| Empty State 1 | 🚫 | user-slash | Status |
-| Empty State 2 | 💰 | money-wave | Status |
-| Empty State 3 | 🏎️ | tachometer | Status |
-| Error | ⚠️ | exclamation-circle | Banner |
-| Export | 📤 | file-export | Action |
-| Favorite | ⭐ | star-o | Action |
-| Fees | 💵 | money-solid | Object |
-| Grid View | 🔄 | network-wired | Display |
-| Groups | 👥 | users | Object |
-| High | ⟰ | angle-double-up-bold | Priority |
-| History | 🕒 | history | Object |
-| Import | 📥 | file-import | Action |
-| In Progress | ⟳ | spinner | Status |
-| Inactive | ⊗ | times-circle-o | Status |
-| Incomplete | ✕ | times-circle | Status |
-| Info | ℹ️ | info-circle | Banner |
-| Institution | 🏢 | building | Object |
-| List | ≡ | list | Display |
-| Locations | 📍 | map-marker | Object |
-| Low | ⌄ | angle-down-bold | Priority |
-| Medium | ⌃ | angle-up-bold | Priority |
-| None | ○ | circle-o | Priority |
-| Not Needed | ⊘ | ban | Task |
-| Overdue | ⚠️ | exclamation-circle | Status |
-| PDF Files | 📄 | file-pdf-o | Object |
-| Pending | ⏳ | hourglass-start | Status |
-| Phone | 📱 | mobile-alt | Object |
-| Profile | 👤 | user-circle-o | Object |
-| Programs | 🏷️ | tags | Object |
-| Questions | 📝 | file-invoice | Object |
-| Ready | ◉ | dot-circle-o-large | Task |
-| Remove | ✕ | times | Action |
-| Remove User | 🚫 | user-times | Action |
-| Reset | ↺ | undo | Action |
-| Risk Score | 👁️ | eye | Object |
-| Solicitation | 📄 | file-text-o | Object |
-| Success | ✓ | check-circle | Banner |
-| Table | 🔲 | table | Display |
-| Task Complete | ✓ | check | Task |
-| Tasks | 📋 | clipboard-check | Task |
-| Test FS Icon | 💣 | bomb | Action |
-| Time | 🕒 | clock-o | Object |
-| Upcoming | 🕒 | clock | Status |
-| Update Due Date | 📅 | calendar-alt | Action |
-| Upload | ⬆️ | upload | Action |
-| User | 👤 | user | Object |
-| Users | 👥 | users | Object |
-| Vendors | 🏪 | store | Object |
-| Warning | ⚠️ | exclamation-triangle | Banner |
-| Workflow Template | ✓ | tasks-alt | Object |
+| Accounts | :fontawesome-solid-suitcase: | suitcase | Object |
+| Active | :fontawesome-regular-check-circle: | check-circle-o | Status |
+| Add | :fontawesome-solid-plus: | plus | Action |
+| Additional Details | 	:fontawesome-solid-list-alt: | list-alt | Object |
+| Address | :fontawesome-solid-map-marker: | map-marker | Object |
+| Addresses | :fontawesome-regular-address-card: | address-card-o | Object |
+| Alerts | :fontawesome-regular-bell: | bell-o | Object |
+| Award | :fontawesome-solid-award: | award | Object |
+| Business | :fontawesome-regular-building: | building-o | Object |
+| Calendar | :fontawesome-regular-calendar: | calendar-o | Object |
+| Checklist Setup | :fontawesome-solid-tasks-alt: | tasks-alt | Object |
+| Close | :fontawesome-solid-times: | times | Action |
+| Collateral | :fontawesome-solid-balance-scale: | balance-scale | Object |
+| Column View | :fontawesome-solid-columns: | columns | Display |
+| Commercial Auto | :fontawesome-solid-car-alt: | car-alt | Object |
+| Complete | :fontawesome-solid-check-circle: | check-circle | Status |
+| Confirmation | :fontawesome-regular-thumbs-up: | thumbs-o-up | Action |
+| Contact | :fontawesome-regular-address-card: | address-card-o | Object |
+| Contacts | :fontawesome-regular-address-book: | address-book-o | Object |
+| Critical | :fontawesome-solid-fire-alt: | fire-alt | Priority |
+| Data | :fontawesome-solid-database: | database | Object |
+| Delete | :fontawesome-regular-trash-alt: | trash-o | Action |
+| Delivery | :fontawesome-solid-truck-loading: | truck-loading | Object |
+| Details | :fontawesome-solid-list-alt: | list-alt | Object |
+| Download | :fontawesome-solid-download: | download | Action |
+| Duplicate | :fontawesome-regular-copy: | files-o | Action |
+| Edit | :fontawesome-regular-edit: | pencil-square-o | Action |
+| Email | :fontawesome-regular-envelope: | envelope-o | Object |
+| Empty State 1 | :fontawesome-solid-user-slash: | user-slash | Status |
+| Empty State 2 | :fontawesome-solid-money-bill-wave: | money-wave | Status |
+| Empty State 3 | :fontawesome-solid-tachometer: | tachometer | Status |
+| Error | :fontawesome-solid-exclamation-circle: | exclamation-circle | Banner |
+| Export | :fontawesome-solid-file-export: | file-export | Action |
+| Favorite | :fontawesome-regular-star: | star-o | Action |
+| Fees | :fontawesome-solid-money-bill: | money-solid | Object |
+| Grid View | :fontawesome-solid-network-wired: | network-wired | Display |
+| Groups | :fontawesome-solid-users: | users | Object |
+| High | :fontawesome-solid-angle-double-up: | angle-double-up-bold | Priority |
+| History | :fontawesome-solid-history: | history | Object |
+| Import | :fontawesome-solid-file-import: | file-import | Action |
+| In Progress | :fontawesome-solid-spinner: | spinner | Status |
+| Inactive | :fontawesome-regular-times-circle: | times-circle-o | Status |
+| Incomplete | :fontawesome-solid-times-circle: | times-circle | Status |
+| Info | :fontawesome-solid-info-circle: | info-circle | Banner |
+| Institution | :fontawesome-solid-building: | building | Object |
+| List | :fontawesome-solid-list: | list | Display |
+| Locations | :fontawesome-solid-map-marker: | map-marker | Object |
+| Low | :fontawesome-solid-angle-down: | angle-down-bold | Priority |
+| Medium | :fontawesome-solid-angle-up: | angle-up-bold | Priority |
+| None | :fontawesome-regular-circle: | circle-o | Priority |
+| Not Needed | :fontawesome-solid-ban: | ban | Task |
+| Overdue | :fontawesome-solid-exclamation-circle: | exclamation-circle | Status |
+| PDF Files | :fontawesome-regular-file-pdf: | file-pdf-o | Object |
+| Pending | :fontawesome-solid-hourglass-start: | hourglass-start | Status |
+| Phone | :fontawesome-solid-mobile-alt: | mobile-alt | Object |
+| Profile | :fontawesome-regular-user-circle: | user-circle-o | Object |
+| Programs | :fontawesome-solid-tags: | tags | Object |
+| Questions | :fontawesome-solid-file-invoice: | file-invoice | Object |
+| Ready | :fontawesome-regular-dot-circle: | dot-circle-o-large | Task |
+| Remove | :fontawesome-solid-times: | times | Action |
+| Remove User | :fontawesome-solid-user-times: | user-times | Action |
+| Reset | :fontawesome-solid-undo: | undo | Action |
+| Risk Score | :fontawesome-solid-eye: | eye | Object |
+| Solicitation | :fontawesome-regular-file-alt: | file-text-o | Object |
+| Success | :fontawesome-solid-check-circle: | check-circle | Banner |
+| Table | :fontawesome-solid-table: | table | Display |
+| Task Complete | :fontawesome-solid-check: | check | Task |
+| Tasks | :fontawesome-solid-clipboard-check: | clipboard-check | Task |
+| Test FS Icon | :fontawesome-solid-bomb: | bomb | Action |
+| Time | :fontawesome-regular-clock: | clock-o | Object |
+| Upcoming | :fontawesome-solid-clock: | clock | Status |
+| Update Due Date | :fontawesome-solid-calendar-alt: | calendar-alt | Action |
+| Upload | :fontawesome-solid-upload: | upload | Action |
+| User | :fontawesome-solid-user: | user | Object |
+| Users | :fontawesome-solid-users: | users | Object |
+| Vendors | :fontawesome-solid-store: | store | Object |
+| Warning |	:fontawesome-solid-exclamation-triangle: | exclamation-triangle | Banner |
+| Workflow Template | :fontawesome-solid-tasks-alt: | tasks-alt | Object |
 
 ## Usage Guidelines
 

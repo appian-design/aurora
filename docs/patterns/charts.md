@@ -18,8 +18,9 @@ Follow labeling that is consistent with other sections in the interface.
 * If a help tooltip is needed, use a rich text header in a side by side layout with a help icon.  The icon size must match the size of the title text.
 * Use of tooltip should be reserved for chart titles that include terms that may not be universally understood.
 
-> [!Note]
-> **Accessibility:** In addition to the tooltip text on the richTextIcon, to ensure the text is read to screen readers, set the help icon CAPTION to the same text as the tooltip.
+!!! abstract "Accessibility"
+
+    In addition to the tooltip text on the richTextIcon, to ensure the text is read to screen readers, set the help icon CAPTION to the same text as the tooltip.
 
 ### Legend
 

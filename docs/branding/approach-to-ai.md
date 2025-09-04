@@ -56,13 +56,13 @@ Chatbot interface for users to ask questions about a case within Case Management
 
 Generate RFI modal for a Requirements Management demo
 
-> **Helpful Tips**
->
-> If an icon is needed and cannot be an image, the "magic" icon can be used
+!!! info "Helpful Tips"
 
-> **Accessibility**
->
-> Alt-text is not needed as the image is entirely decorative
+    If an icon is needed and cannot be an image, the "magic" icon can be used
+
+!!! abstract "Accessibility"
+
+    Alt-text is not needed as the image is entirely decorative
 
 ## Language
 

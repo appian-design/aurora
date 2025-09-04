@@ -16,6 +16,7 @@ Use a!PaneLayout() to display independently scrolling sections within the interf
 ![](https://github.com/user-attachments/assets/b153e99c-40b3-42b7-8148-fab8a1fa2c9b)
 
 Depending on the need, use a two or three pane layout
+
 * Set an “AUTO” width for the content pane and “NARROW_PLUS” or “MEDIUM” for the secondary panes (left or right or both)
 * Set the secondary panes to the default background color or to white (#FFF). If the secondary pane is interactive (includes filters, form fields or actions), set a white background
 * Set the content pane to the default background color

@@ -3,7 +3,7 @@ status: "stable"
 last_updated: "2025-07-09"
 ---
 
-# Tags Guidance
+# Tags
 
 Tags are visual indicators used to highlight notable attributes of items and draw viewer attention to important characteristics. They provide quick, scannable context without overwhelming the interface.
 
@@ -14,6 +14,7 @@ Tags are visual indicators used to highlight notable attributes of items and dra
 ### When to Use Tags
 
 Use tags to:
+
 - Highlight newly added or updated items
 - Display important item attributes (status, priority, category)
 - Provide quick visual context in lists and data displays
@@ -22,6 +23,7 @@ Use tags to:
 ### Variants
 
 #### Categorical Tags
+
 Use tags to display status, priority, or category information:
 - Status indicators (Active, Pending, Complete)
 - Priority levels (High, Medium, Low)
@@ -29,6 +31,7 @@ Use tags to display status, priority, or category information:
 
 #### Numerical Tags
 Use tags to display counts, quantities, or numerical information:
+
 - Unread message counts (3, 12, 99+)
 - Task counts (5 tasks, 2 pending)
 - Item quantities (15 items, 3 new)
@@ -38,12 +41,14 @@ Use tags to display counts, quantities, or numerical information:
 Use colors strategically to convey meaning and maintain consistency:
 
 Colors with semantic meaning:
+
 - **Positive (Green)**: Success, active, approved states
 - **Negative (Red)**: Errors, urgent, critical items  
 - **Accent (Blue)**: Important information, primary actions
 - **Secondary (Gray)**: Neutral information, inactive states
 
 Extended color palette for categorical tags:
+
 - Orange (Orange 3) 
 - Yellow (Yellow 3) 
 - Teal (Teal 3) 

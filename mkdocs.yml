@@ -2,3 +2,31 @@ site_name: Design System Docs
 site_url:  https://pglevy.github.io/design-system-docs/
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands # Default repository for brand icons
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/universal-access
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons # Path to your custom icons

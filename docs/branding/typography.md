@@ -11,17 +11,17 @@ Guidance on heading styles and how to use them in your interfaces
 
 Use title case for all heading styles. Avoid using all caps. By default, use *a!sectionLayout* instead of *a!richTextHeader* for more customizability. Use Gray 4 (#2E2E35) for primary headers and Gray 3 (#6C6C75) for secondary headers unless you are using *a!richTextHeader*. Avoid using the accent color for headers that are not clickable.
 
-> **Helpful Tips**
->
-> When using *a!sectionLayout*, use LARGE size for page titles, SMALL size for section titles and EXTRA_SMALL size for subsection titles.
->
-> When using *a!richTextHeader*, use LARGE size for page titles, MEDIUM size for section titles and SMALL size for subsection titles.
+!!! info "Helpful Tips"
 
-> **Accessibility**
->
-> For *a!sectionLayout*, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
->
-> The *a!richTextHeader* component implicitly provides HTML heading context to screen readers. Since the heading tags may not always fit your needs, it is recommended to use *a!sectionLayout* headers when possible.
+    When using *a!sectionLayout*, use LARGE size for page titles, SMALL size for section titles and EXTRA_SMALL size for subsection titles.
+
+
+
+!!! abstract "Accessibility"
+
+    For *a!sectionLayout*, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
+
+
 
 ## Section Layout Examples
 

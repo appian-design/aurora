@@ -18,6 +18,7 @@ A dashboard aggregates data in order to highlight trends, statuses and alerts th
 A dashboard’s structure should be governed by its purpose. When designing dashboards, think about what data to present, how to present it and what actions the user might take based on the data.
 
 A dashboard is generally composed of one or more the following components:
+
 * Filters (for parsing the data)
 * Data representation (e.g.: KPIs, charts or tables)
 * Actions
@@ -49,6 +50,7 @@ Checklist:
 Combination of different data representations. Read more about Charts, KPIs, and Grids
 
 Checklist:
+
 * Read ASDS chart guidance to understand best practices when including charts in interfaces
 * Read ASDS KPI guidance to understand best practices when including KPIs in interfaces
 * Read ASDS Grids guidance to understand best practices when including grids in interfaces
@@ -64,6 +66,7 @@ Action is in context with the data it will affect
 Edit Dashboard button is the most priminent action on the interface
 
 Checklist:
+
 * Place actions in context with the data that is used to help users determine whether or not to take action.
 * Make primary action the most heavily weighted visual component on the interface.
 
