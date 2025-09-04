@@ -30,3 +30,5 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons # Path to your custom icons
+extra_css:
+  - stylesheets/extra.css
