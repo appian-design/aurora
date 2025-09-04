@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2023-11-15"
+last_updated: "2025-09-04"
 ---
 
 # Empty States

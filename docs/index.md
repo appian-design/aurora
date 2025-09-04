@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+last_updated: "2025-09-04"
 ---
 
 # Appian Design System
