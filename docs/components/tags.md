@@ -40,21 +40,7 @@ Use tags to display counts, quantities, or numerical information:
 
 Use colors strategically to convey meaning and maintain consistency:
 
-Colors with semantic meaning:
-
-- **Positive (Green)**: Success, active, approved states
-- **Negative (Red)**: Errors, urgent, critical items  
-- **Accent (Blue)**: Important information, primary actions
-- **Secondary (Gray)**: Neutral information, inactive states
-
-Extended color palette for categorical tags:
-
-- Orange (Orange 3) 
-- Yellow (Yellow 3) 
-- Teal (Teal 3) 
-- Sky (Sky 3) 
-- Purple (Purple 3) 
-- Pink (Pink 3)
+ Tag colors should always use a [color name] 4 for the background and the corresponding [color name] 1 for the text. For example, a green tag would use Green 4 for the background and Green 1 for the text.
 
 ### Usage Guidelines
 
@@ -210,6 +196,6 @@ a!localVariables(
 ### Tag Item Properties
 
 - **text**: Display text for the tag
-- **backgroundColor**: Color scheme - "ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY", Orange 3, Yellow 3, Teal 3, Sky 3, Purple 3, Pink 3
-- **textColor**: Optional text color override
+- **backgroundColor**: Color scheme. Accepts semantic names ("ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY") or specific palette colors (e.g., Green 4, Orange 4, Red 4).
+- **textColor**: Color scheme. Use the corresponding [color name] 1 for the text color. For example, if backgroundColor is Green 4, textColor should be Green 1. Use the "STANDARD" value if you've chosen a semantic color for the background to maintain proper text contrast.
 - **link**: Optional link for interactive tags

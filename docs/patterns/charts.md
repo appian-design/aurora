@@ -27,6 +27,7 @@ Follow labeling that is consistent with other sections in the interface.
 ![](https://github.com/user-attachments/assets/64d44c7c-0475-4050-81f2-8a0bea504b80)
 
 For more styling flexibility, we recommend using a custom legend instead of the OOTB legend.
+
 * Note that the functionality to toggle a series on and off using the legend will be lost when choosing to use a custom legend.
 
 ### Abbreviated Numbers
@@ -34,6 +35,7 @@ For more styling flexibility, we recommend using a custom legend instead of the 
 ![](https://github.com/user-attachments/assets/e8c4b3e8-3d7f-4510-89fb-f68c59f5be4b)
 
 For charts that plot large numbers (above 1 million), consider abbreviating the numbers to make the chart cleaner and easier to scan.
+
 * When abbreviating numbers in the axis, make sure to include the units used in the axis label.
 
 ### Data Limits
@@ -57,6 +59,7 @@ Use ASDS defined [chart color themes](../branding/colors.md#charts)
 ![](https://github.com/user-attachments/assets/d196d931-a3d3-4e9c-8edd-b44d6f96aee0)
 
 Use custom empty states for charts with no data to add visual interest.
+
 * Consider pairing the empty state image with text with additional information on why the chart may be empty or a call to action on how to add data.
 * Choose an icon that best represents the type of chart that will be shown
 

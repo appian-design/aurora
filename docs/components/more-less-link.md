@@ -65,15 +65,6 @@ a!localVariables(
 )
 ```
 
-### Rule Usage
-
-```
-rule!More_Less_Link_Component(
-  text: "The rapid advancement of artificial intelligence and machine learning is profoundly reshaping the landscape of the financial services industry, moving far beyond algorithmic trading and into the core functions of banking, insurance, and personal finance. Financial institutions are increasingly leveraging AI for sophisticated fraud detection, analyzing vast datasets in real-time to identify and flag suspicious transactions with a level of accuracy and speed previously unattainable.",
-  cutoff: 255
-)
-```
-
 ### Rule Inputs
 
 | Name | Type | Description |

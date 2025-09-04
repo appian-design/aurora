@@ -3,13 +3,13 @@ layout: default
 title: Home
 ---
 
-# Solutions Design System
+# Appian Design System
 
 Contains patterns, design kits and guidelines to build usable solutions using Appian's low code automation platform.
 
 ## Our Design Principles
 
-Ensure consistency across all Appian Solutions and provide modern, accessible experiences
+Ensure consistency across all Appian Platform features and Solutions, and provide users with provide modern, accessible experiences
 
 ### Inviting
 
@@ -35,4 +35,4 @@ Ensure consistency across all Appian Solutions and provide modern, accessible ex
 
 ---
 
-**Need help or have feedback?** Check our [GitHub repository](https://github.com/your-org/design-system-docs) for issues, discussions, and contribution guidelines.
+**Need help or have feedback?** Check our [GitHub repository](https://github.com/pglevy/design-system-docs/issues/new/choose) for issues, discussions, and contribution guidelines.

@@ -9,7 +9,7 @@ Guidance on heading styles and how to use them in your interfaces
 
 ## Heading Styles
 
-Use title case for all heading styles. Avoid using all caps. By default, use *a!sectionLayout* instead of *a!richTextHeader* for more customizability. Use Gray 4 (#2E2E35) for primary headers and Gray 3 (#6C6C75) for secondary headers unless you are using *a!richTextHeader*. Avoid using the accent color for headers that are not clickable.
+Use title case for all heading styles. Avoid using all caps. By default, use *a!sectionLayout* instead of *a!richTextHeader* for more customizability. Use Gray 4 (#2E2E35) for primary headers and Gray 3 (#6C6C75) for secondary headers. Avoid using the accent color for headers that are not clickable.
 
 !!! info "Helpful Tips"
 
@@ -21,24 +21,6 @@ Use title case for all heading styles. Avoid using all caps. By default, use *a!
 
     For *a!sectionLayout*, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
 
-
-
-## Section Layout Examples
-
-### H1 Page Title
-
-### H2 Section Title
-
-#### H3 Sub-Section Title
-
-## Rich Text Header Examples
-
-### H1 Page Title
-
-### H2 Section Title
-
-### H3 Sub-Section Title
-
 ## Using Section Headings with Actions or Text
 
 ### Option 1 of 2: Use Columns Layout
@@ -47,7 +29,7 @@ When placing an action component aligned to the other end of the header, place t
 
 ### Option 2 of 2: Use Side By Side Layout
 
-When you have patterns that require information or interactions immediately alongside the header, place the *a!richTextHeader* section title into an *a!sideBySideLayout*. Note that you cannot place an *a!sectionLayout* header into an *a!sideBySideLayout*.
+When you have patterns that require information or interactions immediately alongside the header, place the *a!headingField* section title into an *a!sideBySideLayout*. Note that you cannot place an *a!sectionLayout* header into an *a!sideBySideLayout*.
 
 ## Code Examples
 
@@ -58,15 +40,10 @@ a!headerContentLayout(
   header: {
     a!cardLayout(
       contents: {
-        a!richTextDisplayField(
-          labelPosition: "COLLAPSED",
-          value: {
-            a!richTextItem(
-              text: { "Case Details" },
-              color: "#ffffff",
-              size: "LARGE"
-            )
-          }
+        a!headingField(
+          text: { "Case Details" },
+          color: "#ffffff",
+          size: "LARGE"
         )
       },
       height: "AUTO",
@@ -77,7 +54,8 @@ a!headerContentLayout(
     )
   },
   contents: {
-    // Page content goes here
+    /* Page content goes here*/
+    
   }
 )
 ```

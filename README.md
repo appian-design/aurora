@@ -16,20 +16,44 @@ Visit our [live documentation site](https://pglevy.github.io/design-system-docs/
 ### Contributing
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
-### Local Development
+### 🛠️ Local Development
+
+We welcome contributions! Please read our full [**Contributing Guide (CONTRIBUTING.md)**](CONTRIBUTING.md) before starting. The basics to get the site running locally are below.
+
+#### 1. Prerequisites
+* [Python 3.8+](https://www.python.org/downloads/)
+* [Git](https://git-scm.com/downloads/)
+
+#### 2. Setup
+
 ```bash
 # Clone the repository
-git clone https://github.com/pglevy/design-system-docs.git
+git clone [https://github.com/pglevy/design-system-docs.git](https://github.com/pglevy/design-system-docs.git)
 cd design-system-docs
 
-# Install dependencies
-bundle install
+# Create and activate a virtual environment
+# On macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate
 
-# Serve the site locally
-bundle exec jekyll serve
+# On Windows:
+python -m venv venv
+.\venv\Scripts\activate
 
-# View at http://localhost:4000
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
 ```
+
+#### 3. Run the Local Server
+
+```bash
+# Start the live-reloading server
+mkdocs serve
+
+# View the site in your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+```
+Any changes you save will automatically reload in the browser.
+
 
 ## 📚 What's Inside
 
@@ -46,16 +70,14 @@ This design system documentation includes:
 
 ```
 design-system-docs/
-├── about/                  # About the design system
-├── branding/               # Brand identity and visual elements
-├── content-style-guide/    # Content and writing guidelines
-├── accessibility/          # Accessibility guidelines and checklists
-├── layouts/                # Page-level layout templates
-├── patterns/               # Reusable design patterns
-├── components/             # Individual UI components
-├── _layouts/               # Jekyll layout templates
-├── _includes/              # Jekyll include templates
-└── _config.yml             # Jekyll configuration
+├── .github/workflows/    # GitHub Actions for automated deployment
+├── docs/                 # Contains all Markdown documentation files
+│   ├── index.md          # The home page
+│   ├── assets/           # Images, CSS, or JS overrides
+│   └── ...               # Subdirectories for components, patterns, etc.
+├── mkdocs.yml            # MkDocs configuration file
+├── requirements.txt      # Python dependencies for local development
+└── README.md             # This file
 ```
 
 ## 🤝 Contributing
@@ -102,16 +124,6 @@ This repository is designed to work with Model Context Protocol (MCP) servers th
 
 For AI assistants working with this repository, see [AGENTS.md](AGENTS.md) for guidance on documentation structure, formatting conventions, and best practices.
 
-### Jekyll-Powered Site
-
-Our documentation is built with Jekyll and automatically deployed via GitHub Pages, providing:
-
-- Fast, static site generation
-- Markdown-based content management
-- Responsive, accessible design
-- Search functionality
-- Version control integration
-
 ## 📝 File Formatting
 
 All documentation files use Markdown with YAML front matter:
@@ -156,7 +168,7 @@ related: ["related-item-1", "related-item-2"]
 
 - [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [mkdocs Material Documentation](https://squidfunk.github.io/mkdocs-material/)
 - [Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## 🆘 Getting Help

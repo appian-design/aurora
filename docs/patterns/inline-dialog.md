@@ -160,17 +160,6 @@ a!localVariables(
 )
 ```
 
-### Rule Usage
-```
-rule!Inline_Dialog_Component(
-  formButtonLabel: "Add User",
-  buttonType: "LINK",
-  buttonIcon: "plus",
-  formFields: {},
-  formAction: "Add"
-)
-```
-
 ### Rule Inputs
 |Name|Type|Description|
 |--- |--- |--- |
