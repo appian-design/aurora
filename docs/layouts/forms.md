@@ -11,7 +11,6 @@ Facilitate user input by using the appropriate form style and input types for ea
 ## Design
 ![](https://github.com/user-attachments/assets/1023e7c2-2f86-42d4-a2dd-01d946d19c80)
 Form in a dialog
-<br></br>
 
 Forms serve as a way for users to have a conversation with our products. Great form design enhances the ability for the user to successfully complete their tasks. 
 
@@ -25,9 +24,9 @@ In multi-step forms, place the “Back” button first followed by the “Cancel
 
 ![](https://github.com/user-attachments/assets/556b8845-d773-47ab-81c3-46a8271e2ca0)
 Provide confirmation upon submission
-<br></br>
 
 Checklist:
+
 |Item|Type|
 |--- |--- |
 |Use “Solid” style for the “submit” or “next” action (in multi-step forms)|Buttons|
@@ -57,6 +56,7 @@ Checklist:
 In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.
 
 Checklist:
+
 |Item|Type|
 |--- |--- |
 |Use “Solid” style for the “submit” or “next” action (in multi-step forms)|Buttons|
@@ -83,6 +83,7 @@ Use the instructions parameter to provide information vital to form completion
 Use field level validation as much as possible. Define the error and provide guidance on how to resolve it. Avoid generic error messages. Do not disable a button, instead let the user click and view the error to understand what is missing or incorrect
 
 Checklist:
+
 |Item|Type|
 |--- |--- |
 |Avoid specifying character limits for fields where the user is unlikely to reach the limit (e.g.: First Name)|Character Limits|

@@ -12,6 +12,7 @@ last_updated: "2025-08-29"
 **Tailor Content to Target Users**
 
 Answer these questions to gain a better understanding of the various user personas viewing the landing page: 
+
 * What information does each user need to view?
 * What is the minimum amount of information you need to provide to give users context? 
 * What actions do users need to perform, and what information do they need to perform them?  

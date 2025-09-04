@@ -76,9 +76,7 @@ rule!More_Less_Link_Component(
 
 ### Rule Inputs
 
-```
 | Name | Type | Description |
-|------|------|-------------|
+| :---- | :---- | :---- |
 | text | Text | Full text that needs to be displayed. |
 | cutoff | Number (Integer) | Number of characters to display in the "Less" state. |
-```

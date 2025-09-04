@@ -13,6 +13,7 @@ Used to depict when the UI has no content to display. Empty states can be used t
 ![](https://github.com/user-attachments/assets/c4251b79-854a-43f5-8a2e-254ede50c319)
 
 Use this pattern when the application is first opened by a user and there is no content to display.
+
 * Explain the intent of the app to the user and how it can be used. This can be particularly useful for new users who may not be familiar with the app.
 * Provide a clear action for the user to proceed as part of their journey in using the application.
 
@@ -23,9 +24,9 @@ Provide the user with possible options if their search action turns up with no r
 
 ![](https://github.com/user-attachments/assets/cc46a041-04b1-497a-addc-26d71146aba5)
 Simplistic depiction of an empty state within a section of the UI
-<br></br>
 
 Use this pattern if a user action (e.g.: search) shows no results. Provide options to help the user achieve their intended outcome.
+
 * Provide the user with possible options if their search action turns up with no results
 * Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
 
@@ -34,6 +35,7 @@ Use this pattern if a user action (e.g.: search) shows no results. Provide optio
 ![](https://github.com/user-attachments/assets/8d699349-e3b1-464f-87f7-2feb011b4d4c)
 
 Use this pattern when a user enters an error or exception state.
+
 * State the error in layperson terms. Avoid using technical terms or system jargon.
 * Provide users with actionable suggestions how to exit the error or exception state
 

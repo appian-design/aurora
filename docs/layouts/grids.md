@@ -23,6 +23,7 @@ Grids serve as containers for displaying record information. Great grid design a
 At its foundation, every grid will have column headers, rows of data, and pagination. Most grids will also include search and filter functionality, sorting capabilities, and record actions. Grids can take up a full page or be placed within a page section layout. They can either be read-only or editable, depending on whether users are meant to be viewing or updating the grid content.
 
 Checklist:
+
 |Item|Type|
 |--- |--- |
 |Use the a!gridField component for a read-only grid|Layout|

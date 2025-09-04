@@ -34,6 +34,7 @@ Filters are placed on the side to signify its effect on both the grid and the KP
 The grid and KPI filters are placed relative to what content they affect.
 
 Checklist:
+
 * For OOTB grids, use the out of the box record filter.
 * For other components that require filtering, use custom filters. Custom filter should always have a label with label position being set to "ABOVE"
 * All data used in filters should be visible on the component that it affects (e.g.: you should not have a grid filter for a data field that is not present in the grid.)|
