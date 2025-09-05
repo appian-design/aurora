@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Document Summary
@@ -15,7 +15,7 @@ Allow users to preview a document while easily scanning for relevant document de
 Ensure that there is a back link to the full documents grid at the top left corner.
 
 ### Display
-Use a two-column layout in which the first column displays the document preview and the second column displays the document details with a fixed column width set to “MEDIUM” or “MEDIUM_PLUS”. An icon used to symbolize the file type should be placed to the left of the document name and important metadata can be optionally displayed in tags to the right.
+Use a two-column layout in which the first column displays the document preview and the second column displays the document details with a fixed column width set to `MEDIUM` or `MEDIUM_PLUS`. An icon used to symbolize the file type should be placed to the left of the document name and important metadata can be optionally displayed in tags to the right.
 
 ### Actions
 For files that have a preview available, no “Download” record action is needed, as it is automatically included in the document viewer component. High-level record actions that apply to the document as a whole should be displayed as buttons at the top right. Actions associated with particular sections should be placed next to the corresponding section header, while actions specific to certain fields should be placed immediately next to the field value in a side by side layout.

@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-06-08"
+last_updated: "2025-09-05"
 ---
 
 # Voice and Tone Principles
@@ -40,8 +40,8 @@ Write text that is understandable by anyone and anywhere. Offer a helping hand w
 | Avoid relying solely on visuals (e.g.: images and icons) alone to communicate. Use words, alt-text and captions (for icons). | Accessibility |
 | Aim for high contrast between your font and background. Refer to the Colors in the branding section of the Appian Solutions Design System. | Accessibility |
 | In an image alt-text, avoid writing "Image of". The screen reader knows it is an image. | Accessibility |
-| Organize a!sectionLayout and a!boxLayout headings and subheadings in hierarchy - H2 under H1, H3 under H2 etc. | Accessibility |
-| When using an icon-only button, use the tooltip parameter to label the action | Accessibility |
+| Organize `a!sectionLayout` and `a!boxLayout` headings and subheadings in hierarchy - H2 under H1, H3 under H2 etc. | Accessibility |
+| When using an icon-only button, use the `tooltip` parameter to label the action | Accessibility |
 | Avoid Appian platform, engineering or UI design terms (e.g.: record, summary view, tab) in customer facing content. Instead of "records", use lists. Instead of "summary view" or "tab", use the name of the view. | Terms and Abbreviations |
 | Avoid using i.e. or e.g. | Terms and Abbreviations |
 | If the abbreviation is well known (e.g.: API), then use it without having to spell it out. If not well known, spell out abbreviations the first time you use it. Then use the short version for all other references. | Terms and Abbreviations |

@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Approach to AI
@@ -30,11 +30,17 @@ Due to the "Sparkle" icon not being available externally, use a custom image upl
 
 Use for small iconography
 
+- [Download PNG](../assets/images/ai-imagery/sparkle-dark-1.png)
+- [Download SVG](../assets/images/ai-imagery/sparkle-dark-2.svg)
+
 ### Sparkle Image - Light
 
 ![](https://github.com/user-attachments/assets/b2cce3d1-1022-45fa-b710-9eef42b99b45)
 
 Use for larger, more illustrative elements
+
+- [Download PNG](../assets/images/ai-imagery/sparkle-light-1.png)
+- [Download SVG](../assets/images/ai-imagery/sparkle-light-2.svg)
 
 ### Wizard Image
 
@@ -73,8 +79,6 @@ Generate RFI modal for a Requirements Management demo
 - All AI elements should denote if they are using AI
 - For generated content consider adding instructional text such as "Review generated content to make sure it's accurate and appropriate"
 
-## Resources
-- [AI Imagery](../assets/images/ai-imagery)
 
 ## UX Guidance
 

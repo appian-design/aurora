@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-06-08"
+last_updated: "2025-09-05"
 parent: "branding"
 related: ["colors", "typography"]
 ---
@@ -13,11 +13,11 @@ Use the Appian logo and favicon to support branding guidelines.
 
 ### Appian Logo White (Default)
 
-![](https://github.com/user-attachments/assets/016caac5-1310-4815-a23f-858df557ef53)
+![](https://github.com/user-attachments/assets/016caac5-1310-4815-a23f-858df557ef53){style="background-color: black; padding: 1rem;"}
 
 Use Appian Logo White for Mercury Sites.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-white.png)
+[Download](../assets/images/logo-and-favicon/appian-logo-white.png)
 
 ### Appian Logo Blue
 
@@ -25,7 +25,7 @@ Use Appian Logo White for Mercury Sites.png
 
 Use Appian Logo Vibrant Blue for Mercury Sites.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-logo-vibrant-blue.png)
+[Download](../assets/images/logo-and-favicon/appian-logo-vibrant-blue.png)
 
 ### Appian Favicon
 
@@ -33,12 +33,8 @@ Use Appian Logo Vibrant Blue for Mercury Sites.png
 
 Use Appian_favicon_48x48.png
 
-[Download](https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/logo-and-favicon/appian-favicon48x48.png)
+[Download](../assets/images/logo-and-favicon/appian-favicon-48x48.png)
 
 ## Accessibility
 
 For alternative text, select Custom and specify the text as "Appian" in all Appian Solutions.
-
-## Resources
-
-[Branding Images](../assets/images/logo-and-favicon)

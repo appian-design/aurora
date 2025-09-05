@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Tags
@@ -185,17 +185,9 @@ a!localVariables(
 )
 ```
 
-### Key Parameters
-
-- **tags**: List of `a!tagItem()` components
-- **size**: "SMALL" or "STANDARD" (default)
-- **align**: "START", "CENTER", or "END"
-- **labelPosition**: "ABOVE", "ADJACENT", "COLLAPSED", or "JUSTIFIED"
-- **accessibilityText**: Screen reader description when needed
-
 ### Tag Item Properties
 
 - **text**: Display text for the tag
-- **backgroundColor**: Color scheme. Accepts semantic names ("ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY") or specific palette colors (e.g., Green 4, Orange 4, Red 4).
-- **textColor**: Color scheme. Use the corresponding [color name] 1 for the text color. For example, if backgroundColor is Green 4, textColor should be Green 1. Use the "STANDARD" value if you've chosen a semantic color for the background to maintain proper text contrast.
+- **backgroundColor**: Color scheme. Accepts semantic names (`ACCENT`, `POSITIVE`, `NEGATIVE`, `SECONDARY`) or specific palette colors (e.g., Green 4, Orange 4, Red 4).
+- **textColor**: Color scheme. Use the corresponding [color name] 1 for the text color. For example, if backgroundColor is Green 4, textColor should be Green 1. Use the `STANDARD` value if you've chosen a semantic color for the background to maintain proper text contrast.
 - **link**: Optional link for interactive tags

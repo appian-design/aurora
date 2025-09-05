@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Milestones
@@ -17,7 +17,7 @@ Wizard milestones provide a guided experience to help users complete their tasks
 
 ![](https://github.com/user-attachments/assets/7c20e215-cdff-4dfe-a6b4-ff0b8612bed9)
 
-Use the Milestone Component (a!milestoneField) to leverage built-in accessibility parameters. Use this component when your form has at least 3 steps. Depending on the form’s layout, apply a horizontal or vertical layout.
+Use the Milestone Component (`a!milestoneField`) to leverage built-in accessibility parameters. Use this component when your form has at least 3 steps. Depending on the form’s layout, apply a horizontal or vertical layout.
 
 #### Using Stamps as Steps
 
@@ -31,7 +31,7 @@ Use this pattern when your form has at least 3 steps with a form layout that per
 
 ![](https://github.com/user-attachments/assets/f1d75653-9e14-498d-8d11-4ef8c5825c49)
 
-Use the instructions parameter of `a!formLayout` when the milestone has 2 steps.
+Use the `instructions` parameter of `a!formLayout` when the milestone has 2 steps.
 
 #### Use as Horizontal Progress Indicator
 
@@ -43,7 +43,7 @@ Use the horizontal layout when there are 4 - 6 steps in the workflow.
 
 - Identify opportunities to reduce steps as much as possible. A good rule of thumb is to have at most 6 steps.
 - Use succinct labels for each step to avoid wrapping
-- For accessibility considerations, set the label of the milestone wizard component to “Progress” and the label position to “Collapsed”
+- For accessibility considerations, set the label of the milestone wizard component to “Progress” and the label position to `COLLAPSED`
 
 ### Usage
 
@@ -60,8 +60,8 @@ Use the “Next” and “Back” buttons to provide navigation across the form 
 Use the following considerations when deciding on the Milestone orientation:
 
 1. **Number of Steps**<br>For 3-6 steps, use your best judgment on Vertical vs. Horizontal. Vertical milestones may look too sparse with 3 steps and horizontal milestones may look crowded with 5-6 steps. Use Vertical orientation for 6+ steps.
-1. **Step Label Length**<br>Avoid text wrapping of step labels. Make the label succinct or reduce the label size to fit in one line.
-1. **Dialog Box Size**<br>Use Vertical orientation for Large Dialog Box size record actions. Use Horizontal orientation for Medium and Small Dialog Box sizes.
+2. **Step Label Length**<br>Avoid text wrapping of step labels. Make the label succinct or reduce the label size to fit in one line.
+3. **Dialog Box Size**<br>Use `VERTICAL` orientation for Large Dialog Box size record actions. Use `HORIZONTAL` orientation for Medium and Small Dialog Box sizes.
 
 ## Development
 

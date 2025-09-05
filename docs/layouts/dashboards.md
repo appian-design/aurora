@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Dashboards
@@ -19,9 +19,9 @@ A dashboard’s structure should be governed by its purpose. When designing dash
 
 A dashboard is generally composed of one or more the following components:
 
-* Filters (for parsing the data)
-* Data representation (e.g.: KPIs, charts or tables)
-* Actions
+- Filters (for parsing the data)
+- Data representation (e.g.: KPIs, charts or tables)
+- Actions
 
 ### Usage
 
@@ -36,12 +36,12 @@ The grid and KPI filters are placed relative to what content they affect.
 
 Checklist:
 
-* For OOTB grids, use the out of the box record filter.
-* For other components that require filtering, use custom filters. Custom filter should always have a label with label position being set to "ABOVE"
-* All data used in filters should be visible on the component that it affects (e.g.: you should not have a grid filter for a data field that is not present in the grid.)|
-* Ensure filters are placed at the correct hierarchy. A filter's location should clearly indicate which section of the interface they apply to.
-* Use a filter bar or sidebar for higher level filters
-* Use inline filters for filters that only affect one component of the interface
+- For OOTB grids, use the out of the box record filter.
+- For other components that require filtering, use custom filters. Custom filter should always have a label with label position being set to `ABOVE`
+- All data used in filters should be visible on the component that it affects (e.g.: you should not have a grid filter for a data field that is not present in the grid.)|
+- Ensure filters are placed at the correct hierarchy. A filter's location should clearly indicate which section of the interface they apply to.
+- Use a filter bar or sidebar for higher level filters
+- Use inline filters for filters that only affect one component of the interface
 
 
 #### Data Representation
@@ -51,10 +51,10 @@ Combination of different data representations. Read more about Charts, KPIs, and
 
 Checklist:
 
-* Read ASDS chart guidance to understand best practices when including charts in interfaces
-* Read ASDS KPI guidance to understand best practices when including KPIs in interfaces
-* Read ASDS Grids guidance to understand best practices when including grids in interfaces
-* If grid rows have links to a detailed view, links should be attached to the record identifier.
+- Read ASDS chart guidance to understand best practices when including charts in interfaces
+- Read ASDS KPI guidance to understand best practices when including KPIs in interfaces
+- Read ASDS Grids guidance to understand best practices when including grids in interfaces
+- If grid rows have links to a detailed view, links should be attached to the record identifier.
 
 
 #### Actions
@@ -67,8 +67,8 @@ Edit Dashboard button is the most priminent action on the interface
 
 Checklist:
 
-* Place actions in context with the data that is used to help users determine whether or not to take action.
-* Make primary action the most heavily weighted visual component on the interface.
+- Place actions in context with the data that is used to help users determine whether or not to take action.
+- Make primary action the most heavily weighted visual component on the interface.
 
 ## Development
 

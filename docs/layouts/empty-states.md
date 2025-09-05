@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Empty States
@@ -14,8 +14,8 @@ Used to depict when the UI has no content to display. Empty states can be used t
 
 Use this pattern when the application is first opened by a user and there is no content to display.
 
-* Explain the intent of the app to the user and how it can be used. This can be particularly useful for new users who may not be familiar with the app.
-* Provide a clear action for the user to proceed as part of their journey in using the application.
+- Explain the intent of the app to the user and how it can be used. This can be particularly useful for new users who may not be familiar with the app.
+- Provide a clear action for the user to proceed as part of their journey in using the application.
 
 ### No Results to Display
 
@@ -27,8 +27,8 @@ Simplistic depiction of an empty state within a section of the UI
 
 Use this pattern if a user action (e.g.: search) shows no results. Provide options to help the user achieve their intended outcome.
 
-* Provide the user with possible options if their search action turns up with no results
-* Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
+- Provide the user with possible options if their search action turns up with no results
+- Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
 
 ### Errors
 
@@ -36,8 +36,8 @@ Use this pattern if a user action (e.g.: search) shows no results. Provide optio
 
 Use this pattern when a user enters an error or exception state.
 
-* State the error in layperson terms. Avoid using technical terms or system jargon.
-* Provide users with actionable suggestions how to exit the error or exception state
+- State the error in layperson terms. Avoid using technical terms or system jargon.
+- Provide users with actionable suggestions how to exit the error or exception state
 
 ## Development
 

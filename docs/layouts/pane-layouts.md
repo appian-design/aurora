@@ -1,11 +1,11 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Pane Layouts
 
-Use a!PaneLayout() to display independently scrolling sections within the interface
+Use `a!PaneLayout()` to display independently scrolling sections within the interface
 
 ![](https://github.com/user-attachments/assets/9b9b551a-a404-4dc7-a1d7-b76a52bcf6d2)
 
@@ -17,9 +17,9 @@ Use a!PaneLayout() to display independently scrolling sections within the interf
 
 Depending on the need, use a two or three pane layout
 
-* Set an “AUTO” width for the content pane and “NARROW_PLUS” or “MEDIUM” for the secondary panes (left or right or both)
-* Set the secondary panes to the default background color or to white (#FFF). If the secondary pane is interactive (includes filters, form fields or actions), set a white background
-* Set the content pane to the default background color
+- Set an `AUTO` width for the content pane and `NARROW_PLUS` or `MEDIUM` for the secondary panes (left or right or both)
+- Set the secondary panes to the default background color or to white (#FFF). If the secondary pane is interactive (includes filters, form fields or actions), set a white background
+- Set the content pane to the default background color
 
 ### Usage
 
@@ -61,7 +61,7 @@ Wizard form with steps on the left pane
 
 Use to showcase steps or provide reference information
 
-Note: If providing reference information, set a fixed width for the right pane at “NARROW_PLUS” or “MEDIUM” depending on the content. 
+Note: If providing reference information, set a fixed width for the right pane at  `NARROW_PLUS` or `MEDIUM` depending on the content. 
 
 ## Development
 

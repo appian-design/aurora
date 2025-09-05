@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Grids
@@ -16,7 +16,6 @@ In a full page
 ![](https://github.com/user-attachments/assets/97af65da-18e5-43ed-bc51-ca0a004007b5)
 
 In a page section layout
-<br></br>
 
 Grids serve as containers for displaying record information. Great grid design allows users to quickly scan, sort, compare, and take action on large amounts of data.
 
@@ -26,13 +25,13 @@ Checklist:
 
 |Item|Type|
 |--- |--- |
-|Use the a!gridField component for a read-only grid|Layout|
-|Use the a!gridLayout component for an editable grid|Layout|
+|Use the `a!gridField` component for a read-only grid|Layout|
+|Use the `a!gridLayout` component for an editable grid|Layout|
 |Minimize content sprawl across the grid by putting more than one field in one column (e.g.: Last updated and user who updated can be in the same column)|Layout|
-|Set preventTextWrapping to true for columns with long read-only text using the a!RichTextDisplayField() component|Layout|
+|Set `preventTextWrapping` to true for columns with long read-only text using the `a!RichTextDisplayField()` component|Layout|
 |Set a fixed grid column width for icons and center align the rich text icon within the column|Layout|
-|Avoid using the “Dense” spacing option|Styling|
-|Use the “Light” border style by default, but “Standard” when sorting is involved to clearly identify which column is being sorted on|Styling|
+|Avoid using the `DENSE` spacing option|Styling|
+|Use the `LIGHT` border style by default, but `STANDARD` when sorting is involved to clearly identify which column is being sorted on|Styling|
 |Shade alternate rows for full-page grids to enhance readability. For grids with a smaller batch size (e.g. 5), it is not necessary to shade alternate rows.|Styling|
 |Avoid shading alternate rows when secondary text are used on a grid due to accessibility concerns with color contrast. Only use colors that pass color contrast against the shaded row background color for rich text icons.|Styling|
 |For multi-row selections, set the selection styling to checkbox. Avoid using the row highlight style.|Styling|
@@ -53,8 +52,8 @@ Checklist:
 |Right align dollar and numeric amounts|Column Alignments|
 |Left align ID and phone numbers|Column Alignments|
 |Left align dates, date ranges and timestamps if an icon is used, otherwise keep it right aligned|Column Alignments|
-|Ensure that every cell must have an icon if status icons are to be used for overdue items. By default, use the “calendar-o” icon in gray 3 color with a caption that says “Due”. Reference the Icons page for more guidance on using icons to signify date stat|Column Alignments|
-|Left align tags and use "Standard" size|Column Alignments|
+|Ensure that every cell must have an icon if status icons are to be used for overdue items. By default, use the `calendar-o` icon in gray 3 color with a caption that says “Due”. Reference the Icons page for more guidance on using icons to signify date stat|Column Alignments|
+|Left align tags and use `STANDARD` size|Column Alignments|
 |Center align rich text icon links, buttons and record actions|Column Alignments|
 |Left align user profile images|Column Alignments|
 |Left align input fields|Column Alignments|
@@ -63,7 +62,7 @@ Checklist:
 |For grids within smaller section layouts or card containers, use the out of the box empty state message (e.g.: “No [objects] available”)|Empty States|
 |Try to have at most 6 columns. To maximize the use of available space, use text formatting to consolidate logical groupings of fields into a grid column or minimize the number of columns to the ones necessary.|Column Alignments|
 |Keep column labels to a minimum. Avoid wrapping of labels. Use a tooltip to provide additional context if necessary.|Column Alignments|
-|Use the Rich Text Component's PreventWrapping parameter to optimize column widths especially for values with long text|Styling|
+|Use the Rich Text Component's `preventWrapping` parameter to optimize column widths especially for values with long text|Styling|
 
 ## Development
 

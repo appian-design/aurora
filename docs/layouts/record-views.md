@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-05"
 ---
 
 # Record Views
@@ -21,8 +21,8 @@ The Summary view is displayed by default when the user clicks on a record item f
 
 **Note:**
 
-* We recommend using at most 6 views in a record. 
-* Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
+- We recommend using at most 6 views in a record. 
+- Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
 
 ![](https://github.com/user-attachments/assets/18d041b7-aceb-4875-ab1f-ff0916cbdcd9)
 
@@ -65,8 +65,8 @@ Checklist:
 |Use other record views to highlight data that is of intermittent importance. Examples include: Audit history, list of documents, list of users etc.|Views|
 |Avoid using more than 6 record views in a record. Use a combination of Record Views and Tabs as Side Navigation to balance information density.|Views|
 |Depending on the information to display, use a one column or two column layout|Views|
-|When using one column layout, center the component and set the width based on the amount of information to display. Use blank a!columnLayout()s to establish gutters on either side of the component.|Views|
-|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually NARROW_PLUS or MEDIUM).|Views|
+|When using one column layout, center the component and set the width based on the amount of information to display. Use blank `a!columnLayout()s` to establish gutters on either side of the component.|Views|
+|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually `NARROW_PLUS` or `MEDIUM`).|Views|
 |When using two column layouts, include high priority information in the primary and wider content area and move secondary priority information (e.g.: record metadata) to the second and narrower column.|Views|
 |Avoid using three column layouts|Views|
 |Unless agreed upon with your PM as a Category 1 - Marketable UI, treat other views as Category 2 - Usability Focused UIs.|Views|

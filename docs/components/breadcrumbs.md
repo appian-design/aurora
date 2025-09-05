@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-07-07"
+last_updated: "2025-09-05"
 ---
 
 # Breadcrumbs
@@ -12,14 +12,14 @@ Breadcrumbs display the user's current location within the application's hierarc
 
 ![image](https://github.com/user-attachments/assets/a0994d9f-14a0-4b19-aa3f-891407c870cd)
 
-* **Purpose**: Breadcrumbs are for showing structural hierarchy, not navigation history. The breadcrumbs for a given object should always be the same regardless of how the user arrived at the object.
-* **Structure**: Always start the breadcrumb trail with the highest level, e.g., home page.
-* **Separators**: Use a forward slash (/) as the separator. Do not add a link on separators.
-* **Current Page**: The last item in the trail should typically be the title of the current page and should not be a link. This can be omitted if it causes visual noise or unnecessary wrapping.
-* **Clarity**: Use concise and recognizable page titles for labels. If a page title is very long, consider using a shortened but still understandable version in the breadcrumb.
-* **Responsiveness**: Shrink links into an ellipsis menu (...) when the available width is insufficient
-* **Accessibility**: For screen readers, only the navigable links (not the current page) will be focusable. Add `accessibilityText` to identify the component as breadcrumbs per [ARIA breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/).
-* **When not to use**: Avoid using breadcrumbs for multi-step processes like wizards or forms where a progress bar or step indicator would be more appropriate. Breadcrumbs are for navigating a site's hierarchy, not for indicating progress through a linear workflow.
+- **Purpose**: Breadcrumbs are for showing structural hierarchy, not navigation history. The breadcrumbs for a given object should always be the same regardless of how the user arrived at the object.
+- **Structure**: Always start the breadcrumb trail with the highest level, e.g., home page.
+- **Separators**: Use a forward slash (/) as the separator. Do not add a link on separators.
+- **Current Page**: The last item in the trail should typically be the title of the current page and should not be a link. This can be omitted if it causes visual noise or unnecessary wrapping.
+- **Clarity**: Use concise and recognizable page titles for labels. If a page title is very long, consider using a shortened but still understandable version in the breadcrumb.
+- **Responsiveness**: Shrink links into an ellipsis menu (...) when the available width is insufficient
+- **Accessibility**: For screen readers, only the navigable links (not the current page) will be focusable. Add `accessibilityText` to identify the component as breadcrumbs per [ARIA breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/).
+- **When not to use**: Avoid using breadcrumbs for multi-step processes like wizards or forms where a progress bar or step indicator would be more appropriate. Breadcrumbs are for navigating a site's hierarchy, not for indicating progress through a linear workflow.
 
 ## Development
 
