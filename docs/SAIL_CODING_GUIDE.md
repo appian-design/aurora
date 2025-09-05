@@ -1,4 +1,4 @@
-# SAIL Coding Guide - Appian Interface Generation
+# Agents
 
 ## Overview
 This guide helps generate valid Appian SAIL interfaces using documented components and best practices. SAIL (Self-Assembling Interface Layer) is Appian's declarative UI framework for building responsive, accessible interfaces.
