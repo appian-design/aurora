@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Messaging Module
@@ -10,9 +10,9 @@ last_updated: "2025-08-29"
 
 ### Guidance
 
-* Put the number of unread messages next to the site tab name (i.e. “Messages (3)”)
-* Messages should be truncated at 300 characters 
-* For the site tab the user will only see threads in which they are a sender or recipient
+- Put the number of unread messages next to the site tab name (i.e. “Messages (3)”)
+- Messages should be truncated at 300 characters 
+- For the site tab the user will only see threads in which they are a sender or recipient
 
 ### Empty State
 
@@ -37,11 +37,11 @@ Show this error state if the AI Smart Summary feature encounters any issues.
 ### Accessibility
 
 #### Accessibility Text
-* Specify 'Selected' in the AccessibilityText parameter of the Tab’s a!CardLayout to ensure screen readers identify the selected tab.
-* Specify 'Selected' in the AccessibilityText parameter of the message’s a!CardLayout in the message list column to ensure screen readers identify the selected message.
-* Ensure accessibility text of 'opens in a new window' for the 'external-link' icon in the body of the message underneath the subject of the message.
-* The 'View Full Message / View Less' links have accessibility text of the 'Name of the sender, date/time the message was sent.'
-* 'View All' links needs accessibility text of the # of attachments (i.e. '5 attachments').
+- Specify "Selected" in the `accessibilityText` parameter of the Tab’s `a!cardLayout` to ensure screen readers identify the selected tab.
+- Specify "Selected" in the `accessibilityText` parameter of the message’s `a!cardLayout` in the message list column to ensure screen readers identify the selected message.
+- Ensure accessibility text of 'opens in a new window' for the `external-link` icon in the body of the message underneath the subject of the message.
+- The 'View Full Message / View Less' links have accessibility text of the 'Name of the sender, date/time the message was sent.'
+- 'View All' links needs accessibility text of the # of attachments (i.e. '5 attachments').
 
 #### Captions
 Ensure captions are on the pagination arrows of the list of messages.

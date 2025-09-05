@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Charts
@@ -14,17 +14,20 @@ Charts can be a useful tool in interfaces to get a high level view of data and t
 ![](https://github.com/user-attachments/assets/bfb04812-eee2-4bbc-b734-d6deca56a949)
 
 Follow labeling that is consistent with other sections in the interface.
-* If a help tooltip is needed, use a rich text header in a side by side layout with a help icon.  The icon size must match the size of the title text.
-  * Use of tooltip should be reserved for chart titles that include terms that may not be universally understood.
 
-> [!Note]
-> **Accessibility:** In addition to the tooltip text on the richTextIcon, to ensure the text is read to screen readers, set the help icon CAPTION to the same text as the tooltip.
+- If a help tooltip is needed, use a rich text header in a side by side layout with a help icon.  The icon size must match the size of the title text.
+- Use of tooltip should be reserved for chart titles that include terms that may not be universally understood.
+
+!!! abstract "Accessibility"
+
+    In addition to the tooltip text on the `richTextIcon`, to ensure the text is read to screen readers, set the help icon CAPTION to the same text as the tooltip.
 
 ### Legend
 
 ![](https://github.com/user-attachments/assets/64d44c7c-0475-4050-81f2-8a0bea504b80)
 
 For more styling flexibility, we recommend using a custom legend instead of the OOTB legend.
+
 * Note that the functionality to toggle a series on and off using the legend will be lost when choosing to use a custom legend.
 
 ### Abbreviated Numbers
@@ -32,6 +35,7 @@ For more styling flexibility, we recommend using a custom legend instead of the 
 ![](https://github.com/user-attachments/assets/e8c4b3e8-3d7f-4510-89fb-f68c59f5be4b)
 
 For charts that plot large numbers (above 1 million), consider abbreviating the numbers to make the chart cleaner and easier to scan.
+
 * When abbreviating numbers in the axis, make sure to include the units used in the axis label.
 
 ### Data Limits
@@ -48,15 +52,16 @@ All charts should have an intentional order. Some charts have a natural ordering
 
 ### Chart Colors
 
-Use ASDS defined [chart color themes](../branding/colors.md#charts)
+Use defined [chart color themes](../branding/colors.md#charts)
 
 ### Empty State
 
 ![](https://github.com/user-attachments/assets/d196d931-a3d3-4e9c-8edd-b44d6f96aee0)
 
 Use custom empty states for charts with no data to add visual interest.
-* Consider pairing the empty state image with text with additional information on why the chart may be empty or a call to action on how to add data.
-* Choose an icon that best represents the type of chart that will be shown
+
+- Consider pairing the empty state image with text with additional information on why the chart may be empty or a call to action on how to add data.
+- Choose an icon that best represents the type of chart that will be shown
 
 ## Development
 

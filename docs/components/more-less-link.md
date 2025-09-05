@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-04"
 ---
 
 # More / Less Link
@@ -65,20 +65,9 @@ a!localVariables(
 )
 ```
 
-### Rule Usage
-
-```
-rule!More_Less_Link_Component(
-  text: "The rapid advancement of artificial intelligence and machine learning is profoundly reshaping the landscape of the financial services industry, moving far beyond algorithmic trading and into the core functions of banking, insurance, and personal finance. Financial institutions are increasingly leveraging AI for sophisticated fraud detection, analyzing vast datasets in real-time to identify and flag suspicious transactions with a level of accuracy and speed previously unattainable.",
-  cutoff: 255
-)
-```
-
 ### Rule Inputs
 
-```
 | Name | Type | Description |
-|------|------|-------------|
+| :---- | :---- | :---- |
 | text | Text | Full text that needs to be displayed. |
 | cutoff | Number (Integer) | Number of characters to display in the "Less" state. |
-```

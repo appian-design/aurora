@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Record Views
@@ -20,6 +20,7 @@ By default, each record type will have at least three views namely, Summary, New
 The Summary view is displayed by default when the user clicks on a record item from the record list. A record type could also have up to 20 additional customizable views to display information sourced from the record type. 
 
 **Note:**
+
 - We recommend using at most 6 views in a record. 
 - Before designing the views, set up a planning session with your PM. Establish how to group data in the views. Identify data elements that are related and how to meaningfully label that group in a section.
 
@@ -36,6 +37,7 @@ A mix of horizontal and vertical tabs used to balance information density. Local
 The button label in the record view matches the verb in the form header. Also, the submit button label in the footer matches the verb in the form header.
 
 Checklist:
+
 |Item|Type|
 |--- |--- |
 |Place global actions next to the record header. Global actions affect the entire record. Examples include: “Update”, “Update Status”, Delete”, “Export”.|Related Actions|
@@ -63,8 +65,8 @@ Checklist:
 |Use other record views to highlight data that is of intermittent importance. Examples include: Audit history, list of documents, list of users etc.|Views|
 |Avoid using more than 6 record views in a record. Use a combination of Record Views and Tabs as Side Navigation to balance information density.|Views|
 |Depending on the information to display, use a one column or two column layout|Views|
-|When using one column layout, center the component and set the width based on the amount of information to display. Use blank a!columnLayout()s to establish gutters on either side of the component.|Views|
-|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually NARROW_PLUS or MEDIUM).|Views|
+|When using one column layout, center the component and set the width based on the amount of information to display. Use blank `a!columnLayout()s` to establish gutters on either side of the component.|Views|
+|When using two column layouts, set two different column widths for the content. The primary content should be wider (usually WIDE) than the second content column (usually `NARROW_PLUS` or `MEDIUM`).|Views|
 |When using two column layouts, include high priority information in the primary and wider content area and move secondary priority information (e.g.: record metadata) to the second and narrower column.|Views|
 |Avoid using three column layouts|Views|
 |Unless agreed upon with your PM as a Category 1 - Marketable UI, treat other views as Category 2 - Usability Focused UIs.|Views|

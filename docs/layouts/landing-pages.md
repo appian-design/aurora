@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Landing Pages
@@ -12,10 +12,11 @@ last_updated: "2025-08-29"
 **Tailor Content to Target Users**
 
 Answer these questions to gain a better understanding of the various user personas viewing the landing page: 
-* What information does each user need to view?
-* What is the minimum amount of information you need to provide to give users context? 
-* What actions do users need to perform, and what information do they need to perform them?  
-* What helpful (but not essential) information can you display under a link that directs users to a separate page? 
+
+- What information does each user need to view?
+- What is the minimum amount of information you need to provide to give users context? 
+- What actions do users need to perform, and what information do they need to perform them?  
+- What helpful (but not essential) information can you display under a link that directs users to a separate page? 
 
 Use dense layouts for experienced, data-intensive users that prefer efficiency. Use a guided experience layout for novice users that prefer a step-by-step approach.
 

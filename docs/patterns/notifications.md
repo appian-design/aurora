@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Notifications
@@ -24,9 +24,9 @@ Each tab will show a list of the 5 most recent notifications. If there are no no
 
 ### Accessibility
 
-* Set the accessibilityText parameter on the currently selected tab (a!cardLayout) to “Selected”.
-* Set accessibilityText parameter to “Read” for read notifications and “Unread” for unread notifications.
-* Set caption text on the icons.
+- Set the `accessibilityText` parameter on the currently selected tab (`a!cardLayout`) to “Selected”.
+- Set `accessibilityText` parameter to “Read” for read notifications and “Unread” for unread notifications.
+- Set caption text on the icons.
 
 ## Development
 

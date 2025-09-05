@@ -1,9 +1,9 @@
 ---
 status: "stable"
-last_updated: "2025-07-09"
+last_updated: "2025-09-05"
 ---
 
-# Tags Guidance
+# Tags
 
 Tags are visual indicators used to highlight notable attributes of items and draw viewer attention to important characteristics. They provide quick, scannable context without overwhelming the interface.
 
@@ -14,6 +14,7 @@ Tags are visual indicators used to highlight notable attributes of items and dra
 ### When to Use Tags
 
 Use tags to:
+
 - Highlight newly added or updated items
 - Display important item attributes (status, priority, category)
 - Provide quick visual context in lists and data displays
@@ -22,6 +23,7 @@ Use tags to:
 ### Variants
 
 #### Categorical Tags
+
 Use tags to display status, priority, or category information:
 - Status indicators (Active, Pending, Complete)
 - Priority levels (High, Medium, Low)
@@ -29,6 +31,7 @@ Use tags to display status, priority, or category information:
 
 #### Numerical Tags
 Use tags to display counts, quantities, or numerical information:
+
 - Unread message counts (3, 12, 99+)
 - Task counts (5 tasks, 2 pending)
 - Item quantities (15 items, 3 new)
@@ -37,19 +40,7 @@ Use tags to display counts, quantities, or numerical information:
 
 Use colors strategically to convey meaning and maintain consistency:
 
-Colors with semantic meaning:
-- **Positive (Green)**: Success, active, approved states
-- **Negative (Red)**: Errors, urgent, critical items  
-- **Accent (Blue)**: Important information, primary actions
-- **Secondary (Gray)**: Neutral information, inactive states
-
-Extended color palette for categorical tags:
-- Orange (Orange 3) 
-- Yellow (Yellow 3) 
-- Teal (Teal 3) 
-- Sky (Sky 3) 
-- Purple (Purple 3) 
-- Pink (Pink 3)
+ Tag colors should always use a [color name] 4 for the background and the corresponding [color name] 1 for the text. For example, a green tag would use Green 4 for the background and Green 1 for the text.
 
 ### Usage Guidelines
 
@@ -194,17 +185,9 @@ a!localVariables(
 )
 ```
 
-### Key Parameters
-
-- **tags**: List of `a!tagItem()` components
-- **size**: "SMALL" or "STANDARD" (default)
-- **align**: "START", "CENTER", or "END"
-- **labelPosition**: "ABOVE", "ADJACENT", "COLLAPSED", or "JUSTIFIED"
-- **accessibilityText**: Screen reader description when needed
-
 ### Tag Item Properties
 
 - **text**: Display text for the tag
-- **backgroundColor**: Color scheme - "ACCENT", "POSITIVE", "NEGATIVE", "SECONDARY", Orange 3, Yellow 3, Teal 3, Sky 3, Purple 3, Pink 3
-- **textColor**: Optional text color override
+- **backgroundColor**: Color scheme. Accepts semantic names (`ACCENT`, `POSITIVE`, `NEGATIVE`, `SECONDARY`) or specific palette colors (e.g., Green 4, Orange 4, Red 4).
+- **textColor**: Color scheme. Use the corresponding [color name] 1 for the text color. For example, if backgroundColor is Green 4, textColor should be Green 1. Use the `STANDARD` value if you've chosen a semantic color for the background to maintain proper text contrast.
 - **link**: Optional link for interactive tags

@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-04"
 ---
 
 # Inline Dialog
@@ -157,17 +157,6 @@ a!localVariables(
       }
     )
   }
-)
-```
-
-### Rule Usage
-```
-rule!Inline_Dialog_Component(
-  formButtonLabel: "Add User",
-  buttonType: "LINK",
-  buttonIcon: "plus",
-  formFields: {},
-  formAction: "Add"
 )
 ```
 

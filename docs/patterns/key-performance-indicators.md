@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-08-29"
+last_updated: "2025-09-05"
 ---
 
 # Key Performance Indicators
@@ -17,16 +17,18 @@ KPIs are best suited for Landing Pages, Record Summary Views, or Dashboards.
 ![](https://github.com/user-attachments/assets/bcf62bbb-34f9-4e13-8cf4-6ae24e8276f8)
 
 Place KPIs where they might be optimally discoverable while not impeding their tasks (e.g.: at the top or on the side).
-* Avoid using more than 5 KPIs. Fewer the KPIs, the easier it is for the user to consume and act on the information.
-* When presenting in Record Summary Views, ensure that the KPIs do not impede or confuse the user from the actions they need to accomplish.
+
+- Avoid using more than 5 KPIs. Fewer the KPIs, the easier it is for the user to consume and act on the information.
+- When presenting in Record Summary Views, ensure that the KPIs do not impede or confuse the user from the actions they need to accomplish.
 
 ### Action
 ![](https://github.com/user-attachments/assets/e80501bc-12bf-485c-85eb-37b2e107438e)
 
 
 When designing KPIs, think about the underlying action or importance and present that to the user if applicable. For example:
-* What is the user going to do based on the information presented?
-* How should the user interpret the values (urgency)?
+
+- What is the user going to do based on the information presented?
+- How should the user interpret the values (urgency)?
 
 ### Filter
 
@@ -37,8 +39,9 @@ Use KPIs in clickable cards to filter down tabular data
 ### Supporting Information
 
 If applicable:
-* Show trends or benchmarks to the help the user gauge how their organization is performing
-* Use tags to call out critical information to highlight or for the user to act on
+
+- Show trends or benchmarks to the help the user gauge how their organization is performing
+- Use tags to call out critical information to highlight or for the user to act on
 
 ## Development
 

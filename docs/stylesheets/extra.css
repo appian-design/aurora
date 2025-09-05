@@ -1,0 +1,4 @@
+/* Hide the icon for the "stable" page status */
+.md-status--stable {
+    display: none;
+  }

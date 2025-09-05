@@ -1,4 +1,4 @@
-# SAIL Coding Guide - Appian Interface Generation
+# Agents
 
 ## Overview
 This guide helps generate valid Appian SAIL interfaces using documented components and best practices. SAIL (Self-Assembling Interface Layer) is Appian's declarative UI framework for building responsive, accessible interfaces.
@@ -24,8 +24,9 @@ a!textField(
 
 ## Starting with local variables
 
-> [!IMPORTANT]
-> All interfaces should start with the `a!localVariables` component. Any other functions or components references local variables have to be wrapped in this top-level component.
+!!! tip "Important"
+
+    All interfaces should start with the `a!localVariables` component. Any other functions or components references local variables have to be wrapped in this top-level component.
 
 ### Local variable types
 
