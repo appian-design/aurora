@@ -40,8 +40,8 @@ source venv/bin/activate
 python -m venv venv
 .\venv\Scripts\activate
 
-# Install dependencies from requirements.txt
-pip install -r requirements.txt
+# Install mkdocs material 
+pip install mkdocs-material
 ```
 
 #### 3. Run the Local Server
