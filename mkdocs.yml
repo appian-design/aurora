@@ -48,9 +48,20 @@ theme:
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
 
+  features:
+    - content.code.copy
+    - content.code.select
+    
+
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
   - attr_list
   - md_in_html
