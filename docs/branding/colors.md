@@ -52,7 +52,7 @@ The following is the complete color palette with named colors and their correspo
 ### Sky
 - Sky 0: #EBF4FF
 - Sky 1: #DBECFF
-- Sky 2: #8BD9FF
+- Sky 2: #B8D9FF
 - Sky 3: #3F8EEE
 - Sky 35: #115EBB
 - Sky 4: #0C4283
