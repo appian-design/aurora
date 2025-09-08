@@ -20,7 +20,6 @@ design-system-docs/
 │   ├── stylesheets/      # Custom CSS overrides
 │   └── SAIL_CODING_GUIDE.md # Coding guidance for SAIL framework
 ├── mkdocs.yml            # MkDocs configuration file
-├── requirements.txt      # Python dependencies for local development
 └── README.md             # Repository overview and setup instructions
 ```
 
