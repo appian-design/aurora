@@ -7,15 +7,20 @@ This guide helps AI assistants understand and work with the design system docume
 
 ```
 design-system-docs/
-├── components/         # Individual UI components
-├── patterns/          # Reusable design patterns  
-├── layouts/           # Page-level layout templates
-├── branding/          # Brand identity and visual elements
-├── accessibility/     # Accessibility guidelines
-├── content-style-guide/ # Content and writing guidelines
-├── _layouts/          # Jekyll layout templates
-├── _includes/         # Jekyll include templates
-└── _config.yml        # Jekyll configuration
+├── .github/workflows/    # GitHub Actions for automated deployment
+├── docs/                 # Contains all Markdown documentation files
+│   ├── index.md          # The home page
+│   ├── assets/           # Images, CSS, or JS overrides
+│   ├── components/       # Individual UI components
+│   ├── patterns/         # Reusable design patterns  
+│   ├── layouts/          # Page-level layout templates
+│   ├── branding/         # Brand identity and visual elements
+│   ├── accessibility/    # Accessibility guidelines and checklist
+│   ├── content-style-guide/ # Content and writing guidelines
+│   ├── stylesheets/      # Custom CSS overrides
+│   └── SAIL_CODING_GUIDE.md # Coding guidance for SAIL framework
+├── mkdocs.yml            # MkDocs configuration file
+└── README.md             # Repository overview and setup instructions
 ```
 
 ## Documentation Format
@@ -68,11 +73,29 @@ related: ["related-item-1", "related-item-2"]
 - Every component must include accessibility guidance
 - Follow WCAG 2.1 AA standards
 - Include ARIA patterns and semantic HTML examples
+- Reference the comprehensive [Accessibility Checklist](docs/accessibility/checklist.md) for detailed requirements
 
 ### 4. Developer-Friendly
 - Provide working code examples
 - Include common variations and use cases
 - Explain the reasoning behind design decisions
+- Reference the [SAIL Coding Guide](docs/SAIL_CODING_GUIDE.md) for framework-specific implementation guidance
+
+## Global Resources
+
+### Accessibility Checklist
+The repository includes a comprehensive [Accessibility Checklist](docs/accessibility/checklist.md) that covers:
+- WCAG 2.1 AA compliance requirements
+- Testing procedures and tools
+- Common accessibility patterns
+- Implementation guidelines for inclusive design
+
+### SAIL Coding Guide  
+The [SAIL Coding Guide](docs/SAIL_CODING_GUIDE.md) provides:
+- Framework-specific implementation patterns
+- Best practices for SAIL development
+- Code examples and conventions
+- Integration guidance for design system components
 
 ## Content Guidelines
 
@@ -98,12 +121,13 @@ related: ["related-item-1", "related-item-2"]
 ### For AI Assistants
 - Reference existing patterns when suggesting new components
 - Maintain consistency with established conventions
-- Always include accessibility considerations
+- Always include accessibility considerations using the [Accessibility Checklist](docs/accessibility/checklist.md)
+- Follow coding patterns from the [SAIL Coding Guide](docs/SAIL_CODING_GUIDE.md) when applicable
 - Provide complete, working examples
 - Follow the established documentation format
 
 ### Integration with MCP Server
-This documentation is designed to work with the companion MCP server that makes this content available directly within development environments. Changes made here are automatically available through the MCP interface.
+This documentation is designed to work with the companion MCP server that makes this content available directly within development environments. The site is built using MkDocs Material and deployed via GitHub Pages. Changes made here are automatically available through the MCP interface.
 
 ## Related Resources
 
