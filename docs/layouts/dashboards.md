@@ -860,7 +860,7 @@ a!localVariables(
                                 labelPosition: "COLLAPSED",
                                 images: {
                                   a!webImage(
-                                    source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/callout-image-1.png"
+                                    source:"https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/callout-image-1.png"
                                   )
                                 },
                                 size: "FIT",
@@ -1506,7 +1506,7 @@ a!headerContentLayout(
   header: {
     a!billboardLayout(
       backgroundMedia: a!webImage(
-        source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-1.jpg"
+        source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-1.jpg"
       ),
       height: "EXTRA_SHORT",
       marginBelow: "NONE"
@@ -3770,7 +3770,7 @@ a!localVariables(
                           labelPosition: "ABOVE",
                           images: {
                             a!webImage(
-                              source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image-2.png"
+                              source:"https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/header-image-2.png"
                             )
                           },
                           size: "FIT",
@@ -5233,7 +5233,7 @@ a!headerContentLayout(
         pickedUpOn: today(),
         pickedUpBy: "Jared Connors",
         pricePerItem: "$100",
-        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-1.jpg"
+        image: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/data-image-1.jpg"
       ),
       a!map(
         name: "Suede Lace Up Shoe",
@@ -5241,7 +5241,7 @@ a!headerContentLayout(
         pickedUpOn: null,
         pickedUpBy: null,
         pricePerItem: "$50",
-        image: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/data-image-2.jpg"
+        image: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/data-image-2.jpg"
       )
     },
     local!orderSummary: a!map(

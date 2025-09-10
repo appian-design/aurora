@@ -36,4 +36,4 @@ Ensure consistency across all Appian Platform features and Solutions, and provid
 
 ---
 
-**Need help or have feedback?** Check our [GitHub repository](https://github.com/pglevy/design-system-docs/issues/new/choose) for issues, discussions, and contribution guidelines.
+**Need help or have feedback?** Check our [GitHub repository](https://github.com/appian-design/aurora/issues/new/choose) for issues, discussions, and contribution guidelines.

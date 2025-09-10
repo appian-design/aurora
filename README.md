@@ -11,14 +11,10 @@ This open-source repository serves as the single source of truth for our design 
 ## 🚀 Quick Start
 
 ### View the Documentation
-Visit our [live documentation site](https://pglevy.github.io/design-system-docs/) to explore the design system.
+Visit our [live documentation site](https://appian-design.github.io/aurora/) to explore the design system.
 
-### Contributing
+### 🛠️ Contributing
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
-
-### 🛠️ Local Development
-
-We welcome contributions! Please read our full [**Contributing Guide (CONTRIBUTING.md)**](CONTRIBUTING.md) before starting. The basics to get the site running locally are below.
 
 #### 1. Prerequisites
 * [Python 3.8+](https://www.python.org/downloads/)
@@ -28,7 +24,7 @@ We welcome contributions! Please read our full [**Contributing Guide (CONTRIBUTI
 
 ```bash
 # Clone the repository
-git clone [https://github.com/pglevy/design-system-docs.git](https://github.com/pglevy/design-system-docs.git)
+git clone [https://github.com/appian-design/aurora.git](https://github.com/appian-design/aurora.git)
 cd design-system-docs
 
 # Create and activate a virtual environment
@@ -86,7 +82,7 @@ We believe that great design systems are built by communities. Whether you're a 
 
 ### Ways to Contribute
 
-- **Report Issues**: Found a bug or have a suggestion? [Open an issue](https://github.com/pglevy/design-system-docs/issues/new/choose)
+- **Report Issues**: Found a bug or have a suggestion? [Open an issue](https://github.com/appian-design/aurora/issues/new/choose)
 - **Improve Documentation**: Help us make our docs clearer and more comprehensive
 - **Add Examples**: Contribute code examples and implementation guides
 - **Enhance Accessibility**: Help us make our design system more inclusive
@@ -173,9 +169,9 @@ related: ["related-item-1", "related-item-2"]
 
 ## 🆘 Getting Help
 
-- **Documentation**: Check our [existing documentation](https://pglevy.github.io/design-system-docs/) first
-- **Issues**: Search [existing issues](https://github.com/pglevy/design-system-docs/issues) before creating new ones
-- **Discussions**: Start a [discussion](https://github.com/pglevy/design-system-docs/discussions) for questions and ideas
+- **Documentation**: Check our [existing documentation](https://appian-design.github.io/aurora/) first
+- **Issues**: Search [existing issues](https://github.com/appian-design/aurora/issues) before creating new ones
+- **Discussions**: Start a [discussion](https://github.com/appian-design/aurora/discussions) for questions and ideas
 - **Contributing**: Read our [Contributing Guide](CONTRIBUTING.md) for detailed guidance
 
 ## 📄 License

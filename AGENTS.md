@@ -133,4 +133,4 @@ This documentation is designed to work with the companion MCP server that makes 
 
 - [Contributing Guide](CONTRIBUTING.md) - How to contribute to this documentation
 - [Code of Conduct](CODE_OF_CONDUCT.md) - Community guidelines
-- [Design System Server](https://github.com/pglevy/design-system-server) - MCP server for AI integration
+- [Design System Server](https://github.com/appian-design/aurora-mcp) - MCP server for AI integration

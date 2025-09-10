@@ -64,23 +64,23 @@ jobs:
           script: |
             // Close any existing open sync issues
             const { data: issues } = await github.rest.issues.listForRepo({
-              owner: 'pglevy',
-              repo: 'design-system-server',
+              owner: 'appian-design',
+              repo: 'aurora-mcp',
               state: 'open',
               labels: 'sync-needed'
             });
             
             for (const issue of issues) {
               await github.rest.issues.update({
-                owner: 'pglevy',
-                repo: 'design-system-server',
+                owner: 'appian-design',
+                repo: 'aurora-mcp',
                 issue_number: issue.number,
                 state: 'closed'
               });
               
               await github.rest.issues.createComment({
-                owner: 'pglevy',
-                repo: 'design-system-server',
+                owner: 'appian-design',
+                repo: 'aurora-mcp',
                 issue_number: issue.number,
                 body: '✅ Sync check passed - closing this issue as resolved.'
               });
@@ -98,8 +98,8 @@ jobs:
             
             // Check if there's already an open sync issue
             const { data: existingIssues } = await github.rest.issues.listForRepo({
-              owner: 'pglevy',
-              repo: 'design-system-server',
+              owner: 'appian-design',
+              repo: 'aurora-mcp',
               state: 'open',
               labels: 'sync-needed'
             });
@@ -108,16 +108,16 @@ jobs:
               // Update the existing issue
               const issue = existingIssues[0];
               await github.rest.issues.update({
-                owner: 'pglevy',
-                repo: 'design-system-server',
+                owner: 'appian-design',
+                repo: 'aurora-mcp',
                 issue_number: issue.number,
                 title: issueTitle,
                 body: issueBody
               });
               
               await github.rest.issues.createComment({
-                owner: 'pglevy',
-                repo: 'design-system-server',
+                owner: 'appian-design',
+                repo: 'aurora-mcp',
                 issue_number: issue.number,
                 body: '🔄 Issue updated with latest sync requirements.'
               });
@@ -126,8 +126,8 @@ jobs:
             } else {
               // Create a new issue
               const { data: newIssue } = await github.rest.issues.create({
-                owner: 'pglevy',
-                repo: 'design-system-server',
+                owner: 'appian-design',
+                repo: 'aurora-mcp',
                 title: issueTitle,
                 body: issueBody,
                 labels: ['sync-needed', 'automated']

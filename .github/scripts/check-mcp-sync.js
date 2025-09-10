@@ -123,7 +123,7 @@ async function fetchMCPMetadata() {
     console.log('📡 Fetching MCP server metadata from GitHub API...');
     
     const response = await fetch(
-      'https://api.github.com/repos/pglevy/design-system-server/contents/src/design-system-data.ts',
+      'https://api.github.com/repos/appian-design/aurora-mcp/contents/src/design-system-data.ts',
       {
         headers: {
           'Accept': 'application/vnd.github.v3+json',

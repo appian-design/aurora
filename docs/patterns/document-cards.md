@@ -537,7 +537,7 @@ a!columnsLayout(
                                             labelPosition: "COLLAPSED",
                                             images: {
                                               a!webImage(
-                                                source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/ai-imagery/sparkle-light-1.png"
+                                                source:"https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-light-1.png"
                                               )
                                             },
                                             size: "ICON",
