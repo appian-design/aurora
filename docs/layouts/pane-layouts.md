@@ -1173,7 +1173,7 @@ a!localVariables(
       daysListed: "2d",
       tagText: "NEW LISTING",
       tagColor: "#ff9900",
-      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-2.jpg",
+      imageSource: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-2.jpg",
       link: a!dynamicLink()
     },
     {
@@ -1185,7 +1185,7 @@ a!localVariables(
       daysListed: "15d",
       tagText: "OPEN HOUSE SCHEDULED",
       tagColor: "#38761d",
-      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-3.jpg",
+      imageSource: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-3.jpg",
       link: a!dynamicLink()
     },
     {
@@ -1197,7 +1197,7 @@ a!localVariables(
       daysListed: "26d",
       tagText: "OPEN HOUSE SCHEDULED",
       tagColor: "#38761d",
-      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-4.jpg",
+      imageSource: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-4.jpg",
       link: a!dynamicLink()
     },
     {
@@ -1209,7 +1209,7 @@ a!localVariables(
       daysListed: "33d",
       tagText: "PRICE REDUCED",
       tagColor: "#3c78d8",
-      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-5.jpg",
+      imageSource: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-5.jpg",
       link: a!dynamicLink()
     },
     {
@@ -1221,7 +1221,7 @@ a!localVariables(
       daysListed: "42d",
       tagText: "NO OFFERS RECEIVED",
       tagColor: "#cc0000",
-      imageSource: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/billboard-bg-6.jpg",
+      imageSource: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/billboard-bg-6.jpg",
       link: a!dynamicLink()
     }
   },

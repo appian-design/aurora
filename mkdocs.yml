@@ -1,9 +1,9 @@
 site_name: Appian Design System Docs
-site_url:  https://pglevy.github.io/design-system-docs/
+site_url:  https://appian-design.github.io/aurora/
 
 #Repository link in header 
-repo_url: https://github.com/pglevy/design-system-docs/
-repo_name: pglevy/design-system-docs
+repo_url: https://github.com/appian-design/aurora
+repo_name: appian-design/aurora
 
 theme:
   name: material
@@ -77,4 +77,4 @@ extra_css:
 extra: 
   social:
     - icon: fontawesome/brands/github 
-      link: https://github.com/pglevy/design-system-docs/issues/new/choose
+      link: https://github.com/appian-design/aurora/issues/new/choose

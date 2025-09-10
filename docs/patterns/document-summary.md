@@ -264,7 +264,7 @@ a!localVariables(
                             labelPosition: "COLLAPSED",
                             images: {
                               a!webImage(
-                                source: "https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/empty-state-image-2.png"
+                                source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/empty-state-image-2.png"
                               )
                             },
                             size: "MEDIUM_PLUS",

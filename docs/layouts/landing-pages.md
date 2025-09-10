@@ -4746,7 +4746,7 @@ a!localVariables(
     header: {
       a!billboardLayout(
         backgroundMedia: a!webImage(
-          source:"https://raw.githubusercontent.com/pglevy/design-system-docs/main/assets/images/header-image.png"
+          source:"https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/header-image.png"
         ),
         backgroundColor: "#FAFAFC",
         height: "MEDIUM",

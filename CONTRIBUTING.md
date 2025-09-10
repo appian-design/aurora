@@ -117,7 +117,7 @@ design-system-docs/
 
 ```bash
 # Clone the repository
-git clone https://github.com/pglevy/design-system-docs.git
+git clone https://github.com/appian-design/aurora.git
 cd design-system-docs
 
 # Install dependencies
@@ -158,8 +158,8 @@ Each documentation page should include:
 ## Questions?
 
 - Check our [existing documentation](README.md)
-- Search through [existing issues](https://github.com/pglevy/design-system-docs/issues)
-- Start a [discussion](https://github.com/pglevy/design-system-docs/discussions) for questions
+- Search through [existing issues](https://github.com/appian-design/aurora/issues)
+- Start a [discussion](https://github.com/appian-design/aurora/discussions) for questions
 - Reach out to maintainers for guidance
 
 Thank you for contributing to making our design system documentation better for everyone!
