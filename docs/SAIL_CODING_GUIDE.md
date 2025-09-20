@@ -1071,6 +1071,28 @@ a!fileUploadField(
 )
 ```
 
+### 11. Valid icons
+
+#### Use only icons that part of the supported set listed in `branding/icons`
+
+**❌ Incorrect - Making assumptions about what icons are available:**
+
+```sail
+a!richTextDisplayField(
+  labelPosition: "COLLAPSED",
+  value: { a!richTextIcon(icon: "shield-alt") }
+)
+```
+
+**✅ Correct - Check that icons are available in full reference list:**
+
+```sail
+a!richTextDisplayField(
+  labelPosition: "COLLAPSED",
+  value: { a!richTextIcon(icon: "shield") }
+)
+```
+
 ### Error Prevention Checklist
 
 Before submitting SAIL code, verify:
@@ -1088,3 +1110,4 @@ Before submitting SAIL code, verify:
 - [ ] **Required input indicators**: Do not add asterisks to required input labels since they are added automatically
 - [ ] **Pie chart legend syntax**: Use `seriesLabelStyle: "LEGEND"` to show legend for pie charts
 - [ ] **Inconsistent buttons styles for `a!fileUploadField`**: Use old button style values for `a!fileUploadField` only
+- [ ] **Valid icons**: Check that icons are part of supported set before including
