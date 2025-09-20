@@ -82,8 +82,10 @@ The following is the complete color palette with named colors and their correspo
 - Pink 4: #8C1565
 
 ### Grays
-- Gray 0: #FFFFFF
+- Gray 0: #F5F5F7
+- Gray 1: #EDEDF2
 - Gray 2: #E0E0E0
+- Gray 3: #6C6C75
 - Gray 4: #636363
 - Gray 5: #222222
 
