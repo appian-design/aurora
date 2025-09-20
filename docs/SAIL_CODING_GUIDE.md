@@ -1,7 +1,7 @@
-# Agents
+# SAIL Coding Guide
 
 ## Overview
-This guide helps generate valid Appian SAIL interfaces using documented components and best practices. SAIL (Self-Assembling Interface Layer) is Appian's declarative UI framework for building responsive, accessible interfaces.
+This guide provides basic guidance and error avoidance for generating valid Appian SAIL interfaces using documented components and best practices. SAIL (Self-Assembling Interface Layer) is Appian's declarative UI framework for building responsive, accessible interfaces.
 
 ## Core Principles
 
@@ -24,9 +24,7 @@ a!textField(
 
 ## Starting with local variables
 
-!!! tip "Important"
-
-    All interfaces should start with the `a!localVariables` component. Any other functions or components references local variables have to be wrapped in this top-level component.
+IMPORTANT: All interfaces should start with the `a!localVariables` component. Any other functions or components references local variables have to be wrapped in this top-level component.
 
 ### Local variable types
 
@@ -141,6 +139,40 @@ a!cardLayout(
 )
 ```
 
+### Card Group Layout
+Displays an arrangement of cards, with the same width and height. Prefer this approach any time there is a set of cards displayed together.
+
+```sail
+a!cardGroupLayout(
+  labelPosition: "COLLAPSED",
+  cards: {
+    a!cardLayout(
+      contents: {
+        /* Card content */
+      }
+    ),
+    a!cardLayout(
+      contents: {
+        /* Card content */
+      }
+    ),
+    a!cardLayout(
+      contents: {
+        /* Card content */
+      }
+    ),
+    a!cardLayout(
+      contents: {
+        /* Card content */
+      }
+    )
+  },
+  spacing: "STANDARD",
+  cardWidth: "MEDIUM",
+  cardHeight: "AUTO"
+)
+```
+
 ## Common Input Components
 
 ### Text Field
@@ -150,12 +182,7 @@ a!textField(
   labelPosition: "ABOVE",
   value: local!email,
   saveInto: local!email,
-  required: true,
-  validations: if(
-    not(isemailaddress(local!email)),
-    "Please enter a valid email address",
-    null
-  )
+  required: true
 )
 ```
 
@@ -193,7 +220,7 @@ a!richTextDisplayField(
     a!richTextItem(text: "Status: ", style: "STRONG"),
     a!richTextItem(
       text: "Active",
-      color: "POSITIVE"
+      color: "STANDARD"
     )
   }
 )
@@ -220,7 +247,7 @@ a!tagField(
 
 ### Button
 
-Button widgets should always be placed inside a `a!buttonArrayLayout`.
+IMPORTANT: Button widgets should always be placed inside a `a!buttonArrayLayout`, unless they are part of `a!formLayout`, which uses `a!buttonLayout` instead.
 
 ```sail
 a!buttonArrayLayout(
@@ -253,9 +280,29 @@ a!richTextDisplayField(
     a!richTextItem(
       text: "Visit site",
       link: a!safeLink(uri: "http://www.appian.com"),
-      linkStyle: "INLINE"
-       /* Use STANDALONE for linkStyle when linked text is not part of a sentence with other unlinked text. */
+      linkStyle: "STANDALONE"
     )
+  }
+)
+```
+
+#### Link Style
+
+IMPORTANT: Use `INLINE` for `linkStyle` ONLY when linked text is part of a sentence with other unlinked text. Otherwise use `STANDALONE`.
+
+```sail
+a!richTextDisplayField(
+  labelPosition: "COLLAPSED",
+  value: {
+    a!richTextItem(
+      text: "For more information, "
+    ),
+    a!richTextItem(
+      text: "visit our website",
+      link: a!safeLink(uri: "http://www.appian.com"),
+      linkStyle: "STANDALONE"
+    ),
+    "."
   }
 )
 ```
@@ -566,3 +613,478 @@ and(condition1, condition2, condition3, condition4)
 /* Multiple conditions with or() */
 or(option1, option2, option3, option4, option5)
 ```
+
+## Null Checking and Default Values
+
+To avoid null errors, use special functions to check whether values are (or are not) null or empty. Use default values as fallback.
+
+### Null Checking Functions
+
+**Checking that a local variable is not null or empty:**
+
+```sail
+a!localVariables(
+  local!basicInfo: "some content",
+  a!sectionLayout(
+    label: "Additional Info",
+    contents: {},
+    showWhen: a!isNotNullOrEmpty(local!basicInfo)
+  )
+)
+```
+
+**Checking that a local variable is null or empty:**
+
+```sail
+a!localVariables(
+  local!basicInfo: null,
+  a!messageBanner(
+    icon: "info-circle",
+    primaryText: "Enter the basic info to get started",
+    showWhen: a!isNullOrEmpty(local!basicInfo)
+  )
+)
+```
+
+### Default Values
+
+```sail
+a!localVariables(
+  local!cookiePreference: null,
+  a!textField(
+    label: "Cookie Preference",
+    value: a!defaultValue(local!cookiePreference, "Reject All"),
+    readOnly: true
+  )
+)
+```
+
+## Common Errors and How to Avoid Them
+
+This section covers the most frequent SAIL syntax errors and provides examples of both incorrect and correct implementations.
+
+### 1. Overuse of text() Function
+
+**❌ Incorrect - Unnecessary text() wrapping:**
+```sail
+a!richTextItem(
+  text: text("Status: Active"),  /* text() not needed for string literals */
+  style: "STRONG"
+)
+```
+
+**✅ Correct - Direct string usage:**
+```sail
+a!richTextItem(
+  text: "Status: Active",  /* String literals don't need text() */
+  style: "STRONG"
+)
+```
+
+**When to use text():** Only when converting non-text values to strings:
+```sail
+a!richTextItem(
+  text: text(local!numericValue, `format`),  /* Note the required format parameter: The output format string, supporting "date/time" format, "positive" format, "positive;negative" format or "positive;negative;zero" format. */
+  style: "STRONG"
+)
+```
+
+### 2. Grid Component Validation Errors
+
+**❌ Incorrect - showSearchBox without Record Type data:**
+```sail
+a!gridField(
+  data: local!arrayData,  /* Array data source */
+  showSearchBox: true,    /* Error: showSearchBox requires Record Type */
+  columns: {
+    /* columns */
+  }
+)
+```
+
+**✅ Correct - showSearchBox with Record Type:**
+```sail
+a!gridField(
+  data: a!recordData(recordType!Employee),  /* Record Type data source */
+  showSearchBox: true,                      /* Valid with Record Type */
+  columns: {
+    /* columns */
+  }
+)
+```
+
+**✅ Correct - Array data without showSearchBox:**
+```sail
+a!gridField(
+  data: local!arrayData,  /* Array data source */
+  /* showSearchBox omitted - not supported with arrays */
+  columns: {
+    /* columns */
+  }
+)
+```
+
+### 3. Layout Width Validation Errors
+
+#### Side by Side Layout Widths
+
+**❌ Incorrect - Invalid width values:**
+```sail
+a!sideBySideLayout(
+  items: {
+    a!sideBySideItem(
+      width: "WIDE",  /* Invalid: Use AUTO, MINIMIZE, or 1X-10X */
+      item: /* component */
+    ),
+    a!sideBySideItem(
+      width: "NARROW",  /* Invalid: Use AUTO, MINIMIZE, or 1X-10X */
+      item: /* component */
+    )
+  }
+)
+```
+
+**✅ Correct - Valid width values:**
+```sail
+a!sideBySideLayout(
+  items: {
+    a!sideBySideItem(
+      width: "AUTO",  /* Valid: AUTO, MINIMIZE, 1X-10X */
+      item: /* component */
+    ),
+    a!sideBySideItem(
+      width: "3X",  /* Valid: 1X through 10X */
+      item: /* component */
+    )
+  }
+)
+```
+
+#### Form Layout Widths
+
+**❌ Incorrect - Invalid formWidth:**
+```sail
+a!formLayout(
+  formWidth: "NARROW_PLUS",  /* Invalid width value */
+  contents: {
+    /* form contents */
+  }
+)
+```
+
+**✅ Correct - Valid formWidth values:**
+```sail
+a!formLayout(
+  formWidth: "MEDIUM",  /* Valid: FULL, WIDE, MEDIUM, NARROW, EXTRA_NARROW */
+  contents: {
+    /* form contents */
+  }
+)
+```
+
+### 4. Component Confusion Errors
+
+#### Milestone Components
+
+**❌ Incorrect - Using non-existent component:**
+```sail
+a!milestoneStep(  /* This component doesn't exist (yet) */
+  label: "Step 1",
+  status: "COMPLETE"
+)
+```
+
+**✅ Correct - Using milestoneField with steps:**
+```sail
+a!milestoneField(
+  steps: {
+    "Submit Customer Request", 
+    "Set Up On-Site Appt", 
+    "File Assessment", 
+    "Submit Proposal", 
+    "Submit Agreement", 
+    "Finalize Repairs"
+  }
+)
+```
+
+### 5. Invalid Parameter Values
+
+#### Button Color Values
+
+**❌ Incorrect - Invalid color:**
+```sail
+a!buttonArrayLayout(
+  buttons: {
+    a!buttonWidget(
+      label: "Submit",
+      color: "POSITIVE",
+      /* Invalid: Use ACCENT, NEGATIVE, SECONDARY or any hex value from colors.md */
+      style: "SOLID"
+    )
+  }
+)
+```
+
+**✅ Correct - Valid color values:**
+```sail
+a!buttonArrayLayout(
+  buttons: {
+    a!buttonWidget(
+      label: "Submit",
+      color: "ACCENT",  /* Valid: ACCENT, NEGATIVE, SECONDARY, or any hex value from colors.md */
+      style: "SOLID"
+    )
+  }
+)
+```
+
+#### Progress Bar Colors
+
+**❌ Incorrect - Invalid color:**
+```sail
+a!progressBarField(
+  percentage: 75,
+  color: "SECONDARY"  /* Invalid: Use ACCENT, POSITIVE, NEGATIVE, WARN */
+)
+```
+
+**✅ Correct - Valid color values:**
+```sail
+a!progressBarField(
+  percentage: 75,
+  color: "POSITIVE". /* Valid: ACCENT, POSITIVE, NEGATIVE, WARN */
+)
+```
+
+#### Checkbox Value/Choice Mismatch
+
+**❌ Incorrect - Value not in choiceValues:**
+```sail
+a!checkboxField(
+  label: "Document Confirmation",
+  choiceLabels: {"Confirmed"},
+  choiceValues: {true},    /* choiceValues contains true */
+  value: false             /* Error: false not in choiceValues */
+)
+```
+
+**✅ Correct - Matching values:**
+```sail
+a!checkboxField(
+  label: "Document Confirmation",
+  choiceLabels: {"Confirmed"},
+  choiceValues: {true},
+  value: true              /* Value matches choiceValues */
+)
+```
+
+#### Invalid Parameters
+
+**❌ Incorrect - Non-existent parameter:**
+```sail
+a!textField(
+  label: "Name",
+  value: local!name,
+  saveInto: local!name,
+  skipAutoFocus: true  /* This parameter is not available externally */
+)
+```
+
+**✅ Correct - Valid parameters only:**
+```sail
+a!textField(
+  label: "Name",
+  value: local!name,
+  saveInto: local!name
+  /* Use only documented parameters */
+)
+```
+
+### 6. Component Availability Errors
+
+#### Unavailable Components
+
+**❌ Incorrect - Using unavailable component:**
+```sail
+a!dateRangeField(  /* This component is not available */
+  startValue: local!startDate,
+  endValue: local!endDate
+)
+```
+
+**✅ Correct - Use separate date fields:**
+```sail
+a!columnsLayout(
+  columns: {
+    a!columnLayout(
+      contents: {
+        a!dateField(
+          label: "Start Date",
+          value: local!startDate,
+          saveInto: local!startDate
+        )
+      }
+    ),
+    a!columnLayout(
+      contents: {
+        a!dateField(
+          label: "End Date",
+          value: local!endDate,
+          saveInto: local!endDate
+        )
+      }
+    )
+  }
+)
+```
+
+### 7. Layout Restriction Errors
+
+#### Unsupported Component Nesting
+
+**❌ Incorrect - MultiColumnLayout in sideBySideLayout:**
+```sail
+a!sideBySideLayout(
+  items: {
+    a!sideBySideItem(
+      item: a!columnsLayout(  /* Error: columnsLayout not supported here */
+        columns: {
+          /* columns */
+        }
+      )
+    )
+  }
+)
+```
+
+**✅ Correct - Use appropriate layout nesting:**
+```sail
+a!columnsLayout(
+  columns: {
+    a!columnLayout(
+      contents: {
+        a!sideBySideLayout(
+          items: {
+            a!sideBySideItem(
+              item: /* single component only */
+            )
+          }
+        )
+      }
+    )
+  }
+)
+```
+
+### 8. Redundant Elements Errors
+
+#### Asterisks Added to Required Fields
+
+**❌ Incorrect - Manually adding asterisks to required form fields:**
+```sail
+a!textField(
+  label: "First Name *", /* Error: Asterisk added to label of required field */
+  value: local!firstName,
+  saveInto: local!firstName,
+  required: true
+)
+```
+
+**✅ Correct - Asterisk is added automatically when required is set to true:**
+```sail
+a!textField(
+  label: "First Name", /* Correct: No additional asterisk */
+  value: local!firstName,
+  saveInto: local!firstName,
+  required: true /* System adds asterisk automatically when required parameter is set to true */
+)
+```
+
+### 9. Invalid Chart Parameters
+
+#### Pie Chart Legend Parameter
+
+**❌ Incorrect - Using `showLegend` parameter for `a!pieChartField`:**
+
+```sail
+a!pieChartField(
+  label: "Pie Chart",
+  labelPosition: "COLLAPSED",
+  series: {
+    a!chartSeries(label: "Chart Series 1", data: 1),
+    a!chartSeries(label: "Chart Series 2", data: 2),
+    a!chartSeries(label: "Chart Series 3", data: 3)
+  },
+  colorScheme: "RAINFOREST",
+  style: "DONUT",
+  showLegend: true, /* Error: using showLegend parameter for pie chart is not valid, even though it is used for other chart types */
+  height: "MEDIUM",
+)
+```
+
+**✅ Correct - Use `seriesLabelStyle: "LEGEND"` to show the legend for `a!pieChartField`:**
+
+```sail
+a!pieChartField(
+  label: "Pie Chart",
+  labelPosition: "COLLAPSED",
+  series: {
+    a!chartSeries(label: "Chart Series 1", data: 1),
+    a!chartSeries(label: "Chart Series 2", data: 2),
+    a!chartSeries(label: "Chart Series 3", data: 3)
+  },
+  colorScheme: "RAINFOREST",
+  style: "DONUT",
+  seriesLabelStyle: "LEGEND", /* Correct: pie chart uses a different syntax to show the legend */
+  height: "MEDIUM",
+)
+```
+
+### 10. Button Style Inconsistency for `a!fileUploadField`
+
+#### `a!fileUploadField` uses different button styles from other buttons
+
+This is currently a bug in the system where this component uses the old button style names. IMPORTANT: This guidance is for a!fileUploadField` only!
+
+**❌ Incorrect - Using `SOLID` and other correct button styles for `a!fileUploadField`:**
+
+```sail
+a!fileUploadField(
+  label: "File Upload",
+  labelPosition: "ABOVE",
+  buttonStyle: "SOLID", /* Incorrect: Even though this is correct for all other buttons, this causes an error with this component */
+  saveInto: {},
+  validations: {}
+)
+```
+
+**✅ Correct - Use the old buttons style values with `a!fileUploadField`:**
+
+```sail
+a!fileUploadField(
+  label: "File Upload",
+  labelPosition: "ABOVE",
+  buttonStyle: "STANDARD", /* Valid values: "PRIMARY", "SECONDARY" (default), "STANDARD", "LINK" */
+  saveInto: {},
+  validations: {}
+)
+```
+
+### Error Prevention Checklist
+
+Before submitting SAIL code, verify:
+
+- [ ] **Text function usage**: Only use `text()` for type conversion, not string literals
+- [ ] **Grid configuration**: Use `showSearchBox` only with Record Type data sources
+- [ ] **Layout widths**:
+  - sideBySideLayout: `AUTO`, `MINIMIZE`, `1X`-`10X`
+  - formLayout: `FULL`, `WIDE`, `MEDIUM`, `NARROW`, `EXTRA_NARROW`
+- [ ] **Component names**: Use exact component names from documentation
+- [ ] **Parameter values**: Use only documented parameter values
+- [ ] **Component parameters**: Include only documented parameters
+- [ ] **Component availability**: Verify component exists in current Appian version
+- [ ] **Layout nesting**: Check component compatibility within layouts
+- [ ] **Required input indicators**: Do not add asterisks to required input labels since they are added automatically
+- [ ] **Pie chart legend syntax**: Use `seriesLabelStyle: "LEGEND"` to show legend for pie charts
+- [ ] **Inconsistent buttons styles for `a!fileUploadField`**: Use old button style values for `a!fileUploadField` only
