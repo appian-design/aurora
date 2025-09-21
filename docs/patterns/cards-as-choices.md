@@ -7,15 +7,21 @@ last_updated: "2025-09-21"
 
 Cards as choices present a set of distinct options to a user in a visually engaging, easily scannable format. This pattern serves as an alternative to radio buttons or dropdowns, especially when choices benefit from descriptive text, icons, or images. 
 
+![](https://github.com/user-attachments/assets/d30db36f-cf02-4be1-bcfa-6323dccd4848)
+
 ## Design
 
 ### Variants
 
 #### Hero Cards 
 
+![](https://github.com/user-attachments/assets/f615d031-2efc-42c7-866c-900a1097b010)
+
 Use this variant when the cards as choice field is the only content in a form/wizard step and could benefit from more visual prominence. 
 
 #### Stacked Content
+
+![](https://github.com/user-attachments/assets/3b723387-2bb2-44eb-86d2-60473d350e74)
 
 The stacked content layout is the base, preferred version for card choices when the space permits and you can keep the text for choices brief.
 
@@ -24,17 +30,147 @@ The stacked content layout is the base, preferred version for card choices when 
 
 #### Side by Side Content 
 
+![](https://github.com/user-attachments/assets/1b9603f6-f024-4037-836f-f41c70d28069)
+
 The side by side content is the version used when you need more text to describe the choices or if you need a denser layout.
 
 - Use a width up to around "MEDIUM_PLUS." This style accommodates both wider and narrower widths, but we want to ensure that the text is still readable
 - When there is secondary text: use up to 3 lines of text (i.e. primary text can only have 1 line of text if secondary text takes up 2 lines)
 - When there is no secondary text: use only 1 line of primary text
 
+
 ## Development
 
 ### Variants
 
 #### Hero Cards 
+```
+a!localVariables(
+  local!selectedCard,
+  local!options: {
+    a!map(
+      id: 1,
+      name: "Create new file",
+      icon: "plus-circle",
+      description: "For full control and custom design",
+      contentColor: "#152B99",
+      backgroundColor: "#EDEEFA"
+    ),
+    a!map(
+      id: 2,
+      name: "Use existing file",
+      icon: "upload",
+      description: "To save time by importing your own file",
+      contentColor: "#790DA1",
+      backgroundColor: "#F2E9FF"
+    )
+  },
+  {
+    a!columnsLayout(
+      columns: {
+        a!columnLayout(),
+        a!columnLayout(
+          contents: {
+            a!headingField(
+              text: "Choose a creation method",
+              fontWeight: "SEMI_BOLD",
+              align: "CENTER",
+              marginBelow: "MORE"
+            ),
+            a!cardGroupLayout(
+              cards: a!forEach(
+                items: local!options,
+                expression: a!cardLayout(
+                  contents: {
+                    a!cardLayout(
+                      contents: {
+                        a!sideBySideLayout(
+                          items: {
+                            a!sideBySideItem(
+                              item: a!richTextDisplayField(
+                                labelPosition: "COLLAPSED",
+                                value: a!richTextIcon(
+                                  icon: if(
+                                    and(
+                                      a!isNotNullOrEmpty(local!selectedCard),
+                                      local!selectedCard = fv!item.id
+                                    ),
+                                    "check-circle",
+                                    "circle-o-large"
+                                  ),
+                                  color: if(
+                                    and(
+                                      a!isNotNullOrEmpty(local!selectedCard),
+                                      local!selectedCard = fv!item.id
+                                    ),
+                                    "ACCENT",
+                                    "#6C6C75"
+                                  )
+                                )
+                              ),
+                              width: "MINIMIZE"
+                            ),
+                            a!sideBySideItem()
+                          }
+                        ),
+                        a!stampField(
+                          icon: fv!item.icon,
+                          backgroundColor: fv!item.backgroundColor,
+                          contentColor: fv!item.contentColor,
+                          size: "LARGE",
+                          align: "CENTER",
+                          marginBelow: "MORE"
+                        )
+                      },
+                      style: fv!item.backgroundColor,
+                      padding: "STANDARD",
+                      showBorder: false()
+                    ),
+                    a!cardLayout(
+                      contents: {
+                        a!headingField(
+                          text: fv!item.name,
+                          size: "SMALL",
+                          fontWeight: "BOLD",
+                          marginBelow: "LESS"
+                        ),
+                        a!richTextDisplayField(
+                          labelPosition: "COLLAPSED",
+                          value: fv!item.description
+                        )
+                      },
+                      padding: "STANDARD",
+                      showBorder: false()
+                    )
+                  },
+                  link: a!dynamicLink(
+                    label: "Select option",
+                    value: fv!item.id,
+                    saveInto: local!selectedCard
+                  ),
+                  shape: "SEMI_ROUNDED",
+                  padding: "NONE",
+                  borderColor: if(
+                    and(
+                      a!isNotNullOrEmpty(local!selectedCard),
+                      local!selectedCard = fv!item.id
+                    ),
+                    "ACCENT",
+                    "#EDEEFA"
+                  )
+                )
+              ),
+              cardWidth: "EXTRA_NARROW"
+            )
+          },
+          width: "WIDE"
+        ),
+        a!columnLayout()
+      }
+    )
+  }
+)
+```
 
 #### Stacked Content
 ```
