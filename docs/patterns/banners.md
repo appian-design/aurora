@@ -33,7 +33,7 @@ Use this variant of a titled banner when your banner message wraps to more than 
 
 Use buttons or links to enable the user to take actions if needed. Actions may include opening a dialog, expanding or collapsing to view more information, or dismissing the banner for example.
 
-If applying a single button, use the `SOLID` style with `#FFF` color. For two actions, use `SOLID` for the prominent action and `LINK` style for the secondary action. Use `SMALL` size for all buttons. Avoid placing more than two actions in a banner.
+If applying a single button, use the `OUTLINE` style with `ACCENT` color. For two actions, use `SOLID` for the prominent action and `LINK` style for the secondary action. Use `SMALL` size for all buttons. Avoid placing more than two actions in a banner.
 
 If using a link, use the `link` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `linkStyle` to `STANDALONE`.
 

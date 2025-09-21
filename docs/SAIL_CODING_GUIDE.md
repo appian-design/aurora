@@ -247,7 +247,9 @@ a!tagField(
 
 ### Button
 
-IMPORTANT: Button widgets should always be placed inside a `a!buttonArrayLayout`, unless they are part of `a!formLayout`, which uses `a!buttonLayout` instead.
+IMPORTANT: Button widgets should generally be placed inside a `a!buttonArrayLayout`, but there are exceptions:
+- `a!formLayout` uses `a!buttonLayout` for the `buttons` parameter
+- `a!wizardLayout` takes an array of `a!buttonWidget` directly in the `primaryButtons` and `secondaryButtons` parameters 
 
 ```sail
 a!buttonArrayLayout(
@@ -760,22 +762,24 @@ a!sideBySideLayout(
 )
 ```
 
-#### Form Layout Widths
+#### Form and Wizard Layout Widths
 
-**❌ Incorrect - Invalid formWidth:**
+This applies to both `a!formLayout` and `a!wizardLayout`
+
+**❌ Incorrect - Invalid contentsWidth:**
 ```sail
 a!formLayout(
-  formWidth: "NARROW_PLUS",  /* Invalid width value */
+  contentsWidth: "NARROW_PLUS",  /* Invalid width value */
   contents: {
     /* form contents */
   }
 )
 ```
 
-**✅ Correct - Valid formWidth values:**
+**✅ Correct - Valid contentsWidth values:**
 ```sail
 a!formLayout(
-  formWidth: "MEDIUM",  /* Valid: FULL, WIDE, MEDIUM, NARROW, EXTRA_NARROW */
+  contentsWidth: "MEDIUM",  /* Valid: FULL, WIDE, MEDIUM, NARROW, EXTRA_NARROW */
   contents: {
     /* form contents */
   }
@@ -853,7 +857,7 @@ a!progressBarField(
 ```sail
 a!progressBarField(
   percentage: 75,
-  color: "POSITIVE". /* Valid: ACCENT, POSITIVE, NEGATIVE, WARN */
+  color: "POSITIVE". /* Valid: ACCENT, POSITIVE, NEGATIVE, WARN, or any hex value from colors.md */
 )
 ```
 
@@ -1045,7 +1049,7 @@ a!pieChartField(
 
 #### `a!fileUploadField` uses different button styles from other buttons
 
-This is currently a bug in the system where this component uses the old button style names. IMPORTANT: This guidance is for a!fileUploadField` only!
+This is currently a bug in the system where this component uses the old button style names. IMPORTANT: This guidance is for `a!fileUploadField` and `a!signatureField only`!
 
 **❌ Incorrect - Using `SOLID` and other correct button styles for `a!fileUploadField`:**
 
