@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-05"
+last_updated: "2025-09-20"
 ---
 
 # Banners
@@ -33,9 +33,9 @@ Use this variant of a titled banner when your banner message wraps to more than 
 
 Use buttons or links to enable the user to take actions if needed. Actions may include opening a dialog, expanding or collapsing to view more information, or dismissing the banner for example.
 
-If applying a single button, use the `SECONDARY` style. For two actions, use `PRIMARY` for the prominent action and `LINK` style for the secondary action. Use `SMALL` size for all buttons. Avoid placing more than two actions in a banner.
+If applying a single button, use the `OUTLINE` style with `ACCENT` color. For two actions, use `SOLID` for the prominent action and `LINK` style for the secondary action. Use `SMALL` size for all buttons. Avoid placing more than two actions in a banner.
 
-If using a link, use the `LINK` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `LINKSTYLE` to `STANDALONE`.
+If using a link, use the `link` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `linkStyle` to `STANDALONE`.
 
 Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the `accessibilityText` parameter.
 
