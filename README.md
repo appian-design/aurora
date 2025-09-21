@@ -101,7 +101,7 @@ We believe that great design systems are built by communities. Whether you're a 
 2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/design-system-docs.git`
 3. **Create a feature branch**: `git checkout -b feature/your-feature-name`
 4. **Make changes**: Edit markdown files or add new documentation
-5. **Test locally**: Run `bundle exec jekyll serve` to preview changes
+5. **Test locally**: Run `mkdocs serve` to preview changes
 6. **Submit PR**: Push changes and open a pull request for review
 
 Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information and our [Code of Conduct](CODE_OF_CONDUCT.md) for community guidelines.
