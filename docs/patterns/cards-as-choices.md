@@ -47,14 +47,15 @@ The side by side content is the version used when you need more text to describe
 ```
 a!localVariables(
   local!selectedCard,
-  local!options: {
+  local!cards: {
     a!map(
       id: 1,
       name: "Create new file",
       icon: "plus-circle",
       description: "For full control and custom design",
       contentColor: "#152B99",
-      backgroundColor: "#EDEEFA"
+      backgroundColor: "#EDEEFA",
+      
     ),
     a!map(
       id: 2,
@@ -78,8 +79,10 @@ a!localVariables(
               marginBelow: "MORE"
             ),
             a!cardGroupLayout(
+              label: "Method selection, 2 choices",
+              labelPosition: "COLLAPSED",
               cards: a!forEach(
-                items: local!options,
+                items: local!cards,
                 expression: a!cardLayout(
                   contents: {
                     a!cardLayout(
@@ -124,7 +127,13 @@ a!localVariables(
                       },
                       style: fv!item.backgroundColor,
                       padding: "STANDARD",
-                      showBorder: false()
+                      showBorder: false(),
+                      accessibilityText: "option " & fv!index & " of " & length(local!cards) & if(
+                        fv!item.id = local!selectedCard,
+                        ", selected, ",
+                        ", "
+                      ) & "toggle button, " & "to select or de-select this option, press return.",
+                      
                     ),
                     a!cardLayout(
                       contents: {
@@ -244,8 +253,8 @@ a!localVariables(
                   ),
                   color: if(
                     fv!item.disabled,
-                    if(fv!item.selected, "#898989", "#ddd"),
-                    if(fv!item.selected, "ACCENT", "#959595")
+                    if(fv!item.selected, "#6C6C75", "#E0E0E0"),
+                    if(fv!item.selected, "ACCENT", "#6C6C75")
                   ),
                   size: "MEDIUM"
                 ),
@@ -257,8 +266,8 @@ a!localVariables(
               a!stampField(
                 labelPosition: "COLLAPSED",
                 icon: fv!item.icon,
-                backgroundColor: if(fv!item.disabled, "#e0e0e0", "#dcdbff"),
-                contentColor: if(fv!item.disabled, "#898989", "ACCENT"),
+                backgroundColor: if(fv!item.disabled, "#e0e0e0", "#DCDEF5"),
+                contentColor: if(fv!item.disabled, "#6C6C75", "ACCENT"),
                 size: "TINY",
                 align: if(
                   a!isNotNullOrEmpty(fv!item.secondaryText),
@@ -355,10 +364,10 @@ a!localVariables(
             padding: "STANDARD",
             style: if(
               fv!item.disabled,
-              if(fv!item.selected, "#f0f0f0", "#fafafa"),
+              if(fv!item.selected, "#EDEDF2", "#F5F5F7"),
               if(
                 fv!item.selected,
-                "#EEEEFE",
+                "#EDEEFA",
                 "TRANSPARENT"
               )
             ),
@@ -367,7 +376,7 @@ a!localVariables(
             shape: "SEMI_ROUNDED",
             borderColor: if(
               fv!item.disabled,
-              if(fv!item.selected, "#898989", fn!null()),
+              if(fv!item.selected, "#6C6C75", fn!null()),
               if(fv!item.selected, "ACCENT", fn!null())
             )
           )
@@ -437,8 +446,8 @@ a!localVariables(
                     item: a!stampField(
                       labelPosition: "ABOVE",
                       icon: fv!item.icon,
-                      backgroundColor: if(fv!item.disabled, "#e0e0e0", "#dcdbff"),
-                      contentColor: if(fv!item.disabled, "#898989", "ACCENT"),
+                      backgroundColor: if(fv!item.disabled, "#e0e0e0", "#DCDEF5"),
+                      contentColor: if(fv!item.disabled, "#6C6C75", "ACCENT"),
                       size: "TINY",
                       marginAbove: "STANDARD",
                       marginBelow: "STANDARD"
@@ -490,8 +499,8 @@ a!localVariables(
                         ),
                         color: if(
                           fv!item.disabled,
-                          if(fv!item.selected, "#898989", "#ddd"),
-                          if(fv!item.selected, "ACCENT", "#959595")
+                          if(fv!item.selected, "#6C6C75", "#E0E0E0"),
+                          if(fv!item.selected, "ACCENT", "#6C6C75")
                         ),
                         size: "MEDIUM"
                       ),
@@ -533,10 +542,10 @@ a!localVariables(
             padding: "STANDARD",
             style: if(
               fv!item.disabled,
-              if(fv!item.selected, "#f0f0f0", "#fafafa"),
+              if(fv!item.selected, "#EDEDF2", "#F5F5F7"),
               if(
                 fv!item.selected,
-                "#EEEEFE",
+                "#EDEEFA",
                 "TRANSPARENT"
               )
             ),
@@ -545,7 +554,7 @@ a!localVariables(
             shape: "SEMI_ROUNDED",
             borderColor: if(
               fv!item.disabled,
-              if(fv!item.selected, "#898989", fn!null()),
+              if(fv!item.selected, "#6C6C75", fn!null()),
               if(fv!item.selected, "ACCENT", fn!null())
             )
           )
