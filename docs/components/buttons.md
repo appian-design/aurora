@@ -56,9 +56,12 @@ Use for common actions where users will recognize the icon as a symbol of the ac
 !!! abstract "Accessibility"
 
     When an icon is the sole element within a link, a text alternative MUST be provided. 
-    - Use the caption parameter to add a visible label. This is the best choice when an icon's meaning might be ambiguous to users.
-    - For universally understood icons where a visible label is unnecessary, use the altText parameter instead. 
-    - To avoid a redundant experience where screen readers announce the text twice, **do not use** both caption and altText on the same icon.
+    
+    Use the caption parameter to add a visible label. This is the best choice when an icon's meaning might be ambiguous to users.
+    
+    For universally understood icons where a visible label is unnecessary, use the altText parameter instead. 
+    
+    To avoid a redundant experience where screen readers announce the text twice, **do not use** both caption and altText on the same icon.
 
 
 ## Development
