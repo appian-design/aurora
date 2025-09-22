@@ -44,10 +44,6 @@ Use message banners sparingly and keep the language concise, especially if used 
 
 ### Variants
 
-#### Message Banner Component
-
-Use the out-of-the-box `a!messageBanner()` component for accessibility and standard styling.
-
 #### Dynamic • Standard
 
 Use this to communicate and draw the user's attention to the specific state they're in
@@ -160,13 +156,6 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
   ),
   a!messageBanner(
-    backgroundColor: "#F5F5F7",
-    icon: "lock",
-    highlightColor: "#636363",
-    primaryText: "Case Locked",
-    secondaryText: "Case #1123 has been closed successfully."
-  ),
-  a!messageBanner(
     backgroundColor: "SUCCESS",
     icon: "check-circle",
     highlightColor: "POSITIVE",
@@ -190,7 +179,7 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "Case #1125 is missing. Please notify your Administrator.",
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
   )
-  }
+}
 ```
 
 #### Dynamic • Standard
@@ -222,7 +211,8 @@ a!localVariables(
           icon: fv!item.icon,
           highlightColor: fv!item.iconColor,
           showDecorativeBar: false,
-          shape: "SEMI_ROUNDED"
+          shape: "SEMI_ROUNDED",
+          announceBehavior: "DISPLAY_AND_ANNOUNCE"
         ),
         /* Use custom banner pattern when there are links */
         a!cardLayout(
@@ -234,10 +224,6 @@ a!localVariables(
             a!sideBySideLayout(
               spacing: "STANDARD",
               items: {
-                a!sideBySideItem(
-                  item: {},
-                  width: "MINIMIZE"
-                ),
                 a!sideBySideItem(
                   item: a!richTextDisplayField(
                     labelPosition: "COLLAPSED",
@@ -542,31 +528,37 @@ a!localVariables(
   local!infoIcon: "#115EBB",
   local!closedBg: "#F5F5F7",
   local!closedIcon: "#636363",
-  local!successBg: "#EDF7EE",
-  local!successIcon: "#117C00",
   local!warnBg: "#FFF5E6",
   local!warnIcon: "#CC7600",
-  local!errorBg: "#FDEDF0",
-  local!errorIcon: "#B2002C",
-  local!dynamicTitledBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    title: "New System",      text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  title: "Case Locked",     text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, title: "Case Closed",     text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    title: "Case Still Open", text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   title: "Case Not Found",  text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+  local!minimalBanners: {
+    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(bgColor: "SUCCESS",       icon: "check-circle",         iconColor: "POSITIVE",        text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(bgColor: "ERROR",         icon: "exclamation-triangle", iconColor: "NEGATIVE",        text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
-      items: local!dynamicTitledBanners,
-      expression: {
+      items: local!minimalBanners,
+      expression: if(
+        a!isNullOrEmpty(fv!item.actionText),
+        /* Use a!messageBanner for text only messages */
+        a!messageBanner(
+          backgroundColor: "#FFFFFF00",
+          secondaryText: fv!item.text,
+          icon: fv!item.icon,
+          highlightColor: fv!item.iconColor,
+          showDecorativeBar: false,
+          shape: "SEMI_ROUNDED",
+          marginBelow: "NONE",
+          announceBehavior: "DISPLAY_AND_ANNOUNCE"
+        ),
+        /* Use custom banner pattern when there are links */
         a!sideBySideLayout(
           spacing: "STANDARD",
           alignVertical: "TOP",
           items: {
-            a!sideBySideItem(
-              item: {},
-              width: "MINIMIZE"
-            ),
+            a!sideBySideItem(width: "MINIMIZE"),
             a!sideBySideItem(
               item: a!richTextDisplayField(
                 labelPosition: "COLLAPSED",
@@ -605,7 +597,7 @@ a!localVariables(
           marginAbove: "STANDARD",
           marginBelow: "STANDARD"
         )
-      }
+      )
     )
   }
 )
