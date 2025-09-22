@@ -21,6 +21,9 @@ A button allows users to trigger an action, such as submitting a form, opening a
 
 ![](https://github.com/user-attachments/assets/0723f84f-3e3d-44ca-ad4e-34c50d0f9ada)
 
+- In forms and wizards, the "Submit", "Next", "Back", and "Cancel" buttons are provided OOTB with `a!formLayout` and `a!wizardLayout`. Do not add these buttons when using these layouts. 
+
+If making a custom form or wizard: 
 - In forms, place the primary action ("Submit") on the right, and the secondary action ("Cancel") on the left in RTL
 - In wizards, place the primary action ("Next" or "Submit") on the right, and the secondary action ("Back" or "Cancel") on the left in RTL. Use `LINK` style for the cancel button.
 
@@ -34,12 +37,13 @@ A button allows users to trigger an action, such as submitting a form, opening a
 Use for the primary or most important action on a page. There should be only one solid button per view to guide the user toward the intended action.
 
 - Use `SOLID` style and `ACCENT` color for constructive actions ("Create, "Add", "Save", "Submit")
-- Use `OUTLINE` style and `NEGATIVE` color for destructive actions ("Delete", "Remove")
+- Use `GHOST` style and `NEGATIVE` color for destructive actions ("Delete", "Remove")
 
 #### Secondary Action
 Use for secondary actions that supplement the primary action. These actions are important but not the main goal of the page. You can have multiple secondary buttons. Examples include "Add Another" or "Cancel."
 
-- Use `OUTLINE` style and `ACCENT` color
+- Use `OUTLINE` style and `ACCENT` color most of the time
+- When accompanying a primary destructive action, use a `SECONDARY` color 
 
 #### Icon-only Recognizable Actions
 Use for common actions where users will recognize the icon as a symbol of the action (create, update/edit, delete). 
@@ -51,7 +55,10 @@ Use for common actions where users will recognize the icon as a symbol of the ac
 
 !!! abstract "Accessibility"
 
-    A text alternative MUST be provided for the icon when it is the only element used in a link, set via the altText or caption parameter on the icon.
+    When an icon is the sole element within a link, a text alternative MUST be provided. 
+    - Use the caption parameter to add a visible label. This is the best choice when an icon's meaning might be ambiguous to users.
+    - For universally understood icons where a visible label is unnecessary, use the altText parameter instead. 
+    - To avoid a redundant experience where screen readers announce the text twice, **do not use** both caption and altText on the same icon.
 
 
 ## Development
