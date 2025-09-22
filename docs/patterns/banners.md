@@ -46,7 +46,7 @@ Use message banners sparingly and keep the language concise, especially if used 
 
 #### Dynamic • Standard
 
-Use this to communicate and draw the user's attention to the specific state they're in
+Use this to communicate and draw the user’s attention to the specific state they’re in
 
 ![](https://github.com/user-attachments/assets/ef276439-890a-440a-ac90-75fdb4c9dca8)
 
@@ -66,7 +66,7 @@ If applying a single button, use the `SECONDARY` style. For two actions, use `PR
 
 If using a link, use the `LINK` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `LINKSTYLE` to `STANDALONE`.
 
-Note: When using the 'X' action to dismiss the banner, specify 'Dismiss {insert name of item}' in the `accessibilityText` parameter.
+Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the `accessibilityText` parameter.
 
 ![](https://github.com/user-attachments/assets/c090366d-1147-4afc-8ed1-61da303b3440)
 
