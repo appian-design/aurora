@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-9-21"
+last_updated: "2025-9-22"
 ---
 
 # Confirmation Dialog
@@ -28,7 +28,9 @@ When the action is destructive, the primary action should be in `OUTLINE` style 
 
 ## Development
 
-### Informational Dialog 
+### Variants
+
+#### Informational Dialog 
 ```
 a!formLayout(
   titleBar: a!headerTemplateSimple(
@@ -52,7 +54,7 @@ a!formLayout(
 )
 ```
 
-### Action Confirmation
+#### Action Confirmation
 ```
 a!formLayout(
   titleBar: a!headerTemplateSimple(
@@ -81,7 +83,7 @@ a!formLayout(
 )
 ```
 
-### Destructive Action Confirmation 
+#### Destructive Action Confirmation 
 
 ```
 a!formLayout(
