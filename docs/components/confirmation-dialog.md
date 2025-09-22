@@ -24,7 +24,9 @@ Use to display view-only information. No action is possible.
 
 Use to present a confirmation that an action might be irreversible. 
 
-When the action is destructive, the primary action should be in `OUTLINE` style and `NEGATIVE` color. 
+When the action is destructive, the primary action should be in `GHOST` style and `NEGATIVE` color. The secondary button should be `OUTLINE` style and `SECONDARY` color. 
+
+**Note**: If the primary action for a destruction confirmation dialog is "Cancel" (Like, "Cancel Process?"), the secondary button should be "Back". 
 
 ## Development
 
@@ -117,6 +119,7 @@ a!formLayout(
         saveInto: {},
         submit: true,
         style: "OUTLINE",
+        color: "SECONDARY",
         validate: false
       )
     }
