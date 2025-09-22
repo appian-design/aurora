@@ -18,15 +18,17 @@ Every form needs to have a header, content and form navigation. A form can be us
 
 Use `a!formLayout()` for single-step forms and `a!wizardLayout()` for multi-step forms.
 
-### When to Use Wizard vs Form (Multi-Step Forms)
+### When to Use Form vs Wizard (Multi-Step Form)
+
+Use form layout when:
+- Inputting data is unlikely to be sequential, and users will need to jump around
+- Editing data via inline actions from the read-only representation of that data
+- Focusing on a specific point in your workflow to input a small portion of the input fields
 
 Use wizard layout when:
 - Users need to enter a large number of fields that can be broken up into logical, sequential steps
 - Users need a more guided navigation experience, where they can focus on one section of fields at a time with a visual progress indicator
-
-Avoid using a wizard, and use a form layout instead, when:
-- Inputting data is unlikely to be sequential, and users will need to jump around
-- Users will use the form to input a small portion of the inputs, especially when they won't be on the first page of a wizard. Having to click through a wizard to get to specific data to edit can be cumbersome. Instead, consider inline actions from the read-only representation of that data, or forms focused on a specific point in your workflow
+Note: Having to click through a wizard to get to specific data to edit can be cumbersome, so consider when inline actions are more efficient 
 
 ### When to Use Inline Dialogs vs. Modals
 
@@ -831,240 +833,163 @@ a!localVariables(
 ### Site Page
 ```
 a!localVariables(
-  local!currentStep: 3,
-  local!gray4: "#636363",
-  a!headerContentLayout(
-    backgroundColor: "#FAFAFC",
-    header: a!cardLayout(
-      style: "#020A51",
-      padding: "MORE",
-      contents: {
-        a!richTextDisplayField(
-          labelPosition: "COLLAPSED",
-          value: {
-            a!richTextItem(
-              text: "Create Case",
-              style: "STRONG",
-              size: "LARGE"
-            )
-          }
-        )
-      },
-      marginBelow: "NONE"
+  local!firstName,
+  local!lastName,
+  local!location,
+  local!maritalStatus,
+  local!identityProof,
+  a!wizardLayout(
+    titleBar: a!headerTemplateFull(
+      title: "Create Case",
+      backgroundColor: "#020A51"
     ),
-    contents: {
-      a!columnsLayout(
-        marginAbove: "MORE",
-        columns: {
-          a!columnLayout(width: "EXTRA_NARROW"),
-          a!columnLayout(
-            width: "NARROW_PLUS",
-            contents: {
-              a!milestoneField(
-                label: "Progress",
-                stepStyle: "DOT",
-                orientation: "VERTICAL",
-                labelPosition: "COLLAPSED",
-                steps: {
-                  "Contact Information",
-                  "Case Information",
-                  "Review"
-                },
-                active: local!currentStep,
-                color: "ACCENT"
-              )
-            }
-          ),
-          a!columnLayout(
-            contents: {
-              a!sectionLayout(
-                label: "Contact Information",
-                labelSize: "EXTRA_SMALL",
-                labelColor: "STANDARD",
+    isButtonFooterFixed: true,
+    backgroundColor: "#FAFAFC",
+    style: if(a!isPageWidth("TABLET_LANDSCAPE"), "MINIMAL", "DOT_VERTICAL"),
+    contentsWidth: "FULL",
+    steps: {
+      a!wizardStep(
+        label: "Profile Information",
+        contents: {
+          a!columnsLayout(
+            columns: {
+              a!columnLayout(
                 contents: {
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Name", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(align: "RIGHT", value: "Karen Anderson")
-                        }
-                      )
-                    }
+                  a!textField(
+                    label: "First Name",
+                    labelPosition: "ABOVE",
+                    required: true,
+                    value: local!firstName,
+                    saveInto: local!firstName
                   ),
-                  a!horizontalLine(),
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Email", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            align: "RIGHT",
-                            value: "karen.anderson@acme.com"
-                          )
-                        }
-                      )
-                    }
+                  a!textField(
+                    label: "Last Name",
+                    labelPosition: "ABOVE",
+                    required: true,
+                    value: local!lastName,
+                    saveInto: local!lastName
                   ),
-                  a!horizontalLine(),
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Phone", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(align: "RIGHT", value: "571-567-0987")
-                        }
-                      )
-                    }
+                  a!dropdownField(
+                    label: "Location",
+                    labelPosition: "ABOVE",
+                    placeholder: "Select a Location",
+                    required: true,
+                    choiceLabels: {
+                      "New York",
+                      "California",
+                      "Texas",
+                      "Florida"
+                    },
+                    choiceValues: { "NY", "CA", "TX", "FL" },
+                    value: local!location,
+                    saveInto: local!location
                   ),
-                  a!horizontalLine(),
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Address", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            align: "RIGHT",
-                            value: "9836 Rocky River Court" & char(10) & "Annandale, VA USA 22003"
-                          )
-                        }
-                      )
-                    }
+                  a!dropdownField(
+                    label: "Marital Status",
+                    labelPosition: "ABOVE",
+                    placeholder: "Select a Status",
+                    choiceLabels: {
+                      "Single",
+                      "Married",
+                      "Divorced",
+                      "Widowed"
+                    },
+                    choiceValues: {
+                      "single",
+                      "married",
+                      "divorced",
+                      "widowed"
+                    },
+                    value: local!maritalStatus,
+                    saveInto: local!maritalStatus
+                  ),
+                  a!fileUploadField(
+                    label: "Identity Proof",
+                    labelPosition: "ABOVE",
+                    instructions: "Upload supporting documentation",
+                    value: local!identityProof,
+                    saveInto: local!identityProof
                   )
                 }
               ),
-              a!sectionLayout(
-                label: "Case Information",
-                labelSize: "EXTRA_SMALL",
-                labelColor: "STANDARD",
-                contents: {
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Type", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(align: "RIGHT", value: "Account Renewal")
-                        }
-                      )
-                    }
-                  ),
-                  a!horizontalLine(),
-                  a!columnsLayout(
-                    columns: {
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(
-                            value: {
-                              a!richTextItem(text: "Title", color: local!gray4)
-                            }
-                          )
-                        }
-                      ),
-                      a!columnLayout(
-                        contents: {
-                          a!richTextDisplayField(align: "RIGHT", value: "Renew my account")
-                        }
-                      )
-                    }
-                  ),
-                  a!horizontalLine()
-                }
+              a!columnLayout(
+                showWhen: a!isPageWidth({"DESKTOP_NARROW", "DESKTOP", "DESKTOP_WIDE"}), 
+                width: "EXTRA_NARROW"
               ),
-              a!sideBySideLayout(
-                items: {
-                  a!sideBySideItem(
-                    item: a!buttonArrayLayout(
-                      buttons: {
-                        a!buttonWidget(label: "Back", style: "OUTLINE"),
-                        a!buttonWidget(label: "Cancel", style: "LINK")
-                      }
-                    )
-                  ),
-                  a!sideBySideItem(
-                    item: a!buttonArrayLayout(
-                      buttons: {
-                        a!buttonWidget(label: "Create Case", style: "SOLID")
-                      }
-                    )
-                  )
-                },
-                marginAbove: "STANDARD"
-              )
-            }
-          ),
-          a!columnLayout(width: "EXTRA_NARROW"),
-          a!columnLayout(
-            width: "NARROW_PLUS",
-            contents: {
-              a!cardLayout(
-                style: "#E7F1FF",
-                showBorder: false,
+              a!columnLayout(
+                width: "NARROW_PLUS",
                 contents: {
-                  a!richTextDisplayField(
-                    value: {
-                      a!richTextItem(
-                        text: "What happens next?",
-                        style: "STRONG",
-                        size: "MEDIUM"
+                  a!cardLayout(
+                    style: "#E7F1FF",
+                    showBorder: false,
+                    shape: "SEMI_ROUNDED",
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: "What happens next?",
+                            style: "STRONG",
+                            size: "MEDIUM"
+                          )
+                        },
+                        marginBelow: "STANDARD"
+                      ),
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          a!richTextItem(
+                            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            style: "PLAIN"
+                          )
+                        }
                       )
                     },
-                    marginBelow: "STANDARD"
-                  ),
-                  a!richTextDisplayField(
-                    value: {
-                      a!richTextItem(
-                        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                        style: "PLAIN"
-                      )
-                    }
+                    padding: "STANDARD"
                   )
-                },
-                padding: "STANDARD"
+                }
               )
             }
-          ),
-          a!columnLayout(width: "EXTRA_NARROW")
+          )
         }
+      ),
+      a!wizardStep(
+        label: "Contact Information",
+        contents: {
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: "Contact information form fields would go here"
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Payment Information",
+        contents: {
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: "Payment information form fields would go here"
+          )
+        }
+      ),
+      a!wizardStep(
+        label: "Confirmation",
+        contents: {
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: "Review and confirmation content would go here"
+          )
+        }
+      )
+    },
+    showButtonDivider: true,
+    secondaryButtons: {
+      a!buttonWidget(label: "Cancel", style: "LINK")
+    },
+    primaryButtons: {
+      a!buttonWidget(
+        showWhen: fv!isLastStep,
+        label: "Create",
+        style: "SOLID"
       )
     }
   )
