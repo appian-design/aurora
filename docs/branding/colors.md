@@ -10,84 +10,84 @@ last_updated: "2025-08-29"
 The following is the complete color palette with named colors and their corresponding hex codes:
 
 ### Red
-- Red 0: #FDEDF0
-- Red 1: #FED7DE  
-- Red 2: #FDADAD
-- Red 3: #DE0037
-- Red 35: #B2002C
-- Red 4: #9F0019
+- <span class="color-chip" style="background-color: #FDEDF0;"></span>Red 0: #FDEDF0
+- <span class="color-chip" style="background-color: #FED7DE;"></span>Red 1: #FED7DE  
+- <span class="color-chip" style="background-color: #FDADAD;"></span>Red 2: #FDADAD
+- <span class="color-chip" style="background-color: #DE0037;"></span>Red 3: #DE0037
+- <span class="color-chip" style="background-color: #B2002C;"></span>Red 35: #B2002C
+- <span class="color-chip" style="background-color: #9F0019;"></span>Red 4: #9F0019
 
 ### Orange
-- Orange 0: #FFF5E6
-- Orange 1: #FFEED3
-- Orange 2: #FFDCA3
-- Orange 3: #FAA92F
-- Orange 35: #CC7600
-- Orange 4: #995C00
+- <span class="color-chip" style="background-color: #FFF5E6;"></span>Orange 0: #FFF5E6
+- <span class="color-chip" style="background-color: #FFEED3;"></span>Orange 1: #FFEED3
+- <span class="color-chip" style="background-color: #FFDCA3;"></span>Orange 2: #FFDCA3
+- <span class="color-chip" style="background-color: #FAA92F;"></span>Orange 3: #FAA92F
+- <span class="color-chip" style="background-color: #CC7600;"></span>Orange 35: #CC7600
+- <span class="color-chip" style="background-color: #995C00;"></span>Orange 4: #995C00
 
 ### Yellow
-- Yellow 0: #FFFCEB
-- Yellow 1: #FFF6C9
-- Yellow 2: #FDEB93
-- Yellow 3: #FFD948
-- Yellow 35: #FFC008
-- Yellow 4: #856C00
+- <span class="color-chip" style="background-color: #FFFCEB;"></span>Yellow 0: #FFFCEB
+- <span class="color-chip" style="background-color: #FFF6C9;"></span>Yellow 1: #FFF6C9
+- <span class="color-chip" style="background-color: #FDEB93;"></span>Yellow 2: #FDEB93
+- <span class="color-chip" style="background-color: #FFD948;"></span>Yellow 3: #FFD948
+- <span class="color-chip" style="background-color: #FFC008;"></span>Yellow 35: #FFC008
+- <span class="color-chip" style="background-color: #856C00;"></span>Yellow 4: #856C00
 
 ### Green
-- Green 0: #EDF7EE
-- Green 1: #E3FBDF
-- Green 2: #B2EAB1
-- Green 3: #1CC101
-- Green 4: #117C00
-- Green 5: #0A4D00
+- <span class="color-chip" style="background-color: #EDF7EE;"></span>Green 0: #EDF7EE
+- <span class="color-chip" style="background-color: #E3FBDF;"></span>Green 1: #E3FBDF
+- <span class="color-chip" style="background-color: #B2EAB1;"></span>Green 2: #B2EAB1
+- <span class="color-chip" style="background-color: #1CC101;"></span>Green 3: #1CC101
+- <span class="color-chip" style="background-color: #117C00;"></span>Green 4: #117C00
+- <span class="color-chip" style="background-color: #0A4D00;"></span>Green 5: #0A4D00
 
 ### Teal
-- Teal 0: #E7F8F8
-- Teal 1: #E2FAF9
-- Teal 2: #A5E8E8
-- Teal 3: #56ADC0
-- Teal 35: #31808B
-- Teal 4: #2C6770
+- <span class="color-chip" style="background-color: #E7F8F8;"></span>Teal 0: #E7F8F8
+- <span class="color-chip" style="background-color: #E2FAF9;"></span>Teal 1: #E2FAF9
+- <span class="color-chip" style="background-color: #A5E8E8;"></span>Teal 2: #A5E8E8
+- <span class="color-chip" style="background-color: #56ADC0;"></span>Teal 3: #56ADC0
+- <span class="color-chip" style="background-color: #31808B;"></span>Teal 35: #31808B
+- <span class="color-chip" style="background-color: #2C6770;"></span>Teal 4: #2C6770
 
 ### Sky
-- Sky 0: #EBF4FF
-- Sky 1: #DBECFF
-- Sky 2: #B8D9FF
-- Sky 3: #3F8EEE
-- Sky 35: #115EBB
-- Sky 4: #0C4283
+- <span class="color-chip" style="background-color: #EBF4FF;"></span>Sky 0: #EBF4FF
+- <span class="color-chip" style="background-color: #DBECFF;"></span>Sky 1: #DBECFF
+- <span class="color-chip" style="background-color: #B8D9FF;"></span>Sky 2: #B8D9FF
+- <span class="color-chip" style="background-color: #3F8EEE;"></span>Sky 3: #3F8EEE
+- <span class="color-chip" style="background-color: #115EBB;"></span>Sky 35: #115EBB
+- <span class="color-chip" style="background-color: #0C4283;"></span>Sky 4: #0C4283
 
 ### Blue
-- Blue 0: #F5F5FC
-- Blue 1: #EDEEFA
-- Blue 2: #DCDEF5
-- Blue 3: #2322F0
-- Blue 4: #152B99
-- Blue 5: #020A50
+- <span class="color-chip" style="background-color: #F5F5FC;"></span>Blue 0: #F5F5FC
+- <span class="color-chip" style="background-color: #EDEEFA;"></span>Blue 1: #EDEEFA
+- <span class="color-chip" style="background-color: #DCDEF5;"></span>Blue 2: #DCDEF5
+- <span class="color-chip" style="background-color: #2322F0;"></span>Blue 3: #2322F0
+- <span class="color-chip" style="background-color: #152B99;"></span>Blue 4: #152B99
+- <span class="color-chip" style="background-color: #020A50;"></span>Blue 5: #020A50
 
 ### Purple
-- Purple 0: #F9F2FF
-- Purple 1: #F2E9FF
-- Purple 2: #D9AEFF
-- Purple 3: #B561FF
-- Purple 35: #962FEA
-- Purple 4: #790DA1
+- <span class="color-chip" style="background-color: #F9F2FF;"></span>Purple 0: #F9F2FF
+- <span class="color-chip" style="background-color: #F2E9FF;"></span>Purple 1: #F2E9FF
+- <span class="color-chip" style="background-color: #D9AEFF;"></span>Purple 2: #D9AEFF
+- <span class="color-chip" style="background-color: #B561FF;"></span>Purple 3: #B561FF
+- <span class="color-chip" style="background-color: #962FEA;"></span>Purple 35: #962FEA
+- <span class="color-chip" style="background-color: #790DA1;"></span>Purple 4: #790DA1
 
 ### Pink
-- Pink 0: #FFDEF3
-- Pink 1: #FFDEF3
-- Pink 2: #F7A7DA
-- Pink 3: #E21496
-- Pink 35: #BB117C
-- Pink 4: #8C1565
+- <span class="color-chip" style="background-color: #FFDEF3;"></span>Pink 0: #FFDEF3
+- <span class="color-chip" style="background-color: #FFDEF3;"></span>Pink 1: #FFDEF3
+- <span class="color-chip" style="background-color: #F7A7DA;"></span>Pink 2: #F7A7DA
+- <span class="color-chip" style="background-color: #E21496;"></span>Pink 3: #E21496
+- <span class="color-chip" style="background-color: #BB117C;"></span>Pink 35: #BB117C
+- <span class="color-chip" style="background-color: #8C1565;"></span>Pink 4: #8C1565
 
 ### Grays
-- Gray 0: #F5F5F7
-- Gray 1: #EDEDF2
-- Gray 2: #E0E0E0
-- Gray 3: #6C6C75
-- Gray 4: #636363
-- Gray 5: #222222
+- <span class="color-chip" style="background-color: #F5F5F7;"></span>Gray 0: #F5F5F7
+- <span class="color-chip" style="background-color: #EDEDF2;"></span>Gray 1: #EDEDF2
+- <span class="color-chip" style="background-color: #E0E0E0;"></span>Gray 2: #E0E0E0
+- <span class="color-chip" style="background-color: #6C6C75;"></span>Gray 3: #6C6C75
+- <span class="color-chip" style="background-color: #636363;"></span>Gray 4: #636363
+- <span class="color-chip" style="background-color: #222222;"></span>Gray 5: #222222
 
 ## Branding
 
