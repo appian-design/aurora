@@ -5,11 +5,11 @@ last_updated: "2025-09-22"
 
 # Milestones
 
-Wizard milestones provide a guided experience to help users complete their tasks. Milestones should clearly identify each step in the process as well as the user's progress through those steps.
+Wizard milestones provide a guided experience to help users complete their tasks. Milestones should clearly identify each step in the process as well as the user’s progress through those steps.
 
-Use the milestone built into `a!wizardLayout` to leverage built-in accessibility parameters and automatic navigation links. Use the standalone Milestone Component (`a!milestoneField`) only when you need to display progress outside of a wizard context.
+Use the milestone built into `a!wizardLayout` to leverage built-in accessibility parameters and automatic navigation links. Configure the milestone appearance using the `style` parameter of `a!wizardLayout`. Use the standalone Milestone Component (`a!milestoneField`) only when you need to display progress outside of a wizard context.
 
-Use milestones when your form has at least 3 steps. Use succinct labels for each step to avoid text wrapping. Make the label concise or reduce the label size to fit in one line.
+Use succinct labels for each step to avoid text wrapping.
 
 ![](https://github.com/user-attachments/assets/e7444311-7592-4633-ac3a-f9b98ee4d895)
 
@@ -23,36 +23,38 @@ Use milestones when your form has at least 3 steps. Use succinct labels for each
 ![](https://github.com/user-attachments/assets/1cc3c06d-6419-410e-b0a3-18c5a10b0997)
 
 
-Use the minimal style to reduce the prominence of step indicators when progress information is not as important for the user, for example if there are only a few steps. Keep in mind that the milestone styles, which display step labels along with progress, will provide the most information to your users.
+Use the minimal style (`style: MINIMAL`) to reduce the prominence of step indicators when progress information is not as important for the user, for example if there are only a few steps (1 - 3 steps). Keep in mind that the other milestone styles, which display step labels along with progress, will provide the most information to your users.
 
-When using the minimal style, or when users are expected to use the wizard on small form factors, show step headings so that the user has context for their current step.
+Enable step headings (`showStepHeadings: true`) when using the minimal style or on small screens to provide users with context for their current step.
 
 #### Vertical Style Milestone
 
 ![](https://github.com/user-attachments/assets/24440c5d-2fad-4902-820c-a2c924530f3b)
 
 
-Use vertical milestone styles to balance horizontal white space with narrower content widths. This is the default milestone style (`DOT_VERTICAL`) and can be configured using the `style` parameter of `a!wizardLayout`. This layout is particularly useful on UIs that are tailored to users that are new to Appian or the solution.
+Use vertical milestone styles (`style: DOT_VERTIAL`) to balance horizontal white space with narrower content widths. This layout is particularly useful on UIs that are tailored to users that are new to Appian or the solution.
 
-Don't use vertical tab patterns with the vertical milestone style.
+Avoid combining vertical milestone styles with vertical tab patterns.
 
-Use `VERTICAL` orientation for Large Dialog Box size record actions. Use Vertical orientation for 6+ steps.
+Use `VERTICAL` orientation for:
+- Large Dialog Box size record actions
+- Wizards with 6+ steps
 
-**Note:** For pending steps, use a light gray (#EDEEF2) stamp background color with dark gray (#2E2E35) text. For the current step and completed steps, use an accent background color with white text.
 
 #### Horizontal Style Milestone
 
 ![](https://github.com/user-attachments/assets/52f40cc3-2cc3-4a97-a320-ba75da466912)
 
-Use horizontal milestone styles when you have shorter step contents. When step contents are tall, use a vertical or minimal style to avoid pushing inputs out of view. Use the horizontal layout when there are 4 - 6 steps in the workflow.
+Use horizontal milestone styles when you have shorter step contents. When step contents are tall, use a vertical or minimal style to avoid pushing inputs out of view.
 
-If you have a large number of steps that won't fit comfortably in a horizontal layout on user screen sizes, use a vertical milestone style instead.
+Use `HORIZONTAL` orientation for:
+- Medium and Small Dialog Box sizes.
+- Wizards wtih 4 - 6 steps
 
-Use `HORIZONTAL` orientation for Medium and Small Dialog Box sizes. For 3-6 steps, use your best judgment on Vertical vs. Horizontal. Vertical milestones may look too sparse with 3 steps and horizontal milestones may look crowded with 5-6 steps.
 
 **Note:**
 - Identify opportunities to reduce steps as much as possible. A good rule of thumb is to have at most 6 steps
-- For accessibility considerations, set the label of the milestone wizard component to "Progress" and the label position to `COLLAPSED`
+- For 3-6 steps, use your best judgment on Vertical vs. Horizontal. Vertical milestones may look too sparse with 3 steps and horizontal milestones may look crowded with 5-6 steps.
 
 
 
@@ -166,7 +168,7 @@ a!localVariables(
 )
 ```
 
-#### Horizontal Milestone Component
+#### Horizontal Style Milestone
 
 ```
 a!localVariables(
@@ -312,7 +314,7 @@ a!localVariables(
 )
 ```
 
-#### Vertical Milestone Component
+#### Vertical Style Milestone
 
 ```
 a!localVariables(
