@@ -16,6 +16,10 @@ background: linear-gradient(90deg, #302A8F 0%, #2322F0 88%);
 box-shadow: none; /* Optional: Removes the default shadow */
 }
 
+.md-header__button.md-logo {
+  padding-top: .6rem;
+}
+
 /* Hide the icon for the "stable" page status */
 .md-status--stable {
     display: none;
