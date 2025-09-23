@@ -67,8 +67,6 @@ Checklist:
 
 |Item|Type|
 |--- |--- |
-|Use `SOLID` style for the "submit" action|Buttons|
-|Use `LINK` style for the "cancel" action|Buttons|
 |Use "Update" (not "Edit") for the "submit" action when a user is modifying an item|Buttons|
 |Stack buttons on mobile in the order as prescribed (see example image)|Buttons|
 |In related actions, the form header should match the action Display Name (button label)|Buttons|
@@ -104,8 +102,6 @@ Checklist:
 
 |Item|Type|
 |--- |--- |
-|Use `SOLID` style for the "submit" action|Buttons|
-|Use `LINK` style for the "cancel" action|Buttons|
 |Use "Update" (not "Edit") for the "submit" action when a user is modifying an item|Buttons|
 |Stack buttons on mobile in the order as prescribed (see example image)|Buttons|
 |In related actions, the form header should match the action Display Name (button label)|Buttons|
@@ -160,7 +156,7 @@ Checklist:
 
 ## Development
 
-### Dialog Example 1
+### Confirmation Dialog
 ```
 a!formLayout(
   titleBar: a!headerTemplateFull(
@@ -212,7 +208,7 @@ a!formLayout(
       marginBelow: "NONE"
     )
   },
-  contentsWidth: "NARROW"
+  contentsWidth: "FULL"
 )
 ```
 
@@ -741,7 +737,6 @@ a!localVariables(
     showTitleBarDivider: true,
     style: "MINIMAL",
     contentsWidth: "FULL",
-    backgroundColor: "#FAFAFC",
     showButtonDivider: true,
     steps: {
       a!wizardStep(
@@ -844,7 +839,6 @@ a!localVariables(
       backgroundColor: "#020A51"
     ),
     isButtonFooterFixed: true,
-    backgroundColor: "#FAFAFC",
     style: if(a!isPageWidth("TABLET_LANDSCAPE"), "MINIMAL", "DOT_VERTICAL"),
     contentsWidth: "FULL",
     steps: {
