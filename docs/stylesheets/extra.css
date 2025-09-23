@@ -1,3 +1,16 @@
+/* Color overrides for Material for MkDocs theme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #2322F0;
+  --md-accent-fg-color: #152B99;
+  --md-typeset-a-color: #2322F0;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #152B99;
+  --md-accent-fg-color: #B8D9FF;
+  --md-typeset-a-color: #3F8EEE;
+}
+
 /* Hide the icon for the "stable" page status */
 .md-status--stable {
     display: none;
