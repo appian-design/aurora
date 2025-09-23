@@ -1,4 +1,4 @@
-site_name: Appian Design System Docs
+site_name: Aurora Design System
 site_url:  https://appian-design.github.io/aurora/
 
 #Repository link in header 
@@ -7,6 +7,7 @@ repo_name: appian-design/aurora
 
 theme:
   name: material
+  logo: assets/Appian_Digital_Logo_White.svg
   palette:
 
     # Palette toggle for automatic mode
@@ -17,7 +18,9 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -25,6 +28,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
