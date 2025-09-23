@@ -18,7 +18,7 @@ Banners are visual elements used to display important information or messages to
 - Status messages (action complete, etc.)
 - Simple, concise messages
 - Leveraging built-in accessibility features
-- Standard INFO, SUCCESS, WARN, ERROR styles
+- Standard `INFO`, `SUCCESS`, `WARN`, `ERROR` styles
 
 **Use custom action banner patterns for:**
 - Longer text content
@@ -26,7 +26,7 @@ Banners are visual elements used to display important information or messages to
 - Multiple actions or links
 - Complex layouts
 
-Use message banners sparingly and keep the language concise, especially if used as a status message. If used as a status message, use "DISPLAY_AND_ANNOUNCE" as the `announceBehavior` setting for accessibility.
+Use message banners sparingly and keep the language concise, especially if used as a status message. If used as a status message, use `DISPLAY_AND_ANNOUNCE` as the `announceBehavior` setting for accessibility.
 
 ### Platform vs Solutions Variations
 
@@ -186,18 +186,12 @@ Use this for messages that are always going to be a part of the UI. It is up to 
 
 ```
 a!localVariables(
-  local!infoBg: "#EBF4FF",
-  local!infoIcon: "#115EBB",
-  local!closedBg: "#F5F5F7",
-  local!closedIcon: "#636363",
-  local!warnBg: "#FFF5E6",
-  local!warnIcon: "#CC7600",
   local!dynamicStandardBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: "SUCCESS",       icon: "check-circle",         iconColor: "POSITIVE",        text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: "ERROR",         icon: "exclamation-triangle", iconColor: "NEGATIVE",        text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363",  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
@@ -275,19 +269,11 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#EBF4FF",
-  local!infoIcon: "#115EBB",
-  local!successBg: "#EDF7EE",
-  local!successIcon: "#117C00",
-  local!warnBg: "#FFF5E6",
-  local!warnIcon: "#CC7600",
-  local!errorBg: "#FDEDF0",
-  local!errorIcon: "#B2002C",
   local!dynamicActionBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    title: "New System",      text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, title: "Case Closed",     text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    title: "Case Still Open", text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   title: "Case Not Found",  text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
@@ -382,6 +368,7 @@ a!localVariables(
                         icon: "close",
                         color: "#000",
                         link: a!dynamicLink(),
+                        caption: "Close",
                         linkStyle: "STANDALONE"
                       )
                     },
@@ -433,22 +420,12 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#EBF4FF",
-  local!infoIcon: "#115EBB",
-  local!closedBg: "#F5F5F7",
-  local!closedIcon: "#636363",
-  local!successBg: "#EDF7EE",
-  local!successIcon: "#117C00",
-  local!warnBg: "#FFF5E6",
-  local!warnIcon: "#CC7600",
-  local!errorBg: "#FDEDF0",
-  local!errorIcon: "#B2002C",
   local!persistentBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info",                 iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363"),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE"),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE")
   },
   {
     a!forEach(
@@ -524,18 +501,12 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#EBF4FF",
-  local!infoIcon: "#115EBB",
-  local!closedBg: "#F5F5F7",
-  local!closedIcon: "#636363",
-  local!warnBg: "#FFF5E6",
-  local!warnIcon: "#CC7600",
   local!minimalBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: "SUCCESS",       icon: "check-circle",         iconColor: "POSITIVE",        text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: "ERROR",         icon: "exclamation-triangle", iconColor: "NEGATIVE",        text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363",  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
