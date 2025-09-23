@@ -11,8 +11,7 @@ Use the milestone built into `a!wizardLayout` to leverage built-in accessibility
 
 Use succinct labels for each step to avoid text wrapping.
 
-![](https://github.com/user-attachments/assets/e7444311-7592-4633-ac3a-f9b98ee4d895)
-
+![](https://github.com/user-attachments/assets/34dd3e0b-09e4-4fb6-9b67-d19f81809e08)
 
 ## Design
 
@@ -20,7 +19,7 @@ Use succinct labels for each step to avoid text wrapping.
 
 #### Minimal Style Milestone
 
-![](https://github.com/user-attachments/assets/1cc3c06d-6419-410e-b0a3-18c5a10b0997)
+![](https://github.com/user-attachments/assets/d7f47cca-b786-4344-a9f2-6c18a75b0195)
 
 
 Use the minimal style (`style: MINIMAL`) to reduce the prominence of step indicators when progress information is not as important for the user, for example if there are only a few steps (1 - 3 steps). Keep in mind that the other milestone styles, which display step labels along with progress, will provide the most information to your users.
@@ -43,13 +42,13 @@ Use `VERTICAL` orientation for:
 
 #### Horizontal Style Milestone
 
-![](https://github.com/user-attachments/assets/52f40cc3-2cc3-4a97-a320-ba75da466912)
+![](https://github.com/user-attachments/assets/0de5aacb-70f1-43af-a4b7-588bd38650db)
 
-Use horizontal milestone styles when you have shorter step contents. When step contents are tall, use a vertical or minimal style to avoid pushing inputs out of view.
+Use horizontal milestone styles (`style: DOT_HORIZONTAL`) when you have shorter step contents. When step contents are tall, use a vertical or minimal style to avoid pushing inputs out of view.
 
 Use `HORIZONTAL` orientation for:
-- Medium and Small Dialog Box sizes.
-- Wizards wtih 4 - 6 steps
+- Medium and Small Dialog Box sizes
+- Wizards with 4 - 6 steps
 
 
 **Note:**
@@ -79,7 +78,6 @@ a!localVariables(
     showTitleBarDivider: true,
     style: "MINIMAL",
     contentsWidth: "FULL",
-    backgroundColor: "#FAFAFC",
     showButtonDivider: true,
     steps: {
       a!wizardStep(
@@ -188,9 +186,7 @@ a!localVariables(
     showTitleBarDivider: true,
     isButtonFooterFixed: true,
     showButtonDivider: true,
-    style: "LINE_HORIZONTAL",
-    contentsWidth: "NARROW",
-    backgroundColor: "#FAFAFC",
+    style: "DOT_HORIZONTAL",
     steps: {
       a!wizardStep(
         label: "Basic Info",
