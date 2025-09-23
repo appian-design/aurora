@@ -58,8 +58,11 @@ function generateTitleFromFilename(filename) {
 function scanCurrentRepo() {
   const structure = {};
   
+  // Get the repository root (go up from .github/scripts)
+  const repoRoot = path.join(__dirname, '..', '..');
+  
   Object.keys(CATEGORIES).forEach(category => {
-    const categoryPath = path.join(process.cwd(), category);
+    const categoryPath = path.join(repoRoot, 'docs', category);
     
     if (fs.existsSync(categoryPath)) {
       structure[category] = {};
