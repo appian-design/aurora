@@ -6,7 +6,7 @@ last_updated: "2025-09-22"
 # Forms
 Facilitate user input by using the appropriate form style and input types for each scenario
 
-![](https://github.com/user-attachments/assets/38c4881d-ad58-4043-a40c-b686a898972d)
+![](https://github.com/user-attachments/assets/deca717a-41a6-486a-b450-5515da3fab91)
 
 ## Design
 ![](https://github.com/user-attachments/assets/1023e7c2-2f86-42d4-a2dd-01d946d19c80)
