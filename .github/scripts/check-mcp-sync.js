@@ -345,7 +345,7 @@ ${generateTypeScriptUpdates(discrepancies)}
       console.log('ISSUE_TITLE=MCP Server Metadata Sync Required');
       console.log('ISSUE_BODY=' + Buffer.from(issueBody).toString('base64'));
       
-      process.exit(1); // Exit with error to indicate sync needed
+      process.exit(0); // Exit successfully so workflow can continue
     }
   } catch (error) {
     console.error('❌ Error during sync check:', error.message);
@@ -370,7 +370,7 @@ This indicates a problem with the sync checking system itself that needs to be r
     console.log('ISSUE_TITLE=MCP Server Sync Check Failed');
     console.log('ISSUE_BODY=' + Buffer.from(errorIssueBody).toString('base64'));
     
-    process.exit(1);
+    process.exit(0); // Exit successfully so workflow can handle the error issue
   }
 }
 
