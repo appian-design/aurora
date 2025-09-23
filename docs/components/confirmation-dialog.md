@@ -1,96 +1,105 @@
 ---
 status: "stable"
-last_updated: "2024-01-29"
+last_updated: "2025-9-22"
 ---
 
 # Confirmation Dialog
 
 Confirmation dialogs are used to present the user with a directive action to prevent adverse situations
 
-![](https://github.com/user-attachments/assets/def4ee48-5910-45fd-9213-8c0d8a8ac736)
+![](https://github.com/user-attachments/assets/76632f64-4fb9-4dfc-b715-444a5152a0f4)
 
 ## Design
 
 ### Variants
 
+#### Informational Dialog
+![](https://github.com/user-attachments/assets/d3280a0a-9ebd-4db4-84b5-00f245a42f69)
+
+Use to display view-only information. No action is possible. 
+
 #### Action Confirmation
 
-![](https://github.com/user-attachments/assets/40647a81-852f-4bdf-b948-dc0a9de292b5)
+![](https://github.com/user-attachments/assets/6dc4276d-8777-415f-b7c6-bfce3cda0a92)
 
-Use to present a confirmation that an action might be irreversible
+Use to present a confirmation that an action might be irreversible. 
 
-#### Error State
+When the action is destructive, the primary action should be in `GHOST` style and `NEGATIVE` color. The secondary button should be `OUTLINE` style and `SECONDARY` color. 
 
-![](https://github.com/user-attachments/assets/53d5411f-16b3-4cd6-ad61-e9f2339c70df)
-
-Use to present an error state
-
-**Note:** Use this approach sparingly. For instance, when designing forms, use field level validations as much as possible.
-
-### Usage
-
-#### Confirmation Modal
-
-![](https://github.com/user-attachments/assets/fafc07b1-eb55-4892-b260-50e22ad28c37)
-
-If the out of the box confirmation dialog component is not technically feasible, you may use `a!formLayout` with a warning banner to inform users that the action is not reversible.
+**Note**: If the primary action for a destruction confirmation dialog is "Cancel" (Like, "Cancel Process?"), the secondary button should be "Back". 
 
 ## Development
 
-### Confirmation Modal
+### Variants
 
+#### Informational Dialog 
 ```
 a!formLayout(
   titleBar: a!headerTemplateSimple(
-    title: "Delete Document | Claim9236.pdf",
+    title: "Package Deleted"
   ), 
   contents: {
     a!richTextDisplayField(
       labelPosition: "COLLAPSED",
-      value: "Are you sure you want to delete this document?"
+      value: "This package was deleted on 9/24/24 1:49 PM by Admin User."
+    )
+  },
+  buttons: a!buttonLayout(
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Close",
+        submit: true,
+        style: "SOLID"
+      )
+    }
+  )
+)
+```
+
+#### Action Confirmation
+```
+a!formLayout(
+  titleBar: a!headerTemplateSimple(
+    title: "Publish Document"
+  ), 
+  contents: {
+    a!richTextDisplayField(
+      labelPosition: "COLLAPSED",
+      value: "Once published, this document will be viewable by all users."
+    )
+  },
+  buttons: a!buttonLayout(
+    primaryButtons: {
+      a!buttonWidget(
+        label: "Publish",
+        submit: true,
+        style: "SOLID"
+      )
+    }, 
+    secondaryButtons: {
+      a!buttonWidget(
+        label: "Cancel"
+      )
+    }
+  )
+)
+```
+
+#### Destructive Action Confirmation 
+
+```
+a!formLayout(
+  titleBar: a!headerTemplateSimple(title: "Delete Document"),
+  contents: {
+    a!richTextDisplayField(
+      labelPosition: "COLLAPSED",
+      value: "You are about to permanently delete Claim9236.pdf."
     ),
-    a!cardLayout(
-      contents: {
-        a!sideBySideLayout(
-          items: {
-            a!sideBySideItem(item: {}, width: "MINIMIZE"),
-            a!sideBySideItem(
-              item: a!richTextDisplayField(
-                labelPosition: "COLLAPSED",
-                value: {
-                  a!richTextIcon(
-                    icon: "exclamation-triangle",
-                    color: "#E5BF00",
-                    size: "STANDARD"
-                  )
-                },
-                marginAbove: "NONE",
-                marginBelow: "NONE"
-              ),
-              width: "MINIMIZE"
-            ),
-            a!sideBySideItem(
-              item: a!richTextDisplayField(
-                labelPosition: "COLLAPSED",
-                value: a!richTextItem(
-                  text: "This document cannot be recovered once deleted"
-                ),
-                marginAbove: "NONE",
-                marginBelow: "NONE"
-              ),
-              width: "MINIMIZE"
-            )
-          },
-          alignVertical: "TOP",
-          spacing: "STANDARD",
-          marginAbove: "STANDARD",
-          marginBelow: "STANDARD"
-        )
-      },
-      style: "#FFF9DB",
-      shape: "SEMI_ROUNDED",
-      marginAbove: "STANDARD",
-      showBorder: false
+    a!messageBanner(
+      primaryText: "This document cannot be recovered once deleted",
+      backgroundColor: "WARN",
+      highlightColor: "WARN",
+      icon: "exclamation-triangle"
     )
   },
   buttons: a!buttonLayout(
@@ -98,7 +107,8 @@ a!formLayout(
       a!buttonWidget(
         label: "Delete",
         submit: true,
-        style: "SOLID",
+        style: "OUTLINE",
+        color: "NEGATIVE",
         loadingIndicator: true
       )
     },
@@ -109,6 +119,7 @@ a!formLayout(
         saveInto: {},
         submit: true,
         style: "OUTLINE",
+        color: "SECONDARY",
         validate: false
       )
     }
