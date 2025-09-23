@@ -66,7 +66,7 @@ If applying a single button, use the `OUTLINE` style with `ACCENT` color. For tw
 
 If using a link, use the `link` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `linkStyle` to `STANDALONE`.
 
-Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the `accessibilityText` parameter.
+Note: When using the ‘X’ action to dismiss the banner, use the `caption` parameter to add a visible label
 
 ![](https://github.com/user-attachments/assets/34099b96-74ae-460c-91e9-e692266ca6e8)
 
