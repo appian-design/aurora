@@ -22,7 +22,7 @@ The following is the complete color palette with named colors and their correspo
 - <span class="color-chip" style="background-color: #FFEED3;"></span>Orange 1: #FFEED3
 - <span class="color-chip" style="background-color: #FFDCA3;"></span>Orange 2: #FFDCA3
 - <span class="color-chip" style="background-color: #FAA92F;"></span>Orange 3: #FAA92F
-- <span class="color-chip" style="background-color: #CC7600;"></span>Orange 35: #CC7600
+- <span class="color-chip" style="background-color: #D97706;"></span>Orange 35: #D97706
 - <span class="color-chip" style="background-color: #995C00;"></span>Orange 4: #995C00
 
 ### Yellow
