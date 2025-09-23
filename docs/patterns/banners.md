@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-20"
+last_updated: "2025-09-22"
 ---
 
 # Banners
@@ -9,8 +9,38 @@ Banners are visual elements used to display important information or messages to
 
 ## Design
 
-![](https://github.com/user-attachments/assets/ba329fb2-817a-48ce-ab4d-332e749a9fd0)
+![](https://github.com/user-attachments/assets/3c6b7ad9-60ea-43b4-b9de-3136a9ad119b)
 
+
+### When to Use Message Banner vs Actions Banner
+
+**Use `a!messageBanner()` for:**
+- Status messages (action complete, etc.)
+- Simple, concise messages
+- Leveraging built-in accessibility features
+- Standard `INFO`, `SUCCESS`, `WARN`, `ERROR` styles
+
+**Use custom action banner patterns for:**
+- Longer text content
+- Rich text formatting
+- Multiple actions or links
+- Complex layouts
+
+Use message banners sparingly and keep the language concise, especially if used as a status message. If used as a status message, use `DISPLAY_AND_ANNOUNCE` as the `announceBehavior` setting for accessibility.
+
+### Platform vs Solutions Variations
+
+**Platform Applications:**
+- Use "no decorative bar" style for flush messages
+- Use "with decorative bar" style for standalone messages
+- The decorative bar helps banner messages stand out sufficiently
+
+**Solutions Applications:**
+- If you have many banners, the decorative bar could feel heavy, so a simpler style without a decorative bar might work best
+- If you have card-based layouts with semi-rounded/rounded cards, a semi-rounded banner shape may be a better choice to match the general aesthetic of your application
+- When using semi-rounded shapes, hide the decorative border because it doesn't look as good as it does on the squared variant
+
+**General Rule:** Flush banners should not have the decorative bar.
 
 ### Variants
 
@@ -18,15 +48,14 @@ Banners are visual elements used to display important information or messages to
 
 Use this to communicate and draw the user’s attention to the specific state they’re in
 
-![](https://github.com/user-attachments/assets/1168c8d1-c1c6-4f66-84f6-14ed981a7881)
+![](https://github.com/user-attachments/assets/ef276439-890a-440a-ac90-75fdb4c9dca8)
 
 
 #### Dynamic • Titled
 
 Use this variant of a titled banner when your banner message wraps to more than one line
 
-![](https://github.com/user-attachments/assets/3af62b08-7adb-4ca7-bc21-460f6cf5bd95)
-
+![](https://github.com/user-attachments/assets/ef0a1682-aeb2-4807-8d6e-51ff725f198e)
 
 
 #### Actions
@@ -37,68 +66,188 @@ If applying a single button, use the `OUTLINE` style with `ACCENT` color. For tw
 
 If using a link, use the `link` parameter in the `a!richTextItem()` component. Avoid placing links adjacent to each other to prevent errors due to mistaken clicks. Set the `linkStyle` to `STANDALONE`.
 
-Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the `accessibilityText` parameter.
+Note: When using the ‘X’ action to dismiss the banner, use the `caption` parameter to add a visible label
 
-![](https://github.com/user-attachments/assets/ac5b80d1-c63c-47b6-be8f-667485e51eca)
+![](https://github.com/user-attachments/assets/34099b96-74ae-460c-91e9-e692266ca6e8)
 
 
 #### Persistent
 
-Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
+Use this for messages that are always going to be a part of the UI. It is up to the designer's discretion if the border is needed or not based on the UI.
 
-![](https://github.com/user-attachments/assets/5602ce1e-1087-4653-9d41-2c5967ea6d78)
+![](https://github.com/user-attachments/assets/6710c20b-237e-49e7-a36c-5d7d41b8f7f2)
 
 
 #### Minimal
 
-Use this for messages that are always going to be a part of the UI. It is up to the designer’s discretion if the border is needed or not based on the UI.
+Use this for messages that are always going to be a part of the UI. It is up to the designer's discretion if the border is needed or not based on the UI.
 
-![](https://github.com/user-attachments/assets/4c83d1a7-f2df-43af-8559-b333f6034e99)
-
-
+![](https://github.com/user-attachments/assets/df66d388-ca3d-42ee-ba4b-e1a24276f62a)
 
 ## Development
 
 ### Variants
 
+#### Dynamic • Titled (Solutions)
+
+```
+{
+  a!messageBanner(
+    backgroundColor: "INFO",
+    icon: "info-circle",
+    primaryText: "New System",
+    secondaryText: "A new Case Management System is available. Contact your Administrator with any questions.",
+    shape: "SEMI_ROUNDED",
+    showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "#F5F5F7",
+    icon: "lock",
+    highlightColor: "#636363",
+    primaryText: "Case Locked",
+    secondaryText: "Case #1123 has been closed successfully.",
+    shape: "SEMI_ROUNDED",
+    showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "SUCCESS",
+    icon: "check-circle",
+    highlightColor: "POSITIVE",
+    primaryText: "Case Locked",
+    secondaryText: "Case #1123 has been closed successfully.",
+    shape: "SEMI_ROUNDED",
+    showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "WARN",
+    icon: "warning",
+    highlightColor: "WARN",
+    primaryText: "Case Still Open",
+    secondaryText: "The following case has been open for more than 30 days: Case #1124",
+    shape: "SEMI_ROUNDED",
+    showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "ERROR",
+    icon: "warning",
+    highlightColor: "NEGATIVE",
+    primaryText: "Case Not Found",
+    secondaryText: "Case #1125 is missing. Please notify your Administrator.",
+    shape: "SEMI_ROUNDED",
+    showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  )
+}
+```
+
+#### Dynamic • Titled (Platform)
+
+```
+{
+  a!messageBanner(
+    backgroundColor: "INFO",
+    icon: "info-circle",
+    primaryText: "New System",
+    secondaryText: "A new Case Management System is available. Contact your Administrator with any questions.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "SUCCESS",
+    icon: "check-circle",
+    highlightColor: "POSITIVE",
+    primaryText: "Case Locked",
+    secondaryText: "Case #1123 has been closed successfully.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "WARN",
+    icon: "warning",
+    highlightColor: "WARN",
+    primaryText: "Case Still Open",
+    secondaryText: "The following case has been open for more than 30 days: Case #1124",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  ),
+  a!messageBanner(
+    backgroundColor: "ERROR",
+    icon: "warning",
+    highlightColor: "NEGATIVE",
+    primaryText: "Case Not Found",
+    secondaryText: "Case #1125 is missing. Please notify your Administrator.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
+    announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
+  )
+}
+```
+
 #### Dynamic • Standard
 
 ```
 a!localVariables(
-  local!infoBg: "#F0F2FC",
-  local!infoIcon: "#143CCC",
-  local!closedBg: "#F2F2F5",
-  local!closedIcon: "#5C5C66",
-  local!successBg: "#EDFCEA",
-  local!successIcon: "#24990F",
-  local!warnBg: "#FFF9DB",
-  local!warnIcon: "#E5BF00",
-  local!errorBg: "#FFEFEF",
-  local!errorIcon: "#B22D2D",
   local!dynamicStandardBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363",  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
       items: local!dynamicStandardBanners,
-      expression: {
+      expression: if(
+        a!isNullOrEmpty(fv!item.actionText),
+        /* Use a!messageBanner for text only messages */
+        a!messageBanner(
+          backgroundColor: fv!item.bgColor,
+          secondaryText: fv!item.text,
+          icon: fv!item.icon,
+          highlightColor: fv!item.iconColor,
+          showDecorativeBar: false,
+          shape: "SEMI_ROUNDED",
+          /* 
+          Review the guidance for announce behavior and set when appropriate
+          announceBehavior: "DISPLAY_AND_ANNOUNCE"
+          */
+        ),
+        /* Use custom banner pattern when there are links */
         a!cardLayout(
           shape: "SEMI_ROUNDED",
           style: fv!item.bgColor, 
+          marginBelow: "STANDARD",
           showBorder: false,
-          marginAbove: "STANDARD",
           contents: {
             a!sideBySideLayout(
               spacing: "STANDARD",
               items: {
-                a!sideBySideItem(
-                  item: {},
-                  width: "MINIMIZE"
-                ),
                 a!sideBySideItem(
                   item: a!richTextDisplayField(
                     labelPosition: "COLLAPSED",
@@ -139,111 +288,9 @@ a!localVariables(
               marginBelow: "STANDARD"
             )
           }
-        ),
-      }
-    ),
-  }
-)
-```
-
-#### Dynamic • Titled
-
-```
-a!localVariables(
-  local!infoBg: "#F0F2FC",
-  local!infoIcon: "#143CCC",
-  local!closedBg: "#F2F2F5",
-  local!closedIcon: "#5C5C66",
-  local!successBg: "#EDFCEA",
-  local!successIcon: "#24990F",
-  local!warnBg: "#FFF9DB",
-  local!warnIcon: "#E5BF00",
-  local!errorBg: "#FFEFEF",
-  local!errorIcon: "#B22D2D",
-  local!dynamicTitledBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    title: "New System",      text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  title: "Case Locked",     text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, title: "Case Closed",     text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    title: "Case Still Open", text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   title: "Case Not Found",  text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
-  },
-  {
-    a!forEach(
-      items: local!dynamicTitledBanners,
-      expression: a!cardLayout(
-        shape: "SEMI_ROUNDED",
-        style: fv!item.bgColor,
-        showBorder: false,
-        marginAbove: "STANDARD",
-        contents: {
-          a!sideBySideLayout(
-            spacing: "STANDARD",
-            alignVertical: "TOP",
-            marginAbove: "STANDARD",
-            marginBelow: "NONE",
-            items: {
-              a!sideBySideItem(item: {}, width: "MINIMIZE"),
-              a!sideBySideItem(
-                item: a!richTextDisplayField(
-                  labelPosition: "COLLAPSED",
-                  value: {
-                    a!richTextIcon(
-                      icon: fv!item.icon,
-                      color: fv!item.iconColor,
-                    )
-                  }
-                ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!headingField(
-                  text: fv!item.title,
-                  headingTag: "H3",
-                  size: "EXTRA_SMALL",
-                  fontWeight: "BOLD",
-                  marginAbove: "NONE",
-                  marginBelow: "NONE",
-                )
-              ),
-              a!sideBySideItem(item: {}, width: "MINIMIZE"),
-            }
-          ),
-          a!sideBySideLayout(
-            items: {
-              a!sideBySideItem(item: {}, width: "MINIMIZE"),
-              a!sideBySideItem(
-                item: a!richTextDisplayField(
-                  labelPosition: "COLLAPSED",
-                  marginAbove: "NONE",
-                  marginBelow: "NONE",
-                  value: {
-                    a!richTextIcon(
-                      icon: "info-circle",
-                      color: fv!item.bgColor,
-                    )
-                  }
-                ),
-                width: "MINIMIZE"
-              ),
-              a!sideBySideItem(
-                item: a!richTextDisplayField(
-                  labelPosition: "COLLAPSED",
-                  value: {
-                    a!richTextItem(
-                      text: fv!item.text
-                    )
-                  },
-                  marginAbove: "NONE"
-                )
-              ),
-              a!sideBySideItem(item: {}, width: "MINIMIZE")
-            },
-            marginAbove: "NONE",
-            marginBelow: "STANDARD",
-          )
-        },
-      ),
-    ),
+        )
+      )
+    )
   }
 )
 ```
@@ -252,21 +299,11 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#F0F2FC",
-  local!infoIcon: "#143CCC",
-  local!closedBg: "#F2F2F5",
-  local!closedIcon: "#5C5C66",
-  local!successBg: "#EDFCEA",
-  local!successIcon: "#24990F",
-  local!warnBg: "#FFF9DB",
-  local!warnIcon: "#E5BF00",
-  local!errorBg: "#FFEFEF",
-  local!errorIcon: "#B22D2D",
   local!dynamicActionBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    title: "New System",      text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, title: "Case Closed",     text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    title: "Case Still Open", text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   title: "Case Not Found",  text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your System Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
@@ -361,6 +398,7 @@ a!localVariables(
                         icon: "close",
                         color: "#000",
                         link: a!dynamicLink(),
+                        caption: "Dismiss",
                         linkStyle: "STANDALONE"
                       )
                     },
@@ -394,16 +432,21 @@ a!localVariables(
                 a!sideBySideItem(
                   item: {},
                   width: "MINIMIZE"
-                ),
+                )
               },
-              alignVertical: "TOP",
+              alignVertical: if(
+                /* May need to adjust logic based on message length */
+                a!isPageWidth({"PHONE", "TABLET_PORTRAIT", "TABLET_LANDSCAPE"}),
+                "TOP",
+                "MIDDLE"
+              ),
               marginAbove: "STANDARD",
               marginBelow: "STANDARD"
             )
           }
-        ),
+        )
       }
-    ),
+    )
   }
 )
 ```
@@ -412,22 +455,12 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#F0F2FC",
-  local!infoIcon: "#143CCC",
-  local!closedBg: "#F2F2F5",
-  local!closedIcon: "#5C5C66",
-  local!successBg: "#EDFCEA",
-  local!successIcon: "#24990F",
-  local!warnBg: "#FFF9DB",
-  local!warnIcon: "#E5BF00",
-  local!errorBg: "#FFEFEF",
-  local!errorIcon: "#B22D2D",
   local!persistentBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info",          iconColor: local!infoIcon,    text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363"),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE"),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE")
   },
   {
     a!forEach(
@@ -492,9 +525,9 @@ a!localVariables(
               }
             )
           }
-        ),
+        )
       }
-    ),
+    )
   }
 )
 ```
@@ -503,34 +536,38 @@ a!localVariables(
 
 ```
 a!localVariables(
-  local!infoBg: "#F0F2FC",
-  local!infoIcon: "#143CCC",
-  local!closedBg: "#F2F2F5",
-  local!closedIcon: "#5C5C66",
-  local!successBg: "#EDFCEA",
-  local!successIcon: "#24990F",
-  local!warnBg: "#FFF9DB",
-  local!warnIcon: "#E5BF00",
-  local!errorBg: "#FFEFEF",
-  local!errorIcon: "#B22D2D",
-  local!dynamicTitledBanners: {
-    a!map(bgColor: local!infoBg,    icon: "info-circle",          iconColor: local!infoIcon,    title: "New System",      text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
-    a!map(bgColor: local!closedBg,  icon: "lock",                 iconColor: local!closedIcon,  title: "Case Locked",     text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!successBg, icon: "check-circle",         iconColor: local!successIcon, title: "Case Closed",     text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
-    a!map(bgColor: local!warnBg,    icon: "exclamation-triangle", iconColor: local!warnIcon,    title: "Case Still Open", text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(bgColor: local!errorBg,   icon: "exclamation-triangle", iconColor: local!errorIcon,   title: "Case Not Found",  text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+  local!minimalBanners: {
+    a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
+    a!map(type: "Closed",  bgColor: "#F5F5F7", icon: "lock",                 iconColor: "#636363",  text: "Case #1123 has been locked. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
+    a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
-      items: local!dynamicTitledBanners,
-      expression: {
+      items: local!minimalBanners,
+      expression: if(
+        a!isNullOrEmpty(fv!item.actionText),
+        /* Use a!messageBanner for text only messages */
+        a!messageBanner(
+          backgroundColor: "#FFFFFF00",
+          secondaryText: fv!item.text,
+          icon: fv!item.icon,
+          highlightColor: fv!item.iconColor,
+          showDecorativeBar: false,
+          shape: "SEMI_ROUNDED",
+          marginBelow: "NONE",
+          /* 
+          Review the guidance for announce behavior and set when appropriate
+          announceBehavior: "DISPLAY_AND_ANNOUNCE"
+          */
+        ),
+        /* Use custom banner pattern when there are links */
         a!sideBySideLayout(
           spacing: "STANDARD",
+          alignVertical: "TOP",
           items: {
-            a!sideBySideItem(
-              item: {},
-              width: "MINIMIZE"
-            ),
+            a!sideBySideItem(width: "MINIMIZE"),
             a!sideBySideItem(
               item: a!richTextDisplayField(
                 labelPosition: "COLLAPSED",
@@ -566,12 +603,11 @@ a!localVariables(
               width: "MINIMIZE"
             )
           },
-          alignVertical: "MIDDLE",
           marginAbove: "STANDARD",
           marginBelow: "STANDARD"
         )
-      }
-    ),
+      )
+    )
   }
 )
 ```
