@@ -68,7 +68,7 @@ If using a link, use the `link` parameter in the `a!richTextItem()` component. A
 
 Note: When using the ‘X’ action to dismiss the banner, specific ‘Dismiss {insert name of item}’ in the `accessibilityText` parameter.
 
-![](https://github.com/user-attachments/assets/c090366d-1147-4afc-8ed1-61da303b3440)
+![](https://github.com/user-attachments/assets/34099b96-74ae-460c-91e9-e692266ca6e8)
 
 
 #### Persistent
@@ -99,7 +99,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "A new Case Management System is available. Contact your Administrator with any questions.",
     shape: "SEMI_ROUNDED",
     showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "#F5F5F7",
@@ -109,7 +112,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "Case #1123 has been closed successfully.",
     shape: "SEMI_ROUNDED",
     showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "SUCCESS",
@@ -119,7 +125,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "Case #1123 has been closed successfully.",
     shape: "SEMI_ROUNDED",
     showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "WARN",
@@ -129,7 +138,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "The following case has been open for more than 30 days: Case #1124",
     shape: "SEMI_ROUNDED",
     showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "ERROR",
@@ -139,7 +151,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     secondaryText: "Case #1125 is missing. Please notify your Administrator.",
     shape: "SEMI_ROUNDED",
     showDecorativeBar: false,
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   )
 }
 ```
@@ -153,7 +168,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     icon: "info-circle",
     primaryText: "New System",
     secondaryText: "A new Case Management System is available. Contact your Administrator with any questions.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "SUCCESS",
@@ -161,7 +179,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     highlightColor: "POSITIVE",
     primaryText: "Case Locked",
     secondaryText: "Case #1123 has been closed successfully.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "WARN",
@@ -169,7 +190,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     highlightColor: "WARN",
     primaryText: "Case Still Open",
     secondaryText: "The following case has been open for more than 30 days: Case #1124",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   ),
   a!messageBanner(
     backgroundColor: "ERROR",
@@ -177,7 +201,10 @@ Use this for messages that are always going to be a part of the UI. It is up to 
     highlightColor: "NEGATIVE",
     primaryText: "Case Not Found",
     secondaryText: "Case #1125 is missing. Please notify your Administrator.",
+    /* 
+    Review the guidance for announce behavior and set when appropriate
     announceBehavior: "DISPLAY_AND_ANNOUNCE"
+    */
   )
 }
 ```
@@ -206,7 +233,10 @@ a!localVariables(
           highlightColor: fv!item.iconColor,
           showDecorativeBar: false,
           shape: "SEMI_ROUNDED",
+          /* 
+          Review the guidance for announce behavior and set when appropriate
           announceBehavior: "DISPLAY_AND_ANNOUNCE"
+          */
         ),
         /* Use custom banner pattern when there are links */
         a!cardLayout(
@@ -273,7 +303,7 @@ a!localVariables(
     a!map(type: "Info",    bgColor: "INFO",    icon: "info-circle",          iconColor: "#115EBB",  text: "A new Case Management System is available. Contact your Administrator with any questions.", actionText: " Learn more"),
     a!map(type: "Success", bgColor: "SUCCESS", icon: "check-circle",         iconColor: "POSITIVE", text: "Case #1123 has been closed. A survey has been sent to the customer.",                       actionText: ""),
     a!map(type: "Warning", bgColor: "WARN",    icon: "exclamation-triangle", iconColor: "#CC7600",  text: "The following case has been open for more than 30 days:",                                   actionText: " Case #1124"),
-    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your Administrator.",                                  actionText: "")
+    a!map(type: "Error",   bgColor: "ERROR",   icon: "exclamation-triangle", iconColor: "NEGATIVE", text: "Case #1125 is missing. Please notify your System Administrator.",                                  actionText: "")
   },
   {
     a!forEach(
@@ -368,7 +398,7 @@ a!localVariables(
                         icon: "close",
                         color: "#000",
                         link: a!dynamicLink(),
-                        caption: "Close",
+                        caption: "Dismiss",
                         linkStyle: "STANDALONE"
                       )
                     },
@@ -404,7 +434,12 @@ a!localVariables(
                   width: "MINIMIZE"
                 )
               },
-              alignVertical: "MIDDLE",
+              alignVertical: if(
+                /* May need to adjust logic based on message length */
+                a!isPageWidth({"PHONE", "TABLET_PORTRAIT", "TABLET_LANDSCAPE"}),
+                "TOP",
+                "MIDDLE"
+              ),
               marginAbove: "STANDARD",
               marginBelow: "STANDARD"
             )
@@ -522,7 +557,10 @@ a!localVariables(
           showDecorativeBar: false,
           shape: "SEMI_ROUNDED",
           marginBelow: "NONE",
+          /* 
+          Review the guidance for announce behavior and set when appropriate
           announceBehavior: "DISPLAY_AND_ANNOUNCE"
+          */
         ),
         /* Use custom banner pattern when there are links */
         a!sideBySideLayout(
