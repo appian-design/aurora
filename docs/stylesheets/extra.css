@@ -11,6 +11,11 @@
   --md-typeset-a-color: #3F8EEE;
 }
 
+.md-header {
+background: linear-gradient(90deg, #302A8F 0%, #2322F0 88%);
+box-shadow: none; /* Optional: Removes the default shadow */
+}
+
 /* Hide the icon for the "stable" page status */
 .md-status--stable {
     display: none;
