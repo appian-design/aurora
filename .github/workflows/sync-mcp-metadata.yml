@@ -4,12 +4,12 @@ on:
   # Run on file changes in documentation directories
   push:
     paths:
-      - 'branding/**/*.md'
-      - 'components/**/*.md'
-      - 'layouts/**/*.md'
-      - 'patterns/**/*.md'
-      - 'content-style-guide/**/*.md'
-      - 'accessibility/**/*.md'
+      - 'docs/branding/**/*.md'
+      - 'docs/components/**/*.md'
+      - 'docs/layouts/**/*.md'
+      - 'docs/patterns/**/*.md'
+      - 'docs/content-style-guide/**/*.md'
+      - 'docs/accessibility/**/*.md'
   
   # Run weekly on Mondays at 9 AM UTC
   schedule:
@@ -36,6 +36,11 @@ jobs:
           # Install node-fetch as fallback for older Node versions
           npm init -y
           npm install node-fetch@2
+          
+      - name: Test sync check setup
+        run: |
+          cd .github/scripts
+          node test-sync-check.js
           
       - name: Run sync check
         id: sync-check
