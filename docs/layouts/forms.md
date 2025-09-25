@@ -21,11 +21,13 @@ Use `a!formLayout()` for single-step forms and `a!wizardLayout()` for multi-step
 ### When to Use Form vs Wizard (Multi-Step Form)
 
 Use form layout when:
+
 - Inputting data is unlikely to be sequential, and users will need to jump around
 - Editing data via inline actions from the read-only representation of that data
 - Focusing on a specific point in your workflow to input a small portion of the input fields
 
 Use wizard layout when:
+
 - Users need to enter a large number of fields that can be broken up into logical, sequential steps
 - Users need a more guided navigation experience, where they can focus on one section of fields at a time with a visual progress indicator
 Note: Having to click through a wizard to get to specific data to edit can be cumbersome, so consider when inline actions are more efficient 
@@ -50,15 +52,18 @@ Provide confirmation upon submission
 ##### Dialog Sizing
 
 **When to use AUTO height:**
+
 - When dialog contents are short
 - You want your dialog size to match your content height exactly
 - The form height is not going to change dynamically based on user input
 
 **Do not use AUTO when:**
+
 - Your dialog contents will dynamically change height based on state. This will result in a jumpy experience, because the dialog height will change with the height of its contents
 - You are using a wizard, because each wizard step could change the height of your dialog
 
 **Best practices:**
+
 - Do not use very wide widths with very short heights, as it will feel unbalanced on the page
 - When choosing a dialog size, use a width that will allow your inputs to fit expected value lengths. Avoid setting a wider width than needed, as this can lead to extremely long inputs, which are more difficult to scan
 - Use dialog height and width to determine the size of your form or wizard. Form and wizard layout should always use the "FULL" contents width when used in record action dialogs

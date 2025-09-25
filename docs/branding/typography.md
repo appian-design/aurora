@@ -1,33 +1,37 @@
 ---
 status: "stable"
-last_updated: "2025-09-05"
+last_updated: "2025-09-25"
 ---
 
 # Typography
 
-Guidance on heading styles and how to use them in your interfaces
+Guidance on heading styles and how to use them in your interfaces to maintain visual hierarchy
 
-## Heading Styles
+## General Guidelines
 
-Use title case for all heading styles. Avoid using all caps. Use Gray 4 (#2E2E35) for primary headers and Gray 3 (#6C6C75) for secondary headers. Avoid using the accent color for headers that are not clickable.
+Use title case for all heading styles. Avoid using all caps and accent colors for headers that are not clickable.
 
-!!! info "Helpful Tips"
+## Page Headers
 
-    When using `a!sectionLayout`, use LARGE size for page titles, SMALL size for section titles and EXTRA_SMALL size for subsection titles.
+- Use `a!headingField` with `size: "LARGE"`
+- Typically placed within `a!headerContentLayout` for proper page structure
 
+## Section Headers
 
+- **Section titles**: Use `SMALL` size with `STANDARD` color 
+- **Subsection titles**: Use `EXTRA_SMALL` size
 
 !!! abstract "Accessibility"
 
     For `a!sectionLayout`, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
 
-## Using Section Headings with Actions or Text
+### Using Section Headings with Actions or Text
 
-### Option 1 of 2: Use Columns Layout
+#### Option 1 of 2: Use Columns Layout
 
 When placing an action component aligned to the other end of the header, place the `a!sectionLayout` header into an `a!columnsLayout`.
 
-### Option 2 of 2: Use Side By Side Layout
+#### Option 2 of 2: Use Side By Side Layout
 
 When you have patterns that require information or interactions immediately alongside the header, place the `a!headingField` section title into an `a!sideBySideLayout`. Note that you cannot place an `a!sectionLayout` header into an `a!sideBySideLayout`.
 
@@ -43,7 +47,8 @@ a!headerContentLayout(
         a!headingField(
           text: { "Case Details" },
           color: "#ffffff",
-          size: "LARGE"
+          size: "LARGE",
+          marginBelow: "NONE"
         )
       },
       height: "AUTO",
@@ -107,6 +112,7 @@ a!sideBySideLayout(
       item: a!headingField(
         text: "Section Title",
         size: "SMALL",
+        marginBelow: "NONE",
         fontWeight: "SEMI_BOLD",
         headingTag: "H2"
       )

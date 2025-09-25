@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-04"
+last_updated: "2025-09-25"
 ---
 
 # More / Less Link
@@ -8,6 +8,19 @@ last_updated: "2025-09-04"
 More / Less Links are used to display a certain amount of text content and provide a link for the user to expand and view additional information. It prevents clutter in an interface that might be prone to long text.
 
 ![](https://github.com/user-attachments/assets/ff935aef-7cbf-437a-986a-9128d892fd17)
+
+## Usage
+
+### When to Use
+Use this pattern when:
+
+- You have a wide range of character lengths across content items
+- You want consistent grid row heights without some rows being much taller than others
+- The expected text length varies significantly and won't consistently fit within the available space
+
+### Character Limit Guidelines
+- **Default recommendation**: 255 characters
+- **For grids**: Select a limit that keeps expanded text only about twice as tall as regular rows. Avoid limits that are too high, as this can make text columns appear heavier or more dense compared to other columns
 
 ## Development
 
