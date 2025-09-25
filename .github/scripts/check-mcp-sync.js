@@ -78,7 +78,7 @@ function scanCurrentRepo() {
           structure[category][key] = {
             title: title || generateTitleFromFilename(key),
             body: description || `${CATEGORIES[category]} guidance.`,
-            filePath: `${category}/${file}`
+            filePath: `docs/${category}/${file}`
           };
         }
       });
