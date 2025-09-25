@@ -65,7 +65,7 @@ This design system documentation includes:
 ## 🏗️ Repository Structure
 
 ```
-design-system-docs/
+aurora/
 ├── .github/              # GitHub automation and workflows
 │   ├── workflows/        # GitHub Actions for deployment and sync checking
 │   └── scripts/          # Automation scripts for MCP server sync
