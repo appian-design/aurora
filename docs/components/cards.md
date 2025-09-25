@@ -66,7 +66,7 @@ Placing cards within cards can create unnecessary borders and lines that crowd t
 
 #### Padding
 
-Use standard padding instead of the default padding to create more whitespace in dense UIs.
+Use card padding `STANDARD` to provide more visual space for card contents.
 
 ## Development
 
