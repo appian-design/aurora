@@ -78,7 +78,7 @@ function scanCurrentRepo() {
           structure[category][key] = {
             title: title || generateTitleFromFilename(key),
             body: description || `${CATEGORIES[category]} guidance.`,
-            filePath: `${category}/${file}`
+            filePath: `docs/${category}/${file}`
           };
         }
       });
@@ -92,28 +92,29 @@ function scanCurrentRepo() {
  * Parse TypeScript file content to extract designSystemData object
  */
 function parseTypeScriptMetadata(content) {
+  const vm = require('vm');
+  let dataString = '';
   try {
     // Find the designSystemData export
     const dataMatch = content.match(/export const designSystemData[\s\S]*?= ([\s\S]*?);\s*$/m);
     if (!dataMatch) {
       throw new Error('Could not find designSystemData export in TypeScript file');
     }
-    
-    let dataString = dataMatch[1];
-    
-    // Clean up the TypeScript syntax to make it valid JSON
-    // Remove TypeScript type annotations and trailing commas
-    dataString = dataString
-      .replace(/([a-zA-Z_$][a-zA-Z0-9_$]*)(\s*):/g, '"$1":') // Quote property names
-      .replace(/'/g, '"') // Convert single quotes to double quotes
-      .replace(/,\s*}/g, '}') // Remove trailing commas before closing braces
-      .replace(/,\s*]/g, ']'); // Remove trailing commas before closing brackets
-    
-    // Parse as JSON
-    const parsedData = JSON.parse(dataString);
+
+    dataString = dataMatch[1];
+
+    // Use vm.runInNewContext for safer evaluation with restricted context
+    // This prevents access to global objects and system functions
+    const context = {};
+    const parsedData = vm.runInNewContext('(' + dataString + ')', context, {
+      timeout: 1000 // 1 second timeout
+    });
     return parsedData;
   } catch (error) {
     console.error('Error parsing TypeScript metadata:', error);
+    if (dataString) {
+      console.error('Failed to parse this data string:', dataString.substring(0, 500) + '...');
+    }
     throw new Error(`Failed to parse MCP server metadata: ${error.message}`);
   }
 }

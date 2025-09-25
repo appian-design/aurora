@@ -1,8 +1,9 @@
 name: Check MCP Server Sync
 
 on:
-  # Run on file changes in documentation directories
+  # Run on merges to main branch with documentation changes
   push:
+    branches: [main]
     paths:
       - 'docs/branding/**/*.md'
       - 'docs/components/**/*.md'
