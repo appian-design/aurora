@@ -435,6 +435,39 @@ labelPosition: "ABOVE"  /* ABOVE, ADJACENT, COLLAPSED, JUSTIFIED */
 
 ## Responsive Design
 
+### Columns Layout
+
+#### Centering Single-Column Content
+
+For single-column content, use a three-column layout with margin columns to prevent content from becoming too wide on large screens. The center column uses a fixed width on desktop but switches to `AUTO` on smaller screens for proper responsive behavior:
+
+```sail
+a!columnsLayout(
+  columns: {
+    a!columnLayout(
+      width: "AUTO", 
+      showWhen: a!isPageWidth({"DESKTOP","DESKTOP_WIDE"})
+    ), /* left margin - hidden on smaller screens */
+    a!columnLayout(
+      width: if(a!isPageWidth({"DESKTOP","DESKTOP_WIDE"}), "WIDE_PLUS", "AUTO"),
+      contents: {
+        /* All page content goes here */
+      }
+    ), /* main content - fixed width on desktop, AUTO on mobile/tablet */
+    a!columnLayout(
+      width: "AUTO", 
+      showWhen: a!isPageWidth({"DESKTOP","DESKTOP_WIDE"})
+    ) /* right margin - hidden on smaller screens */
+  }
+)
+```
+
+#### Key Principles
+
+- **Always include `AUTO` columns**: At least one column must have `width: "AUTO"` for fluid layout
+- **Hide margin columns**: Use `showWhen: a!isPageWidth({"DESKTOP","DESKTOP_WIDE"})` to hide margins on mobile/tablet
+- **Never use all fixed widths**: This causes responsive issues
+
 ### Side by Side Layout
 ```sail
 a!sideBySideLayout(
