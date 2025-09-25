@@ -7,6 +7,10 @@ last_updated: "2025-09-25"
 
 Guidance on heading styles and how to use them in your interfaces to maintain visual hierarchy
 
+## General Guidelines
+
+Use title case for all heading styles. Avoid using all caps and accent colors for headers that are not clickable.
+
 ## Page Headers
 
 - Use `a!headingField` with `size: "LARGE"`
