@@ -66,7 +66,7 @@ Use colors strategically to convey meaning and maintain consistency:
 
 ### Basic Tag Implementation
 
-```
+```sail
 a!tagField(
   labelPosition: "COLLAPSED",
   tags: {
@@ -82,7 +82,7 @@ a!tagField(
 
 ### Multiple Tags with Different Colors
 
-```
+```sail
 a!tagField(
   labelPosition: "COLLAPSED",
   tags: {
@@ -109,7 +109,7 @@ a!tagField(
 
 ### Tags with Custom Styling
 
-```
+```sail
 a!tagField(
   labelPosition: "COLLAPSED",
   tags: {
@@ -131,7 +131,7 @@ a!tagField(
 
 ### Tags in Data Display Context
 
-```
+```sail
 a!localVariables(
   local!items: {
     {
