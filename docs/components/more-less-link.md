@@ -13,6 +13,7 @@ More / Less Links are used to display a certain amount of text content and provi
 
 ### When to Use
 Use this pattern when:
+
 - You have a wide range of character lengths across content items
 - You want consistent grid row heights without some rows being much taller than others
 - The expected text length varies significantly and won't consistently fit within the available space
