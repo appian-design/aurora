@@ -15,12 +15,14 @@ Banners are visual elements used to display important information or messages to
 ### When to Use Message Banner vs Actions Banner
 
 **Use `a!messageBanner()` for:**
+
 - Status messages (action complete, etc.)
 - Simple, concise messages
 - Leveraging built-in accessibility features
 - Standard `INFO`, `SUCCESS`, `WARN`, `ERROR` styles
 
 **Use custom action banner patterns for:**
+
 - Longer text content
 - Rich text formatting
 - Multiple actions or links
@@ -31,11 +33,13 @@ Use message banners sparingly and keep the language concise, especially if used 
 ### Platform vs Solutions Variations
 
 **Platform Applications:**
+
 - Use "no decorative bar" style for flush messages
 - Use "with decorative bar" style for standalone messages
 - The decorative bar helps banner messages stand out sufficiently
 
 **Solutions Applications:**
+
 - If you have many banners, the decorative bar could feel heavy, so a simpler style without a decorative bar might work best
 - If you have card-based layouts with semi-rounded/rounded cards, a semi-rounded banner shape may be a better choice to match the general aesthetic of your application
 - When using semi-rounded shapes, hide the decorative border because it doesn't look as good as it does on the squared variant
