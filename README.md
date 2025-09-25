@@ -1,4 +1,4 @@
-# Design System Documentation
+# Appian Aurora Design System
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
@@ -66,7 +66,9 @@ This design system documentation includes:
 
 ```
 design-system-docs/
-├── .github/workflows/    # GitHub Actions for automated deployment
+├── .github/              # GitHub automation and workflows
+│   ├── workflows/        # GitHub Actions for deployment and sync checking
+│   └── scripts/          # Automation scripts for MCP server sync
 ├── docs/                 # Contains all Markdown documentation files
 │   ├── index.md          # The home page
 │   ├── assets/           # Images, CSS, or JS overrides
@@ -110,7 +112,7 @@ Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information a
 
 ### MCP Server Integration
 
-This repository is designed to work with Model Context Protocol (MCP) servers that make documentation available directly within AI coding assistants. Changes made here are automatically available through the MCP interface, enabling:
+This repository is designed to work with the [Aurora MCP Server](https://github.com/appian-design/aurora-mcp) that makes documentation available directly within AI coding assistants. Changes made here are automatically synchronized with the MCP server through automated workflows, enabling:
 
 - Real-time access to design system guidance within development environments
 - AI-powered assistance with component selection and implementation
@@ -157,8 +159,8 @@ related: ["related-item-1", "related-item-2"]
 
 ## 🚀 Deployment
 
-- **GitHub Pages**: Static site automatically deployed from main branch
-- **MCP Server**: Documentation served through Model Context Protocol for AI integration
+- **GitHub Pages**: Static documentation site automatically deployed from main branch
+- **MCP Server**: Documentation metadata automatically synchronized with the [Aurora MCP Server](https://github.com/appian-design/aurora-mcp) for AI integration
 
 ## 📖 Helpful Resources
 
