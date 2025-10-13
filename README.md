@@ -25,7 +25,7 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 ```bash
 # Clone the repository
 git clone [https://github.com/appian-design/aurora.git](https://github.com/appian-design/aurora.git)
-cd design-system-docs
+cd aurora
 
 # Create and activate a virtual environment
 # On macOS/Linux:
@@ -36,8 +36,11 @@ source venv/bin/activate
 python -m venv venv
 .\venv\Scripts\activate
 
-# Install mkdocs material 
+# Install Material for MkDocs 
 pip install mkdocs-material
+
+# Install MkDocs GLightbox
+pip install mkdocs-glightbox
 ```
 
 #### 3. Run the Local Server
