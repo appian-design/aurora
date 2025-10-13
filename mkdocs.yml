@@ -83,3 +83,6 @@ extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/appian-design/aurora/issues/new/choose
+
+plugins:
+  - glightbox
