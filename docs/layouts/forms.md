@@ -93,7 +93,7 @@ Checklist:
 |For wizards in record action dialogs, don't use the "AUTO" dialog height. Each step could change the height of the dialog, which would feel jarring to a user.|Dialogs|
 |If you have section headings within a step, make sure they are smaller than the step heading. Otherwise, the hierarchy of the page may be harder to understand.|Dialogs|
 |Make sure your wizard step contents are designed responsively, following design guidance. The wizard milestone styles responsively switch to the minimal style on narrow screens so that only the step contents need to be designed with small form factors in mind.|Dialogs|
-|In a multi-step form, use the milestone component to indicate progress. See [Milestone guidance](milestones.md) for detailed implementation guidance.|Progress|
+|In a multi-step form, use the milestone component to indicate progress. See [Milestone guidance](../components/milestones.md) for detailed implementation guidance.|Progress|
 |In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
 |In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
 |Provide confirmation upon submission|Progress|
@@ -114,7 +114,7 @@ Checklist:
 |Use "Update" (not "Edit") when a user is modifying an item|Content|
 |Group related fields close to each other as much as possible to minimize context switching|Content|
 |If there is a required input field, add instructions under the form header that specifies - "Mandatory fields are marked with an asterisk (*)"|Content|
-|In a multi-step form, use the milestone component to indicate progress. See [Milestone guidance](milestones.md) for detailed implementation guidance.|Progress|
+|In a multi-step form, use the milestone component to indicate progress. See [Milestone guidance](../components/milestones.md) for detailed implementation guidance.|Progress|
 |In a multi-step form, avoid specifying a header label for the step. The milestone step label is sufficient.|Progress|
 |In a form with 3+ steps, provide a review step that lists all the fields as read -only. Allow the user to navigate back to update information.|Progress|
 |Provide confirmation upon submission|Progress|
