@@ -86,7 +86,6 @@ extra:
 
 plugins:
   - glightbox:
-      auto_caption: true
 
 hooks:
   - hooks/add_image_titles.py
