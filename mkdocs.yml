@@ -85,4 +85,8 @@ extra:
       link: https://github.com/appian-design/aurora/issues/new/choose
 
 plugins:
-  - glightbox
+  - glightbox:
+      auto_caption: true
+
+hooks:
+  - hooks/add_image_titles.py

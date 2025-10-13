@@ -48,13 +48,13 @@ To indicate reference information cards, use the accent color decorative bar at 
 
 #### Empty State
 
-![image](https://github.com/user-attachments/assets/00b77d48-67ba-41aa-9f1d-7089c8b210cc)
+![](https://github.com/user-attachments/assets/00b77d48-67ba-41aa-9f1d-7089c8b210cc)
 
 Use this pattern if there is no content available to display and provide forward flow to help the user with content they might be looking for.
 
 If applicable, provide a prominent action for the user so that they are able to add useful content.
 
-![image](https://github.com/user-attachments/assets/d2ba8296-6eaf-45f7-a5ae-e206e099b06c)
+![](https://github.com/user-attachments/assets/d2ba8296-6eaf-45f7-a5ae-e206e099b06c)
 
 Mention explicitly when no data exists for key value pairs. Avoid using this pattern in grids. In grids, use “-” instead.
 

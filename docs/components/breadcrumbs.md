@@ -10,7 +10,7 @@ Breadcrumbs display the user's current location within the application's hierarc
 
 ## Design
 
-![image](https://github.com/user-attachments/assets/a0994d9f-14a0-4b19-aa3f-891407c870cd)
+![](https://github.com/user-attachments/assets/a0994d9f-14a0-4b19-aa3f-891407c870cd)
 
 - **Purpose**: Breadcrumbs are for showing structural hierarchy, not navigation history. The breadcrumbs for a given object should always be the same regardless of how the user arrived at the object.
 - **Structure**: Always start the breadcrumb trail with the highest level, e.g., home page.
