@@ -34,7 +34,24 @@ Use this option when there are 4 or more tabs.
 !!! abstract "Accessibility"
 
     Specify “Selected” in the `accessibilityText` parameter of the tab’s card layout to ensure screen readers identify the selected tab. Avoid using the word “tab” in the accessibility text.
+#### Secondary Tabs
 
+Use secondary tabs for sub-navigation within a primary tab or section. Secondary tabs should be visually distinct from primary tabs through reduced visual weight.
+
+**When to use:**
+- For filtering or categorizing content within a primary tab
+- When you need a second level of navigation hierarchy
+- For toggling between related views of the same data set
+
+**Design considerations:**
+- Use smaller text size and less prominent styling than primary tabs
+- Limit to 2-4 secondary tabs to avoid cognitive overload
+- Ensure clear visual hierarchy between primary and secondary tabs
+- Consider using text-only secondary tabs without decorative bars
+
+!!! abstract "Accessibility"
+
+    Specify "Selected" in the `accessibilityText` parameter of the secondary tab's card layout. Use descriptive labels like "Filtered by Active" rather than just "Selected" to provide context about the secondary navigation level.
 #### Horizontal Tabs
 
 ![](https://github.com/user-attachments/assets/88d1c232-396e-47d6-a6bd-52f968bea8c2)
@@ -113,6 +130,38 @@ a!localVariables(
         link: a!dynamicLink(),
         decorativeBarPosition: "START",
         marginBelow: "LESS"
+      )
+    }
+  )
+)
+```
+
+#### Secondary Tabs
+
+```
+a!localVariables(
+  local!secondaryTabs: {"All", "Active", "Inactive"},
+  local!selectedSecondaryTab: 1,
+  a!forEach(
+    items: local!secondaryTabs,
+    expression: {
+      a!buttonWidget(
+        label: fv!item,
+        size: "SMALL",
+        style: if(
+          fv!index = local!selectedSecondaryTab,
+          "SOLID",
+          "LINK"
+        ),
+        link: a!dynamicLink(
+          value: fv!index,
+          saveInto: local!selectedSecondaryTab
+        ),
+        accessibilityText: if(
+          fv!index = local!selectedSecondaryTab,
+          "Selected " & fv!item,
+          fv!item
+        )
       )
     }
   )
