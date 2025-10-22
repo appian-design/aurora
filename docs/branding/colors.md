@@ -75,7 +75,7 @@ The following is the complete color palette with named colors and their correspo
 
 ### Pink
 - <span class="color-chip" style="background-color: #FFDEF3;"></span>Pink 0: #FFDEF3
-- <span class="color-chip" style="background-color: #FFDEF3;"></span>Pink 1: #FFDEF3
+- <span class="color-chip" style="background-color: #FFC9E8;"></span>Pink 1: #FFC9E8
 - <span class="color-chip" style="background-color: #F7A7DA;"></span>Pink 2: #F7A7DA
 - <span class="color-chip" style="background-color: #E21496;"></span>Pink 3: #E21496
 - <span class="color-chip" style="background-color: #BB117C;"></span>Pink 35: #BB117C
