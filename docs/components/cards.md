@@ -3,7 +3,7 @@ status: "stable"
 last_updated: "2025-09-25"
 ---
 
-# Cards Guidance
+# Cards
 
 Cards are containers used to group content together. They allow the user to view information and take actions.
 
