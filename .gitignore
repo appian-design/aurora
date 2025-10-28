@@ -36,3 +36,6 @@ mkdocs.local.yml
 
 # Secrets
 .env
+
+# Analysis files
+github-issues-analysis.md

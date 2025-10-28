@@ -86,6 +86,8 @@ extra:
 
 plugins:
   - glightbox:
+  - data
+  - macros
 
 hooks:
   - hooks/add_image_titles.py
