@@ -55,9 +55,85 @@ Use `HORIZONTAL` orientation for:
 - Identify opportunities to reduce steps as much as possible. A good rule of thumb is to have at most 6 steps
 - For 3-6 steps, use your best judgment on Vertical vs. Horizontal. Vertical milestones may look too sparse with 3 steps and horizontal milestones may look crowded with 5-6 steps.
 
+### Usage
+
+#### Record View
+
+Use `a!milestoneField` to display process progress or status tracking within record views. This is ideal for showing the current state of a workflow or approval process.
+
+![](https://github.com/user-attachments/assets/0de5aacb-70f1-43af-a4b7-588bd38650db)
+
+**When to use in Record Views:**
+- Displaying approval workflow status
+- Showing order fulfillment progress  
+- Tracking project phases or deliverables
+- Indicating document review stages
+
+**Design considerations:**
+- Use completed, current, and future states to show progress
+- Keep milestone labels concise (1-2 words)
+- Consider using icons or colors to reinforce status meaning
+- Place milestones prominently near the top of record summary
+
 
 
 ## Development
+
+### Usage
+
+#### Record View
+
+```
+a!localVariables(
+  /* This would typically come from record data or process variables */
+  local!currentStep: 3,
+  local!orderStatus: "Processing",
+  a!sectionLayout(
+    label: "Order Status",
+    labelSize: "SMALL",
+    labelColor: "STANDARD",
+    contents: {
+      a!cardLayout(
+        contents: {
+          a!milestoneField(
+            steps: {
+              a!map(label: "Placed", isCompleted: true),
+              a!map(label: "Confirmed", isCompleted: true), 
+              a!map(label: "Processing", isCompleted: false, isCurrent: true),
+              a!map(label: "Shipped", isCompleted: false),
+              a!map(label: "Delivered", isCompleted: false)
+            },
+            color: "ACCENT",
+            size: "MEDIUM",
+            marginBelow: "STANDARD"
+          ),
+          a!richTextDisplayField(
+            labelPosition: "COLLAPSED",
+            value: {
+              a!richTextItem(
+                text: "Current Status: ",
+                style: "STRONG"
+              ),
+              a!richTextItem(
+                text: local!orderStatus,
+                color: "ACCENT"
+              )
+            },
+            align: "CENTER"
+          )
+        },
+        height: "AUTO",
+        style: "NONE",
+        padding: "STANDARD",
+        marginBelow: "STANDARD",
+        showBorder: true,
+        borderColor: "#EDEEFA",
+        shape: "SEMI_ROUNDED"
+      )
+    }
+  )
+)
+```
 
 ### Variants
 
