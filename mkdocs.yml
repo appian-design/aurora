@@ -85,7 +85,7 @@ extra:
       link: https://github.com/appian-design/aurora/issues/new/choose
 
 plugins:
-  - glightbox:
+  - glightbox
   - data
   - macros
 

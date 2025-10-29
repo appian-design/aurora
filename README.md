@@ -36,11 +36,8 @@ source venv/bin/activate
 python -m venv venv
 .\venv\Scripts\activate
 
-# Install Material for MkDocs 
-pip install mkdocs-material
-
-# Install MkDocs GLightbox
-pip install mkdocs-glightbox
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 #### 3. Run the Local Server
