@@ -7,6 +7,8 @@ last_updated: "2025-09-05"
 
 ## Design
 
+Layout patterns for creating effective landing pages that provide users with clear navigation, contextual information, and actionable next steps.
+
 ### Guidance
 
 **Tailor Content to Target Users**
