@@ -118,7 +118,7 @@ This repository uses automated workflows to help maintain the design system:
 - **AI-Assisted Implementation**: Support for AI agents to implement routine fixes and updates
 - **Automated PR Creation**: PRs are automatically created when branches following the `aurora-agent/*` pattern are pushed
 
-See our [Automated Maintenance Guide](docs/automated-maintenance.md) for details on how to use these workflows.
+See our [Automated Maintenance Guide](.github/automated-maintenance.md) for details on how to use these workflows.
 
 ### MCP Server Integration
 
