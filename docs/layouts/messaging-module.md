@@ -6,6 +6,9 @@ last_updated: "2025-09-05"
 # Messaging Module
 
 ## Design
+
+A messaging interface for viewing, composing, and managing threaded conversations with support for attachments, search, and AI-powered summaries.
+
 ![](https://github.com/user-attachments/assets/c4a563e1-fb73-4ac3-8233-44b4182c5f9d)
 
 ### Guidance
