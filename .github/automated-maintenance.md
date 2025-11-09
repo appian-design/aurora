@@ -169,6 +169,34 @@ git push origin aurora-agent/fix-issue-161
 
 ## Configuration
 
+### Prerequisites: Personal Access Token
+
+The auto-PR workflow requires a Personal Access Token (PAT) because organization policies may prevent the default `GITHUB_TOKEN` from creating pull requests.
+
+**Setup Steps:**
+
+1. **Create a Personal Access Token:**
+   - Go to GitHub: **Settings → Developer settings → Personal access tokens → Tokens (classic)**
+   - Click **"Generate new token (classic)"**
+   - Name: `Aurora Agent PR Creator` (or similar)
+   - Permissions needed:
+     - ✅ `repo` (full control of private repositories)
+     - ✅ `workflow` (update GitHub Actions workflows)
+   - Set expiration (recommend 90 days or 1 year)
+   - Click **Generate token**
+   - **Copy the token immediately** (you won't see it again!)
+
+2. **Add Token as Repository Secret:**
+   - Go to repository: **Settings → Secrets and variables → Actions**
+   - Click **"New repository secret"**
+   - Name: `AURORA_AGENT_TOKEN`
+   - Value: Paste your token
+   - Click **Add secret**
+
+3. **Token Renewal:**
+   - When the token expires, generate a new one and update the repository secret
+   - The workflow will fail with authentication errors if the token is expired
+
 ### GitHub Action Files
 
 **Issue Analysis:** `.github/workflows/issue-analysis.yml`
@@ -220,17 +248,20 @@ To adjust the automation:
 
 ## Getting Started
 
-1. **Enable GitHub Actions** (if not already enabled)
-2. **Run first analysis:**
+1. **Set up Personal Access Token:**
+   - Follow the [Prerequisites: Personal Access Token](#prerequisites-personal-access-token) instructions above
+   - This is **required** for the auto-PR workflow to function
+2. **Enable GitHub Actions** (if not already enabled)
+3. **Run first analysis:**
    - Go to Actions → "Automated Issue Analysis"
    - Click "Run workflow"
-3. **Review analysis issue** and identify 1-2 AI-suitable issues
-4. **Test the workflow:**
+4. **Review analysis issue** and identify 1-2 AI-suitable issues
+5. **Test the workflow:**
    - Use LLM to implement changes for one issue
    - Create `aurora-agent/fix-issue-{NUMBER}` branch
    - Push and verify PR is created automatically
-5. **Review and merge** the test PR
-6. **Scale up** to more issues as confidence grows
+6. **Review and merge** the test PR
+7. **Scale up** to more issues as confidence grows
 
 ## Questions?
 

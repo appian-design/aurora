@@ -5,6 +5,10 @@ on:
     branches:
       - 'aurora-agent/**'
 
+# Note: This workflow requires a Personal Access Token (PAT) to be set as a repository secret
+# named AURORA_AGENT_TOKEN with 'repo' and 'workflow' permissions.
+# This is necessary because organization policies may prevent GITHUB_TOKEN from creating PRs.
+
 permissions:
   contents: read
   pull-requests: write
@@ -33,7 +37,7 @@ jobs:
       - name: Check if PR already exists
         id: check-pr
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.AURORA_AGENT_TOKEN }}
         run: |
           BRANCH_NAME="${{ steps.extract-issue.outputs.branch_name }}"
           PR_EXISTS=$(gh pr list --head "$BRANCH_NAME" --json number --jq 'length')
@@ -43,7 +47,7 @@ jobs:
         if: steps.check-pr.outputs.exists == '0' && steps.extract-issue.outputs.issue_number != ''
         id: issue-details
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.AURORA_AGENT_TOKEN }}
         run: |
           ISSUE_NUM="${{ steps.extract-issue.outputs.issue_number }}"
 
@@ -69,7 +73,7 @@ jobs:
       - name: Create Pull Request
         if: steps.check-pr.outputs.exists == '0'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.AURORA_AGENT_TOKEN }}
         run: |
           ISSUE_NUM="${{ steps.extract-issue.outputs.issue_number }}"
           BRANCH_NAME="${{ steps.extract-issue.outputs.branch_name }}"
