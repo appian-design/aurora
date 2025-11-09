@@ -27,8 +27,8 @@ jobs:
           ISSUE_COUNT=$(gh issue list --state open --json number --jq 'length')
           echo "count=$ISSUE_COUNT" >> $GITHUB_OUTPUT
 
-          # Get issue list with links
-          ISSUE_LIST=$(gh issue list --state open --json number,title,url --jq '.[] | "- #\(.number): [\(.title)](\(.url))"' | head -50)
+          # Get issue list (GitHub will auto-link issue numbers)
+          ISSUE_LIST=$(gh issue list --state open --json number --jq '.[] | "- #\(.number)"' | head -50)
           echo "ISSUE_LIST<<EOF" >> $GITHUB_OUTPUT
           echo "$ISSUE_LIST" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
