@@ -1,0 +1,91 @@
+name: Automated Issue Analysis
+
+on:
+  # Runs monthly on the first day
+  schedule:
+    - cron: '0 0 1 * *'
+  # Allows manual triggering
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  analyze-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get open issues
+        id: get-issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get all open issues
+          ISSUE_COUNT=$(gh issue list --state open --json number --jq 'length')
+          echo "count=$ISSUE_COUNT" >> $GITHUB_OUTPUT
+
+          # Get issue list with links
+          ISSUE_LIST=$(gh issue list --state open --json number,title,url --jq '.[] | "- #\(.number): [\(.title)](\(.url))"' | head -50)
+          echo "ISSUE_LIST<<EOF" >> $GITHUB_OUTPUT
+          echo "$ISSUE_LIST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create analysis issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_COUNT="${{ steps.get-issues.outputs.count }}"
+          ISSUE_LIST="${{ steps.get-issues.outputs.ISSUE_LIST }}"
+
+          BODY=$(cat <<EOF
+          ## Monthly Issue Analysis
+
+          **Total Open Issues:** $ISSUE_COUNT
+
+          ### Open Issues
+
+          $ISSUE_LIST
+
+          ### Next Steps
+
+          1. **Human Analysis Required:** Review the issues above and identify:
+             - Issues suitable for AI agent implementation (documentation fixes, clear bugs, pattern additions)
+             - Issues requiring human design decisions
+             - Strategic issues needing dedicated planning
+
+          2. **For AI-Ready Issues:**
+             - Run LLM analysis to implement changes
+             - Create branch with naming pattern: \`aurora-agent/fix-issue-XXX\`
+             - Push branch to trigger automatic PR creation
+
+          3. **For Human-Decision Issues:**
+             - Add comments clarifying what decisions are needed
+             - Label appropriately
+             - Prioritize for team discussion
+
+          ### Analysis Criteria
+
+          **AI-Suitable Issues:**
+          - Clear, unambiguous requirements
+          - Documentation updates
+          - Simple bug fixes with known solutions
+          - Pattern additions following existing conventions
+
+          **Human-Required Issues:**
+          - Design decisions needed
+          - Breaking changes
+          - New feature proposals
+          - Strategic direction questions
+
+          ---
+          *This analysis was automatically generated. Please assign a team member to review and take action.*
+          EOF
+          )
+
+          gh issue create \
+            --title "Monthly Issue Analysis - $(date +%Y-%m)" \
+            --body "$BODY" \
+            --label "maintenance,automation"
