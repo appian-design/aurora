@@ -110,6 +110,16 @@ Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information a
 
 ## 🛠️ Technical Features
 
+### Automated Maintenance
+
+This repository uses automated workflows to help maintain the design system:
+
+- **Monthly Issue Analysis**: Automated review of open issues to identify maintenance opportunities
+- **AI-Assisted Implementation**: Support for AI agents to implement routine fixes and updates
+- **Automated PR Creation**: PRs are automatically created when branches following the `aurora-agent/*` pattern are pushed
+
+See our [Automated Maintenance Guide](.github/automated-maintenance.md) for details on how to use these workflows.
+
 ### MCP Server Integration
 
 This repository is designed to work with the [Aurora MCP Server](https://github.com/appian-design/aurora-mcp) that makes documentation available directly within AI coding assistants. Changes made here are automatically synchronized with the MCP server through automated workflows, enabling:

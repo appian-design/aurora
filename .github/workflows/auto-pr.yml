@@ -1,0 +1,145 @@
+name: Auto-Create PR from Agent Branches
+
+on:
+  push:
+    branches:
+      - 'aurora-agent/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: read
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract issue number from branch name
+        id: extract-issue
+        run: |
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          echo "Branch name: $BRANCH_NAME"
+
+          # Extract issue number from branch name (e.g., aurora-agent/fix-issue-123)
+          ISSUE_NUM=$(echo "$BRANCH_NAME" | grep -oP 'issue-\K\d+' || echo "")
+          echo "issue_number=$ISSUE_NUM" >> $GITHUB_OUTPUT
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+      - name: Check if PR already exists
+        id: check-pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="${{ steps.extract-issue.outputs.branch_name }}"
+          PR_EXISTS=$(gh pr list --head "$BRANCH_NAME" --json number --jq 'length')
+          echo "exists=$PR_EXISTS" >> $GITHUB_OUTPUT
+
+      - name: Get issue details
+        if: steps.check-pr.outputs.exists == '0' && steps.extract-issue.outputs.issue_number != ''
+        id: issue-details
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM="${{ steps.extract-issue.outputs.issue_number }}"
+
+          if [ -n "$ISSUE_NUM" ]; then
+            ISSUE_TITLE=$(gh issue view "$ISSUE_NUM" --json title --jq '.title')
+            ISSUE_BODY=$(gh issue view "$ISSUE_NUM" --json body --jq '.body')
+
+            echo "title=$ISSUE_TITLE" >> $GITHUB_OUTPUT
+            echo "ISSUE_BODY<<EOF" >> $GITHUB_OUTPUT
+            echo "$ISSUE_BODY" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get commit messages
+        if: steps.check-pr.outputs.exists == '0'
+        id: commits
+        run: |
+          COMMITS=$(git log --oneline origin/main..HEAD | head -10)
+          echo "COMMITS<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.check-pr.outputs.exists == '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM="${{ steps.extract-issue.outputs.issue_number }}"
+          BRANCH_NAME="${{ steps.extract-issue.outputs.branch_name }}"
+
+          if [ -n "$ISSUE_NUM" ]; then
+            # PR with issue reference
+            ISSUE_TITLE="${{ steps.issue-details.outputs.title }}"
+            PR_TITLE="Fix #$ISSUE_NUM: $ISSUE_TITLE"
+
+            PR_BODY=$(cat <<EOF
+          ## Summary
+
+          This PR addresses issue #$ISSUE_NUM.
+
+          ### Changes
+
+          \`\`\`
+          ${{ steps.commits.outputs.COMMITS }}
+          \`\`\`
+
+          ### Related Issue
+
+          Closes #$ISSUE_NUM
+
+          ---
+
+          🤖 This PR was automatically created by the Aurora Agent workflow.
+
+          **Review Checklist:**
+          - [ ] Changes align with issue requirements
+          - [ ] Code follows project conventions
+          - [ ] Documentation updated if needed
+          - [ ] Tests pass
+          EOF
+          )
+          else
+            # PR without issue reference
+            PR_TITLE="Aurora Agent: $BRANCH_NAME"
+
+            PR_BODY=$(cat <<EOF
+          ## Summary
+
+          This PR was automatically created from branch \`$BRANCH_NAME\`.
+
+          ### Changes
+
+          \`\`\`
+          ${{ steps.commits.outputs.COMMITS }}
+          \`\`\`
+
+          ---
+
+          🤖 This PR was automatically created by the Aurora Agent workflow.
+
+          **Review Checklist:**
+          - [ ] Changes align with requirements
+          - [ ] Code follows project conventions
+          - [ ] Documentation updated if needed
+          - [ ] Tests pass
+          EOF
+          )
+          fi
+
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --base main \
+            --head "$BRANCH_NAME"
+
+      - name: PR already exists
+        if: steps.check-pr.outputs.exists != '0'
+        run: |
+          echo "Pull request already exists for this branch. Skipping PR creation."

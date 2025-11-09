@@ -7,12 +7,14 @@ This guide helps AI assistants understand and work with the design system docume
 
 ```
 design-system-docs/
-├── .github/workflows/    # GitHub Actions for automated deployment
-├── docs/                 # Contains all Markdown documentation files
+├── .github/              # GitHub automation, workflows, and repository documentation
+│   ├── workflows/        # GitHub Actions for automated deployment and maintenance
+│   └── automated-maintenance.md # Documentation for automated workflows
+├── docs/                 # Design system documentation ONLY
 │   ├── index.md          # The home page
 │   ├── assets/           # Images, CSS, or JS overrides
 │   ├── components/       # Individual UI components
-│   ├── patterns/         # Reusable design patterns  
+│   ├── patterns/         # Reusable design patterns
 │   ├── layouts/          # Page-level layout templates
 │   ├── branding/         # Brand identity and visual elements
 │   ├── accessibility/    # Accessibility guidelines and checklist
@@ -22,6 +24,25 @@ design-system-docs/
 ├── mkdocs.yml            # MkDocs configuration file
 └── README.md             # Repository overview and setup instructions
 ```
+
+### Important: `/docs` Directory Purpose
+
+**The `/docs` directory is exclusively for design system documentation.** This includes:
+
+- ✅ Components, patterns, layouts
+- ✅ Branding guidelines (colors, typography, icons)
+- ✅ Accessibility guidelines and checklists
+- ✅ Content style guides
+- ✅ SAIL coding guide (framework-specific implementation)
+
+**Do NOT add to `/docs`:**
+
+- ❌ Repository documentation (README, CONTRIBUTING, etc.)
+- ❌ Workflow or automation documentation
+- ❌ Development process documentation
+- ❌ Issue tracking or maintenance guides
+
+Repository and workflow documentation belongs in `.github/` or the root directory.
 
 ## Documentation Format
 
