@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-05"
+last_updated: "2025-11-11"
 ---
 
 # Messaging Module
