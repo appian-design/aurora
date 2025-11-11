@@ -5,6 +5,8 @@ last_updated: "2025-09-05"
 
 # Messaging Module
 
+Organize and manage messages with inbox, sent, and drafts functionality
+
 ## Design
 ![](https://github.com/user-attachments/assets/c4a563e1-fb73-4ac3-8233-44b4182c5f9d)
 
