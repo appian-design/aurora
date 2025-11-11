@@ -45,12 +45,16 @@ Use for larger, more illustrative elements
 - [Download SVG](../assets/images/ai-imagery/sparkle-light-2.svg)
 
 #### Single-Toned (Blue 3 Only)
+![](https://github.com/user-attachments/assets/fb15d394-3331-4592-9e19-de6ff72af5f5)
+
 Use for icons in banner messages and single-row headers:
 - Blue 3 solid stars image (size "ICON")
 - No stamp background
 - For compact UI elements
 
 #### Duo-Toned Illustration
+![](https://github.com/user-attachments/assets/807f213a-9d44-4f18-ab14-351f64c5dc9a)
+
 Use for larger images (at least size "TINY") and empty states:
 - Blue 3 for the large anchor star (#2322F0)
 - #DCDCE5 for the 3 smaller stars (Dividers color from palette)
@@ -95,6 +99,8 @@ We have defined guidelines for three use cases of AI based on how the user inter
 
 ### Auto-Suggestions
 
+![](https://github.com/user-attachments/assets/fe0ec989-619e-4e00-866f-0bfeee4aa1dd)
+
 Auto-Suggestions are AI components that are working in the background to identify insights or suggestions. These are not user initiated and should be more minimally displayed or have the ability to be collapsed or closed.
 
 These should appear only when valuable. For example, if you have a query running to see if there are duplicate items, it should not appear and say "No duplicate found" and instead show only when a suggestion is applicable.
@@ -110,9 +116,9 @@ These should appear only when valuable. For example, if you have a query running
 
 #### Implementation Patterns
 
-*[Add screenshot here showing Short Message Banner and Paragraph Summary Card examples]*
-
 **Short Message Banner**
+![](https://github.com/user-attachments/assets/8e67e6b4-675c-4b7b-8d36-f8b708dce072)
+
 - Blue 1 background (#E9EDFC)
 - Blue 3 solid stars image (size "ICON")
 - Black text
@@ -127,6 +133,7 @@ These should appear only when valuable. For example, if you have a query running
 - Actions: Side by side with header for single action, below body text for multiple actions
 
 ### Prompted Content
+![](https://github.com/user-attachments/assets/4014cf98-2ffe-464e-9daa-412637992304)
 
 Prompted Content is when a user purposefully engages with an AI element. These components require the user to provide input to create a response.
 
@@ -140,8 +147,6 @@ Prompted Content is when a user purposefully engages with an AI element. These c
 - Include text that suggests how the user should use this AI module or examples so the user knows how to format their request
 
 #### Implementation Pattern
-
-*[Add screenshot here showing Inline Dialog example with duo-toned AI icon]*
 
 **Inline Dialog**
 - Header: Side by side layout with spacing "DENSE"
@@ -170,7 +175,7 @@ Chatbots should be used to provide time savings or additional insight. If they a
 
 #### Implementation Patterns
 
-*[Add screenshot here showing Full Page Chat, Embedded Chat, and chat interface examples]*
+![](https://github.com/user-attachments/assets/dbe6ed20-5691-423a-8db3-8ddc462d6898)
 
 **Full Page Chat**
 - Side pane for navigation
@@ -186,9 +191,6 @@ Chatbots should be used to provide time savings or additional insight. If they a
 - Header: #EDEEFA (Card Border Color from palette)
 - Input box: White with Appian Background (#FAFAFC) around it
 - Send button: Airplane icon (white) in semi-rounded square card with Accent blue background, sticky top right next to input box
-
-**Expandable/Collapsible Chat Pane**
-- TBD (To Be Determined)
 
 ## Development
 
@@ -206,8 +208,8 @@ a!sectionLayout(
               item: a!imageField(
                 label: "Image",
                 labelPosition: "COLLAPSED",
-                images: a!documentImage(
-                  document: cons!SSP_AI_ICON
+                images: a!webImage(
+                    source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
                 ),
                 size: "ICON",
                 isThumbnail: false,
@@ -267,8 +269,8 @@ a!sectionLayout(
                           item: a!imageField(
                             label: "Image",
                             labelPosition: "COLLAPSED",
-                            images: a!documentImage(
-                              document: cons!SSP_AI_ICON
+                            images: a!webImage(
+                                source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
                             ),
                             size: "ICON",
                             isThumbnail: false,
@@ -352,7 +354,7 @@ a!sectionLayout(
 )
 ```
 
-### Prompted Content Inline Dialog 
+### Prompted Content 
 
 ```sail
 a!sectionLayout(
@@ -368,8 +370,8 @@ a!sectionLayout(
                   label: "Image",
                   labelPosition: "COLLAPSED",
                   images: {
-                    a!documentImage(
-                      document: cons!SSP_DUOTONEDAIICON
+                    a!webImage(
+                       source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-two-toned"
                     )
                   },
                   size: "TINY",
