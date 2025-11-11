@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-05"
+last_updated: "2025-11-11"
 ---
 
 # Tags
@@ -41,6 +41,11 @@ Use tags to display counts, quantities, or numerical information:
 Use colors strategically to convey meaning and maintain consistency:
 
  Tag colors should always use a [color name] 1 for the background and the corresponding [color name] 4 for the text. For example, a green tag would use Green 1 for the background and Green 4 for the text.
+
+### Size
+
+Always use `"STANDARD"` size tags unless space constraints specifically require `"SMALL"`.
+Use `size: "SMALL"` in constrained layouts like dense data tables, compact cards, or mobile interfaces.
 
 ### Usage Guidelines
 
