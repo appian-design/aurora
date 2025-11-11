@@ -85,6 +85,112 @@ a!localVariables(
 
 In this example, local!number starts out as an Integer. However, once a user interacts with the Number field, a Decimal value will be saved into local!number.
 
+## Test Data Guidelines
+
+When creating code examples, use realistic but generic test data that helps users understand the component's purpose without being distracting or inappropriate.
+
+### Naming Conventions
+
+**✅ Use generic, professional names:**
+```sail
+local!employees: {
+  a!map(name: "Sarah Johnson", department: "Engineering", id: 1001),
+  a!map(name: "Michael Chen", department: "Marketing", id: 1002),
+  a!map(name: "Emily Rodriguez", department: "Sales", id: 1003)
+}
+```
+
+**❌ Avoid:**
+- Real people's names (especially public figures)
+- Culturally insensitive or inappropriate names
+- Names that could be distracting or controversial
+
+### Data Values
+
+**✅ Use realistic business data:**
+```sail
+local!orders: {
+  a!map(orderNumber: "ORD-2024-001", amount: 1250.00, status: "Shipped"),
+  a!map(orderNumber: "ORD-2024-002", amount: 875.50, status: "Processing"),
+  a!map(orderNumber: "ORD-2024-003", amount: 2100.75, status: "Delivered")
+}
+```
+
+**✅ Use placeholder patterns for sensitive data:**
+```sail
+local!customers: {
+  a!map(email: "sarah.j@company.com", phone: "(555) 123-4567"),
+  a!map(email: "michael.c@company.com", phone: "(555) 234-5678"),
+  a!map(email: "emily.r@company.com", phone: "(555) 345-6789")
+}
+```
+
+### Quantities and Amounts
+
+**✅ Use varied, realistic numbers:**
+```sail
+local!salesData: {45000, 52000, 48000, 61000, 58000}
+local!inventory: {
+  a!map(item: "Laptop", quantity: 25, price: 1299.99),
+  a!map(item: "Monitor", quantity: 18, price: 349.99),
+  a!map(item: "Keyboard", quantity: 42, price: 89.99)
+}
+```
+
+**❌ Avoid:**
+- Sequential numbers (1, 2, 3, 4)
+- Round numbers only (100, 200, 300)
+- Unrealistic values ($999,999,999)
+
+### Dates and Times
+
+**✅ Use recent, realistic dates:**
+```sail
+local!projects: {
+  a!map(name: "Website Redesign", startDate: date(2024, 1, 15), dueDate: date(2024, 3, 30)),
+  a!map(name: "Mobile App", startDate: date(2024, 2, 1), dueDate: date(2024, 5, 15)),
+  a!map(name: "Database Migration", startDate: date(2024, 3, 1), dueDate: date(2024, 4, 30))
+}
+```
+
+### Status and Category Values
+
+**✅ Use common business statuses:**
+```sail
+/* Order statuses */
+"Pending", "Processing", "Shipped", "Delivered", "Cancelled"
+
+/* Project statuses */
+"Planning", "In Progress", "Review", "Complete", "On Hold"
+
+/* Priority levels */
+"Low", "Medium", "High", "Critical"
+
+/* Departments */
+"Engineering", "Marketing", "Sales", "HR", "Finance", "Operations"
+```
+
+### Comments in Examples
+
+**✅ Use helpful placeholder comments:**
+```sail
+a!startProcess(
+  processModel: cons!PM_EMPLOYEE_ONBOARDING,
+  processParameters: {
+    employee: local!employeeData,
+    department: local!selectedDepartment
+  },
+  onSuccess: {
+    /* Add success handling logic here */
+    a!save(local!showConfirmation, true)
+  },
+  onError: {
+    /* Add error handling logic here */
+    a!save(local!errorMessage, "Failed to start onboarding process")
+  }
+)
+```
+
 ## Essential Layout Components
 
 ### Section Layout
