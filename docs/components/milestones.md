@@ -1,6 +1,6 @@
 ---
 status: "stable"
-last_updated: "2025-09-22"
+last_updated: "2025-11-11"
 ---
 
 # Milestones
@@ -55,7 +55,22 @@ Use `HORIZONTAL` orientation for:
 - Identify opportunities to reduce steps as much as possible. A good rule of thumb is to have at most 6 steps
 - For 3-6 steps, use your best judgment on Vertical vs. Horizontal. Vertical milestones may look too sparse with 3 steps and horizontal milestones may look crowded with 5-6 steps.
 
+#### Milestone in Record View
+![](https://github.com/user-attachments/assets/902fcac1-4c13-46ea-8ae1-be51c6f67a78)
 
+Use milestones in record views to show process status and guide users through multi-step workflows.
+
+**When to use in record views**
+- Multi-step processes with clear sequential stages
+- Cases or requests that move through approval workflows
+- When users need to understand current status and next steps
+- Processes where steps cannot be skipped or completed out of order
+
+**Best practices**
+- Place milestone at the top of the record view for immediate visibility
+- Use descriptive step labels that match your business process
+- Limit to 3-7 steps for optimal readability
+- Consider using the milestone in the header to keep it visible while scrolling
 
 ## Development
 
@@ -814,6 +829,397 @@ a!localVariables(
         saveInto: {
           /* Add cancel logic here */ 
         }
+      )
+    }
+  )
+)
+```
+
+#### Milestone in Record View
+
+```sail
+a!localVariables(
+  local!currentStep: 2,
+  local!steps: {
+    "Intake Review",
+    "Department Review", 
+    "Payment",
+    "Initial Site Inspection",
+    "Permit Decision"
+  },
+  local!documents: {
+    a!map(name: "Site Plan", fileName: "site_plan_2025.pdf", uploadDate: "February 22", size: "2.1MB", type: "pdf"),
+    a!map(name: "Building Specifications", fileName: "building_specs.docx", uploadDate: "February 22", size: "856KB", type: "word"),
+    a!map(name: "Property Survey", fileName: "property_survey.pdf", uploadDate: "February 20", size: "1.3MB", type: "pdf"),
+    a!map(name: "Engineering Report", fileName: "structural_analysis.pdf", uploadDate: "February 19", size: "945KB", type: "pdf"),
+    a!map(name: "Site Photos", fileName: "structure_photos.zip", uploadDate: "February 18", size: "4.2MB", type: "image")
+  },
+  a!headerContentLayout(
+    isHeaderFixed: true,
+    backgroundColor: "#FAFAFC",
+    header: a!cardLayout(
+      padding: "STANDARD",
+      showBorder: false,
+      contents: {
+        a!columnsLayout(
+          columns: {
+            a!columnLayout(
+              contents: {
+                a!richTextDisplayField(
+                  labelPosition: "COLLAPSED",
+                  value: {
+                    a!richTextItem(
+                      text: "RES-7FBA3A6 | New Tool Shed",
+                      size: "LARGE",
+                      style: "STRONG"
+                    )
+                  },
+                  marginBelow: "STANDARD"
+                )
+              },
+              width: "WIDE"
+            ),
+            a!columnLayout(
+              contents: {
+                a!buttonArrayLayout(
+                  buttons: {
+                    a!buttonWidget(
+                      label: "Update Permit",
+                      style: "OUTLINE",
+                      size: "SMALL"
+                    ),
+                    a!buttonWidget(
+                      label: "Approve",
+                      style: "SOLID",
+                      size: "SMALL"
+                    )
+                  },
+                  align: "END"
+                )
+              },
+              width: "MEDIUM"
+            )
+          },
+          alignVertical: "MIDDLE"
+        ),
+        a!milestoneField(
+          stepStyle: "DOT",
+          steps: local!steps,
+          active: local!currentStep,
+          color: "ACCENT",
+          marginBelow: "STANDARD"
+        )
+      }
+    ),
+    contents: {
+      a!columnsLayout(
+        stackWhen: {"TABLET_PORTRAIT", "PHONE"},
+        columns: {
+          a!columnLayout(
+            contents: {
+              a!headingField(
+                text: "Permit Request",
+                size: "SMALL",
+                headingTag: "H2",
+                fontWeight: "SEMI_BOLD",
+                color: "STANDARD",
+                marginBelow: "STANDARD"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!columnsLayout(
+                    stackWhen: {"TABLET_LANDSCAPE", "PHONE"},
+                    columns: {
+                      a!columnLayout(
+                        contents: {
+                          a!richTextDisplayField(
+                            label: "Type",
+                            value: "Residential Structure"
+                          ),
+                          a!richTextDisplayField(
+                            label: "Address",
+                            value: "123 Main Street, Springfield, IL 62701"
+                          ),
+                          a!richTextDisplayField(label: "Applicant", value: "John Smith")
+                        }
+                      ),
+                      a!columnLayout(
+                        contents: {
+                          a!richTextDisplayField(
+                            label: "Square Footage",
+                            value: "120 sq ft"
+                          ),
+                          a!richTextDisplayField(label: "Estimated Cost", value: "$8,500"),
+                          a!tagField(
+                            label: "Status",
+                            tags: a!tagItem(
+                              text: "Under Review",
+                              backgroundColor: "#FFF6C9",
+                              textColor: "#856C00"
+                            )
+                          )
+                        }
+                      )
+                    }
+                  )
+                },
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "STANDARD",
+                showBorder: true,
+                borderColor: "#EDEDF2",
+                marginBelow: "STANDARD"
+              ),
+              a!headingField(
+                text: "Related Cases",
+                size: "SMALL",
+                headingTag: "H2",
+                fontWeight: "SEMI_BOLD",
+                color: "STANDARD",
+                marginBelow: "STANDARD"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!gridField(
+                    labelPosition: "COLLAPSED",
+                    data: {
+                      a!map(
+                        case: "Fence installation request",
+                        engineer: "Sarah Johnson",
+                        priority: "Medium",
+                        status: "Approved",
+                        date: "2/15/2025"
+                      ),
+                      a!map(
+                        case: "Deck permit application",
+                        engineer: "Mike Chen",
+                        priority: "Low",
+                        status: "In Progress",
+                        date: "2/20/2025"
+                      ),
+                      a!map(
+                        case: "Pool installation permit",
+                        engineer: "Sarah Johnson",
+                        priority: "High",
+                        status: "Under Review",
+                        date: "2/18/2025"
+                      ),
+                      a!map(
+                        case: "Garage addition request",
+                        engineer: "David Wilson",
+                        priority: "Medium",
+                        status: "Approved",
+                        date: "2/10/2025"
+                      ),
+                      a!map(
+                        case: "Driveway expansion",
+                        engineer: "Mike Chen",
+                        priority: "Low",
+                        status: "Submitted",
+                        date: "2/22/2025"
+                      ),
+                      a!map(
+                        case: "Patio cover installation",
+                        engineer: "Jennifer Martinez",
+                        priority: "Medium",
+                        status: "In Progress",
+                        date: "2/12/2025"
+                      )
+                    },
+                    columns: {
+                      a!gridColumn(
+                        label: "Case",
+                        value: a!linkField(
+                          links: a!dynamicLink(label: fv!row.case, saveInto: {})
+                        )
+                      ),
+                      a!gridColumn(
+                        label: "Assigned Engineer",
+                        value: fv!row.engineer
+                      ),
+                      a!gridColumn(
+                        label: "Priority",
+                        value: a!tagField(
+                          labelPosition: "COLLAPSED",
+                          tags: a!tagItem(
+                            text: fv!row.priority,
+                            backgroundColor: if(
+                              fv!row.priority = "High",
+                              "#FED7DE",
+                              if(
+                                fv!row.priority = "Medium",
+                                "#FFF6C9",
+                                "#E3FBDF"
+                              )
+                            ),
+                            textColor: if(
+                              fv!row.priority = "High",
+                              "#9F0019",
+                              if(
+                                fv!row.priority = "Medium",
+                                "#856C00",
+                                "#117C00"
+                              )
+                            )
+                          )
+                        )
+                      ),
+                      a!gridColumn(label: "Status", value: fv!row.status),
+                      a!gridColumn(label: "Submitted On", value: fv!row.date)
+                    },
+                    pageSize: 10
+                  )
+                },
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "STANDARD",
+                showBorder: true,
+                borderColor: "#EDEDF2"
+              )
+            }
+          ),
+          a!columnLayout(
+            contents: {
+              a!headingField(
+                text: "Actions",
+                size: "SMALL",
+                headingTag: "H2",
+                fontWeight: "SEMI_BOLD",
+                color: "STANDARD",
+                marginBelow: "STANDARD"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!buttonArrayLayout(
+                    buttons: {
+                      a!buttonWidget(
+                        label: "Schedule Inspection",
+                        style: "OUTLINE",
+                        width: "FILL"
+                      ),
+                      a!buttonWidget(
+                        label: "Request Additional Info",
+                        style: "OUTLINE",
+                        width: "FILL"
+                      ),
+                      a!buttonWidget(
+                        label: "Generate Report",
+                        style: "OUTLINE",
+                        width: "FILL"
+                      )
+                    },
+                    align: "START"
+                  )
+                },
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "STANDARD",
+                showBorder: true,
+                borderColor: "#EDEDF2",
+                marginBelow: "STANDARD"
+              ),
+              a!headingField(
+                text: "Case Details",
+                size: "SMALL",
+                headingTag: "H2",
+                fontWeight: "SEMI_BOLD",
+                color: "STANDARD",
+                marginBelow: "STANDARD"
+              ),
+              a!cardLayout(
+                contents: {
+                  a!richTextDisplayField(
+                    label: "Submitted On",
+                    value: "February 22, 2025 4:05 PM"
+                  ),
+                  a!richTextDisplayField(
+                    label: "Modified On",
+                    value: "February 22, 2025 12:54 PM"
+                  ),
+                  a!richTextDisplayField(
+                    label: "Assigned Inspector",
+                    value: "Jennifer Martinez"
+                  ),
+                  a!richTextDisplayField(
+                    label: "Review Deadline",
+                    value: "March 8, 2025"
+                  )
+                },
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "STANDARD",
+                showBorder: true,
+                borderColor: "#EDEDF2",
+                marginBelow: "STANDARD"
+              ),
+              a!headingField(
+                text: "Documents",
+                size: "SMALL",
+                headingTag: "H2",
+                fontWeight: "SEMI_BOLD",
+                color: "STANDARD",
+                marginBelow: "STANDARD"
+              ),
+              a!forEach(
+                items: local!documents,
+                expression: a!cardLayout(
+                  marginBelow: "LESS",
+                  borderColor: "#EDEDF2",
+                  shape: "SEMI_ROUNDED",
+                  contents: {
+                    a!sideBySideLayout(
+                      items: {
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextIcon(
+                                icon: "file-" & fv!item.type & "-o",
+                                color: "ACCENT",
+                                size: "LARGE"
+                              )
+                            }
+                          ),
+                          width: "MINIMIZE"
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(
+                                text: fv!item.name,
+                                color: "STANDARD",
+                                style: "STRONG"
+                              ),
+                              char(10),
+                              a!richTextItem(text: fv!item.fileName, color: "#767676")
+                            }
+                          )
+                        ),
+                        a!sideBySideItem(
+                          item: a!richTextDisplayField(
+                            labelPosition: "COLLAPSED",
+                            value: {
+                              a!richTextItem(text: fv!item.uploadDate),
+                              char(10),
+                              a!richTextItem(text: fv!item.size, color: "SECONDARY")
+                            },
+                            align: "RIGHT"
+                          ),
+                          width: "MINIMIZE"
+                        )
+                      },
+                      alignVertical: "MIDDLE"
+                    )
+                  },
+                  link: a!dynamicLink()
+                )
+              )
+            },
+            width: "MEDIUM"
+          )
+        },
+        spacing: "STANDARD"
       )
     }
   )
