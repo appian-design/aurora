@@ -62,17 +62,11 @@ Use for larger images (at least size "TINY") and empty states:
 
 ### Usage Examples
 
-*[Add new screenshot here showing updated AI components with 2025 styling guidelines]*
-
 ![](https://github.com/user-attachments/assets/1811b902-b743-4f8b-a02d-94d7e8c30da2)
 
 Prompting the user to navigate to the AI Procedure Copilot from the Contract Writing landing page
 
 ![](https://github.com/user-attachments/assets/9f3deb74-ce3a-45da-8f38-8f1d401fa215)
-
-Chatbot interface for users to ask questions about a case within Case Management
-
-![](https://github.com/user-attachments/assets/4a5b5e26-b927-4b69-b51c-e1a3642352f6)
 
 Generate RFI modal for a Requirements Management demo
 
