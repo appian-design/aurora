@@ -71,6 +71,8 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 
 ## Usage Examples
 
+We have defined guidelines for three use cases of AI based on how the user interacts with the component. Each situation has unique guidance for when and how to display the UI.
+
 ### Auto-Suggestions
 ![](https://github.com/user-attachments/assets/e1f19e95-3139-4c60-8f54-30b9c149d872)
 Short Message Banner
