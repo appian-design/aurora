@@ -64,7 +64,6 @@ Use milestones in record views to show process status and guide users through mu
 - Multi-step processes with clear sequential stages
 - Cases or requests that move through approval workflows
 - When users need to understand current status and next steps
-- Processes where steps cannot be skipped or completed out of order
 
 **Best practices**
 - Place milestone at the top of the record view for immediate visibility
