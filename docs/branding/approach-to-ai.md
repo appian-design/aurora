@@ -45,7 +45,7 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 - Larger images (at least size "TINY")
 - Empty states and prominent AI features
 - Blue 3 for the large anchor star (#2322F0)
-- Blue 2 for the three smaller stars (#DCDEF5)
+- Blue 2 for the three other stars (#DCDEF5)
 
 ### Previous Icons
 
@@ -78,76 +78,53 @@ Short Message Banner
 ![](https://github.com/user-attachments/assets/957bdbb9-0244-4055-a609-e4495cb5d433)
 Paragraph Summary Card
 
-Auto-Suggestions are AI components that work in the background to identify insights or suggestions. These are not user initiated and should be minimally displayed with the ability to be collapsed or closed.
+Auto-Suggestions are AI components that are working in the background to identify insights or suggestions. These are not user initiated and should be minimally displayed with the ability to be collapsed or closed.
 
-#### When to Use
-- Related Cases identification
-- Comment or Message summaries
-- Document analysis insights
-- Duplicate detection alerts
+These should appear only when valuable. For example, if you have a query running to see if there are duplicate items, it should not appear and say "No duplicate found" and instead show only when a suggestion is applicable.
 
-#### Behavior Guidelines
-- Show only when valuable - avoid displaying "No results found" messages
-- Allow users to collapse sections, especially for large content
-- Default to collapsed state for lengthy suggestions
-- Hide component entirely if there's an error or unavailable
-- Use single-toned icons for compact banner messages
+#### Example Use Cases
+- Related Cases
+- Comment or Message Summary
+- Document Summary
 
-#### Styling Considerations
-- **Short Message Banner**: Blue 1 background, single-toned icon (size "ICON"), minimal padding
-- **Paragraph Summary Cards**: White background with Blue 1 header, embedded body text, flexible action placement
+#### Behavior
+- Allow the user to collapse the section. If the suggested content is going to be large, considering having the section be default-collapsed.
+- Do not show the component if there is an error or if it is unavailable
 
 ### Prompted Content
 
 ![](https://github.com/user-attachments/assets/4c34cb6c-e750-468f-86ca-19c0acbb9a8f)
 
-
 Prompted Content occurs when users purposefully engage with AI elements, requiring input to generate responses.
 
-#### When to Use
-- Case generation forms
-- RFI creation interfaces
-- Semantic search functionality
-- Content generation prompts
+#### Example Use Cases
+- Generating a Case
+- Generating an RFI
+- Semantic Search
 
-#### Behavior Guidelines
-- Display in AI-branded cards to invite engagement
-- Embed within frequently accessed interfaces (landing pages, summary views)
-- Include instructional text and examples for proper formatting
-- Use duo-toned illustrations for prominence
-- Provide clear input guidance and expectations
-
-#### Styling Considerations
-- **Inline Dialog**: Side-by-side header layout with duo-toned illustration (size "TINY")
-- Header text should be bold with Gray 3 instruction text
-- Optional expand/collapse functionality
-- Conditional dividers based on content complexity
+#### Behavior
+- Display in an AI-branded card to invite the user to use the AI feature. This is usually embedded within a frequently accessed interface, e.g. a landing page or summary view, in order to encourage the use of more AI functionality.
+- Include text that suggests how the user should use this AI module or examples so the user knows how to format their request
 
 ### Chat Interface
 
 ![](https://github.com/user-attachments/assets/43d0939a-b1d7-4a5f-b5b3-c058c7a790e4)
 
-Chat interfaces work best when users have multiple questions or when AI needs several attempts to understand prompts. Ideal for wayfinding and parsing large amounts of information.
+Chatbots are best when you anticipate the user to have more than one question or the AI will need multiple attempts to understand the prompt. These are often used for wayfinding or parsing through high-quantities of information.
 
-#### When to Use
-- Appian AI Copilot integration
-- Document assistance and Q&A
-- Complex information navigation
-- Multi-turn conversations
+Chatbots should be used to provide time savings or additional insight. If they are querying limited information or cannot gather the full context of a system, then you should not use them.
 
-#### Behavior Guidelines
-- Provide time savings and additional insights
-- Avoid for limited information queries or incomplete system context
-- Allow users to collapse if not needed
-- Hide if errors occur or unavailable
-- Include "Review AI generated content" warnings
+#### Example Use Cases
+- Appian AI Copilot
+- Document Assistant
+
+#### Behavior
+- Allow the user to collapse the section if they do not want to use it
+- Do not show the component if there is an error or if it is unavailable
 
 #### Styling Considerations
 - **Full Page Chat**: Side navigation pane, duo-tone AI user stamps, Blue 1 headers with Blue 4 text
 - **Embedded Chat**: Maximum ⅓ page width, white background with Blue 1 headers
-- Airplane send icon in semi-rounded Accent blue card
-- Sticky positioning for input controls
-
   
 ## Development
 
