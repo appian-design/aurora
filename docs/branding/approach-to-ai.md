@@ -72,8 +72,11 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 ## Usage Examples
 
 ### Auto-Suggestions
+![](https://github.com/user-attachments/assets/e1f19e95-3139-4c60-8f54-30b9c149d872)
+Short Message Banner
 
 ![](https://github.com/user-attachments/assets/957bdbb9-0244-4055-a609-e4495cb5d433)
+Paragraph Summary Card
 
 Auto-Suggestions are AI components that work in the background to identify insights or suggestions. These are not user initiated and should be minimally displayed with the ability to be collapsed or closed.
 
@@ -148,7 +151,62 @@ Chat interfaces work best when users have multiple questions or when AI needs se
   
 ## Development
 
-### Auto-Suggestion
+### Auto-Suggestion - Short Message Banner
+
+```sail
+a!sectionLayout(
+  label: "",
+  contents: {
+    a!cardLayout(
+      contents: {
+        a!sideBySideLayout(
+          items: {
+            a!sideBySideItem(
+              item: a!imageField(
+                label: "Image",
+                labelPosition: "COLLAPSED",
+                images: a!webImage(
+                    source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
+                ),
+                size: "ICON",
+                isThumbnail: false,
+                style: "STANDARD"
+              ),
+              width: "MINIMIZE"
+            ),
+            a!sideBySideItem(
+              item: a!richTextDisplayField(
+                labelPosition: "COLLAPSED",
+                value: {
+                  "We found past procurements that may be relevant to this requirement. ",
+                  a!richTextItem(
+                    text: {
+                      "View"
+                    },
+                    link: a!safeLink(
+                      uri: "google.com",
+                      openLinkIn: "NEW_TAB"
+                    ),
+                    linkStyle: "STANDALONE"
+                  )
+                }
+              )
+            )
+          },
+          alignVertical: "MIDDLE"
+        )
+      },
+      height: "AUTO",
+      style: "#E9EDFC",
+      padding: "LESS",
+      marginBelow: "STANDARD",
+      showBorder: false
+    )
+  }
+)
+```
+
+### Auto-Suggestion - Paragraph Summary Card
 
 ```sail
 a!sectionLayout(
@@ -356,61 +414,6 @@ a!sectionLayout(
       style: "#E9EDFC",
       shape: "SEMI_ROUNDED",
       padding: "STANDARD",
-      marginBelow: "STANDARD",
-      showBorder: false
-    )
-  }
-)
-```
-
-### Short Message Banner
-
-```sail
-a!sectionLayout(
-  label: "",
-  contents: {
-    a!cardLayout(
-      contents: {
-        a!sideBySideLayout(
-          items: {
-            a!sideBySideItem(
-              item: a!imageField(
-                label: "Image",
-                labelPosition: "COLLAPSED",
-                images: a!webImage(
-                    source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
-                ),
-                size: "ICON",
-                isThumbnail: false,
-                style: "STANDARD"
-              ),
-              width: "MINIMIZE"
-            ),
-            a!sideBySideItem(
-              item: a!richTextDisplayField(
-                labelPosition: "COLLAPSED",
-                value: {
-                  "We found past procurements that may be relevant to this requirement. ",
-                  a!richTextItem(
-                    text: {
-                      "View"
-                    },
-                    link: a!safeLink(
-                      uri: "google.com",
-                      openLinkIn: "NEW_TAB"
-                    ),
-                    linkStyle: "STANDALONE"
-                  )
-                }
-              )
-            )
-          },
-          alignVertical: "MIDDLE"
-        )
-      },
-      height: "AUTO",
-      style: "#E9EDFC",
-      padding: "LESS",
       marginBelow: "STANDARD",
       showBorder: false
     )
