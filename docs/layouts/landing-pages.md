@@ -1,9 +1,11 @@
 ---
 status: "stable"
-last_updated: "2025-09-05"
+last_updated: "2025-11-11"
 ---
 
 # Landing Pages
+
+Introduce users to your application and direct them to key functionality
 
 ## Design
 
