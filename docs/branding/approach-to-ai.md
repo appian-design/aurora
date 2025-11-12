@@ -27,7 +27,7 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 ### Single-Toned Icon
 ![](https://github.com/user-attachments/assets/30d7de82-ca19-4cd4-8691-c4b521c25232)
 
-[Download PNG](../assets/images/ai-imagery/sparkle-no-bg.png)
+[Download PNG](../assets/images/ai-imagery/sparkle-single-tone.png)
 
 **Use for:**
 - Banner messages and single-row headers
@@ -166,7 +166,7 @@ a!sectionLayout(
                 label: "Image",
                 labelPosition: "COLLAPSED",
                 images: a!webImage(
-                    source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
+                    source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-single-tone"
                 ),
                 size: "ICON",
                 isThumbnail: false,
@@ -227,7 +227,7 @@ a!sectionLayout(
                             label: "Image",
                             labelPosition: "COLLAPSED",
                             images: a!webImage(
-                                source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-no-bg"
+                                source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-single-tone"
                             ),
                             size: "ICON",
                             isThumbnail: false,
