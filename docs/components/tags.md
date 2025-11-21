@@ -44,7 +44,7 @@ Use colors strategically to convey meaning and maintain consistency:
 
 ### Size
 
-Always use `"STANDARD"` size tags unless space constraints specifically require `"SMALL"`.
+Always use `STANDARD` size tags unless space constraints specifically require `SMALL`.
 Use `size: "SMALL"` in constrained layouts like dense data tables, compact cards, or mobile interfaces.
 
 ### Usage Guidelines

@@ -32,7 +32,7 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 **Use for:**
 - Banner messages and single-row headers
 - Compact UI elements
-- Size "ICON"
+- Size `ICON`
 - Blue 3 only (#2322F0)
 - No stamp background
 
@@ -42,7 +42,7 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 [Download PNG](../assets/images/ai-imagery/sparkle-two-toned.png)
 
 **Use for:**
-- Larger images (at least size "TINY")
+- Larger images (at least size `TINY`)
 - Empty states and prominent AI features
 - Blue 3 for the large anchor star (#2322F0)
 - Blue 2 for the three other stars (#DCDEF5)
