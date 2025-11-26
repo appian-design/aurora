@@ -74,11 +74,12 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 We have defined guidelines for three use cases of AI based on how the user interacts with the component. Each situation has unique guidance for when and how to display the UI.
 
 ### Auto-Suggestions
-![](https://github.com/user-attachments/assets/e1f19e95-3139-4c60-8f54-30b9c149d872)
-Short Message Banner
 
-![](https://github.com/user-attachments/assets/957bdbb9-0244-4055-a609-e4495cb5d433)
+Short Message Banner
+![](https://github.com/user-attachments/assets/b3adbe24-e611-417d-a7ac-1c22a3f312a3)
+
 Paragraph Summary Card
+![](https://github.com/user-attachments/assets/66084548-a495-4f6b-bc05-e2e370d9fba4)
 
 Auto-Suggestions are AI components that are working in the background to identify insights or suggestions. These are not user initiated and should be minimally displayed with the ability to be collapsed or closed.
 
@@ -188,106 +189,108 @@ a!sectionLayout(
 ### Auto-Suggestion - Paragraph Summary Card
 
 ```sail
-a!sectionLayout(
-  label: "",
-  contents: {
-    a!columnsLayout(
-      columns: {
-        a!columnLayout(
-          contents: {
-            a!cardLayout(
-              contents: {
-                a!cardLayout(
-                  contents: {
-                    a!sideBySideLayout(
-                      items: {
-                        a!sideBySideItem(
-                          item: a!imageField(
-                            label: "Image",
-                            labelPosition: "COLLAPSED",
-                            images: a!webImage(
-                                source: "https://raw.githubusercontent.com/appian-design/aurora/main/docs/assets/images/ai-imagery/sparkle-single-tone"
+{
+  a!sectionLayout(
+    label: "",
+    contents: {
+      a!columnsLayout(
+        columns: {
+          a!columnLayout(
+            contents: {
+              a!cardLayout(
+                contents: {
+                  a!cardLayout(
+                    contents: {
+                      a!sideBySideLayout(
+                        items: {
+                          a!sideBySideItem(
+                            item: a!imageField(
+                              label: "Image",
+                              labelPosition: "COLLAPSED",
+                              images: a!documentImage(
+                                document: cons!SSP_AI_ICON
+                              ),
+                              size: "ICON",
+                              isThumbnail: false,
+                              style: "STANDARD"
                             ),
-                            size: "ICON",
-                            isThumbnail: false,
-                            style: "STANDARD"
+                            width: "MINIMIZE"
                           ),
-                          width: "MINIMIZE"
-                        ),
-                        a!sideBySideItem(
-                          item: a!richTextDisplayField(
-                            labelPosition: "COLLAPSED",
-                            value: {
-                              a!richTextItem(
-                                text: {
-                                  "AI Suggestion"
-                                },
-                                style: {
-                                  "STRONG"
-                                }
-                              )
-                            }
+                          a!sideBySideItem(
+                            item: a!richTextDisplayField(
+                              labelPosition: "COLLAPSED",
+                              value: {
+                                a!richTextItem(
+                                  text: {
+                                    "AI Suggestion"
+                                  },
+                                  style: {
+                                    "STRONG"
+                                  }
+                                )
+                              }
+                            )
                           )
-                        )
-                      },
-                      alignVertical: "MIDDLE"
-                    )
-                  },
-                  height: "AUTO",
-                  style: "#E9EDFC",
-                  marginBelow: "STANDARD",
-                  showBorder: false
-                ),
-                a!cardLayout(
-                  contents: {
-                    a!richTextDisplayField(
-                      labelPosition: "COLLAPSED",
-                      value: {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                      }
-                    )
-                  },
-                  height: "AUTO",
-                  style: "TRANSPARENT",
-                  marginBelow: "STANDARD",
-                  showBorder: false
-                ),
-                a!buttonArrayLayout(
-                  buttons: {
-                    a!buttonWidget(
-                      label: "paste suggestion below",
-                      icon: "files-o",
-                      size: "SMALL",
-                      style: "LINK"
-                    ),
-                    a!buttonWidget(
-                      label: "generate again",
-                      icon: "refresh",
-                      size: "SMALL",
-                      style: "LINK"
-                    )
-                  },
-                  align: "START",
-                  marginBelow: "LESS"
-                )
-              },
-              height: "AUTO",
-              style: "NONE",
-              shape: "SEMI_ROUNDED",
-              padding: "NONE",
-              marginBelow: "STANDARD",
-              showBorder: false,
-              showShadow: true
-            )
-          }
-        ),
-        a!columnLayout(
-          contents: {}
-        )
-      }
-    )
-  }
-)
+                        },
+                        alignVertical: "MIDDLE"
+                      )
+                    },
+                    height: "AUTO",
+                    style: "#E9EDFC",
+                    marginBelow: "STANDARD",
+                    showBorder: false
+                  ),
+                  a!cardLayout(
+                    contents: {
+                      a!richTextDisplayField(
+                        labelPosition: "COLLAPSED",
+                        value: {
+                          "This client record currently requires immediate attention. The analysis highlights several elevated risk indicators related to account activity and recent interactions, suggesting a need for prompt follow-up. Based on these factors, the system strongly recommends escalating this case to a manager for final review and approval before proceeding with any changes. Overall customer satisfaction metrics for this account remain positive."
+                        }
+                      )
+                    },
+                    height: "AUTO",
+                    style: "TRANSPARENT",
+                    marginBelow: "STANDARD",
+                    showBorder: false
+                  ),
+                  a!buttonArrayLayout(
+                    buttons: {
+                      a!buttonWidget(
+                        label: "paste suggestion below",
+                        icon: "files-o",
+                        size: "SMALL",
+                        style: "LINK"
+                      ),
+                      a!buttonWidget(
+                        label: "generate again",
+                        icon: "refresh",
+                        size: "SMALL",
+                        style: "LINK"
+                      )
+                    },
+                    align: "START",
+                    marginBelow: "LESS"
+                  )
+                },
+                height: "AUTO",
+                style: "NONE",
+                shape: "SEMI_ROUNDED",
+                padding: "NONE",
+                marginBelow: "STANDARD",
+                showBorder: false,
+                showShadow: true
+              )
+            }
+          ),
+          a!columnLayout(
+            contents: {}
+          )
+        }
+      )
+    }
+  )
+}
 ```
 
 ### Prompted Content 
