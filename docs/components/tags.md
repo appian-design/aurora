@@ -56,6 +56,15 @@ Use colors strategically to convey meaning and maintain consistency:
 - Keep consistent sizing within the same interface
 - Ensure sufficient contrast for accessibility
 
+#### Size Guidelines:
+- Default: Use 'size:"STANDARD' for a!tagField() size parameter in most cases
+- Exception: Use 'size:"SMALL"' only when there is a clear visual reason, such as:
+  - Tags appear in dense layouts (tables, compact cards)
+  - Tags are secondary information alongside larger text
+  - Space constraints require smaller elements
+  - Tags appear inline with small text (size:"SMALL" in richTextItem withiin a richTextDisplayField)
+
+
 ### Accessibility
 
 - Tags must have sufficient color contrast (4.5:1 ratio minimum)
@@ -69,6 +78,7 @@ Use colors strategically to convey meaning and maintain consistency:
 ```sail
 a!tagField(
   labelPosition: "COLLAPSED",
+  size: "STANDARD,
   tags: {
     a!tagItem(
       text: "NEW",
@@ -85,6 +95,7 @@ a!tagField(
 ```sail
 a!tagField(
   labelPosition: "COLLAPSED",
+  size: "STANDARD,
   tags: {
     a!tagItem(
       text: "URGENT",
