@@ -113,9 +113,9 @@ colors:
   
   pink:
     - name: "Pink 0"
-      hex: "#FFDEF3"
+      hex: "#FFF5FB"
     - name: "Pink 1"
-      hex: "#FFC9E8"
+      hex: "#FFDEF3"
     - name: "Pink 2"
       hex: "#F7A7DA"
     - name: "Pink 3"
