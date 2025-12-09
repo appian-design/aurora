@@ -144,12 +144,12 @@ local!inventory: {
 
 ### Dates and Times
 
-**✅ Use recent, realistic dates:**
+**✅ Use relative dates with today():**
 ```sail
 local!projects: {
-  a!map(name: "Website Redesign", startDate: date(2024, 1, 15), dueDate: date(2024, 3, 30)),
-  a!map(name: "Mobile App", startDate: date(2024, 2, 1), dueDate: date(2024, 5, 15)),
-  a!map(name: "Database Migration", startDate: date(2024, 3, 1), dueDate: date(2024, 4, 30))
+  a!map(name: "Website Redesign", startDate: today() - 45, dueDate: today() + 30),
+  a!map(name: "Mobile App", startDate: today() - 30, dueDate: today() + 75),
+  a!map(name: "Database Migration", startDate: today() - 15, dueDate: today() + 45)
 }
 ```
 
