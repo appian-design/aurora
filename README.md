@@ -17,7 +17,7 @@ Visit our [live documentation site](https://appian-design.github.io/aurora/) to 
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 #### 1. Prerequisites
-* [Python 3.8+](https://www.python.org/downloads/)
+* [uv](https://docs.astral.sh/uv/getting-started/installation/) (installs the pinned Python version automatically)
 * [Git](https://git-scm.com/downloads/)
 
 #### 2. Setup
@@ -27,24 +27,15 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 git clone [https://github.com/appian-design/aurora.git](https://github.com/appian-design/aurora.git)
 cd aurora
 
-# Create and activate a virtual environment
-# On macOS/Linux:
-python3 -m venv venv
-source venv/bin/activate
-
-# On Windows:
-python -m venv venv
-.\venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+# Install Python and dependencies (creates .venv from uv.lock)
+uv sync
 ```
 
 #### 3. Run the Local Server
 
 ```bash
 # Start the live-reloading server
-mkdocs serve
+uv run mkdocs serve
 
 # View the site in your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000)
 ```
@@ -74,7 +65,8 @@ aurora/
 │   ├── assets/           # Images, CSS, or JS overrides
 │   └── ...               # Subdirectories for components, patterns, etc.
 ├── mkdocs.yml            # MkDocs configuration file
-├── requirements.txt      # Python dependencies for local development
+├── pyproject.toml        # Python dependencies (managed with uv)
+├── uv.lock               # Locked, hashed dependency versions
 └── README.md             # This file
 ```
 
@@ -119,6 +111,8 @@ This repository uses automated workflows to help maintain the design system:
 - **Automated PR Creation**: PRs are automatically created when branches following the `aurora-agent/*` pattern are pushed
 
 See our [Automated Maintenance Guide](.github/automated-maintenance.md) for details on how to use these workflows.
+
+See our [Security Maintenance Guide](.github/security-maintenance.md) for dependency auditing and follow-up hardening tasks.
 
 ### MCP Server Integration
 
