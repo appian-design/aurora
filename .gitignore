@@ -27,6 +27,7 @@ gh-pages/
 .idea/
 .vscode/
 .claude/
+.kiro/sessions
 *.swp
 *.swo
 
