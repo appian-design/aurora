@@ -1,8 +1,8 @@
 ---
+title: "Accessibility Checklist"
 status: "stable"
 last_updated: "2025-10-17"
-hide:
-    - toc
+tableOfContents: false
 ---
 
 # Accessibility Checklist

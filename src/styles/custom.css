@@ -1,0 +1,31 @@
+/*
+ * Appian brand palette for Starlight, carried over from the mkdocs Material
+ * theme's docs/stylesheets/extra.css color overrides.
+ */
+:root {
+  --sl-color-accent-low: #e7f1ff;
+  --sl-color-accent: #2322f0;
+  --sl-color-accent-high: #152b99;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #152b99;
+  --sl-color-accent: #3f8eee;
+  --sl-color-accent-high: #b8d9ff;
+}
+
+/* Reproduce the mkdocs header gradient on the Starlight top bar */
+.header {
+  background: linear-gradient(90deg, #302a8f 0%, #2322f0 88%);
+}
+
+/* Color chip used in docs/branding/colors.md */
+.color-chip {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  margin-right: 8px;
+  vertical-align: middle;
+}

@@ -1,23 +1,9 @@
-# MkDocs build output
-site/
+# Astro build output
+dist/
+.astro/
 
-# Python virtual environment
-venv/
-.venv/
-env/
-.env/
-*/activate
-*/pyvenv.cfg
-*/pip-selfcheck.json
-.python-version
-
-# Python cache files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# MkDocs cache
-.cache/
+# Node dependencies
+node_modules/
 
 # GitHub Pages deployment directory
 gh-pages/
@@ -29,10 +15,6 @@ gh-pages/
 .claude/
 *.swp
 *.swo
-
-# Local configuration overrides (optional)
-# Use a mkdocs.local.yml for personal settings not to be committed
-mkdocs.local.yml
 
 # Secrets
 .env

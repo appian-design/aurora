@@ -1,5 +1,5 @@
 # The name of the workflow
-name: Deploy MkDocs Site
+name: Deploy Astro Site
 
 # Controls when the workflow will run
 on:
@@ -24,18 +24,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: 3.x
+          node-version: 20
+          cache: pnpm
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pnpm install --frozen-lockfile
       - name: Build site
-        run: mkdocs build
+        run: pnpm build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: ./dist
 
   # Deployment job
   deploy:

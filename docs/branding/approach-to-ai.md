@@ -1,4 +1,5 @@
 ---
+title: "Approach to AI"
 status: "stable"
 last_updated: "2025-11-11"
 ---
@@ -54,11 +55,13 @@ Appian Solutions will use a modified version of the Appian AI Copilot Brand for 
 - [Sparkle Image - Light PNG](../assets/images/ai-imagery/sparkle-light-1.png)
 - [Sparkle Image - Light SVG](../assets/images/ai-imagery/sparkle-light-2.svg)
 
-!!! info "Helpful Tips"
-    If an icon is needed and cannot be an image, the "magic" icon can be used
+:::note[Helpful Tips]
+If an icon is needed and cannot be an image, the "magic" icon can be used
+:::
 
-!!! abstract "Accessibility"
-    Alt-text is not needed as the image is entirely decorative
+:::note[Accessibility]
+Alt-text is not needed as the image is entirely decorative
+:::
 
 ## Language
 

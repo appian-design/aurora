@@ -1,3 +1,6 @@
+---
+title: "SAIL Coding Guide"
+---
 # SAIL Coding Guide
 
 ## Overview

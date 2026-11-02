@@ -1,4 +1,5 @@
 ---
+title: "Comment Thread"
 status: "stable"
 last_updated: "2025-08-29"
 ---

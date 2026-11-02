@@ -1,4 +1,5 @@
 ---
+title: "Typography"
 status: "stable"
 last_updated: "2025-09-25"
 ---
@@ -21,9 +22,10 @@ Use title case for all heading styles. Avoid using all caps and accent colors fo
 - **Section titles**: Use `SMALL` size with `STANDARD` color 
 - **Subsection titles**: Use `EXTRA_SMALL` size
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    For `a!sectionLayout`, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
+For `a!sectionLayout`, use the Accessibility Heading Tag parameter to provide semantic context for screen readers.
+:::
 
 ### Using Section Headings with Actions or Text
 

@@ -17,7 +17,8 @@ Visit our [live documentation site](https://appian-design.github.io/aurora/) to 
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 #### 1. Prerequisites
-* [Python 3.8+](https://www.python.org/downloads/)
+* [Node.js 20+](https://nodejs.org/)
+* [pnpm](https://pnpm.io/installation)
 * [Git](https://git-scm.com/downloads/)
 
 #### 2. Setup
@@ -27,26 +28,17 @@ We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) 
 git clone [https://github.com/appian-design/aurora.git](https://github.com/appian-design/aurora.git)
 cd aurora
 
-# Create and activate a virtual environment
-# On macOS/Linux:
-python3 -m venv venv
-source venv/bin/activate
-
-# On Windows:
-python -m venv venv
-.\venv\Scripts\activate
-
 # Install dependencies
-pip install -r requirements.txt
+pnpm install
 ```
 
 #### 3. Run the Local Server
 
 ```bash
 # Start the live-reloading server
-mkdocs serve
+pnpm dev
 
-# View the site in your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+# View the site in your browser at [http://localhost:4321](http://localhost:4321)
 ```
 Any changes you save will automatically reload in the browser.
 
@@ -73,10 +65,20 @@ aurora/
 │   ├── index.md          # The home page
 │   ├── assets/           # Images, CSS, or JS overrides
 │   └── ...               # Subdirectories for components, patterns, etc.
-├── mkdocs.yml            # MkDocs configuration file
-├── requirements.txt      # Python dependencies for local development
+├── src/
+│   ├── content/docs/     # Symlink to ../../docs — Starlight reads content from here
+│   ├── content.config.ts # Content collection schema
+│   └── styles/custom.css # Appian brand color overrides for Starlight
+├── astro.config.mjs      # Astro + Starlight configuration
+├── package.json           # Node dependencies for local development
 └── README.md             # This file
 ```
+
+> **Note:** `docs/` remains the single source of truth for all documentation
+> content and keeps its original file layout. Site generation (previously
+> MkDocs, now Astro + Starlight) reads from it via a symlink at
+> `src/content/docs`, so the paths watched by the MCP sync workflow
+> (`.github/workflows/sync-mcp-metadata.yml`) are unaffected by this change.
 
 ## 🤝 Contributing
 
@@ -103,7 +105,7 @@ We believe that great design systems are built by communities. Whether you're a 
 2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/design-system-docs.git`
 3. **Create a feature branch**: `git checkout -b feature/your-feature-name`
 4. **Make changes**: Edit markdown files or add new documentation
-5. **Test locally**: Run `mkdocs serve` to preview changes
+5. **Test locally**: Run `pnpm dev` to preview changes
 6. **Submit PR**: Push changes and open a pull request for review
 
 Please read our [Contributing Guide](CONTRIBUTING.md) for detailed information and our [Code of Conduct](CODE_OF_CONDUCT.md) for community guidelines.
@@ -176,7 +178,7 @@ related: ["related-item-1", "related-item-2"]
 
 - [GitHub-flavored Markdown reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [markdownTables](https://jmalarcon.github.io/markdowntables/): for converting HTML table content to Markdown tables
-- [mkdocs Material Documentation](https://squidfunk.github.io/mkdocs-material/)
+- [Astro Starlight Documentation](https://starlight.astro.build/)
 - [Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## 🆘 Getting Help

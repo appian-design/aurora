@@ -1,4 +1,5 @@
 ---
+title: "Tabs"
 status: "stable"
 last_updated: "2025-09-04"
 ---
@@ -19,9 +20,10 @@ Tabs are used to navigate between alternate views within a user interface
 
 Use the platform’s record tabs to establish views within a record. Avoid designing custom view tabs when using an Appian record.
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    The platform's record tabs have accessibility features available out of the box — nothing more is necessary.
+The platform's record tabs have accessibility features available out of the box — nothing more is necessary.
+:::
 
 #### Tabs as Side Navigation
 
@@ -31,9 +33,10 @@ Use this option when there are 4 or more tabs.
 
 **Note:** When using this option, keep in mind that the components within the tab will have lesser page width and the design will need to be adjusted accordingly
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    Specify “Selected” in the `accessibilityText` parameter of the tab’s card layout to ensure screen readers identify the selected tab. Avoid using the word “tab” in the accessibility text.
+Specify “Selected” in the `accessibilityText` parameter of the tab’s card layout to ensure screen readers identify the selected tab. Avoid using the word “tab” in the accessibility text.
+:::
 
 #### Horizontal Tabs
 
@@ -46,9 +49,10 @@ Use horizontal tabs to implement views within a page or section. Avoid using mor
 - This layout could work for showing lists based on different statuses
 - Ensure the tabs have a wrapping container in order to establish the appropriate hierarchy
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    Specify “Selected” in the `accessibilityText` parameter of the tab’s card layout to ensure screen readers identify the selected tab. Avoid using the word “tab” in the accessibility text.
+Specify “Selected” in the `accessibilityText` parameter of the tab’s card layout to ensure screen readers identify the selected tab. Avoid using the word “tab” in the accessibility text.
+:::
 
 #### Chart Toggle Using Tabs
 
@@ -57,9 +61,10 @@ Use horizontal tabs to implement views within a page or section. Avoid using mor
 Use this pattern to toggle data display between a chart view and list view.
 
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    Specify “Selected” in the `accessibilityText` parameter of the `a!buttonWidget` to ensure screen readers identify the selected button/tab. Avoid using the word “tab“ in the accessibility text. The button names should be “chart view“ and “list view“, respectively.
+Specify “Selected” in the `accessibilityText` parameter of the `a!buttonWidget` to ensure screen readers identify the selected button/tab. Avoid using the word “tab“ in the accessibility text. The button names should be “chart view“ and “list view“, respectively.
+:::
 
 ### Accessibility
 

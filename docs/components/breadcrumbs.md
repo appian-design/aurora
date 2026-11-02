@@ -1,4 +1,5 @@
 ---
+title: "Breadcrumbs"
 status: "stable"
 last_updated: "2025-09-05"
 ---

@@ -1,4 +1,5 @@
 ---
+title: "Cards as Choices"
 status: "stable"
 last_updated: "2025-09-21"
 ---

@@ -1,4 +1,5 @@
 ---
+title: "Buttons"
 status: "stable"
 last_updated: "2025-09-21"
 ---
@@ -53,16 +54,16 @@ Use for common actions where users will recognize the icon as a symbol of the ac
 - For Update/Edit actions, use the `pencil` icon in `ACCENT` color
 - For Delete actions, use the `times` icon in `STANDARD` color
 
-!!! abstract "Accessibility"
+:::note[Accessibility]
 
-    When an icon is the sole element within a link, a text alternative MUST be provided. 
-    
-    Use the caption parameter to add a visible label. This is the best choice when an icon's meaning might be ambiguous to users.
-    
-    For universally understood icons where a visible label is unnecessary, use the altText parameter instead. 
-    
-    To avoid a redundant experience where screen readers announce the text twice, **do not use** both caption and altText on the same icon.
+When an icon is the sole element within a link, a text alternative MUST be provided. 
 
+Use the caption parameter to add a visible label. This is the best choice when an icon's meaning might be ambiguous to users.
+
+For universally understood icons where a visible label is unnecessary, use the altText parameter instead. 
+
+To avoid a redundant experience where screen readers announce the text twice, **do not use** both caption and altText on the same icon.
+:::
 
 ## Development
 

@@ -1,4 +1,5 @@
 ---
+title: "Icons"
 status: "stable"
 last_updated: "2025-09-04"
 ---

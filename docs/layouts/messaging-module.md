@@ -1,4 +1,5 @@
 ---
+title: "Messaging Module"
 status: "stable"
 last_updated: "2025-11-11"
 ---

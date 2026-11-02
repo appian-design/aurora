@@ -1,4 +1,5 @@
 ---
+title: "Logo and Favicon"
 status: "stable"
 last_updated: "2025-09-05"
 parent: "branding"
